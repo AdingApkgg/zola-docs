@@ -1,11 +1,10 @@
 +++
-title = "Overview"
+title = "概览"
 weight = 10
 +++
 
-Zola uses the directory structure to determine the site structure.
-Each child directory in the `content` directory represents a [section](@/documentation/content/section.md)
-that contains [pages](@/documentation/content/page.md) (your `.md` files).
+Zola 使用目录结构来确定站点结构。
+`content` 目录中的每个子目录代表一个 [section](@/documentation/content/section.md)，其中包含 [pages](@/documentation/content/page.md)（你的 `.md` 文件）。
 
 ```bash
 .
@@ -22,30 +21,24 @@ that contains [pages](@/documentation/content/page.md) (your `.md` files).
         └── _index.md // -> https://mywebsite.com/landing/
 ```
 
-Each page path (the part after `base_url`, for example `blog/cli-usage/`) can be customised by changing the `path` or
-`slug` attribute of the [page front-matter](@/documentation/content/page.md#front-matter).
+每个页面路径（`base_url` 之后的部分，例如 `blog/cli-usage/`）可以通过更改 [页面 front-matter](@/documentation/content/page.md#front-matter) 的 `path` 或 `slug` 属性来得自定义。
 
-You might have noticed a file named `_index.md` in the example above.
-This file is used to store both the metadata and content of the section itself and is not considered a page.
+你可能已经注意到上面示例中名为 `_index.md` 的文件。
+此文件用于存储 section 本身的元数据和内容，不被视为页面。
 
-To ensure that the terminology used in the rest of the documentation is understood, let's go over the example above.
+为了确保理解本文档其余部分中使用的术语，让我们回顾一下上面的示例。
 
-The `content` directory in this case has three `sections`: `content`, `blog` and `landing`. The `content` section has only
-one page (`something.md`), the `landing` section has no pages and the `blog` section has 4 pages (`cli-usage.md`,
-`configuration.md`, `directory-structure.md` and `installation.md`).
+在这种情况下，`content` 目录有三个 `sections`：`content`、`blog` 和 `landing`。`content` section 只有一个页面（`something.md`），`landing` section 没有页面，`blog` section 有 4 个页面（`cli-usage.md`、`configuration.md`、`directory-structure.md` 和 `installation.md`）。
 
-Sections can be nested indefinitely.
+Section 可以无限嵌套。
 
-## Asset colocation
+## 资源共置 (Asset colocation)
 
-The `content` directory is not limited to markup files. It's natural to want to co-locate a page and some related
-assets, such as images or spreadsheets. Zola supports this pattern out of the box for both sections and pages.
+`content` 目录不限于标记文件。很自然地，我们希望将页面和一些相关资源（如图像或电子表格）放在一起。Zola 对 section 和页面都开箱即用地支持这种模式。
 
-All non-Markdown files you add in a page/section directory will be copied alongside the generated page when the site is
-built, which allows us to use a relative path to access them.
+你在页面/section 目录中添加的所有非 Markdown 文件将在构建站点时与生成的页面一起复制，这允许我们使用相对路径访问它们。
 
-Pages with co-located assets should not be placed directly in their section directory (such as `latest-experiment.md`), but
-as an `index.md` file in a dedicated directory (`latest-experiment/index.md`), like so:
+具有共置资源的页面不应直接放在其 section 目录中（例如 `latest-experiment.md`），而应作为专用目录中的 `index.md` 文件（`latest-experiment/index.md`），如下所示：
 
 
 ```bash
@@ -57,41 +50,32 @@ as an `index.md` file in a dedicated directory (`latest-experiment/index.md`), l
     └── research.jpg
 ```
 
-With this setup, you may access `research.jpg` from your 'research' section
-and `javascript.js` from your 'latest-experiment' page directly within the Markdown:
+通过此设置，你可以直接在 Markdown 中从 'research' section 访问 `research.jpg`，从 'latest-experiment' 页面访问 `javascript.js`：
 
 ```Markdown
-Check out the complete program [here](javascript.js). It's **really cool free-software**!
+查看完整程序 [这里](javascript.js)。它**真的很酷的自由软件**！
 ```
 
-By default, this page's slug will be the directory name and thus its permalink will be `https://example.com/research/latest-experiment/`.
+默认情况下，此页面的 slug 将是目录名称，因此其永久链接将是 `https://example.com/research/latest-experiment/`。
 
-### Excluding files from assets
+### 从资源中排除文件
 
-It is possible to ignore selected asset files using the
-[ignored_content](@/documentation/getting-started/configuration.md) setting in the config file.
-For example, say that you have several code files which you are linking to on your website.
-For maintainability, you want to keep your code in the same directory as the Markdown file,
-but you don't want to copy the build folders to the public web site. You can achieve this by setting `ignored_content` in the config file:
+可以使用配置文件中的 [ignored_content](@/documentation/getting-started/configuration.md) 设置忽略选定的资源文件。
+例如，假设你有几个要在网站上链接的代码文件。
+为了可维护性，你想将代码保留在与 Markdown 文件相同的目录中，但不想将构建文件夹复制到公共网站。你可以通过在配置文件中设置 `ignored_content` 来实现此目的：
 
-(Note of caution: `{Cargo.lock,target}` is _not_ the same as `{Cargo.lock, target}`)
+（注意：`{Cargo.lock,target}` 与 `{Cargo.lock, target}` _不同_）
 ```
 ignored_content = ["code_articles/**/{Cargo.lock,target}, *.rs"]
 ```
 
-## Static assets
+## 静态资源
 
-In addition to placing content files in the `content` directory, you may also place content
-files in the `static` directory.  Any files/directories that you place in the `static` directory
-will be copied, without modification, to the `public` directory.
+除了将内容文件放置在 `content` 目录中之外，你还可以将内容文件放置在 `static` 目录中。你在 `static` 目录中放置的任何文件/目录都将不加修改地复制到 `public` 目录。
 
-Typically, you might put site-wide assets (such as a CSS file, the site favicon, site logos or site-wide
-JavaScript) in the root of the static directory. You can also place any HTML or other files that
-you wish to be included without modification (that is, without being parsed as Markdown files)
-into the static directory.
+通常，你可能会将全站资源（如 CSS 文件、站点 favicon、站点徽标或全站 JavaScript）放在 static 目录的根目录中。你还可以将任何你希望不加修改地包含（即不作为 Markdown 文件解析）的 HTML 或其他文件放入 static 目录中。
 
-Note that the static directory provides an _alternative_ to co-location.  For example, imagine that you
-had the following directory structure (a simplified version of the structure presented above):
+请注意，static 目录提供了共置的_替代方案_。例如，假设你有以下目录结构（上面介绍的结构的简化版本）：
 
 ```bash
 .
@@ -102,16 +86,7 @@ had the following directory structure (a simplified version of the structure pre
         └── _index.md // -> https://mywebsite.com/blog/
 ```
 
-To add an image to the `https://mywebsite.com/blog/configuration` page, you have three options:
- *  You could save the image to the `content/blog/configuration` directory and then link to it with a
- relative path from the `index.md` page.  This is the approach described under **co-location**
- above.
- *  You could save the image to a `static/blog/configuration` directory and link to it in exactly the
- same way as if you had co-located it. If you do this, the generated files will be identical to those
- obtained if you had co-located the image; the only difference will be that all static files will be saved in the
- static directory rather than in the content directory. The choice depends on your organizational needs.
- *  Or you could save the image to some arbitrary directory within the static directory. For example,
- you could save all images to `static/images`.  Using this approach, you can no longer use relative links. Instead,
- you must use an absolute link to `images/[filename]` to access your
- image. This might be preferable for small sites or for sites that associate images with
- multiple pages (e.g., logo images that appear on every page).
+要向 `https://mywebsite.com/blog/configuration` 页面添加图像，你有三个选项：
+ *  你可以将图像保存到 `content/blog/configuration` 目录，然后从 `index.md` 页面使用相对路径链接到它。这是上面 **共置** 下描述的方法。
+ *  你可以将图像保存到 `static/blog/configuration` 目录，并以与共置完全相同的方式链接到它。如果你这样做，生成的文件将与共置图像获得的文件相同；唯一的区别是所有静态文件将保存在 static 目录中，而不是 content 目录中。选择取决于你的组织需求。
+ *  或者你可以将图像保存到 static 目录中的任意目录。例如，你可以将所有图像保存到 `static/images`。使用这种方法，你不能再使用相对链接。相反，你必须使用绝对链接 `images/[filename]` 来访问你的图像。这对于小型站点或将图像与多个页面关联的站点（例如，出现在每个页面上的徽标图像）可能更可取。
