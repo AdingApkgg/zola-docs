@@ -1,42 +1,27 @@
-# zola (né Gutenberg) <img src="docs/static/logos/Zola-logo-main-coffee.svg" align="right" alt="zola logo" width="30%"/>
+# Zola 中文文档
 
-[![Build Status](https://dev.azure.com/getzola/zola/_apis/build/status/getzola.zola?branchName=master)](https://dev.azure.com/getzola/zola/_build/latest?definitionId=1&branchName=master)
-![GitHub all releases](https://img.shields.io/github/downloads/getzola/zola/total)
+[Zola](https://www.getzola.org/) 是一个快速的静态网站生成器，它是一个单一的二进制文件，没有任何依赖。
 
-A fast static site generator in a single binary with everything built-in.
+本项目是 [Zola 官方文档](https://github.com/getzola/zola/tree/master/docs) 的中文翻译版本。
 
-To find out more see the [Zola Documentation](https://www.getzola.org/documentation/getting-started/overview/), look
-in the [docs/content](docs/content) folder of this repository or visit the [Zola community forum](https://zola.discourse.group).
+## 本地预览
 
-This tool and its template engine [tera](https://keats.github.io/tera/) were born from an intense dislike of the (insane) Golang template engine and therefore of
-Hugo that I was using before for 6+ sites.
+1. [安装 Zola](https://www.getzola.org/documentation/getting-started/installation/)
+2. 克隆本仓库：
+   ```bash
+   git clone https://github.com/AdingApkgg/zola-docs.git
+   cd zola-docs
+   ```
+3. 运行开发服务器：
+   ```bash
+   zola serve
+   ```
+4. 访问 `http://127.0.0.1:1111`
 
-## List of features
+## 贡献
 
-- [Single binary](https://www.getzola.org/documentation/getting-started/cli-usage/)
-- [Syntax highlighting](https://www.getzola.org/documentation/content/syntax-highlighting/)
-- [Sass compilation](https://www.getzola.org/documentation/content/sass/)
-- Assets co-location
-- [Multilingual site support](https://www.getzola.org/documentation/content/multilingual/) (Basic currently)
-- [Image processing](https://www.getzola.org/documentation/content/image-processing/)
-- [Themes](https://www.getzola.org/documentation/themes/overview/)
-- [Shortcodes](https://www.getzola.org/documentation/content/shortcodes/)
-- [Internal links](https://www.getzola.org/documentation/content/linking/)
-- [External link checker](https://www.getzola.org/documentation/getting-started/cli-usage/#check)
-- [Table of contents automatic generation](https://www.getzola.org/documentation/content/table-of-contents/)
-- Automatic header anchors
-- [Aliases](https://www.getzola.org/documentation/content/page/#front-matter)
-- [Pagination](https://www.getzola.org/documentation/templates/pagination/)
-- [Custom taxonomies](https://www.getzola.org/documentation/templates/taxonomies/)
-- [Search with no servers or any third parties involved](https://www.getzola.org/documentation/content/search/)
-- [Live reload](https://www.getzola.org/documentation/getting-started/cli-usage/#serve)
-- Deploy on many platforms easily: [Netlify](https://www.getzola.org/documentation/deployment/netlify/), [Vercel](https://www.getzola.org/documentation/deployment/vercel/), [Cloudflare Pages](https://www.getzola.org/documentation/deployment/cloudflare-pages/), etc
+欢迎提交 Pull Request 改进翻译或报告问题。
 
-## License
+## 许可证
 
-This project contains code under multiple licenses.
-
-Code introduced after version 0.22 is licensed under the EUPL-1.2.
-Code that existed prior to commit 3c9131db0d203640b6d5619ca1f75ce1e0d49d8f remains licensed under the MIT License, including in later versions of the project.
-
-See LICENSE and LICENSE-MIT for details.
+MIT License

@@ -1,31 +1,26 @@
 +++
-title = "Search"
+title = "搜索"
 weight = 100
 +++
 
-Zola can build a search index from the sections and pages content to
-be used by a JavaScript library such as [elasticlunr](http://elasticlunr.com/) or [fuse](https://www.fusejs.io).
+Zola 可以从 section 和页面内容构建搜索索引，以供 JavaScript 库（如 [elasticlunr](http://elasticlunr.com/) 或 [fuse](https://www.fusejs.io)）使用。
 
-To enable it, you only need to set `build_search_index = true` in your `config.toml` and Zola will
-generate an index for the `default_language` set for all pages not excluded from the search index.
+要启用它，你只需要在 `config.toml` 中设置 `build_search_index = true`，Zola 就会为所有未从搜索索引中排除的页面生成 `default_language` 设置的索引。
 
-It is very important to set the `default_language` in your `config.toml` if you are writing a site not in
-English; the index building pipelines are very different depending on the language.
+如果你正在编写非英语站点，在 `config.toml` 中设置 `default_language` 非常重要；索引构建管道因语言而异。
 
-As each site will be different, Zola makes no assumptions about your search function and doesn't provide
-the JavaScript/CSS code to do an actual search and display results. You can look at how this site
-implements it (using elasticlunr) to get an idea: [search.js](https://github.com/getzola/zola/tree/master/docs/static/search.js).
+由于每个站点都不同，Zola 不会对你的搜索功能做出任何假设，也不提供执行实际搜索和显示结果的 JavaScript/CSS 代码。你可以查看本网站是如何实现的（使用 elasticlunr）以获得灵感：[search.js](https://github.com/getzola/zola/tree/master/docs/static/search.js)。
 
 
-## Configuring the search index
-In some cases, the default indexing strategy is not suitable. You can customize which fields to include and whether
-to truncate the content in the [search configuration](@/documentation/getting-started/configuration.md).
+## 配置搜索索引
 
-## Index Formats
+在某些情况下，默认索引策略并不合适。你可以在 [搜索配置](@/documentation/getting-started/configuration.md) 中自定义要包含的字段以及是否截断内容。
+
+## 索引格式
 
 ### Elasticlunr
 
-Compatible with [elasticlunr](http://elasticlunr.com/). Also produces `elasticlunr.min.js`.
+兼容 [elasticlunr](http://elasticlunr.com/)。还会生成 `elasticlunr.min.js`。
 
 ```toml
 # config.toml
@@ -33,12 +28,12 @@ Compatible with [elasticlunr](http://elasticlunr.com/). Also produces `elasticlu
 index_format = "elasticlunr_javascript" # or "elasticlunr_json"
 ```
 
-If you are using a language other than English, you will also need to include the corresponding JavaScript stemmer file.
-See <https://github.com/weixsong/lunr-languages#in-a-web-browser> for details.
+如果你使用的语言不是英语，你还需要包含相应的 JavaScript 词干提取器 (stemmer) 文件。
+有关详细信息，请参阅 <https://github.com/weixsong/lunr-languages#in-a-web-browser>。
 
 ### Fuse
 
-Compatible with [fuse.js](https://www.fusejs.io/) and [tinysearch](https://github.com/tinysearch/tinysearch).
+兼容 [fuse.js](https://www.fusejs.io/) 和 [tinysearch](https://github.com/tinysearch/tinysearch)。
 
 ```toml
 # config.toml

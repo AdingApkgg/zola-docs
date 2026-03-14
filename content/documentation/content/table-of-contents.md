@@ -1,15 +1,14 @@
 +++
-title = "Table of Contents"
+title = "目录"
 weight = 60
 +++
 
-Each page/section will automatically generate a table of contents for itself based on the headers generated with markdown.
+每个页面/section 将根据 markdown 生成的标题自动为其自身生成目录。
 
-It is available in the template through the `page.toc` or `section.toc` variable.
-You can view the [template variables](@/documentation/templates/pages-sections.md#table-of-contents)
-documentation for information on its structure.
+它可以通过 `page.toc` or `section.toc` 变量在模板中使用。
+你可以查看 [模板变量](@/documentation/templates/pages-sections.md#table-of-contents) 文档以获取有关其结构的信息。
 
-Here is an example of using that field to render a two-level table of contents:
+下面是一个使用该字段渲染两级目录的示例：
 
 ```jinja
 {% if page.toc %}
@@ -32,7 +31,6 @@ Here is an example of using that field to render a two-level table of contents:
 {% endif %}
 ```
 
-While headers are neatly ordered in this example, it will work just as well with disjoint headers.
+虽然在此示例中标题排列整齐，但它同样适用于不连贯的标题。
 
-Note that all existing HTML tags from the title will NOT be present in the table of contents to
-avoid various issues.
+请注意，标题中所有现有的 HTML 标签都**不**会出现在目录中，以避免各种问题。

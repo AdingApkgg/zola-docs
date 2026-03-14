@@ -3,46 +3,36 @@ title = "Sass"
 weight = 110
 +++
 
-Sass is a popular CSS preprocessor that adds special features (e.g., variables, nested rules) to facilitate the
-maintenance of large sets of CSS rules. If you're curious about what Sass
-is and why it might be useful for styling your static site, the following links
-may be of interest:
+Sass 是一种流行的 CSS 预处理器，它添加了特殊功能（如变量、嵌套规则）以方便维护大型 CSS 规则集。如果你好奇 Sass 是什么以及为什么它对你的静态站点样式有用，以下链接可能会让你感兴趣：
 
-* The [official Sass website](https://sass-lang.com/)
-* [Why Sass?](https://alistapart.com/article/why-sass), by Dan Cederholm
+* [Sass 官方网站](https://sass-lang.com/)
+* [为什么选择 Sass?](https://alistapart.com/article/why-sass), 作者 Dan Cederholm
 
-It currently uses [grass](https://github.com/connorskees/grass), a Rust implementation of Sass roughly equivalent
-with dart-sass.
+它目前使用 [grass](https://github.com/connorskees/grass)，这是一个大致等同于 dart-sass 的 Rust 实现。
 
-## Using Sass in Zola
+## 在 Zola 中使用 Sass
 
-Zola always compiles Sass files in theme directories.
-However, for Zola to process files in the `sass` folder, you need to set `compile_sass = true` in your `config.toml`.
+Zola 总是编译主题目录中的 Sass 文件。
+但是，为了让 Zola 处理 `sass` 文件夹中的文件，你需要在 `config.toml` 中设置 `compile_sass = true`。
 
-Zola processes any files with the `sass` or `scss` extension in the `sass`
-folder, and places the processed output into a `css` file with the same folder
-structure and base name into the `public` folder:
+Zola 处理 `sass` 文件夹中任何带有 `sass` 或 `scss` 扩展名的文件，并将处理后的输出放入具有相同文件夹结构和基本名称的 `css` 文件中，并存入 `public` 文件夹：
 
 ```bash
 .
 └── sass
     ├── style.scss // -> ./public/style.css
     ├── indented_style.sass // -> ./public/indented_style.css
-    ├── _include.scss # This file won't get put into the `public` folder, but other files can @import it.
+    ├── _include.scss # 此文件不会被放入 `public` 文件夹，但其他文件可以 @import 它。
     ├── assets
     │   ├── fancy.scss // -> ./public/assets/fancy.css
     │   ├── same_name.scss // -> ./public/assets/same_name.css
-    │   ├── same_name.sass # CONFLICT! This has the same base name as the file above, so Zola will return an error.
-    │   └── _common_mixins.scss # This file won't get put into the `public` folder, but other files can @import it.
+    │   ├── same_name.sass # 冲突！这与上面的文件具有相同的基本名称，因此 Zola 将返回错误。
+    │   └── _common_mixins.scss # 此文件不会被放入 `public` 文件夹，但其他文件可以 @import 它。
     └── secret-side-project
         └── style.scss // -> ./public/secret-side-project/style.css
 ```
 
-Files with a leading underscore in the name are not placed into the `public`
-folder, but can still be used as `@import` dependencies. For more information, see the "Partials" section of
-[Sass Basics](https://sass-lang.com/guide).
+名称中带有前导下划线的文件不会被放置在 `public` 文件夹中，但仍可用作 `@import` 依赖项。有关更多信息，请参阅 [Sass 基础](https://sass-lang.com/guide) 的 "Partials" section。
 
-Files with the `scss` extension use "Sassy CSS" syntax,
-while files with the `sass` extension use the "indented" syntax: <https://sass-lang.com/documentation/syntax>.
-Zola will return an error if `scss` and `sass` files with the same
-base name exist in the same folder to avoid confusion -- see the example above.
+带有 `scss` 扩展名的文件使用 "Sassy CSS" 语法，而带有 `sass` 扩展名的文件使用 "缩进" 语法：<https://sass-lang.com/documentation/syntax>。
+如果同一文件夹中存在具有相同基本名称的 `scss` 和 `sass` 文件，Zola 将返回错误以避免混淆——见上面的示例。

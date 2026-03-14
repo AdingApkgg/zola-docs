@@ -3,55 +3,39 @@ title = "Page"
 weight = 30
 +++
 
-A page is any file ending with `.md` in the `content` directory, except files
-named `_index.md`. **Note:** page file names must not contain `_index.` [at all](https://github.com/getzola/zola/pull/1694).
+页面是 `content` 目录中除名为 `_index.md` 的文件之外的任何以 `.md` 结尾的文件。**注意：**页面文件名不能包含 `_index.` [字样](https://github.com/getzola/zola/pull/1694)。
 
-If a file ending with `.md` is named `index.md`, it will generate a page
-with the name of its directory (for example, `/content/about/index.md` would
-create a page at `[base_url]/about`). (Note the lack of an underscore; if the file
-were named `_index.md`, then it would create a **section** at `[base_url]/about`, as
-discussed in a previous part of this documentation. In contrast, naming the file `index.md` will
-create a **page** at `[base_url]/about`).
+如果以 `.md` 结尾的文件名为 `index.md`，它将生成一个以其目录名称命名的页面（例如，`/content/about/index.md` 将在 `[base_url]/about` 创建一个页面）。（注意没有下划线；如果文件名为 `_index.md`，它将在 `[base_url]/about` 创建一个 **section**，如本文档前一部分所讨论的那样。相反，将文件命名为 `index.md` 将在 `[base_url]/about` 创建一个 **page**）。
 
-If the file is given any name _other_ than `index.md` or `_index.md`, then it will
-create a page with that name (without the `.md`). For example, naming a file in the root of your
-content directory `about.md` would create a page at `[base_url]/about`.
+如果文件被赋予 `index.md` 或 `_index.md` _以外_ 的任何名称，那么它将创建一个具有该名称的页面（不带 `.md`）。例如，在你的 content 目录根目录中命名一个文件 `about.md` 将在 `[base_url]/about` 创建一个页面。
 
-Another exception to this rule is that a filename starting with a datetime (YYYY-mm-dd or [an RFC3339 datetime](https://www.ietf.org/rfc/rfc3339.txt))
-will use that date as the page date, unless already set
-in the front matter. A datetime filename can optionally be followed by an underscore (`_`) or a dash (`-`), and slug.
-The page name will be either the datetime or anything after `_`/`-`,
-so the file `2018-10-10.md` will be available at `[base_url]/2018-10-10`, and `2018-10-10-hello-world.md` will
-be available at `[base_url]/hello-world`. Note that the full RFC3339 datetime contains colons, which is not a valid
-character in a filename on Windows.
-This behavior can be disabled by setting `slugify.paths_keep_dates` to `true` (the default is `false`). Note that a `_` separating the date would be slugified into a `-` with the default value for `slugify.paths` of `"on"`.
+此规则的另一个例外是，以日期时间（YYYY-mm-dd 或 [RFC3339 日期时间](https://www.ietf.org/rfc/rfc3339.txt)）开头的文件名将使用该日期作为页面日期，除非已在 front matter 中设置。日期时间文件名后面可以跟一个下划线 (`_`) 或破折号 (`-`) 和 slug。
+页面名称将是日期时间或 `_`/`-` 之后的任何内容，因此文件 `2018-10-10.md` 将在 `[base_url]/2018-10-10` 可用，而 `2018-10-10-hello-world.md` 将在 `[base_url]/hello-world` 可用。请注意，完整的 RFC3339 日期时间包含冒号，这在 Windows 上的文件名中不是有效字符。
+可以通过将 `slugify.paths_keep_dates` 设置为 `true`（默认为 `false`）来禁用此行为。请注意，当 `slugify.paths` 的默认值为 `"on"` 时，分隔日期的 `_` 将被 slugify 为 `-`。
 
-As you can see, creating an `about.md` file is equivalent to creating an
-`about/index.md` file. The only difference between the two methods is that creating
-the `about` directory allows you to use asset co-location, as discussed in the
-[overview](@/documentation/content/overview.md#asset-colocation) section.
+如你所见，创建 `about.md` 文件等同于创建 `about/index.md` 文件。这两种方法之间的唯一区别是，创建 `about` 目录允许你使用资源共置，如 [概览](@/documentation/content/overview.md#asset-colocation) section 中所讨论的那样。
 
-## Output paths
+## 输出路径
 
-For any page within your content folder, its output path will be defined by either:
+对于你的 content 文件夹中的任何页面，其输出路径将由以下两者之一定义：
 
-- its `slug` frontmatter key
-- its filename
+- 其 `slug` frontmatter 键
+- 其文件名
 
-Either way, these proposed path will be sanitized before being used.
-If `slugify.paths` is set to `"on"` in the site's config - the default - paths are [slugified](https://en.wikipedia.org/wiki/Clean_URL#Slug).
-If it is set to `"safe"`, only sanitation is performed, with the following characters being removed: `<`, `>`, `:`, `/`, `|`, `?`, `*`, `#`, `\\`, `(`, `)`, `[`, `]` as well as newlines and tabulations. This ensures that the path can be represented on all operating systems.
-Additionally, trailing whitespace and dots are removed and whitespaces are replaced by `_`.
+无论哪种方式，这些建议的路径在使用前都会被清理。
+如果在站点的配置中将 `slugify.paths` 设置为 `"on"` - 默认值 - 路径将被 [slugified](https://en.wikipedia.org/wiki/Clean_URL#Slug)。
+如果设置为 `"safe"`，则仅执行清理，删除以下字符：`<`, `>`, `:`, `/`, `|`, `?`, `*`, `#`, `\\`, `(`, `)`, `[`, `]` 以及换行符和制表符。这确保了路径可以在所有操作系统上表示。
+此外，尾随空格和点被删除，空格被替换为 `_`。
 
-If `slugify.paths` is set to `"off"`, no modifications are made.
+如果 `slugify.paths` 设置为 `"off"`，则不进行任何修改。
 
-If you want URLs containing non-ASCII characters, `slugify.paths` needs to be set to `"safe"` or `"off"`.
+如果你想要包含非 ASCII 字符的 URL，`slugify.paths` 需要设置为 `"safe"` 或 `"off"`。
 
-### Path from frontmatter
+### 来自 frontmatter 的路径
 
-The output path for the page will first be read from the `slug` key in the page's frontmatter.
+页面的输出路径将首先从页面的 frontmatter 中的 `slug` 键读取。
 
-**Example:** (file `content/zines/élevage-chèvre.md`)
+**示例：**（文件 `content/zines/élevage-chèvre.md`）
 
 ```
 +++
@@ -61,115 +45,101 @@ slug = "élevage-chèvre-carrière-alternative"
 This is my article.
 ```
 
-This frontmatter will output the article to `[base_url]/zines/élevage-chèvre-carrière-alternative` with `slugify.paths` set to `"safe"` or `"off"`, and to `[base_url]/zines/elevage-chevre-carriere-alternative` with the default value for `slugify.paths` of `"on"`.
+此 frontmatter 将在 `slugify.paths` 设置为 `"safe"` 或 `"off"` 时将文章输出到 `[base_url]/zines/élevage-chèvre-carrière-alternative`，并在 `slugify.paths` 默认值 `"on"` 时输出到 `[base_url]/zines/elevage-chevre-carriere-alternative`。
 
-### Path from filename
+### 来自文件名的路径
 
-When the article's output path is not specified in the frontmatter, it is extracted from the file's path in the content folder. Consider a file `content/foo/bar/thing.md`. The output path is constructed:
+当文章的输出路径未在 frontmatter 中指定时，它将从 content 文件夹中的文件路径中提取。考虑一个文件 `content/foo/bar/thing.md`。输出路径的构造如下：
 
-- if the filename is `index.md`, its parent folder name (`bar`) is used as output path
-- otherwise, the output path is extracted from `thing` (the filename without the `.md` extension)
+- 如果文件名是 `index.md`，其父文件夹名称 (`bar`) 用作输出路径
+- 否则，输出路径从 `thing`（不带 `.md` 扩展名的文件名）中提取
 
-If the path found starts with a datetime string (`YYYY-mm-dd` or [a RFC3339 datetime](https://www.ietf.org/rfc/rfc3339.txt)) followed by optional whitespace and then an underscore (`_`) or a dash (`-`), this date is removed from the output path and will be used as the page date (unless already set in the front-matter). Note that the full RFC3339 datetime contains colons, which is not a valid character in a filename on Windows.
+如果找到的路径以日期时间字符串（`YYYY-mm-dd` 或 [RFC3339 日期时间](https://www.ietf.org/rfc/rfc3339.txt)）开头，后跟可选空格，然后是下划线 (`_`) 或破折号 (`-`)，则此日期将从输出路径中删除，并将用作页面日期（除非已在 front-matter 中设置）。请注意，完整的 RFC3339 日期时间包含冒号，这在 Windows 上的文件名中不是有效字符。
 
-The output path extracted from the file path is then slugified or not, depending on the `slugify.paths` config, as explained previously.
+从文件路径提取的输出路径随后根据 `slugify.paths` 配置进行 slugify 或不进行 slugify，如前所述。
 
-**Example:**
-The file `content/blog/2018-10-10-hello-world.md` will yield a page at `[base_url]/blog/hello-world`. With optional whitespace, the file `content/blog/2021-01-23 -hello new world.md` will yield a page at `[base_url]/blog/hello-new-world`
+**示例：**
+文件 `content/blog/2018-10-10-hello-world.md` 将生成页面 `[base_url]/blog/hello-world`。带有可选空格的文件 `content/blog/2021-01-23 -hello new world.md` 将生成页面 `[base_url]/blog/hello-new-world`。
 
-## Front matter
+## Front matter (前置数据)
 
-The TOML front matter is a set of metadata embedded in a file at the beginning of the file enclosed
-by triple pluses (`+++`).
+TOML front matter 是一组嵌入在文件开头的元数据，由三个加号 (`+++`) 包围。
 
-Although none of the front matter variables are mandatory, the opening and closing `+++` are required.
+虽然没有 front matter 变量是强制性的，但开头和结尾的 `+++` 是必需的。
 
-Note that even though the use of TOML is encouraged, YAML front matter is also supported to ease porting
-legacy content. In this case the embedded metadata must be enclosed by triple minuses (`---`).
+请注意，尽管鼓励使用 TOML，但也支持 YAML front matter 以便移植旧内容。在这种情况下，嵌入的元数据必须由三个减号 (`---`) 包围。
 
-Here is an example page with all the available variables. The values provided below are the
-default values.
+下面是一个包含所有可用变量的示例页面。下面提供的值是默认值。
 
 ```toml
 title = ""
 description = ""
 
-# The date of the post.
-# Two formats are allowed: YYYY-MM-DD (2012-10-02) and RFC3339 (2002-10-02T15:00:00Z).
-# Do not wrap dates in quotes; the line below only indicates that there is no default date.
-# If the section variable `sort_by` is set to `date`, then any page that lacks a `date`
-# will not be rendered.
-# Setting this overrides a date set in the filename.
+# 文章的日期。
+# 允许两种格式：YYYY-MM-DD (2012-10-02) 和 RFC3339 (2002-10-02T15:00:00Z)。
+# 不要将日期用引号括起来；下面的行仅表示没有默认日期。
+# 如果 section 变量 `sort_by` 设置为 `date`，那么任何缺少 `date` 的页面将不会被渲染。
+# 设置此项将覆盖文件名中设置的日期。
 date =
 
-# The last updated date of the post, if different from the date.
-# Same format as `date`.
+# 文章的最后更新日期，如果与日期不同。
+# 格式与 `date` 相同。
 updated =
 
-# The weight as defined on the Section page of the documentation.
-# If the section variable `sort_by` is set to `weight`, then any page that lacks a `weight`
-# will not be rendered.
+# 文档 Section 页面上定义的权重。
+# 如果 section 变量 `sort_by` 设置为 `weight`，那么任何缺少 `weight` 的页面将不会被渲染。
 weight = 0
 
-# A draft page is only loaded if the `--drafts` flag is passed to `zola build`, `zola serve` or `zola check`.
+# 草稿页面只有在将 `--drafts` 标志传递给 `zola build`、`zola serve` 或 `zola check` 时才会加载。
 draft = false
 
-# When set to "false" Zola will not create a separate folder with index.html inside for this page.
+# 当设置为 "false" 时，Zola 不会为此页面创建一个包含 index.html 的单独文件夹。
 render = false
 
-# If set, this slug will be used instead of the filename to make the URL.
-# The section path will still be used.
+# 如果设置，将使用此 slug 代替文件名来制作 URL。
+# section 路径仍将被使用。
 slug = ""
 
-# The path the content will appear at.
-# If set, it cannot be an empty string and will override both `slug` and the filename.
-# The sections' path won't be used.
-# It should not start with a `/` and the slash will be removed if it does.
+# 内容将出现的路径。
+# 如果设置，它不能为空字符串，并且将覆盖 `slug` 和文件名。
+# section 的路径将不会被使用。
+# 它不应以 `/` 开头，如果开头有 `/` 将被删除。
 path = ""
 
-# Use aliases if you are moving content but want to redirect previous URLs to the
-# current one. This takes an array of paths, not URLs.
+# 如果你正在移动内容但希望将以前的 URL 重定向到当前 URL，请使用别名。这接受路径数组，而不是 URL。
 aliases = []
 
-# A list of page authors. If a site feed is enabled, the first author (if any)
-# will be used as the page's author in the default feed template.
+# 页面作者列表。如果启用了站点 feed，第一个作者（如果有）将在默认 feed 模板中用作页面的作者。
 authors = []
 
-# When set to "true", the page will be in the search index. This is only used if
-# `build_search_index` is set to "true" in the Zola configuration and the parent section
-# hasn't set `in_search_index` to "false" in its front matter.
+# 如果设置为 "true"，页面将包含在搜索索引中。这仅在 Zola 配置中 `build_search_index` 设置为 "true"
+# 并且父 section 在其 front matter 中没有将 `in_search_index` 设置为 "false" 时使用。
 in_search_index = true
 
-# Template to use to render this page.
+# 用于渲染此页面的模板。
 template = "page.html"
 
-# The taxonomies for this page. The keys need to be the same as the taxonomy
-# names configured in `config.toml` and the values are an array of String objects. For example,
+# 此页面的分类法。键必须与 `config.toml` 中配置的分类法名称相同，值是字符串对象数组。例如，
 # tags = ["rust", "web"].
 [taxonomies]
 
-# Your own data.
+# 你自己的数据。
 [extra]
 ```
 
-## Summary
+## 摘要
 
-You can ask Zola to create a summary if, for example, you only want to show the first
-paragraph of the page content in a list.
+你可以要求 Zola 创建摘要，例如，如果你只想在列表中显示页面内容的第一段。
 
-To do so, add `<!-- more -->` in your content at the point
-where you want the summary to end. The content up to that point will be
-available separately in the
-[template](@/documentation/templates/pages-sections.md#page-variables) via `page.summary`.
+为此，请在内容中你希望摘要结束的位置添加 `<!-- more -->`。到该点为止的内容将通过 `page.summary` 在 [模板](@/documentation/templates/pages-sections.md#page-variables) 中单独可用。
 
-A span element in this position with a `continue-reading` id is created, so you can link directly to it if needed. For example:
-`<a href="{{ page.permalink }}#continue-reading">Continue Reading</a>`.
+在此位置会创建一个带有 `continue-reading` id 的 span 元素，因此如果需要，你可以直接链接到它。例如：
+`<a href="{{ page.permalink }}#continue-reading">继续阅读</a>`。
 
-The `<!-- more -->` marker can also exist in the middle of a line, and it will ensure that this does not emit unclosed HTML tags.
-You can use the `summary-cutoff.html` to show text after the summary (but before these closing tags) based
-upon the summary before the cutoff.
+`<!-- more -->` 标记也可以存在于行中间，它将确保这不会发出未闭合的 HTML 标签。
+你可以使用 `summary-cutoff.html` 根据截止前的摘要显示摘要之后的文本（但在这些闭合标签之前）。
 
-By default, it will show an ellipsis (…) regardless of the content of the summary, but you can use a different template if you want to only show an ellipsis if the summary does not end in any punctuation:
+默认情况下，无论摘要的内容如何，它都会显示省略号 (…)，但如果你想仅在摘要不以任何标点符号结尾时显示省略号，你可以使用不同的模板：
 
 ```jinja
 {% if summary is matching("\PP$") %}&hellip;{% endif %}

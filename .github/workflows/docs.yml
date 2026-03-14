@@ -2,10 +2,10 @@ name: Build and deploy Zola website
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 permissions:
   contents: read
@@ -20,17 +20,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v6.0.1
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Build Zola + upload Pages artifact
+      - name: Build Zola
         uses: getzola/github-pages@066755243e69f508fd1a74739fbf1a65f656c790
         with:
           zola_version: v0.22.0
-          working_directory: docs
 
   deploy:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: build
     environment:

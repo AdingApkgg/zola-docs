@@ -1,128 +1,122 @@
 +++
-title = "Image processing"
+title = "图像处理"
 weight = 120
 +++
 
-Zola provides support for automatic image resizing through the built-in function `resize_image`,
-which is available in template code as well as in shortcodes.
+Zola 通过内置函数 `resize_image` 提供对自动图像调整大小的支持，该函数在模板代码和 shortcodes 中都可用。
 
-The function usage is as follows:
+函数用法如下：
 
 ```jinja
 resize_image(path, width, height, op, format, quality, speed)
 ```
 
-### Arguments
+### 参数
 
-- `path`: The path to the source image. The following directories will be searched, in this order:
-    - `/` (the root of the project; that is, the directory with your `config.toml`)
+- `path`: 源图像的路径。将按以下顺序搜索以下目录：
+    - `/` (项目的根目录；即包含 `config.toml` 的目录)
     - `/static`
     - `/content`
     - `/public`
     - `/themes/current-theme/static`
-- `width` and `height`: The dimensions in pixels of the resized image. Usage depends on the `op` argument.
-- `op` (_optional_): Resize operation. This can be one of:
+- `width` 和 `height`: 调整大小后的图像的像素尺寸。用法取决于 `op` 参数。
+- `op` (_可选_): 调整大小操作。可以是以下之一：
     - `"scale"`
     - `"fit_width"`
     - `"fit_height"`
     - `"fit"`
     - `"fill"`
 
-  What each of these does is explained below. The default is `"fill"`.
-- `format` (_optional_): Encoding format of the resized image. May be one of:
+  下面解释了每一个的作用。默认为 `"fill"`。
+- `format` (_可选_): 调整大小后的图像的编码格式。可以是以下之一：
     - `"auto"`
     - `"jpg"`
     - `"png"`
     - `"webp"`
     - `"avif"`
 
-  The default is `"auto"`, this means that the format is chosen based on input image format.
-  JPEG is chosen for JPEGs and other lossy formats, and PNG is chosen for PNGs and other lossless formats.
-- `quality` (_optional_): Quality of the resized image. Quality is only used when encoding JPEGs, WebPs or AVIFs. Quality for JPEG ranges from 1 to 100 and defaults to 75. Quality for WebP ranges from 0 to 100 and defaults to lossless encoding. Quality for AVIF ranges from 1 to 100 and defaults to 80.
-- `speed` (_optional_): Speed of encoding the resized image. Speed is only used when encoding AVIFs. Speed for AVIF ranges from 1 to 10 and defaults to 5. Speed 10 should process images the fastest, but may not produce the best compression; speed 1 is much slower but produces the best compression.
+  默认为 `"auto"`，这意味着格式是根据输入图像格式选择的。
+  JPEG 用于 JPEG 和其他有损格式，PNG 用于 PNG 和其他无损格式。
+- `quality` (_可选_): 调整大小后的图像的质量。质量仅在编码 JPEG、WebP 或 AVIF 时使用。JPEG 的质量范围为 1 到 100，默认为 75。WebP 的质量范围为 0 到 100，默认为无损编码。AVIF 的质量范围为 1 到 100，默认为 80。
+- `speed` (_可选_): 编码调整大小后的图像的速度。速度仅在编码 AVIF 时使用。AVIF 的速度范围为 1 到 10，默认为 5。速度 10 应该处理图像最快，但可能不会产生最佳压缩；速度 1 慢得多，但产生最佳压缩。
 
-### Image processing and return value
+### 图像处理和返回值
 
-Zola performs image processing during the build process and places the resized images in a subdirectory in the static files directory:
+Zola 在构建过程中执行图像处理，并将调整大小后的图像放置在静态文件目录的子目录中：
 
 ```
 static/processed_images/
 ```
 
-The filename of each resized image is a hash of the function arguments,
-which means that once an image is resized in a certain way, it will be stored in the above directory and will not
-need to be resized again during subsequent builds (unless the image itself, the dimensions, or other arguments have changed).
+每个调整大小后的图像的文件名是函数参数的哈希值，这意味着一旦图像以某种方式调整大小，它将被存储在上述目录中，并且在随后的构建期间不需要再次调整大小（除非图像本身、尺寸或其他参数已更改）。
 
-The function returns an object with the following schema:
+该函数返回具有以下模式的对象：
 
 ```
-/// The final URL for that asset
+/// 该资产的最终 URL
 url: String,
-/// The path to the static asset generated
+/// 生成的静态资产的路径
 static_path: String,
-/// New image width
+/// 新图像宽度
 width: u32,
-/// New image height
+/// 新图像高度
 height: u32,
-/// Original image width
+/// 原始图像宽度
 orig_width: u32,
-/// Original image height
+/// 原始图像高度
 orig_height: u32,
 ```
 
-### Color and metadata
+### 颜色和元数据
 
-All EXIF, XMP, and IPTC metadata is discarded during processing.
+在处理过程中，所有 EXIF、XMP 和 IPTC 元数据都将被丢弃。
 
-Zola tries to preserve image color space information as much as possible.
-The following limitations apply:
-- Only ICC-based color data is preserved.
-- For WebP, only lossless encoding supports ICC profiles.
-- AVIF encoding does not currently support ICC profiles.
+Zola 尽可能保留图像色彩空间信息。
+适用以下限制：
+- 仅保留基于 ICC 的颜色数据。
+- 对于 WebP，只有无损编码支持 ICC 配置文件。
+- AVIF 编码目前不支持 ICC 配置文件。
 
-If the color space were to be lost, a warning is printed.
-The image is converted regardless, without proper color conversion.
-Therefore, if the source color space and the default color space of the target format (usually sRGB or Rec.709) do not match, colors will appear incorrect.
+如果丢失了色彩空间，将打印警告。
+无论如何，图像都会被转换，没有适当的颜色转换。
+因此，如果源色彩空间与目标格式的默认色彩空间（通常是 sRGB 或 Rec.709）不匹配，颜色将显示不正确。
 
-Zola performs image processing on the raw pixel data, without taking the color space into account.
-This is not usually an issue, but non-linear color spaces (including sRGB, Rec.709, AdobeRGB, Display P3, and non-linear Rec2020) may exhibit imprecise color blending, especially when scaling up low-resolution images.
+Zola 对原始像素数据执行图像处理，而不考虑色彩空间。
+这通常不是问题，但非线性色彩空间（包括 sRGB、Rec.709、AdobeRGB、Display P3 和非线性 Rec2020）可能会表现出不精确的颜色混合，特别是在放大低分辨率图像时。
 
-## Resize operations
+## 调整大小操作
 
-The source for all examples is this 300 pixel × 380 pixel image:
+所有示例的源都是这张 300 像素 × 380 像素的图像：
 
 ![zola](01-zola.png)
 
 ### **`"scale"`**
-  Simply scales the image to the specified dimensions (`width` & `height`) irrespective of the aspect ratio.
+  简单地将图像缩放到指定的尺寸（`width` & `height`），而不考虑纵横比。
 
   `resize_image(..., width=150, height=150, op="scale")`
 
   {{ resize_image(path="documentation/content/image-processing/01-zola.png", width=150, height=150, op="scale") }}
 
 ### **`"fit_width"`**
-  Resizes the image such that the resulting width is `width` and height is whatever will preserve the aspect ratio.
-  The `height` argument is not needed.
+  调整图像大小，使得结果宽度为 `width`，高度为任何保持纵横比的值。
+  不需要 `height` 参数。
 
   `resize_image(..., width=100, op="fit_width")`
 
   {{ resize_image(path="documentation/content/image-processing/01-zola.png", width=100, height=0, op="fit_width") }}
 
 ### **`"fit_height"`**
-  Resizes the image such that the resulting height is `height` and width is whatever will preserve the aspect ratio.
-  The `width` argument is not needed.
+  调整图像大小，使得结果高度为 `height`，宽度为任何保持纵横比的值。
+  不需要 `width` 参数。
 
   `resize_image(..., height=150, op="fit_height")`
 
   {{ resize_image(path="documentation/content/image-processing/01-zola.png", width=0, height=150, op="fit_height") }}
 
 ### **`"fit"`**
-  Like `"fit_width"` and `"fit_height"` combined, but only resize if the image is bigger than any of the specified dimensions.
-  This mode is handy, if for example images are automatically shrunk to certain sizes in a shortcode for
-  mobile optimization.
-  Resizes the image such that the result fits within `width` and `height` while preserving the aspect ratio. This
-  means that both width or height will be at max `width` and `height`, respectively, but possibly one of them
-  smaller so as to preserve the aspect ratio.
+  类似于 `"fit_width"` 和 `"fit_height"` 的组合，但仅当图像大于任何指定尺寸时才调整大小。
+  此模式很方便，例如，如果图像在 shortcode 中自动缩小到特定尺寸以进行移动优化。
+  调整图像大小，使得结果适合 `width` 和 `height` 内，同时保持纵横比。这意味着宽度或高度将分别为最大 `width` 和 `height`，但其中一个可能更小，以便保持纵横比。
 
 
   `resize_image(..., width=5000, height=5000, op="fit")`
@@ -134,38 +128,32 @@ The source for all examples is this 300 pixel × 380 pixel image:
   {{ resize_image(path="documentation/content/image-processing/01-zola.png", width=150, height=150, op="fit") }}
 
 ### **`"fill"`**
-  This is the default operation. It takes the image's center part with the same aspect ratio as the `width` and
-  `height` given and resizes that to `width` and `height`. This means that parts of the image that are outside
-  of the resized aspect ratio are cropped away.
+  这是默认操作。它采用图像的中心部分，具有与给定的 `width` 和 `height` 相同的纵横比，并将其调整为 `width` 和 `height`。这意味着调整大小后的纵横比之外的图像部分将被裁剪掉。
 
   `resize_image(..., width=150, height=150, op="fill")`
 
   {{ resize_image(path="documentation/content/image-processing/01-zola.png", width=150, height=150, op="fill") }}
 
 
-## Using `resize_image` in markdown via shortcodes
+## 通过 shortcodes 在 markdown 中使用 `resize_image`
 
-`resize_image` is a Zola built-in Tera function (see the [templates](@/documentation/templates/_index.md) chapter),
-but it can be used in Markdown using [shortcodes](@/documentation/content/shortcodes.md).
+`resize_image` 是 Zola 内置的 Tera 函数（参见 [模板](@/documentation/templates/_index.md) 章节），但它可以使用 [shortcodes](@/documentation/content/shortcodes.md) 在 Markdown 中使用。
 
-The examples above were generated using a shortcode file named `resize_image.html` with this content:
+上面的示例是使用名为 `resize_image.html` 的 shortcode 文件生成的，内容如下：
 
 ```jinja
 {% set image = resize_image(path=path, width=width, height=height, op=op) %}
 <img src="{{ image.url }}" />
 ```
 
-## Creating picture galleries
+## 创建图片库
 
-The `resize_image()` can be used multiple times and/or in loops. It is designed to handle this efficiently.
+`resize_image()` 可以多次使用和/或在循环中使用。它旨在有效地处理这种情况。
 
-This can be used along with `assets` [page metadata](@/documentation/templates/pages-sections.md) to create picture galleries.
-The `assets` variable holds paths to all assets in the directory of a page with resources
-(see [asset colocation](@/documentation/content/overview.md#asset-colocation)); if you have files other than images you
-will need to filter them out in the loop first like in the example below.
+这可以与 `assets` [页面元数据](@/documentation/templates/pages-sections.md) 一起使用来创建图片库。
+`assets` 变量保存带有资源的页面目录中所有资产的路径（参见 [资产共置](@/documentation/content/overview.md#asset-colocation)）；如果你有除图像以外的文件，你需要像下面的示例一样首先在循环中过滤掉它们。
 
-This can be used in shortcodes. For example, we can create a very simple html-only clickable
-picture gallery with the following shortcode named `gallery.html`:
+这可以在 shortcodes 中使用。例如，我们可以使用以下名为 `gallery.html` 的 shortcode 创建一个非常简单的仅 HTML 的可点击图片库：
 
 ```jinja
 <div>
@@ -180,16 +168,15 @@ picture gallery with the following shortcode named `gallery.html`:
 </div>
 ```
 
-As you can notice, we didn't specify an `op` argument, which means that it'll default to `"fill"`. Similarly,
-the format will default to `"auto"` (choosing PNG or JPEG as appropriate) and the JPEG quality will default to `75`.
+如你所见，我们没有指定 `op` 参数，这意味着它将默认为 `"fill"`。同样，格式将默认为 `"auto"`（根据情况选择 PNG 或 JPEG），JPEG 质量将默认为 `75`。
 
-To call it from a Markdown file, simply do:
+要从 Markdown 文件调用它，只需执行：
 
 ```jinja
 {{/* gallery() */}}
 ```
 
-Here is the result:
+结果如下：
 
 {{ gallery() }}
 
@@ -198,12 +185,11 @@ Here is the result:
 </small>
 
 
-## Get image size and relative resizing
+## 获取图像尺寸和相对调整大小
 
-Sometimes when building a gallery it is useful to know the dimensions of each asset.  You can get this information with
-[get_image_metadata](@/documentation/templates/overview.md#get-image-metadata).
+有时在构建图库时，知道每个资产的尺寸很有用。你可以通过 [get_image_metadata](@/documentation/templates/overview.md#get-image-metadata) 获取此信息。
 
-This can also be useful in combination with `resize_image()` to do a relative resizing. So we can create a relative image resizing function with the following shortcode named `resize_image_relative.html`:
+这也可以与 `resize_image()` 结合使用以进行相对调整大小。因此，我们可以使用以下名为 `resize_image_relative.html` 的 shortcode 创建一个相对图像调整大小函数：
 
 ```jinja
 {% set mdata = get_image_metadata(path=path) %}
@@ -211,17 +197,17 @@ This can also be useful in combination with `resize_image()` to do a relative re
 <img src="{{ image.url }}" />
 ```
 
-It can be invoked from Markdown like this:
+它可以像这样从 Markdown 调用：
 
 `resize_image_relative(..., scale=0.5)`
 
 {{ resize_image_relative(path="documentation/content/image-processing/01-zola.png", scale=0.5) }}
 
-## Creating scaled-down versions of high-resolution images
+## 创建高分辨率图像的缩小版本
 
-With the above, we can also create a shortcode that creates a 50% scaled-down version of a high-resolution image (e.g. screenshots taken on Retina Macs), along with the proper HTML5 `srcset` for the original image to be displayed on high-resolution / retina displays.
+通过上述内容，我们还可以创建一个 shortcode，用于创建高分辨率图像的 50% 缩小版本（例如在 Retina Mac 上截取的屏幕截图），以及用于在显示高分辨率 / retina 显示器上显示原始图像的正确 HTML5 `srcset`。
 
-Consider the following shortcode named `high_res_image.html`:
+考虑以下名为 `high_res_image.html` 的 shortcode：
 
 ```jinja
 {% set mdata = get_image_metadata(path=path) %}

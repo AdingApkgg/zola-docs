@@ -1,13 +1,11 @@
 +++
-title = "Syntax Highlighting"
+title = "语法高亮"
 weight = 80
 +++
 
-Zola comes with built-in syntax highlighting but you first
-need to enable it in the [configuration](@/documentation/getting-started/configuration.md).
+Zola 带有内置的语法高亮显示，但你首先需要在 [配置](@/documentation/getting-started/configuration.md) 中启用它。
 
-Once this is done, Zola will automatically highlight all code blocks
-in your content. A code block in Markdown looks like the following:
+完成后，Zola 将自动高亮显示你内容中的所有代码块。Markdown 中的代码块如下所示：
 
 ````
 ```rust
@@ -15,18 +13,16 @@ let highlight = true;
 ```
 ````
 
-You can replace `rust` with another language or not put anything to get the text
-interpreted as plain text.
+你可以将 `rust` 替换为另一种语言，或者不放任何东西以使文本被解释为纯文本。
 
-Zola uses [Giallo](https://github.com/getzola/giallo), a library that uses VSCode syntaxes and themes.
+Zola 使用 [Giallo](https://github.com/getzola/giallo)，这是一个使用 VSCode 语法和主题的库。
 
-You can see a full list of supported languages and themes in the README: <https://github.com/getzola/giallo?tab=readme-ov-file#built-in>
+你可以在 README 中看到支持的语言和主题的完整列表：<https://github.com/getzola/giallo?tab=readme-ov-file#built-in>
 
-If a theme or a language you want to highlight is not supported, you can find the JSON grammar files and JSON theme files, copy them somewhere in your site
-and load them from the configurations with `extra_grammars` and `extra_themes` in the `[markdown.highlighting]` section.
-You can see the list of supported themes at https://textmate-grammars-themes.netlify.app/
+如果不支持你想要高亮的主题或语言，你可以找到 JSON 语法文件和 JSON 主题文件，将它们复制到你站点的某个位置，并通过 `[markdown.highlighting]` section 中的 `extra_grammars` 和 `extra_themes` 从配置中加载它们。
+你可以在 https://textmate-grammars-themes.netlify.app/ 查看支持的主题列表。
 
-In any cases, you will need to add the following CSS to your site CSS for things to display correctly:
+在任何情况下，你需要将以下 CSS 添加到你的站点 CSS 中，以便正确显示：
 
 ```css
 .giallo-l {
@@ -45,42 +41,38 @@ In any cases, you will need to add the following CSS to your site CSS for things
 }
 ```
 
-## Theme selection
+## 主题选择
 
-You can choose to use a single theme or light/dark themes.
+你可以选择使用单个主题或浅色/深色主题。
 
-If you want a single theme, use the `theme` key in the `[markdown.highlighting]` section of the configuration.
+如果你想要单个主题，请使用配置的 `[markdown.highlighting]` section 中的 `theme` 键。
 
-If you want dual themes, use the `light_theme` and `dark_theme` keys:
+如果你想要双重主题，请使用 `light_theme` 和 `dark_theme` 键：
 
 ```toml
 light_theme = "github-light"                                                                                     
 dark_theme = "github-dark"
 ```
 
-## Rendering style
+## 渲染样式
 
-The default rendering style is `inline`, meaning the colours are set directly on the `<span>` elements with the hexadecimal values like
-`<span style="color: #83A598;">base_url</span>` for a single theme and `<span style="color: light-dark(#076678, #83A598);">base_url</span>`
-for dual themes. The [light-dark()](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark) CSS functions
-will automatically use the preferred color scheme of the user, with no way of overriding it from JS.
+默认渲染样式是 `inline`，这意味着颜色直接设置在具有十六进制值的 `<span>` 元素上，例如单个主题的 `<span style="color: #83A598;">base_url</span>` 和双重主题的 `<span style="color: light-dark(#076678, #83A598);">base_url</span>`。[light-dark()](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark) CSS 函数将自动使用用户的首选配色方案，无法从 JS 覆盖它。
 
-If you want a light/dark theme switch button or have rules against inline styles, you can set `markdown.highlighting.style` to `class` in order
-to have the renderer use CSS classes instead and generate one CSS file for each theme in static folder following:
+如果你想要一个浅色/深色主题切换按钮或有禁止内联样式的规则，你可以将 `markdown.highlighting.style` 设置为 `class`，以便渲染器改用 CSS 类，并为静态文件夹中的每个主题生成一个 CSS 文件，如下所示：
 
-- single theme -> `giallo.css`
-- dual themes: light -> `giallo-light.css`, dark -> `giallo-dark.css`
+- 单个主题 -> `giallo.css`
+- 双重主题：浅色 -> `giallo-light.css`, 深色 -> `giallo-dark.css`
 
-The HTML will look like `<span class="z-support z-type z-property-name z-css">  user-select</span>`.
+HTML 将类似于 `<span class="z-support z-type z-property-name z-css">  user-select</span>`。
 
-You can then support light and dark mode like so:
+然后你可以像这样支持浅色和深色模式：
 
 ```css
 @import url("giallo-dark.css") (prefers-color-scheme: dark);
 @import url("giallo-light.css") (prefers-color-scheme: light);
 ```
 
-Alternately, you can reference the stylesheets in your base template to reduce request chains:
+或者，你可以在基本模板中引用样式表以减少请求链：
 
 ```html
 <head>
@@ -90,11 +82,11 @@ Alternately, you can reference the stylesheets in your base template to reduce r
 </head>
 ```
 
-## Annotations
+## 标注 (Annotations)
 
-You can use additional annotations to customize how code blocks are displayed:
+你可以使用额外的注释来定制代码块的显示方式：
 
-- `linenos` to enable line numbering.
+- `linenos` 启用行号。
 
 ````
 ```rust,linenos
@@ -104,7 +96,7 @@ highlight(code);
 ```
 ````
 
-- `linenostart` to specify the number for the first line (defaults to 1)
+- `linenostart` 指定第一行的编号（默认为 1）
   
 ````
 ```rust,linenos,linenostart=20
@@ -114,8 +106,7 @@ highlight(code);
 ```
 ````
 
-- `hl_lines` to highlight lines. You must specify a list of inclusive ranges of lines to highlight,
-separated by ` ` (whitespace). Ranges are 1-indexed and `linenostart` doesn't influence the values, it always refers to the codeblock line number.
+- `hl_lines` 高亮行。你必须指定要高亮的行的包含范围列表，由 ` ` (空格) 分隔。范围是 1 索引的，`linenostart` 不会影响这些值，它总是指代码块行号。
   
 ````
 ```rust,hl_lines=1 3-5 9
@@ -125,8 +116,7 @@ highlight(code);
 ```
 ````
 
-- `hide_lines` to hide lines. You must specify a list of inclusive ranges of lines to hide,
-separated by ` ` (whitespace). Ranges are 1-indexed.
+- `hide_lines` 隐藏行。你必须指定要隐藏的行的包含范围列表，由 ` ` (空格) 分隔。范围是 1 索引的。
 
 ````
 ```rust,hide_lines=1-2
@@ -136,7 +126,7 @@ highlight(code);
 ```
 ````
 
-- `name` to specify a name the code block is associated with.
+- `name` 指定代码块关联的名称。
   
 ````
 ```rust,name=mod.rs
@@ -146,7 +136,7 @@ highlight(code);
 ```
 ````
 
-Here's an example with all the options used: `scss, linenos, linenostart=10, hl_lines=3-4 8-9, hide_lines=2 7`.
+这是一个使用了所有选项的示例：`scss, linenos, linenostart=10, hl_lines=3-4 8-9, hide_lines=2 7`。
 
 ```scss, linenos, linenostart=10, hl_lines=3-4 8-9, hide_lines=2 7
 pre mark {
@@ -161,4 +151,4 @@ pre table td:nth-of-type(1) {
 }
 ```
 
-Line 2 and 7 are comments that are not shown in the final output.
+第 2 行和第 7 行是注释，在最终输出中不显示。
