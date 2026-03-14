@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+        <meta name="author" content="{{ config.extra.author }}">
+        <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+        <link rel="stylesheet" href="{{ get_url(path='site.css') }}">
+        <link rel="icon" href="{{ get_url(path='favicon.ico') }}">
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="{{ config.base_url }}"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="{{ get_url(path='@/documentation/_index.md') }}" class="nav-link">文档</a></li>
+                    <li><a class="white" href="{{ get_url(path='@/themes/_index.md') }}" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content {% block extra_content_class %}{% endblock extra_content_class %}">
+            {% block content %}
+                <div class="hero">
+                    <h1>您的一站式静态站点引擎</h1>
+                    <p class="hero__tagline">
+                        告别依赖。所有功能尽在一个二进制文件中。
+                    </p>
+                    <a href="{{ get_url(path='@/documentation/_index.md') }}" class="button">开始使用</a>
+                </div>
+
+                <div class="inverted-colours selling-points">
+                    <div class="selling-points__content container">
+                        <div class="selling-point">
+                            <h2>无依赖</h2>
+                            <p>
+                                Zola 是一个单一的可执行文件，内置了 Sass 编译、语法高亮、目录生成
+                                以及许多传统上需要设置开发环境或添加 JavaScript 库才能实现的功能。
+                            </p>
+                        </div>
+
+                        <div class="selling-point">
+                            <h2>极速</h2>
+                            <p>
+                                平均每个站点的生成时间不到一秒，
+                                包括 Sass 编译和语法高亮。
+                            </p>
+                        </div>
+
+                        <div class="selling-point">
+                            <h2>可扩展</h2>
+                            <p>
+                                Zola 将您的整个站点渲染为静态文件，这使得处理任何流量都变得轻而易举，
+                                而且无需担心管理服务器或数据库。
+                            </p>
+                        </div>
+
+                        <div class="selling-point">
+                            <h2>易于使用</h2>
+                            <p>
+                                从 CLI 到模板引擎，一切都设计得直观易用。
+                                别只听我说，看看
+                                <a href="{{ get_url(path='@/documentation/_index.md') }}">文档</a> 自己体验一下。
+                            </p>
+                        </div>
+
+                        <div class="selling-point">
+                            <h2>灵活</h2>
+                            <p>
+                                Zola 不会妨碍您，让您可以专注于内容，无论是博客、
+                                知识库、落地页还是它们的组合。
+                            </p>
+                        </div>
+
+                        <div class="selling-point">
+                            <h2>增强的 Markdown</h2>
+                            <p>
+                                Zola 自带 <a href="{{ get_url(path='@/documentation/content/shortcodes.md') }}">shortcodes</a> 和
+                                <a href="{{ get_url(path='@/documentation/content/linking.md') }}">内部链接</a>
+                                功能，让您更轻松地编写内容。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endblock content %}
+        </div>
+        <footer>
+            ©2017-{{ now() | date(format="%Y") }} — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script type="text/javascript" src="{{ get_url(path='elasticlunr.min.js') }}"></script>
+        <script type="text/javascript" src="{{ get_url(path='search.js') }}"></script>
+    </body>
+</html>
