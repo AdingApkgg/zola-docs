@@ -1,21 +1,21 @@
 +++
-title = "Customizing a theme"
+title = "自定义主题"
 weight = 30
 +++
 
-When your site uses a theme, you can replace parts of it in your site's templates folder. For any given theme template, you can either override a single block in it, or replace the whole template. If a site template and a theme template collide, the site template will be given priority. Whether a theme template collides or not, theme templates remain accessible from any template within `theme_name/templates/`.
+当你的站点使用主题时，你可以在站点的 templates 文件夹中替换它的部分内容。对于任何给定的主题模板，你可以覆盖其中的单个块，或者替换整个模板。如果站点模板和主题模板冲突，站点模板将被优先考虑。无论主题模板是否冲突，主题模板仍然可以从 `theme_name/templates/` 中的任何模板访问。
 
-## Replacing a template
+## 替换模板
 
-When your site uses a theme, the generated structure follows the theme's structure whenever possible, i.e. there are no user defined templates with the same name and relative path as the theme's; for example: with two files `templates/page.html` and `themes/theme_name/templates/page.html`, the site template is the one that will be used. Such a conflict results in the theme's template being ignored in favor of the template defined by the user.  
+当你的站点使用主题时，生成的结构尽可能遵循主题的结构，即没有与主题具有相同名称和相对路径的用户定义模板；例如：有两个文件 `templates/page.html` 和 `themes/theme_name/templates/page.html`，站点模板是将要使用的那个。这种冲突导致主题的模板被忽略，而支持用户定义的模板。
 
-## Overriding a block
+## 覆盖块
 
-If you don't want to replace a whole template, but override parts of it, you can [extend the template](https://keats.github.io/tera/docs/#inheritance) and redefine some specific blocks. For example, if you want to override the `title` block in your theme's page.html, you can create a page.html file in your site templates with the following content:
+如果你不想替换整个模板，而是覆盖其中的一部分，你可以 [扩展模板](https://keats.github.io/tera/docs/#inheritance) 并重新定义一些特定的块。例如，如果你想覆盖主题 page.html 中的 `title` 块，你可以在你的站点 templates 中创建一个 page.html 文件，内容如下：
 
 ```
 {% extends "theme_name/templates/page.html" %}
 {% block title %}{{ page.title }}{% endblock %}
 ```
 
-If you extend `page.html` and not `theme_name/templates/page.html` specifically, it will extend the site's page template if it exists, and the theme's page template otherwise. This makes it possible to override your theme's base template(s) from your site templates, as long as the theme templates do not hardcode the theme name in template paths. For instance, children templates in the theme should use `{% extends 'index.html' %}`, not `{% extends 'theme_name/templates/index.html' %}`.
+如果你扩展 `page.html` 而不是具体的 `theme_name/templates/page.html`，它将扩展站点的 page 模板（如果存在），否则扩展主题的 page 模板。这使得从你的站点模板覆盖你的主题的基本模板成为可能，只要主题模板不在模板路径中硬编码主题名称。例如，主题中的子模板应该使用 `{% extends 'index.html' %}`，而不是 `{% extends 'theme_name/templates/index.html' %}`。

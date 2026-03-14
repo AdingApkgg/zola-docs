@@ -1,20 +1,20 @@
 +++
-title = "Taxonomies"
+title = "分类法 (Taxonomies)"
 weight = 40
 +++
 
-Zola will look up the following, taxon-specific files in the `templates` directory:
+Zola 将在 `templates` 目录中查找以下特定于分类法的文件：
 
 - `$TAXONOMY_NAME/single.html`
 - `$TAXONOMY_NAME/list.html`
 
-if they are not found, it will attempt to fall back on the following generic template files:
+如果未找到它们，它将尝试回退到以下通用模板文件：
 - `taxonomy_single.html`
 - `taxonomy_list.html`
 
-The taxonomy templates are required only if at least one taxonomy exists with `render` set to `true`.
+仅当至少存在一个 `render` 设置为 `true` 的分类法时，才需要分类法模板。
 
-First, `TaxonomyTerm` has the following fields:
+首先，`TaxonomyTerm` 具有以下字段：
 
 ```ts
 name: String;
@@ -25,7 +25,7 @@ pages: Array<Page>;
 page_count: Number;
 ```
 
-and `TaxonomyConfig` has the following fields:
+并且 `TaxonomyConfig` 具有以下字段：
 
 ```ts
 name: String,
@@ -36,41 +36,40 @@ render: Bool;
 ```
 
 
-### Taxonomy list (`list.html`)
+### 分类法列表 (`list.html`)
 
-This template is never paginated and therefore gets the following variables in all cases.
+此模板从不分页，因此在所有情况下都会获得以下变量。
 
 ```ts
-// The site config
+// 站点配置
 config: Config;
-// The data of the taxonomy, from the config
+// 来自配置的分类法数据
 taxonomy: TaxonomyConfig;
-// The current full permalink for that page
+// 该页面的当前完整永久链接
 current_url: String;
-// The current path for that page
+// 该页面的当前路径
 current_path: String;
-// All terms for that taxonomy
+// 该分类法的所有术语
 terms: Array<TaxonomyTerm>;
-// The lang of the current page
+// 当前页面的语言
 lang: String;
 ```
 
 
-### Single term (`single.html`)
+### 单个术语 (`single.html`)
 ```ts
-// The site config
+// 站点配置
 config: Config;
-// The data of the taxonomy, from the config
+// 来自配置的分类法数据
 taxonomy: TaxonomyConfig;
-// The current full permalink for that page
+// 该页面的当前完整永久链接
 current_url: String;
-// The current path for that page
+// 该页面的当前路径
 current_path: String;
-// The current term being rendered
+// 正在渲染的当前术语
 term: TaxonomyTerm;
-// The lang of the current page
+// 当前页面的语言
 lang: String;
 ```
 
-A paginated taxonomy term will also get a `paginator` variable; see the
-[pagination page](@/documentation/templates/pagination.md) for more details.
+分页的分类法术语还将获得一个 `paginator` 变量；有关更多详细信息，请参阅 [分页页面](@/documentation/templates/pagination.md)。

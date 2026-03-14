@@ -3,67 +3,48 @@ title = "Vercel"
 weight = 50
 +++
 
-Vercel (previously Zeit) is similar to Netlify, making the deployment of your site easy as pie.
-The sites are hosted by Vercel and automatically deployed whenever we push a commit to our
-selected production branch (e.g, master).
+Vercel（以前叫 Zeit）类似于 Netlify，使你的站点部署变得易如反掌。
+站点由 Vercel 托管，只要我们向选定的生产分支（例如 master）推送提交，就会自动部署。
 
-If you don't have an account with Vercel, you can sign up [here.](https://vercel.com/signup)
+如果你没有 Vercel 帐户，可以在 [这里](https://vercel.com/signup) 注册。
 
-## Automatic deploys
+## 自动部署
 
-Once you sign up you can import your site from a Git provider (Github, GitLab or Bitbucket). 
-When you import your repository, Vercel will try to find out what framework your site is using.
+注册后，你可以从 Git 提供商（Github、GitLab 或 Bitbucket）导入你的站点。
+导入仓库时，Vercel 将尝试找出你的站点使用的框架。
 
-If it doesn't default to Zola:
+如果它没有默认为 Zola：
 
-- Set "Framework Preset" as **Zola**.
+- 将 "Framework Preset" 设置为 **Zola**。
 
-By default, Vercel chooses output directory as `public`. If you use a different directory, then
-specify output directory under the "Build and Output Settings" dropdown.
-You can learn more about how to setup a custom domain and how to get the most out of Vercel
-[via their documentation.](https://vercel.com/docs) 
+默认情况下，Vercel 选择输出目录为 `public`。如果你使用不同的目录，请在 "Build and Output Settings" 下拉菜单下指定输出目录。
+你可以通过 [他们的文档](https://vercel.com/docs) 了解更多关于如何设置自定义域名以及如何充分利用 Vercel 的信息。
 
-After you click the blue "Deploy" button, it's off to the races!
+点击蓝色的 "Deploy" 按钮后，就可以开始了！
 
-To use a specific version of Zola, set [`ZOLA_VERSION`](https://vercel.com/docs/deployments/environments#specifying-framework-versions) environment variable in project settings to a valid
-release tag, for example `0.17.2`.
+要使用特定版本的 Zola，请在项目设置中将 [`ZOLA_VERSION`](https://vercel.com/docs/deployments/environments#specifying-framework-versions) 环境变量设置为有效的发布标签，例如 `0.17.2`。
 
-## Troubleshooting
+## 故障排除
 
 ### `GLIBC_X.XX` not found
 
-This is because Vercel's build images doesn't come with a `glibc` version that Zola requires. 
-Vercel provides [different build images](https://vercel.com/docs/builds/build-image) for
-different Node.js versions, so even though Zola has no relation with Node.js at all, you can
-bump your Node.js version from project settings to make Vercel to use a newer build
-environment, allowing Zola to work properly.
+这是因为 Vercel 的构建镜像不包含 Zola 所需的 `glibc` 版本。
+Vercel 为不同的 Node.js 版本提供 [不同的构建镜像](https://vercel.com/docs/builds/build-image)，因此即使 Zola 与 Node.js 没有任何关系，你也可以从项目设置中升级 Node.js 版本，使 Vercel 使用较新的构建环境，从而允许 Zola 正常工作。
 
-If your project was created before when the default Node.js version was `20.x`, bumping
-Node.js version to `22.x` (which is the new default) should work for Zola versions up to
-`0.19.2` (inclusive) without further configuration.
+如果你的项目是在默认 Node.js 版本为 `20.x` 时创建的，将 Node.js 版本升级到 `22.x`（这是新的默认值）应该适用于 Zola 版本高达 `0.19.2`（含）而无需进一步配置。
 
-Since Vercel does not provide a even newer image, subsequent versions of Zola will not work
-again when using the built-in Zola framework preset. However, starting with Zola version
-`0.21.0`, a statically linked `musl` binary being released, which provides the highest
-compatibility among systems where glibc is insufficient - like Vercel's build images. To use
-the `musl`-compiled binary, you must ensure that Vercel
-[does not use its built-in Zola preset and instead provide the binary yourself.](#using-a-custom-zola-binary)
+由于 Vercel 不提供更新的镜像，当使用内置的 Zola 框架预设时，后续版本的 Zola 将无法再次工作。但是，从 Zola 版本 `0.21.0` 开始，发布了静态链接的 `musl` 二进制文件，这在 glibc 不足的系统（如 Vercel 的构建镜像）中提供了最高的兼容性。要使用 `musl` 编译的二进制文件，你必须确保 Vercel [不使用其内置的 Zola 预设，而是你自己提供二进制文件。](#using-a-custom-zola-binary)
 
-## Additional options
+## 其他选项
 
-### Enable trailing slashes
+### 启用尾随斜杠
 
-Visiting a page without trailing slash may break relative paths, so you might want to configure
-Vercel to always redirect paths with a trailing slash. By default, redirecting to a trailing
-slash is not enabled on Vercel.
+访问没有尾随斜杠的页面可能会破坏相对路径，因此你可能希望配置 Vercel 始终重定向带有尾随斜杠的路径。默认情况下，Vercel 上未启用重定向到尾随斜杠。
 
-For example if you have an `about.md` file, and when visiting the path without a trailing
-slash, like `/about`, Vercel will redirect with trailing slash, resulting in `/about/`.
-Paths with a file extension will not redirect to a trailing slash, for example if you
-have a static file named `favicon.ico`, it will stay as-is.
+例如，如果你有一个 `about.md` 文件，并且当访问没有尾随斜杠的路径（如 `/about`）时，Vercel 将重定向带有尾随斜杠，结果为 `/about/`。
+带有文件扩展名的路径将不会重定向到尾随斜杠，例如，如果你有一个名为 `favicon.ico` 的静态文件，它将保持原样。
 
-To enable that, create a file in the root of your git repository named `vercel.json`
-(if it doesn't exists already), and set this option:
+要启用该功能，请在你的 git 仓库根目录中创建一个名为 `vercel.json` 的文件（如果尚未存在），并设置此选项：
 
 ```json
 {
@@ -71,14 +52,11 @@ To enable that, create a file in the root of your git repository named `vercel.j
 }
 ```
 
-### Prefer clean URLs
+### 首选干净 URL
 
-When enabled, all HTML files will be served without their file extension. For example
-if you have an `about.md` file, Zola will generate a `about/index.html` file, but you may
-prefer to have Vercel to serve the file as `/about` without its `index.html` suffix.
+启用后，所有 HTML 文件将在没有文件扩展名的情况下提供服务。例如，如果你有一个 `about.md` 文件，Zola 将生成一个 `about/index.html` 文件，但你可能希望 Vercel 将文件作为 `/about` 提供，而不带其 `index.html` 后缀。
 
-To enable that, create a file in the root of your git repository named `vercel.json`
-(if it doesn't exists already), and set this option:
+要启用该功能，请在你的 git 仓库根目录中创建一个名为 `vercel.json` 的文件（如果尚未存在），并设置此选项：
 
 ```json
 {
@@ -86,33 +64,23 @@ To enable that, create a file in the root of your git repository named `vercel.j
 }
 ```
 
-### Using a custom Zola binary
+### 使用自定义 Zola 二进制文件
 
-If you want to provide Zola binary on your own for full control instead of having Vercel
-to use their controlled Zola preset, set the "Framework Preset" to "Other". This will make
-Vercel to not get use of `ZOLA_VERSION` variable anymore automatically.
-Then, set "Install Command" to:
+如果你想自己提供 Zola 二进制文件以获得完全控制，而不是让 Vercel 使用其受控的 Zola 预设，请将 "Framework Preset" 设置为 "Other"。这将使 Vercel 不再自动使用 `ZOLA_VERSION` 变量。
+然后，将 "Install Command" 设置为：
 
 ```bash
 echo "${ZOLA_VERSION:-"latest"}" | sed '/^latest$/!s/\(.*\)/tags\/v\1/' | xargs -I% curl -fsSL "https://api.github.com/repos/getzola/zola/releases/%" | grep -oP "\"browser_download_url\": ?\"\\K(.+linux-${ZOLA_LIBC:-"musl"}\\.tar\\.gz)" | xargs curl -fsSL | tar -xz
 ```
 
-This command will download Zola from the file URL obtained from GitHub API and extract it.
-This way we can continue using same `ZOLA_VERSION` environment variable name to pin to a
-specific Zola version (same as how Vercel does) - or set it to `latest` to always pull the
-latest version whenever an deployment is initiated on Vercel.
+此命令将从 GitHub API 获取的文件 URL 下载 Zola 并解压缩。
+这样我们就可以继续使用相同的 `ZOLA_VERSION` 环境变量名称来固定到特定的 Zola 版本（与 Vercel 的做法相同） - 或者将其设置为 `latest` 以便每当在 Vercel 上启动部署时始终拉取最新版本。
 
-We also pull `musl` binaries by default in the command, so we no longer have to worry
-about Vercel's build images. But if you would like to use older versions (below of
-`0.21.0` where there isn't a `musl` binary provided), you need to create a new environment
-variable named `ZOLA_LIBC` and set it to `gnu`.
+我们在命令中默认也会拉取 `musl` 二进制文件，因此我们不再需要担心 Vercel 的构建镜像。但是，如果你想使用旧版本（低于 `0.21.0`，没有提供 `musl` 二进制文件），你需要创建一个名为 `ZOLA_LIBC` 的新环境变量并将其设置为 `gnu`。
 
-Along with setting "Install Command" to above, you will also need to set "Build Command"
-to `./zola build`, so we can have our site built with the locally downloaded Zola binary
-previously.
+除了将 "Install Command" 设置为上述内容外，你还需要将 "Build Command" 设置为 `./zola build`，这样我们就可以使用之前在本地下载的 Zola 二进制文件构建我们的站点。
 
-If you prefer to use `vercel.json` instead,
-(which overrides the options set in the dashboard) you can use this configuration:
+如果你更喜欢使用 `vercel.json`（这会覆盖仪表板中设置的选项），你可以使用此配置：
 
 ```json
 {
@@ -123,10 +91,8 @@ If you prefer to use `vercel.json` instead,
 }
 ```
 
-You can modify the commands as your wish if you would like to use your own fork and use
-binaries released there.
+如果你想使用自己的 fork 并使用在那里发布的二进制文件，你可以根据自己的意愿修改命令。
 
-## See also
+## 另请参阅
 
-See [Vercel's own documentation](https://vercel.com/docs/projects/project-configuration) 
-for all available options in `vercel.json`.
+请参阅 [Vercel 自己的文档](https://vercel.com/docs/projects/project-configuration) 以获取 `vercel.json` 中的所有可用选项。

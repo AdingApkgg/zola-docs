@@ -1,88 +1,64 @@
 +++
-title = "Feeds"
+title = "Feeds (订阅源)"
 weight = 50
 aliases = ["/documentation/templates/rss/"]
 +++
 
-If the site `config.toml` file sets `generate_feeds = true`, then Zola will
-generate feed files for the site, named according to the `feed_filenames`
-setting in `config.toml`, which defaults to `atom.xml`. Given the feed filename
-`atom.xml`, the generated file will live at `base_url/atom.xml`, based upon the
-`atom.xml` file in the `templates` directory, or the built-in Atom template.
+如果站点 `config.toml` 文件设置 `generate_feeds = true`，那么 Zola 将为站点生成 feed 文件，根据 `config.toml` 中的 `feed_filenames` 设置命名，默认为 `atom.xml`。给定 feed 文件名 `atom.xml`，生成的文件将位于 `base_url/atom.xml`，基于 `templates` 目录中的 `atom.xml` 文件，或内置的 Atom 模板。
 
-`feed_filenames` can be set to any value, but built-in templates are provided
-for `atom.xml` (in the preferred Atom 1.0 format), and `rss.xml` (in the RSS
-2.0 format). If you choose a different filename (e.g. `feed.xml`), you will
-need to provide a template yourself.
+`feed_filenames` 可以设置为任何值，但提供了内置模板 `atom.xml`（首选 Atom 1.0 格式）和 `rss.xml`（RSS 2.0 格式）。如果你选择不同的文件名（例如 `feed.xml`），你需要自己提供模板。
 
-In case you want to extend, or modify, the built-in templates, you can get a
-copy from [the source code here](https://github.com/getzola/zola/tree/master/components/templates/src/builtins)
-and place it in the `templates/` directory with the appropriate name. You can
-check the documentation for the specifications for Atom 1.0 and RSS 2.0 in
-[W3C Feed Validation Service](https://validator.w3.org/feed/docs/).
+如果你想扩展或修改内置模板，你可以从 [源代码](https://github.com/getzola/zola/tree/master/components/templates/src/builtins) 获取副本，并将其以适当的名称放置在 `templates/` 目录中。你可以在 [W3C Feed Validation Service](https://validator.w3.org/feed/docs/) 中查看 Atom 1.0 和 RSS 2.0 的规范文档。
 
-**Only pages with a date will be available.**
+**只有带有日期的页面才可用。**
 
-The author in the feed is set as
-- The first author in `authors` set in the 
-  [front matter](@/documentation/content/page.md#front-matter)
-- If that is not present it falls back to the `author` in the 
-  [Configuration](@/documentation/getting-started/configuration.md)
-- If that is also not preset it is set to `Unknown`.
+Feed 中的作者设置为：
+- [front matter](@/documentation/content/page.md#front-matter) 中 `authors` 设置的第一位作者
+- 如果不存在，则回退到 [配置](@/documentation/getting-started/configuration.md) 中的 `author`
+- 如果也未预设，则设置为 `Unknown`。
 
-Note that `atom.xml` and `rss.xml` require different formats for specifying the
-author. According to [RFC 4287][atom_rfc] `atom.xml` requires the author's
-name, for example `"John Doe"`. While according to the 
-[RSS 2.0 Specification][rss_spec] the email address is required, and the name
-optionally included, for example `"lawyer@boyer.net"` or 
-`"lawyer@boyer.net (Lawyer Boyer)"`.
+请注意，`atom.xml` 和 `rss.xml` 需要不同的格式来指定作者。根据 [RFC 4287][atom_rfc]，`atom.xml` 需要作者的名字，例如 `"John Doe"`。而根据 [RSS 2.0 规范][rss_spec]，电子邮件地址是必需的，名字是可选的，例如 `"lawyer@boyer.net"` 或 `"lawyer@boyer.net (Lawyer Boyer)"`。
 
-The feed template gets five variables:
+Feed 模板获得五个变量：
 
-- `config`: the site config
-- `feed_url`: the full url to that specific feed
-- `last_updated`: the most recent `updated` or `date` field of any post
-- `pages`: see [page variables](@/documentation/templates/pages-sections.md#page-variables)
-  for a detailed description of what this contains
-- `lang`: the language code that applies to all of the pages in the feed,
-  if the site is multilingual, or `config.default_language` if it is not
+- `config`: 站点配置
+- `feed_url`: 该特定 feed 的完整 url
+- `last_updated`: 任何文章的最新 `updated` 或 `date` 字段
+- `pages`: 请参阅 [page 变量](@/documentation/templates/pages-sections.md#page-variables) 了解其内容的详细说明
+- `lang`: 适用于 feed 中所有页面的语言代码（如果站点是多语言的），如果不是则为 `config.default_language`
 
-Feeds for taxonomy terms get two more variables, using types from the
-[taxonomies templates](@/documentation/templates/taxonomies.md):
+分类法术语的 Feeds 还有两个变量，使用来自 [分类法模板](@/documentation/templates/taxonomies.md) 的类型：
 
-- `taxonomy`: of type `TaxonomyConfig`
-- `term`: of type `TaxonomyTerm`, but without `term.pages` (use `pages` instead)
+- `taxonomy`: `TaxonomyConfig` 类型
+- `term`: `TaxonomyTerm` 类型，但没有 `term.pages`（改用 `pages`）
 
-You can also enable separate feeds for each section by setting the
-`generate_feeds` variable to true in the respective section's front matter.
-Section feeds will use the same template as indicated in the `config.toml` file.
-Section feeds, in addition to the five feed template variables, get the
-`section` variable from the [section
-template](@/documentation/templates/pages-sections.md).
+你还可以通过在相应 section 的 front matter 中将 `generate_feeds` 变量设置为 true 来为每个 section 启用单独的 feeds。
+Section feeds 将使用与 `config.toml` 文件中指示的相同的模板。
+Section feeds 除了五个 feed 模板变量外，还可以从 [section 模板](@/documentation/templates/pages-sections.md) 获得 `section` 变量。
 
-Enable feed autodiscovery allows feed readers and browsers to notify user about a RSS or Atom feed available on your web site. So it is easier for user to subscribe.
-As an example this is how it looks like using [Firefox](https://en.wikipedia.org/wiki/Mozilla_Firefox) [Livemarks](https://addons.mozilla.org/en-US/firefox/addon/livemarks/?src=search) addon.
+启用 feed 自动发现允许 feed 阅读器和浏览器通知用户你的网站上有可用的 RSS 或 Atom feed。这样用户更容易订阅。
+例如，这是使用 [Firefox](https://en.wikipedia.org/wiki/Mozilla_Firefox) [Livemarks](https://addons.mozilla.org/en-US/firefox/addon/livemarks/?src=search) 插件时的样子。
 
-![RSS feed autodiscovery example.](rss_feed.png)
+![RSS feed 自动发现示例。](rss_feed.png)
 
-You can enable posts autodiscovery modifying your blog `base.html` template adding the following code in between the `<head>` tags.
+你可以通过修改博客 `base.html` 模板并在 `<head>` 标签之间添加以下代码来启用文章自动发现。
 ```html
 {% block rss %}
   <link rel="alternate" type="application/rss+xml" title="RSS" href="{{/* get_url(path="rss.xml", trailing_slash=false) */}}">
 {% endblock %}
 ```
-You can as well use an Atom feed using `type="application/atom+xml"` and `path="atom.xml"`.
+你也可以使用 Atom feed，使用 `type="application/atom+xml"` 和 `path="atom.xml"`。
 
-All pages on your site will refer to your post feed.
+你站点上的所有页面都将引用你的文章 feed。
 
-In order to enable the tag feeds as well, you can overload the `block rss` using the following code in your `tags/single.html` template.
+为了同时启用标签 feeds，你可以在 `tags/single.html` 模板中使用以下代码重载 `block rss`。
 ```html
 {% block rss %}
   {% set rss_path = "tags/" ~ term.name ~ "/rss.xml" %}
   <link rel="alternate" type="application/rss+xml" title="RSS" href="{{/* get_url(path=rss_path, trailing_slash=false) */}}">
 {% endblock rss %}
 ```
-Each tag page will refer to it's dedicated feed.
+每个标签页面都将引用其专用 feed。
 
 [atom_rfc]: https://www.rfc-editor.org/rfc/rfc4287
 [rss_spec]: https://www.rssboard.org/rss-specification#ltauthorgtSubelementOfLtitemgt

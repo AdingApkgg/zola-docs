@@ -1,83 +1,83 @@
 +++
-title = "Taxonomies"
+title = "分类法 (Taxonomies)"
 weight = 90
 +++
 
-Zola has built-in support for taxonomies, a way to group content according to user-defined categories.
+Zola 内置了对分类法（taxonomies）的支持，这是一种根据用户定义的类别对内容进行分组的方法。
 
-## Definitions
+## 定义
 
-- Taxonomy: A category that can be used to group content
-- Term: A specific group within a taxonomy
-- Value: A piece of content that can be associated with a term
+- 分类法 (Taxonomy): 可用于对内容进行分组的类别
+- 术语 (Term): 分类法中的特定组
+- 值 (Value): 可以与术语关联的一段内容
 
-## Example: a movie website
+## 示例：电影网站
 
-Imagine that you want to make a website to display information about various movies. In that case, you could use the following taxonomies:
+假设你想制作一个网站来显示有关各种电影的信息。在这种情况下，你可以使用以下分类法：
 
-- Director
-- Genres
-- Awards
-- Release year
+- 导演 (Director)
+- 类型 (Genres)
+- 奖项 (Awards)
+- 发行年份 (Release year)
 
-Then, at build time, Zola can create pages for each taxonomy, listing all of the known terms and linking it to all associated pieces of content.
+然后，在构建时，Zola 可以为每个分类法创建页面，列出所有已知的术语并将它们链接到所有相关的内容片段。
 
-Imagine again we have the following movies:
+再次假设我们有以下电影：
 
 ```txt
-- Shape of water                             Value
-  - Director ............................ Taxonomy
-    - Guillermo Del Toro                      Term
-  - Genres .............................. Taxonomy
-    - Thriller                                Term
-    - Drama                                   Term
-  - Awards .............................. Taxonomy
-    - Golden globe                            Term
-    - Academy award                           Term
-    - BAFTA                                   Term
-  - Release year ........................ Taxonomy
-    - 2017                                    Term
+- 水形物语 (Shape of water)              值
+  - 导演 ............................ 分类法
+    - 吉尔莫·德尔·托罗 (Guillermo Del Toro) 术语
+  - 类型 ............................ 分类法
+    - 惊悚 (Thriller)                     术语
+    - 剧情 (Drama)                        术语
+  - 奖项 ............................ 分类法
+    - 金球奖 (Golden globe)               术语
+    - 奥斯卡金像奖 (Academy award)         术语
+    - 英国电影学院奖 (BAFTA)               术语
+  - 发行年份 ........................ 分类法
+    - 2017                                术语
 
-- The Room                                   Value
-  - Director ............................ Taxonomy
-    - Tommy Wiseau                            Term
-  - Genres .............................. Taxonomy
-    - Romance                                 Term
-    - Drama                                   Term
-  - Release Year ........................ Taxonomy
-    - 2003                                    Term
+- 房间 (The Room)                       值
+  - 导演 ............................ 分类法
+    - 托米·韦素 (Tommy Wiseau)            术语
+  - 类型 ............................ 分类法
+    - 爱情 (Romance)                      术语
+    - 剧情 (Drama)                        术语
+  - 发行年份 ........................ 分类法
+    - 2003                                术语
 
-- Bright                                     Value
-  - Director ............................ Taxonomy
-    - David Ayer                              Term
-  - Genres .............................. Taxonomy
-    - Fantasy                                 Term
-    - Action                                  Term
-  - Awards .............................. Taxonomy
-    - California on Location Awards           Term
-  - Release Year ........................ Taxonomy
-    - 2017                                    Term
+- 光灵 (Bright)                         值
+  - 导演 ............................ 分类法
+    - 大卫·阿耶 (David Ayer)              术语
+  - 类型 ............................ 分类法
+    - 奇幻 (Fantasy)                      术语
+    - 动作 (Action)                       术语
+  - 奖项 ............................ 分类法
+    - 加州外景奖 (California on Location Awards) 术语
+  - 发行年份 ........................ 分类法
+    - 2017                                术语
 ```
 
-In this example, the page for `Release year` would include links to pages for both 2003 and 2017, whereas the page for 2017 would list both *Shape of Water* and *Bright*.
+在此示例中，`发行年份` 页面将包含指向 2003 年和 2017 年页面的链接，而 2017 年页面将列出 *水形物语* 和 *光灵*。
 
-## Configuration
+## 配置
 
-A taxonomy has six variables:
+一个分类法有六个变量：
 
-- `name`: a required string that will be used in the URLs, usually the plural version (i.e. tags, categories, etc.)
-- `paginate_by`: if this is set to a number, each term page will be paginated by this much.
-- `paginate_path`: if set, this path will be used by the paginated page and the page number will be appended after it.
-For example the default would be `page/1`.
-- `feed`: if set to `true`, a feed (atom by default) will be generated for each term.
-- `lang`: only set this if you are making a multilingual site and want to indicate which language this taxonomy is for
-- `render`: if set to `false`, pages will not be rendered for the taxonomy or for individual terms.
+- `name`: 必需的字符串，将用于 URL，通常是复数版本（即 tags, categories 等）
+- `paginate_by`: 如果设置为数字，每个术语页面将按此数量分页。
+- `paginate_path`: 如果设置，此路径将用于分页页面，页码将附加在其后。
+例如，默认值为 `page/1`。
+- `feed`: 如果设置为 `true`，将为每个术语生成一个 feed（默认为 atom）。
+- `lang`: 仅当你制作多语言站点并希望指示此分类法属于哪种语言时才设置此项
+- `render`: 如果设置为 `false`，则不会为分类法或单个术语渲染页面。
 
-Insert into the configuration file (`config.toml`):
+插入到配置文件 (`config.toml`) 中：
 
-⚠️ Place the taxonomies key in the main section and not in the `[extra]` section
+⚠️ 将 taxonomies 键放在主部分，而不是 `[extra]` 部分
 
-**Example 1:** (one language)
+**示例 1:** (一种语言)
 
 ```toml
 taxonomies = [
@@ -88,10 +88,10 @@ taxonomies = [
 ]
 ```
 
-**Example 2:** (multilingual site)
+**示例 2:** (多语言站点)
 
 ```toml
-# These taxonomies go in the main section
+# 这些分类法放在主部分
 taxonomies = [
     {name = "director", feed = true},
     {name = "genres", feed = true},
@@ -108,16 +108,16 @@ taxonomies = [
 ]
 ```
 
-## Using taxonomies
+## 使用分类法
 
-Once the configuration is done, you can then set taxonomies in your content and Zola will pick them up:
+配置完成后，你可以在内容中设置分类法，Zola 会识别它们：
 
-**Example:**
+**示例:**
 
 ```toml
 +++
 title = "Shape of water"
-date = 2019-08-15 # date of the post, not the movie
+date = 2019-08-15 # 文章日期，不是电影日期
 [taxonomies]
 director=["Guillermo Del Toro"]
 genres=["Thriller","Drama"]
@@ -126,31 +126,31 @@ release-year = ["2017"]
 +++
 ```
 
-## Output paths
+## 输出路径
 
-In a similar manner to how section and pages calculate their output path:
+与 section 和页面计算输出路径的方式类似：
 
-- the taxonomy name is never slugified
-- the taxonomy term (e.g. as specific tag) is slugified when `slugify.taxonomies` is enabled (`"on"`, the default) in the configuration
+- 分类法名称永远不会被 slugify
+- 当配置中启用 `slugify.taxonomies`（默认值为 `"on"`）时，分类法术语（例如特定标签）会被 slugify
 
-The taxonomy pages are then available at the following paths:
+分类法页面随后可在以下路径获得：
 
 ```txt
-$BASE_URL/$NAME/ (taxonomy)
-$BASE_URL/$NAME/$SLUG (taxonomy entry)
+$BASE_URL/$NAME/ (分类法)
+$BASE_URL/$NAME/$SLUG (分类法条目)
 ```
 
 
-Note that taxonomies are case-insensitive, so terms that have the same slug will get merged: sections and pages containing the tag "example" will be shown in the same taxonomy page as those containing "Example".
+请注意，分类法不区分大小写，因此具有相同 slug 的术语将被合并：包含标签 "example" 的 section 和页面将显示在与包含 "Example" 的页面相同的分类法页面中。
 
-If you have set the `taxonomy_root` configuration option, all taxonomy paths will be prefixed with that root path:
+如果你设置了 `taxonomy_root` 配置选项，所有分类法路径都将以该根路径为前缀：
 
 ```txt
-$BASE_URL/$TAXONOMY_ROOT/$NAME/ (taxonomy)
-$BASE_URL/$TAXONOMY_ROOT/$NAME/$SLUG (taxonomy entry)
+$BASE_URL/$TAXONOMY_ROOT/$NAME/ (分类法)
+$BASE_URL/$TAXONOMY_ROOT/$NAME/$SLUG (分类法条目)
 ```
 
-For example, with `taxonomy_root = "blog"` and a taxonomy named `tags` with a term `rust`:
-- Taxonomy list page: `$BASE_URL/blog/tags/`
-- Taxonomy term page: `$BASE_URL/blog/tags/rust/`
+例如，如果 `taxonomy_root = "blog"` 并且有一个名为 `tags` 的分类法，其中包含术语 `rust`：
+- 分类法列表页面: `$BASE_URL/blog/tags/`
+- 分类法术语页面: `$BASE_URL/blog/tags/rust/`
 

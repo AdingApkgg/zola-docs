@@ -3,11 +3,10 @@ title = "Sourcehut Pages"
 weight = 15
 +++
 
-Deploying your static Zola website on [Sourcehut Pages][srht] is very simple.
+在 [Sourcehut Pages][srht] 上部署你的静态 Zola 网站非常简单。
 
-You need to create a `.build.yml` manifest file in the root folder of your Zola project and push your changes to the
-Sourcehut git/hg repository.
-To create your `.build.yml` file you can start with [a template][srht-tpl] or use the following example:
+你需要在 Zola 项目的根文件夹中创建一个 `.build.yml` 清单文件，并将更改推送到 Sourcehut git/hg 仓库。
+要创建你的 `.build.yml` 文件，你可以从 [模板][srht-tpl] 开始或使用以下示例：
 ``` yaml
 image: alpine/edge
 packages:
@@ -29,15 +28,12 @@ tasks:
       hut pages publish -d $site site.tar.gz
 ```
 
-This manifest will clone your source code, build the website and upload the generated static files to the domain
-you specified in `site`.
-For publishing the website, the build manifest uses `hut`, a commandline tool which takes care of automatically
-generating authentication tokens, so there is nothing else you need to do.
+此清单将克隆你的源代码，构建网站并将生成的静态文件上传到你在 `site` 中指定的域。
+为了发布网站，构建清单使用 `hut`，这是一个命令行工具，负责自动生成身份验证令牌，因此你无需执行任何其他操作。
 
-From this template you need to customize the variable `site` with the domain that will host your website and
-`sources` to point to your Sourcehut git/hg public URL (in this example `my-website` is the name of the repository).
+从此模板中，你需要自定义变量 `site` 为将托管你的网站的域，以及 `sources` 指向你的 Sourcehut git/hg 公共 URL（在此示例中，`my-website` 是仓库的名称）。
 
-Then commit and push your changes:
+然后提交并推送你的更改：
 ``` sh
 $ git push
 Enumerating objects: 5, done.
@@ -48,13 +44,12 @@ To git.sr.ht:~your_username/www
    fbe9afa..59ae556  master -> master
 ```
 
-The build job will be automatically triggered.
-Notice that Sourcehut returns a direct link to the build page, where you can check the progress and success status.
+构建作业将自动触发。
+请注意，Sourcehut 返回指向构建页面的直接链接，你可以在其中检查进度和成功状态。
 
-By default you can use a subdomain of Sourcehut Pages to host your static website - `your_username.srht.site`.
-If you want to use a custom domain (e.g. "blog.mydomain.org"), you will need to configure a DNS record to point to
-the Sourcehut server.
-Instructions on how to do this are available on [Sourcehut][srht-custom-domain].
+默认情况下，你可以使用 Sourcehut Pages 的子域来托管你的静态网站 - `your_username.srht.site`。
+如果你想使用自定义域名（例如 "blog.mydomain.org"），你需要配置 DNS 记录以指向 Sourcehut 服务器。
+有关如何执行此操作的说明可在 [Sourcehut][srht-custom-domain] 上找到。
 
 [srht]: https://srht.site
 [srht-tpl]: https://git.sr.ht/~sircmpwn/pages.sr.ht-examples

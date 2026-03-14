@@ -3,11 +3,11 @@ title = "Fly.io"
 weight = 70
 +++
 
-If you don't have an account with fly.io, you can sign up [here](https://fly.io/app/sign-up).
+如果你没有 fly.io 帐户，可以在 [这里](https://fly.io/app/sign-up) 注册。
 
-Then install the `flyctl` tool following the instructions [here](https://fly.io/docs/hands-on/install-flyctl/).
+然后按照 [这里](https://fly.io/docs/hands-on/install-flyctl/) 的说明安装 `flyctl` 工具。
 
-Create a `Dockerfile`:
+创建一个 `Dockerfile`：
 
 ```Dockerfile
 FROM ghcr.io/getzola/zola:v0.17.2 AS builder
@@ -21,16 +21,16 @@ COPY --from=builder /app/public /public
 ENV SERVER_PORT 8080
 ```
 
-You can now run `fly launch`. It will detect the `Dockerfile` and mostly auto-configure everything. Fill out the necessary information, but say "no" to (1) launching any databases and (2) deploying immediately.
+你现在可以运行 `fly launch`。它将检测 `Dockerfile` 并在很大程度上自动配置所有内容。填写必要的信息，但在 (1) 启动任何数据库和 (2) 立即部署时说“no”。
 
-Take note of the hostname assigned to your app.
+记下分配给你的应用的 hostname。
 
-If you already have a Zola site you must now ensure that `base_url` in `config.toml` is set correctly using the hostname from your app (or whatever domain you have pointing to the app):
+如果你已经有一个 Zola 站点，你现在必须确保 `config.toml` 中的 `base_url` 使用你的应用的 hostname（或任何指向该应用的域名）正确设置：
 
     base_url = "https://white-snow-9922.fly.dev"
 
-If you don't have an existing site, initialize one with `zola init -f` and remember to set the correct `base_url`.
+如果你没有现有站点，请使用 `zola init -f` 初始化一个，并记住设置正确的 `base_url`。
 
-You're now ready to launch your site! Run `flyctl deploy` and have fun!
+你现在准备好启动你的站点了！运行 `flyctl deploy` 并玩得开心！
 
-Finally, to set up continuous deployment of your site from GitHub, follow [this](https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/) guide, steps 4-8. Any changes to your site will now be pushed automatically.
+最后，要从 GitHub 设置站点的持续部署，请遵循 [此指南](https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/) 的步骤 4-8。对你站点的任何更改现在都将自动推送。

@@ -3,11 +3,9 @@ title = "Robots.txt"
 weight = 70
 +++
 
-Zola will look for a `robots.txt` file in the `templates` directory or
-use the built-in one.
+Zola 将在 `templates` 目录中查找 `robots.txt` 文件，或者使用内置的文件。
 
-Robots.txt is the simplest of all templates: it only gets `config`
-and the default is what most sites want:
+Robots.txt 是所有模板中最简单的：它只获得 `config`，默认值是大多数站点想要的：
 
 ```jinja
 User-agent: *
@@ -16,7 +14,7 @@ Allow: /
 Sitemap: {{/* get_url(path="sitemap.xml") */}}
 ```
 
-The file can be extended & expanded like other templates using e.g. Tera's `include` tag:
+该文件可以像其他模板一样扩展和展开，例如使用 Tera 的 `include` 标签：
 
 ```jinja
 User-agent: *

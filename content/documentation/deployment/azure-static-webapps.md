@@ -1,20 +1,20 @@
 +++
-title = "Azure Static Web Apps"
+title = "Azure 静态 Web 应用"
 weight = 60
 +++
 
-[Azure Static Web Apps](https://learn.microsoft.com/en-us/azure/static-web-apps/overview) is a managed Azure service that handles automatically deploying static site content from changes to GitHub or Azure DevOps repositories. We'll be going over how to configure deploying your site to Azure Static Web Apps via GitHub Actions.
+[Azure 静态 Web 应用](https://learn.microsoft.com/zh-cn/azure/static-web-apps/overview) 是一种托管的 Azure 服务，可处理从 GitHub 或 Azure DevOps 仓库中的更改自动部署静态站点内容。我们将介绍如何配置通过 GitHub Actions 将你的站点部署到 Azure 静态 Web 应用。
 
-### Setting up Azure Static Web Apps
-Follow the [official documentation](https://learn.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript&pivots=github) for configuring the static web app in the Azure portal with the `GitHub` as the selected code hosting platform except for the `Build Details section.
+### 设置 Azure 静态 Web 应用
+按照 [官方文档](https://learn.microsoft.com/zh-cn/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript&pivots=github) 在 Azure 门户中配置静态 Web 应用，选择 `GitHub` 作为代码托管平台，但 `Build Details` 部分除外。
 
-Instead, for the`Build Details` section, set the App location as `./public` since that is where `zola build` will write the site content to by default. Leave the other boxes empty.
+相反，对于 `Build Details` 部分，将应用位置 (App location) 设置为 `./public`，因为这是 `zola build` 默认写入站点内容的位置。将其他框留空。
 
-After creating the web app, make note of the domain automatically created by Azure and update `base_url` in your repo's `config.toml` to that URL.
+创建 Web 应用后，记下 Azure 自动创建的域名，并将你的仓库的 `config.toml` 中的 `base_url` 更新为该 URL。
 
 
-### Configuring GitHub Actions
-Azure should have already created a GitHub Actions YAML file in your GitHub repository under `.github/workflows` and configured secrets for deploying your app to Azure. Now we'll need to update the workflow to install Zola and build your site. 
+### 配置 GitHub Actions
+Azure 应该已经在你的 GitHub 仓库的 `.github/workflows` 下创建了一个 GitHub Actions YAML 文件，并配置了用于将你的应用程序部署到 Azure 的 secrets。现在我们需要更新工作流以安装 Zola 并构建你的站点。
 
 
 ```yaml
@@ -72,4 +72,4 @@ jobs:
           action: "close"
 
 ```
-Once your YAML changes have been pushed, GitHub will automatically kick off a workflow deploying your site!
+一旦你的 YAML 更改被推送，GitHub 将自动启动工作流部署你的站点！

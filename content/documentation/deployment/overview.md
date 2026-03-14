@@ -1,9 +1,6 @@
 +++
-title = "Overview"
+title = "概览"
 weight = 10
 +++
 
-Zola outputs plain files, no databases needed. This makes hosting and deployment
-trivial on many providers.
-
-
+Zola 输出纯文件，不需要数据库。这使得在许多提供商上的托管和部署变得微不足道。

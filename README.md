@@ -18,6 +18,17 @@
    ```
 4. 访问 `http://127.0.0.1:1111`
 
+## 部署到 Cloudflare Pages
+
+本项目已配置 `wrangler.toml` 和 `build.sh` 以支持在 Cloudflare Pages 上自动构建。
+
+由于 Cloudflare Pages V2 构建环境不再预装 Zola，我们使用 `build.sh` 脚本在构建时自动下载并安装 Zola。
+
+1. 在 Cloudflare Pages 中创建一个新项目，并连接到你的 GitHub 仓库。
+2. **Build command** 设置为 `bash build.sh`（如果未自动检测）。
+3. **Build output directory** 设置为 `public`。
+
+
 ## 贡献
 
 欢迎提交 Pull Request 改进翻译或报告问题。

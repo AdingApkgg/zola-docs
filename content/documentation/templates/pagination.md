@@ -1,66 +1,61 @@
 +++
-title = "Pagination"
+title = "分页"
 weight = 30
 +++
 
-Two things can get paginated: a section and a taxonomy term.
+有两样东西可以分页：section 和分类法术语 (taxonomy term)。
 
-Both kinds get a `paginator` variable of the `Pager` type, on top of the common variables mentioned in the
-[overview page](@/documentation/templates/overview.md):
+除了 [概览页面](@/documentation/templates/overview.md) 中提到的常用变量外，这两种类型都获得一个 `Pager` 类型的 `paginator` 变量：
 
 ```ts
-// How many items per pager
+// 每个分页器的项目数
 paginate_by: Number;
-// The base URL for the pagination: section permalink + pagination path
-// You can concatenate an integer with that to get a link to a given pagination pager.
+// 分页的基本 URL：section 永久链接 + 分页路径
+// 你可以将其与一个整数连接以获取指向给定分页页面的链接。
 base_url: String;
-// How many pagers in total
+// 总共有多少个分页页面
 number_pagers: Number;
-// Permalink to the first pager
+// 第一个分页页面的永久链接
 first: String;
-// Permalink to the last pager
+// 最后一个分页页面的永久链接
 last: String;
-// Permalink to the previous pager, if there is one
+// 上一个分页页面的永久链接（如果有）
 previous: String?;
-// Permalink to the next pager, if there is one
+// 下一个分页页面的永久链接（如果有）
 next: String?;
-// All pages for the current pager
+// 当前分页页面的所有页面
 pages: Array<Page>;
-// Which pager are we on, 1-indexed
+// 我们在哪个分页页面上，1 索引
 current_index: Number;
-// Total number of pages across all the pagers
+// 所有分页页面的总页数
 total_pages: Number;
 ```
 
-**The variable will not be defined if `paginate_by` is not set to a positive number.**
+**如果 `paginate_by` 未设置为正数，则不会定义该变量。**
 
-A pager is a page of the pagination; if you have 100 pages and paginate_by is set to 10, you will have 10 pagers each
-containing 10 pages.
+一个 pager 是分页的一页；如果你有 100 个页面并且 paginate_by 设置为 10，你将有 10 个 pagers，每个包含 10 个页面。
 
 ## Section
 
-A paginated section gets the same `section` variable as a normal
-[section page](@/documentation/templates/pages-sections.md#section-variables)
-minus its pages. The pages are instead in `paginator.pages`.
+分页的 section 获得与普通 [section 页面](@/documentation/templates/pages-sections.md#section-variables) 相同的 `section` 变量，减去它的页面。页面在 `paginator.pages` 中。
 
-## Taxonomy term
+## 分类法术语 (Taxonomy term)
 
-A paginated taxonomy gets two variables aside from the `paginator` variable:
+除了 `paginator` 变量外，分页的分类法还获得两个变量：
 
-- a `taxonomy` variable of type `TaxonomyConfig`
-- a `term` variable of type `TaxonomyTerm`.
+- 一个 `TaxonomyConfig` 类型的 `taxonomy` 变量
+- 一个 `TaxonomyTerm` 类型的 `term` 变量。
 
-See the [taxonomies page](@/documentation/templates/taxonomies.md) for a detailed version of the types.
+有关类型的详细版本，请参阅 [分类法页面](@/documentation/templates/taxonomies.md)。
 
 ## SEO
 
-It is preferable to not include paginated pages in sitemap since they are non-canonical pages.
-To exclude paginated pages in sitemap, set the
-`exclude_paginated_pages_in_sitemap` as `all` in `config.toml`.
+最好不要在 sitemap 中包含分页页面，因为它们是非规范页面。
+要在 sitemap 中排除分页页面，请在 `config.toml` 中将 `exclude_paginated_pages_in_sitemap` 设置为 `all`。
 
-## Example
+## 示例
 
-Here is an example from a theme on how to use pagination on a page (`index.html` in this case):
+这是一个来自主题的示例，说明如何在页面上使用分页（本例中为 `index.html`）：
 
 ```jinja
 <div class="posts">

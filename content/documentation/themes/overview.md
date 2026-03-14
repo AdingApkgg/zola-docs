@@ -1,13 +1,12 @@
 +++
-title = "Overview"
+title = "概览"
 weight = 10
 +++
 
-Themes are collections of layouts and styles used to facilitate the creation and management of Zola projects. As such, themes are Zola projects which provide their own templates, content and even static assets. 
+主题是布局和样式的集合，用于促进 Zola 项目的创建和管理。因此，主题是提供自己的模板、内容甚至静态资源的 Zola 项目。
 
-Zola has built-in support for themes which makes it easy to customise and update them. 
+Zola 具有对主题的内置支持，这使得自定义和更新它们变得容易。
 
-All themes can use the full power of Zola, from shortcodes to Sass compilation.
+所有主题都可以使用 Zola 的全部功能，从 shortcodes 到 Sass 编译。
 
-A list of themes is available [here](@/themes/_index.md).
-
+主题列表可在 [此处](@/themes/_index.md) 获得。
