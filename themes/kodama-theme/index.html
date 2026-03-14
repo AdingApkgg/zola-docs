@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="kodama | Zola">
+        <meta property="og:description" content="Theme insipired by wowchemy academic.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kodama-theme&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>kodama | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kodama-theme&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>kodama</h1>
+            <p>Theme insipired by wowchemy academic.</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;adrien-faure.fr">Adrien Faure</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.15 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;adfaure&#x2F;kodama-theme">https:&#x2F;&#x2F;github.com&#x2F;adfaure&#x2F;kodama-theme</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;adfaure.github.io&#x2F;kodama-theme&#x2F;">https:&#x2F;&#x2F;adfaure.github.io&#x2F;kodama-theme&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2025-10-11T14:31:25+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="kodama">Kodama</h1>
+<p><img src="https://zola.docs.saop.cc/themes/kodama-theme/./screenshot.png" alt="Theme screenshot" /></p>
+<h2 id="summary">Summary</h2>
+<p>This theme is greatly inspired from hugo academic theme.</p>
+<p>First lets introduce some technical details:</p>
+<ul>
+<li>It relies on <a class="external" rel="external" href="https://www.getzola.org/">zola</a>.</li>
+<li>It has no javascript.</li>
+<li>The CSS is built with <a class="external" rel="external" href="https://tailwindcss.com/">tailwindcss</a>.
+<ul>
+<li>The blog articles are themed with <a class="external" rel="external" href="https://tailwindcss-typography.vercel.app">@tailwindcss/typography</a> theme.</li>
+</ul>
+</li>
+</ul>
+<h2 id="getting-started">Getting started</h2>
+<p>The best way to get started is to follow the official <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/overview/">zola tutorial</a>.</p>
+<p>This theme can be installed as any other theme.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>mkdir themes</span></span>
+<span class="giallo-l"><span>cd themes &amp; git clone https://github.com/adfaure/kodama-theme</span></span></code></pre>
+<p>and set in the <code>config.toml</code> the variable <code>theme</code> to <code>kodama-theme</code>.</p>
+<h3 id="generate-the-css">Generate the CSS</h3>
+<p><a class="external" rel="external" href="https://tailwindcss.com/">Tailwindcss</a> is a framework that parses your html files, and generate the minimal CSS required.
+This theme depends on this framework.</p>
+<p>The theme comes with the precompiled style files (<code>static/styles/styles.css</code>). However, if you wish to change the style, or modify the template html, you might need to recompile your styles.</p>
+<p>The most simple way, is to follow the <a class="external" rel="external" href="https://tailwindcss.com/docs/installation/">installation page of tailwindcss</a>.</p>
+<p>At the end, you should have tailwindcss installed, and I advise to use the following tailwind configuration (for tailwindcss v4):</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="javascript"><span class="giallo-l"><span># tailwind</span><span style="color: #94E2D5;">.</span><span>config</span><span style="color: #94E2D5;">.</span><span>js</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;font-style: italic;">module</span><span style="color: #94E2D5;">.</span><span style="color: #CBA6F7;font-style: italic;">exports</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span>  content</span><span style="color: #94E2D5;">:</span><span> [</span><span style="color: #A6E3A1;">&quot;./templates/**/*.html&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;./themes/**/*.html&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;">  &quot;./themes/**/*.html&quot;</span><span>]</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">};</span></span></code></pre>
+<p>Create a file <code>styles/styles.css</code>, and use the following command to generate the final CSS file:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>npx tailwindcss -i styles/styles.css -o static/styles/styles.css</span></span></code></pre>
+<p>or, starting with tailwindcss v4.0, the separate CLI command</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>npx @tailwindcss/cli -i styles/styles.css -o static/styles/styles.css</span></span></code></pre>
+<p>The resulting file <code>static/styles/styles.css</code> is loaded in the html.</p>
+<p><em>Note that, for the moment the generation of the css is not automated. As a result, it is necessary to re-run this command when changes are made with the styling.</em></p>
+<h2 id="configuration">Configuration</h2>
+<p>This theme use some extra configuration, that can be set in the extra section of your <code>config.toml</code>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Title displayed in the index page</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Website title&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Use this theme</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;kodama-theme&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Image of your avatar displayed on the landing page</span></span>
+<span class="giallo-l"><span>avatar</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;static/img/avatar.jpg&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Image of the favicon</span></span>
+<span class="giallo-l"><span>favicon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;static/img/avatar.jpg&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Your email address showed in the contact section</span></span>
+<span class="giallo-l"><span>email</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;kodama[at]domain.com&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If you don&#39;t want to show your contact information in the index</span></span>
+<span class="giallo-l"><span>contact_in_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Additional menu items</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># `Name` is what it is displayed, `path` is the url</span></span>
+<span class="giallo-l"><span>menu_items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> path</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#contacts&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Contact&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h2 id="index-page">Index page</h2>
+<p>The information needed to build the index page are located in the page <a class="external" rel="external" href="https://www.getzola.org/documentation/content/page/#front-matter">front matter</a> of root index file (e.g <code>content/_index.md</code>).</p>
+<p>The available configuration options are:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Insert zola front matter variable such as date etc</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Show a concise description of what you do below your avatar.</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Concise description&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The list of interests displayed</span></span>
+<span class="giallo-l"><span>interests</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">  &quot;Rainbow pony&quot;</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">  &quot;Martian food&quot;</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">  &quot;Quantic science&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The list of your degrees / education</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.education.courses</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>  course</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Latest degree&quot;</span></span>
+<span class="giallo-l"><span>  institution</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Some academy&quot;</span></span>
+<span class="giallo-l"><span>  year</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 2020</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.education.courses</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>  course</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Another degree&quot;</span></span>
+<span class="giallo-l"><span>  institution</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Here and there&quot;</span></span>
+<span class="giallo-l"><span>  year</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 2016</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Finally, a list of icons with a link displayed below your avatar</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.avatar_icons</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>  icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github&quot;</span></span>
+<span class="giallo-l"><span>  link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/adfaure&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.avatar_icons</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>  icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;gitlab&quot;</span></span>
+<span class="giallo-l"><span>  link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://gitlab.com/adfaure&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.avatar_icons</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>  icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;linkedin&quot;</span></span>
+<span class="giallo-l"><span>  link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://www.linkedin.com/in/adrien-faure-9958978b/&quot;</span></span></code></pre><h2 id="contact">Contact</h2>
+<p>The predefined contact page can be use.
+The front matter extra part should contains a list of the link to show in the contacts.</p>
+<h2 id="sections">Sections</h2>
+<p>The section available in your website are automatically detected and displayed in the nav bar at the top of the page.
+To prevent a section to be displayed in the nav bar, you can set the extra front matter option <code>extra.hidden_nav = false</code> to false.</p>
+<p>The section are sorted by <code>weight</code> defined in the front matter of the section.</p>
+<p>By default, the sections (i.e folders under <code>content/section_name</code>) have a summary showed in the index.
+This is configurable in the front matter of the section (e.g <code>content/section_name/_index.md</code>).</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The name displayed in the section summary</span></span>
+<span class="giallo-l"><span>extra</span><span style="color: #9399B2;">.</span><span>index_title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Recent Posts&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Set to false to remove the section from the index</span></span>
+<span class="giallo-l"><span>extra</span><span style="color: #9399B2;">.</span><span>index_show</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="blog">Blog</h3>
+<p>The section <code>blog</code> is the most standard section. It show a list of article with things that you want to share in your website.
+To use the blog template, configure the section with the following front matter:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;section.html&quot;</span></span>
+<span class="giallo-l"><span>page_template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;blog-page.html&quot;</span></span></code></pre><h3 id="publications">Publications</h3>
+<p>The section <code>publication</code> is very similar to the <code>blog</code> section however it is dedicated to show your list of scientific articles.
+The articles are showed in two subcategories: Thesis and Conference / Workshop.</p>
+<p>To configure a publication section (e.g <code>content/research</code>) and set the following content:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;Research&quot;</span></span>
+<span class="giallo-l"><span>sort_by = &quot;date&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #F38BA8;"># Here the two dedicated templates</span></span>
+<span class="giallo-l"><span>template = &quot;publications.html&quot;</span></span>
+<span class="giallo-l"><span>page_template = &quot;publication-page.html&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #F38BA8;"># If you want to show your publications under different sections</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;"># the title will be the displayed text in your website, and the type</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;"># should be the type of publication.</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;"># Each individual plublication has an </span><span style="color: #A6E3A1;">`extra.type`</span><span style="color: #F38BA8;"> that refers to the</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;"># publication type (example in content sub-section).</span></span>
+<span class="giallo-l"><span>extra.publications_types = [</span></span>
+<span class="giallo-l"><span>  { title = &quot;Journal articles&quot;, type = &quot;journals&quot; },</span></span>
+<span class="giallo-l"><span>  { title = &quot;Thesis&quot;, type = &quot;thesis&quot; },</span></span>
+<span class="giallo-l"><span>  { title = &quot;Conferences and workshops &quot;, type = &quot;conferences&quot; }</span></span>
+<span class="giallo-l"><span>]</span></span>
+<span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FAB387;">## Content</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>Any content will be displayed on top of the section.</span></span></code></pre>
+<p>Article are referenced in subdirectories of this section.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>tree content/research</span></span>
+<span class="giallo-l"><span>content/research</span></span>
+<span class="giallo-l"><span>├── _index.md</span></span>
+<span class="giallo-l"><span>├── paper1</span></span>
+<span class="giallo-l"><span>│   ├── bib</span></span>
+<span class="giallo-l"><span>│   └── index.md</span></span>
+<span class="giallo-l"><span>└── thesis</span></span>
+<span class="giallo-l"><span>    ├── bib</span></span>
+<span class="giallo-l"><span>    ├── index.md</span></span>
+<span class="giallo-l"><span>    ├── thesis.pdf</span></span>
+<span class="giallo-l"><span>    └── thesis_slides.pdf</span></span></code></pre>
+<p>The bib files are automatically loaded to get information from it. However, it is also possible to add information in the front matter of the article markdown file.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;Article 1&quot;</span></span>
+<span class="giallo-l"><span>date = 2021-05-18</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #B4BEFE;">[extra]</span></span>
+<span class="giallo-l"><span>type = &quot;Conference&quot;</span></span>
+<span class="giallo-l"><span>authors = [ &quot;Kodama Mononoke&quot; ]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #F38BA8;"># Should be the type of the publication type it should appears under</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;"># configured in the front matter of publications/_index.md</span></span>
+<span class="giallo-l"><span>type = &quot;conferences&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>featured = true</span></span>
+<span class="giallo-l"><span>publication = &quot;2020 IEE rainbow workshop&quot;</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;"># Add full url for your pdf and your presentation</span></span>
+<span class="giallo-l"><span>url_pdf = &quot;https://your-pdf&quot;</span></span>
+<span class="giallo-l"><span>url_slides = &quot;path_to_slides&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #F38BA8;"># Add a link to a local pdf inside of your paper folder (example in content/publications/paper1.index.md)</span></span>
+<span class="giallo-l"><span>pdf = &quot;paper.pdf&quot;</span></span>
+<span class="giallo-l"><span>slides = &quot;path_to_slides.pdf&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre><h2 id="extend-the-html-header">Extend the html header</h2>
+<p>In some cases, it is needed to add extra javascript or css files to be loaded by the web browsers.
+The base template of this theme define an empty block named <code>user_head</code>.</p>
+<p>To use this block, you can just create a new template name <code>templates/base.html</code> with the following content:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{%/* extends &quot;kodama-theme/templates/base.html&quot; */%}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>{%/* block user_head */%}</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">  &lt;</span><span style="color: #89B4FA;">script</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span>    console</span><span style="color: #94E2D5;">.</span><span style="color: #89B4FA;font-style: italic;">log</span><span>(</span><span style="color: #A6E3A1;">&quot;hello world!&quot;</span><span>)</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span>  &lt;</span><span style="color: #94E2D5;">/</span><span style="color: #89B4FA;">script</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span>{%/* endblock user_head */%}</span></span></code></pre><h2 id="icons">Icons</h2>
+<p>The icons available in this project are stored in a dedicated macro function in <code>templates/macros/icons.html</code>.
+To add a new svg, you can add a case in the <code>if elif .. else</code> of the function containing the svg copied from <a class="external" rel="external" href="https://heroicons.com/">heroicons</a> for instance.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

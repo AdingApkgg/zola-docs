@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Page | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Page | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>Page</h1>
+    <p>页面是 <code>content</code> 目录中除名为 <code>_index.md</code> 的文件之外的任何以 <code>.md</code> 结尾的文件。**注意：**页面文件名不能包含 <code>_index.</code> <a class="external" rel="external" href="https://github.com/getzola/zola/pull/1694">字样</a>。</p>
+<p>如果以 <code>.md</code> 结尾的文件名为 <code>index.md</code>，它将生成一个以其目录名称命名的页面（例如，<code>/content/about/index.md</code> 将在 <code>[base_url]/about</code> 创建一个页面）。（注意没有下划线；如果文件名为 <code>_index.md</code>，它将在 <code>[base_url]/about</code> 创建一个 <strong>section</strong>，如本文档前一部分所讨论的那样。相反，将文件命名为 <code>index.md</code> 将在 <code>[base_url]/about</code> 创建一个 <strong>page</strong>）。</p>
+<p>如果文件被赋予 <code>index.md</code> 或 <code>_index.md</code> <em>以外</em> 的任何名称，那么它将创建一个具有该名称的页面（不带 <code>.md</code>）。例如，在你的 content 目录根目录中命名一个文件 <code>about.md</code> 将在 <code>[base_url]/about</code> 创建一个页面。</p>
+<p>此规则的另一个例外是，以日期时间（YYYY-mm-dd 或 <a class="external" rel="external" href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339 日期时间</a>）开头的文件名将使用该日期作为页面日期，除非已在 front matter 中设置。日期时间文件名后面可以跟一个下划线 (<code>_</code>) 或破折号 (<code>-</code>) 和 slug。
+页面名称将是日期时间或 <code>_</code>/<code>-</code> 之后的任何内容，因此文件 <code>2018-10-10.md</code> 将在 <code>[base_url]/2018-10-10</code> 可用，而 <code>2018-10-10-hello-world.md</code> 将在 <code>[base_url]/hello-world</code> 可用。请注意，完整的 RFC3339 日期时间包含冒号，这在 Windows 上的文件名中不是有效字符。
+可以通过将 <code>slugify.paths_keep_dates</code> 设置为 <code>true</code>（默认为 <code>false</code>）来禁用此行为。请注意，当 <code>slugify.paths</code> 的默认值为 <code>"on"</code> 时，分隔日期的 <code>_</code> 将被 slugify 为 <code>-</code>。</p>
+<p>如你所见，创建 <code>about.md</code> 文件等同于创建 <code>about/index.md</code> 文件。这两种方法之间的唯一区别是，创建 <code>about</code> 目录允许你使用资源共置，如 <a href="https://zola.docs.saop.cc/documentation/content/overview/#asset-colocation">概览</a> section 中所讨论的那样。</p>
+<h2 id="shu-chu-lu-jing"><a class="zola-anchor" href="#shu-chu-lu-jing" aria-label="Anchor link for: shu-chu-lu-jing">🔗</a>输出路径</h2>
+<p>对于你的 content 文件夹中的任何页面，其输出路径将由以下两者之一定义：</p>
+<ul>
+<li>其 <code>slug</code> frontmatter 键</li>
+<li>其文件名</li>
+</ul>
+<p>无论哪种方式，这些建议的路径在使用前都会被清理。
+如果在站点的配置中将 <code>slugify.paths</code> 设置为 <code>"on"</code> - 默认值 - 路径将被 <a class="external" rel="external" href="https://en.wikipedia.org/wiki/Clean_URL#Slug">slugified</a>。
+如果设置为 <code>"safe"</code>，则仅执行清理，删除以下字符：<code>&lt;</code>, <code>&gt;</code>, <code>:</code>, <code>/</code>, <code>|</code>, <code>?</code>, <code>*</code>, <code>#</code>, <code>\\</code>, <code>(</code>, <code>)</code>, <code>[</code>, <code>]</code> 以及换行符和制表符。这确保了路径可以在所有操作系统上表示。
+此外，尾随空格和点被删除，空格被替换为 <code>_</code>。</p>
+<p>如果 <code>slugify.paths</code> 设置为 <code>"off"</code>，则不进行任何修改。</p>
+<p>如果你想要包含非 ASCII 字符的 URL，<code>slugify.paths</code> 需要设置为 <code>"safe"</code> 或 <code>"off"</code>。</p>
+<h3 id="lai-zi-frontmatter-de-lu-jing"><a class="zola-anchor" href="#lai-zi-frontmatter-de-lu-jing" aria-label="Anchor link for: lai-zi-frontmatter-de-lu-jing">🔗</a>来自 frontmatter 的路径</h3>
+<p>页面的输出路径将首先从页面的 frontmatter 中的 <code>slug</code> 键读取。</p>
+<p><strong>示例：</strong>（文件 <code>content/zines/élevage-chèvre.md</code>）</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;L&#39;élevage de chèvres, la carrière alternative de tous dévelopeurs&#39;&quot;</span></span>
+<span class="giallo-l"><span>slug = &quot;élevage-chèvre-carrière-alternative&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>This is my article.</span></span></code></pre>
+<p>此 frontmatter 将在 <code>slugify.paths</code> 设置为 <code>"safe"</code> 或 <code>"off"</code> 时将文章输出到 <code>[base_url]/zines/élevage-chèvre-carrière-alternative</code>，并在 <code>slugify.paths</code> 默认值 <code>"on"</code> 时输出到 <code>[base_url]/zines/elevage-chevre-carriere-alternative</code>。</p>
+<h3 id="lai-zi-wen-jian-ming-de-lu-jing"><a class="zola-anchor" href="#lai-zi-wen-jian-ming-de-lu-jing" aria-label="Anchor link for: lai-zi-wen-jian-ming-de-lu-jing">🔗</a>来自文件名的路径</h3>
+<p>当文章的输出路径未在 frontmatter 中指定时，它将从 content 文件夹中的文件路径中提取。考虑一个文件 <code>content/foo/bar/thing.md</code>。输出路径的构造如下：</p>
+<ul>
+<li>如果文件名是 <code>index.md</code>，其父文件夹名称 (<code>bar</code>) 用作输出路径</li>
+<li>否则，输出路径从 <code>thing</code>（不带 <code>.md</code> 扩展名的文件名）中提取</li>
+</ul>
+<p>如果找到的路径以日期时间字符串（<code>YYYY-mm-dd</code> 或 <a class="external" rel="external" href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339 日期时间</a>）开头，后跟可选空格，然后是下划线 (<code>_</code>) 或破折号 (<code>-</code>)，则此日期将从输出路径中删除，并将用作页面日期（除非已在 front-matter 中设置）。请注意，完整的 RFC3339 日期时间包含冒号，这在 Windows 上的文件名中不是有效字符。</p>
+<p>从文件路径提取的输出路径随后根据 <code>slugify.paths</code> 配置进行 slugify 或不进行 slugify，如前所述。</p>
+<p><strong>示例：</strong>
+文件 <code>content/blog/2018-10-10-hello-world.md</code> 将生成页面 <code>[base_url]/blog/hello-world</code>。带有可选空格的文件 <code>content/blog/2021-01-23 -hello new world.md</code> 将生成页面 <code>[base_url]/blog/hello-new-world</code>。</p>
+<h2 id="front-matter-qian-zhi-shu-ju"><a class="zola-anchor" href="#front-matter-qian-zhi-shu-ju" aria-label="Anchor link for: front-matter-qian-zhi-shu-ju">🔗</a>Front matter (前置数据)</h2>
+<p>TOML front matter 是一组嵌入在文件开头的元数据，由三个加号 (<code>+++</code>) 包围。</p>
+<p>虽然没有 front matter 变量是强制性的，但开头和结尾的 <code>+++</code> 是必需的。</p>
+<p>请注意，尽管鼓励使用 TOML，但也支持 YAML front matter 以便移植旧内容。在这种情况下，嵌入的元数据必须由三个减号 (<code>---</code>) 包围。</p>
+<p>下面是一个包含所有可用变量的示例页面。下面提供的值是默认值。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 文章的日期。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 允许两种格式：YYYY-MM-DD (2012-10-02) 和 RFC3339 (2002-10-02T15:00:00Z)。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 不要将日期用引号括起来；下面的行仅表示没有默认日期。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果 section 变量 `sort_by` 设置为 `date`，那么任何缺少 `date` 的页面将不会被渲染。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 设置此项将覆盖文件名中设置的日期。</span></span>
+<span class="giallo-l"><span>date</span><span style="color: #94E2D5;"> =</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 文章的最后更新日期，如果与日期不同。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 格式与 `date` 相同。</span></span>
+<span class="giallo-l"><span>updated</span><span style="color: #94E2D5;"> =</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 文档 Section 页面上定义的权重。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果 section 变量 `sort_by` 设置为 `weight`，那么任何缺少 `weight` 的页面将不会被渲染。</span></span>
+<span class="giallo-l"><span>weight</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 0</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 草稿页面只有在将 `--drafts` 标志传递给 `zola build`、`zola serve` 或 `zola check` 时才会加载。</span></span>
+<span class="giallo-l"><span>draft</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 当设置为 &quot;false&quot; 时，Zola 不会为此页面创建一个包含 index.html 的单独文件夹。</span></span>
+<span class="giallo-l"><span>render</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果设置，将使用此 slug 代替文件名来制作 URL。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># section 路径仍将被使用。</span></span>
+<span class="giallo-l"><span>slug</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 内容将出现的路径。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果设置，它不能为空字符串，并且将覆盖 `slug` 和文件名。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># section 的路径将不会被使用。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 它不应以 `/` 开头，如果开头有 `/` 将被删除。</span></span>
+<span class="giallo-l"><span>path</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果你正在移动内容但希望将以前的 URL 重定向到当前 URL，请使用别名。这接受路径数组，而不是 URL。</span></span>
+<span class="giallo-l"><span>aliases</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> []</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 页面作者列表。如果启用了站点 feed，第一个作者（如果有）将在默认 feed 模板中用作页面的作者。</span></span>
+<span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> []</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果设置为 &quot;true&quot;，页面将包含在搜索索引中。这仅在 Zola 配置中 `build_search_index` 设置为 &quot;true&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 并且父 section 在其 front matter 中没有将 `in_search_index` 设置为 &quot;false&quot; 时使用。</span></span>
+<span class="giallo-l"><span>in_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 用于渲染此页面的模板。</span></span>
+<span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;page.html&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 此页面的分类法。键必须与 `config.toml` 中配置的分类法名称相同，值是字符串对象数组。例如，</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># tags = [&quot;rust&quot;, &quot;web&quot;].</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 你自己的数据。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span></code></pre><h2 id="zhai-yao"><a class="zola-anchor" href="#zhai-yao" aria-label="Anchor link for: zhai-yao">🔗</a>摘要</h2>
+<p>你可以要求 Zola 创建摘要，例如，如果你只想在列表中显示页面内容的第一段。</p>
+<p>为此，请在内容中你希望摘要结束的位置添加 <code>&lt;!-- more --&gt;</code>。到该点为止的内容将通过 <code>page.summary</code> 在 <a href="https://zola.docs.saop.cc/documentation/templates/pages-sections/#page-variables">模板</a> 中单独可用。</p>
+<p>在此位置会创建一个带有 <code>continue-reading</code> id 的 span 元素，因此如果需要，你可以直接链接到它。例如：
+<code>&lt;a href="{{ page.permalink }}#continue-reading"&gt;继续阅读&lt;/a&gt;</code>。</p>
+<p><code>&lt;!-- more --&gt;</code> 标记也可以存在于行中间，它将确保这不会发出未闭合的 HTML 标签。
+你可以使用 <code>summary-cutoff.html</code> 根据截止前的摘要显示摘要之后的文本（但在这些闭合标签之前）。</p>
+<p>默认情况下，无论摘要的内容如何，它都会显示省略号 (…)，但如果你想仅在摘要不以任何标点符号结尾时显示省略号，你可以使用不同的模板：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> if</span><span> summary</span><span style="color: #CBA6F7;"> is</span><span> matching</span><span style="color: #9399B2;">(</span><span style="color: #A6E3A1;">&quot;\PP$&quot;</span><span style="color: #9399B2;">)</span><span> %}&amp;hellip;{%</span><span style="color: #CBA6F7;"> endif</span><span> %}</span></span></code></pre>
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

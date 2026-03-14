@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="karzok | Zola">
+        <meta property="og:description" content="The theme for launching fast documentation sites">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;karzok&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>karzok | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;karzok&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>karzok</h1>
+            <p>The theme for launching fast documentation sites</p>
+            <p><b>作者:</b>
+            
+              Konrad Geletey
+              
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.15.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;kogeletey&#x2F;karzok">https:&#x2F;&#x2F;github.com&#x2F;kogeletey&#x2F;karzok</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;karzok.re128.org">https:&#x2F;&#x2F;karzok.re128.org</a></p>
+            
+            
+            <p><b>最后更新:</b> 2024-07-18T16:03:24Z</p>
+        </div>
+    </div>
+
+    <hr>
+    <p align="center">
+  <a href="https://ci.codeberg.org/kogeletey/karzok" target="_blank"><img src="https://ci.codeberg.org/api/badges/kogeletey/karzok/status.svg" alt="status-badge" /></a>
+  <a href="https://codeberg.org/kogeletey/karzok/blob/develop/LICENSE"><img src="https://flat.badgen.net/github/license/kogeletey/karzok" alt="license a repository, MIT" /></a>
+  <a href="https://github.com/kogeletey/karzok/releases"><img src="https://flat.badgen.net/github/release/kogeletey/karzok" alt="latest release as a repository" /></a>
+</p>
+<p align="center">
+    <a href="https://karzok.re128.org"> Documentation </a>
+</p>
+<h1 id="karzok">Karzok</h1>
+<ul>
+<li>classless and frameworkless</li>
+<li>Jinja-like templates</li>
+<li>javascript is optional, needed only for search,math,alerts and dark mode</li>
+<li>no roundings and other strange design trends</li>
+</ul>
+<p><img src="https://zola.docs.saop.cc/themes/karzok/./screenshot.png" alt="screenshot" /></p>
+<h2 id="get-started">Get Started</h2>
+<ul>
+<li><a class="external" rel="external" href="https://karzok.re128.org/install/">find out more</a></li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li><a class="external" rel="external" href="https://nodejs.org/">Node.js</a></li>
+</ul>
+<h3 id="1-create-a-new-zola-site">1. Create a new zola site</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init zola_site</span></span></code></pre><h3 id="2-download-this-theme-to-you-themes-directory">2. Download this theme to you themes directory:</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://codeberg.org/kogeletey/karzok zola_site/themes</span></span></code></pre>
+<p>or install as submodule:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> zola_site</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span><span style="color: #9399B2;font-style: italic;"> # if your project is a git repository already, ignore this command</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://codeberg.org/kogeletey/karzok zola_site/themes</span></span></code></pre><h3 id="3-configuration-open-in-favorite-editor-config-toml">3. Configuration. Open in favorite editor <code>config.toml</code></h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://karzok.example.net&quot;</span><span style="color: #9399B2;font-style: italic;"> # set-up for production</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;karzok&quot;</span></span></code></pre>
+<p>See more in <a class="external" rel="external" href="https://karzok.re128.org/configure/">configuration</a></p>
+<h3 id="4-added-new-content">4. Added new content</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    cp</span><span style="color: #A6E3A1;"> ./themes/content/_index.md content/_index.md</span></span></code></pre>
+<p>how you can give freedom to your creativity</p>
+<h3 id="5-run-the-project">5. Run the project</h3>
+<p>i. development enviroment</p>
+<ol>
+<li>Install node dependencies needed to work</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">pnpm</span><span style="color: #A6E3A1;"> ci</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">pnpm</span><span style="color: #A6E3A1;"> run build</span></span></code></pre>
+<ol start="2">
+<li>Just run <code>zola serve</code> in the root path of the project</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre>
+<p>Open in favorite browser <a class="external" rel="external" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a>. Saved
+changes live reolad.</p>
+<p>ii. production enviroment</p>
+<ul>
+<li>with conainers</li>
+</ul>
+<ol>
+<li>Write file for container</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="docker"><span class="giallo-l"><span style="color: #CBA6F7;">FROM</span><span> ghcr.io/kogeletey/karzok:latest </span><span style="color: #CBA6F7;">AS</span><span> build-stage</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># or your path to image</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">ADD</span><span> . /www</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">WORKDIR</span><span> /www</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">RUN</span><span> sh /www/build.sh </span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">FROM</span><span> nginx:stable-alpine</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">COPY</span><span> --from=build-stage /www/public /usr/share/nginx/html</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">EXPOSE</span><span> 80</span></span></code></pre>
+<ol start="2">
+<li>Run the your container</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">docker</span><span style="color: #A6E3A1;"> build -t</span><span style="color: #94E2D5;"> &lt;</span><span style="color: #A6E3A1;">your_name_imag</span><span>e</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> .</span><span style="color: #9399B2;"> &amp;&amp;</span><span style="color: #F5C2E7;">\</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">docker</span><span style="color: #A6E3A1;"> run -d -p 8080:8080</span><span style="color: #94E2D5;"> &lt;</span><span style="color: #A6E3A1;">your_name_imag</span><span>e</span><span style="color: #94E2D5;">&gt;</span><span> </span></span></code></pre>
+<ul>
+<li>using gitlab-ci and gitlab-pages</li>
+</ul>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #89B4FA;">image</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> ghcr.io/kogeletey/karzok:latest</span><span style="color: #9399B2;font-style: italic;"> # or change use your registry</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #89B4FA;">pages</span><span style="color: #94E2D5;">:</span><span> </span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  script</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    -</span><span style="color: #A6E3A1;"> sh /www/build.sh</span><span>   </span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    -</span><span style="color: #A6E3A1;"> mv /www/public public</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  artifacts</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    paths</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> public/</span></span></code></pre>
+<p>Open in favorite browser <a class="external" rel="external" href="http://localhost:8080">https://localhost:8080</a></p>
+<h2 id="license">License</h2>
+<p>This program is Free Software: You can use, study share and improve it at your
+will. Specifically you can redistribute and/or modify it under the terms of the
+<a class="external" rel="external" href="https://mit-license.org/">MIT</a></p>
+<h2 id="contribute">Contribute</h2>
+<p>Make sure to read the <a class="external" rel="external" href="https://karzok.re128.org/reference/code_of_conduct/">Code of Conduct</a></p>
+<h3 id="find-bugs-and-come-up-with-features">Find bugs and come up with features</h3>
+<p>On the <a class="external" rel="external" href="https://codeberg.org/kogeletey/karzok/issues">codeberg issues</a> or
+<a class="external" rel="external" href="https://github.com/kogeletey/karzok/issues">github issues</a></p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

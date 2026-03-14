@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="minimal-dark | Zola">
+        <meta property="og:description" content="Clean and minimalistic dark theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;minimal-dark&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>minimal-dark | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;minimal-dark&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>minimal-dark</h1>
+            <p>Clean and minimalistic dark theme</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;viku.me">Vitaliy Kuznetsov</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.18.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;kuznetsov17&#x2F;minimal-dark">https:&#x2F;&#x2F;github.com&#x2F;kuznetsov17&#x2F;minimal-dark</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;kuznetsov17.github.io&#x2F;minimal-dark&#x2F;">https:&#x2F;&#x2F;kuznetsov17.github.io&#x2F;minimal-dark&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2024-02-07T14:01:03+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <p><a class="external" rel="external" href="https://github.com/kuznetsov17/minimal-dark/actions/workflows/zola-build.yml"><img src="https://github.com/kuznetsov17/minimal-dark/actions/workflows/zola-build.yml/badge.svg" alt="Deploy Zola with GitHub Pages" /></a></p>
+<h1 id="general">General</h1>
+<p>I am not the best webmaster, but should be somewhat responsive.
+I intentionally using the bigger fonts to make, feel free to change it in main.scss</p>
+<h1 id="light-mode">Light mode</h1>
+<p>Now light mode also supported.</p>
+<h1 id="important">Important</h1>
+<p>Please make sure to set up your base_url with trailing slash:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://kuznetsov17.github.io/minimal-dark/&quot;</span></span></code></pre><h1 id="comments">Comments</h1>
+<p>Theme supports <a class="external" rel="external" href="https://giscuss.app">Giscuss</a> for comments. The configuration is done via config.toml. Here you can see the example section used for this page deployment:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.giscus</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>data_repo</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;kuznetsov17/minimal-dark&quot;</span></span>
+<span class="giallo-l"><span>data_repo_id</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;R_kgDOLIfXYA&quot;</span></span>
+<span class="giallo-l"><span>data_category</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;General&quot;</span></span>
+<span class="giallo-l"><span>data_category_id</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;DIC_kwDOLIfXYM4Ccn56&quot;</span></span>
+<span class="giallo-l"><span>data_mapping</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;title&quot;</span></span>
+<span class="giallo-l"><span>data_strict</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;0&quot;</span></span>
+<span class="giallo-l"><span>data_reactions_enabled</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;0&quot;</span></span>
+<span class="giallo-l"><span>data_emit_metadata</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;0&quot;</span></span>
+<span class="giallo-l"><span>data_input_position</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;top&quot;</span></span>
+<span class="giallo-l"><span>data_theme</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;//kuznetsov17.github.io/minimal-dark/css/gs_dark.css&quot;</span></span>
+<span class="giallo-l"><span>data_lang</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;en&quot;</span></span>
+<span class="giallo-l"><span>crossorigin</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;anonymous&quot;</span></span>
+<span class="giallo-l"><span>nonce</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;&quot;</span></span></code></pre><h1 id="page-onfigurations">Page onfigurations</h1>
+<p>Customize the page blocks by setting configuration in <strong>[extra]</strong> section:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>copyright_string</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Сreated in %YEAR% for fun.&quot;</span><span style="color: #9399B2;font-style: italic;"> # the string displayed in footer. %YEAR% is replaced by current year on build</span></span>
+<span class="giallo-l"><span>show_copyright</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># enables / disables footer with copyright</span></span>
+<span class="giallo-l"><span>show_comments</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># enables / disables comments</span></span>
+<span class="giallo-l"><span>show_shares</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># enables / disables section with social share buttons</span></span>
+<span class="giallo-l"><span>show_toc</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># enables / disable TOC</span></span>
+<span class="giallo-l"><span>show_date</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># displays publication date in page</span></span></code></pre><h1 id="blog">Blog</h1>
+<p>I am using this theme for my <a class="external" rel="external" href="https://viku.me/notes/">notes</a>, or probably blog.
+The section template supports pagination, tags, sorts the pages by publication date. You may see the working example <a href="/notes/">here</a></p>
+<h1 id="config-toml-extras">config.toml extras</h1>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;John Doe&quot;</span><span style="color: #9399B2;font-style: italic;"> # author. Will be puth in page metadata</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Some description, if you somehow didn&#39;t set it in page / section settings&quot;</span></span>
+<span class="giallo-l"><span>logo_src</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;images/logo.svg&quot;</span><span style="color: #9399B2;font-style: italic;"> # logo src</span></span>
+<span class="giallo-l"><span>avatar_src</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;images/avatar.png&quot;</span><span style="color: #9399B2;font-style: italic;"> # avatar src</span></span>
+<span class="giallo-l"><span>index_page</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;index&quot;</span><span style="color: #9399B2;font-style: italic;"> # name of the index page. Should be one of top_menu to make things work</span></span>
+<span class="giallo-l"><span>top_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;index&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;">&quot;features&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;">&quot;notes&quot;</span><span style="color: #9399B2;">]</span><span style="color: #9399B2;font-style: italic;"> # Menu items</span></span>
+<span class="giallo-l"><span>copyright_string</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Сreated by John Doe in 2024 – %YEAR% for fun.&quot;</span><span style="color: #9399B2;font-style: italic;"> # footer content. %YEAR% will be replaced with current year</span></span>
+<span class="giallo-l"><span>nonce</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;${SOME_HASH_VALUE}&quot;</span><span style="color: #9399B2;font-style: italic;"> # used for JavaScript src nonce</span></span></code></pre><h1 id="shortcodes">Shortcodes</h1>
+<h2 id="callouts">Callouts</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>{% callout(type = &#39;warning&#39;) %}</span></span>
+<span class="giallo-l"><span>This is an example of **Warning** callout. [Some link](#)</span></span>
+<span class="giallo-l"><span>{% end %}</span></span>
+<span class="giallo-l"><span>{% callout(type = &#39;alert&#39;) %}</span></span>
+<span class="giallo-l"><span>This is an example of **Alert** callout. [Some link](#)</span></span>
+<span class="giallo-l"><span>{% end %}</span></span>
+<span class="giallo-l"><span>{% callout(type = &#39;info&#39;) %}</span></span>
+<span class="giallo-l"><span>This is an example of **Info** callout. [Some link](#)</span></span>
+<span class="giallo-l"><span>{% end %}</span></span></code></pre><h2 id="timeline">Timeline</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>{% timeline() %}</span></span>
+<span class="giallo-l"><span>[{</span></span>
+<span class="giallo-l"><span>    &quot;title&quot;:&quot;Lorem Ipsum Event&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;body&quot;:&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;date&quot;:&quot;Jul-2023&quot;</span></span>
+<span class="giallo-l"><span>},</span></span>
+<span class="giallo-l"><span>{</span></span>
+<span class="giallo-l"><span>    &quot;title&quot;:&quot;Lorem Ipsum event 2&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;body&quot;:&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.&quot;,</span></span>
+<span class="giallo-l"><span>    &quot;date&quot;:&quot;Jun-2022&quot;</span></span>
+<span class="giallo-l"><span>}]</span></span>
+<span class="giallo-l"><span>{% end %}</span></span></code></pre><h1 id="thanks-to">Thanks to</h1>
+<ul>
+<li><a class="external" rel="external" href="https://giscuss.app">Giscuss</a> for excellent comments system</li>
+<li><a class="external" rel="external" href="https://icons.getbootstrap.com">bootstrap icons</a> for great social icons</li>
+</ul>
+<h1 id="screenshot">Screenshot</h1>
+<p><img src="https://github.com/kuznetsov17/minimal-dark/blob/main/screenshot.png?raw=true" alt="Screenshot" /></p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="DeepThought | Zola">
+        <meta property="og:description" content="A simple blog theme focused on writing powered by Bulma and Zola.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;deepthought&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>DeepThought | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;deepthought&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>DeepThought</h1>
+            <p>A simple blog theme focused on writing powered by Bulma and Zola.</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;ratanshreshtha.dev">Ratan Kulshreshtha</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.14.1 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;RatanShreshtha&#x2F;DeepThought">https:&#x2F;&#x2F;github.com&#x2F;RatanShreshtha&#x2F;DeepThought</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;deepthought-theme.netlify.app&#x2F;">https:&#x2F;&#x2F;deepthought-theme.netlify.app&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2023-04-09T15:52:10+05:30</p>
+        </div>
+    </div>
+
+    <hr>
+    <div align="center">
+  <img src="static/images/avatar.png" alt="logo" width="200" height="auto" />
+  <h1>DeepThought</h1>
+  <p>
+    A simple blog theme focused on writing powered by Bulma and Zola.
+  </p>
+<!-- Badges -->
+<p>
+  <a href="https://github.com/RatanShreshtha/DeepThought/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/RatanShreshtha/DeepThought" alt="contributors" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/RatanShreshtha/DeepThought" alt="last update" />
+  </a>
+  <a href="https://github.com/RatanShreshtha/DeepThought/network/members">
+    <img src="https://img.shields.io/github/forks/RatanShreshtha/DeepThought" alt="forks" />
+  </a>
+  <a href="https://github.com/RatanShreshtha/DeepThought/stargazers">
+    <img src="https://img.shields.io/github/stars/RatanShreshtha/DeepThought" alt="stars" />
+  </a>
+  <a href="https://github.com/RatanShreshtha/DeepThought/issues/">
+    <img src="https://img.shields.io/github/issues/RatanShreshtha/DeepThought" alt="open issues" />
+  </a>
+  <a href="https://github.com/RatanShreshtha/DeepThought/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/RatanShreshtha/DeepThought.svg" alt="license" />
+  </a>
+</p>
+<h4>
+    <a href="https://github.com/RatanShreshtha/DeepThought/">View Demo</a>
+  <span> · </span>
+    <a href="https://github.com/RatanShreshtha/DeepThought">Documentation</a>
+  <span> · </span>
+    <a href="https://github.com/RatanShreshtha/DeepThought/issues/">Report Bug</a>
+  <span> · </span>
+    <a href="https://github.com/RatanShreshtha/DeepThought/issues/">Request Feature</a>
+  </h4>
+</div>
+<br />
+<!-- Table of Contents -->
+<h1 id="notebook-with-decorative-cover-table-of-contents">:notebook_with_decorative_cover: Table of Contents</h1>
+<ul>
+<li>:notebook_with_decorative_cover: Table of Contents
+<ul>
+<li>:star2: About the Project
+<ul>
+<li>:camera: Screenshots</li>
+<li>:space_invader: Tech Stack</li>
+<li>:dart: Features</li>
+</ul>
+</li>
+<li>:toolbox: Getting Started
+<ul>
+<li>:bangbang: Prerequisites</li>
+<li>:gear: Installation</li>
+<li>:running: Run Locally</li>
+<li>:triangular_flag_on_post: Deployment</li>
+</ul>
+</li>
+<li>:eyes: Usage
+<ul>
+<li>Multilingual Navbar</li>
+<li>KaTeX math formula support
+<ul>
+<li>Automatic rendering without short codes</li>
+</ul>
+</li>
+<li>Elasticlunr search in other language</li>
+</ul>
+</li>
+<li>:wave: Contributing</li>
+<li>:warning: License</li>
+<li>:handshake: Contact</li>
+<li>:gem: Acknowledgements</li>
+</ul>
+</li>
+</ul>
+<!-- About the Project -->
+<h2 id="star2-about-the-project">:star2: About the Project</h2>
+<!-- Screenshots -->
+<h3 id="camera-screenshots">:camera: Screenshots</h3>
+<div align="center"> 
+  <img src="screenshot.png" alt="screenshot" />
+</div>
+<!-- TechStack -->
+<h3 id="space-invader-tech-stack">:space_invader: Tech Stack</h3>
+<ul>
+<li><a class="external" rel="external" href="https://www.getzola.org/">Zola</a> - Your one-stop static site engine</li>
+<li><a class="external" rel="external" href="https://bulma.io/">Bulma</a> - The modern CSS framework that just works.</li>
+</ul>
+<!-- Features -->
+<h3 id="dart-features">:dart: Features</h3>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Dark Mode</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Pagination</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Search</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Charts</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Maps</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Diagrams</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Galleria</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Analytics</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Comments</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Categories</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Social Links</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Multilingual Navbar</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Katex</li>
+</ul>
+<!-- Getting Started -->
+<h2 id="toolbox-getting-started">:toolbox: Getting Started</h2>
+<!-- Prerequisites -->
+<h3 id="bangbang-prerequisites">:bangbang: Prerequisites</h3>
+<p>You need static site generator (SSG) <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a> installed in your machine to use this theme follow their guide on <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/overview/">getting started</a>.</p>
+<!-- Installation -->
+<h3 id="gear-installation">:gear: Installation</h3>
+<p>Follow zola's guide on <a class="external" rel="external" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">installing a theme</a>.
+Make sure to add <code>theme = "DeepThought"</code> to your <code>config.toml</code></p>
+<p><strong>Check zola version (only 0.9.0+)</strong>
+Just to double-check to make sure you have the right version. It is not supported to use this theme with a version under 0.14.1.</p>
+<!-- Run Locally -->
+<h3 id="running-run-locally">:running: Run Locally</h3>
+<p>Go into your sites directory and type <code>zola serve</code>. You should see your new site at <code>localhost:1111</code>.</p>
+<p><strong>NOTE</strong>: you must provide the theme options variables in <code>config.toml</code> to serve a functioning site</p>
+<!-- Deployment -->
+<h3 id="triangular-flag-on-post-deployment">:triangular_flag_on_post: Deployment</h3>
+<p><a class="external" rel="external" href="https://www.getzola.org">Zola</a> already has great documentation for deploying to <a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/netlify/">Netlify</a> or <a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/github-pages/">Github Pages</a>. I won't bore you with a regurgitated explanation.</p>
+<!-- Usage -->
+<h2 id="eyes-usage">:eyes: Usage</h2>
+<p>Following options are available with the <code>DeepThought</code> theme</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable external libraries</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>katex</span><span style="color: #9399B2;">.</span><span>enabled</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>katex</span><span style="color: #9399B2;">.</span><span>auto_render</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>chart</span><span style="color: #9399B2;">.</span><span>enabled</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>mermaid</span><span style="color: #9399B2;">.</span><span>enabled</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>galleria</span><span style="color: #9399B2;">.</span><span>enabled</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>navbar_items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;"> {</span><span> code</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en&quot;</span><span style="color: #9399B2;">,</span><span> nav_items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/posts&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Posts&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/docs&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Docs&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/tags&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/categories&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Categories&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;"> ]},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Add links to favicon, you can use https://realfavicongenerator.net/ to generate favicon for your site</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.favicon</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>favicon_16x16</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/favicon-16x16.png&quot;</span></span>
+<span class="giallo-l"><span>favicon_32x32</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/favicon-32x32.png&quot;</span></span>
+<span class="giallo-l"><span>apple_touch_icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/apple-touch-icon.png&quot;</span></span>
+<span class="giallo-l"><span>safari_pinned_tab</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/safari-pinned-tab.svg&quot;</span></span>
+<span class="giallo-l"><span>webmanifest</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/site.webmanifest&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Author details</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.author</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;DeepThought&quot;</span></span>
+<span class="giallo-l"><span>avatar</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/images/avatar.png&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Social links</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.social</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>email</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;email_id&gt;&quot;</span></span>
+<span class="giallo-l"><span>facebook</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;facebook_username&gt;&quot;</span></span>
+<span class="giallo-l"><span>github</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;github_username&gt;&quot;</span></span>
+<span class="giallo-l"><span>gitlab</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;gitlab_username&gt;&quot;</span></span>
+<span class="giallo-l"><span>keybase</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;keybase_username&gt;&quot;</span></span>
+<span class="giallo-l"><span>linkedin</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;linkedin_username&gt;&quot;</span></span>
+<span class="giallo-l"><span>stackoverflow</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;stackoverflow_userid&gt;&quot;</span></span>
+<span class="giallo-l"><span>twitter</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;twitter_username&gt;&quot;</span></span>
+<span class="giallo-l"><span>instagram</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;instagram_username&gt;&quot;</span></span>
+<span class="giallo-l"><span>behance</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;behance_username&gt;&quot;</span></span>
+<span class="giallo-l"><span>google_scholar</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;googlescholar_userid&gt;&quot;</span></span>
+<span class="giallo-l"><span>orcid</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;orcid_userid&gt;&quot;</span></span>
+<span class="giallo-l"><span>mastodon_username</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;mastadon_username&gt;&quot;</span></span>
+<span class="giallo-l"><span>mastodon_server</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;mastodon_server&gt;&quot;</span><span> (if not set, defaults to mastodon.social)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># To add google analytics</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.analytics</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>google</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;your_gtag&gt;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># To add disqus comments</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.commenting</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>disqus</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;your_disqus_shortname&gt;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># To enable mapbox maps</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.mapbox</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>enabled</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>access_token</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;your_access_token&gt;&quot;</span></span></code></pre><h4 id="multilingual-navbar">Multilingual Navbar</h4>
+<p>If you want to have a multilingual navbar on your blog, you must add your new code language in the <a class="external" rel="external" href="https://www.getzola.org/documentation/content/multilingual/#configuration">languages</a> array in the <code>config.toml</code> file.</p>
+<p><strong>NOTE</strong>: Don't add you default language to this array</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>languages</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>code</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fr&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>code</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;es&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>And then create and array of nav item for each language:</p>
+<p><strong>NOTE</strong>: Include your default language in this array</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>navbar_items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;"> {</span><span> code</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en&quot;</span><span style="color: #9399B2;">,</span><span> nav_items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/posts&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Posts&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/docs&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Docs&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/tags&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/categories&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Categories&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;"> ]},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;"> {</span><span> code</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fr&quot;</span><span style="color: #9399B2;">,</span><span> nav_items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Connexion&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;"> ]},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;"> {</span><span> code</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;es&quot;</span><span style="color: #9399B2;">,</span><span> nav_items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Publicationes&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Registrar&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;"> ]}</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>en:</p>
+<p><img src="https://zola.docs.saop.cc/themes/deepthought/./screenshot_navbar_en.png" alt="DeepThought" /></p>
+<p>fr:</p>
+<p><img src="https://zola.docs.saop.cc/themes/deepthought/./screenshot_navbar_fr.png" alt="DeepThought" /></p>
+<p>es:</p>
+<p><img src="https://zola.docs.saop.cc/themes/deepthought/./screenshot_navbar_es.png" alt="DeepThought" /></p>
+<h3 id="katex-math-formula-support">KaTeX math formula support</h3>
+<p>This theme contains math formula support using <a class="external" rel="external" href="https://katex.org/">KaTeX</a>,
+which can be enabled by setting <code>katex.enabled = true</code> in the <code>extra</code> section
+of <code>config.toml</code>.</p>
+<p>After enabling this extension, the <code>katex</code> short code can be used in documents:</p>
+<ul>
+<li><code>{{ katex(body="\KaTeX") }}</code> to typeset a math formula inlined into a text,
+similar to <code>$...$</code> in LaTeX</li>
+<li><code>{% katex(block=true) %}\KaTeX{% end %}</code> to typeset a block of math formulas,
+similar to <code>$$...$$</code> in LaTeX</li>
+</ul>
+<h4 id="automatic-rendering-without-short-codes">Automatic rendering without short codes</h4>
+<p>Optionally, <code>\\( \KaTeX \\)</code> / <code>$ \KaTeX $</code> inline and <code>\\[ \KaTeX \\]</code> / <code>$$ \KaTeX $$</code>
+block-style automatic rendering is also supported, if enabled in the config
+by setting <code>katex.auto_render = true</code>.</p>
+<h3 id="elasticlunr-search-in-other-language">Elasticlunr search in other language</h3>
+<p>Zola use <a class="external" rel="external" href="https://github.com/weixsong/elasticlunr.js">Elasticlunr.js</a> to add full-text search feature.
+To use languages other than en (English), you need to add some javascript files. See the Zola's issue <a class="external" rel="external" href="https://github.com/getzola/zola/issues/1349">#1349</a>.
+By placing the <code>templates/base.html</code>on your project and using the <code>other_lang_search_js</code> block, you can load the required additional javascript files in the right timing.</p>
+<p>e.g. <code>templates/base.html</code></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{%/* extends &quot;DeepThought/templates/base.html&quot; */%} {%/* block other_lang_search_js */%}</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">script</span><span style="color: #F9E2AF;"> src</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;{{ get_url(path=&#39;js/lunr.stemmer.support.js&#39;) }}&quot;</span><span style="color: #94E2D5;">&gt;</span><span>&lt;</span><span style="color: #94E2D5;">/</span><span style="color: #89B4FA;">script</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">script</span><span style="color: #F9E2AF;"> src</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;{{ get_url(path=&#39;js/tinyseg.js&#39;) }}&quot;</span><span style="color: #94E2D5;">&gt;</span><span>&lt;</span><span style="color: #94E2D5;">/</span><span style="color: #89B4FA;">script</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">script</span><span style="color: #F9E2AF;"> src</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;{{/* get_url(path=&#39;js/lunr.&#39; ~ lang ~ &#39;.js&#39;) */}}&quot;</span><span style="color: #94E2D5;">&gt;</span><span>&lt;</span><span style="color: #94E2D5;">/</span><span style="color: #89B4FA;">script</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">script</span><span style="color: #F9E2AF;"> src</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;{{ get_url(path=&#39;js/search.js&#39;) }}&quot;</span><span style="color: #94E2D5;">&gt;</span><span>&lt;</span><span style="color: #94E2D5;">/</span><span style="color: #89B4FA;">script</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span>{%/* endblock */%}</span></span></code></pre>
+<p>More detailed explanations are aound in <a class="external" rel="external" href="https://github.com/weixsong/elasticlunr.js#other-languages-example-in-browser">elasticlunr's documents</a>.</p>
+<!-- Contributing -->
+<h2 id="wave-contributing">:wave: Contributing</h2>
+<a href="https://github.com/RatanShreshtha/DeepThought/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=RatanShreshtha/DeepThought" />
+</a>
+<p>Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.</p>
+<ul>
+<li>Fork the Project</li>
+<li>Create your Feature Branch (git checkout -b feature/AmazingFeature)</li>
+<li>Commit your Changes (git commit -m 'Add some AmazingFeature')</li>
+<li>Push to the Branch (git push origin feature/AmazingFeature)</li>
+<li>Open a Pull Request</li>
+</ul>
+<!-- License -->
+<h2 id="warning-license">:warning: License</h2>
+<p>Distributed under the MIT License. See  <code>LICENSE</code> for more information.</p>
+<!-- Contact -->
+<h2 id="handshake-contact">:handshake: Contact</h2>
+<p>Ratan Kulshreshtha - <a class="external" rel="external" href="https://twitter.com/RatanShreshtha">@RatanShreshtha</a> - ratan.shreshtha[at]gmail.com</p>
+<p>Project Link: <a class="external" rel="external" href="https://github.com/RatanShreshtha/DeepThought">https://github.com/RatanShreshtha/DeepThought</a></p>
+<!-- Acknowledgments -->
+<h2 id="gem-acknowledgements">:gem: Acknowledgements</h2>
+<p>Use this section to mention useful resources and libraries that you have used in your projects.</p>
+<ul>
+<li><a class="external" rel="external" href="https://shields.io/">Shields.io</a></li>
+<li><a class="external" rel="external" href="https://choosealicense.com">Choose an Open Source License</a></li>
+<li><a class="external" rel="external" href="https://github.com/matiassingers/awesome-readme">Awesome README</a></li>
+<li><a class="external" rel="external" href="https://github.com/ikatyang/emoji-cheat-sheet/blob/main/README.md#travel--places">Emoji Cheat Sheet</a></li>
+<li><a class="external" rel="external" href="https://kenwheeler.github.io/slick">Slick Carousel</a></li>
+<li><a class="external" rel="external" href="https://fontawesome.com">Font Awesome</a></li>
+<li><a class="external" rel="external" href="https://unsplash.com/">Unsplash</a></li>
+</ul>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="BelResume | Zola">
+        <meta property="og:description" content="A beautiful, modern, and minimal single-page resume site">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;belresume&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>BelResume | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;belresume&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>BelResume</h1>
+            <p>A beautiful, modern, and minimal single-page resume site</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;cx48.dev">cx48</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.20.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;cx48&#x2F;BelResume">https:&#x2F;&#x2F;github.com&#x2F;cx48&#x2F;BelResume</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;cx48.github.io&#x2F;BelResume&#x2F;">https:&#x2F;&#x2F;cx48.github.io&#x2F;BelResume&#x2F;</a></p>
+            
+            
+              <div>
+              <p>标签:</p>
+              <ul style="list-style-type: none;">
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;minimal&#x2F;">minimal</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;resume&#x2F;">resume</a></li>
+                
+              
+              </div>
+            
+            <p><b>最后更新:</b> 2025-04-30T17:15:25+05:30</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="belresume">BelResumé</h1>
+<p><em><strong>A beautiful, modern, and minimal single-page resume site</strong></em></p>
+<p>Powered by <a class="external" rel="external" href="https://getzola.org/">Zola</a>. Styled with Tailwind CSS &amp; Font Awesome</p>
+<blockquote>
+<p>“Bel” in French means beautiful — this is your beautiful resumé!</p>
+</blockquote>
+<h2 id="preview">Preview</h2>
+<p><a class="external" rel="external" href="https://cx48.github.io/BelResume/">BelResumé</a> can be deployed for free using GitHub Pages or Vercel</p>
+<h4 id="light-mode">Light Mode</h4>
+<p><img src="https://raw.githubusercontent.com/cx48/BelResume/refs/heads/main/static/images/light.png" alt="Light Mode" /></p>
+<h4 id="dark-mode">Dark Mode</h4>
+<p><img src="https://raw.githubusercontent.com/cx48/BelResume/refs/heads/main/static/images/dark.png" alt="Dark Mode" /></p>
+<h4 id="pagespeed-insights">PageSpeed Insights</h4>
+<p><img src="https://raw.githubusercontent.com/cx48/BelResume/refs/heads/main/static/images/pagespeed.png" alt="PageSpeed" /></p>
+<h2 id="project-structure">Project Structure</h2>
+<ul>
+<li><strong>config.toml</strong>: Site metadata</li>
+<li><strong>static/</strong>: <code>css/style.css</code>, <code>js/script.js</code></li>
+<li><strong>templates/index.html</strong>: Main layout (calls all partials)</li>
+<li><strong>templates/partials/</strong>: All resume sections are modular
+<ul>
+<li><code>header.html</code>: Name, job title, contact links</li>
+<li><code>experience.html</code>: Work history (companies, roles, achievements)</li>
+<li><code>education.html</code>: Schools, degrees, specializations</li>
+<li><code>projects.html</code>: Key project summaries with tags</li>
+<li><code>skills.html</code>: Visual skill bars (adjust widths)</li>
+<li><code>certifications.html</code>: Cert title + authority + year</li>
+<li><code>languages.html</code>: Language proficiency (bars &amp; labels)</li>
+<li><code>awards.html</code>: Award names + year + issuer</li>
+</ul>
+</li>
+</ul>
+<h2 id="quick-start">Quick Start</h2>
+<ol>
+<li>
+<p><strong>Install Zola</strong>: <a class="external" rel="external" href="https://getzola.org/documentation/getting-started/installation/">https://getzola.org/documentation/getting-started/installation/</a></p>
+</li>
+<li>
+<p><strong>Clone repository</strong>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/cx48/BelResume</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> BelResume</span></span></code></pre></li>
+<li>
+<p><strong>Serve locally</strong>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre>
+<p>After making necessary changes to HTML files present under <code>partials/</code> visit <a class="external" rel="external" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a></p>
+</li>
+<li>
+<p><strong>Build static site</strong>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> build</span></span></code></pre>
+<p>All files output to <code>/public</code></p>
+</li>
+</ol>
+<h2 id="deployment-guide">Deployment Guide</h2>
+<blockquote>
+<p>Deploy to GitHub Pages</p>
+</blockquote>
+<ol>
+<li>
+<p>Run Zola build:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> build</span></span></code></pre></li>
+<li>
+<p>Commit and push the contents of the <code>public/</code> folder to your <code>gh-pages</code> branch</p>
+</li>
+<li>
+<p>In GitHub repo settings, enable Pages from the <code>/public</code> folder or <code>gh-pages</code> branch</p>
+</li>
+<li>
+<p>Your site will be live at <code>https://yourusername.github.io/BelResume/</code></p>
+</li>
+</ol>
+<blockquote>
+<p>Deploy to Vercel</p>
+</blockquote>
+<ol>
+<li>
+<p>Login to <a class="external" rel="external" href="https://vercel.com">Vercel</a> and import your GitHub repo</p>
+</li>
+<li>
+<p>Set <strong>Build Command</strong> to:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> build</span></span></code></pre></li>
+<li>
+<p>Set <strong>Output Directory</strong> to:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">public</span></span></code></pre></li>
+<li>
+<p>Set <strong>Framework Preset</strong> to <code>Other</code></p>
+</li>
+<li>
+<p>Click <strong>Deploy</strong></p>
+</li>
+</ol>
+<p>Zola will build and serve from the <code>public/</code> folder automatically on every push</p>
+<h2 id="customization-guide">Customization Guide</h2>
+<p>To update your resume, simply open the required HTML file under <code>partials/</code> and modify it as per your requirement</p>
+<h3 id="1-config-toml">1. <strong>config.toml</strong></h3>
+<p>Update site-wide metadata:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;John Doe&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Senior Software Engineer&quot;</span></span>
+<span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://yourdomain.com&quot;</span></span></code></pre><h3 id="2-partials-header-html">2. <strong>partials/header.html</strong></h3>
+<p>Edit your name, role, email, phone, location, LinkedIn link. Example:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">h1</span><span style="color: #F9E2AF;"> class</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;text-3xl font-bold&quot;</span><span style="color: #94E2D5;">&gt;</span><span>John Doe</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">h1</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">h2</span><span style="color: #F9E2AF;"> class</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;text-xl text-[var(--primary)] font-semibold&quot;</span><span style="color: #94E2D5;">&gt;</span><span>Senior Software Engineer</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">h2</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h3 id="3-partials-experience-html">3. <strong>partials/experience.html</strong></h3>
+<p>Replace job titles, companies, durations, and bullet points.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">h3</span><span style="color: #F9E2AF;"> class</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;font-semibold&quot;</span><span style="color: #94E2D5;">&gt;</span><span>Senior Developer</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">span</span><span style="color: #94E2D5;">&gt;</span><span>2020–Present</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">span</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">ul</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">  &lt;</span><span style="color: #89B4FA;">li</span><span style="color: #94E2D5;">&gt;</span><span>Improved system performance by 30%</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">li</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">ul</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h3 id="4-partials-education-html">4. <strong>partials/education.html</strong></h3>
+<p>List your degrees, schools, GPA or honors:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span><span>Master of CS</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span><span>Stanford University — GPA: 3.9</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h3 id="5-partials-projects-html">5. <strong>partials/projects.html</strong></h3>
+<p>List project names, stacks used, short descriptions.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span><span>E-commerce Platform</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">span</span><span style="color: #F9E2AF;"> class</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;tag&quot;</span><span style="color: #94E2D5;">&gt;</span><span>React</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">span</span><span style="color: #94E2D5;">&gt; &lt;</span><span style="color: #89B4FA;">span</span><span style="color: #F9E2AF;"> class</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;tag&quot;</span><span style="color: #94E2D5;">&gt;</span><span>Node.js</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">span</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h3 id="6-partials-skills-html">6. <strong>partials/skills.html</strong></h3>
+<p>Update skill bars by adjusting the width in <code>style="width: 90%"</code>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span><span>JavaScript</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">div</span><span style="color: #F9E2AF;"> class</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;progress&quot;</span><span style="color: #F9E2AF;"> style</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;</span><span>width: 95%&quot;</span><span style="color: #94E2D5;">&gt;&lt;/</span><span style="color: #89B4FA;">div</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h3 id="7-partials-certifications-html">7. <strong>partials/certifications.html</strong></h3>
+<p>List certificates with name, organization, and date:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span><span>AWS Certified Architect</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span><span>Amazon – 2022</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h3 id="8-partials-languages-html">8. <strong>partials/languages.html</strong></h3>
+<p>Change language names, levels, and progress widths:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">span</span><span style="color: #94E2D5;">&gt;</span><span>English</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">span</span><span style="color: #94E2D5;">&gt; &lt;</span><span style="color: #89B4FA;">span</span><span style="color: #94E2D5;">&gt;</span><span>Native</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">span</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">div</span><span style="color: #F9E2AF;"> style</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;</span><span>width: 100%&quot;</span><span style="color: #94E2D5;">&gt;&lt;/</span><span style="color: #89B4FA;">div</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h3 id="9-partials-awards-html">9. <strong>partials/awards.html</strong></h3>
+<p>Highlight awards with name and source:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span><span>Best Hackathon Project</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span><span>DefCon 2025</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h2 id="get-in-touch">Get in Touch</h2>
+<p>Have feedback, questions, or just want to say hello?<br />
+Feel free to <a class="external" rel="external" href="https://github.com/cx48/BelResume/issues">open an issue</a> or reach out directly:</p>
+<blockquote>
+<p>Check my GitHub profile for contact links</p>
+</blockquote>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Zeabur | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Zeabur | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>Zeabur</h1>
+    <p>在本教程中，我们将指导你将 Zola 站点部署到 <a class="external" rel="external" href="https://zeabur.com">Zeabur</a> 的过程。Zeabur 提供无缝的部署体验，具有自动 SSL 证书和全球边缘网络交付。让我们开始吧！</p>
+<h2 id="xian-jue-tiao-jian"><a class="zola-anchor" href="#xian-jue-tiao-jian" aria-label="Anchor link for: xian-jue-tiao-jian">🔗</a>先决条件</h2>
+<ul>
+<li>本地机器上的 Zola 站点项目。</li>
+<li>一个 GitHub 帐户和托管在 GitHub 上的 Zola 站点项目仓库。</li>
+<li>一个 Zeabur 帐户。如果你没有，请在 <a class="external" rel="external" href="https://zeabur.com/login">这里</a> 注册。</li>
+</ul>
+<h2 id="di-yi-bu-zai-zeabur-shang-chuang-jian-xiang-mu"><a class="zola-anchor" href="#di-yi-bu-zai-zeabur-shang-chuang-jian-xiang-mu" aria-label="Anchor link for: di-yi-bu-zai-zeabur-shang-chuang-jian-xiang-mu">🔗</a>第一步：在 Zeabur 上创建项目</h2>
+<ol>
+<li>登录到你的 Zeabur 帐户。</li>
+<li>导航到仪表板并点击 <strong>Create Project</strong> 按钮。</li>
+<li>按照屏幕上的说明设置新项目。</li>
+</ol>
+<h2 id="di-er-bu-jiang-ni-de-zola-wen-jian-tui-song-dao-github"><a class="zola-anchor" href="#di-er-bu-jiang-ni-de-zola-wen-jian-tui-song-dao-github" aria-label="Anchor link for: di-er-bu-jiang-ni-de-zola-wen-jian-tui-song-dao-github">🔗</a>第二步：将你的 Zola 文件推送到 GitHub</h2>
+<ol>
+<li>
+<p>如果你还没有在你的 Zola 项目文件夹中初始化 Git 仓库：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> add .</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> commit -m &quot;Initial commit&quot;</span></span></code></pre></li>
+<li>
+<p>将你的 Zola 项目推送到 GitHub：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> remote add origin</span><span style="color: #94E2D5;"> &lt;</span><span style="color: #A6E3A1;">your-github-repo-ur</span><span>l</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> branch -M main</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> push -u origin main</span></span></code></pre></li>
+</ol>
+<p>将 <code>&lt;your-github-repo-url&gt;</code> 替换为你的 GitHub 仓库的 URL。</p>
+<h2 id="di-san-bu-zai-zeabur-shang-chuang-jian-fu-wu"><a class="zola-anchor" href="#di-san-bu-zai-zeabur-shang-chuang-jian-fu-wu" aria-label="Anchor link for: di-san-bu-zai-zeabur-shang-chuang-jian-fu-wu">🔗</a>第三步：在 Zeabur 上创建服务</h2>
+<ol>
+<li>回到你的 Zeabur 仪表板，点击 <strong>Create Service</strong>。</li>
+<li>选择 <strong>git</strong> 选项以连接你的 GitHub 仓库。</li>
+</ol>
+<h2 id="di-si-bu-xuan-ze-ni-de-zola-cang-ku"><a class="zola-anchor" href="#di-si-bu-xuan-ze-ni-de-zola-cang-ku" aria-label="Anchor link for: di-si-bu-xuan-ze-ni-de-zola-cang-ku">🔗</a>第四步：选择你的 Zola 仓库</h2>
+<ol>
+<li>从仓库列表中，选择你的 Zola 项目所在的仓库。</li>
+</ol>
+<h2 id="di-wu-bu-zi-dong-bu-shu"><a class="zola-anchor" href="#di-wu-bu-zi-dong-bu-shu" aria-label="Anchor link for: di-wu-bu-zi-dong-bu-shu">🔗</a>第五步：自动部署</h2>
+<p>Zeabur 将自动检测到你正在部署 Zola 项目，并将为你处理部署过程，无需任何额外的配置。</p>
+<p>要使用特定版本的 Zola，请在项目设置中将 <a class="external" rel="external" href="https://zeabur.com/docs/environment/variables"><code>ZOLA_VERSION</code></a> 环境变量设置为有效的发布标签，例如 <code>0.17.2</code>。</p>
+<h2 id="di-liu-bu-yu-ming-bang-ding"><a class="zola-anchor" href="#di-liu-bu-yu-ming-bang-ding" aria-label="Anchor link for: di-liu-bu-yu-ming-bang-ding">🔗</a>第六步：域名绑定</h2>
+<ol>
+<li>部署完成后，将域名绑定到你的服务。</li>
+<li>你可以选择使用免费的 <code>.zeabur.app</code> 子域或绑定你自己的自定义域名。</li>
+<li>Zeabur 将自动为你的域名提供免费的 SSL 证书，确保你的访问者安全浏览。</li>
+</ol>
+<h2 id="di-qi-bu-ni-de-zhan-dian-yi-shang-xian"><a class="zola-anchor" href="#di-qi-bu-ni-de-zhan-dian-yi-shang-xian" aria-label="Anchor link for: di-qi-bu-ni-de-zhan-dian-yi-shang-xian">🔗</a>第七步：你的站点已上线！</h2>
+<p>恭喜！你的 Zola 站点现已部署并上线，通过 Zeabur 的边缘网络提供服务。</p>
+<p>你现在可以在你设置的域名上访问你的网站。</p>
+
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

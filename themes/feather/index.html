@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="feather | Zola">
+        <meta property="og:description" content="A fuzzy blog theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;feather&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>feather | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;feather&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>feather</h1>
+            <p>A fuzzy blog theme</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;doomy.org">doomy</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.19.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;piedoom&#x2F;feather">https:&#x2F;&#x2F;github.com&#x2F;piedoom&#x2F;feather</a></p>
+            
+              <p><b>在线演示:</b> <a href="http:&#x2F;&#x2F;feather.doomy.org&#x2F;">http:&#x2F;&#x2F;feather.doomy.org&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2026-01-26T07:40:26-05:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="feather">feather</h1>
+<p>A lightweight blog theme for <a class="external" rel="external" href="https://www.getzola.org/">Zola</a> (and to my knowledge the first of now
+many themes created specifically for Zola).</p>
+<h1 id="live-demo-link"><a class="external" rel="external" href="https://feather.doomy.org/">Live demo 🔗</a></h1>
+<p><a class="external" rel="external" href="https://feather.doomy.org/"><img src="https://zola.docs.saop.cc/themes/feather/screenshot.png" alt="screenshot" /></a></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Fully responsive</li>
+<li>Designed for legibility</li>
+<li>All JS is non-critical and fails gracefully</li>
+</ul>
+<h2 id="options">Options</h2>
+<p>Zola allows themes to <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/configuration/">define <code>[extra]</code> variables</a>
+in the config. Here's a full list of theme variables with example values and comments.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Regular variables you might want to set...</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;My site&quot;</span><span style="color: #9399B2;font-style: italic;"> # Otherwise, this will read &quot;Home&quot; in the nav</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.feather</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Specify a specific theme to use, or use system prefs</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If set, the theme switcher button is hidden</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;light&quot;</span></span>
+<span class="giallo-l"><span>head</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;script&gt;&lt;/script&gt;&quot;</span><span style="color: #9399B2;font-style: italic;"> # add anything to the head</span></span>
+<span class="giallo-l"><span>hide_nav_image</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # hide the navigation image</span></span>
+<span class="giallo-l"><span>disqus_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;my-site-com&quot;</span><span style="color: #9399B2;font-style: italic;"> # site domain if you want disqus comments</span></span>
+<span class="giallo-l"><span>cusdis_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;12312-31231123-123123123&quot;</span><span style="color: #9399B2;font-style: italic;"> # cusdis id if you use their comment service</span></span>
+<span class="giallo-l"><span>social</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://mastodon.social/@doomy&quot;</span><span style="color: #9399B2;">,</span><span> display</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;@doomy@mastodon.social&quot;</span><span style="color: #9399B2;"> }</span><span style="color: #9399B2;font-style: italic;"> # generic social to show on pages</span></span>
+<span class="giallo-l"><span>timezone</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;America/New_York&quot;</span><span style="color: #9399B2;font-style: italic;"> # timezone to calculate article post times</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.feather.analytics</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>goatcounter_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;mydomain-com&quot;</span><span style="color: #9399B2;font-style: italic;"> # privacy-focused analytics https://www.goatcounter.com</span></span></code></pre>
+<p>Per post, these options are available:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.feather.opengraph</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;my_image.jpg&quot;</span><span style="color: #9399B2;font-style: italic;"> # Assumes asset colocation</span></span></code></pre><h1 id="usage">Usage</h1>
+<p>Using feather is easy.  Install <a class="external" rel="external" href="https://www.getzola.org/">Zola</a> and follow
+<a class="external" rel="external" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">the guide for creating a site and using a theme</a>.  Then,
+add <code>theme = "feather"</code> to your <code>config.toml</code> file.</p>
+<p>If you intend to publish your site to GitHub Pages, please check out <a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/github-pages/">this
+tutorial</a>.</p>
+<p>You can specify <code>tags</code> taxonomies .</p>
+<h1 id="developing-contributing">Developing &amp; Contributing</h1>
+<p>Because feather comes with example content, you can run the theme just like any Zola
+blog with <code>zola serve</code>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

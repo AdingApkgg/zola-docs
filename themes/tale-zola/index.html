@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="tale-zola | Zola">
+        <meta property="og:description" content="Tala-Zola is a minimal Zola theme helping you to build a nice and seo-ready blog.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tale-zola&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>tale-zola | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tale-zola&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>tale-zola</h1>
+            <p>Tala-Zola is a minimal Zola theme helping you to build a nice and seo-ready blog.</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;aaranxu">Aaran Xu</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.13.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;aaranxu&#x2F;tale-zola">https:&#x2F;&#x2F;github.com&#x2F;aaranxu&#x2F;tale-zola</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;tale-zola.netlify.app&#x2F;">https:&#x2F;&#x2F;tale-zola.netlify.app&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2021-12-05T00:18:16+08:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="tale-zola-theme">Tale-Zola Theme</h1>
+<p>Tala-Zola is a minimal <a class="external" rel="external" href="https://www.getzola.org">Zola</a> theme helping you to
+build a light and seo-ready blog, and you can customise any information of the
+blog without having to modify the codes of the template. Tala-Zola is a port of
+the Jekyll theme <a class="external" rel="external" href="https://github.com/chesterhow/tale">Tale</a>.</p>
+<h2 id="demo">Demo</h2>
+<p><a class="external" rel="external" href="https://tale-zola.netlify.app/">Live Preview</a>.</p>
+<h2 id="requirements">Requirements</h2>
+<p>Before using the theme, you need to install the <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a> ≥ 0.13.0.</p>
+<h2 id="quick-start">Quick Start</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone git@github.com:aaranxu/tale-zola.git</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> tale-zola</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># open http://127.0.0.1:1111/ in the browser</span></span></code></pre><h2 id="installation">Installation</h2>
+<p>Just earlier we showed you how to run the theme directly. Now we start to
+install the theme in an existing site step by step.</p>
+<h3 id="step-1-create-a-new-zola-site">Step 1: Create a new zola site</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init blog</span></span></code></pre><h3 id="step-2-install-tale-zola">Step 2: Install Tale-Zola</h3>
+<p>Download this theme to your themes directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> blog/themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone git@github.com:aaranxu/tale-zola.git</span></span></code></pre>
+<p>Or install as a submodule:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> blog</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span><span style="color: #9399B2;font-style: italic;">  # if your project is a git repository already, ignore this command</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add git@github.com:aaranxu/tale-zola.git themes/tale-zola</span></span></code></pre><h3 id="step-3-configuration">Step 3: Configuration</h3>
+<p>Enable the theme in your <code>config.toml</code> in the site derectory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tale-zola&quot;</span></span></code></pre>
+<p>Or copy the <code>config.toml.example</code> from the theme directory to your project's
+root directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> themes/tale-zola/config.toml.example config.toml</span></span></code></pre><h3 id="step-4-add-new-content">Step 4: Add new content</h3>
+<p>Add an <code>_index.md</code> file to your <code>content</code> directory with some lines as bellows.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>sort_by = &quot;date&quot;</span></span>
+<span class="giallo-l"><span>paginate_by = 5</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p>Add a blog article file with a filename <code>first-post.md</code> (or other filenames) and
+input some content in it.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;First Post&quot;</span></span>
+<span class="giallo-l"><span>date = 2021-05-01T18:18:18+00:00</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>[taxonomies]</span></span>
+<span class="giallo-l"><span>tags = [&quot;Post&quot;]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>[extra]</span></span>
+<span class="giallo-l"><span>author = &quot;Your Name&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>This is my first post.</span></span></code></pre>
+<p>Or you can just copy the content from the theme directory to your project:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> -r themes/tale-zola/content .</span></span></code></pre><h3 id="step-5-run-the-project">Step 5: Run the project</h3>
+<p>Just run <code>zola serve</code> in the root path of the project:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre>
+<p>Tale-Zola will start the Zola development web server accessible by default at
+<code>http://127.0.0.1:1111</code>. Saved changes will live reload in the browser.</p>
+<h2 id="customisation">Customisation</h2>
+<p>You can customize your configurations, templates and content for yourself. Look
+at the <code>config.toml</code>, <code>theme.toml</code> and templates files in this repo for an idea.</p>
+<p>In most cases you only need to modify the content in the <code>config.toml</code> file to
+custom your blog, including different expressions in your speaking language.</p>
+<h3 id="necessary-configurations">Necessary Configurations</h3>
+<p>Add some information for your blog.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;You Blog Title&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;The description of your blog.&quot;</span></span></code></pre>
+<p>Set the tags for the site.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>Add menus and footer information for your blog.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span># Menu items</span></span>
+<span class="giallo-l"><span>[[extra.menu]]</span></span>
+<span class="giallo-l"><span>name = &quot;Posts&quot;</span></span>
+<span class="giallo-l"><span>url = &quot;/&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>[[extra.menu]]</span></span>
+<span class="giallo-l"><span>name = &quot;Tags&quot;</span></span>
+<span class="giallo-l"><span>url = &quot;tags&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>[[extra.menu]]</span></span>
+<span class="giallo-l"><span>name = &quot;About&quot;</span></span>
+<span class="giallo-l"><span>url = &quot;about&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>[extra.footer]</span></span>
+<span class="giallo-l"><span>start_year = &quot;2020&quot;  # start year of the site</span></span>
+<span class="giallo-l"><span>end_year = &quot;2021&quot;    # end year of the site</span></span>
+<span class="giallo-l"><span>info = &quot;The information on the footer.&quot;</span></span></code></pre><h4 id="option-configurations">Option Configurations</h4>
+<p>Add your name as the author name for the blog globally.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Name&quot;</span></span></code></pre>
+<p>Use Google Analytics. Add your own Google Analytics ID.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>google_analytics</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;UA—XXXXXXXX-X&quot;</span></span></code></pre>
+<p>Whether to use Disqus globally and set to your disqus id name.
+And you can enable the disqus on per post page with <code>extra.disqus</code> option</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>disqus</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"><span>disqus_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span></code></pre>
+<p>Code syntax highlighting. See also <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting">syntax highlighting</a>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>markdown</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>highlight_code</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>highlight_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;base16-ocean-light&quot;</span></span></code></pre>
+<p>Use KaTeX to support the math notation</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>katex</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
+<blockquote>
+<p>Note: You can also add the <code>katex</code> option on per mardown file of the page or section.</p>
+</blockquote>
+<p>Set date format in the site</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>timeformat</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;%B %e, %Y&quot;</span><span style="color: #9399B2;font-style: italic;"> # e.g. June 14, 2021, and this is the default format</span></span></code></pre>
+<p>SEO settings, like Open Graph + Twitter Cards</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.seo</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># this image will be used as fallback if a page has no image of its own</span></span>
+<span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tale.png&quot;</span></span>
+<span class="giallo-l"><span>image_height</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 50</span></span>
+<span class="giallo-l"><span>image_width</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 50</span></span>
+<span class="giallo-l"><span>og_locale</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en_US&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">  [</span><span>extra.seo.twitter</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>  site</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;twitter_accout&quot;</span></span>
+<span class="giallo-l"><span>  creator</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;twitter_accout&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">  [</span><span>extra.seo.facebook</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>  admins</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;facebook_accout&quot;</span></span>
+<span class="giallo-l"><span>  publisher</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;facebook_accout&quot;</span></span></code></pre>
+<p>Change the words in your speaking language.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.expressions</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>home</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span><span style="color: #9399B2;font-style: italic;">              # The homepage&#39;s name</span></span>
+<span class="giallo-l"><span>pinned</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Pinned&quot;</span><span style="color: #9399B2;font-style: italic;">          # On the header of the post list</span></span>
+<span class="giallo-l"><span>written_by</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Written by&quot;</span><span style="color: #9399B2;font-style: italic;">  # Like: Written by Aaran Xu</span></span>
+<span class="giallo-l"><span>on</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;on&quot;</span><span style="color: #9399B2;font-style: italic;">                  # Like: on May 3, 2021</span></span>
+<span class="giallo-l"><span>top</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Top&quot;</span><span style="color: #9399B2;font-style: italic;">                # Go to the top of the page in the post</span></span>
+<span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags&quot;</span><span style="color: #9399B2;font-style: italic;">              # In the page of Tags</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># disqus comments block</span></span>
+<span class="giallo-l"><span>disqus_discussion</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Discussion and feedback&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The contents of the 404 page</span></span>
+<span class="giallo-l"><span>p404</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;404: Page not found&quot;</span></span>
+<span class="giallo-l"><span>p404_info</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Oops! We can&#39;t seem to find the page you are looking for.&quot;</span></span>
+<span class="giallo-l"><span>p404_back_home_start</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Let&#39;s&quot;</span></span>
+<span class="giallo-l"><span>p404_back_home_with_link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;head back home&quot;</span></span>
+<span class="giallo-l"><span>p404_back_home_end</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;.&quot;</span></span></code></pre><h3 id="custom-css-styles">Custom CSS styles</h3>
+<p>Just add your own styles to <code>sass/_custom.scss</code> file.</p>
+<h2 id="reporting-issues">Reporting Issues</h2>
+<p>We use GitHub Issues as the official bug tracker for the <strong>Tale-Zola</strong>. Please
+search <a class="external" rel="external" href="https://github.com/aaranxu/tale-zola/issues">existing issues</a>. It’s
+possible someone has already reported the same problem.</p>
+<p>If your problem or idea is not addressed yet, <a class="external" rel="external" href="https://github.com/aaranxu/tale-zola/issues/new">open a new issue</a>.</p>
+<h2 id="contributing">Contributing</h2>
+<p>We'd love your help! Please see <a href="https://zola.docs.saop.cc/themes/tale-zola/./CONTRIBUTING.md">CONTRIBUTING.md</a> to learn
+about the kinds of contributions we're looking for.</p>
+<h2 id="license">License</h2>
+<p>Tale-Zola is distributed under the terms of the
+<a href="https://zola.docs.saop.cc/themes/tale-zola/LICENSE">MIT license</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

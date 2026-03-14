@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="概览 | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>概览 | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>概览</h1>
+    <p>Zola 使用目录结构来确定站点结构。
+<code>content</code> 目录中的每个子目录代表一个 <a href="https://zola.docs.saop.cc/documentation/content/section/">section</a>，其中包含 <a href="https://zola.docs.saop.cc/documentation/content/page/">pages</a>（你的 <code>.md</code> 文件）。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">.</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">└──</span><span style="color: #A6E3A1;"> content</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    ├──</span><span style="color: #A6E3A1;"> content</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    │  </span><span style="color: #A6E3A1;"> └── something.md //</span><span> -</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> https://mywebsite.com/content/something/</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    ├──</span><span style="color: #A6E3A1;"> blog</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    │  </span><span style="color: #A6E3A1;"> ├── cli-usage.md //</span><span> -</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> https://mywebsite.com/blog/cli-usage/</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    │  </span><span style="color: #A6E3A1;"> ├── configuration.md //</span><span> -</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> https://mywebsite.com/blog/configuration/</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    │  </span><span style="color: #A6E3A1;"> ├── directory-structure.md //</span><span> -</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> https://mywebsite.com/blog/directory-structure/</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    │  </span><span style="color: #A6E3A1;"> ├── _index.md //</span><span> -</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> https://mywebsite.com/blog/</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    │  </span><span style="color: #A6E3A1;"> └── installation.md //</span><span> -</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> https://mywebsite.com/blog/installation/</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    └──</span><span style="color: #A6E3A1;"> landing</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">        └──</span><span style="color: #A6E3A1;"> _index.md //</span><span> -</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> https://mywebsite.com/landing/</span></span></code></pre>
+<p>每个页面路径（<code>base_url</code> 之后的部分，例如 <code>blog/cli-usage/</code>）可以通过更改 <a href="https://zola.docs.saop.cc/documentation/content/page/#front-matter">页面 front-matter</a> 的 <code>path</code> 或 <code>slug</code> 属性来得自定义。</p>
+<p>你可能已经注意到上面示例中名为 <code>_index.md</code> 的文件。
+此文件用于存储 section 本身的元数据和内容，不被视为页面。</p>
+<p>为了确保理解本文档其余部分中使用的术语，让我们回顾一下上面的示例。</p>
+<p>在这种情况下，<code>content</code> 目录有三个 <code>sections</code>：<code>content</code>、<code>blog</code> 和 <code>landing</code>。<code>content</code> section 只有一个页面（<code>something.md</code>），<code>landing</code> section 没有页面，<code>blog</code> section 有 4 个页面（<code>cli-usage.md</code>、<code>configuration.md</code>、<code>directory-structure.md</code> 和 <code>installation.md</code>）。</p>
+<p>Section 可以无限嵌套。</p>
+<h2 id="zi-yuan-gong-zhi-asset-colocation"><a class="zola-anchor" href="#zi-yuan-gong-zhi-asset-colocation" aria-label="Anchor link for: zi-yuan-gong-zhi-asset-colocation">🔗</a>资源共置 (Asset colocation)</h2>
+<p><code>content</code> 目录不限于标记文件。很自然地，我们希望将页面和一些相关资源（如图像或电子表格）放在一起。Zola 对 section 和页面都开箱即用地支持这种模式。</p>
+<p>你在页面/section 目录中添加的所有非 Markdown 文件将在构建站点时与生成的页面一起复制，这允许我们使用相对路径访问它们。</p>
+<p>具有共置资源的页面不应直接放在其 section 目录中（例如 <code>latest-experiment.md</code>），而应作为专用目录中的 <code>index.md</code> 文件（<code>latest-experiment/index.md</code>），如下所示：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">└──</span><span style="color: #A6E3A1;"> research</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    ├──</span><span style="color: #A6E3A1;"> latest-experiment</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    │</span><span style="color: #A6E3A1;">   ├── index.md</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    │</span><span style="color: #A6E3A1;">   └── javascript.js</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    ├──</span><span style="color: #A6E3A1;"> _index.md</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    └──</span><span style="color: #A6E3A1;"> research.jpg</span></span></code></pre>
+<p>通过此设置，你可以直接在 Markdown 中从 'research' section 访问 <code>research.jpg</code>，从 'latest-experiment' 页面访问 <code>javascript.js</code>：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>查看完整程序 </span><span style="color: #B4BEFE;">[这里]</span><span style="color: #9399B2;">(</span><span style="color: #89B4FA;">javascript.js</span><span style="color: #9399B2;">)</span><span>。它</span><span style="color: #9399B2;">**</span><span style="color: #F38BA8;font-weight: bold;">真的很酷的自由软件</span><span style="color: #9399B2;">**</span><span>！</span></span></code></pre>
+<p>默认情况下，此页面的 slug 将是目录名称，因此其永久链接将是 <code>https://example.com/research/latest-experiment/</code>。</p>
+<h3 id="cong-zi-yuan-zhong-pai-chu-wen-jian"><a class="zola-anchor" href="#cong-zi-yuan-zhong-pai-chu-wen-jian" aria-label="Anchor link for: cong-zi-yuan-zhong-pai-chu-wen-jian">🔗</a>从资源中排除文件</h3>
+<p>可以使用配置文件中的 <a href="https://zola.docs.saop.cc/documentation/getting-started/configuration/">ignored_content</a> 设置忽略选定的资源文件。
+例如，假设你有几个要在网站上链接的代码文件。
+为了可维护性，你想将代码保留在与 Markdown 文件相同的目录中，但不想将构建文件夹复制到公共网站。你可以通过在配置文件中设置 <code>ignored_content</code> 来实现此目的：</p>
+<p>（注意：<code>{Cargo.lock,target}</code> 与 <code>{Cargo.lock, target}</code> <em>不同</em>）</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>ignored_content = [&quot;code_articles/**/{Cargo.lock,target}, *.rs&quot;]</span></span></code></pre><h2 id="jing-tai-zi-yuan"><a class="zola-anchor" href="#jing-tai-zi-yuan" aria-label="Anchor link for: jing-tai-zi-yuan">🔗</a>静态资源</h2>
+<p>除了将内容文件放置在 <code>content</code> 目录中之外，你还可以将内容文件放置在 <code>static</code> 目录中。你在 <code>static</code> 目录中放置的任何文件/目录都将不加修改地复制到 <code>public</code> 目录。</p>
+<p>通常，你可能会将全站资源（如 CSS 文件、站点 favicon、站点徽标或全站 JavaScript）放在 static 目录的根目录中。你还可以将任何你希望不加修改地包含（即不作为 Markdown 文件解析）的 HTML 或其他文件放入 static 目录中。</p>
+<p>请注意，static 目录提供了共置的_替代方案_。例如，假设你有以下目录结构（上面介绍的结构的简化版本）：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">.</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">└──</span><span style="color: #A6E3A1;"> content</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    └──</span><span style="color: #A6E3A1;"> blog</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">        ├── configuration</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">        │</span><span style="color: #A6E3A1;">    └── index.md //</span><span> -</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> https://mywebsite.com/blog/configuration/</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">        └── _index.md //</span><span> -</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> https://mywebsite.com/blog/</span></span></code></pre>
+<p>要向 <code>https://mywebsite.com/blog/configuration</code> 页面添加图像，你有三个选项：</p>
+<ul>
+<li>你可以将图像保存到 <code>content/blog/configuration</code> 目录，然后从 <code>index.md</code> 页面使用相对路径链接到它。这是上面 <strong>共置</strong> 下描述的方法。</li>
+<li>你可以将图像保存到 <code>static/blog/configuration</code> 目录，并以与共置完全相同的方式链接到它。如果你这样做，生成的文件将与共置图像获得的文件相同；唯一的区别是所有静态文件将保存在 static 目录中，而不是 content 目录中。选择取决于你的组织需求。</li>
+<li>或者你可以将图像保存到 static 目录中的任意目录。例如，你可以将所有图像保存到 <code>static/images</code>。使用这种方法，你不能再使用相对链接。相反，你必须使用绝对链接 <code>images/[filename]</code> 来访问你的图像。这对于小型站点或将图像与多个页面关联的站点（例如，出现在每个页面上的徽标图像）可能更可取。</li>
+</ul>
+
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

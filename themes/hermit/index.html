@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Hermit_Zola | Zola">
+        <meta property="og:description" content="Minimal Zola theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hermit&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Hermit_Zola | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hermit&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>Hermit_Zola</h1>
+            <p>Minimal Zola theme</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;versbinarii.gitlab.io&#x2F;blog&#x2F;">VersBinarii</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.4.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;VersBinarii&#x2F;hermit_zola">https:&#x2F;&#x2F;github.com&#x2F;VersBinarii&#x2F;hermit_zola</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;versbinarii.gitlab.io&#x2F;blog&#x2F;">https:&#x2F;&#x2F;versbinarii.gitlab.io&#x2F;blog&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2025-04-06T11:23:44+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <p><a class="external" rel="external" href="https://travis-ci.org/VersBinarii/hermit_zola"><img src="https://travis-ci.org/VersBinarii/hermit_zola.svg?branch=master" alt="Build Status" /></a></p>
+<h1 id="hermit">Hermit</h1>
+<blockquote>
+<p>this is a port of the <a class="external" rel="external" href="https://github.com/Track3/hermit">Hermit theme</a> for <a class="external" rel="external" href="https://www.getzola.org/">Zola</a></p>
+</blockquote>
+<p>Hermit is a  minimal &amp; fast Zola theme for bloggers.</p>
+<p><img src="https://zola.docs.saop.cc/themes/hermit/screenshot.png" alt="screenshot" /></p>
+<p><a class="external" rel="external" href="https://versbinarii.gitlab.io/blog/">View demo</a></p>
+<h2 id="installation">Installation</h2>
+<p>First download the theme to your <code>themes</code> directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cd themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git clone https://github.com/VersBinarii/hermit_zola</span></span></code></pre>
+<p>and then enable it in your <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;hermit_zola&quot;</span></span></code></pre><h2 id="configuration">Configuration</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>home_subtitle</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Some profound and catchy statement&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>footer_copyright</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &#39; &amp;#183; &lt;a href=&quot;https://creativecommons.org/licenses/by-nc/4.0/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CC BY-NC 4.0&lt;/a&gt;&#39;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>hermit_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/posts&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Posts&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/about&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;About&quot;</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>hermit_social</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;twitter&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://twitter.com&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;email&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;mailto:author@domain.com&quot;</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.highlightjs</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>enable</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>clipboard</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;vs2015&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.disqus</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>enable</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Take this from your Disqus account</span></span>
+<span class="giallo-l"><span>shortname</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;my-supa-dupa-blog&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.author</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;The Author&quot;</span></span>
+<span class="giallo-l"><span>email</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;author@domain.com&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.google_analytics</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>enable</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"><span>id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;UA-4XXXXXXX-X&quot;</span></span></code></pre><h3 id="table-of-content">Table of content</h3>
+<p>Table of content can be enabled by adding</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>[extra]</span></span>
+<span class="giallo-l"><span>toc=true</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p>to the page front matter. Icon will then appear above the page title that will
+allow to toggle the ToC.</p>
+<h2 id="license">License</h2>
+<p><a href="https://zola.docs.saop.cc/themes/hermit/LICENSE">MIT</a></p>
+<p>Thanks to <a class="external" rel="external" href="https://github.com/Track3">Track3</a> for creating the original!</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

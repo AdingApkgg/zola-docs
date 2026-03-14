@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Prism | Zola">
+        <meta property="og:description" content="A modern Zola theme featuring glassmorphism design">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;prism&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Prism | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;prism&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>Prism</h1>
+            <p>A modern Zola theme featuring glassmorphism design</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;jahongir.ru">Jahongir Ahmadaliev</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.19.0 及以上</p>
+            
+            <p><b>许可证:</b> AGPL-3.0</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;jahamars&#x2F;zola-prism">https:&#x2F;&#x2F;github.com&#x2F;jahamars&#x2F;zola-prism</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;xpltt.vercel.app&#x2F;">https:&#x2F;&#x2F;xpltt.vercel.app&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2026-03-09T09:27:07+05:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="prism">Prism</h1>
+<p>A modern Zola theme featuring glassmorphism design
+<a class="external" rel="external" href="https://xpltt.vercel.app/">demo</a></p>
+<p><img src="https://zola.docs.saop.cc/themes/prism/./static/screenshot.png" alt="Screenshot" /></p>
+<h2 id="installation">Installation</h2>
+<p>Clone the theme into your <code>themes</code> directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/jahamars/prism themes/prism</span></span></code></pre>
+<p>Enable the theme in your <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;prism&quot;</span></span></code></pre><h2 id="configuration">Configuration</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># CORE ZOLA SETTINGS</span></span>
+<span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://your-site.com/&quot;</span><span style="color: #9399B2;font-style: italic;">          # Your site URL</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Site Title&quot;</span><span style="color: #9399B2;font-style: italic;">                     # Site title (shown in header)</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your site description&quot;</span><span style="color: #9399B2;font-style: italic;">         # Meta description for SEO</span></span>
+<span class="giallo-l"><span>default_language</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en&quot;</span><span style="color: #9399B2;font-style: italic;">                       # Site language code (en, ru, etc)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>compile_sass</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                           # Compile Sass to CSS</span></span>
+<span class="giallo-l"><span>minify_html</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                            # Minify HTML output for performance</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># TAXONOMIES - Categories, tags, authors</span></span>
+<span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;"> },</span><span style="color: #9399B2;font-style: italic;">           # Enable tags with RSS feed</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;authors&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;"> },</span><span style="color: #9399B2;font-style: italic;">        # Enable authors with RSS feed</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;categories&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;"> }</span><span style="color: #9399B2;font-style: italic;">      # Enable categories with RSS feed</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># MARKDOWN SETTINGS</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>markdown</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>render_emoji</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                           # Convert :smile: to 😊</span></span>
+<span class="giallo-l"><span>external_links_target_blank</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">            # Open external links in new tab</span></span>
+<span class="giallo-l"><span>external_links_no_follow</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">               # Add rel=&quot;nofollow&quot; to external links</span></span>
+<span class="giallo-l"><span>external_links_no_referrer</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">             # Add rel=&quot;noreferrer&quot; for privacy</span></span>
+<span class="giallo-l"><span>smart_punctuation</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                      # Convert -- to em-dash, etc</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Syntax highlighting, see https://github.com/getzola/giallo for options</span></span>
+<span class="giallo-l"><span>highlighting</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span> theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github-dark&quot;</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># THEME SETTINGS [extra]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Navigation</span></span>
+<span class="giallo-l"><span>home</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;back&quot;</span><span style="color: #9399B2;font-style: italic;">                                 # Text for home button (e.g., &quot;home&quot;, &quot;back&quot;, &quot;←&quot;)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Background options (choose ONE):</span></span>
+<span class="giallo-l"><span>background_image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com/bg.jpg&quot;</span><span style="color: #9399B2;font-style: italic;">  # URL to background image</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># OR</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># background_gradient = &quot;linear-gradient(135deg, #1e3a8a 0%, #7c3aed 50%, #ec4899 100%)&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Table of Contents</span></span>
+<span class="giallo-l"><span>show_toc</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                               # Show table of contents on posts</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Main navigation menu</span></span>
+<span class="giallo-l"><span>sam_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;posts&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/posts&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;about&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/about&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/username/repo&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;authors&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/authors&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/tags&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;categories&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/categories&quot;</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>sam_bottom_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                        # Show navigation menu at page bottom</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Post metadata display</span></span>
+<span class="giallo-l"><span>show_word_count</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                        # Display word count on posts</span></span>
+<span class="giallo-l"><span>show_reading_time</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                      # Display estimated reading time</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Comments</span></span>
+<span class="giallo-l"><span>comments</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                               # Enable/disable Giscus comments globally</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># SEO &amp; Meta</span></span>
+<span class="giallo-l"><span>keywords</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;blog, tech, programming&quot;</span><span style="color: #9399B2;font-style: italic;">          # Meta keywords (optional)</span></span>
+<span class="giallo-l"><span>banner</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;static/banner.png&quot;</span><span style="color: #9399B2;font-style: italic;">                  # OG:image for social media (optional)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># GISCUS COMMENTS - GitHub-based comments system</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.giscus</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>enabled</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                                # Enable Giscus comments</span></span>
+<span class="giallo-l"><span>repo</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;username/repo&quot;</span><span style="color: #9399B2;font-style: italic;">                        # GitHub repo for comments</span></span>
+<span class="giallo-l"><span>repo_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;R_xxxxx&quot;</span><span style="color: #9399B2;font-style: italic;">                           # GitHub repo ID (get from giscus.app)</span></span>
+<span class="giallo-l"><span>category</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Announcements&quot;</span><span style="color: #9399B2;font-style: italic;">                    # Discussion category</span></span>
+<span class="giallo-l"><span>category_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;DIC_xxxxx&quot;</span><span style="color: #9399B2;font-style: italic;">                     # Category ID (get from giscus.app)</span></span>
+<span class="giallo-l"><span>mapping</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;pathname&quot;</span><span style="color: #9399B2;font-style: italic;">                          # Map comments to: pathname, url, title, og:title</span></span>
+<span class="giallo-l"><span>strict</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;0&quot;</span><span style="color: #9399B2;font-style: italic;">                                  # Strict title matching (0 or 1)</span></span>
+<span class="giallo-l"><span>reactions_enabled</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;1&quot;</span><span style="color: #9399B2;font-style: italic;">                       # Enable reactions (0 or 1)</span></span>
+<span class="giallo-l"><span>emit_metadata</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;0&quot;</span><span style="color: #9399B2;font-style: italic;">                           # Emit discussion metadata (0 or 1)</span></span>
+<span class="giallo-l"><span>input_position</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;bottom&quot;</span><span style="color: #9399B2;font-style: italic;">                     # Comment input: top or bottom</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;catppuccin_frappe&quot;</span><span style="color: #9399B2;font-style: italic;">                   # Giscus theme (see giscus.app for options)</span></span>
+<span class="giallo-l"><span>lang</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en&quot;</span><span style="color: #9399B2;font-style: italic;">                                   # Language code</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># FOOTER</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.sam_footer</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Built using Zola &amp; Prism theme&quot;</span><span style="color: #9399B2;font-style: italic;">       # Footer text (supports HTML)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># AUTHOR INFO - Used in meta tags and structured data</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.author</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Name&quot;</span><span style="color: #9399B2;font-style: italic;">                            # Author name</span></span>
+<span class="giallo-l"><span>email</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;your@email.com&quot;</span><span style="color: #9399B2;font-style: italic;">                      # Author email (optional)</span></span>
+<span class="giallo-l"><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://yoursite.com&quot;</span><span style="color: #9399B2;font-style: italic;">                  # Author website (optional)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># FEATURES - Toggle theme features on/off</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.features</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>copy_code_button</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                       # Show copy button on code blocks</span></span>
+<span class="giallo-l"><span>reading_progress_bar</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                   # Show reading progress bar at top</span></span>
+<span class="giallo-l"><span>smooth_scroll</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                          # Enable smooth scrolling for anchor links</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># ANALYTICS (optional) - Add if needed</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.analytics</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>google_analytics_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;G-XXXXXXXXXX&quot;</span><span style="color: #9399B2;font-style: italic;">          # Google Analytics </span></span>
+<span class="giallo-l"></span></code></pre><h3 id="page-level-settings-in-front-matter-of-md-files">Page level settings (in front matter of .md files)</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;Post Title&quot;</span></span>
+<span class="giallo-l"><span>date = 2024-01-15 </span></span>
+<span class="giallo-l"><span style="color: #B4BEFE;">[taxonomies]</span></span>
+<span class="giallo-l"><span>tags = [&quot;rust&quot;, &quot;web&quot;]</span></span>
+<span class="giallo-l"><span>authors = [&quot;Author Name&quot;]</span></span>
+<span class="giallo-l"><span>categories = </span><span style="color: #B4BEFE;">[&quot;Programming&quot;]</span><span> </span></span>
+<span class="giallo-l"><span style="color: #B4BEFE;">[extra]</span></span>
+<span class="giallo-l"><span>toc = true                     # Override global show_toc setting</span></span>
+<span class="giallo-l"><span>no_header = false              # Hide page header</span></span>
+<span class="giallo-l"><span>no_comments = false            # Disable comments on this page</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre><h3 id="additional-notes">Additional notes</h3>
+<p>Get Giscus settings from: https://giscus.app/
+Syntax highlighting themes list: https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting
+Date format guide: https://docs.rs/chrono/latest/chrono/format/strftime/index.html</p>
+<h2 id="license">License</h2>
+<p>AGPL-3.0</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

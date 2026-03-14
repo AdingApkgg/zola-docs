@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Block | Zola">
+        <meta property="og:description" content="Blog&#x2F;Black theme for Zola">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;block&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Block | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;block&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>Block</h1>
+            <p>Blog&#x2F;Black theme for Zola</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;ssiyad.com">Sabu Siyad</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.21.0 及以上</p>
+            
+            <p><b>许可证:</b> GPLv3</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;ssiyad&#x2F;block">https:&#x2F;&#x2F;github.com&#x2F;ssiyad&#x2F;block</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;block-zola.netlify.app&#x2F;">https:&#x2F;&#x2F;block-zola.netlify.app&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2026-01-28T12:43:48+05:30</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="block">Block</h1>
+<p>Pure black, blog focused theme for <a class="external" rel="external" href="https://www.getzola.org/">Zola</a>, powered by
+<a class="external" rel="external" href="https://tailwindcss.com/">TailwindCSS</a>.</p>
+<p>Demo: https://block-zola.netlify.app/</p>
+<p><img src="https://zola.docs.saop.cc/themes/block/./screenshot.png" alt="sreenshot" /></p>
+<h2 id="setup">Setup</h2>
+<p>In your zola site directory</p>
+<ul>
+<li>
+<p>Get theme</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/ssiyad/block themes/block</span></span></code></pre></li>
+<li>
+<p>Build CSS</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes/block</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">npm</span><span style="color: #A6E3A1;"> ci</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">npm</span><span style="color: #A6E3A1;"> run css:build</span></span></code></pre></li>
+<li>
+<p>Build your site</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> ../..</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> build</span></span></code></pre></li>
+</ul>
+<h2 id="variables">Variables</h2>
+<p>You can use the following variables in your <code>config.toml</code>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.intro</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>heading</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Blog/Black theme for Zola&quot;</span></span>
+<span class="giallo-l"><span>subheading</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Thoughts, stories and ideas.&quot;</span></span>
+<span class="giallo-l"><span>avatar_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://picsum.photos/200&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.footer</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>license_text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span></code></pre>
+<p>Check <a href="https://zola.docs.saop.cc/themes/block/./theme.toml">theme.toml</a> for more info.</p>
+<h2 id="blocks">Blocks</h2>
+<p>You can override individual blocks by following
+<a class="external" rel="external" href="https://www.getzola.org/documentation/themes/extending-a-theme/#overriding-a-block">this</a>.</p>
+<p>Example: <code>templates/base_layout.html</code></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{%/* extends &quot;block/templates/base_layout.html&quot; */%}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>{%/* block license_text */%}</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">  &lt;</span><span style="color: #89B4FA;">div</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span>    The content for this site is</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">a</span></span>
+<span class="giallo-l"><span style="color: #F9E2AF;">      href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;</span></span>
+<span class="giallo-l"><span style="color: #F9E2AF;">      target</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;_blank&quot;</span></span>
+<span class="giallo-l"><span style="color: #F9E2AF;">      class</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;font-medium&quot;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">      &gt;</span><span>CC-BY-SA</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">a</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">    &gt;</span><span>. The</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">a</span></span>
+<span class="giallo-l"><span style="color: #F9E2AF;">      href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://github.com/ssiyad/ssiyad.github.io&quot;</span></span>
+<span class="giallo-l"><span style="color: #F9E2AF;">      target</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;_blank&quot;</span></span>
+<span class="giallo-l"><span style="color: #F9E2AF;">      class</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;font-medium&quot;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">      &gt;</span><span>code for this site</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">a</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">    &gt;</span></span>
+<span class="giallo-l"><span>    is</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">a</span></span>
+<span class="giallo-l"><span style="color: #F9E2AF;">      href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://www.gnu.org/licenses/gpl-3.0.en.html&quot;</span></span>
+<span class="giallo-l"><span style="color: #F9E2AF;">      target</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;_blank&quot;</span></span>
+<span class="giallo-l"><span style="color: #F9E2AF;">      class</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;font-medium&quot;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">      &gt;</span><span>GPLv3</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">a</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">    &gt;</span><span>.</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">  &lt;/</span><span style="color: #89B4FA;">div</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span>{%/* endblock */%}</span></span></code></pre><h2 id="self-promotion">Self Promotion</h2>
+<p>Like this project? Give it a star! ⭐, and spread the word! 🚀. And if you are
+feeling especially charitable, follow <a class="external" rel="external" href="https://ssiyad.com">Sabu Siyad</a> on
+<a class="external" rel="external" href="https://github.com/ssiyad">GitHub</a>. Thanks!</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

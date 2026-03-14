@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Cela | Zola">
+        <meta property="og:description" content="A minimalist documentation&#x2F;blog theme.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;cela&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Cela | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;cela&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>Cela</h1>
+            <p>A minimalist documentation&#x2F;blog theme.</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;edwardzcn-decade">Edward Zhang</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.19.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;edwardzcn-decade&#x2F;cela">https:&#x2F;&#x2F;github.com&#x2F;edwardzcn-decade&#x2F;cela</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;edwardzcn-decade.github.io&#x2F;cela&#x2F;">https:&#x2F;&#x2F;edwardzcn-decade.github.io&#x2F;cela&#x2F;</a></p>
+            
+            
+              <div>
+              <p>标签:</p>
+              <ul style="list-style-type: none;">
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;blog&#x2F;">blog</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;documentation&#x2F;">documentation</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;lightweight&#x2F;">lightweight</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;minimal&#x2F;">minimal</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;responsive&#x2F;">responsive</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;search&#x2F;">search</a></li>
+                
+              
+              </div>
+            
+            <p><b>最后更新:</b> 2025-12-06T11:43:01+08:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="cela">Cela</h1>
+<p align="center">
+  <a href="https://edwardzcn-decade.github.io/cela"><img src="https://img.shields.io/badge/Cela-f8f8f8?style=for-the-badge"></a>
+  <a href="https://www.getzola.org"><img src="https://img.shields.io/badge/Zola-f8f8f8?style=for-the-badge&logo=zola&logoColor=black"></a>
+</p>
+<p><em>Cela</em> is a simple, lightweight Zola theme, inspired by <a class="external" rel="external" href="https://github.com/adityatelange/hugo-PaperMod">Hugo PaperMod</a>.</p>
+<p>The style sheet is adapted from <a class="external" rel="external" href="https://github.com/catppuccin/catppuccin">Catppuccin</a>.
+If you like it, please give it a 🌟 on GitHub. Thanks!</p>
+<p><img src="https://zola.docs.saop.cc/themes/cela/screenshot.png" alt="screenshot" /></p>
+<hr />
+<h2 id="theme-features">Theme Features</h2>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Catppuccin color theme</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Light/Dark mode toggle</li>
+<li><input disabled="" type="checkbox" checked=""/>
+MathJax support</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Blog RSS feeds</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Full-text search</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Robot tools</li>
+<li><input disabled="" type="checkbox"/>
+Blog archive (group by year)</li>
+<li><input disabled="" type="checkbox"/>
+Internationalization (i18n)</li>
+</ul>
+<h3 id="tags-categories-and-taxonomies">Tags, Categories, and Taxonomies</h3>
+<p>Cela provides Hexo/Hugo-like <code>tags</code> and <code>categories</code>, compatible with Zola <code>taxonomies</code>. In front matter:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;Rust&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;Zola&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>categories</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;Programming&quot;</span><span style="color: #9399B2;">]</span></span></code></pre>
+<p>or in YAML style:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #89B4FA;">taxonomies</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  tags</span><span style="color: #94E2D5;">:</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;Rust&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;Zola&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  categories</span><span style="color: #94E2D5;">:</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;Programming&quot;</span><span style="color: #9399B2;">]</span></span></code></pre>
+<p>Zola <code>taxonomies</code> as recommended are more powerful for structuring your contents. See <a class="external" rel="external" href="https://www.getzola.org/documentation/content/taxonomies/">zola taxonomies</a> for more information.</p>
+<h2 id="quick-start">Quick Start</h2>
+<p>If you only need installation of the theme, skip to Theme Installation.</p>
+<h3 id="zola-installation">Zola Installation</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># macOS</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">brew</span><span style="color: #A6E3A1;"> install zola</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Alpine Linux</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">apk</span><span style="color: #A6E3A1;"> add zola</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Arch Linux</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">pacman</span><span style="color: #A6E3A1;"> -S zola</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Docker</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">docker</span><span style="color: #A6E3A1;"> pull ghcr.io/getzola/zola:v0.19.1</span></span></code></pre><h3 id="create-a-zola-site">Create a Zola site</h3>
+<p>Creates your first Zola site.</p>
+<p>If <code>myblog</code> already exists but only contains hidden files (like <code>.git</code>), Zola will alswo populate the site.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init myblog</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># or</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># populate the current directory</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init</span></span></code></pre>
+<p>Any choices you make during the initialization can be changed later in the <code>config.toml</code> file.</p>
+<h3 id="theme-installation">Theme Installation</h3>
+<h4 id="by-git-submodule">By Git submodule</h4>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/edwardzcn-decade/cela themes/cela</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule update --init --force --recursive</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule sync</span></span></code></pre>
+<p>Then set the <code>theme</code> in your <code>config.toml</code> file.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;cela&quot;</span></span></code></pre><h4 id="by-download-releases">By Download Releases</h4>
+<ol>
+<li>Download the latest release archive from the Cela releases.</li>
+<li>Unzip to themes/cela in your Zola project.</li>
+<li>Set <code>theme</code> in config.toml.</li>
+<li>(Optional) Delete unused example content under content/ if you start fresh.</li>
+</ol>
+<h2 id="open-hands-contributing">👐 Contributing</h2>
+<blockquote>
+<p>[!NOTE]</p>
+<p>If you find this project helpful and would like to support its development, see our <a href="https://zola.docs.saop.cc/themes/cela/CONTRIBUTING.md">CONTRIBUTING</a> and <a href="https://zola.docs.saop.cc/themes/cela/CODE_OF_CONDUCT.md">CODE_OF_CONDUCT</a> guidelines.</p>
+</blockquote>
+<h2 id="license">LICENSE</h2>
+<p>MIT</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

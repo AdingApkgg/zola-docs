@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="ntun-zola-theme | Zola">
+        <meta property="og:description" content="A classic resume theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ntun&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>ntun-zola-theme | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ntun&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>ntun-zola-theme</h1>
+            <p>A classic resume theme</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;netoun.com">Nicolas Coulonnier</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.1.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;netoun&#x2F;ntun">https:&#x2F;&#x2F;github.com&#x2F;netoun&#x2F;ntun</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;netoun.github.io&#x2F;ntun&#x2F;">https:&#x2F;&#x2F;netoun.github.io&#x2F;ntun&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2023-09-25T10:40:29+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="ntun"><strong>Ntun</strong></h1>
+<p><img src="https://zola.docs.saop.cc/themes/ntun/screenshot.png" alt="alt text" title="Screenshoot" /></p>
+<p><strong>Live demo</strong> : https://netoun.github.io/ntun/</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Installation</li>
+<li>Options</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>First download this theme to your <code>themes</code> directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/netoun/ntun.git</span></span></code></pre>
+<p>and then enable it in your <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;ntun&quot;</span></span></code></pre>
+<p>This theme requires index section in <code>about</code> (<code>content/about/_index.md</code>)</p>
+<p>The posts should therefore be in directly under the <code>content about</code> folder.</p>
+<h2 id="options">Options</h2>
+<p>Set a field in <code>extra</code> with a key of <code>after_dark_menu</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Jon Snow&quot;</span></span>
+<span class="giallo-l"><span>author_image</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;me.jpg&quot;</span></span>
+<span class="giallo-l"><span>city</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Winterfell&quot;</span></span>
+<span class="giallo-l"><span>years</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;281&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>job</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;King of the north&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Dragons &amp; Aunt ❤️&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;">,</span><span> title</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;&quot;</span><span style="color: #9399B2;">,</span><span> icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fab fa-github&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;">,</span><span> title</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;&quot;</span><span style="color: #9399B2;">,</span><span> icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fab fa-twitter&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;">,</span><span> title</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;&quot;</span><span style="color: #9399B2;">,</span><span> icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fab fa-linkedin&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;mailto:&quot;</span><span style="color: #9399B2;">,</span><span> title</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;&quot;</span><span style="color: #9399B2;">,</span><span> icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fas fa-envelope&quot;</span><span style="color: #9399B2;">}</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># if you add languages, put your emoji flag on array</span></span>
+<span class="giallo-l"><span>languages_flags</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">    &quot;🇬🇧&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>If you put <code>$BASE_URL</code> in a url, it will automatically be replaced by the actual
+site URL.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

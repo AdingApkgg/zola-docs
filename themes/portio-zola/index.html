@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Portio-Zola | Zola">
+        <meta property="og:description" content="Portio-Zola is a minimal, well-formatted and extremely flexible theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;portio-zola&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Portio-Zola | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;portio-zola&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>Portio-Zola</h1>
+            <p>Portio-Zola is a minimal, well-formatted and extremely flexible theme</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;quentin-rodriguez">quentin-rodriguez</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.21.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;quentin-rodriguez&#x2F;portio-zola.git">https:&#x2F;&#x2F;github.com&#x2F;quentin-rodriguez&#x2F;portio-zola.git</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;quentin-rodriguez.github.io&#x2F;portio-zola">https:&#x2F;&#x2F;quentin-rodriguez.github.io&#x2F;portio-zola</a></p>
+            
+            
+            <p><b>最后更新:</b> 2026-02-18T21:50:30+01:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="portio-zola">Portio-Zola</h1>
+<div align="center">
+<p><a class="external" rel="external" href="https://www.getzola.org/"><img src="https://img.shields.io/badge/Zola-0.22.0-red?style=for-the-badge" alt="Zola" /></a>
+<a href="https://zola.docs.saop.cc/themes/portio-zola/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License" /></a>
+<a class="external" rel="external" href="https://quentin-rodriguez.github.io/portio-zola"><img src="https://img.shields.io/badge/-Live%20demo-blue?style=for-the-badge" alt="Live demo" /></a></p>
+</div>
+<p><img src="https://zola.docs.saop.cc/themes/portio-zola/screenshot.png" alt="homepage" /></p>
+<h2 id="memo-about">📝 About</h2>
+<p>Portio-Zola is a minimal, well-formatted theme that is extremely flexible and can be changed in whole or in part as required.</p>
+<p>This theme is based on <a class="external" rel="external" href="https://github.com/StaticMania/portio-hugo.git">Portio-Hugo</a>, with all the features mentioned below.</p>
+<h2 id="page-with-curl-features">📃 Features</h2>
+<ul>
+<li>Responsive reedy.</li>
+<li>Powered by Bootstrap 5.</li>
+<li>Blog support.</li>
+<li>Multilingual support.</li>
+<li><a class="external" rel="external" href="https://formspree.io/">Formspree.io</a> support.</li>
+<li>Portfolio support.</li>
+<li>Google Analytics.</li>
+<li>Easy customization.</li>
+</ul>
+<h2 id="computer-installation">💻 Installation</h2>
+<ol>
+<li>
+<p>Install <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a></p>
+</li>
+<li>
+<p>Initialize a new project and go to the folder</p>
+</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init</span><span style="color: #94E2D5;"> &lt;</span><span style="color: #A6E3A1;">PROJECT_NAM</span><span>E</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #94E2D5;"> &lt;</span><span style="color: #A6E3A1;">PROJECT_NAM</span><span>E</span><span style="color: #94E2D5;">&gt;</span></span></code></pre>
+<ol start="3">
+<li>Add the <strong>Portio-Zola</strong> theme to the project with either a <code>submodule</code> or a <code>clone</code></li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Submodule</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/quentin-rodriguez/portio-zola.git themes/portio-zola</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Clone</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/quentin-rodriguez/portio-zola.git themes/portio-zola</span></span></code></pre>
+<ol start="4">
+<li>Copy the theme's <code>config.toml</code> file into your project root</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> themes/portio-zola/config.toml .</span></span></code></pre>
+<ol start="5">
+<li>Add the <code>theme</code> to the configuration file</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;portio-zola&quot;</span></span></code></pre>
+<ol start="6">
+<li>Copy the theme <code>content</code> and <code>static</code> folders directly into your project root</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> -r themes/portio-zola/content/ content/</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> -r themes/portio-zola/static/ static/</span></span></code></pre>
+<ol start="7">
+<li>(Optional) Depending on the language set as <code>default_language</code>, the <code>_index.md</code> files must correspond to the appropriate language.</li>
+</ol>
+<h2 id="inbox-tray-deployment">📥 Deployment</h2>
+<p>Here is a list provided by <a class="external" rel="external" href="https://www.getzola.org/">Zola</a> to help you deploy your own site on different platforms.</p>
+<ul>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/sourcehut/">Sourcehut Pages</a></li>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/netlify/">Netlify</a></li>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/github-pages/">GitHub Pages</a></li>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/gitlab-pages/">GitLab Pages</a></li>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/codeberg-pages/">Codeberg Pages</a></li>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/edgio/">Edgio</a></li>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/vercel/">Vercel</a></li>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/zeabur/">Zeabur</a></li>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/cloudflare-pages/">Cloudflare Pages</a></li>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/flyio/">Fly.io</a></li>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/aws-s3/">AWS S3 Bucket</a></li>
+<li><a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/docker-image/">Docker image</a></li>
+</ul>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

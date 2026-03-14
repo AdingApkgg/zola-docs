@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="ataraxia | Zola">
+        <meta property="og:description" content="A personal theme focused on ease of reading.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ataraxia-zola&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>ataraxia | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ataraxia-zola&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>ataraxia</h1>
+            <p>A personal theme focused on ease of reading.</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;gersonbenavides&#x2F;ataraxia-zola">Gerson Benavides</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.16.0 及以上</p>
+            
+            <p><b>许可证:</b> MPL-2.0</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;gersonbenavides&#x2F;ataraxia-zola">https:&#x2F;&#x2F;github.com&#x2F;gersonbenavides&#x2F;ataraxia-zola</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;www.gersonb.dev&#x2F;">https:&#x2F;&#x2F;www.gersonb.dev&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2023-04-22T22:26:07-05:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="ataraxia">Ataraxia</h1>
+<p><a class="external" rel="external" href="https://gersonbenavides.github.io/"><img src="https://raw.githubusercontent.com/gersonbenavides/ataraxia-zola/main/mockup.png" alt="Ataraxia preview" title="Ataraxia mockup" /></a></p>
+<p>A personal theme for <a class="external" rel="external" href="https://www.getzola.org/">Zola</a> focused on readability that aims to be simple, beautiful, and modern. It is designed to support multiple languages and be highly customizable.</p>
+<p>The theme takes visual inspiration from the <a class="external" rel="external" href="https://github.com/cotes2020/jekyll-theme-chirpy">Chirpy</a> and <a class="external" rel="external" href="https://github.com/longpdo/neumorphism">Neumorphism</a> themes.</p>
+<h2 id="installation">Installation</h2>
+<p>Open a command terminal at your site path and run:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span></code></pre><pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/gersonbenavides/ataraxia-zola.git ataraxia</span></span></code></pre><h2 id="configuration">Configuration</h2>
+<p>Copy the <code>config_sample.toml</code> file to your site's main path, then rename it to <code>config.toml</code> and edit it with your site data.</p>
+<blockquote>
+<p>You can see the <a class="external" rel="external" href="https://github.com/gersonbenavides/gersonbenavides.github.io">Gerson's website</a> repository for theme setup guide.</p>
+</blockquote>
+<p>For the site to work properly you need to create a <code>_index.md</code> file within the <code>content</code> path with the following structure:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home site description.&quot;</span></span>
+<span class="giallo-l"><span>sort_by</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;date&quot;</span></span>
+<span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;index.html&quot;</span></span>
+<span class="giallo-l"><span>page_template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;page.html&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p>You can add more markdown content inside this file if you need to.</p>
+<p>If you want to enable the site's blog, create a _index.md file inside the <code>content/blog</code> path then copy the following structure inside the file:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Blog&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Blog site description.&quot;</span></span>
+<span class="giallo-l"><span>sort_by</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;date&quot;</span></span>
+<span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 5</span></span>
+<span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;blog.html&quot;</span></span>
+<span class="giallo-l"><span>page_template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;blog_page.html&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p>You can display the result of your website by running:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre><h2 id="hacking">Hacking</h2>
+<p>By default, the theme comes with all the scss styles already compiled, in such a way that the installation of Bootstrap is not necessary, in order to avoid dependencies such as Node.js in the production file.</p>
+<p>If you want to edit the theme's styles, you'll need to have a <a class="external" rel="external" href="https://nodejs.org/">Node.js</a> interpreter and a <a class="external" rel="external" href="https://sass-lang.com/install">Sass compiler</a> installed. After that, go to the main path of the theme and execute:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">npm</span><span style="color: #A6E3A1;"> install</span></span></code></pre><pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">sass</span><span style="color: #A6E3A1;"> --watch scss/custom.scss:static/assets/css/custom.css</span></span></code></pre>
+<blockquote>
+<p>Keep in mind that the main branch of this repository only has the stable versions of the theme, if you want to see the development status and the unstable versions, change to the corresponding branch.</p>
+</blockquote>
+<h2 id="credits">Credits</h2>
+<p>This theme is mainly built on <a class="external" rel="external" href="https://www.getzola.org/">Zola</a> and <a class="external" rel="external" href="https://getbootstrap.com/">Bootstrap</a>, plus it makes use of <a class="external" rel="external" href="https://fonts.google.com/">Google fonts</a>.</p>
+<h2 id="sponsoring">Sponsoring</h2>
+<p><a class="external" rel="external" href="https://liberapay.com/gersonbenavides/donate"><img src="https://img.shields.io/badge/Finance%20my%20work-F6C915?style=flat&amp;logo=liberapay&amp;logoColor=ffffff" alt="Liberapay" title="Finance my work" /></a></p>
+<p><a class="external" rel="external" href="https://paypal.me/gersonbdev?country.x=CO&amp;locale.x=es_XC"><img src="https://img.shields.io/badge/Make%20a%20donation-00457C?style=flat&amp;logo=paypal" alt="PayPal" title="Make a donation" /></a></p>
+<h2 id="license">License</h2>
+<p>This work is published under the <a class="external" rel="external" href="https://www.mozilla.org/en-US/MPL/2.0/">MPL-2.0</a> license</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

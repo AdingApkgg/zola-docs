@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Shortcodes | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Shortcodes | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>Shortcodes</h1>
+    <p>Zola 借鉴了 WordPress 的 <a class="external" rel="external" href="https://codex.wordpress.org/Shortcode_API">shortcodes</a>（短代码）概念。
+在我们的例子中，shortcode 对应于 <code>templates/shortcodes</code> 目录中定义的模板，可以在 Markdown 文件中使用。</p>
+<p>广义上讲，Zola 的 shortcodes 涵盖两个不同的用例：</p>
+<ul>
+<li>注入更复杂的 HTML：Markdown 擅长写作，但当你需要添加内联 HTML 或样式时，它就不太好了。</li>
+<li>简化基于数据的重复性任务：当你有想要在页面正文中显示的 <a href="https://zola.docs.saop.cc/documentation/templates/overview/#load-data">外部数据</a> 时。</li>
+</ul>
+<p>后者也可以通过编写 HTML 来解决，但 Zola 允许使用以 <code>.md</code> 而不是 <code>.html</code> 结尾的基于 Markdown 的 shortcodes。如果你想在 <a href="https://zola.docs.saop.cc/documentation/content/table-of-contents/">目录</a> 中包含由 shortcode 生成的标题，这可能特别有用。</p>
+<p>如果你想在模板中使用类似于 shortcodes 的东西，可以使用 <a class="external" rel="external" href="https://keats.github.io/tera/docs#macros">Tera macros</a>。它们是可以调用以返回一些文本的函数或组件。</p>
+<h2 id="bian-xie-shortcode"><a class="zola-anchor" href="#bian-xie-shortcode" aria-label="Anchor link for: bian-xie-shortcode">🔗</a>编写 Shortcode</h2>
+<p>作为示例，让我们编写一个嵌入 YouTube 视频的 shortcode。
+在 <code>templates/shortcodes</code> 目录中名为 <code>youtube.html</code> 的文件中，粘贴以下内容：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>&lt;div {%</span><span style="color: #CBA6F7;"> if</span><span> class %}class=&quot;{{class}}&quot;{%</span><span style="color: #CBA6F7;"> endif</span><span> %}&gt;</span></span>
+<span class="giallo-l"><span>    &lt;iframe</span></span>
+<span class="giallo-l"><span>        src=&quot;https://www.youtube.com/embed/{{id}}{%</span><span style="color: #CBA6F7;"> if</span><span> autoplay %}?autoplay=1{%</span><span style="color: #CBA6F7;"> endif</span><span> %}&quot;</span></span>
+<span class="giallo-l"><span>        webkitallowfullscreen</span></span>
+<span class="giallo-l"><span>        mozallowfullscreen</span></span>
+<span class="giallo-l"><span>        allowfullscreen&gt;</span></span>
+<span class="giallo-l"><span>    &lt;/iframe&gt;</span></span>
+<span class="giallo-l"><span>&lt;/div&gt;</span></span></code></pre>
+<p>这个模板非常简单：一个指向 YouTube 嵌入 URL 的 iframe，包裹在一个 <code>&lt;div&gt;</code> 中。
+就输入而言，此 shortcode 至少需要一个变量：<code>id</code>（<a href="https://zola.docs.saop.cc/documentation/content/shortcodes/#shortcodes-without-body">示例在此</a>）。
+因为其他变量在 <code>if</code> 语句中，所以它们是可选的。</p>
+<p>就是这样。Zola 现在将识别此模板为名为 <code>youtube</code> 的 shortcode（文件名减去 <code>.html</code> 扩展名）。</p>
+<p>Markdown 渲染器会将内联 HTML 节点（如 <code>&lt;a&gt;</code> 或 <code>&lt;span&gt;</code>）包装在一个段落中。
+如果你想禁用此行为，请将你的 shortcode 包裹在 <code>&lt;div&gt;</code> 中。</p>
+<p>反过来，基于 Markdown 的 shortcode 将被视为其返回的内容是页面正文的一部分。例如，如果我们在 <code>templates/shortcodes</code> 中创建 <code>books.md</code>：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> data</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span>path</span><span style="color: #9399B2;">)</span><span> -%}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> for</span><span> book</span><span style="color: #CBA6F7;"> in</span><span> data</span><span style="color: #9399B2;">.</span><span>books %}</span></span>
+<span class="giallo-l"><span>### {{ book</span><span style="color: #9399B2;">.</span><span>title }}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>{{ book</span><span style="color: #9399B2;">.</span><span>description</span><span style="color: #9399B2;"> |</span><span> safe }}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> endfor</span><span> %}</span></span></code></pre>
+<p>这将创建一个名为 <code>books</code> 的 shortcode，其参数 <code>path</code> 指向一个 <code>.toml</code> 文件，从中加载带有标题和描述的书籍列表。它们将与调用 <code>books</code> 的文档的其余部分一起流动。</p>
+<p>Shortcodes 在解析页面的 Markdown 之前呈现，因此它们无法访问页面的目录。
+因此，你也不能使用 <a href="https://zola.docs.saop.cc/documentation/templates/overview/#get-page"><code>get_page</code></a> / <a href="https://zola.docs.saop.cc/documentation/templates/overview/#get-section"><code>get_section</code></a> / <a href="https://zola.docs.saop.cc/documentation/templates/overview/#get-taxonomy"><code>get_taxonomy</code></a> / <a href="https://zola.docs.saop.cc/documentation/templates/overview/#get-taxonomy-term"><code>get_taxonomy_term</code></a> 全局函数。它在运行 <code>zola serve</code> 时可能会工作，因为它已被加载，但在 <code>zola build</code> 期间将失败。</p>
+<h2 id="shi-yong-shortcodes"><a class="zola-anchor" href="#shi-yong-shortcodes" aria-label="Anchor link for: shi-yong-shortcodes">🔗</a>使用 Shortcodes</h2>
+<p>有两种类型的 shortcodes：</p>
+<ul>
+<li>不带主体的，例如上面的 YouTube 示例</li>
+<li>带主体的，例如为引用添加样式的 shortcode</li>
+</ul>
+<p>在这两种情况下，参数必须命名，并且它们都将传递给模板。
+即使没有参数，括号也是强制性的。</p>
+<p>请注意，虽然 shortcodes 看起来像普通的 Tera 表达式，但它们根本不是 Tera——它们几乎只是将参数传递给它们的模板。几个值得注意的限制是：</p>
+<ul>
+<li>所有参数都是必需的</li>
+<li>Shortcode 不能引用 Tera 变量</li>
+<li>连接和其他运算符不可用</li>
+</ul>
+<p>如果 shortcode 无效，Markdown 解析器将不会解释它，而是直接渲染到最终 HTML 中。</p>
+<p>最后，shortcode 名称（以及相应的 <code>.html</code> 文件）以及任何参数名称只能包含数字、字母和下划线，并且必须以字母或下划线开头。
+用 Regex 术语来说，<code>^[A-Za-z_][0-9A-Za-z_]+$</code>。</p>
+<p>参数值可以是以下五种类型之一：</p>
+<ul>
+<li>string: 由双引号、单引号或反引号包围</li>
+<li>bool: <code>true</code> 或 <code>false</code></li>
+<li>float: 带小数点的数字 (例如 1.2)</li>
+<li>integer: 整数或其负对应物 (例如 3)</li>
+<li>array: 任何类型值的数组，数组除外</li>
+</ul>
+<p>格式错误的值将被静默忽略。</p>
+<p>两种类型的 shortcode 还将根据它们的使用位置获得 <code>page</code> 或 <code>section</code> 变量以及 <code>config</code> 变量。这些值将覆盖传递给 shortcode 的任何参数，因此不应将这些变量名用作 shortcode 中的参数名。</p>
+<h3 id="wu-zhu-ti-shortcodes"><a class="zola-anchor" href="#wu-zhu-ti-shortcodes" aria-label="Anchor link for: wu-zhu-ti-shortcodes">🔗</a>无主体 Shortcodes</h3>
+<p>只需像在变量块中调用 Tera 函数一样调用 shortcode。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>这是一个 YouTube 视频：</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>{{ youtube(id=&quot;dQw4w9WgXcQ&quot;) }}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>{{ youtube(id=&quot;dQw4w9WgXcQ&quot;, autoplay=true) }}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>一个内联 {{ youtube(id=&quot;dQw4w9WgXcQ&quot;, autoplay=true, class=&quot;youtube&quot;) }} shortcode</span></span></code></pre>
+<p>请注意，如果你想拥有一些看起来像 shortcode 的内容，但不希望 Zola 尝试渲染它，你需要通过使用 <code>{{/*</code> 和 <code>*/}}</code> 而不是 <code>{{</code> 和 <code>}}</code> 来转义它。</p>
+<h3 id="you-zhu-ti-shortcodes"><a class="zola-anchor" href="#you-zhu-ti-shortcodes" aria-label="Anchor link for: you-zhu-ti-shortcodes">🔗</a>有主体 Shortcodes</h3>
+<p>让我们想象一下，我们有以下 <code>quote.html</code> shortcode 模板：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>&lt;blockquote&gt;</span></span>
+<span class="giallo-l"><span>    {{ body }} &lt;br&gt;</span></span>
+<span class="giallo-l"><span>    -- {{ author}}</span></span>
+<span class="giallo-l"><span>&lt;/blockquote&gt;</span></span></code></pre>
+<p>我们可以像这样在 Markdown 文件中使用它：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>正如某人所说：</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>{% quote(author=&quot;Vincent&quot;) %}</span></span>
+<span class="giallo-l"><span>A quote</span></span>
+<span class="giallo-l"><span>{% end %}</span></span></code></pre>
+<p>Shortcode 的主体将自动作为 <code>body</code> 变量传递给渲染上下文，并且需要在新行上。</p>
+<h3 id="wu-can-shu-shortcodes"><a class="zola-anchor" href="#wu-can-shu-shortcodes" aria-label="Anchor link for: wu-can-shu-shortcodes">🔗</a>无参数 Shortcodes</h3>
+<p>请注意，对于这两种情况，shortcodes 的括号都是必需的。
+没有括号的 shortcode 将渲染为纯文本，并且不会发出警告。</p>
+<p>例如，这是如何在 <code>aside.html</code> 中定义没有参数的带主体的 <code>aside</code> shortcode：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>&lt;aside&gt;</span></span>
+<span class="giallo-l"><span>    {{ body }}</span></span>
+<span class="giallo-l"><span>&lt;/aside&gt;</span></span></code></pre>
+<p>我们可以像这样在 Markdown 文件中使用它：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>读者可以参考 aside 以获取更多信息。</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>{% aside() %}</span></span>
+<span class="giallo-l"><span>An aside</span></span>
+<span class="giallo-l"><span>{% end %}</span></span></code></pre><h3 id="lei-si-shortcodes-de-nei-rong"><a class="zola-anchor" href="#lei-si-shortcodes-de-nei-rong" aria-label="Anchor link for: lei-si-shortcodes-de-nei-rong">🔗</a>类似 Shortcodes 的内容</h3>
+<p>如果你想拥有一些看起来像 shortcode 的内容，但不希望 Zola 尝试渲染它，你需要通过使用 <code>{%/*</code> 和 <code>*/%}</code> 而不是 <code>{%</code> 和 <code>%}</code> 来转义它。直到结束标记之前，你不需要转义其他任何内容。</p>
+<h2 id="shortcode-shang-xia-wen"><a class="zola-anchor" href="#shortcode-shang-xia-wen" aria-label="Anchor link for: shortcode-shang-xia-wen">🔗</a>Shortcode 上下文</h2>
+<p>每个 shortcode 都可以访问一些变量，除了你显式传递为参数的变量之外。这些变量在以下小节中解释：</p>
+<ul>
+<li>调用计数 (<code>nth</code>)</li>
+<li>当前语言 (<code>lang</code>)，除非从 <code>markdown</code> 模板过滤器调用（在这种情况下，它将始终与配置中的 <code>default_language</code> 相同，或者在未设置时为 <code>en</code>）</li>
+<li><code>colocated_path</code></li>
+</ul>
+<p>当这些变量之一与作为参数传递的变量冲突时，将使用参数值。</p>
+<h3 id="nth-diao-yong-ji-shu"><a class="zola-anchor" href="#nth-diao-yong-ji-shu" aria-label="Anchor link for: nth-diao-yong-ji-shu">🔗</a><code>nth</code>: 调用计数</h3>
+<p>每个 shortcode 上下文都传入一个名为 <code>nth</code> 的变量，该变量跟踪特定 shortcode 在当前 Markdown 文件中被调用的次数。给定一个 shortcode <code>true_statement.html</code> 模板：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>&lt;p id=&quot;number{{ nth }}&quot;&gt;{{ value }} is equal to {{ nth }}.&lt;/p&gt;</span></span></code></pre>
+<p>它可以像这样在我们的 Markdown 中使用：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>{{ true_statement(value=1) }}</span></span>
+<span class="giallo-l"><span>{{ true_statement(value=2) }}</span></span></code></pre>
+<p>这在实现诸如旁注或尾注等功能的自定义标记时很有用。</p>
+<h3 id="lang-dang-qian-yu-yan"><a class="zola-anchor" href="#lang-dang-qian-yu-yan" aria-label="Anchor link for: lang-dang-qian-yu-yan">🔗</a><code>lang</code>: 当前语言</h3>
+<p><strong>注意：</strong> 从 <code>markdown</code> 模板过滤器中调用 shortcode 时，<code>lang</code> 变量将始终为 <code>en</code>。
+如果你觉得你需要那个，请考虑改用模板宏。
+如果你真的需要那个，你可以重写你的 Markdown 内容以将 <code>lang</code> 作为参数传递给 shortcode。</p>
+<p>每个 shortcode 都可以访问上下文中的 <code>lang</code> 变量中的当前语言。
+这对于根据每种语言在 shortcode 中呈现/过滤信息很有用。例如，要在名为 <code>bookcover.md</code> 的 shortcode 中显示当前页面的每种语言的书籍封面：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>![Book cover in {{ lang }}](cover.{{ lang }}.png)</span></span></code></pre><h3 id="page-huo-section"><a class="zola-anchor" href="#page-huo-section" aria-label="Anchor link for: page-huo-section">🔗</a><code>page</code> 或 <code>section</code></h3>
+<p>你可以访问普通模板中等效变量的略微精简版本。
+以下属性将为空：</p>
+<ul>
+<li>translations</li>
+<li>backlinks</li>
+<li>pages</li>
+</ul>
+<p>（注意：这是因为 markdown 的渲染是在填充 sections 之前完成的）</p>
+<p>shortcodes 中 <code>page</code> 的一个有用属性是 <code>colocated_path</code>。
+这用于当你想要将一些资源的名称传递给 shortcodes 而不重复完整的文件夹路径时。
+当与 <code>load_data</code> 或 <code>resize_image</code> 结合使用时最有用。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> resized</span><span style="color: #94E2D5;"> =</span><span> resize_image</span><span style="color: #9399B2;">(</span><span>format</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;jpg&quot;</span><span style="color: #9399B2;">,</span><span> path</span><span style="color: #94E2D5;">=</span><span>page</span><span style="color: #9399B2;">.</span><span>colocated_path ~ img_name</span><span style="color: #9399B2;">,</span><span> width</span><span style="color: #94E2D5;">=</span><span>width</span><span style="color: #9399B2;">,</span><span> op</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;fit_width&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>&lt;img alt=&quot;{{ alt }}&quot; src=&quot;{{ resized</span><span style="color: #9399B2;">.</span><span>url</span><span style="color: #9399B2;"> |</span><span> safe }}&quot; /&gt;</span></span></code></pre><h2 id="shi-li"><a class="zola-anchor" href="#shi-li" aria-label="Anchor link for: shi-li">🔗</a>示例</h2>
+<p>这里有一些 shortcodes 供灵感。</p>
+<h3 id="youtube"><a class="zola-anchor" href="#youtube" aria-label="Anchor link for: youtube">🔗</a>YouTube</h3>
+<p>嵌入 YouTube 视频的响应式播放器。</p>
+<p>参数有：</p>
+<ul>
+<li><code>id</code>: 视频 id (强制)</li>
+<li><code>playlist</code>: 播放列表 id (可选)</li>
+<li><code>class</code>: 添加到围绕 iframe 的 <code>&lt;div&gt;</code> 的类</li>
+<li><code>autoplay</code>: 当设置为 "true" 时，视频在加载时自动播放</li>
+</ul>
+<p>代码：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>&lt;div {% if class %}class=&quot;{{class}}&quot;{% endif %}&gt;</span></span>
+<span class="giallo-l"><span>    &lt;iframe src=&quot;https://www.youtube-nocookie.com/embed/{{id}}{% if playlist %}?list={{playlist}}{% endif %}{% if autoplay %}?autoplay=1{% endif %}&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;</span></span>
+<span class="giallo-l"><span>&lt;/div&gt;</span></span></code></pre>
+<p>使用示例：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>{{ youtube(id=&quot;dCKeXuVHl1o&quot;) }}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>{{ youtube(id=&quot;dCKeXuVHl1o&quot;, playlist=&quot;RDdQw4w9WgXcQ&quot;) }}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>{{ youtube(id=&quot;dCKeXuVHl1o&quot;, autoplay=true) }}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>{{ youtube(id=&quot;dCKeXuVHl1o&quot;, autoplay=true, class=&quot;youtube&quot;) }}</span></span></code></pre><h3 id="tu-pian-ku-image-gallery"><a class="zola-anchor" href="#tu-pian-ku-image-gallery" aria-label="Anchor link for: tu-pian-ku-image-gallery">🔗</a>图片库 (Image Gallery)</h3>
+<p>有关代码和示例，请参阅 <a href="https://zola.docs.saop.cc/documentation/content/image-processing/#creating-picture-galleries">内容处理页面</a>。</p>
+
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

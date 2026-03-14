@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Academic Workshop | Zola">
+        <meta property="og:description" content="A Zola theme for a website to list the schedule of your scientific workshop or seminar series">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;academic-workshop&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Academic Workshop | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;academic-workshop&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>Academic Workshop</h1>
+            <p>A Zola theme for a website to list the schedule of your scientific workshop or seminar series</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;avt.im">Alexander Terein</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.18.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;aterenin&#x2F;academic-workshop">https:&#x2F;&#x2F;github.com&#x2F;aterenin&#x2F;academic-workshop</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;aterenin.github.io&#x2F;academic-workshop">https:&#x2F;&#x2F;aterenin.github.io&#x2F;academic-workshop</a></p>
+            
+            
+            <p><b>最后更新:</b> 2025-10-21T20:16:41-04:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="academic-workshop-a-zola-theme">Academic Workshop: a Zola theme</h1>
+<p><a class="external" rel="external" href="https://aterenin.github.io/academic-workshop">Academic Workshop</a> is a Zola theme desgned for hosting a website for scientific workshop or scientific seminar series.
+A demo website built with Academic Workshop can be found at <a class="external" rel="external" href="https://aterenin.github.io/academic-workshop">aterenin.github.io/academic-workshop</a>, and example repositories using this theme, for a seminar series and workshop, respectively, can be found at <a class="external" rel="external" href="https://github.com/gp-seminar-series/gp-seminar-series.github.io">github.com/gp-seminar-series/gp-seminar-series.github.io</a> and <a class="external" rel="external" href="https://github.com/gp-seminar-series/neurips-2024">https://github.com/gp-seminar-series/neurips-2024</a>.</p>
+<h1 id="features">Features</h1>
+<p><a class="external" rel="external" href="https://github.com/aterenin/academic-workshop">Academic Workshop</a> is designed to be reasonably feature-complete. Its features include:</p>
+<ul>
+<li>An automatic header which lists the tagline, title, and subtitles, with customizable buttons, as well as a background banner image with customizable CSS.</li>
+<li>Shortcodes for various types of lists such as lists of speakers and lists of previous seminars, as well as highlighting upcoming seminars on the front page, implemented in a fully responsive way to look professional on both desktop and mobile devices.</li>
+<li>Smart image resizing in image-grid-type lists, such as for lists of speakers.</li>
+<li>Support for creating a table of accepted workshop papers from a CSV file.</li>
+<li>Metadata including Twitter Summary Card, OpenGraph, and JSON-LD, implemented similar to <a class="external" rel="external" href="https://github.com/jekyll/jekyll-seo-tag">Jekyll SEO Tag</a>: these ensure pages are search-engine-fiendly and provide social media websites with links which are displayed when links are shared,</li>
+</ul>
+<h1 id="design-and-maintainability">Design and maintainability</h1>
+<p><a class="external" rel="external" href="https://github.com/aterenin/academic-workshop">Academic Workshop</a> is <a class="external" rel="external" href="https://jeffhuang.com/designed_to_last/">designed to last</a>.
+This means it follows a set of best practices which try to ensure websites correctly built with it will work correctly in the indefinite future with minimal maintenance, even as the internet changes and links break over time.
+As consequence, the theme has no JavaScript or CSS dependencies of any kind.</p>
+<h1 id="documentation">Documentation</h1>
+<p>The examples below document the theme's options which are available in the TOML files, which are listed as comments within each file.</p>
+<h2 id="config-toml">Config.toml</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span></span>
+<span class="giallo-l"><span>compile_sass</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;"> # should be set to true</span></span>
+<span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # not used by the theme</span></span>
+<span class="giallo-l"><span>generate_feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # not used by the theme</span></span>
+<span class="giallo-l"><span>minify_html</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;"> # to ensure correct rendering due to minification of whitespace, should be set to true, unless there is a reason to override it</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>markdown</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>highlight_code</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # should be set to false unless the page has code to highlight</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>footer_text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;This website is built using [Zola](https://www.getzola.org) and the [Academic Workshop](http://github.com/aterenin/academic-workshop/) theme, which is [designed to last](https://jeffhuang.com/designed_to_last/).&quot;</span><span style="color: #9399B2;font-style: italic;"> # by default this page adds a small and non-intrusive footer with some text linking to this repository - you can set this to false to remove the footer if you prefer</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span>tagline</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Presenting the&quot;</span><span style="color: #9399B2;">,</span><span> title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Academic Workshop Zola Theme&quot;</span><span style="color: #9399B2;">,</span><span> subtitles</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;For workshops, seminars, and academic events&quot;</span><span style="color: #9399B2;">]}</span><span style="color: #9399B2;font-style: italic;"> # this contains the header&#39;s tagline, title, and list of subtitles, which are displayed in order</span></span>
+<span class="giallo-l"><span>banner</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span>extension</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;svg&quot;</span><span style="color: #9399B2;">,</span><span> size</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fixed&quot;</span><span style="color: #9399B2;">,</span><span> fade</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">}</span><span style="color: #9399B2;font-style: italic;"> # this enables a banner image stored in static/banner.svg, with the CSS class bg-fixed: this CSS class is designed for users to set the background image&#39;s height and width by overriding CSS - see _main.scss for other classes like bg-contain or bg-cover - the fade option enables a CSS-based fade around the text</span></span>
+<span class="giallo-l"><span>buttons</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [{</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Example&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com/&quot;</span><span style="color: #9399B2;">}, {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;GitHub&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;http://github.com/aterenin/academic-workshop&quot;</span><span style="color: #9399B2;">}]</span><span style="color: #9399B2;font-style: italic;"> # creates a list of buttons displayed in order, with links to the URLs</span></span>
+<span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span>resize</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 400</span><span style="color: #9399B2;">,</span><span> ext</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &#39;.jpg&#39;</span><span style="color: #9399B2;">}</span><span style="color: #9399B2;font-style: italic;"> # this sets the desired size for image resizing, as well as the default extension</span></span>
+<span class="giallo-l"><span>list_page_limit</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 10</span><span style="color: #9399B2;font-style: italic;"> # this sets the default number of items which show up in one page in a list</span></span>
+<span class="giallo-l"><span>header_pages</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [{</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/#home&quot;</span><span style="color: #9399B2;">},{</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Design&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/#design&quot;</span><span style="color: #9399B2;">}]</span><span style="color: #9399B2;font-style: italic;"> # this sets the pages which show up in the navigation menu which gets displayed on mobile devices</span></span>
+<span class="giallo-l"><span>button_shortcuts</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [{</span><span>variable</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;video&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Video&quot;</span><span style="color: #9399B2;">}]</span><span style="color: #9399B2;font-style: italic;"> # this configuration makes it possible to add a button to a page or section in a less-verbose way, for example by writing video = &quot;/url/to/video&quot; instead of buttons = [{name = &quot;Video&quot;, url = &quot;/url/to/video&quot;}]</span></span></code></pre><h2 id="page-configuration">Page configuration</h2>
+<p>If using this theme for a list of seminars, each seminar should be added as a page within a suitable section. An example configuration is given here.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Seminar Title&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Example Author&quot;</span><span style="color: #9399B2;font-style: italic;"> # name of the author goes here</span></span>
+<span class="giallo-l"><span>institution</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Example Institution&quot;</span><span style="color: #9399B2;font-style: italic;"> # name of the institution goes here</span></span>
+<span class="giallo-l"><span>author_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span><span style="color: #9399B2;font-style: italic;"> # the author&#39;s webpage, which the theme will create links to</span></span>
+<span class="giallo-l"><span>time</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;16:00 UTC&quot;</span><span style="color: #9399B2;font-style: italic;"> # the time of the seminar</span></span>
+<span class="giallo-l"><span>buttons</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [{</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Example&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com/&quot;</span><span style="color: #9399B2;">}]</span><span style="color: #9399B2;font-style: italic;"> # a list of buttons displayed on the page and in lists, shown in order</span></span>
+<span class="giallo-l"><span>highlight</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;"> # whether or not the seminar gets displayed on a page using the highlight shortcode, which is designed to display a short list of upcoming seminars on the theme&#39;s front page - defaults to false</span></span>
+<span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;placeholder.svg&quot;</span><span style="color: #9399B2;font-style: italic;"> # optional: allows ont to override the default image URL</span></span>
+<span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>The seminar&#39;s abstract goes here</span></span></code></pre>
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="分页 | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>分页 | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>分页</h1>
+    <p>有两样东西可以分页：section 和分类法术语 (taxonomy term)。</p>
+<p>除了 <a href="https://zola.docs.saop.cc/documentation/templates/overview/">概览页面</a> 中提到的常用变量外，这两种类型都获得一个 <code>Pager</code> 类型的 <code>paginator</code> 变量：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="typescript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// 每个分页器的项目数</span></span>
+<span class="giallo-l"><span>paginate_by</span><span style="color: #9399B2;">:</span><span> Number</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// 分页的基本 URL：section 永久链接 + 分页路径</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// 你可以将其与一个整数连接以获取指向给定分页页面的链接。</span></span>
+<span class="giallo-l"><span>base_url</span><span style="color: #9399B2;">:</span><span> String</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// 总共有多少个分页页面</span></span>
+<span class="giallo-l"><span>number_pagers</span><span style="color: #9399B2;">:</span><span> Number</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// 第一个分页页面的永久链接</span></span>
+<span class="giallo-l"><span>first</span><span style="color: #9399B2;">:</span><span> String</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// 最后一个分页页面的永久链接</span></span>
+<span class="giallo-l"><span>last</span><span style="color: #9399B2;">:</span><span> String</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// 上一个分页页面的永久链接（如果有）</span></span>
+<span class="giallo-l"><span>previous</span><span style="color: #9399B2;">:</span><span> String</span><span style="color: #94E2D5;">?</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// 下一个分页页面的永久链接（如果有）</span></span>
+<span class="giallo-l"><span>next</span><span style="color: #94E2D5;">:</span><span> String</span><span style="color: #94E2D5;">?</span><span>;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// 当前分页页面的所有页面</span></span>
+<span class="giallo-l"><span>pages</span><span style="color: #94E2D5;">:</span><span> Array</span><span style="color: #94E2D5;">&lt;</span><span>Page</span><span style="color: #94E2D5;">&gt;</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// 我们在哪个分页页面上，1 索引</span></span>
+<span class="giallo-l"><span>current_index</span><span style="color: #9399B2;">:</span><span> Number</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">// 所有分页页面的总页数</span></span>
+<span class="giallo-l"><span>total_pages</span><span style="color: #9399B2;">:</span><span> Number</span><span style="color: #9399B2;">;</span></span></code></pre>
+<p><strong>如果 <code>paginate_by</code> 未设置为正数，则不会定义该变量。</strong></p>
+<p>一个 pager 是分页的一页；如果你有 100 个页面并且 paginate_by 设置为 10，你将有 10 个 pagers，每个包含 10 个页面。</p>
+<h2 id="section"><a class="zola-anchor" href="#section" aria-label="Anchor link for: section">🔗</a>Section</h2>
+<p>分页的 section 获得与普通 <a href="https://zola.docs.saop.cc/documentation/templates/pages-sections/#section-variables">section 页面</a> 相同的 <code>section</code> 变量，减去它的页面。页面在 <code>paginator.pages</code> 中。</p>
+<h2 id="fen-lei-fa-shu-yu-taxonomy-term"><a class="zola-anchor" href="#fen-lei-fa-shu-yu-taxonomy-term" aria-label="Anchor link for: fen-lei-fa-shu-yu-taxonomy-term">🔗</a>分类法术语 (Taxonomy term)</h2>
+<p>除了 <code>paginator</code> 变量外，分页的分类法还获得两个变量：</p>
+<ul>
+<li>一个 <code>TaxonomyConfig</code> 类型的 <code>taxonomy</code> 变量</li>
+<li>一个 <code>TaxonomyTerm</code> 类型的 <code>term</code> 变量。</li>
+</ul>
+<p>有关类型的详细版本，请参阅 <a href="https://zola.docs.saop.cc/documentation/templates/taxonomies/">分类法页面</a>。</p>
+<h2 id="seo"><a class="zola-anchor" href="#seo" aria-label="Anchor link for: seo">🔗</a>SEO</h2>
+<p>最好不要在 sitemap 中包含分页页面，因为它们是非规范页面。
+要在 sitemap 中排除分页页面，请在 <code>config.toml</code> 中将 <code>exclude_paginated_pages_in_sitemap</code> 设置为 <code>all</code>。</p>
+<h2 id="shi-li"><a class="zola-anchor" href="#shi-li" aria-label="Anchor link for: shi-li">🔗</a>示例</h2>
+<p>这是一个来自主题的示例，说明如何在页面上使用分页（本例中为 <code>index.html</code>）：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>&lt;div class=&quot;posts&quot;&gt;</span></span>
+<span class="giallo-l"><span>    {%</span><span style="color: #CBA6F7;"> for</span><span> page</span><span style="color: #CBA6F7;"> in</span><span> paginator</span><span style="color: #9399B2;">.</span><span>pages %}</span></span>
+<span class="giallo-l"><span>        &lt;article class=&quot;post&quot;&gt;</span></span>
+<span class="giallo-l"><span>            {{ post_macros</span><span style="color: #9399B2;">::</span><span>title</span><span style="color: #9399B2;">(</span><span>page</span><span style="color: #94E2D5;">=</span><span>page</span><span style="color: #9399B2;">)</span><span> }}</span></span>
+<span class="giallo-l"><span>            &lt;div class=&quot;post__summary&quot;&gt;</span></span>
+<span class="giallo-l"><span>                {{ page</span><span style="color: #9399B2;">.</span><span>summary</span><span style="color: #9399B2;"> |</span><span> safe }}</span></span>
+<span class="giallo-l"><span>            &lt;/div&gt;</span></span>
+<span class="giallo-l"><span>            &lt;div class=&quot;read-more&quot;&gt;</span></span>
+<span class="giallo-l"><span>                &lt;a href=&quot;{{ page</span><span style="color: #9399B2;">.</span><span>permalink }}&quot;&gt;Read more...&lt;/a&gt;</span></span>
+<span class="giallo-l"><span>            &lt;/div&gt;</span></span>
+<span class="giallo-l"><span>        &lt;/article&gt;</span></span>
+<span class="giallo-l"><span>    {%</span><span style="color: #CBA6F7;"> endfor</span><span> %}</span></span>
+<span class="giallo-l"><span>&lt;/div&gt;</span></span>
+<span class="giallo-l"><span>&lt;nav class=&quot;pagination&quot;&gt;</span></span>
+<span class="giallo-l"><span>    {%</span><span style="color: #CBA6F7;"> if</span><span> paginator</span><span style="color: #9399B2;">.</span><span>previous %}</span></span>
+<span class="giallo-l"><span>        &lt;a class=&quot;previous&quot; href=&quot;{{ paginator</span><span style="color: #9399B2;">.</span><span>previous }}&quot;&gt;‹ Previous&lt;/a&gt;</span></span>
+<span class="giallo-l"><span>    {%</span><span style="color: #CBA6F7;"> endif</span><span> %}</span></span>
+<span class="giallo-l"><span>    {%</span><span style="color: #CBA6F7;"> if</span><span> paginator</span><span style="color: #9399B2;">.</span><span>next %}</span></span>
+<span class="giallo-l"><span>        &lt;a class=&quot;next&quot; href=&quot;{{ paginator</span><span style="color: #9399B2;">.</span><span>next }}&quot;&gt;Next ›&lt;/a&gt;</span></span>
+<span class="giallo-l"><span>    {%</span><span style="color: #CBA6F7;"> endif</span><span> %}</span></span>
+<span class="giallo-l"><span>&lt;/nav&gt;</span></span></code></pre>
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

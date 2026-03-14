@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Section | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Section | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>Section</h1>
+    <p>只要 <code>content</code> section 中的目录（或子目录）包含 <code>_index.md</code> 文件，就会创建一个 section。如果目录不包含 <code>_index.md</code> 文件，则不会创建 section，但该目录中的 Markdown 文件仍将创建页面（称为孤立页面）。</p>
+<p>主页（即用户浏览你的 <code>base_url</code> 时显示的页面）是一个 section，无论你是否在 <code>content</code> 目录的根目录下添加 <code>_index.md</code> 文件，它都会被创建。如果你不在内容目录中创建 <code>_index.md</code> 文件，此主内容 section 将没有任何内容或元数据。如果你想添加内容或元数据，可以在 <code>content</code> 目录的根目录下添加一个 <code>_index.md</code> 文件，并像编辑任何其他 <code>_index.md</code> 文件一样编辑它；你的 <code>index.html</code> 模板随后将能够访问该内容和元数据。</p>
+<p>Section 目录中的任何非 Markdown 文件都会添加到 section 的 <code>assets</code> 集合中，如 <a href="https://zola.docs.saop.cc/documentation/content/overview/#asset-colocation">内容概览</a> 中所述。这些文件随后可以使用相对链接在 Markdown 文件中使用。</p>
+<h2 id="cao-gao-drafting"><a class="zola-anchor" href="#cao-gao-drafting" aria-label="Anchor link for: cao-gao-drafting">🔗</a>草稿 (Drafting)</h2>
+<p>就像页面一样，section 可以通过在 front matter 中设置 <code>draft</code> 选项来设为草稿，该选项默认未设置（即 <code>false</code>）。当一个 section 被设为草稿时，它的后代（如页面、子 section 和资源）将<strong>不会</strong>被处理，除非传递了 <code>--drafts</code> 标志。请注意，如果页面的任何父 section 是草稿，无论它们自己的 <code>draft</code> 状态如何，这些页面都不会被处理。</p>
+<h2 id="front-matter-qian-zhi-shu-ju"><a class="zola-anchor" href="#front-matter-qian-zhi-shu-ju" aria-label="Anchor link for: front-matter-qian-zhi-shu-ju">🔗</a>Front matter (前置数据)</h2>
+<p>目录中的 <code>_index.md</code> 文件定义了该 section 的内容和元数据。要设置元数据，请将 front matter 添加到文件中。</p>
+<p>TOML front matter 是一组嵌入在文件开头的元数据，由三个加号 (<code>+++</code>) 包围。</p>
+<p>在结束的 <code>+++</code> 之后，你可以添加内容，这些内容将被解析为 Markdown，并通过 <code>section.content</code> 变量提供给你的模板。</p>
+<p>虽然没有 front matter 变量是强制性的，但开头和结尾的 <code>+++</code> 是必需的。</p>
+<p>请注意，尽管鼓励使用 TOML，但也支持 YAML front matter 以便移植旧内容。在这种情况下，嵌入的元数据必须由三个减号 (<code>---</code>) 包围。</p>
+<p>下面是一个包含所有可用变量的 <code>_index.md</code> 示例。下面提供的值是默认值。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 草稿 section 只有在将 `--drafts` 标志传递给 `zola build`、`zola serve` 或 `zola check` 时才会加载。</span></span>
+<span class="giallo-l"><span>draft</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 用于对页面进行排序，可按 &quot;date&quot;, &quot;update_date&quot;, &quot;title&quot;, &quot;title_bytes&quot;, &quot;weight&quot;, &quot;slug&quot; 或 &quot;none&quot;。详见下文。</span></span>
+<span class="giallo-l"><span>sort_by</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;none&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 父 section 用来排序其子 section。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 值越小优先级越高。</span></span>
+<span class="giallo-l"><span>weight</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 0</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 用于渲染此 section 页面的模板。</span></span>
+<span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;section.html&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 给定的模板应用于 section 下的所有页面，递归地。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果你有几个嵌套的 section，每个都设置了 page_template，页面将始终使用最接近自己的那个。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 但是，页面自己的 `template` 变量总是具有优先权。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 默认未设置。</span></span>
+<span class="giallo-l"><span>page_template</span><span style="color: #94E2D5;"> =</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 这设置了每个分页页面显示的页面数量。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果未设置此项或值为 0，则不会进行分页。</span></span>
+<span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 0</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果设置，这将是分页页面使用的路径。页码将追加在此路径之后。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 默认为 page/1。</span></span>
+<span class="giallo-l"><span>paginate_path</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;page&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果设置，分页将按相反顺序进行。</span></span>
+<span class="giallo-l"><span>paginate_reversed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 这决定了是否为每个标题插入链接，就像你在本网站上看到的那样（如果你将鼠标悬停在标题上）。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 可以通过在 `templates` 目录中创建 `anchor-link.html` 文件来覆盖默认模板。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 此值可以是 &quot;left&quot;, &quot;right&quot;, &quot;heading&quot; 或 &quot;none&quot;。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># &quot;heading&quot; 意味着整个标题成为锚点的文本。</span></span>
+<span class="giallo-l"><span>insert_anchor_links</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;none&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果设置为 &quot;true&quot;，section 页面将包含在搜索索引中。这仅在 Zola 配置文件中 `build_search_index` 设置为 &quot;true&quot; 时使用。</span></span>
+<span class="giallo-l"><span>in_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果设置为 &quot;true&quot;，则渲染 section 主页。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 当 section 用于组织页面（不直接使用）时很有用。</span></span>
+<span class="giallo-l"><span>render</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 这决定了当用户访问 section 时是否重定向。默认为未设置。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 与 `render` 原因相同，但当你不想在访问根 section 页面时出现 404 时很有用。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 示例：redirect_to = &quot;documentation/content/overview&quot;</span></span>
+<span class="giallo-l"><span>redirect_to</span><span style="color: #94E2D5;"> =</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果设置为 &quot;true&quot;，section 将把它的页面传递给父 section。默认为 `false`。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 当 section 不应该拆分父 section 时很有用，例如 posts section 下的每年 section。</span></span>
+<span class="giallo-l"><span>transparent</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果你正在移动内容但希望将以前的 URL 重定向到当前 URL，请使用别名。这接受路径数组，而不是 URL。</span></span>
+<span class="giallo-l"><span>aliases</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> []</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果设置为 &quot;true&quot;，将在此 section 的根路径为此 section 生成 feed 文件。这独立于同名的全站变量。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># section feed 将仅包含来自该相应 feed 的文章，而不包含来自任何其他 section（包括该 section 下的子 section）的文章。</span></span>
+<span class="giallo-l"><span>generate_feeds</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 你自己的数据。</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span></code></pre>
+<p>请记住，任何配置选项仅适用于直接页面，不适用于子 section 的页面。</p>
+<h2 id="fen-ye"><a class="zola-anchor" href="#fen-ye" aria-label="Anchor link for: fen-ye">🔗</a>分页</h2>
+<p>要为 section 的页面启用分页，请将 <code>paginate_by</code> 设置为正数。有关模板中可用变量的更多信息，请参阅 <a href="https://zola.docs.saop.cc/documentation/templates/pagination/">分页模板文档</a>。</p>
+<p>你还可以通过设置 <code>paginate_path</code> 变量来更改分页路径（在 URL 中分页时显示的单词，如 <code>page/1</code>），默认为 <code>page</code>。</p>
+<h2 id="pai-xu"><a class="zola-anchor" href="#pai-xu" aria-label="Anchor link for: pai-xu">🔗</a>排序</h2>
+<p>Zola 模板遍历页面或 section 以显示给定目录中的所有页面/section 是非常常见的。考虑一个非常简单的示例：一个包含三个文件的 <code>blog</code> 目录：<code>blog/Post_1.md</code>、<code>blog/Post_2.md</code> 和 <code>blog/Post_3.md</code>。要遍历这些文章并创建指向文章的链接列表，一个简单的模板可能如下所示：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> for</span><span> post</span><span style="color: #CBA6F7;"> in</span><span> section</span><span style="color: #9399B2;">.</span><span>pages %}</span></span>
+<span class="giallo-l"><span>  &lt;h1&gt;&lt;a href=&quot;{{ post</span><span style="color: #9399B2;">.</span><span>permalink }}&quot;&gt;{{ post</span><span style="color: #9399B2;">.</span><span>title }}&lt;/a&gt;&lt;/h1&gt;</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> endfor</span><span> %}</span></span></code></pre>
+<p>这将按照相应 section 的 <code>_index.md</code> 页面中 <code>sort_by</code> 变量指定的顺序遍历文章。<code>sort_by</code> 变量可以赋予几个值：<code>date</code>, <code>update_date</code>, <code>title</code>, <code>title_bytes</code>, <code>weight</code>, <code>slug</code>, <code>permalink</code> 或 <code>none</code>。如果未设置 <code>sort_by</code>，页面将按 <code>none</code> 顺序排序，这不适用于排序内容。</p>
+<p>任何缺少排序所需数据的页面都将被忽略且不会被渲染。例如，如果页面缺少日期变量并且其 section 设置 <code>sort_by = "date"</code>，则该页面将被忽略。如果发生这种情况，终端会警告你。</p>
+<p>如果几个页面具有相同的日期/权重/顺序，它们的永久链接将用于根据字母顺序打破平局。</p>
+<h2 id="ye-mian-pai-xu"><a class="zola-anchor" href="#ye-mian-pai-xu" aria-label="Anchor link for: ye-mian-pai-xu">🔗</a>页面排序</h2>
+<p><code>sort_by</code> front-matter 变量可以具有以下值：</p>
+<h3 id="date"><a class="zola-anchor" href="#date" aria-label="Anchor link for: date">🔗</a><code>date</code></h3>
+<p>这将按 <code>date</code> 字段对所有页面进行排序，从最近的（在列表顶部）到最旧的（在列表底部）。每个页面都将获得 <code>page.lower</code> 和 <code>page.higher</code> 变量，分别包含日期较早和较晚的页面。</p>
+<h3 id="update-date"><a class="zola-anchor" href="#update-date" aria-label="Anchor link for: update-date">🔗</a><code>update_date</code></h3>
+<p>与 <code>date</code> 相同，只是它会考虑页面的任何 <code>updated</code> 日期。</p>
+<h3 id="title"><a class="zola-anchor" href="#title" aria-label="Anchor link for: title">🔗</a><code>title</code></h3>
+<p>这将按 <code>title</code> 字段以自然词法顺序对所有页面进行排序，由 <a class="external" rel="external" href="https://docs.rs/lexical-sort">lexical-sort</a> crate 中的 <code>natural_lexical_cmp</code> 定义。每个页面都将获得 <code>page.lower</code> 和 <code>page.higher</code> 变量，分别包含具有上一个和下一个标题的页面。</p>
+<p>例如，这里是自然词法排序："bachata, BART, bolero, μ-kernel, meter, Métro, Track-2, Track-3, Track-13, underground"。请注意特殊字符和数字是如何合理排序的。</p>
+<h3 id="title-bytes"><a class="zola-anchor" href="#title-bytes" aria-label="Anchor link for: title-bytes">🔗</a><code>title_bytes</code></h3>
+<p>与 <code>title</code> 相同，只是它直接使用字节进行排序。
+自然排序将非 ascii 字符视为其最接近的 ascii 字符。这可能会导致具有不同字符集的语言出现意外结果。例如，瑞典字母表的最后三个字符 åäö 会被自然排序视为 aao。在这种情况下，标准字节顺序排序可能更合适。</p>
+<h3 id="weight"><a class="zola-anchor" href="#weight" aria-label="Anchor link for: weight">🔗</a><code>weight</code></h3>
+<p>这将按 <code>weight</code> 字段对所有页面进行排序，从最轻的权重（在列表顶部）到最重的（在列表底部）。每个页面都获得 <code>page.lower</code> 和 <code>page.higher</code> 变量，分别包含具有更轻和更重权重的页面。</p>
+<h3 id="slug"><a class="zola-anchor" href="#slug" aria-label="Anchor link for: slug">🔗</a><code>slug</code></h3>
+<p>这将按 slug 以自然词法顺序对页面或 section 进行排序。</p>
+<h3 id="permalink"><a class="zola-anchor" href="#permalink" aria-label="Anchor link for: permalink">🔗</a><code>permalink</code></h3>
+<p>与 <code>slug</code> 类似，这将按永久链接以自然词法顺序对页面或 section 进行排序。
+如果你在页面上设置了 <code>path</code> 键，这很有用。</p>
+<h3 id="fan-xiang-pai-xu"><a class="zola-anchor" href="#fan-xiang-pai-xu" aria-label="Anchor link for: fan-xiang-pai-xu">🔗</a>反向排序</h3>
+<p>在遍历页面时，你可能希望使用 Tera <code>reverse</code> 过滤器，它反转页面的顺序。例如，在使用 <code>reverse</code> 过滤器后，按权重排序的页面将从最轻（在顶部）排序到最重（在底部）；按日期排序的页面将从最旧（在顶部）排序到最新（在底部）。</p>
+<p><code>reverse</code> 对 <code>page.lower</code> / <code>page.higher</code> 没有影响。</p>
+<p>如果 section 是分页的，应该在相关 section 的 front matter 中设置 <code>paginate_reversed=true</code>，而不是使用过滤器。</p>
+<h2 id="zi-section-pai-xu"><a class="zola-anchor" href="#zi-section-pai-xu" aria-label="Anchor link for: zi-section-pai-xu">🔗</a>子 section 排序</h2>
+<p>排序 section 不太灵活：section 只能按 <code>weight</code> 排序，并且没有指向更重/更轻 section 的变量。</p>
+<p>默认情况下，最轻（最低 <code>weight</code>）的子 section 将在列表顶部，最重（最高 <code>weight</code>）将在底部；<code>reverse</code> 过滤器反转此顺序。</p>
+<p><strong>注意</strong>：与页面不同，永久链接<strong>不会</strong>用于打破同样权重的 section 之间的平局。因此，如果你的 section 的 <code>weight</code> 变量未设置（或者如果设置的方式产生平局），那么你的 section 将按<strong>随机</strong>顺序排序。此外，该顺序是在构建时确定的，并且会在每次站点重建时更改。因此，如果有任何机会你会遍历你的 section，你应该总是为它们分配不同的权重。</p>
+
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="分类法 (Taxonomies) | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>分类法 (Taxonomies) | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>分类法 (Taxonomies)</h1>
+    <p>Zola 内置了对分类法（taxonomies）的支持，这是一种根据用户定义的类别对内容进行分组的方法。</p>
+<h2 id="ding-yi"><a class="zola-anchor" href="#ding-yi" aria-label="Anchor link for: ding-yi">🔗</a>定义</h2>
+<ul>
+<li>分类法 (Taxonomy): 可用于对内容进行分组的类别</li>
+<li>术语 (Term): 分类法中的特定组</li>
+<li>值 (Value): 可以与术语关联的一段内容</li>
+</ul>
+<h2 id="shi-li-dian-ying-wang-zhan"><a class="zola-anchor" href="#shi-li-dian-ying-wang-zhan" aria-label="Anchor link for: shi-li-dian-ying-wang-zhan">🔗</a>示例：电影网站</h2>
+<p>假设你想制作一个网站来显示有关各种电影的信息。在这种情况下，你可以使用以下分类法：</p>
+<ul>
+<li>导演 (Director)</li>
+<li>类型 (Genres)</li>
+<li>奖项 (Awards)</li>
+<li>发行年份 (Release year)</li>
+</ul>
+<p>然后，在构建时，Zola 可以为每个分类法创建页面，列出所有已知的术语并将它们链接到所有相关的内容片段。</p>
+<p>再次假设我们有以下电影：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>- 水形物语 (Shape of water)              值</span></span>
+<span class="giallo-l"><span>  - 导演 ............................ 分类法</span></span>
+<span class="giallo-l"><span>    - 吉尔莫·德尔·托罗 (Guillermo Del Toro) 术语</span></span>
+<span class="giallo-l"><span>  - 类型 ............................ 分类法</span></span>
+<span class="giallo-l"><span>    - 惊悚 (Thriller)                     术语</span></span>
+<span class="giallo-l"><span>    - 剧情 (Drama)                        术语</span></span>
+<span class="giallo-l"><span>  - 奖项 ............................ 分类法</span></span>
+<span class="giallo-l"><span>    - 金球奖 (Golden globe)               术语</span></span>
+<span class="giallo-l"><span>    - 奥斯卡金像奖 (Academy award)         术语</span></span>
+<span class="giallo-l"><span>    - 英国电影学院奖 (BAFTA)               术语</span></span>
+<span class="giallo-l"><span>  - 发行年份 ........................ 分类法</span></span>
+<span class="giallo-l"><span>    - 2017                                术语</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>- 房间 (The Room)                       值</span></span>
+<span class="giallo-l"><span>  - 导演 ............................ 分类法</span></span>
+<span class="giallo-l"><span>    - 托米·韦素 (Tommy Wiseau)            术语</span></span>
+<span class="giallo-l"><span>  - 类型 ............................ 分类法</span></span>
+<span class="giallo-l"><span>    - 爱情 (Romance)                      术语</span></span>
+<span class="giallo-l"><span>    - 剧情 (Drama)                        术语</span></span>
+<span class="giallo-l"><span>  - 发行年份 ........................ 分类法</span></span>
+<span class="giallo-l"><span>    - 2003                                术语</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>- 光灵 (Bright)                         值</span></span>
+<span class="giallo-l"><span>  - 导演 ............................ 分类法</span></span>
+<span class="giallo-l"><span>    - 大卫·阿耶 (David Ayer)              术语</span></span>
+<span class="giallo-l"><span>  - 类型 ............................ 分类法</span></span>
+<span class="giallo-l"><span>    - 奇幻 (Fantasy)                      术语</span></span>
+<span class="giallo-l"><span>    - 动作 (Action)                       术语</span></span>
+<span class="giallo-l"><span>  - 奖项 ............................ 分类法</span></span>
+<span class="giallo-l"><span>    - 加州外景奖 (California on Location Awards) 术语</span></span>
+<span class="giallo-l"><span>  - 发行年份 ........................ 分类法</span></span>
+<span class="giallo-l"><span>    - 2017                                术语</span></span></code></pre>
+<p>在此示例中，<code>发行年份</code> 页面将包含指向 2003 年和 2017 年页面的链接，而 2017 年页面将列出 <em>水形物语</em> 和 <em>光灵</em>。</p>
+<h2 id="pei-zhi"><a class="zola-anchor" href="#pei-zhi" aria-label="Anchor link for: pei-zhi">🔗</a>配置</h2>
+<p>一个分类法有六个变量：</p>
+<ul>
+<li><code>name</code>: 必需的字符串，将用于 URL，通常是复数版本（即 tags, categories 等）</li>
+<li><code>paginate_by</code>: 如果设置为数字，每个术语页面将按此数量分页。</li>
+<li><code>paginate_path</code>: 如果设置，此路径将用于分页页面，页码将附加在其后。
+例如，默认值为 <code>page/1</code>。</li>
+<li><code>feed</code>: 如果设置为 <code>true</code>，将为每个术语生成一个 feed（默认为 atom）。</li>
+<li><code>lang</code>: 仅当你制作多语言站点并希望指示此分类法属于哪种语言时才设置此项</li>
+<li><code>render</code>: 如果设置为 <code>false</code>，则不会为分类法或单个术语渲染页面。</li>
+</ul>
+<p>插入到配置文件 (<code>config.toml</code>) 中：</p>
+<p>⚠️ 将 taxonomies 键放在主部分，而不是 <code>[extra]</code> 部分</p>
+<p><strong>示例 1:</strong> (一种语言)</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;director&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;genres&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;awards&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;release-year&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p><strong>示例 2:</strong> (多语言站点)</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 这些分类法放在主部分</span></span>
+<span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;director&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;genres&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;awards&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;release-year&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>languages.fr</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;director&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;genres&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;awards&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;release-year&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h2 id="shi-yong-fen-lei-fa"><a class="zola-anchor" href="#shi-yong-fen-lei-fa" aria-label="Anchor link for: shi-yong-fen-lei-fa">🔗</a>使用分类法</h2>
+<p>配置完成后，你可以在内容中设置分类法，Zola 会识别它们：</p>
+<p><strong>示例:</strong></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Shape of water&quot;</span></span>
+<span class="giallo-l"><span>date</span><span style="color: #94E2D5;"> =</span><span> 2019-08-15</span><span style="color: #9399B2;font-style: italic;"> # 文章日期，不是电影日期</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>director</span><span style="color: #94E2D5;">=</span><span style="color: #9399B2;">[</span><span style="color: #A6E3A1;">&quot;Guillermo Del Toro&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>genres</span><span style="color: #94E2D5;">=</span><span style="color: #9399B2;">[</span><span style="color: #A6E3A1;">&quot;Thriller&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;">&quot;Drama&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>awards</span><span style="color: #94E2D5;">=</span><span style="color: #9399B2;">[</span><span style="color: #A6E3A1;">&quot;Golden Globe&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;Academy award&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;BAFTA&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>release-year</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;2017&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre><h2 id="shu-chu-lu-jing"><a class="zola-anchor" href="#shu-chu-lu-jing" aria-label="Anchor link for: shu-chu-lu-jing">🔗</a>输出路径</h2>
+<p>与 section 和页面计算输出路径的方式类似：</p>
+<ul>
+<li>分类法名称永远不会被 slugify</li>
+<li>当配置中启用 <code>slugify.taxonomies</code>（默认值为 <code>"on"</code>）时，分类法术语（例如特定标签）会被 slugify</li>
+</ul>
+<p>分类法页面随后可在以下路径获得：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>$BASE_URL/$NAME/ (分类法)</span></span>
+<span class="giallo-l"><span>$BASE_URL/$NAME/$SLUG (分类法条目)</span></span></code></pre>
+<p>请注意，分类法不区分大小写，因此具有相同 slug 的术语将被合并：包含标签 "example" 的 section 和页面将显示在与包含 "Example" 的页面相同的分类法页面中。</p>
+<p>如果你设置了 <code>taxonomy_root</code> 配置选项，所有分类法路径都将以该根路径为前缀：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>$BASE_URL/$TAXONOMY_ROOT/$NAME/ (分类法)</span></span>
+<span class="giallo-l"><span>$BASE_URL/$TAXONOMY_ROOT/$NAME/$SLUG (分类法条目)</span></span></code></pre>
+<p>例如，如果 <code>taxonomy_root = "blog"</code> 并且有一个名为 <code>tags</code> 的分类法，其中包含术语 <code>rust</code>：</p>
+<ul>
+<li>分类法列表页面: <code>$BASE_URL/blog/tags/</code></li>
+<li>分类法术语页面: <code>$BASE_URL/blog/tags/rust/</code></li>
+</ul>
+
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

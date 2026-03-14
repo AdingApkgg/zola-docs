@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="apollo | Zola">
+        <meta property="og:description" content="Modern and minimalistic blog theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;apollo&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>apollo | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;apollo&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>apollo</h1>
+            <p>Modern and minimalistic blog theme</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;not-matthias">not-matthias</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.14.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;not-matthias&#x2F;apollo">https:&#x2F;&#x2F;github.com&#x2F;not-matthias&#x2F;apollo</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;not-matthias.github.io&#x2F;apollo">https:&#x2F;&#x2F;not-matthias.github.io&#x2F;apollo</a></p>
+            
+            
+            <p><b>最后更新:</b> 2026-03-05T22:45:50+01:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="apollo">apollo</h1>
+<p>Modern and minimalistic blog theme powered by <a class="external" rel="external" href="https://getzola.org">Zola</a>. See a live preview <a class="external" rel="external" href="https://not-matthias.github.io/apollo">here</a>.</p>
+<p><sub><sup>Named after the greek god of knowledge, wisdom and intellect</sup></sub></p>
+<details open>
+  <summary>Dark theme</summary>
+<p><img src="https://zola.docs.saop.cc/themes/apollo/./screenshot-dark.png" alt="blog-dark" /></p>
+</details>
+<details>
+  <summary>Light theme</summary>
+<p><img src="https://zola.docs.saop.cc/themes/apollo/./screenshot.png" alt="blog-light" /></p>
+</details>
+<h2 id="features">Features</h2>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Pagination</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Themes (light, dark, auto)</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Projects page</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Analytics using <a class="external" rel="external" href="https://www.goatcounter.com/">GoatCounter</a> / <a class="external" rel="external" href="https://umami.is/">Umami</a> / <a class="external" rel="external" href="https://analytics.google.com/">Google Analytics</a></li>
+<li><input disabled="" type="checkbox" checked=""/>
+Social Links</li>
+<li><input disabled="" type="checkbox" checked=""/>
+MathJax Rendering</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Taxonomies</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Meta Tags For Individual Pages</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Custom homepage</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Comments</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Search</li>
+<li><input disabled="" type="checkbox" checked=""/>
+RSS feeds</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Mermaid diagram support</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Table of Contents</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Configurable cards layout</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<ol>
+<li>Download the theme</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git submodule add https://github.com/not-matthias/apollo themes/apollo</span></span></code></pre>
+<ol start="2">
+<li>Add the following to the top of your <code>config.toml</code></li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;apollo&quot;</span></span>
+<span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [{</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;"> }]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;auto&quot;</span></span>
+<span class="giallo-l"><span>socials</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">  # Configure socials here</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">  # Configure menu bar here</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># See this for more options: https://github.com/not-matthias/apollo/blob/main/config.toml#L14</span></span></code></pre>
+<ol start="3">
+<li>Copy the example content</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>cp -r themes/apollo/content/* content/</span></span></code></pre><h2 id="configuration">Configuration</h2>
+<p>Checkout all the <a href="https://zola.docs.saop.cc/themes/apollo/./content/posts/configuration.md">options you can configure</a> and the <a href="https://zola.docs.saop.cc/themes/apollo/./content/posts/">example pages</a>.</p>
+<h2 id="references">References</h2>
+<p>This theme is based on <a class="external" rel="external" href="https://github.com/XXXMrG/archie-zola/">archie-zola</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

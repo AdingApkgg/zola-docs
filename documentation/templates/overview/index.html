@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="概览 | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>概览 | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>概览</h1>
+    <p>Zola 使用 <a class="external" rel="external" href="https://keats.github.io/tera">Tera</a> 模板引擎，它与 Jinja2、Liquid 和 Twig 非常相似。</p>
+<p>由于本文档仅讨论模板如何在 Zola 中工作，如果你想先了解更多相关信息，请阅读 <a class="external" rel="external" href="https://keats.github.io/tera/docs/#templates">Tera 模板文档</a>。</p>
+<p>所有模板都位于 <code>templates</code> 目录中。如果你不确定模板中有哪些变量可用，可以在模板中放置 <code>{{ __tera_context }}</code> 以打印整个上下文。</p>
+<p>除 feeds 和 sitemap 外，所有模板都有一些变量可用：</p>
+<ul>
+<li><code>config</code>: 语言感知的 <a href="https://zola.docs.saop.cc/documentation/getting-started/configuration/">配置</a></li>
+<li><code>current_path</code>: 当前页面的路径（不带 <code>base_url</code> 的完整 URL），总是以 <code>/</code> 开头</li>
+<li><code>current_url</code>: 当前页面的完整 URL</li>
+<li><code>lang</code>: 当前页面的语言</li>
+</ul>
+<p>配置变量可以像 <code>config.variable</code> 这样访问，例如在 HTML 中使用 <code>{{ config.base_url }}</code>。
+404 模板无法获取 <code>current_path</code> 和 <code>current_url</code>（无法确定这些信息）。</p>
+<p>除了上面提到的 <code>config</code> 属性外，它还获得了 <code>config.mode</code>，即它是在 <code>build</code>、<code>serve</code> 还是 <code>check</code> 模式下运行。</p>
+<h2 id="biao-zhun-mo-ban"><a class="zola-anchor" href="#biao-zhun-mo-ban" aria-label="Anchor link for: biao-zhun-mo-ban">🔗</a>标准模板</h2>
+<p>默认情况下，Zola 将查找三个模板：<code>index.html</code>，应用于站点主页；<code>section.html</code>，应用于所有 sections（通过在 <code>content</code> 目录中创建目录生成的任何 HTML 页面）；以及 <code>page.html</code>，应用于所有 pages（通过在 <code>content</code> 目录中创建 <code>.md</code> 文件生成的任何 HTML 页面）。</p>
+<p>主页始终是一个 section（无论它是否包含其他页面）。
+因此，<code>index.html</code> 和 <code>section.html</code> 模板都可以访问 section 变量。<code>page.html</code> 模板可以访问 page 变量。
+下一节将更详细地描述 page 和 section 变量。</p>
+<h2 id="nei-zhi-mo-ban"><a class="zola-anchor" href="#nei-zhi-mo-ban" aria-label="Anchor link for: nei-zhi-mo-ban">🔗</a>内置模板</h2>
+<p>Zola 自带四个内置模板：<code>atom.xml</code> 和 <code>rss.xml</code>（在 <a href="https://zola.docs.saop.cc/documentation/templates/feeds/">Feeds</a> 中描述），<code>sitemap.xml</code>（在 <a href="https://zola.docs.saop.cc/documentation/templates/sitemap/">Sitemap</a> 中描述），以及 <code>robots.txt</code>（在 <a href="https://zola.docs.saop.cc/documentation/templates/robots/">Robots.txt</a> 中描述）。
+此外，主题可以添加自己的模板，如果没有被覆盖，这些模板将被应用。你可以通过在正确路径中创建同名模板来覆盖内置或主题模板。例如，你可以通过创建 <code>templates/atom.xml</code> 文件来覆盖 Atom 模板。</p>
+<h2 id="zi-ding-yi-mo-ban"><a class="zola-anchor" href="#zi-ding-yi-mo-ban" aria-label="Anchor link for: zi-ding-yi-mo-ban">🔗</a>自定义模板</h2>
+<p>除了标准的 <code>index.html</code>、<code>section.html</code> 和 <code>page.html</code> 模板外，你还可以通过在 <code>templates</code> 目录中创建 <code>.html</code> 文件来创建自定义模板。这些自定义模板默认不会被使用。相反，自定义模板 <em>仅</em> 在你通过将 <code>template</code> front-matter 变量设置为该模板的路径（或者如果你在另一个被应用的模板中 <code>include</code> 它）时才会被使用。例如，如果你为站点的“关于”页面创建了一个名为 <code>about.html</code> 的自定义模板，你可以通过在 <code>about.md</code> 页面中包含以下 front matter 来将其应用于 <code>about.md</code> 页面：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;关于我们&quot;</span></span>
+<span class="giallo-l"><span>template = &quot;about.html&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p>自定义模板不需要位于 <code>templates</code> 目录的根目录下。
+例如，<code>product_pages/with_pictures.html</code> 是一个有效的模板。</p>
+<h2 id="nei-zhi-guo-lu-qi"><a class="zola-anchor" href="#nei-zhi-guo-lu-qi" aria-label="Anchor link for: nei-zhi-guo-lu-qi">🔗</a>内置过滤器</h2>
+<p>Zola 在 Tera 中已有的 <a class="external" rel="external" href="https://keats.github.io/tera/docs/#filters">过滤器</a> 之外添加了一些过滤器。</p>
+<h3 id="markdown"><a class="zola-anchor" href="#markdown" aria-label="Anchor link for: markdown">🔗</a>markdown</h3>
+<p>使用 Markdown 将给定变量转换为 HTML。与 page/section Markdown 渲染相比，有一些区别：</p>
+<ul>
+<li>此过滤器评估的 shortcodes 无法访问当前的渲染上下文：<code>config</code> 可用，但在 <code>markdown</code> 过滤器调用的 shortcode 中访问 <code>section</code> 或 <code>page</code>（以及其他变量）将阻止你的站点构建（请参阅 <a class="external" rel="external" href="https://github.com/getzola/zola/pull/1358">此讨论</a>）</li>
+<li>shortcodes 中的 <code>lang</code> 将始终等于站点的 <code>config.default_language</code>（否则为 <code>en</code>）；这应该不是问题，但在大多数情况下如果需要在过滤器中使用感知语言的 shortcodes，请参考文档的 <a href="https://zola.docs.saop.cc/documentation/content/shortcodes/#shortcode-context">Shortcode context</a> 部分。</li>
+</ul>
+<p>默认情况下，过滤器会将所有文本包裹在一个段落中。要禁用此行为，你可以将 <code>true</code> 传递给 inline 参数：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ some_text</span><span style="color: #9399B2;"> |</span><span> markdown</span><span style="color: #9399B2;">(</span><span>inline</span><span style="color: #94E2D5;">=</span><span style="color: #F38BA8;">true</span><span style="color: #9399B2;">)</span><span> }}</span></span></code></pre>
+<p>你不需要对 <code>page.content</code> 或 <code>section.content</code> 使用此过滤器，内容已经渲染过了。</p>
+<h3 id="base64-encode"><a class="zola-anchor" href="#base64-encode" aria-label="Anchor link for: base64-encode">🔗</a>base64_encode</h3>
+<p>将变量编码为 base64。</p>
+<h3 id="base64-decode"><a class="zola-anchor" href="#base64-decode" aria-label="Anchor link for: base64-decode">🔗</a>base64_decode</h3>
+<p>从 base64 解码变量。</p>
+<h3 id="regex-replace"><a class="zola-anchor" href="#regex-replace" aria-label="Anchor link for: regex-replace">🔗</a>regex_replace</h3>
+<p>通过正则表达式替换文本。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{</span><span style="color: #A6E3A1;"> &quot;World Hello&quot;</span><span style="color: #9399B2;"> |</span><span> regex_replace</span><span style="color: #9399B2;">(</span><span>pattern</span><span style="color: #94E2D5;">=</span><span>`</span><span style="color: #9399B2;">(</span><span>?P</span><span style="color: #94E2D5;">&lt;</span><span>subject</span><span style="color: #94E2D5;">&gt;</span><span>\w</span><span style="color: #94E2D5;">+</span><span style="color: #9399B2;">), (</span><span>?P</span><span style="color: #94E2D5;">&lt;</span><span>greeting</span><span style="color: #94E2D5;">&gt;</span><span>\w</span><span style="color: #94E2D5;">+</span><span style="color: #9399B2;">)</span><span>`</span><span style="color: #9399B2;">,</span><span> rep</span><span style="color: #94E2D5;">=</span><span>`$greeting $subject`</span><span style="color: #9399B2;">)</span><span> }}</span></span>
+<span class="giallo-l"><span>&lt;!-- Hello World --&gt;</span></span></code></pre><h3 id="num-format"><a class="zola-anchor" href="#num-format" aria-label="Anchor link for: num-format">🔗</a>num_format</h3>
+<p>将数字格式化为其字符串表示形式。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ 1000000 </span><span style="color: #9399B2;">|</span><span> num_format }}</span></span>
+<span class="giallo-l"><span>&lt;!-- 1,000,000 --&gt;</span></span></code></pre>
+<p>默认情况下，这将使用 config.toml 中 <code>config.default_language</code> 设置的语言环境来格式化数字。</p>
+<p>要为特定语言环境格式化数字，你可以使用 <code>locale</code> 参数并传递所需语言环境的名称：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ 1000000 </span><span style="color: #9399B2;">|</span><span> num_format</span><span style="color: #9399B2;">(</span><span>locale</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;en-IN&quot;</span><span style="color: #9399B2;">)</span><span> }}</span></span>
+<span class="giallo-l"><span>&lt;!-- 10,00,000 --&gt;</span></span></code></pre><h2 id="nei-zhi-han-shu"><a class="zola-anchor" href="#nei-zhi-han-shu" aria-label="Anchor link for: nei-zhi-han-shu">🔗</a>内置函数</h2>
+<p>Zola 添加了一些 Tera 函数到 <a class="external" rel="external" href="https://keats.github.io/tera/docs#built-in-functions">Tera 内置函数</a> 中，以便更轻松地开发复杂的站点。</p>
+<h3 id="wen-jian-sou-suo-luo-ji"><a class="zola-anchor" href="#wen-jian-sou-suo-luo-ji" aria-label="Anchor link for: wen-jian-sou-suo-luo-ji">🔗</a>文件搜索逻辑</h3>
+<p>对于通过 <code>get_page</code> 和 <code>get_section</code> 以外的方式在磁盘上搜索文件的函数，适用以下逻辑。</p>
+<ol>
+<li>基本目录是 Zola 根目录，即 <code>config.toml</code> 所在的位置</li>
+<li>对于给定的路径：如果以 <code>@/</code> 开头，将其替换为 <code>content/</code> 并修剪任何前导 <code>/</code></li>
+<li>按以下顺序在以下位置搜索，返回第一个存在文件的位置：
+<ol>
+<li><code>$base_directory</code> + <code>$path</code></li>
+<li><code>$base_directory</code> + <code>"static/"</code> + <code>$path</code></li>
+<li><code>$base_directory</code> + <code>"content/"</code> + <code>$path</code></li>
+<li><code>$base_directory</code> + <code>$output_path</code> + <code>$path</code></li>
+<li><code>$base_directory</code> + <code>"themes"</code> + <code>$theme</code> + <code>"static/"</code> + <code>$path</code>（仅当使用主题时）</li>
+</ol>
+</li>
+</ol>
+<p>实际上，这意味着 <code>@/some/image.jpg</code>、<code>/content/some/image.jpg</code> 和 <code>content/some/image.jpg</code> 将指向同一个东西。</p>
+<p>如果路径在 Zola 目录之外，它将报错。</p>
+<h3 id="get-page"><a class="zola-anchor" href="#get-page" aria-label="Anchor link for: get-page">🔗</a><code>get_page</code></h3>
+<p>获取 <code>.md</code> 文件的路径并返回关联的页面。基本路径是 <code>content</code> 目录。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> page</span><span style="color: #94E2D5;"> =</span><span> get_page</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;blog/page2.md&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p>如果为页面选择特定语言，可以将带有语言代码的 <code>lang</code> 传递给函数：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> page</span><span style="color: #94E2D5;"> =</span><span> get_page</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;blog/page2.md&quot;</span><span style="color: #9399B2;">,</span><span> lang</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;fr&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">{# 如果 &quot;fr&quot; 是默认语言，这等效于 #}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> page</span><span style="color: #94E2D5;"> =</span><span> get_page</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;blog/page2.md&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">{# 如果 &quot;fr&quot; 不是默认语言，这等效于 #}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> page</span><span style="color: #94E2D5;"> =</span><span> get_page</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;blog/page2.fr.md&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre><h3 id="get-section"><a class="zola-anchor" href="#get-section" aria-label="Anchor link for: get-section">🔗</a><code>get_section</code></h3>
+<p>获取 <code>_index.md</code> 文件的路径并返回关联的 section。基本路径是 <code>content</code> 目录。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> section</span><span style="color: #94E2D5;"> =</span><span> get_section</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;blog/_index.md&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p>如果你只需要 section 的元数据，可以将 <code>metadata_only=true</code> 传递给函数：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> section</span><span style="color: #94E2D5;"> =</span><span> get_section</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;blog/_index.md&quot;</span><span style="color: #9399B2;">,</span><span> metadata_only</span><span style="color: #94E2D5;">=</span><span style="color: #F38BA8;">true</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p>如果为 section 选择特定语言，可以将带有语言代码的 <code>lang</code> 传递给函数：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> section</span><span style="color: #94E2D5;"> =</span><span> get_section</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;blog/_index.md&quot;</span><span style="color: #9399B2;">,</span><span> lang</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;fr&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">{# 如果 &quot;fr&quot; 是默认语言，这等效于 #}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> section</span><span style="color: #94E2D5;"> =</span><span> get_section</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;blog/_index.md&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">{# 如果 &quot;fr&quot; 不是默认语言，这等效于 #}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> section</span><span style="color: #94E2D5;"> =</span><span> get_section</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;blog/_index.fr.md&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre><h3 id="get-taxonomy-url"><a class="zola-anchor" href="#get-taxonomy-url" aria-label="Anchor link for: get-taxonomy-url">🔗</a><code>get_taxonomy_url</code></h3>
+<p>获取找到的 taxonomy 项目的永久链接。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> url</span><span style="color: #94E2D5;"> =</span><span> get_taxonomy_url</span><span style="color: #9399B2;">(</span><span>kind</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;categories&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;">=</span><span>page</span><span style="color: #9399B2;">.</span><span>taxonomies</span><span style="color: #9399B2;">.</span><span>category</span><span style="color: #9399B2;">,</span><span> lang</span><span style="color: #94E2D5;">=</span><span>page</span><span style="color: #9399B2;">.</span><span>lang</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p><code>name</code> 几乎总是来自变量，但如果你想手动执行此操作，该值应与 front matter 中的值相同，而不是 slugified 版本。</p>
+<p><code>lang</code>（可选）默认为 config.toml 中的 <code>config.default_language</code></p>
+<p><code>required</code>（可选）如果定义了 taxonomy 但没有任何内容使用它，则抛出错误。默认为 true。</p>
+<h3 id="get-taxonomy"><a class="zola-anchor" href="#get-taxonomy" aria-label="Anchor link for: get-taxonomy">🔗</a><code>get_taxonomy</code></h3>
+<p>获取特定类型的整个 taxonomy。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> categories</span><span style="color: #94E2D5;"> =</span><span> get_taxonomy</span><span style="color: #9399B2;">(</span><span>kind</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;categories&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p>输出的类型是：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="typescript"><span class="giallo-l"><span>kind</span><span style="color: #9399B2;">:</span><span> TaxonomyConfig</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span>items</span><span style="color: #9399B2;">:</span><span> Array</span><span style="color: #94E2D5;">&lt;</span><span>TaxonomyTerm</span><span style="color: #94E2D5;">&gt;</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span>lang</span><span style="color: #9399B2;">:</span><span> String</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span>permalink</span><span style="color: #9399B2;">:</span><span> String</span><span style="color: #9399B2;">;</span></span></code></pre>
+<p><code>lang</code>（可选）默认为 config.toml 中的 <code>config.default_language</code></p>
+<p><code>required</code>（可选）如果定义了 taxonomy 但没有任何内容使用它，则抛出错误。默认为 true。</p>
+<p>有关这些类型的完整文档，请参阅 <a href="https://zola.docs.saop.cc/documentation/templates/taxonomies/">Taxonomies 文档</a>。</p>
+<h3 id="get-taxonomy-term"><a class="zola-anchor" href="#get-taxonomy-term" aria-label="Anchor link for: get-taxonomy-term">🔗</a><code>get_taxonomy_term</code></h3>
+<p>从特定类型的 taxonomy 中获取单个术语。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> categories</span><span style="color: #94E2D5;"> =</span><span> get_taxonomy_term</span><span style="color: #9399B2;">(</span><span>kind</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;categories&quot;</span><span style="color: #9399B2;">,</span><span> term</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;term_name&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p>输出的类型是单个 <code>TaxonomyTerm</code> 项目。</p>
+<p><code>lang</code>（可选）默认为 config.toml 中的 <code>config.default_language</code></p>
+<p><code>include_pages</code>（可选）默认为 true。如果为 false，<code>TaxonomyTerm</code> 中的 <code>pages</code> 项目将为空，无论该术语实际存在多少页面。在两种情况下，<code>page_count</code> 都将正确反映该术语的页面数。</p>
+<p><code>required</code>（可选）如果未找到 taxonomy 或术语。</p>
+<p>有关这些类型的完整文档，请参阅 <a href="https://zola.docs.saop.cc/documentation/templates/taxonomies/">Taxonomies 文档</a>。</p>
+<h3 id="get-url"><a class="zola-anchor" href="#get-url" aria-label="Anchor link for: get-url">🔗</a><code>get_url</code></h3>
+<p>获取给定路径的永久链接。
+如果路径以 <code>@/</code> 开头，它将被视为指向 Markdown 文件的 <a href="https://zola.docs.saop.cc/documentation/content/linking/#internal-links">内部链接</a>，从根 <code>content</code> 目录开始并进行验证。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> url</span><span style="color: #94E2D5;"> =</span><span> get_url</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;@/blog/_index.md&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p>它接受一个可选参数 <code>lang</code>，以便在多语言网站中计算 <em>感知语言的 URL</em>。假设 <code>config.base_url</code> 是 <code>"http://example.com"</code>，以下代码段将：</p>
+<ul>
+<li>如果 <code>config.default_language</code> 是 <code>"en"</code>，则返回 <code>"http://example.com/blog/"</code></li>
+<li>如果 <code>config.default_language</code> <strong>不是</strong> <code>"en"</code> 且 <code>"en"</code> 出现在 <code>config.languages</code> 中，则返回 <code>"http://example.com/en/blog/"</code></li>
+<li>否则失败，错误消息为 <code>"'en' is not an authorized language (check config.languages)."</code></li>
+</ul>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> url</span><span style="color: #94E2D5;"> =</span><span> get_url</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;@/blog/_index.md&quot;</span><span style="color: #9399B2;">,</span><span> lang</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;en&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p>这也可以用于获取静态文件的永久链接，例如如果你想链接到位于 <code>static/css/app.css</code> 的文件：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ get_url</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;css/app.css&quot;</span><span style="color: #9399B2;">)</span><span> }}</span></span></code></pre>
+<p>默认情况下，链接不会有尾部斜杠。你可以通过将 <code>trailing_slash=true</code> 传递给 <code>get_url</code> 函数来强制添加一个。
+例如：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ get_url</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;css/app.css&quot;</span><span style="color: #9399B2;">,</span><span> trailing_slash</span><span style="color: #94E2D5;">=</span><span style="color: #F38BA8;">true</span><span style="color: #9399B2;">)</span><span> }}</span></span></code></pre>
+<p>对于非内部链接，你还可以通过将 <code>cachebust=true</code> 传递给 <code>get_url</code> 函数，在 URL 末尾添加格式为 <code>?h=&lt;sha256&gt;</code> 的缓存破坏。在这种情况下，路径需要解析为实际文件。
+有关详细信息，请参阅 <a href="https://zola.docs.saop.cc/documentation/templates/overview/#file-searching-logic">文件搜索逻辑</a>。</p>
+<h3 id="get-hash"><a class="zola-anchor" href="#get-hash" aria-label="Anchor link for: get-hash">🔗</a><code>get_hash</code></h3>
+<p>返回文件或字符串字面量的哈希摘要（SHA-256、SHA-384 或 SHA-512）。</p>
+<p>它可以接受以下参数：</p>
+<ul>
+<li><code>path</code>: 强制，有关详细信息，请参阅 <a href="https://zola.docs.saop.cc/documentation/templates/overview/#file-searching-logic">文件搜索逻辑</a></li>
+<li><strong>或</strong> <code>literal</code>: 强制，要哈希的字符串值</li>
+<li><code>sha_type</code>: 可选，<code>256</code>、<code>384</code> 或 <code>512</code> 之一，默认为 <code>384</code></li>
+<li><code>base64</code>: 可选，<code>true</code> 或 <code>false</code>，默认为 <code>true</code>。是否将哈希编码为 base64</li>
+</ul>
+<p>必须给出 <code>path</code> 或 <code>literal</code>。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ get_hash</span><span style="color: #9399B2;">(</span><span>literal</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Hello World&quot;</span><span style="color: #9399B2;">,</span><span> sha_type</span><span style="color: #94E2D5;">=</span><span>256</span><span style="color: #9399B2;">)</span><span> }}</span></span>
+<span class="giallo-l"><span>{{ get_hash</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;static/js/app.js&quot;</span><span style="color: #9399B2;">,</span><span> sha_type</span><span style="color: #94E2D5;">=</span><span>256</span><span style="color: #9399B2;">)</span><span> }}</span></span></code></pre>
+<p>当其 <code>base64</code> 参数设置为 <code>true</code> 时，该函数还可以输出 base64 编码的哈希值。这可用于实现 <a class="external" rel="external" href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">子资源完整性</a>。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>&lt;script src=&quot;{{ get_url</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;static/js/app.js&quot;</span><span style="color: #9399B2;">)</span><span> }}&quot;</span></span>
+<span class="giallo-l"><span>  integrity=&quot;sha384-{{ get_hash</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;static/js/app.js&quot;</span><span style="color: #9399B2;">,</span><span> sha_type</span><span style="color: #94E2D5;">=</span><span>384</span><span style="color: #9399B2;">,</span><span> base64</span><span style="color: #94E2D5;">=</span><span style="color: #F38BA8;">true</span><span style="color: #9399B2;">) |</span><span> safe }}&quot;&gt;&lt;/script&gt;</span></span></code></pre>
+<p>请注意，子资源完整性通常用于使用外部脚本时，<code>get_hash</code> 不支持此功能。</p>
+<h3 id="get-image-metadata"><a class="zola-anchor" href="#get-image-metadata" aria-label="Anchor link for: get-image-metadata">🔗</a><code>get_image_metadata</code></h3>
+<p>获取图像的元数据。支持 JPEG、PNG、WebP、BMP、GIF 以及 SVG 等常见格式。</p>
+<p>它可以接受以下参数：</p>
+<ul>
+<li><code>path</code>: 强制，有关详细信息，请参阅 <a href="https://zola.docs.saop.cc/documentation/templates/overview/#file-searching-logic">文件搜索逻辑</a></li>
+<li><code>allow_missing</code>: 可选，<code>true</code> 或 <code>false</code>，默认为 <code>false</code>。丢失文件是否应引发错误。</li>
+</ul>
+<p>该方法返回一个包含 <code>width</code>、<code>height</code>、<code>format</code> 和 <code>mime</code> 的映射。返回的 <code>format</code> 是文件格式最常见的文件扩展名，可能与用于图像的扩展名不匹配。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>  {%</span><span style="color: #CBA6F7;"> set</span><span> meta</span><span style="color: #94E2D5;"> =</span><span> get_image_metadata</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;...&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>  我们的图像 (.{{meta</span><span style="color: #9399B2;">.</span><span>format}}) 格式是 {{ meta</span><span style="color: #9399B2;">.</span><span>width }}x{{ meta</span><span style="color: #9399B2;">.</span><span>height }}</span></span></code></pre><h3 id="load-data"><a class="zola-anchor" href="#load-data" aria-label="Anchor link for: load-data">🔗</a><code>load_data</code></h3>
+<p>从文件、URL 或字符串字面量加载数据。支持的文件类型包括 <em>toml</em>、<em>json</em>、<em>csv</em>、<em>bibtex</em>、<em>yaml</em>/<em>yml</em> 和 <em>xml</em>，仅支持 UTF-8 编码。</p>
+<p>任何其他文件类型都将作为纯文本加载。</p>
+<p><code>path</code> 参数指定本地数据文件的路径，依据 <a href="https://zola.docs.saop.cc/documentation/templates/overview/#file-searching-logic">文件搜索逻辑</a>。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> data</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;content/blog/story/data.toml&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p>或者，<code>url</code> 参数指定要加载的远程 URL 的位置。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> data</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://en.wikipedia.org/wiki/Commune_of_Paris&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p>或者，<code>literal</code> 参数指定对象字面量。注意：如果未指定 <code>format</code> 参数，则假定为纯文本。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> data</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>literal</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&#39;{&quot;name&quot;: &quot;bob&quot;}&#39;</span><span style="color: #9399B2;">,</span><span> format</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;json&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>{{ data</span><span style="color: #9399B2;">[</span><span style="color: #A6E3A1;">&quot;name&quot;</span><span style="color: #9399B2;">]</span><span> }}</span></span></code></pre>
+<p><em>注意：当与 <code>literal</code> 参数结合使用时，<code>required</code> 参数无效。</em></p>
+<p>可选的 <code>required</code> 布尔参数可以设置为 false，以便丢失数据（HTTP 错误或本地文件未找到）不会产生错误，而是返回 null 值。但是，即使使用 <code>required=false</code>，本地文件的权限问题和无法解析为请求数据格式的无效数据仍将产生错误。</p>
+<p>下面的代码段输出维基百科页面的 HTML，如果页面无法访问或未返回成功的 HTTP 代码，则输出 "No data found"：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> data</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://en.wikipedia.org/wiki/Commune_of_Paris&quot;</span><span style="color: #9399B2;">,</span><span> required</span><span style="color: #94E2D5;">=</span><span style="color: #F38BA8;">false</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> if</span><span> data %}{{ data</span><span style="color: #9399B2;"> |</span><span> safe }}{%</span><span style="color: #CBA6F7;"> else</span><span> %}No data found{%</span><span style="color: #CBA6F7;"> endif</span><span> %}</span></span></code></pre>
+<p>可选的 <code>format</code> 参数允许你指定并覆盖包含在指定文件或 URL 中的数据类型。
+有效条目是 <code>toml</code>、<code>json</code>、<code>csv</code>、<code>bibtex</code>、<code>yaml</code>、<code>xml</code> 或 <code>plain</code>。如果未指定 <code>format</code> 参数，则使用路径扩展名。如果是字面量，如果未指定 <code>format</code>，则假定为 <code>plain</code>。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> data</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;content/blog/story/data.txt&quot;</span><span style="color: #9399B2;">,</span><span> format</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;json&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p>当你的文件具有支持的扩展名但你想将其作为纯文本加载时，请使用 <code>plain</code> 格式。</p>
+<p>对于 <em>toml</em>、<em>json</em>、<em>yaml</em> 和 <em>xml</em>，数据被加载到与原始数据文件匹配的结构中；
+但是，对于 <em>csv</em>，没有这种结构的原生概念。相反，数据被分离为包含 <em>headers</em> 和 <em>records</em> 的数据结构。查看下面的示例以了解它是如何工作的。</p>
+<p>在模板中：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> data</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;content/blog/story/data.csv&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span></code></pre>
+<p>在 <em>content/blog/story/data.csv</em> 文件中：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="csv"><span class="giallo-l"><span>Number,</span><span style="color: #CBA6F7;"> Title</span></span>
+<span class="giallo-l"><span>1,</span><span style="color: #CBA6F7;">Gutenberg</span></span>
+<span class="giallo-l"><span>2,</span><span style="color: #CBA6F7;">Printing</span></span></code></pre>
+<p>解析数据的等效 json 值将存储在模板中的 <code>data</code> 变量中：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="json"><span class="giallo-l"><span style="color: #9399B2;">{</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">headers</span><span style="color: #9399B2;">&quot;: [</span><span style="color: #A6E3A1;">&quot;Number&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;Title&quot;</span><span style="color: #9399B2;">],</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">records</span><span style="color: #9399B2;">&quot;: [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        [</span><span style="color: #A6E3A1;">&quot;1&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;Gutenberg&quot;</span><span style="color: #9399B2;">],</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        [</span><span style="color: #A6E3A1;">&quot;2&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;Printing&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    ],</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre>
+<p><code>bibtex</code> 格式将数据加载到与 <a class="external" rel="external" href="https://crates.io/crates/nom-bibtex">nom-bibtex crate</a> 使用的格式匹配的结构中。以下是 bibtex 格式的数据示例：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>@preamble{&quot;A bibtex preamble&quot; # &quot; this is.&quot;}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>@Comment{</span></span>
+<span class="giallo-l"><span>    Here is a comment.</span></span>
+<span class="giallo-l"><span>}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>Another comment!</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>@string(name = &quot;Vincent Prouillet&quot;)</span></span>
+<span class="giallo-l"><span>@string(github = &quot;https://github.com/getzola/zola&quot;)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>@misc {my_citation_key,</span></span>
+<span class="giallo-l"><span>    author= name,</span></span>
+<span class="giallo-l"><span>    title = &quot;Zola&quot;,</span></span>
+<span class="giallo-l"><span>    note = &quot;github: &quot; # github</span></span>
+<span class="giallo-l"><span>}                                                    }</span></span></code></pre>
+<p>以下是生成的 bibtex 数据结构的 json 等效格式：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="json"><span class="giallo-l"><span style="color: #9399B2;">{</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">preambles</span><span style="color: #9399B2;">&quot;: [</span><span style="color: #A6E3A1;">&quot;A bibtex preamble this is.&quot;</span><span style="color: #9399B2;">],</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">comments</span><span style="color: #9399B2;">&quot;: [</span><span style="color: #A6E3A1;">&quot;Here is a comment.&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;Another comment!&quot;</span><span style="color: #9399B2;">],</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">variables</span><span style="color: #9399B2;">&quot;: {</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        &quot;</span><span style="color: #89B4FA;">name</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;Vincent Prouillet&quot;</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        &quot;</span><span style="color: #89B4FA;">github</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;https://github.com/getzola/zola&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">bibliographies</span><span style="color: #9399B2;">&quot;: [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">            &quot;</span><span style="color: #89B4FA;">entry_type</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;misc&quot;</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">            &quot;</span><span style="color: #89B4FA;">citation_key</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;my_citation_key&quot;</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">            &quot;</span><span style="color: #89B4FA;">tags</span><span style="color: #9399B2;">&quot;: {</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">                &quot;</span><span style="color: #89B4FA;">author</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;Vincent Prouillet&quot;</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">                &quot;</span><span style="color: #89B4FA;">title</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;Zola&quot;</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">                &quot;</span><span style="color: #89B4FA;">note</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;github: https://github.com/getzola/zola&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">            }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    ]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre>
+<p>最后，可以从模板访问 bibtex 数据，如下所示：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> tags</span><span style="color: #94E2D5;"> =</span><span> data</span><span style="color: #9399B2;">.</span><span>bibliographies</span><span style="color: #9399B2;">[</span><span>0</span><span style="color: #9399B2;">].</span><span>tags %}</span></span>
+<span class="giallo-l"><span>This was generated using {{ tags</span><span style="color: #9399B2;">.</span><span>title }}, authored by {{ tags</span><span style="color: #9399B2;">.</span><span>author }}.</span></span></code></pre><h4 id="yuan-cheng-nei-rong"><a class="zola-anchor" href="#yuan-cheng-nei-rong" aria-label="Anchor link for: yuan-cheng-nei-rong">🔗</a>远程内容</h4>
+<p>你可以从远程 URL 加载数据，而不是使用文件。这可以通过指定 <code>load_data</code> 的 <code>url</code> 参数而不是 <code>path</code> 来完成。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> response</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://api.github.com/repos/getzola/zola&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>{{ response }}</span></span></code></pre>
+<p>默认情况下，响应主体将不进行解析直接返回。可以通过使用如下所示的 <code>format</code> 参数来更改此设置。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> response</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://api.github.com/repos/getzola/zola&quot;</span><span style="color: #9399B2;">,</span><span> format</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;json&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>{{ response }}</span></span></code></pre>
+<p>当未指定其他参数时，URL 将始终使用 HTTP GET 请求检索。
+使用参数 <code>method</code>，自版本 0.14.0 起，你也可以选择使用 POST 请求检索 URL。</p>
+<p>当使用 <code>method="POST"</code> 时，你还可以使用参数 <code>body</code> 和 <code>content_type</code>。
+参数 body 是 POST 请求中发送的实际内容。
+参数 <code>content_type</code> 应该是 body 的 mime 类型。</p>
+<p>此示例将向 kroki 服务发出 POST 请求以生成 SVG。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> postdata</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://kroki.io/blockdiag/svg&quot;</span><span style="color: #9399B2;">,</span><span> format</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;plain&quot;</span><span style="color: #9399B2;">,</span><span> method</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;POST&quot;</span><span style="color: #9399B2;"> ,</span><span>content_type</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;text/plain&quot;</span><span style="color: #9399B2;">,</span><span> body</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;blockdiag {</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">  &#39;Doing POST&#39; -&gt; &#39;using load_data&#39;</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">  &#39;using load_data&#39; -&gt; &#39;can generate&#39; -&gt; &#39;block diagrams&#39;;</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">  &#39;using load_data&#39; -&gt; is -&gt; &#39;very easy!&#39;;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">  &#39;Doing POST&#39; [color = &#39;greenyellow&#39;];</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">  &#39;block diagrams&#39; [color = &#39;pink&#39;];</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">  &#39;very easy!&#39; [color = &#39;orange&#39;];</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">}&quot;</span><span style="color: #9399B2;">)</span><span>%}</span></span>
+<span class="giallo-l"><span>{{postdata</span><span style="color: #9399B2;">|</span><span>safe}}</span></span></code></pre>
+<p>如果你需要对 HTTP 标头进行额外处理，可以使用 <code>headers</code> 参数。
+当资源需要身份验证或需要通过特殊标头传递其他参数时，你可能需要此参数。
+请注意，标头将附加到 Zola 本身设置的默认标头，而不是替换它们。</p>
+<p>此示例将向 GitHub markdown 渲染服务发出 POST 请求。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> postdata</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://api.github.com/markdown&quot;</span><span style="color: #9399B2;">,</span><span> format</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;plain&quot;</span><span style="color: #9399B2;">,</span><span> method</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;POST&quot;</span><span style="color: #9399B2;">,</span><span> content_type</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;application/json&quot;</span><span style="color: #9399B2;">,</span><span> headers</span><span style="color: #94E2D5;">=</span><span style="color: #9399B2;">[</span><span style="color: #A6E3A1;">&quot;accept=application/vnd.github.v3+json&quot;</span><span style="color: #9399B2;">],</span><span> body</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&#39;{&quot;text&quot;:&quot;headers support added in #1710, commit before it: b3918f124d13ec1bedad4860c15a060dd3751368&quot;,&quot;context&quot;:&quot;getzola/zola&quot;,&quot;mode&quot;:&quot;gfm&quot;}&#39;</span><span style="color: #9399B2;">)</span><span>%}</span></span>
+<span class="giallo-l"><span>{{postdata</span><span style="color: #9399B2;">|</span><span>safe}}</span></span></code></pre>
+<p>以下示例展示了如何向 GitHub 发送 GraphQL 查询（需要身份验证）。
+如果你想在自己的机器上尝试此示例，你需要提供 GitHub PAT（个人访问令牌），
+你可以在此链接获取访问令牌：https://github.com/settings/tokens，然后将 <code>GITHUB_TOKEN</code> 环境变量设置为你获得的访问令牌。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> token</span><span style="color: #94E2D5;"> =</span><span> get_env</span><span style="color: #9399B2;">(</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;GITHUB_TOKEN&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> postdata</span><span style="color: #94E2D5;"> =</span><span> load_data</span><span style="color: #9399B2;">(</span><span>url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://api.github.com/graphql&quot;</span><span style="color: #9399B2;">,</span><span> format</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;json&quot;</span><span style="color: #9399B2;">,</span><span> method</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;POST&quot;</span><span style="color: #9399B2;"> ,</span><span>content_type</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;application/json&quot;</span><span style="color: #9399B2;">,</span><span> headers</span><span style="color: #94E2D5;">=</span><span style="color: #9399B2;">[</span><span style="color: #A6E3A1;">&quot;accept=application/vnd.github.v4.idl&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;authorization=Bearer &quot;</span><span> ~ token</span><span style="color: #9399B2;">],</span><span> body</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&#39;{&quot;query&quot;:&quot;query { viewer { login }}&quot;}&#39;</span><span style="color: #9399B2;">)</span><span>%}</span></span>
+<span class="giallo-l"><span>{{postdata</span><span style="color: #9399B2;">|</span><span>safe}}</span></span></code></pre>
+<p>如果你需要指定多个具有相同名称的标头，可以像这样指定它们：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>headers=[&quot;accept=application/json,text/html&quot;]</span></span></code></pre>
+<p>这相当于两个 <code>Accept</code> 标头，分别为 <code>application/json</code> 和 <code>text/html</code>。</p>
+<p>如果不起作用，你可以多次指定标头以达到类似的效果：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>headers=[&quot;accept=application/json&quot;, &quot;accept=text/html&quot;]</span></span></code></pre><h4 id="shu-ju-huan-cun"><a class="zola-anchor" href="#shu-ju-huan-cun" aria-label="Anchor link for: shu-ju-huan-cun">🔗</a>数据缓存</h4>
+<p>数据文件加载和远程请求在构建期间缓存在内存中，因此不会对同一端点发出多个请求。
+URL 基于 URL 缓存，数据文件基于文件修改时间缓存。
+缓存时也会考虑格式，因此如果以两种不同格式加载，请求将被发送两次。</p>
+<h3 id="trans"><a class="zola-anchor" href="#trans" aria-label="Anchor link for: trans">🔗</a><code>trans</code></h3>
+<p>获取给定 <code>key</code> 的翻译，针对 <code>default_language</code>、给定的 <code>lang</code>uage 或活动语言：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ trans</span><span style="color: #9399B2;">(</span><span>key</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;title&quot;</span><span style="color: #9399B2;">)</span><span> }}</span></span>
+<span class="giallo-l"><span>{{ trans</span><span style="color: #9399B2;">(</span><span>key</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;title&quot;</span><span style="color: #9399B2;">,</span><span> lang</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;fr&quot;</span><span style="color: #9399B2;">)</span><span> }}</span></span>
+<span class="giallo-l"><span>{{</span><span style="color: #94E2D5;">/*</span><span> trans</span><span style="color: #9399B2;">(</span><span>key</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;title&quot;</span><span style="color: #9399B2;">,</span><span> lang</span><span style="color: #94E2D5;">=</span><span>lang</span><span style="color: #9399B2;">)</span><span style="color: #94E2D5;"> */</span><span>}}</span></span></code></pre><h3 id="resize-image"><a class="zola-anchor" href="#resize-image" aria-label="Anchor link for: resize-image">🔗</a><code>resize_image</code></h3>
+<p>调整图像文件的大小。
+有关完整文档，请参阅 <a href="https://zola.docs.saop.cc/documentation/content/image-processing/"><em>内容 / 图像处理</em></a>。</p>
+
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

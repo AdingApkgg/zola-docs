@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Anpu | Zola">
+        <meta property="og:description" content="A port of the Hugo Anubis theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anpu&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Anpu | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anpu&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>Anpu</h1>
+            <p>A port of the Hugo Anubis theme</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;zbrox.com">Rostislav Raykov</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.11.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;zbrox&#x2F;anpu-zola-theme">https:&#x2F;&#x2F;github.com&#x2F;zbrox&#x2F;anpu-zola-theme</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;anpu-zola-theme.vercel.app">https:&#x2F;&#x2F;anpu-zola-theme.vercel.app</a></p>
+            
+            
+            <p><b>最后更新:</b> 2025-12-14T11:16:37Z</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="anpu-theme-for-zola">Anpu theme for Zola</h1>
+<p>This is a port of the Hugo theme <a class="external" rel="external" href="https://github.com/Mitrichius/hugo-theme-anubis/tree/master/layouts">Anubis</a> for <a class="external" rel="external" href="https://getzola.org">Zola</a>.</p>
+<h2 id="screenshots">Screenshots</h2>
+<table><thead><tr><th style="text-align: center">Light mode</th><th style="text-align: center">Dark mode</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="https://zola.docs.saop.cc/themes/anpu/screenshot-light.png" alt="light mode website screenshot" /></td><td style="text-align: center"><img src="https://zola.docs.saop.cc/themes/anpu/screenshot-dark.png" alt="dark mode website screenshot" /></td></tr>
+</tbody></table>
+<h2 id="usage">Usage</h2>
+<p>In order to use the theme you need to clone this repository in your <code>themes</code> folder:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/zbrox/anpu-zola-theme.git themes/anpu</span></span></code></pre>
+<p>Then set your theme setting in <code>config.toml</code> to <code>anpu</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;anpu&quot;</span></span></code></pre>
+<p>This theme requires both the <code>tags</code> and <code>categories</code> taxonomies.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;categories&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h2 id="how-to-customize">How To Customize</h2>
+<p>There are two things you can customize:</p>
+<ul>
+<li>The links to be included in the menu</li>
+<li>The date format of the posts</li>
+</ul>
+<h3 id="menu-links">Menu links</h3>
+<p>In your <code>config.toml</code> under the <code>[extra]</code> section you need to set the <code>anpu_menu_links</code> list.</p>
+<p>Example:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>anpu_menu_links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/about/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;About&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>If you include <code>$BASE_URL</code> in the url of a link it will be replaced to the base url of your site.</p>
+<h3 id="date-format">Date format</h3>
+<p>In your <code>config.toml</code> under the <code>[extra]</code> section you need to set the <code>anpu_date_format</code> value.</p>
+<p>Example:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>anpu_date_format</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;%e %B %Y&quot;</span></span></code></pre>
+<p>The formatting uses the standart <code>date</code> filter in Tera. The date format options you can use are listed in the <a class="external" rel="external" href="https://tera.netlify.app/docs/#date">chrono crate documentation</a>.</p>
+<h2 id="attributions">Attributions</h2>
+<p>The icons used are part of <a class="external" rel="external" href="https://uxwing.com/license/">UXWing</a>'s collection.</p>
+<h2 id="license">License</h2>
+<p>Source code is available under <a href="https://zola.docs.saop.cc/themes/anpu/LICENSE">MIT</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

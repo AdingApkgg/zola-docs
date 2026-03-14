@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="re137 | Zola">
+        <meta property="og:description" content="A Chinese friendly zola theme. Inspired by lightspeed.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;re137&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>re137 | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;re137&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>re137</h1>
+            <p>A Chinese friendly zola theme. Inspired by lightspeed.</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;tinikov.com">tinikov</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.4.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;tinikov&#x2F;re137">https:&#x2F;&#x2F;github.com&#x2F;tinikov&#x2F;re137</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;re137.vercel.app">https:&#x2F;&#x2F;re137.vercel.app</a></p>
+            
+            
+            <p><b>最后更新:</b> 2025-02-10T15:39:54+09:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="re137">re137</h1>
+<p><img src="https://zola.docs.saop.cc/themes/re137/screenshot.png" alt="screenshot" /></p>
+<p><a class="external" rel="external" href="https://re137.vercel.app">Demo</a></p>
+<h2 id="installation">Installation</h2>
+<p>Clone this theme to your <code>themes</code> directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/tinikov/re137</span></span></code></pre>
+<p>or add it by submodule:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add git@github.com:tinikov/re137</span></span></code></pre>
+<p>Then enable it in your <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;re137&quot;</span></span></code></pre><h2 id="structure-and-must-configs">Structure and must configs</h2>
+<p>The posts should be directly under the <code>content</code> folder, and the single pages (e.g. <code>about.md</code>) should be under the <code>content/pages</code> folder.</p>
+<p>Your index section in content (<code>content/_index.md</code>) should enable the posts sorted by date:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>sort_by</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;date&quot;</span></span></code></pre>
+<p>And the index section in pages (<code>content/pages/_index.md</code>) should disable the <code>render</code> option:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>render</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre>
+<p>In both index sections, it's recommended to enable the option for anchors:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>insert_anchor_links</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;right&quot;</span></span></code></pre><h2 id="options">Options</h2>
+<h3 id="enable-categories">Enable categories</h3>
+<p>To enable category page, <code>taxonomies</code> should be set in <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [{</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;categories&quot;</span><span style="color: #9399B2;"> }]</span></span></code></pre><h3 id="top-menu">Top-menu</h3>
+<p>Set a field in <code>[extra]</code> of <code>config.toml</code> with a key of <code>re137_menu_links</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>re137_menu_links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;主页&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/categories&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;分类&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/about&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;关于&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/rss.xml&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;RSS&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="page-options">Page options</h3>
+<p>In frontmatter of posts and single pages, supported options are listed below:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot; &quot;</span></span>
+<span class="giallo-l"><span>path</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;about&quot;</span><span style="color: #9399B2;font-style: italic;"> # This is only for single page</span></span>
+<span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;TC&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;BB&quot;</span><span style="color: #9399B2;">]</span><span style="color: #9399B2;font-style: italic;"> # If there are several authors</span></span>
+<span class="giallo-l"><span>date</span><span style="color: #94E2D5;"> =</span><span> 2000-01-01T00:00:00+00:00</span></span>
+<span class="giallo-l"><span>updated</span><span style="color: #94E2D5;"> =</span><span> 2004-01-01T00:00:00+00:00</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot; &quot;</span></span>
+<span class="giallo-l"><span>draft</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>categories</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot; &quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>author_gen</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # Do not generate author</span></span>
+<span class="giallo-l"><span>toc_gen</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;"> # Generate table of contents</span></span></code></pre><h3 id="misc">Misc</h3>
+<p>You can add more customed options in <code>[extra]</code> of <code>config.toml</code></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Image shown when you share this website to others</span></span>
+<span class="giallo-l"><span>ogimage</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot; &quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># SEO settings</span></span>
+<span class="giallo-l"><span>seo</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>google_search_console</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot; &quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Show jump buttons for Indiewebring</span></span>
+<span class="giallo-l"><span>indiewebring</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># For authentication in mastodon</span></span>
+<span class="giallo-l"><span>mastodon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://o3o.ca/@tinikov&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Only user name is needed</span></span>
+<span class="giallo-l"><span>github</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tinikov&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Show establish date in the footer</span></span>
+<span class="giallo-l"><span>establishdate</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;2024&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/)</span></span>
+<span class="giallo-l"><span>license</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Show &quot;🫧 Zola theme re137&quot; in the footer</span></span>
+<span class="giallo-l"><span>show_zola_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

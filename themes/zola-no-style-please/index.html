@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="no style, please! | Zola">
+        <meta property="og:description" content="A (nearly) no-CSS, fast, minimalist Zola theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-no-style-please&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>no style, please! | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-no-style-please&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>no style, please!</h1>
+            <p>A (nearly) no-CSS, fast, minimalist Zola theme</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;gumx.cc">Ahmed</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.4.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;git.sr.ht&#x2F;~gumxcc&#x2F;zola-no-style-please">https:&#x2F;&#x2F;git.sr.ht&#x2F;~gumxcc&#x2F;zola-no-style-please</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;zola-no-style-please.demo.gumx.cc">https:&#x2F;&#x2F;zola-no-style-please.demo.gumx.cc</a></p>
+            
+            
+            <p><b>最后更新:</b> 2025-10-16T17:33:00+03:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="no-style-please">no style, please!</h1>
+<p>A (nearly) no-CSS, fast, minimalist <a class="external" rel="external" href="https://www.getzola.org/">Zola</a> theme.
+Ported from from <a class="external" rel="external" href="https://riggraz.dev/">riggraz</a>'s <a class="external" rel="external" href="https://riggraz.dev/no-style-please/">no style, please! Jekyll theme</a>, and you can find the demo <a class="external" rel="external" href="https://zola-no-style-please.demo.gumx.cc/">here</a></p>
+<p>Main project is on <a class="external" rel="external" href="https://sr.ht/~gumxcc/zola-no-style-please">sourcehut</a>, with mirrors on <a class="external" rel="external" href="https://github.com/gumxcc/zola-no-style-please">GitHub</a> and <a class="external" rel="external" href="https://gitlab.com/gumxcc/zola-no-style-please">GitLab</a>.</p>
+<p><img src="https://zola.docs.saop.cc/themes/zola-no-style-please/./screenshot.png" alt="screenshot" /></p>
+<h2 id="installation">Installation</h2>
+<p>First download this theme to your <code>themes</code> directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://gitlab.com/4bcx/no-style-please.git</span></span></code></pre>
+<p>and then enable it in your <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;no-style-please&quot;</span></span></code></pre><h2 id="options">Options</h2>
+<h3 id="default-taxonomies">Default taxonomies</h3>
+<p>Special templates for <code>tags</code>, <code>categories</code>, and <code>contexts</code> taxonomies are provided. However, generic templates exist for custom taxonomies.</p>
+<p>To use taxonomies, in a page metadata add</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;"> &#39;tag1&#39;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &#39;tag2&#39;</span><span style="color: #9399B2;"> ]</span></span>
+<span class="giallo-l"><span>categories</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;"> &#39;category A&#39;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &#39;B class&#39;</span><span style="color: #9399B2;"> ]</span></span>
+<span class="giallo-l"><span>genre</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;"> &#39;rock&#39;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &#39;alternative&#39;</span><span style="color: #9399B2;"> ]</span><span style="color: #9399B2;font-style: italic;">   # custom taxonomy</span></span></code></pre><h3 id="pages-list-in-homepage">Pages list in homepage</h3>
+<p>To enable listing of pages in homepage add the following in <code>config.toml</code></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>list_pages</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
+<p>If you do not want the date of the post added next to the title in the list, add the following as well:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>no_list_date</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="header-and-footer-nav-links">Header and footer nav links</h3>
+<p>Also in the <code>extra</code> section in <code>config.toml</code></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>header_nav</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;~home&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#tags&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/tags&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;+categories&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/categories&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;@contexts&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/contexts&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;example&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;http://example.com&quot;</span><span style="color: #9399B2;">,</span><span> new_tab</span><span style="color: #94E2D5;">=</span><span style="color: #FAB387;">true</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>footer_nav</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt; previous&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;webring&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;next &gt;&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="add-toc-to-pages">Add TOC to pages</h3>
+<p>In a page frontmatter, set <code>extra.add_toc</code> to <code>true</code></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>add_toc</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="extra-data">Extra data</h3>
+<ul>
+<li><code>author</code> can be set in both main config and in pages metadata</li>
+<li><code>image</code> variable can be used in pages to add an image to HTML <code>&lt;meta&gt;</code> tags</li>
+<li>Same for <code>logo</code> in main config, except this one is also used as the site icon</li>
+</ul>
+<h3 id="horizontal-rule-shortcode-hr">Horizontal rule shortcode <code>hr()</code></h3>
+<p>Adds the option to insert text in the thematic break</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{{ hr(data_content=&quot;footnotes&quot;) }}</span></span></code></pre>
+<p>is rendered</p>
+<p><img src="https://zola.docs.saop.cc/themes/zola-no-style-please/./hr_footnotes.png" alt="thematic break screenshot" /></p>
+<h3 id="invertable-image-iimg">Invertable image <code>iimg()</code></h3>
+<p>Images are not inverted in darkmode by default. To add an invertable image use the following</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{{ iimg(src=&quot;logo.png&quot;, alt=&quot;alt text&quot;) }}</span></span></code></pre>
+<p>In light mode</p>
+<p><img src="https://zola.docs.saop.cc/themes/zola-no-style-please/./iimg_light.png" alt="image in light mode" /></p>
+<p>In dark mode</p>
+<p><img src="https://zola.docs.saop.cc/themes/zola-no-style-please/./iimg_dark.png" alt="image in dark mode" /></p>
+<h3 id="disable-twitter-card">Disable Twitter card</h3>
+<p>Twitter metatags are generated by default, to disable them set <code>extra.twitter_card</code> to <code>false</code> in in your <code>config.toml</code></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>twitter_card</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h2 id="todo">TODO</h2>
+<ul>
+<li><input disabled="" type="checkbox"/>
+Add RTL support</li>
+<li><input disabled="" type="checkbox"/>
+Write proper test pages</li>
+</ul>
+<h2 id="license">License</h2>
+<p>The theme is available as open source under the terms of the <a class="external" rel="external" href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

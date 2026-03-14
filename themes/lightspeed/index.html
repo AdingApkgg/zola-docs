@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="lightspeed | Zola">
+        <meta property="og:description" content="Zola theme with a perfect Lighthouse score">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lightspeed&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>lightspeed | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lightspeed&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>lightspeed</h1>
+            <p>Zola theme with a perfect Lighthouse score</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;carpetscheme">carpetscheme</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.20.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;carpetscheme&#x2F;lightspeed">https:&#x2F;&#x2F;github.com&#x2F;carpetscheme&#x2F;lightspeed</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;carpetscheme.github.io&#x2F;lightspeed">https:&#x2F;&#x2F;carpetscheme.github.io&#x2F;lightspeed</a></p>
+            
+            
+            <p><b>最后更新:</b> 2025-07-05T15:37:03+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="light-speed">Light Speed</h1>
+<p>A small Zola theme, ported from <a class="external" rel="external" href="https://github.com/bradleytaunt/lightspeed">Light Speed Jekyll</a>.</p>
+<ul>
+<li>Perfect score on Google's Lighthouse audit</li>
+<li>Only ~700 bytes of CSS</li>
+<li>No JavaScript</li>
+</ul>
+<p>Demo: <a class="external" rel="external" href="https://carpetscheme.github.io/lightspeed">carpetscheme.github.io/lightspeed</a></p>
+<hr />
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Installation</li>
+<li>Options
+<ul>
+<li>Title</li>
+<li>Footer menu</li>
+<li>Sass</li>
+</ul>
+</li>
+<li>Original</li>
+<li>License</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Download this theme to your <code>themes</code> directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cd themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git clone https://github.com/carpetscheme/lightspeed.git</span></span></code></pre>
+<p>and then enable it in your <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;lightspeed&quot;</span></span></code></pre>
+<p>Posts should be placed directly in the <code>content</code> folder.</p>
+<p>To sort the post index by date, enable sort in your index section <code>content/_index.md</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>sort_by</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;date&quot;</span></span></code></pre><h2 id="options">Options</h2>
+<h3 id="title">Title</h3>
+<p>Set a title and description in the config to appear in the site header:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Different strokes&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;for different folks&quot;</span></span>
+<span class="giallo-l"></span></code></pre><h3 id="footer-menu">Footer-menu</h3>
+<p>Set a field in <code>extra</code> with a key of <code>footer_links</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>footer_links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/about&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;About&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/atom.xml&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;RSS&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Example&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>Create pages such as <code>$BASE_URL/about</code> by placing them in a subfolder of the content directory, and specifying the path in the frontmatter:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>path</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;about&quot;</span></span></code></pre>
+<p>The footer credit to Zola and Lightspeed can be disabled with the <code>footer_credits</code> option.</p>
+<h3 id="sass">Sass</h3>
+<p>Styles are compiled from sass and imported inline to the header.</p>
+<p>You can overide the styles by enabling sass compilation in the config:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>compile_sass</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
+<p>and placing a replacement <code>style.scss</code> file in your sass folder.</p>
+<h2 id="original">Original</h2>
+<p>This template is based on the Jekyll template <a class="external" rel="external" href="https://github.com/bradleytaunt/lightspeed">Light Speed Jekyll</a> by Bradley Taunt.</p>
+<h2 id="license">License</h2>
+<p>Open sourced under the <a href="https://zola.docs.saop.cc/themes/lightspeed/LICENSE.md">MIT license</a>.</p>
+<p>This project is open source except for example articles found in <code>content</code>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Codeberg Pages | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Codeberg Pages | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>Codeberg Pages</h1>
+    <p>我们将使用 Codeberg 托管的 Woodpecker CI 在 Codeberg Pages 上托管站点。</p>
+<h2 id="pei-zhi-ni-de-cang-ku"><a class="zola-anchor" href="#pei-zhi-ni-de-cang-ku" aria-label="Anchor link for: pei-zhi-ni-de-cang-ku">🔗</a>配置你的仓库</h2>
+<p>你需要 Codeberg 上创建一个仅包含你的 Zola 项目的仓库。<a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/directory-structure/">Zola 目录结构</a> 应该位于你的仓库的根目录中。</p>
+<p>有关如何在 Codeberg 上创建和管理仓库的信息，请参阅 <a class="external" rel="external" href="https://docs.codeberg.org/getting-started/first-repository/">https://docs.codeberg.org/getting-started/first-repository/</a>。</p>
+<h2 id="que-bao-woodpecker-ci-ke-yi-fang-wen-ni-de-zhu-ti"><a class="zola-anchor" href="#que-bao-woodpecker-ci-ke-yi-fang-wen-ni-de-zhu-ti" aria-label="Anchor link for: que-bao-woodpecker-ci-ke-yi-fang-wen-ni-de-zhu-ti">🔗</a>确保 Woodpecker CI 可以访问你的主题</h2>
+<p>根据你添加主题的方式，你的仓库可能不包含它。确保添加主题的最佳方法是使用子模块。确保使用 URL 的 <code>https</code> 版本。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add</span><span style="color: #94E2D5;"> &lt;</span><span style="color: #A6E3A1;">theme_ur</span><span>l</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> themes/</span><span style="color: #94E2D5;">&lt;</span><span style="color: #A6E3A1;">theme_nam</span><span>e</span><span style="color: #94E2D5;">&gt;</span></span></code></pre>
+<p>例如，这可能看起来像：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/getzola/hyde.git themes/hyde</span></span></code></pre><h2 id="she-zhi-woodpecker-ci"><a class="zola-anchor" href="#she-zhi-woodpecker-ci" aria-label="Anchor link for: she-zhi-woodpecker-ci">🔗</a>设置 Woodpecker CI</h2>
+<p>假设你可以访问 <a class="external" rel="external" href="https://docs.codeberg.org/ci/">Codeberg 的 Woodpecker CI</a>，我们可以构建站点并在每次提交时自动将其部署到 <a class="external" rel="external" href="https://codeberg.page">Codeberg Pages</a>。</p>
+<p>首先，将以下示例 <a class="external" rel="external" href="https://codeberg.org/Codeberg-CI/examples/src/branch/main/Zola/.woodpecker.yaml">Zola CI 文件</a> 放在你的项目的根目录中：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 排除在 pages 分支上运行管道</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">when</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  branch</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    exclude</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> pages</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 递归克隆以完全克隆作为 Git 子模块给出的主题</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">clone</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  git</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    image</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> woodpeckerci/plugin-git</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    settings</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">      recursive</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #89B4FA;">steps</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">  # 构建 Zola 静态文件</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  build</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    image</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> alpine:edge</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    commands</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> apk add zola</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> zola build</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    when</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">      event</span><span style="color: #94E2D5;">:</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">push</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> pull_request</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  publish</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    image</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> bitnami/git</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    environment</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">      CBMAIL</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">        from_secret</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;mail&quot;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">      CBTOKEN</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">        from_secret</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;codeberg_token&quot;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    commands</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">      # 配置 Git</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> git config --global user.email &quot;$${CBMAIL}&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> git config --global user.name &quot;Woodpecker CI&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">      # 克隆输出分支</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> git clone --branch pages https://$${CBTOKEN}@codeberg.org/$CI_REPO.git $CI_REPO_NAME</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">      # 进入输出分支</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> cd $CI_REPO_NAME</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">      # 删除旧文件</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> git rm -r &quot;*&quot; || true</span><span style="color: #9399B2;font-style: italic;"> # 如果没有要删除的内容，不要失败</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">      # 复制构建步骤的输出</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> cp -ar ../public/. .</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">      # 提交并推送所有静态文件与源提交哈希</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> git add --all</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> git commit -m &quot;Woodpecker CI ${CI_COMMIT_SHA} [SKIP CI]&quot; --allow-empty</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> git push</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    when</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">      event</span><span style="color: #94E2D5;">:</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">push</span><span style="color: #9399B2;">]</span></span></code></pre>
+<p>然后将以下 secrets 添加到 <a class="external" rel="external" href="https://ci.codeberg.org/">Woodpecker</a>：</p>
+<ul>
+<li><code>mail</code>: 你在 Codeberg 使用的电子邮件地址。</li>
+<li><code>codeberg_token</code>: 具有 <code>write:repository</code> 权限的 <a class="external" rel="external" href="https://docs.codeberg.org/advanced/access-token/">Codeberg 访问令牌</a>。</li>
+</ul>
+<p>完成后，你可以通过向仓库推送一些内容来触发 CI，Woodpecker 将构建站点并将生成的站点复制到 <code>pages</code> 分支，它将在 <code>https://&lt;user&gt;.codeberg.page/&lt;repository&gt;</code> 上可用。</p>
+<p>对于 <a class="external" rel="external" href="https://docs.codeberg.org/codeberg-pages/using-custom-domain/">自定义域名</a>，在 <code>./static/</code> 目录中创建 <code>.domains</code> 文件，以便将其复制到生成的构建中。</p>
+<p>有关 Codeberg Pages 的更多信息，请参阅 <a class="external" rel="external" href="https://docs.codeberg.org/codeberg-pages/">官方 Codeberg 文档</a>。</p>
+
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

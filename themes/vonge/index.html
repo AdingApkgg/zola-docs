@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Vonge | Zola">
+        <meta property="og:description" content="Vonge is a Personal portfolio&#x2F;blog site template">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;vonge&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Vonge | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;vonge&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>Vonge</h1>
+            <p>Vonge is a Personal portfolio&#x2F;blog site template</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;pascal-berrang.de">Pascal Berrang</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.4.0 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;paberr&#x2F;vonge-zola-theme&#x2F;">https:&#x2F;&#x2F;github.com&#x2F;paberr&#x2F;vonge-zola-theme&#x2F;</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;paberr.github.io&#x2F;vonge-zola-theme&#x2F;">https:&#x2F;&#x2F;paberr.github.io&#x2F;vonge-zola-theme&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2026-02-17T21:06:42+01:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="vonge-zola-theme">Vonge Zola Theme</h1>
+<p><img src="https://zola.docs.saop.cc/themes/vonge/screenshot.png" alt="" /></p>
+<p>This is a Zola port of the <a class="external" rel="external" href="https://github.com/CloudCannon/vonge-hugo-bookshop-template">Vonge Hugo Bookshop template</a>, originally created by <a class="external" rel="external" href="https://cloudcannon.com/">CloudCannon</a> and licensed under the MIT License.</p>
+<p>Vonge is a clean, modern theme for personal portfolios, blogs, or landing pages. This Zola version is designed to be <strong>fully configurable via <code>config.toml</code> and through structured front matter blocks</strong> and <strong>does not rely on Bookshop</strong>.</p>
+<blockquote>
+<p>✨ This theme is suitable for developers who want a minimal and flexible Zola theme with a professional design and content blocks driven by configuration.</p>
+</blockquote>
+<p>Demo @ https://paberr.github.io/vonge-zola-theme/</p>
+<h2 id="rocket-features">🚀 Features</h2>
+<ul>
+<li>Flexible homepage and inner pages using content blocks</li>
+<li>Customisable content via <code>extra.content_blocks</code> in front matter</li>
+<li>Clean typography and responsive layout</li>
+<li>Blog section with pagination</li>
+<li>Portfolio and testimonial support</li>
+<li>SEO-friendly structure</li>
+<li>MIT licensed</li>
+</ul>
+<h2 id="package-installation">📦 Installation</h2>
+<ol>
+<li>Download the Theme</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git submodule add https://github.com/paberr/vonge-zola-theme themes/vonge</span></span></code></pre>
+<ol start="2">
+<li>At minimum, add the following to your zola <code>config.toml</code></li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;vonge&quot;</span></span>
+<span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<ol start="3">
+<li>Copy over the example content to get started</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>cp -r themes/vonge/content/* content</span></span></code></pre><h2 id="construction-worker-usage">👷 Usage</h2>
+<p>This theme uses <strong>structured front matter</strong> to build flexible page layouts. Each page can define its blocks using the <code>extra.content_blocks</code> array.</p>
+<h3 id="example-content-blog-index-md">Example: <code>content/blog/_index.md</code></h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Blog&quot;</span></span>
+<span class="giallo-l"><span>sort_by</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;date&quot;</span></span>
+<span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 6</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>content_blocks</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> block</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;page-heading&quot;</span><span style="color: #9399B2;">,</span><span> title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Blog&quot;</span><span style="color: #9399B2;">,</span><span> description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Vonge blog features productivity, tips, inspiration and strategies for massive profits. Find out how to set up a successful blog or how to make yours even better!&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> block</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;posts-list&quot;</span><span style="color: #9399B2;">,</span><span> show_posts</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> block</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;newsletter&quot;</span><span style="color: #9399B2;">,</span><span> newsletter_title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Join my mailing list&quot;</span><span style="color: #9399B2;">,</span><span> newsletter_description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Get inspiration, updates and, cool stuff!&quot;</span><span style="color: #9399B2;">,</span><span> newsletter_identifier</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;">,</span><span> newsletter_button</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Subscribe&quot;</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p>You can create your own custom blocks or extend existing ones by editing the theme's templates and SCSS.</p>
+<h2 id="book-documentation">📖 Documentation</h2>
+<p>For a full reference of all configuration options, content blocks, and page variables, see <a href="https://zola.docs.saop.cc/themes/vonge/DOCUMENTATION.md">DOCUMENTATION.md</a>.</p>
+<h2 id="pray-acknowledgements">🙏 Acknowledgements</h2>
+<p>This theme is based on the original <a class="external" rel="external" href="https://github.com/CloudCannon/vonge-hugo-bookshop-template">Vonge Hugo Bookshop template</a> by <a class="external" rel="external" href="https://cloudcannon.com/">CloudCannon</a>, adapted for use with Zola. All original design credits go to the authors.</p>
+<h2 id="page-facing-up-contributing">📄 Contributing</h2>
+<p>All contributions to this port are highly welcome!</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

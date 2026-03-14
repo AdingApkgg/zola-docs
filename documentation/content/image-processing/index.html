@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="图像处理 | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>图像处理 | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>图像处理</h1>
+    <p>Zola 通过内置函数 <code>resize_image</code> 提供对自动图像调整大小的支持，该函数在模板代码和 shortcodes 中都可用。</p>
+<p>函数用法如下：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>resize_image(path, width, height, op, format, quality, speed)</span></span></code></pre><h3 id="can-shu"><a class="zola-anchor" href="#can-shu" aria-label="Anchor link for: can-shu">🔗</a>参数</h3>
+<ul>
+<li>
+<p><code>path</code>: 源图像的路径。将按以下顺序搜索以下目录：</p>
+<ul>
+<li><code>/</code> (项目的根目录；即包含 <code>config.toml</code> 的目录)</li>
+<li><code>/static</code></li>
+<li><code>/content</code></li>
+<li><code>/public</code></li>
+<li><code>/themes/current-theme/static</code></li>
+</ul>
+</li>
+<li>
+<p><code>width</code> 和 <code>height</code>: 调整大小后的图像的像素尺寸。用法取决于 <code>op</code> 参数。</p>
+</li>
+<li>
+<p><code>op</code> (<em>可选</em>): 调整大小操作。可以是以下之一：</p>
+<ul>
+<li><code>"scale"</code></li>
+<li><code>"fit_width"</code></li>
+<li><code>"fit_height"</code></li>
+<li><code>"fit"</code></li>
+<li><code>"fill"</code></li>
+</ul>
+<p>下面解释了每一个的作用。默认为 <code>"fill"</code>。</p>
+</li>
+<li>
+<p><code>format</code> (<em>可选</em>): 调整大小后的图像的编码格式。可以是以下之一：</p>
+<ul>
+<li><code>"auto"</code></li>
+<li><code>"jpg"</code></li>
+<li><code>"png"</code></li>
+<li><code>"webp"</code></li>
+<li><code>"avif"</code></li>
+</ul>
+<p>默认为 <code>"auto"</code>，这意味着格式是根据输入图像格式选择的。
+JPEG 用于 JPEG 和其他有损格式，PNG 用于 PNG 和其他无损格式。</p>
+</li>
+<li>
+<p><code>quality</code> (<em>可选</em>): 调整大小后的图像的质量。质量仅在编码 JPEG、WebP 或 AVIF 时使用。JPEG 的质量范围为 1 到 100，默认为 75。WebP 的质量范围为 0 到 100，默认为无损编码。AVIF 的质量范围为 1 到 100，默认为 80。</p>
+</li>
+<li>
+<p><code>speed</code> (<em>可选</em>): 编码调整大小后的图像的速度。速度仅在编码 AVIF 时使用。AVIF 的速度范围为 1 到 10，默认为 5。速度 10 应该处理图像最快，但可能不会产生最佳压缩；速度 1 慢得多，但产生最佳压缩。</p>
+</li>
+</ul>
+<h3 id="tu-xiang-chu-li-he-fan-hui-zhi"><a class="zola-anchor" href="#tu-xiang-chu-li-he-fan-hui-zhi" aria-label="Anchor link for: tu-xiang-chu-li-he-fan-hui-zhi">🔗</a>图像处理和返回值</h3>
+<p>Zola 在构建过程中执行图像处理，并将调整大小后的图像放置在静态文件目录的子目录中：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>static/processed_images/</span></span></code></pre>
+<p>每个调整大小后的图像的文件名是函数参数的哈希值，这意味着一旦图像以某种方式调整大小，它将被存储在上述目录中，并且在随后的构建期间不需要再次调整大小（除非图像本身、尺寸或其他参数已更改）。</p>
+<p>该函数返回具有以下模式的对象：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>/// 该资产的最终 URL</span></span>
+<span class="giallo-l"><span>url: String,</span></span>
+<span class="giallo-l"><span>/// 生成的静态资产的路径</span></span>
+<span class="giallo-l"><span>static_path: String,</span></span>
+<span class="giallo-l"><span>/// 新图像宽度</span></span>
+<span class="giallo-l"><span>width: u32,</span></span>
+<span class="giallo-l"><span>/// 新图像高度</span></span>
+<span class="giallo-l"><span>height: u32,</span></span>
+<span class="giallo-l"><span>/// 原始图像宽度</span></span>
+<span class="giallo-l"><span>orig_width: u32,</span></span>
+<span class="giallo-l"><span>/// 原始图像高度</span></span>
+<span class="giallo-l"><span>orig_height: u32,</span></span></code></pre><h3 id="yan-se-he-yuan-shu-ju"><a class="zola-anchor" href="#yan-se-he-yuan-shu-ju" aria-label="Anchor link for: yan-se-he-yuan-shu-ju">🔗</a>颜色和元数据</h3>
+<p>在处理过程中，所有 EXIF、XMP 和 IPTC 元数据都将被丢弃。</p>
+<p>Zola 尽可能保留图像色彩空间信息。
+适用以下限制：</p>
+<ul>
+<li>仅保留基于 ICC 的颜色数据。</li>
+<li>对于 WebP，只有无损编码支持 ICC 配置文件。</li>
+<li>AVIF 编码目前不支持 ICC 配置文件。</li>
+</ul>
+<p>如果丢失了色彩空间，将打印警告。
+无论如何，图像都会被转换，没有适当的颜色转换。
+因此，如果源色彩空间与目标格式的默认色彩空间（通常是 sRGB 或 Rec.709）不匹配，颜色将显示不正确。</p>
+<p>Zola 对原始像素数据执行图像处理，而不考虑色彩空间。
+这通常不是问题，但非线性色彩空间（包括 sRGB、Rec.709、AdobeRGB、Display P3 和非线性 Rec2020）可能会表现出不精确的颜色混合，特别是在放大低分辨率图像时。</p>
+<h2 id="diao-zheng-da-xiao-cao-zuo"><a class="zola-anchor" href="#diao-zheng-da-xiao-cao-zuo" aria-label="Anchor link for: diao-zheng-da-xiao-cao-zuo">🔗</a>调整大小操作</h2>
+<p>所有示例的源都是这张 300 像素 × 380 像素的图像：</p>
+<p><img src="https://zola.docs.saop.cc/documentation/content/image-processing/01-zola.png" alt="zola" /></p>
+<h3 id="scale"><a class="zola-anchor" href="#scale" aria-label="Anchor link for: scale">🔗</a><strong><code>"scale"</code></strong></h3>
+<p>简单地将图像缩放到指定的尺寸（<code>width</code> &amp; <code>height</code>），而不考虑纵横比。</p>
+<p><code>resize_image(..., width=150, height=150, op="scale")</code></p>
+
+<img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;01-zola.782c862031f6b2d5.png" />
+<h3 id="fit-width"><a class="zola-anchor" href="#fit-width" aria-label="Anchor link for: fit-width">🔗</a><strong><code>"fit_width"</code></strong></h3>
+<p>调整图像大小，使得结果宽度为 <code>width</code>，高度为任何保持纵横比的值。
+不需要 <code>height</code> 参数。</p>
+<p><code>resize_image(..., width=100, op="fit_width")</code></p>
+
+<img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;01-zola.8aadbee6c40a8bd4.png" />
+<h3 id="fit-height"><a class="zola-anchor" href="#fit-height" aria-label="Anchor link for: fit-height">🔗</a><strong><code>"fit_height"</code></strong></h3>
+<p>调整图像大小，使得结果高度为 <code>height</code>，宽度为任何保持纵横比的值。
+不需要 <code>width</code> 参数。</p>
+<p><code>resize_image(..., height=150, op="fit_height")</code></p>
+
+<img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;01-zola.55d6e65a63e4be0d.png" />
+<h3 id="fit"><a class="zola-anchor" href="#fit" aria-label="Anchor link for: fit">🔗</a><strong><code>"fit"</code></strong></h3>
+<p>类似于 <code>"fit_width"</code> 和 <code>"fit_height"</code> 的组合，但仅当图像大于任何指定尺寸时才调整大小。
+此模式很方便，例如，如果图像在 shortcode 中自动缩小到特定尺寸以进行移动优化。
+调整图像大小，使得结果适合 <code>width</code> 和 <code>height</code> 内，同时保持纵横比。这意味着宽度或高度将分别为最大 <code>width</code> 和 <code>height</code>，但其中一个可能更小，以便保持纵横比。</p>
+<p><code>resize_image(..., width=5000, height=5000, op="fit")</code></p>
+
+<img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;01-zola.766fcd939b56ba4d.png" />
+<p><code>resize_image(..., width=150, height=150, op="fit")</code></p>
+
+<img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;01-zola.d26e31f499ea5014.png" />
+<h3 id="fill"><a class="zola-anchor" href="#fill" aria-label="Anchor link for: fill">🔗</a><strong><code>"fill"</code></strong></h3>
+<p>这是默认操作。它采用图像的中心部分，具有与给定的 <code>width</code> 和 <code>height</code> 相同的纵横比，并将其调整为 <code>width</code> 和 <code>height</code>。这意味着调整大小后的纵横比之外的图像部分将被裁剪掉。</p>
+<p><code>resize_image(..., width=150, height=150, op="fill")</code></p>
+
+<img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;01-zola.d0e71800763af2f1.png" />
+<h2 id="tong-guo-shortcodes-zai-markdown-zhong-shi-yong-resize-image"><a class="zola-anchor" href="#tong-guo-shortcodes-zai-markdown-zhong-shi-yong-resize-image" aria-label="Anchor link for: tong-guo-shortcodes-zai-markdown-zhong-shi-yong-resize-image">🔗</a>通过 shortcodes 在 markdown 中使用 <code>resize_image</code></h2>
+<p><code>resize_image</code> 是 Zola 内置的 Tera 函数（参见 <a href="https://zola.docs.saop.cc/documentation/templates/">模板</a> 章节），但它可以使用 <a href="https://zola.docs.saop.cc/documentation/content/shortcodes/">shortcodes</a> 在 Markdown 中使用。</p>
+<p>上面的示例是使用名为 <code>resize_image.html</code> 的 shortcode 文件生成的，内容如下：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> image</span><span style="color: #94E2D5;"> =</span><span> resize_image</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span>path</span><span style="color: #9399B2;">,</span><span> width</span><span style="color: #94E2D5;">=</span><span>width</span><span style="color: #9399B2;">,</span><span> height</span><span style="color: #94E2D5;">=</span><span>height</span><span style="color: #9399B2;">,</span><span> op</span><span style="color: #94E2D5;">=</span><span>op</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>&lt;img src=&quot;{{ image</span><span style="color: #9399B2;">.</span><span>url }}&quot; /&gt;</span></span></code></pre><h2 id="chuang-jian-tu-pian-ku"><a class="zola-anchor" href="#chuang-jian-tu-pian-ku" aria-label="Anchor link for: chuang-jian-tu-pian-ku">🔗</a>创建图片库</h2>
+<p><code>resize_image()</code> 可以多次使用和/或在循环中使用。它旨在有效地处理这种情况。</p>
+<p>这可以与 <code>assets</code> <a href="https://zola.docs.saop.cc/documentation/templates/pages-sections/">页面元数据</a> 一起使用来创建图片库。
+<code>assets</code> 变量保存带有资源的页面目录中所有资产的路径（参见 <a href="https://zola.docs.saop.cc/documentation/content/overview/#asset-colocation">资产共置</a>）；如果你有除图像以外的文件，你需要像下面的示例一样首先在循环中过滤掉它们。</p>
+<p>这可以在 shortcodes 中使用。例如，我们可以使用以下名为 <code>gallery.html</code> 的 shortcode 创建一个非常简单的仅 HTML 的可点击图片库：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>&lt;div&gt;</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> for</span><span> asset</span><span style="color: #CBA6F7;"> in</span><span> page</span><span style="color: #9399B2;">.</span><span>assets -%}</span></span>
+<span class="giallo-l"><span>  {%-</span><span style="color: #CBA6F7;"> if</span><span> asset</span><span style="color: #CBA6F7;"> is</span><span> matching</span><span style="color: #9399B2;">(</span><span style="color: #A6E3A1;">&quot;[.](jpg|png)$&quot;</span><span style="color: #9399B2;">)</span><span> -%}</span></span>
+<span class="giallo-l"><span>    {%</span><span style="color: #CBA6F7;"> set</span><span> image</span><span style="color: #94E2D5;"> =</span><span> resize_image</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span>asset</span><span style="color: #9399B2;">,</span><span> width</span><span style="color: #94E2D5;">=</span><span>240</span><span style="color: #9399B2;">,</span><span> height</span><span style="color: #94E2D5;">=</span><span>180</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>    &lt;a href=&quot;{{ get_url</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span>asset</span><span style="color: #9399B2;">)</span><span> }}&quot; target=&quot;_blank&quot;&gt;</span></span>
+<span class="giallo-l"><span>      &lt;img src=&quot;{{ image</span><span style="color: #9399B2;">.</span><span>url }}&quot; /&gt;</span></span>
+<span class="giallo-l"><span>    &lt;/a&gt;</span></span>
+<span class="giallo-l"><span>  {%-</span><span style="color: #CBA6F7;"> endif</span><span> %}</span></span>
+<span class="giallo-l"><span>{%-</span><span style="color: #CBA6F7;"> endfor</span><span> %}</span></span>
+<span class="giallo-l"><span>&lt;/div&gt;</span></span></code></pre>
+<p>如你所见，我们没有指定 <code>op</code> 参数，这意味着它将默认为 <code>"fill"</code>。同样，格式将默认为 <code>"auto"</code>（根据情况选择 PNG 或 JPEG），JPEG 质量将默认为 <code>75</code>。</p>
+<p>要从 Markdown 文件调用它，只需执行：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ gallery</span><span style="color: #9399B2;">()</span><span> }}</span></span></code></pre>
+<p>结果如下：</p>
+<div>
+
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/01-zola.png" target="_blank">
+      <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;01-zola.13b6432894d881a2.png" />
+    </a>
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/02-zola-manet.png" target="_blank">
+      <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;02-zola-manet.4f840f11f489db10.png" />
+    </a>
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/03-zola-cezanne.png" target="_blank">
+      <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;03-zola-cezanne.f6f2bb89a89534af.png" />
+    </a>
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/04-gutenberg.jpg" target="_blank">
+      <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;04-gutenberg.80d0a640faca9728.jpg" />
+    </a>
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/05-example.jpg" target="_blank">
+      <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;05-example.1f23f78b8b1299b3.jpg" />
+    </a>
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/06-example.jpg" target="_blank">
+      <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;06-example.97bc5d9d9d2e0e58.jpg" />
+    </a>
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/07-example.jpg" target="_blank">
+      <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;07-example.a75f2921cf2eb066.jpg" />
+    </a>
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/08-example.jpg" target="_blank">
+      <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;08-example.4a264b2369a63855.jpg" />
+    </a>
+</div>
+<small>
+  Image attribution: Public domain, except: _06-example.jpg_: Willi Heidelbach, _07-example.jpg_: Daniel Ullrich.
+</small>
+<h2 id="huo-qu-tu-xiang-chi-cun-he-xiang-dui-diao-zheng-da-xiao"><a class="zola-anchor" href="#huo-qu-tu-xiang-chi-cun-he-xiang-dui-diao-zheng-da-xiao" aria-label="Anchor link for: huo-qu-tu-xiang-chi-cun-he-xiang-dui-diao-zheng-da-xiao">🔗</a>获取图像尺寸和相对调整大小</h2>
+<p>有时在构建图库时，知道每个资产的尺寸很有用。你可以通过 <a href="https://zola.docs.saop.cc/documentation/templates/overview/#get-image-metadata">get_image_metadata</a> 获取此信息。</p>
+<p>这也可以与 <code>resize_image()</code> 结合使用以进行相对调整大小。因此，我们可以使用以下名为 <code>resize_image_relative.html</code> 的 shortcode 创建一个相对图像调整大小函数：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> mdata</span><span style="color: #94E2D5;"> =</span><span> get_image_metadata</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span>path</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> image</span><span style="color: #94E2D5;"> =</span><span> resize_image</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span>path</span><span style="color: #9399B2;">,</span><span> width</span><span style="color: #94E2D5;">=</span><span style="color: #9399B2;">(</span><span>mdata</span><span style="color: #9399B2;">.</span><span>width</span><span style="color: #94E2D5;"> *</span><span> scale</span><span style="color: #9399B2;">)|</span><span>int</span><span style="color: #9399B2;">,</span><span> op</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;fit_width&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>&lt;img src=&quot;{{ image</span><span style="color: #9399B2;">.</span><span>url }}&quot; /&gt;</span></span></code></pre>
+<p>它可以像这样从 Markdown 调用：</p>
+<p><code>resize_image_relative(..., scale=0.5)</code></p>
+
+
+<img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;01-zola.7c678f94a2743d43.png" /><h2 id="chuang-jian-gao-fen-bian-lu-tu-xiang-de-suo-xiao-ban-ben"><a class="zola-anchor" href="#chuang-jian-gao-fen-bian-lu-tu-xiang-de-suo-xiao-ban-ben" aria-label="Anchor link for: chuang-jian-gao-fen-bian-lu-tu-xiang-de-suo-xiao-ban-ben">🔗</a>创建高分辨率图像的缩小版本</h2>
+<p>通过上述内容，我们还可以创建一个 shortcode，用于创建高分辨率图像的 50% 缩小版本（例如在 Retina Mac 上截取的屏幕截图），以及用于在显示高分辨率 / retina 显示器上显示原始图像的正确 HTML5 <code>srcset</code>。</p>
+<p>考虑以下名为 <code>high_res_image.html</code> 的 shortcode：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> mdata</span><span style="color: #94E2D5;"> =</span><span> get_image_metadata</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span>path</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> w</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> (</span><span>mdata</span><span style="color: #9399B2;">.</span><span>width</span><span style="color: #94E2D5;"> /</span><span> 2</span><span style="color: #9399B2;">) |</span><span> int %}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> h</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> (</span><span>mdata</span><span style="color: #9399B2;">.</span><span>height</span><span style="color: #94E2D5;"> /</span><span> 2</span><span style="color: #9399B2;">) |</span><span> int %}</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #CBA6F7;"> set</span><span> image</span><span style="color: #94E2D5;"> =</span><span> resize_image</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span>path</span><span style="color: #9399B2;">,</span><span> width</span><span style="color: #94E2D5;">=</span><span>w</span><span style="color: #9399B2;">,</span><span> height</span><span style="color: #94E2D5;">=</span><span>h</span><span style="color: #9399B2;">,</span><span> op</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;fit_width&quot;</span><span style="color: #9399B2;">)</span><span> %}</span></span>
+<span class="giallo-l"><span>&lt;img src=&quot;{{ image</span><span style="color: #9399B2;">.</span><span>url }}&quot; srcset=&quot;/{{path}} 2x&quot;/&gt;</span></span></code></pre>
+
+
+
+<img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;08-example.50118dc8cdf88a84.jpg" srcset="/documentation&#x2F;content&#x2F;image-processing&#x2F;08-example.jpg 2x"/>
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

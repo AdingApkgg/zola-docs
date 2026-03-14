@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="particle | Zola">
+        <meta property="og:description" content="Particle theme for Zola">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;particle&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>particle | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;particle&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1>particle</h1>
+            <p>Particle theme for Zola</p>
+            <p><b>作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;svavs.github.io&#x2F;">Silvano Sallese</a>
+            
+            </p>
+            
+              <p>此主题需要 Zola 版本 0.16.1 及以上</p>
+            
+            <p><b>许可证:</b> MIT</p>
+            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;svavs&#x2F;particle-zola">https:&#x2F;&#x2F;github.com&#x2F;svavs&#x2F;particle-zola</a></p>
+            
+              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;particle-zola.vercel.app&#x2F;">https:&#x2F;&#x2F;particle-zola.vercel.app&#x2F;</a></p>
+            
+            
+            <p><b>最后更新:</b> 2023-05-11T00:52:07+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="port-for-zola-of-the-particle-jekyll-theme">Port for Zola of the Particle Jekyll theme</h1>
+<p><img src="https://zola.docs.saop.cc/themes/particle/./screenshot.jpg" alt="" /></p>
+<p>This is a simple and minimalist template for Zola designed for developers that want to show of their portfolio.</p>
+<p>The Theme features:</p>
+<ul>
+<li>Gulp</li>
+<li>SASS</li>
+<li>Sweet Scroll</li>
+<li>Particle.js</li>
+<li>BrowserSync</li>
+<li>Font Awesome and Devicon icons</li>
+<li>Google Analytics</li>
+<li>Info Customization</li>
+</ul>
+<h2 id="basic-setup">Basic Setup</h2>
+<ol>
+<li><a class="external" rel="external" href="https://getzola.com">Install Zola</a></li>
+<li>Clone the particle theme: <code>git clone https://github.com/svavs/particle-zola.git</code></li>
+<li>Edit <code>config.toml</code> to personalize your site.</li>
+</ol>
+<h2 id="site-and-user-settings">Site and User Settings</h2>
+<p>You have to fill some informations on the <code>[extra]</code> section of the <code>config.toml</code> to customize your site.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span># Site settings</span></span>
+<span class="giallo-l"><span>description = &quot;A blog about lorem ipsum dolor sit amet&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span># User settings</span></span>
+<span class="giallo-l"><span>username = &quot;Lorem Ipsum&quot;</span></span>
+<span class="giallo-l"><span>user_description = &quot;Anon Developer at Lorem Ipsum Dolor&quot;</span></span>
+<span class="giallo-l"><span>user_title = &quot;Anon Developer&quot;</span></span>
+<span class="giallo-l"><span>email = &quot;my@email.com&quot;</span></span>
+<span class="giallo-l"><span>twitter_username = &quot;lorem_ipsum&quot;</span></span>
+<span class="giallo-l"><span>github_username = &quot;lorem_ipsum&quot;</span></span>
+<span class="giallo-l"><span>gplus_username = &quot;lorem_ipsum&quot;</span></span></code></pre><h2 id="color-and-particle-customization">Color and Particle Customization</h2>
+<ul>
+<li>Color Customization
+<ul>
+<li>Edit the sass variables (<code>_vars.scss</code>)</li>
+</ul>
+</li>
+<li>Particle Customization
+<ul>
+<li>Edit the json data in particle function in app.js</li>
+<li>Refer to <a class="external" rel="external" href="https://github.com/VincentGarreau/particles.js/">Particle.js</a> for help</li>
+</ul>
+</li>
+</ul>
+<p>To customize the project lists and the about sections, you need to edit the <code>templates/content.html</code> template file.
+In future versions will be provided a simpler way.</p>
+<h2 id="questions">Questions</h2>
+<p>Having any issues file a <a class="external" rel="external" href="https://github.com/svavs/particle-zola/issues/new">GitHub Issue</a>.</p>
+<h2 id="license">License</h2>
+<p>This theme is free and open source software, distributed under the The MIT License. So feel free to use this Jekyll theme anyway you want.</p>
+<h2 id="credits">Credits</h2>
+<p>This theme was partially designed with the inspiration from these fine folks</p>
+<ul>
+<li><a class="external" rel="external" href="https://github.com/nrandecker/particle">Nathan Randecker</a></li>
+<li><a class="external" rel="external" href="https://github.com/willianjusten/will-jekyll-template">Willian Justen</a></li>
+<li><a class="external" rel="external" href="https://github.com/VincentGarreau/particles.js/">Vincent Garreau</a></li>
+</ul>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

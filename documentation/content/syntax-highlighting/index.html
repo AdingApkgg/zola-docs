@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="语法高亮 | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>语法高亮 | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>语法高亮</h1>
+    <p>Zola 带有内置的语法高亮显示，但你首先需要在 <a href="https://zola.docs.saop.cc/documentation/getting-started/configuration/">配置</a> 中启用它。</p>
+<p>完成后，Zola 将自动高亮显示你内容中的所有代码块。Markdown 中的代码块如下所示：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>```rust</span></span>
+<span class="giallo-l"><span>let highlight = true;</span></span>
+<span class="giallo-l"><span>```</span></span></code></pre>
+<p>你可以将 <code>rust</code> 替换为另一种语言，或者不放任何东西以使文本被解释为纯文本。</p>
+<p>Zola 使用 <a class="external" rel="external" href="https://github.com/getzola/giallo">Giallo</a>，这是一个使用 VSCode 语法和主题的库。</p>
+<p>你可以在 README 中看到支持的语言和主题的完整列表：<a class="external" rel="external" href="https://github.com/getzola/giallo?tab=readme-ov-file#built-in">https://github.com/getzola/giallo?tab=readme-ov-file#built-in</a></p>
+<p>如果不支持你想要高亮的主题或语言，你可以找到 JSON 语法文件和 JSON 主题文件，将它们复制到你站点的某个位置，并通过 <code>[markdown.highlighting]</code> section 中的 <code>extra_grammars</code> 和 <code>extra_themes</code> 从配置中加载它们。
+你可以在 https://textmate-grammars-themes.netlify.app/ 查看支持的主题列表。</p>
+<p>在任何情况下，你需要将以下 CSS 添加到你的站点 CSS 中，以便正确显示：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="css"><span class="giallo-l"><span style="color: #9399B2;">.</span><span style="color: #F9E2AF;">giallo-l</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    display</span><span style="color: #94E2D5;">:</span><span> inline-block</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    min-height</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> 1</span><span>lh</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    width</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> 100%</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">.</span><span style="color: #F9E2AF;">giallo-ln</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    display</span><span style="color: #94E2D5;">:</span><span> inline-block</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    user-select</span><span style="color: #94E2D5;">:</span><span> none</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    margin-right</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> 0.4</span><span style="color: #CBA6F7;">em</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    padding</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> 0.4</span><span style="color: #CBA6F7;">em</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    min-width</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> 3</span><span style="color: #CBA6F7;">ch</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    text-align</span><span style="color: #94E2D5;">:</span><span> right</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    opacity</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> 0.8</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre><h2 id="zhu-ti-xuan-ze"><a class="zola-anchor" href="#zhu-ti-xuan-ze" aria-label="Anchor link for: zhu-ti-xuan-ze">🔗</a>主题选择</h2>
+<p>你可以选择使用单个主题或浅色/深色主题。</p>
+<p>如果你想要单个主题，请使用配置的 <code>[markdown.highlighting]</code> section 中的 <code>theme</code> 键。</p>
+<p>如果你想要双重主题，请使用 <code>light_theme</code> 和 <code>dark_theme</code> 键：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>light_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github-light&quot;</span><span>                                                                                     </span></span>
+<span class="giallo-l"><span>dark_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github-dark&quot;</span></span></code></pre><h2 id="xuan-ran-yang-shi"><a class="zola-anchor" href="#xuan-ran-yang-shi" aria-label="Anchor link for: xuan-ran-yang-shi">🔗</a>渲染样式</h2>
+<p>默认渲染样式是 <code>inline</code>，这意味着颜色直接设置在具有十六进制值的 <code>&lt;span&gt;</code> 元素上，例如单个主题的 <code>&lt;span style="color: #83A598;"&gt;base_url&lt;/span&gt;</code> 和双重主题的 <code>&lt;span style="color: light-dark(#076678, #83A598);"&gt;base_url&lt;/span&gt;</code>。<a class="external" rel="external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark">light-dark()</a> CSS 函数将自动使用用户的首选配色方案，无法从 JS 覆盖它。</p>
+<p>如果你想要一个浅色/深色主题切换按钮或有禁止内联样式的规则，你可以将 <code>markdown.highlighting.style</code> 设置为 <code>class</code>，以便渲染器改用 CSS 类，并为静态文件夹中的每个主题生成一个 CSS 文件，如下所示：</p>
+<ul>
+<li>单个主题 -&gt; <code>giallo.css</code></li>
+<li>双重主题：浅色 -&gt; <code>giallo-light.css</code>, 深色 -&gt; <code>giallo-dark.css</code></li>
+</ul>
+<p>HTML 将类似于 <code>&lt;span class="z-support z-type z-property-name z-css"&gt;  user-select&lt;/span&gt;</code>。</p>
+<p>然后你可以像这样支持浅色和深色模式：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="css"><span class="giallo-l"><span style="color: #CBA6F7;">@import</span><span style="color: #89B4FA;font-style: italic;"> url</span><span style="color: #9399B2;">(</span><span style="color: #A6E3A1;">&quot;giallo-dark.css&quot;</span><span style="color: #9399B2;">) (</span><span>prefers-color-scheme</span><span style="color: #94E2D5;">:</span><span> dark</span><span style="color: #9399B2;">);</span></span>
+<span class="giallo-l"><span style="color: #CBA6F7;">@import</span><span style="color: #89B4FA;font-style: italic;"> url</span><span style="color: #9399B2;">(</span><span style="color: #A6E3A1;">&quot;giallo-light.css&quot;</span><span style="color: #9399B2;">) (</span><span>prefers-color-scheme</span><span style="color: #94E2D5;">:</span><span> light</span><span style="color: #9399B2;">);</span></span></code></pre>
+<p>或者，你可以在基本模板中引用样式表以减少请求链：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">head</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">  &lt;!-- Other content --&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">  &lt;</span><span style="color: #89B4FA;">link</span><span style="color: #F9E2AF;"> id</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;giallo-dark&quot;</span><span style="color: #F9E2AF;"> rel</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;stylesheet&quot;</span><span style="color: #F9E2AF;"> type</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;text/css&quot;</span><span style="color: #F9E2AF;"> href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;/giallo-dark.css&quot;</span><span style="color: #F9E2AF;"> media</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;(prefers-color-scheme: dark)&quot;</span><span style="color: #94E2D5;"> /&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">  &lt;</span><span style="color: #89B4FA;">link</span><span style="color: #F9E2AF;"> id</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;giallo-light&quot;</span><span style="color: #F9E2AF;"> rel</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;stylesheet&quot;</span><span style="color: #F9E2AF;"> type</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;text/css&quot;</span><span style="color: #F9E2AF;"> href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;/giallo-light.css&quot;</span><span style="color: #F9E2AF;"> media</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;(prefers-color-scheme: light)&quot;</span><span style="color: #94E2D5;"> /&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">head</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h2 id="biao-zhu-annotations"><a class="zola-anchor" href="#biao-zhu-annotations" aria-label="Anchor link for: biao-zhu-annotations">🔗</a>标注 (Annotations)</h2>
+<p>你可以使用额外的注释来定制代码块的显示方式：</p>
+<ul>
+<li><code>linenos</code> 启用行号。</li>
+</ul>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>```rust,linenos</span></span>
+<span class="giallo-l"><span>use highlighter::highlight;</span></span>
+<span class="giallo-l"><span>let code = &quot;...&quot;;</span></span>
+<span class="giallo-l"><span>highlight(code);</span></span>
+<span class="giallo-l"><span>```</span></span></code></pre>
+<ul>
+<li><code>linenostart</code> 指定第一行的编号（默认为 1）</li>
+</ul>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>```rust,linenos,linenostart=20</span></span>
+<span class="giallo-l"><span>use highlighter::highlight;</span></span>
+<span class="giallo-l"><span>let code = &quot;...&quot;;</span></span>
+<span class="giallo-l"><span>highlight(code);</span></span>
+<span class="giallo-l"><span>```</span></span></code></pre>
+<ul>
+<li><code>hl_lines</code> 高亮行。你必须指定要高亮的行的包含范围列表，由 <code> </code> (空格) 分隔。范围是 1 索引的，<code>linenostart</code> 不会影响这些值，它总是指代码块行号。</li>
+</ul>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>```rust,hl_lines=1 3-5 9</span></span>
+<span class="giallo-l"><span>use highlighter::highlight;</span></span>
+<span class="giallo-l"><span>let code = &quot;...&quot;;</span></span>
+<span class="giallo-l"><span>highlight(code);</span></span>
+<span class="giallo-l"><span>```</span></span></code></pre>
+<ul>
+<li><code>hide_lines</code> 隐藏行。你必须指定要隐藏的行的包含范围列表，由 <code> </code> (空格) 分隔。范围是 1 索引的。</li>
+</ul>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>```rust,hide_lines=1-2</span></span>
+<span class="giallo-l"><span>use highlighter::highlight;</span></span>
+<span class="giallo-l"><span>let code = &quot;...&quot;;</span></span>
+<span class="giallo-l"><span>highlight(code);</span></span>
+<span class="giallo-l"><span>```</span></span></code></pre>
+<ul>
+<li><code>name</code> 指定代码块关联的名称。</li>
+</ul>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>```rust,name=mod.rs</span></span>
+<span class="giallo-l"><span>use highlighter::highlight;</span></span>
+<span class="giallo-l"><span>let code = &quot;...&quot;;</span></span>
+<span class="giallo-l"><span>highlight(code);</span></span>
+<span class="giallo-l"><span>```</span></span></code></pre>
+<p>这是一个使用了所有选项的示例：<code>scss, linenos, linenostart=10, hl_lines=3-4 8-9, hide_lines=2 7</code>。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="scss"><span class="giallo-l"><span aria-hidden="true" class="giallo-ln" style="color: #7F849C;">10</span><span style="color: #89B4FA;">pre mark</span><span style="color: #9399B2;"> {</span></span>
+<span class="giallo-l" style="background-color: #CDD6F412;"><span aria-hidden="true" class="giallo-ln" style="color: #7F849C;">12</span><span style="color: #89B4FA;">  display</span><span style="color: #94E2D5;">:</span><span> block</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l" style="background-color: #CDD6F412;"><span aria-hidden="true" class="giallo-ln" style="color: #7F849C;">13</span><span style="color: #89B4FA;">  color</span><span style="color: #94E2D5;">:</span><span> currentcolor</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span aria-hidden="true" class="giallo-ln" style="color: #7F849C;">14</span><span style="color: #9399B2;">}</span></span>
+<span class="giallo-l"><span aria-hidden="true" class="giallo-ln" style="color: #7F849C;">15</span><span style="color: #89B4FA;">pre table td</span><span style="color: #9399B2;">:</span><span style="color: #94E2D5;">nth-of-type</span><span style="color: #9399B2;">(</span><span style="color: #FAB387;">1</span><span style="color: #9399B2;">) {</span></span>
+<span class="giallo-l" style="background-color: #CDD6F412;"><span aria-hidden="true" class="giallo-ln" style="color: #7F849C;">17</span><span style="color: #89B4FA;">  color</span><span style="color: #94E2D5;">:</span><span style="color: #9399B2;"> #</span><span>6b6b6b</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l" style="background-color: #CDD6F412;"><span aria-hidden="true" class="giallo-ln" style="color: #7F849C;">18</span><span style="color: #89B4FA;">  font-style</span><span style="color: #94E2D5;">:</span><span> italic</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span aria-hidden="true" class="giallo-ln" style="color: #7F849C;">19</span><span style="color: #9399B2;">}</span></span></code></pre>
+<p>第 2 行和第 7 行是注释，在最终输出中不显示。</p>
+
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>

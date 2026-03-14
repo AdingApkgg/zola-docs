@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta property="og:title" content="Vercel | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <title>Vercel | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;"><img
+			src="/logos/Zola-logo-white.svg"
+			title="Zola main logo in white"
+			alt="Zola"
+            fetchpriority="high"
+			/></a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+
+                    <div class="search-results">
+                        <div class="search-results__items"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+
+<div class="documentation">
+    <aside class="documentation__sidebar">
+        <ul>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">快速开始</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;">安装</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;cli-usage&#x2F;">CLI 使用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;">目录结构</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;configuration&#x2F;">配置</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">内容</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;section&#x2F;">Section</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;">Page</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;shortcodes&#x2F;">Shortcodes</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;">内部链接和深度链接</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;table-of-contents&#x2F;">目录</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;">语法高亮</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;search&#x2F;">搜索</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;">Sass</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;">图像处理</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;multilingual&#x2F;">多语言站点</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">模板</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pages-sections&#x2F;">Sections 和 Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;pagination&#x2F;">分页</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;taxonomies&#x2F;">分类法 (Taxonomies)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;">Feeds (订阅源)</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;sitemap&#x2F;">Sitemap</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;robots&#x2F;">Robots.txt</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;404&#x2F;">404 错误页面</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;archive&#x2F;">归档 (Archive)</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">主题</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;installing-and-using-themes&#x2F;">安装和使用主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;creating-a-theme&#x2F;">创建主题</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;extending-a-theme&#x2F;">自定义主题</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+            
+            <li>
+                <span class="documentation__sidebar__title">部署</span>
+                <ul>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;overview&#x2F;">概览</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;">Sourcehut Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;netlify&#x2F;">Netlify</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">GitHub Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;">GitLab Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;">Codeberg Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;edgio&#x2F;">Edgio</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;">Vercel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;zeabur&#x2F;">Zeabur</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-web-apps&#x2F;">Azure Static Web Apps</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;azure-static-webapps&#x2F;">Azure 静态 Web 应用</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;">Cloudflare Pages</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;">Cloudflare Workers</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;flyio&#x2F;">Fly.io</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;">AWS S3 Bucket</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;">Docker 镜像</a>
+                        </li>
+                    
+                </ul>
+            </li>
+        
+        </ul>
+    </aside>
+    <div class="documentation__content">
+        
+    <h1>Vercel</h1>
+    <p>Vercel（以前叫 Zeit）类似于 Netlify，使你的站点部署变得易如反掌。
+站点由 Vercel 托管，只要我们向选定的生产分支（例如 master）推送提交，就会自动部署。</p>
+<p>如果你没有 Vercel 帐户，可以在 <a class="external" rel="external" href="https://vercel.com/signup">这里</a> 注册。</p>
+<h2 id="zi-dong-bu-shu"><a class="zola-anchor" href="#zi-dong-bu-shu" aria-label="Anchor link for: zi-dong-bu-shu">🔗</a>自动部署</h2>
+<p>注册后，你可以从 Git 提供商（Github、GitLab 或 Bitbucket）导入你的站点。
+导入仓库时，Vercel 将尝试找出你的站点使用的框架。</p>
+<p>如果它没有默认为 Zola：</p>
+<ul>
+<li>将 "Framework Preset" 设置为 <strong>Zola</strong>。</li>
+</ul>
+<p>默认情况下，Vercel 选择输出目录为 <code>public</code>。如果你使用不同的目录，请在 "Build and Output Settings" 下拉菜单下指定输出目录。
+你可以通过 <a class="external" rel="external" href="https://vercel.com/docs">他们的文档</a> 了解更多关于如何设置自定义域名以及如何充分利用 Vercel 的信息。</p>
+<p>点击蓝色的 "Deploy" 按钮后，就可以开始了！</p>
+<p>要使用特定版本的 Zola，请在项目设置中将 <a class="external" rel="external" href="https://vercel.com/docs/deployments/environments#specifying-framework-versions"><code>ZOLA_VERSION</code></a> 环境变量设置为有效的发布标签，例如 <code>0.17.2</code>。</p>
+<h2 id="gu-zhang-pai-chu"><a class="zola-anchor" href="#gu-zhang-pai-chu" aria-label="Anchor link for: gu-zhang-pai-chu">🔗</a>故障排除</h2>
+<h3 id="glibc-x-xx-not-found"><a class="zola-anchor" href="#glibc-x-xx-not-found" aria-label="Anchor link for: glibc-x-xx-not-found">🔗</a><code>GLIBC_X.XX</code> not found</h3>
+<p>这是因为 Vercel 的构建镜像不包含 Zola 所需的 <code>glibc</code> 版本。
+Vercel 为不同的 Node.js 版本提供 <a class="external" rel="external" href="https://vercel.com/docs/builds/build-image">不同的构建镜像</a>，因此即使 Zola 与 Node.js 没有任何关系，你也可以从项目设置中升级 Node.js 版本，使 Vercel 使用较新的构建环境，从而允许 Zola 正常工作。</p>
+<p>如果你的项目是在默认 Node.js 版本为 <code>20.x</code> 时创建的，将 Node.js 版本升级到 <code>22.x</code>（这是新的默认值）应该适用于 Zola 版本高达 <code>0.19.2</code>（含）而无需进一步配置。</p>
+<p>由于 Vercel 不提供更新的镜像，当使用内置的 Zola 框架预设时，后续版本的 Zola 将无法再次工作。但是，从 Zola 版本 <code>0.21.0</code> 开始，发布了静态链接的 <code>musl</code> 二进制文件，这在 glibc 不足的系统（如 Vercel 的构建镜像）中提供了最高的兼容性。要使用 <code>musl</code> 编译的二进制文件，你必须确保 Vercel <a href="https://zola.docs.saop.cc/documentation/deployment/vercel/#using-a-custom-zola-binary">不使用其内置的 Zola 预设，而是你自己提供二进制文件。</a></p>
+<h2 id="qi-ta-xuan-xiang"><a class="zola-anchor" href="#qi-ta-xuan-xiang" aria-label="Anchor link for: qi-ta-xuan-xiang">🔗</a>其他选项</h2>
+<h3 id="qi-yong-wei-sui-xie-gang"><a class="zola-anchor" href="#qi-yong-wei-sui-xie-gang" aria-label="Anchor link for: qi-yong-wei-sui-xie-gang">🔗</a>启用尾随斜杠</h3>
+<p>访问没有尾随斜杠的页面可能会破坏相对路径，因此你可能希望配置 Vercel 始终重定向带有尾随斜杠的路径。默认情况下，Vercel 上未启用重定向到尾随斜杠。</p>
+<p>例如，如果你有一个 <code>about.md</code> 文件，并且当访问没有尾随斜杠的路径（如 <code>/about</code>）时，Vercel 将重定向带有尾随斜杠，结果为 <code>/about/</code>。
+带有文件扩展名的路径将不会重定向到尾随斜杠，例如，如果你有一个名为 <code>favicon.ico</code> 的静态文件，它将保持原样。</p>
+<p>要启用该功能，请在你的 git 仓库根目录中创建一个名为 <code>vercel.json</code> 的文件（如果尚未存在），并设置此选项：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="json"><span class="giallo-l"><span style="color: #9399B2;">{</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">trailingSlash</span><span style="color: #9399B2;">&quot;:</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre><h3 id="shou-xuan-gan-jing-url"><a class="zola-anchor" href="#shou-xuan-gan-jing-url" aria-label="Anchor link for: shou-xuan-gan-jing-url">🔗</a>首选干净 URL</h3>
+<p>启用后，所有 HTML 文件将在没有文件扩展名的情况下提供服务。例如，如果你有一个 <code>about.md</code> 文件，Zola 将生成一个 <code>about/index.html</code> 文件，但你可能希望 Vercel 将文件作为 <code>/about</code> 提供，而不带其 <code>index.html</code> 后缀。</p>
+<p>要启用该功能，请在你的 git 仓库根目录中创建一个名为 <code>vercel.json</code> 的文件（如果尚未存在），并设置此选项：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="json"><span class="giallo-l"><span style="color: #9399B2;">{</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">cleanUrls</span><span style="color: #9399B2;">&quot;:</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre><h3 id="shi-yong-zi-ding-yi-zola-er-jin-zhi-wen-jian"><a class="zola-anchor" href="#shi-yong-zi-ding-yi-zola-er-jin-zhi-wen-jian" aria-label="Anchor link for: shi-yong-zi-ding-yi-zola-er-jin-zhi-wen-jian">🔗</a>使用自定义 Zola 二进制文件</h3>
+<p>如果你想自己提供 Zola 二进制文件以获得完全控制，而不是让 Vercel 使用其受控的 Zola 预设，请将 "Framework Preset" 设置为 "Other"。这将使 Vercel 不再自动使用 <code>ZOLA_VERSION</code> 变量。
+然后，将 "Install Command" 设置为：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #A6E3A1;"> &quot;</span><span>${ZOLA_VERSION</span><span style="color: #94E2D5;">:-</span><span style="color: #A6E3A1;">&quot;latest&quot;</span><span>}</span><span style="color: #A6E3A1;">&quot;</span><span style="color: #94E2D5;"> |</span><span style="color: #89B4FA;font-style: italic;"> sed</span><span style="color: #A6E3A1;"> &#39;/^latest$/!s/\(.*\)/tags\/v\1/&#39;</span><span style="color: #94E2D5;"> |</span><span style="color: #89B4FA;font-style: italic;"> xargs</span><span style="color: #A6E3A1;"> -I% curl -fsSL &quot;https://api.github.com/repos/getzola/zola/releases/%&quot;</span><span style="color: #94E2D5;"> |</span><span style="color: #89B4FA;font-style: italic;"> grep</span><span style="color: #A6E3A1;"> -oP &quot;</span><span style="color: #F5C2E7;">\&quot;</span><span style="color: #A6E3A1;">browser_download_url</span><span style="color: #F5C2E7;">\&quot;</span><span style="color: #A6E3A1;">: ?</span><span style="color: #F5C2E7;">\&quot;\\</span><span style="color: #A6E3A1;">K(.+linux-</span><span>${ZOLA_LIBC</span><span style="color: #94E2D5;">:-</span><span style="color: #A6E3A1;">&quot;musl&quot;</span><span>}</span><span style="color: #F5C2E7;">\\</span><span style="color: #A6E3A1;">.tar</span><span style="color: #F5C2E7;">\\</span><span style="color: #A6E3A1;">.gz)&quot;</span><span style="color: #94E2D5;"> |</span><span style="color: #89B4FA;font-style: italic;"> xargs</span><span style="color: #A6E3A1;"> curl -fsSL</span><span style="color: #94E2D5;"> |</span><span style="color: #89B4FA;font-style: italic;"> tar</span><span style="color: #A6E3A1;"> -xz</span></span></code></pre>
+<p>此命令将从 GitHub API 获取的文件 URL 下载 Zola 并解压缩。
+这样我们就可以继续使用相同的 <code>ZOLA_VERSION</code> 环境变量名称来固定到特定的 Zola 版本（与 Vercel 的做法相同） - 或者将其设置为 <code>latest</code> 以便每当在 Vercel 上启动部署时始终拉取最新版本。</p>
+<p>我们在命令中默认也会拉取 <code>musl</code> 二进制文件，因此我们不再需要担心 Vercel 的构建镜像。但是，如果你想使用旧版本（低于 <code>0.21.0</code>，没有提供 <code>musl</code> 二进制文件），你需要创建一个名为 <code>ZOLA_LIBC</code> 的新环境变量并将其设置为 <code>gnu</code>。</p>
+<p>除了将 "Install Command" 设置为上述内容外，你还需要将 "Build Command" 设置为 <code>./zola build</code>，这样我们就可以使用之前在本地下载的 Zola 二进制文件构建我们的站点。</p>
+<p>如果你更喜欢使用 <code>vercel.json</code>（这会覆盖仪表板中设置的选项），你可以使用此配置：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="json"><span class="giallo-l"><span style="color: #9399B2;">{</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">framework</span><span style="color: #9399B2;">&quot;:</span><span style="color: #FAB387;"> null</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">installCommand</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;echo </span><span style="color: #F5C2E7;">\&quot;</span><span style="color: #A6E3A1;">${ZOLA_VERSION:-</span><span style="color: #F5C2E7;">\&quot;</span><span style="color: #A6E3A1;">latest</span><span style="color: #F5C2E7;">\&quot;</span><span style="color: #A6E3A1;">}</span><span style="color: #F5C2E7;">\&quot;</span><span style="color: #A6E3A1;"> | sed &#39;/^latest$/!s/</span><span style="color: #F5C2E7;">\\</span><span style="color: #A6E3A1;">(.*</span><span style="color: #F5C2E7;">\\</span><span style="color: #A6E3A1;">)/tags</span><span style="color: #F5C2E7;">\\</span><span style="color: #A6E3A1;">/v</span><span style="color: #F5C2E7;">\\</span><span style="color: #A6E3A1;">1/&#39; | xargs -I% curl -fsSL </span><span style="color: #F5C2E7;">\&quot;</span><span style="color: #A6E3A1;">https://api.github.com/repos/getzola/zola/releases/%</span><span style="color: #F5C2E7;">\&quot;</span><span style="color: #A6E3A1;"> | grep -oP </span><span style="color: #F5C2E7;">\&quot;\\\&quot;</span><span style="color: #A6E3A1;">browser_download_url</span><span style="color: #F5C2E7;">\\\&quot;</span><span style="color: #A6E3A1;">: ?</span><span style="color: #F5C2E7;">\\\&quot;\\</span><span style="color: #A6E3A1;">K(.+linux-${ZOLA_LIBC:-</span><span style="color: #F5C2E7;">\&quot;</span><span style="color: #A6E3A1;">musl</span><span style="color: #F5C2E7;">\&quot;</span><span style="color: #A6E3A1;">}</span><span style="color: #F5C2E7;">\\\\</span><span style="color: #A6E3A1;">.tar</span><span style="color: #F5C2E7;">\\\\</span><span style="color: #A6E3A1;">.gz)</span><span style="color: #F5C2E7;">\&quot;</span><span style="color: #A6E3A1;"> | xargs curl -fsSL | tar -xz&quot;</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">buildCommand</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;./zola build&quot;</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    &quot;</span><span style="color: #89B4FA;">outputDirectory</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;public&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre>
+<p>如果你想使用自己的 fork 并使用在那里发布的二进制文件，你可以根据自己的意愿修改命令。</p>
+<h2 id="ling-qing-can-yue"><a class="zola-anchor" href="#ling-qing-can-yue" aria-label="Anchor link for: ling-qing-can-yue">🔗</a>另请参阅</h2>
+<p>请参阅 <a class="external" rel="external" href="https://vercel.com/docs/projects/project-configuration">Vercel 自己的文档</a> 以获取 <code>vercel.json</code> 中的所有可用选项。</p>
+
+
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+        <script>
+        window.addEventListener('load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+    </body>
+</html>
