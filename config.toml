@@ -4,14 +4,14 @@ description = "无需依赖，单一二进制文件的静态站点生成器。"
 default_language = "zh"
 
 compile_sass = true
-build_search_index = false
+build_search_index = true
 
 taxonomies = [
   { name = "theme-tags"}
 ]
 
 [search]
-index_format = "elasticlunr_json"
+index_format = "fuse_json"
 
 [markdown]
 external_links_class = "external"

@@ -13,24 +13,10 @@ function debounce(func, wait) {
   };
 }
 
-// Taken from mdbook
-// The strategy is as follows:
-// First, assign a value to each word in the document:
-//  Words that correspond to search terms (stemmer aware): 40
-//  Normal words: 2
-//  First word in a sentence: 8
-// Then use a sliding window with a constant number of words and count the
-// sum of the values of the words within the window. Then use the window that got the
-// maximum sum. If there are multiple maximas, then get the last one.
-// Enclose the terms in <b>.
 function makeTeaser(body, terms) {
-  var TERM_WEIGHT = 40;
-  var NORMAL_WORD_WEIGHT = 2;
-  var FIRST_WORD_WEIGHT = 8;
   var TEASER_MAX_WORDS = 30;
-
   var stemmedTerms = terms.map(function (w) {
-    return elasticlunr.stemmer(w.toLowerCase());
+    return w.toLowerCase();
   });
   var termFound = false;
   var index = 0;
@@ -41,27 +27,27 @@ function makeTeaser(body, terms) {
 
   for (var i in sentences) {
     var words = sentences[i].split(" ");
-    var value = FIRST_WORD_WEIGHT;
+    var value = 8;
 
     for (var j in words) {
       var word = words[j];
 
       if (word.length > 0) {
         for (var k in stemmedTerms) {
-          if (elasticlunr.stemmer(word).startsWith(stemmedTerms[k])) {
-            value = TERM_WEIGHT;
+          if (word.includes(stemmedTerms[k])) {
+            value = 40;
             termFound = true;
           }
         }
         weighted.push([word, value, index]);
-        value = NORMAL_WORD_WEIGHT;
+        value = 2;
       }
 
       index += word.length;
-      index += 1;  // ' ' or '.' if last word in sentence
+      index += 1; // ' ' or '.' if last word in sentence
     }
 
-    index += 1;  // because we split at a two-char boundary '. '
+    index += 1; // because we split at a two-char boundary '. '
   }
 
   if (weighted.length === 0) {
@@ -107,13 +93,13 @@ function makeTeaser(body, terms) {
     }
 
     // add <em/> around search terms
-    if (word[1] === TERM_WEIGHT) {
+    if (word[1] === 40) {
       teaser.push("<b>");
     }
     startIndex = word[2] + word[0].length;
     teaser.push(body.substring(word[2], startIndex));
 
-    if (word[1] === TERM_WEIGHT) {
+    if (word[1] === 40) {
       teaser.push("</b>");
     }
   }
@@ -123,9 +109,35 @@ function makeTeaser(body, terms) {
 
 function formatSearchResultItem(item, terms) {
   return '<div class="search-results__item">'
-  + `<a href="${item.ref}">${item.doc.title}</a>`
-  + `<div>${makeTeaser(item.doc.body, terms)}</div>`
+  + `<a href="${item.url}">${item.title}</a>`
+  + `<div>${makeTeaser(item.body, terms)}</div>`
   + '</div>';
+}
+
+var fuse;
+var options = {
+  includeScore: true,
+  includeMatches: true,
+  ignoreLocation: true,
+  keys: [
+    { name: "title", weight: 0.8 },
+    { name: "body", weight: 0.5 },
+  ],
+};
+
+var initIndex = async function () {
+  if (fuse === undefined) {
+    try {
+      const response = await fetch("/search_index.zh.json");
+      if (response.ok) {
+        const data = await response.json();
+        fuse = new Fuse(data, options);
+      }
+    } catch (e) {
+      console.error("Failed to load search index", e);
+    }
+  }
+  return fuse;
 }
 
 function initSearch() {
@@ -133,55 +145,37 @@ function initSearch() {
   var $searchResults = document.querySelector(".search-results");
   var $searchResultsItems = document.querySelector(".search-results__items");
   var MAX_ITEMS = 10;
-
-  var options = {
-    bool: "AND",
-    fields: {
-      title: {boost: 2},
-      body: {boost: 1},
-    }
-  };
-  var currentTerm = "";
-  var index;
   
-  var initIndex = async function () {
-    if (index === undefined) {
-      // 暂时禁用搜索，因为当前 Zola 二进制文件不支持中文索引
-      // index = fetch("/search_index.zh.json")
-      //   .then(
-      //     async function(response) {
-      //       return await elasticlunr.Index.load(await response.json());
-      //   }
-      // );
-      console.warn("Search is currently disabled due to missing Chinese index support in Zola binary.");
-      index = Promise.resolve({ search: () => [] });
-    }
-    let res = await index;
-    return res;
+  if (!$searchInput || !$searchResults || !$searchResultsItems) {
+      return;
   }
 
   $searchInput.addEventListener("keyup", debounce(async function() {
     var term = $searchInput.value.trim();
-    if (term === currentTerm) {
-      return;
-    }
-    $searchResults.style.display = term === "" ? "none" : "block";
-    $searchResultsItems.innerHTML = "";
-    currentTerm = term;
     if (term === "") {
-      return;
-    }
-
-    var results = (await initIndex()).search(term, options);
-    if (results.length === 0) {
       $searchResults.style.display = "none";
       return;
     }
 
-    for (var i = 0; i < Math.min(results.length, MAX_ITEMS); i++) {
-      var item = document.createElement("li");
-      item.innerHTML = formatSearchResultItem(results[i], term.split(" "));
-      $searchResultsItems.appendChild(item);
+    var fuseInstance = await initIndex();
+    if (!fuseInstance) return;
+
+    var results = fuseInstance.search(term);
+    
+    $searchResults.style.display = results.length > 0 ? "block" : "none";
+    $searchResultsItems.innerHTML = "";
+
+    if (results.length > 0) {
+      // Collect all terms from matches for highlighting
+      // Or just use the search term
+      var terms = term.split(" ");
+      
+      for (var i = 0; i < Math.min(results.length, MAX_ITEMS); i++) {
+        var item = document.createElement("li");
+        // results[i].item contains the document
+        item.innerHTML = formatSearchResultItem(results[i].item, terms);
+        $searchResultsItems.appendChild(item);
+      }
     }
   }, 150));
 
@@ -192,11 +186,11 @@ function initSearch() {
   });
 }
 
-
-if (document.readyState === "complete" ||
-    (document.readyState !== "loading" && !document.documentElement.doScroll)
-) {
-  initSearch();
-} else {
-  document.addEventListener("DOMContentLoaded", initSearch);
-}
+initSearch();
+document.addEventListener("turbo:load", initSearch);
+document.addEventListener("turbo:before-cache", function() {
+    var $searchResults = document.querySelector(".search-results");
+    var $searchInput = document.getElementById("search");
+    if ($searchResults) $searchResults.style.display = "none";
+    if ($searchInput) $searchInput.value = "";
+});

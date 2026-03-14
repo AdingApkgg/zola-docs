@@ -9,6 +9,11 @@
         <title>{% block title %}{{ config.title }}{% endblock title %}</title>
         <link rel="stylesheet" href="{{ get_url(path='site.css') }}">
         <link rel="icon" href="{{ get_url(path='favicon.ico') }}">
+        <script type="module">
+            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+        </script>
+        <script type="text/javascript" src="{{ get_url(path='fuse.min.js') }}" defer></script>
+        <script type="text/javascript" src="{{ get_url(path='search.js') }}" defer></script>
     </head>
     <body>
 
@@ -104,7 +109,5 @@
             ©2017-{{ now() | date(format="%Y") }} — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
         </footer>
 
-        <script type="text/javascript" src="{{ get_url(path='elasticlunr.min.js') }}"></script>
-        <script type="text/javascript" src="{{ get_url(path='search.js') }}"></script>
     </body>
 </html>
