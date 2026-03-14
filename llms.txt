@@ -1,0 +1,23 @@
+# Zola 文档 (中文)
+
+这是 Zola 的中文文档，Zola 是一个单一二进制文件的静态站点生成器，无需依赖。
+
+## 关键部分
+
+- **入门**: /documentation/getting-started/
+  安装, CLI 使用, 配置, 和目录结构。
+
+- **内容**: /documentation/content/
+  如何组织内容, Sections (栏目), Pages (页面), Shortcodes (短代码), 和内部链接。
+
+- **模板**: /documentation/templates/
+  Tera 模板简介, 变量, 函数, 和过滤器。
+
+- **主题**: /documentation/themes/
+  安装, 使用, 和创建主题。
+
+- **部署**: /documentation/deployment/
+  部署到 GitHub Pages, Netlify, Vercel, 等等。
+
+## 完整内容
+(此文件旨在提供上下文。如需完整内容，请爬取链接的部分。)
