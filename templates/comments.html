@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock title %}
+
+{% block head %}
+    <link href="https://artalk.saop.cc/dist/Artalk.css" rel="stylesheet">
+    <script src="https://artalk.saop.cc/dist/Artalk.js"></script>
+{% endblock head %}
+
+{% block content %}
+<div class="container" style="padding: 2rem 0;">
+    <h1>{{ page.title }}</h1>
+    <div class="content">
+        {{ page.content | safe }}
+    </div>
+
+    <hr style="margin: 2rem 0;">
+
+    <!-- Artalk -->
+    <div id="Comments"></div>
+    <script>
+    Artalk.init({
+        el:        '#Comments',
+        pageKey:   '{{ page.permalink }}',
+        pageTitle: '{{ page.title }}',
+        server:    'https://artalk.saop.cc',
+        site:      '{{ config.title }}',
+    })
+    </script>
+</div>
+{% endblock content %}

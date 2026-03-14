@@ -8,16 +8,19 @@
   input {
     width: 100%;
     padding: 0.5rem;
+    background: var(--search-bg);
+    color: var(--search-text);
+    border: 1px solid var(--search-border);
   }
 }
 
 .search-results {
   display: none;
   position: absolute;
-  background: white;
-  color: black;
+  background: var(--search-result-bg);
+  color: var(--search-result-text);
   padding: 1rem;
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 2px 0 var(--search-result-shadow);
   max-height: 500px;
   overflow: auto;
   width: 150%;
@@ -29,7 +32,7 @@
 
   li {
     margin-top: 1rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--search-result-border);
     font-size: 0.9rem;
 
     &:first-of-type {

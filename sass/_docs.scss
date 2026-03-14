@@ -24,16 +24,16 @@
         margin-top: 0.25rem;
 
         li {
-          border-left: 1px solid $background;
-          padding-left: 0.75rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
-        }
+            border-left: 1px solid var(--bg-color);
+            padding-left: 0.75rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+          }
 
-        li.active a {
-          font-weight: bold;
-          border-bottom: 1px solid $link-color;
-        }
+          li.active a {
+            font-weight: bold;
+            border-bottom: 1px solid var(--link-color);
+          }
       }
     }
 
@@ -56,7 +56,7 @@
     }
 
     blockquote {
-      border-left: 10px solid black;
+      border-left: 10px solid var(--blockquote-border);
       padding: 0.25rem 0.5rem;
       margin-left: 0;
       font-style: italic;
@@ -81,7 +81,7 @@
     }
 
     &__sidebar {
-      border-top: 1px solid $background;
+      border-top: 1px solid var(--bg-color);
       order: 1;
       margin-right: 0;
       margin-top: 1rem;

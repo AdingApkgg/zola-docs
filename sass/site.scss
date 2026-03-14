@@ -1,6 +1,57 @@
 @charset "utf-8";
 
 @import "normalize";
+@import "pattern";
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #191919;
+  --link-color: #007CBC;
+  --link-border-color: rgba(0, 124, 188, 0.25);
+  --code-bg-color: #f5f5f5;
+  --bg-pattern: #{$grid-pattern-light};
+  --external-link-icon: #{$external-link-icon-light};
+  --button-bg: #191919;
+  --button-text: #ffffff;
+  --button-hover-bg: #333333;
+  --blockquote-border: #191919;
+  --search-bg: #ffffff;
+  --search-text: #191919;
+  --search-border: #ccc;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-color-strong: rgba(0, 0, 0, 0.2);
+  --search-result-bg: #ffffff;
+  --search-result-text: #000000;
+  --search-result-border: #ccc;
+  --search-result-shadow: rgba(0, 0, 0, 0.1);
+  --search-result-hover: #f0f0f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #191919;
+    --text-color: #ffffff;
+    --link-color: #007CBC;
+    --link-border-color: rgba(0, 124, 188, 0.25);
+    --code-bg-color: #f5f5f5;
+    --bg-pattern: #{$grid-pattern-dark};
+    --external-link-icon: #{$external-link-icon-dark};
+    --button-bg: #ffffff;
+    --button-text: #191919;
+    --button-hover-bg: #f6f9fc;
+    --blockquote-border: #000000;
+    --search-bg: #191919;
+    --search-text: #ffffff;
+    --search-border: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --shadow-color-strong: rgba(0, 0, 0, 0.5);
+    --search-result-bg: #2c2c2c;
+    --search-result-text: #ffffff;
+    --search-result-border: #444;
+    --search-result-shadow: rgba(0, 0, 0, 0.5);
+    --search-result-hover: #3c3c3c;
+  }
+}
 
 *, *:before, *:after {
   box-sizing: border-box;

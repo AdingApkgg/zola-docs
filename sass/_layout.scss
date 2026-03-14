@@ -34,8 +34,8 @@ header {
   flex-grow: 1;
 
   &--reversed {
-    background: $foreground;
-    color: $background;
+    background: var(--text-color);
+    color: var(--bg-color);
   }
 }
 

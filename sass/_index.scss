@@ -1,6 +1,6 @@
 .inverted-colours {
-  background: $foreground;
-  color: $background;
+  background: var(--text-color);
+  color: var(--bg-color);
 }
 
 .hero {
