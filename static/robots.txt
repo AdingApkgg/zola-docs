@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zola.docs.saop.cc/sitemap.xml

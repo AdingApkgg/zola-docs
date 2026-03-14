@@ -20,9 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ZOLA_VERSION: 0.22.0
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
           fetch-depth: 0
@@ -33,7 +34,9 @@ jobs:
           zola --version || { echo "Zola installation failed"; exit 1; }
 
       - name: Build Zola site
-        run: zola build || { echo "Zola build failed"; ls -la; exit 1; }
+        run: |
+          zola build || { echo "Zola build failed"; ls -la; exit 1; }
+          touch public/.nojekyll
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
