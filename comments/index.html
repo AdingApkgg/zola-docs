@@ -7,20 +7,20 @@
         <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
         <meta name="author" content="Vincent Prouillet">
         <meta name="robots" content="index, follow">
-        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-hikari&#x2F;">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;comments&#x2F;">
 
         <!-- Open Graph -->
-        <meta property="og:title" content="Hikari | Zola">
-        <meta property="og:description" content="Fluid, responsive blog theme for Zola">
+        <meta property="og:title" content="留言板 | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
         <meta property="og:type" content="article">
-        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-hikari&#x2F;">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;comments&#x2F;">
         <meta property="og:site_name" content="Zola">
         <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Hikari | Zola">
-        <meta name="twitter:description" content="Fluid, responsive blog theme for Zola">
+        <meta name="twitter:title" content="留言板 | Zola">
+        <meta name="twitter:description" content="无需依赖，单一二进制文件的静态站点生成器。">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -31,9 +31,9 @@
         {
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Hikari",
-            "description": "Fluid, responsive blog theme for Zola",
-            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-hikari&#x2F;",
+            "headline": "留言板",
+            "description": "无需依赖，单一二进制文件的静态站点生成器。",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;comments&#x2F;",
             "author": {
                 "@type": "Person",
                 "name": "Vincent Prouillet"
@@ -41,7 +41,7 @@
         }
         </script>
 
-        <title>Hikari | Zola </title>
+        <title>留言板 | Zola</title>
         <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
         <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
         <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
@@ -52,6 +52,9 @@
         <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
         <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
         
+    <link href="https://artalk.saop.cc/dist/Artalk.css" rel="stylesheet">
+    <script src="https://artalk.saop.cc/dist/Artalk.js"></script>
+
     </head>
     <body>
 
@@ -85,59 +88,29 @@
             </nav>
         </header>
 
-        <div class="content content--reversed">
+        <div class="content ">
             
-    <div class="themes-container">
-        
-    <div class="theme-info">
-        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-hikari&#x2F;screenshot.png" class="thumb">
-        <div class="metadata">
-            <h1>Hikari</h1>
-            <p>Fluid, responsive blog theme for Zola</p>
-            <p><b>作者:</b>
-            
-              <a href="https:&#x2F;&#x2F;waynee95.me">waynee95</a>
-            
-            </p>
-            
-              <p>此主题需要 Zola 版本 0.5.1 及以上</p>
-            
-            <p><b>许可证:</b> MIT</p>
-            <p><b>主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;waynee95&#x2F;zola-theme-hikari">https:&#x2F;&#x2F;github.com&#x2F;waynee95&#x2F;zola-theme-hikari</a></p>
-            
-              <p><b>在线演示:</b> <a href="https:&#x2F;&#x2F;waynee95.me&#x2F;zola-theme-hikari">https:&#x2F;&#x2F;waynee95.me&#x2F;zola-theme-hikari</a></p>
-            
-            
-            <p><b>最后更新:</b> 2019-07-13T19:31:51+02:00</p>
-        </div>
-    </div>
-
-    <hr>
-    <h1 id="hikari">hikari</h1>
-<blockquote>
-<p>this is a port of the <a class="external" rel="external" href="https://github.com/mx3m/hikari-for-jekyll">hikari theme</a> for <a class="external" rel="external" href="https://www.getzola.org/">Zola</a></p>
-</blockquote>
-<p>Hikari is a simple theme perfect for dev-savvy bloggers.</p>
-<p><img src="https://zola.docs.saop.cc/themes/zola-theme-hikari/screenshot.png" alt="screenshot" /></p>
-<p><a class="external" rel="external" href="https://waynee95.github.io/zola-theme-hikari/">View demo</a></p>
-<h2 id="installation">Installation</h2>
-<p>First download the theme to your <code>themes</code> directory:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cd themes</span></span>
-<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git clone https://github.com/waynee95/zola-theme-hikari</span></span></code></pre>
-<p>and then enable it in your <code>config.toml</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;hikari&quot;</span></span></code></pre><h2 id="configuration">Configuration</h2>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
-<span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;John Doge&quot;</span></span>
-<span class="giallo-l"><span>author_bio</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, pariatur!&quot;</span></span>
-<span class="giallo-l"><span>twitter</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;waynee955&quot;</span></span>
-<span class="giallo-l"><span>github</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;waynee95&quot;</span></span>
-<span class="giallo-l"><span>instagram</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
-<span class="giallo-l"><span>enable_mathjax</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre><h2 id="license">License</h2>
-<p><a href="https://zola.docs.saop.cc/themes/zola-theme-hikari/LICENSE">MIT</a></p>
-<p>Thanks to <a class="external" rel="external" href="https://github.com/mx3m">Mathieu Mayer-Mazzoli</a> for creating this awesome theme!</p>
-
+<div class="container" style="padding: 2rem 0;">
+    <h1>留言板</h1>
+    <div class="content">
+        <p>欢迎在此留下您的评论和建议。</p>
 
     </div>
+
+    <hr style="margin: 2rem 0;">
+
+    <!-- Artalk -->
+    <div id="Comments"></div>
+    <script>
+    Artalk.init({
+        el:        '#Comments',
+        pageKey:   'https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;comments&#x2F;',
+        pageTitle: '留言板',
+        server:    'https://artalk.saop.cc',
+        site:      'Zola',
+    })
+    </script>
+</div>
 
         </div>
         <footer>
