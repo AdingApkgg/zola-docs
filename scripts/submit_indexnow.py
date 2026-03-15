@@ -22,14 +22,16 @@ def get_base_url():
         print(f"Error reading config.toml: {e}")
     return None
 
-def verify_key_accessibility(host, key, max_retries=18, delay=10):
+def verify_key_accessibility(host, key, max_retries=90, delay=2):
     """验证 Key 文件是否已生效，因为 GitHub Pages 部署有延迟 (默认等待 3 分钟)"""
     url = f"https://{host}/{key}.txt"
     print(f"Verifying key file availability at: {url}")
     
     for i in range(max_retries):
         try:
-            req = urllib.request.Request(url)
+            # 添加 User-Agent 模拟浏览器，避免被 Cloudflare/GitHub Pages 拦截 (403 Forbidden)
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+            req = urllib.request.Request(url, headers=headers)
             with urllib.request.urlopen(req) as response:
                 if response.status == 200:
                     content = response.read().decode('utf-8').strip()
@@ -39,7 +41,9 @@ def verify_key_accessibility(host, key, max_retries=18, delay=10):
                     else:
                         print(f"Key file found but content mismatch. Expected {key}, got {content}")
         except urllib.error.HTTPError as e:
-            print(f"Attempt {i+1}/{max_retries}: Key file not ready yet ({e.code}). Waiting {delay}s...")
+            # 只有在第一次和每 5 次重试时打印日志，避免刷屏
+            if i == 0 or (i + 1) % 5 == 0:
+                print(f"Attempt {i+1}/{max_retries}: Key file not ready yet ({e.code}). Waiting {delay}s...")
         except Exception as e:
             print(f"Attempt {i+1}/{max_retries}: Error checking key file: {e}. Waiting {delay}s...")
         
