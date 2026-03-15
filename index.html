@@ -60,6 +60,27 @@
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
         <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        <script>
         (function() {
             // 仅在首页执行跳转逻辑，避免干扰深层链接访问
             if (window.location.pathname !== '/' && window.location.pathname !== '/en/') return;
@@ -96,19 +117,42 @@
         </a>
             <nav>
                 <ul>
-                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
-                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
-                    <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link">留言板</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link"><i class="fas fa-book"></i> 文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
-                            <a class="white" href="/en/" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')">English</a>
+                        
+
+                        
+
+                        
+                        
+
+                        
+                        
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
                 <div class="search-container">
-                    <input id="search" type="search" placeholder="🔎 搜索文档">
+                    <i class="fas fa-search search-icon"></i>
+                    <input id="search" type="search" placeholder="搜索文档">
             </nav>
         </header>
 
@@ -125,28 +169,28 @@
                 <div class="inverted-colours selling-points">
                     <div class="selling-points__content container">
                         <div class="selling-point">
-                            <h2>无依赖</h2>
+                            <h2><i class="fas fa-box-open"></i> 无依赖</h2>
                             <p>
                                 Zola 是一个单一的可执行文件，内置了 Sass 编译、语法高亮、目录生成以及许多传统上需要设置开发环境或添加 JavaScript 库才能实现的功能。
                             </p>
                         </div>
 
                         <div class="selling-point">
-                            <h2>极速</h2>
+                            <h2><i class="fas fa-bolt"></i> 极速</h2>
                             <p>
                                 平均每个站点的生成时间不到一秒，包括 Sass 编译和语法高亮。
                             </p>
                         </div>
 
                         <div class="selling-point">
-                            <h2>可扩展</h2>
+                            <h2><i class="fas fa-chart-line"></i> 可扩展</h2>
                             <p>
                                 Zola 将您的整个站点渲染为静态文件，这使得处理任何流量都变得轻而易举，而且无需担心管理服务器或数据库。
                             </p>
                         </div>
 
                         <div class="selling-point">
-                            <h2>易于使用</h2>
+                            <h2><i class="fas fa-magic"></i> 易于使用</h2>
                             <p>
                                 从 CLI 到模板引擎，一切都设计得直观易用。别只听我说，看看
                                 <a href="https://zola.docs.saop.cc/documentation/">文档</a> 自己体验一下。
@@ -154,14 +198,14 @@
                         </div>
 
                         <div class="selling-point">
-                            <h2>灵活</h2>
+                            <h2><i class="fas fa-puzzle-piece"></i> 灵活</h2>
                             <p>
                                 Zola 不会妨碍您，让您可以专注于内容，无论是博客、知识库、落地页还是它们的组合。
                             </p>
                         </div>
 
                         <div class="selling-point">
-                            <h2>增强的 Markdown</h2>
+                            <h2><i class="fas fa-file-code"></i> 增强的 Markdown</h2>
                             <p>
                                 Zola 自带 <a href="https://zola.docs.saop.cc/documentation/content/shortcodes/">shortcodes</a> 和
                                 <a href="https://zola.docs.saop.cc/documentation/content/linking/">内部链接</a>
@@ -173,25 +217,9 @@
             
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">Contributors</a>
-            <p>本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | 本页访问 <span id="ppv">-</span> 次</p>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
-
-        <script>
-        (async () => {
-          const res = await fetch('https://bsz.saop.cc/api', {
-            method: 'POST',
-            credentials: 'include',
-            headers: { 'x-bsz-referer': location.href }
-          });
-          const { success, data } = await res.json();
-          if (success) {
-            document.getElementById('pv').textContent = data.site_pv;
-            document.getElementById('uv').textContent = data.site_uv;
-            document.getElementById('ppv').textContent = data.page_pv;
-          }
-        })();
-        </script>
 
     </body>
 </html>

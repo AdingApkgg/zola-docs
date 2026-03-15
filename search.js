@@ -150,6 +150,11 @@ function initSearch() {
       return;
   }
 
+  if ($searchInput.dataset.searchBound === "true") {
+    return;
+  }
+  $searchInput.dataset.searchBound = "true";
+
   $searchInput.addEventListener("keyup", debounce(async function() {
     var term = $searchInput.value.trim();
     if (term === "") {

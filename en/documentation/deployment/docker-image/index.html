@@ -60,6 +60,27 @@
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
         <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        <script>
         (function() {
             // 仅在首页执行跳转逻辑，避免干扰深层链接访问
             if (window.location.pathname !== '/' && window.location.pathname !== '/en/') return;
@@ -96,19 +117,44 @@
         </a>
             <nav>
                 <ul>
-                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link">Documentation</a></li>
-                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link">Themes</a></li>
-                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link">Guestbook</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">Forum</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
-                            <a class="white" href="/" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')">中文</a>
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;docker-image&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
                         
                     </li>
                 </ul>
                 <div class="search-container">
-                    <input id="search" type="search" placeholder="🔎 Search">
+                    <i class="fas fa-search search-icon"></i>
+                    <input id="search" type="search" placeholder="Search">
             </nav>
         </header>
 
@@ -124,7 +170,7 @@
         
             
             <li>
-                <span class="documentation__sidebar__title">Getting Started</span>
+                <span class="documentation__sidebar__title"><i class="fas fa-folder-open"></i> Getting Started</span>
                 <ul>
                     
                         <li class="">
@@ -152,7 +198,7 @@
         
             
             <li>
-                <span class="documentation__sidebar__title">Content</span>
+                <span class="documentation__sidebar__title"><i class="fas fa-folder-open"></i> Content</span>
                 <ul>
                     
                         <li class="">
@@ -208,7 +254,7 @@
         
             
             <li>
-                <span class="documentation__sidebar__title">Templates</span>
+                <span class="documentation__sidebar__title"><i class="fas fa-folder-open"></i> Templates</span>
                 <ul>
                     
                         <li class="">
@@ -252,7 +298,7 @@
         
             
             <li>
-                <span class="documentation__sidebar__title">Themes</span>
+                <span class="documentation__sidebar__title"><i class="fas fa-folder-open"></i> Themes</span>
                 <ul>
                     
                         <li class="">
@@ -276,7 +322,7 @@
         
             
             <li>
-                <span class="documentation__sidebar__title">Deployment</span>
+                <span class="documentation__sidebar__title"><i class="fas fa-folder-open"></i> Deployment</span>
                 <ul>
                     
                         <li class="">
@@ -372,25 +418,9 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors">Contributors</a>
-            <p>Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | Page visits <span id="ppv">-</span> times</p>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
         </footer>
-
-        <script>
-        (async () => {
-          const res = await fetch('https://bsz.saop.cc/api', {
-            method: 'POST',
-            credentials: 'include',
-            headers: { 'x-bsz-referer': location.href }
-          });
-          const { success, data } = await res.json();
-          if (success) {
-            document.getElementById('pv').textContent = data.site_pv;
-            document.getElementById('uv').textContent = data.site_uv;
-            document.getElementById('ppv').textContent = data.page_pv;
-          }
-        })();
-        </script>
 
     </body>
 </html>
