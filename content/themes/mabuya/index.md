@@ -121,7 +121,7 @@ steps:
   - name: Install Zola
     uses: taiki-e/install-action@zola
   - name: Build Zola
-    run: zola check --drafts
+    run: zola check --drafts --skip-external-links
     env:
       BUILD_ONLY: true
       GITHUB_TOKEN: ${{/* secrets.GITHUB_TOKEN */}}

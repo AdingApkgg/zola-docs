@@ -1,6 +1,6 @@
 
 +++
 template = "themes.html"
-sort_by = "date"
+sort_by = "none"
 +++        
         

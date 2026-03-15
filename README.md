@@ -18,6 +18,14 @@
    ```
 4. 访问 `http://127.0.0.1:1111`
 
+## 本地检查
+
+如果网络环境导致外链检查变慢，建议使用以下命令进行快速检查：
+
+```bash
+zola check --skip-external-links
+```
+
 ## 部署到 Cloudflare Pages
 
 本项目已配置 `wrangler.toml` 和 `build.sh` 以支持在 Cloudflare Pages 上自动构建。
@@ -28,6 +36,10 @@
 2. **Build command** 设置为 `bash build.sh`（如果未自动检测）。
 3. **Build output directory** 设置为 `public`。
 
+
+## 文档同步
+
+本项目使用 `scripts/sync_check.py` 脚本来检测官方文档的更新。详细信息请参阅 [SYNC.md](SYNC.md)。
 
 ## 贡献
 

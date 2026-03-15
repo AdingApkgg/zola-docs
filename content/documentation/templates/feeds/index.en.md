@@ -1,6 +1,7 @@
 +++
 title = "Feeds"
 weight = 50
+aliases = ["/en/documentation/templates/rss/"]
 +++
 
 If the site `config.toml` file sets `generate_feeds = true`, then Zola will

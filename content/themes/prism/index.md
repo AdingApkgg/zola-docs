@@ -26,7 +26,7 @@ homepage = "https://jahongir.ru"
 A modern Zola theme featuring glassmorphism design
 [demo](https://xpltt.vercel.app/)
 
-![Screenshot](./static/screenshot.png)
+![Screenshot](./screenshot.png)
 
 ## Installation
 

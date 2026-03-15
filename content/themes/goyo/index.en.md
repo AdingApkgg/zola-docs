@@ -119,6 +119,7 @@ gtag = ""  # Google Analytics tracking ID
 # Language Configuration
 [extra.lang]
 rtl = []  # List of RTL languages e.g. ["ar", "he"]
+aliases = { en = "English", ko = "한국어" }  # Language display names for the language selector
 
 # Edit URL Configuration
 edit_url = ""  # Base URL for editing pages (e.g., "https://github.com/user/repo/edit/main")
