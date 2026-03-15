@@ -3,8 +3,8 @@
 {% block title %}{{ page.title }} | {{ config.title }}{% endblock title %}
 
 {% block head %}
-    <link href="https://artalk.saop.cc/dist/Artalk.css" rel="stylesheet">
-    <script src="https://artalk.saop.cc/dist/Artalk.js"></script>
+    <link href="{{ get_url(path='css/Artalk.css') }}" rel="stylesheet">
+    <script src="{{ get_url(path='js/Artalk.js') }}"></script>
 {% endblock head %}
 
 {% block content %}
@@ -21,7 +21,7 @@
     <script>
     Artalk.init({
         el:        '#Comments',
-        pageKey:   '{{ page.permalink }}',
+        pageKey:   '{{ page.path | safe }}',
         pageTitle: '{{ page.title }}',
         server:    'https://artalk.saop.cc',
         site:      '{{ config.title }}',
