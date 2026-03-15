@@ -103,16 +103,24 @@
     <!-- Artalk -->
     <div id="Comments"></div>
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        Artalk.init({
-            el:        '#Comments',
-            pageKey:   '/comments/',
-            pageTitle: '留言板',
-            server:    'https://artalk.saop.cc',
-            site:      'Zola',
-            darkMode:  'auto',
-        });
-    });
+    (function() {
+        const initArtalk = () => {
+            Artalk.init({
+                el:        '#Comments',
+                pageKey:   '/comments/',
+                pageTitle: '留言板',
+                server:    'https://artalk.saop.cc',
+                site:      'Zola',
+                darkMode:  'auto',
+            });
+        };
+
+        if (typeof Artalk !== 'undefined') {
+            initArtalk();
+        } else {
+            document.addEventListener('DOMContentLoaded', initArtalk);
+        }
+    })();
     </script>
 </div>
 
