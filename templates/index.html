@@ -1,227 +1,256 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ lang }}">
-    <head>
-        <meta charset="UTF-8">
-        <meta content="Zola" name="generator">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
-        <meta name="author" content="{{ config.extra.author }}">
-        <meta name="robots" content="{% block robots %}index, follow{% endblock robots %}">
-        <link rel="canonical" href="{{ current_url | default(value=config.base_url) }}">
 
-        <!-- Open Graph -->
-        <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}">
-        <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}">
-        <meta property="og:type" content="{% if page %}article{% else %}website{% endif %}">
-        <meta property="og:url" content="{{ current_url | default(value=config.base_url) }}">
-        <meta property="og:site_name" content="{{ config.title }}">
-        <meta property="og:image" content="{{ get_url(path='logos/Zola-logo-main-coffee.svg') }}">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="Zola" name="generator" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}" />
+    <meta name="author" content="{{ config.extra.author }}" />
+    <meta name="robots" content="{% block robots %}index, follow{% endblock robots %}" />
+    <link rel="canonical" href="{{ current_url | default(value=config.base_url) }}" />
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}">
-        <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}">
-        <meta name="twitter:image" content="{{ get_url(path='logos/Zola-logo-main-coffee.svg') }}">
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}" />
+    <meta property="og:description"
+        content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}" />
+    <meta property="og:type" content="{% if page %}article{% else %}website{% endif %}" />
+    <meta property="og:url" content="{{ current_url | default(value=config.base_url) }}" />
+    <meta property="og:site_name" content="{{ config.title }}" />
+    <meta property="og:image" content="{{ get_url(path='logos/Zola-logo-main-coffee.svg') }}" />
 
-        <!-- AI Indexing -->
-        <link rel="help" href="/llms.txt" title="AI Context">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title"
+        content="{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}" />
+    <meta name="twitter:description"
+        content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}" />
+    <meta name="twitter:image" content="{{ get_url(path='logos/Zola-logo-main-coffee.svg') }}" />
 
-        <!-- Schema.org -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "{% if page %}Article{% else %}WebSite{% endif %}",
-            "headline": "{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}",
-            "description": "{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}",
-            "url": "{{ current_url | default(value=config.base_url) }}",
-            "author": {
-                "@type": "Person",
-                "name": "{{ config.extra.author }}"
-            }
+    <!-- AI Indexing -->
+    <link rel="help" href="/llms.txt" title="AI Context" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "{% if page %}Article{% else %}WebSite{% endif %}",
+        "headline": "{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}",
+        "description": "{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}",
+        "url": "{{ current_url | default(value=config.base_url) }}",
+        "author": {
+          "@type": "Person",
+          "name": "{{ config.extra.author }}"
         }
-        </script>
+      }
+    </script>
 
-        <title>{% block title %}{{ config.title }}{% endblock title %}</title>
-        <link rel="stylesheet" href="{{ get_url(path='site.css') }}">
-        <link rel="icon" href="{{ get_url(path='favicon.ico') }}">
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
-        <link rel="stylesheet" href="{{ get_url(path='font-awesome/css/all.min.css') }}">
-        <script type="module">
-            import hotwiredTurbo from '{{ get_url(path="js/turbo.js") }}';
-        </script>
-        <script type="text/javascript" src="{{ get_url(path='fuse.min.js') }}" defer></script>
-        <script type="text/javascript" src="{{ get_url(path='search.js') }}" defer></script>
-        <script src="{{ get_url(path='js/quicklink.umd.js') }}" defer></script>
-        <script>
-        document.addEventListener('turbo:load', () => {
-          quicklink.listen({
-            ignores: [
-              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
-            ]
-          });
-        });
-        </script>
-        <script src="{{ get_url(path='js/instant.page.js') }}" type="module"></script>
-        <script>
-        document.addEventListener('turbo:load', async () => {
-          const pv = document.getElementById('pv');
-          const uv = document.getElementById('uv');
-          const ppv = document.getElementById('ppv');
-          if (!pv || !uv || !ppv) return;
-          try {
-            const res = await fetch('https://bsz.saop.cc/api', {
-              method: 'POST',
-              credentials: 'include',
-              headers: { 'x-bsz-referer': location.href }
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <link rel="stylesheet" href="{{ get_url(path='site.css') }}" />
+    <link rel="icon" href="{{ get_url(path='favicon.ico') }}" />
+    <link rel="alternate" type="application/rss+xml" title="RSS"
+        href="{{ get_url(path='rss.xml', trailing_slash=false) }}" />
+    <link rel="stylesheet" href="{{ get_url(path='font-awesome/css/all.min.css') }}" />
+    <script type="module">
+        import hotwiredTurbo from '{{ get_url(path="js/turbo.js") }}';
+    </script>
+    <script type="text/javascript" src="{{ get_url(path='fuse.min.js') }}" defer></script>
+    <script type="text/javascript" src="{{ get_url(path='search.js') }}" defer></script>
+    <script src="{{ get_url(path='js/quicklink.umd.js') }}" defer></script>
+    <script>
+        document.addEventListener("turbo:load", () => {
+            quicklink.listen({
+                ignores: [
+                    (uri, elem) => elem && elem.hasAttribute("data-noquicklink"),
+                ],
             });
-            const { success, data } = await res.json();
-            if (success) {
-              pv.textContent = data.site_pv;
-              uv.textContent = data.site_uv;
-              ppv.textContent = data.page_pv;
-            }
-          } catch (_) {}
         });
-        </script>
-        {% block head %}{% endblock head %}
-    </head>
-    <body>
+    </script>
+    <script src="{{ get_url(path='js/instant.page.js') }}" type="module"></script>
+    <script>
+        document.addEventListener("turbo:load", async () => {
+            const pv = document.getElementById("pv");
+            const uv = document.getElementById("uv");
+            const ppv = document.getElementById("ppv");
+            if (!pv || !uv || !ppv) return;
+            try {
+                const res = await fetch("https://bsz.saop.cc/api", {
+                    method: "POST",
+                    credentials: "include",
+                    headers: { "x-bsz-referer": location.href },
+                });
+                const { success, data } = await res.json();
+                if (success) {
+                    pv.textContent = data.site_pv;
+                    uv.textContent = data.site_uv;
+                    ppv.textContent = data.page_pv;
+                }
+            } catch (_) { }
+        });
+    </script>
+    {% block head %}{% endblock head %}
+</head>
 
-        <header>
-        {% set logo_url = config.base_url %}
-        {% if lang != config.default_language %}
-            {% set logo_url = config.base_url ~ lang ~ "/" %}
-        {% endif %}
-		<a class="header__logo" href="{{ logo_url }}">
+<body>
+    <header>
+        {% set logo_url = config.base_url %} {% if lang != config.default_language
+        %} {% set logo_url = config.base_url ~ lang ~ "/" %} {% endif %}
+        <a class="header__logo" href="{{ logo_url }}">
             <picture>
-                <source srcset="{{ get_url(path='logos/Zola-logo-black.svg') }}" media="(prefers-color-scheme: light)">
-                <img
-                    src="/logos/Zola-logo-white.svg"
-                    title="Zola main logo"
-                    alt="Zola"
-                    fetchpriority="high"
-                />
+                <img src="{{ get_url(path='logos/Zola-logo-white.svg') }}" title="Zola main logo" alt="Zola"
+                    fetchpriority="high" />
             </picture>
         </a>
-            <nav>
-                <ul>
-                    <li><a class="white" href="{{ get_url(path='@/documentation/_index.md', lang=lang) }}" class="nav-link"><i class="fas fa-book"></i> {{ trans(key="documentation", lang=lang) }}</a></li>
-                    <li><a class="white" href="{{ get_url(path='@/themes/_index.md', lang=lang) }}" class="nav-link"><i class="fas fa-palette"></i> {{ trans(key="themes", lang=lang) }}</a></li>
-                    <li><a class="white" href="{{ get_url(path='@/comments.md', lang=lang) }}" class="nav-link"><i class="fas fa-comments"></i> {{ trans(key="guestbook", lang=lang) }}</a></li>
-                    <li><a class="white" href="{{ get_url(path='@/search.md', lang=lang) }}" class="nav-link"><i class="fas fa-search"></i> {{ trans(key="search", lang=lang) }}</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> {{ trans(key="forum", lang=lang) }}</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
-                    <li>
-                        {% set other_lang = "en" %}
-                        {% if lang == "en" %}
-                            {% set other_lang = "zh" %}
-                        {% endif %}
+        <nav>
+            <ul>
+                <li>
+                    <a class="white" href="{{ get_url(path='@/documentation/getting-started/overview.md', lang=lang) }}"
+                        class="nav-link"><i class="fas fa-book"></i> {{ trans(key="documentation",
+                        lang=lang) }}</a>
+                </li>
+                <li>
+                    <a class="white" href="{{ get_url(path='@/themes/_index.md', lang=lang) }}" class="nav-link"><i
+                            class="fas fa-palette"></i> {{ trans(key="themes", lang=lang)
+                        }}</a>
+                </li>
+                <li>
+                    <a class="white" href="{{ get_url(path='@/comments.md', lang=lang) }}" class="nav-link"><i
+                            class="fas fa-comments"></i> {{ trans(key="guestbook",
+                        lang=lang) }}</a>
+                </li>
+                <li>
+                    <a class="white" href="{{ get_url(path='@/search.md', lang=lang) }}" class="nav-link"><i
+                            class="fas fa-search"></i> {{ trans(key="search", lang=lang)
+                        }}</a>
+                </li>
+                <li>
+                    <a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank"
+                        rel="noopener noreferrer"><i class="fab fa-discourse"></i> {{ trans(key="forum", lang=lang)
+                        }}</a>
+                </li>
+                <li>
+                    <a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank"
+                        rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                </li>
+                <li>
+                    {% set other_lang = "en" %} {% if lang == "en" %} {% set other_lang
+                    = "zh" %} {% endif %} {% set other_lang_path = "" %} {# Check if
+                    page translations exist #} {% if page and page.translations %} {%
+                    for trans in page.translations %} {% if trans.lang == other_lang %}
+                    {% set_global other_lang_path = trans.permalink %} {% endif %} {%
+                    endfor %} {% endif %} {# Check if section translations exist #} {%
+                    if not other_lang_path and section and section.translations %} {%
+                    for trans in section.translations %} {% if trans.lang == other_lang
+                    %} {% set_global other_lang_path = trans.permalink %} {% endif %} {%
+                    endfor %} {% endif %} {# Fallback to homepage if no translation
+                    found #} {% if not other_lang_path %} {% if other_lang == "zh" %} {%
+                    set_global other_lang_path = "/" %} {% else %} {% set_global
+                    other_lang_path = "/en/" %} {% endif %} {% endif %} {% if lang ==
+                    "zh" %}
+                    <a class="white" href="{{ other_lang_path }}" class="nav-link" data-noquicklink
+                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                    {% else %}
+                    <a class="white" href="{{ other_lang_path }}" class="nav-link" data-noquicklink
+                        onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-                        {% set other_lang_path = "" %}
-
-                        {# Check if page translations exist #}
-                        {% if page and page.translations %}
-                            {% for trans in page.translations %}
-                                {% if trans.lang == other_lang %}
-                                    {% set_global other_lang_path = trans.permalink %}
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-
-                        {# Check if section translations exist #}
-                        {% if not other_lang_path and section and section.translations %}
-                            {% for trans in section.translations %}
-                                {% if trans.lang == other_lang %}
-                                    {% set_global other_lang_path = trans.permalink %}
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-
-                        {# Fallback to homepage if no translation found #}
-                        {% if not other_lang_path %}
-                            {% if other_lang == "zh" %}
-                                {% set_global other_lang_path = "/" %}
-                            {% else %}
-                                {% set_global other_lang_path = "/en/" %}
-                            {% endif %}
-                        {% endif %}
-
-                        {% if lang == "zh" %}
-                            <a class="white" href="{{ other_lang_path }}" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
-                        {% else %}
-                            <a class="white" href="{{ other_lang_path }}" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
-                        {% endif %}
-                    </li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="content {% block extra_content_class %}{% endblock extra_content_class %}">
-            {% block content %}
-                <div class="hero">
-                    <h1>{{ trans(key="title", lang=lang) }}</h1>
-                    <p class="hero__tagline">
-                        {{ trans(key="tagline", lang=lang) }}
-                    </p>
-                    <a href="{{ get_url(path='@/documentation/_index.md', lang=lang) }}" class="button">{{ trans(key="get_started", lang=lang) }}</a>
-                </div>
-
-                <div class="inverted-colours selling-points">
-                    <div class="selling-points__content container">
-                        <div class="selling-point">
-                            <h2><i class="fas fa-box-open"></i> {{ trans(key="no_deps_title", lang=lang) }}</h2>
-                            <p>
-                                {{ trans(key="no_deps_desc", lang=lang) }}
-                            </p>
-                        </div>
-
-                        <div class="selling-point">
-                            <h2><i class="fas fa-bolt"></i> {{ trans(key="fast_title", lang=lang) }}</h2>
-                            <p>
-                                {{ trans(key="fast_desc", lang=lang) }}
-                            </p>
-                        </div>
-
-                        <div class="selling-point">
-                            <h2><i class="fas fa-chart-line"></i> {{ trans(key="scalable_title", lang=lang) }}</h2>
-                            <p>
-                                {{ trans(key="scalable_desc", lang=lang) }}
-                            </p>
-                        </div>
-
-                        <div class="selling-point">
-                            <h2><i class="fas fa-magic"></i> {{ trans(key="easy_title", lang=lang) }}</h2>
-                            <p>
-                                {{ trans(key="easy_desc_1", lang=lang) }}
-                                <a href="{{ get_url(path='@/documentation/_index.md', lang=lang) }}">{{ trans(key="easy_desc_link", lang=lang) }}</a> {{ trans(key="easy_desc_2", lang=lang) }}
-                            </p>
-                        </div>
-
-                        <div class="selling-point">
-                            <h2><i class="fas fa-puzzle-piece"></i> {{ trans(key="flexible_title", lang=lang) }}</h2>
-                            <p>
-                                {{ trans(key="flexible_desc", lang=lang) }}
-                            </p>
-                        </div>
-
-                        <div class="selling-point">
-                            <h2><i class="fas fa-file-code"></i> {{ trans(key="augmented_title", lang=lang) }}</h2>
-                            <p>
-                                {{ trans(key="augmented_desc_1", lang=lang) }} <a href="{{ get_url(path='@/documentation/content/shortcodes.md', lang=lang) }}">{{ trans(key="augmented_desc_link_1", lang=lang) }}</a> {{ trans(key="augmented_desc_2", lang=lang) }}
-                                <a href="{{ get_url(path='@/documentation/content/linking.md', lang=lang) }}">{{ trans(key="augmented_desc_link_2", lang=lang) }}</a>
-                                {{ trans(key="augmented_desc_3", lang=lang) }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            {% endblock content %}
+    <div class="content {% block extra_content_class %}{% endblock extra_content_class %}">
+        {% block content %}
+        <div class="hero">
+            <h1>{{ trans(key="title", lang=lang) }}</h1>
+            <p class="hero__tagline">{{ trans(key="tagline", lang=lang) }}</p>
+            <a href="{{ get_url(path='@/documentation/getting-started/overview.md', lang=lang) }}" class="button">{{
+                trans(key="get_started", lang=lang) }}</a>
         </div>
-        <footer>
-            ©2017-{{ now() | date(format="%Y") }} — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> {{ trans(key="augmented_desc_2", lang=lang) }} <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
-            <p><i class="fas fa-eye"></i> {{ trans(key="total_visits", lang=lang) }} <span id="pv">-</span> {{ trans(key="visits_count", lang=lang) }} <span id="uv">-</span> {{ trans(key="people", lang=lang) }} | <i class="fas fa-file-alt"></i> {{ trans(key="page_visits", lang=lang) }} <span id="ppv">-</span> {{ trans(key="times", lang=lang) }}</p>
-        </footer>
 
-    </body>
+        <div class="inverted-colours selling-points">
+            <div class="selling-points__content container">
+                <div class="selling-point">
+                    <h2>
+                        <i class="fas fa-box-open"></i> {{ trans(key="no_deps_title",
+                        lang=lang) }}
+                    </h2>
+                    <p>{{ trans(key="no_deps_desc", lang=lang) }}</p>
+                </div>
+
+                <div class="selling-point">
+                    <h2>
+                        <i class="fas fa-bolt"></i> {{ trans(key="fast_title", lang=lang)
+                        }}
+                    </h2>
+                    <p>{{ trans(key="fast_desc", lang=lang) }}</p>
+                </div>
+
+                <div class="selling-point">
+                    <h2>
+                        <i class="fas fa-chart-line"></i> {{ trans(key="scalable_title",
+                        lang=lang) }}
+                    </h2>
+                    <p>{{ trans(key="scalable_desc", lang=lang) }}</p>
+                </div>
+
+                <div class="selling-point">
+                    <h2>
+                        <i class="fas fa-magic"></i> {{ trans(key="easy_title", lang=lang)
+                        }}
+                    </h2>
+                    <p>
+                        {{ trans(key="easy_desc_1", lang=lang) }}
+                        <a href="{{ get_url(path='@/documentation/getting-started/overview.md', lang=lang) }}">{{
+                            trans(key="easy_desc_link", lang=lang) }}</a>
+                        {{ trans(key="easy_desc_2", lang=lang) }}
+                    </p>
+                </div>
+
+                <div class="selling-point">
+                    <h2>
+                        <i class="fas fa-puzzle-piece"></i> {{ trans(key="flexible_title",
+                        lang=lang) }}
+                    </h2>
+                    <p>{{ trans(key="flexible_desc", lang=lang) }}</p>
+                </div>
+
+                <div class="selling-point">
+                    <h2>
+                        <i class="fas fa-file-code"></i> {{ trans(key="augmented_title",
+                        lang=lang) }}
+                    </h2>
+                    <p>
+                        {{ trans(key="augmented_desc_1", lang=lang) }}
+                        <a href="{{ get_url(path='@/documentation/content/shortcodes.md', lang=lang) }}">{{
+                            trans(key="augmented_desc_link_1", lang=lang) }}</a>
+                        {{ trans(key="augmented_desc_2", lang=lang) }}
+                        <a href="{{ get_url(path='@/documentation/content/linking.md', lang=lang) }}">{{
+                            trans(key="augmented_desc_link_2", lang=lang) }}</a>
+                        {{ trans(key="augmented_desc_3", lang=lang) }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endblock content %}
+    </div>
+    <footer>
+        ©2017-{{ now() | date(format="%Y") }} —
+        <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i
+                class="fas fa-user"></i> Vincent Prouillet</a>
+        {{ trans(key="augmented_desc_2", lang=lang) }}
+        <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank"
+            rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+        <p>
+            <i class="fas fa-eye"></i> {{ trans(key="total_visits", lang=lang) }}
+            <span id="pv">-</span> {{ trans(key="visits_count", lang=lang) }}
+            <span id="uv">-</span> {{ trans(key="people", lang=lang) }} |
+            <i class="fas fa-file-alt"></i> {{ trans(key="page_visits", lang=lang)
+            }} <span id="ppv">-</span> {{ trans(key="times", lang=lang) }}
+        </p>
+    </footer>
+</body>
+
 </html>
