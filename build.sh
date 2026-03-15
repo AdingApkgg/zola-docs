@@ -3,7 +3,7 @@
 # Check if zola is installed
 if ! command -v zola &> /dev/null; then
     echo "Zola not found. Installing..."
-    ZOLA_VERSION="v0.22.0"
+    ZOLA_VERSION="v0.22.1"
     
     # Detect OS for download
     if [[ "$OSTYPE" == "linux-gnu"* ]]; then

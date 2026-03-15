@@ -4,7 +4,7 @@
 
 {% block head %}
     <link href="{{ get_url(path='css/Artalk.css') }}" rel="stylesheet">
-    <script src="{{ get_url(path='js/Artalk.js') }}"></script>
+    <script src="{{ get_url(path='js/Artalk.js') }}" defer></script>
 {% endblock head %}
 
 {% block content %}
@@ -19,13 +19,16 @@
     <!-- Artalk -->
     <div id="Comments"></div>
     <script>
-    Artalk.init({
-        el:        '#Comments',
-        pageKey:   '{{ page.path | safe }}',
-        pageTitle: '{{ page.title }}',
-        server:    'https://artalk.saop.cc',
-        site:      '{{ config.title }}',
-    })
+    document.addEventListener("DOMContentLoaded", function() {
+        Artalk.init({
+            el:        '#Comments',
+            pageKey:   '{{ page.path | safe }}',
+            pageTitle: '{{ page.title }}',
+            server:    'https://artalk.saop.cc',
+            site:      '{{ config.title }}',
+            darkMode:  'auto',
+        });
+    });
     </script>
 </div>
 {% endblock content %}
