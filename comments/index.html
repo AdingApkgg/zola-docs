@@ -54,7 +54,7 @@
         <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
         
     <link href="https://zola.docs.saop.cc/css/Artalk.css" rel="stylesheet">
-    <script src="https://zola.docs.saop.cc/js/Artalk.js"></script>
+    <script src="https://zola.docs.saop.cc/js/Artalk.js" defer></script>
 
     </head>
     <body>
@@ -103,13 +103,16 @@
     <!-- Artalk -->
     <div id="Comments"></div>
     <script>
-    Artalk.init({
-        el:        '#Comments',
-        pageKey:   '/comments/',
-        pageTitle: '留言板',
-        server:    'https://artalk.saop.cc',
-        site:      'Zola',
-    })
+    document.addEventListener("DOMContentLoaded", function() {
+        Artalk.init({
+            el:        '#Comments',
+            pageKey:   '/comments/',
+            pageTitle: '留言板',
+            server:    'https://artalk.saop.cc',
+            site:      'Zola',
+            darkMode:  'auto',
+        });
+    });
     </script>
 </div>
 
