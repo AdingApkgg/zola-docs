@@ -15,9 +15,21 @@
   max-width: 600px;
   margin: 0 auto;
 
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--search-text);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+  }
+
   input {
     width: 100%;
     padding: 1rem;
+    padding-left: 3rem;
     font-size: 1.2rem;
     background: var(--search-bg);
     color: var(--search-text);

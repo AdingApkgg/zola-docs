@@ -5,6 +5,24 @@
 {% block head %}
     <link href="{{ get_url(path='css/Artalk.css') }}" rel="stylesheet">
     <script src="{{ get_url(path='js/Artalk.js') }}" defer></script>
+    <script>
+    document.addEventListener('turbo:load', () => {
+        const el = document.getElementById('Comments');
+        if (!el) return;
+        const pageKey = '{{ page.path | safe }}';
+        if (el.dataset.artalkInited === pageKey) return;
+        if (typeof Artalk === 'undefined') return;
+        Artalk.init({
+            el:        '#Comments',
+            pageKey:   pageKey,
+            pageTitle: '{{ page.title }}',
+            server:    'https://artalk.saop.cc',
+            site:      '{{ config.title }}',
+            darkMode:  'auto',
+        });
+        el.dataset.artalkInited = pageKey;
+    });
+    </script>
 {% endblock head %}
 
 {% block content %}
@@ -16,27 +34,6 @@
 
     <hr style="margin: 2rem 0;">
 
-    <!-- Artalk -->
     <div id="Comments"></div>
-    <script>
-    (function() {
-        const initArtalk = () => {
-            Artalk.init({
-                el:        '#Comments',
-                pageKey:   '{{ page.path | safe }}',
-                pageTitle: '{{ page.title }}',
-                server:    'https://artalk.saop.cc',
-                site:      '{{ config.title }}',
-                darkMode:  'auto',
-            });
-        };
-
-        if (typeof Artalk !== 'undefined') {
-            initArtalk();
-        } else {
-            document.addEventListener('DOMContentLoaded', initArtalk);
-        }
-    })();
-    </script>
 </div>
 {% endblock content %}

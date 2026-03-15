@@ -5,9 +5,9 @@
     <div class="theme-info">
         <img src="{{page.permalink}}screenshot.png" class="thumb">
         <div class="metadata">
-            <h1>{{ page.title }}</h1>
+            <h1><i class="fas fa-cube"></i> {{ page.title }}</h1>
             <p>{{ page.description }}</p>
-            <p><b>作者:</b>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
             {% if page.extra.author.homepage %}
               <a href="{{ page.extra.author.homepage }}">{{ page.extra.author.name }}</a>
             {% else %}
@@ -15,26 +15,26 @@
               {% endif %}
             </p>
             {% if page.extra.minimum_version %}
-              <p>此主题需要 Zola 版本 {{ page.extra.minimum_version }} 及以上</p>
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 {{ page.extra.minimum_version }} 及以上</p>
             {% endif %}
-            <p><b>许可证:</b> {{page.extra.license}}</p>
-            <p><b>主页:</b> <a href="{{page.extra.homepage}}">{{page.extra.homepage}}</a></p>
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> {{page.extra.license}}</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="{{page.extra.homepage}}">{{page.extra.homepage}}</a></p>
             {% if page.extra.demo %}
-              <p><b>在线演示:</b> <a href="{{page.extra.demo}}">{{page.extra.demo}}</a></p>
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="{{page.extra.demo}}">{{page.extra.demo}}</a></p>
             {% endif %}
             {% if page.taxonomies["theme-tags"] %}
               <div>
-              <p>标签:</p>
+              <p><i class="fas fa-tags"></i> 标签:</p>
               <ul style="list-style-type: none;">
               {% for termname in page.taxonomies["theme-tags"] %}
                 {% set termurl = get_taxonomy_url(kind="theme-tags", name=termname, required=false) %}
                 {% if termurl %}
-                  <li><a href="{{ termurl }}">{{ termname }}</a></li>
+                  <li><a href="{{ termurl }}"><i class="fas fa-tag"></i> {{ termname }}</a></li>
                 {% endif %}
               {% endfor %}
               </div>
             {% endif %}
-            <p><b>最后更新:</b> {{page.extra.updated }}</p>
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> {{page.extra.updated }}</p>
         </div>
     </div>
 

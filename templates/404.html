@@ -6,10 +6,10 @@
 
 {% block content %}
 <div class="hero">
-    <h1>404</h1>
+    <h1><i class="fas fa-exclamation-triangle"></i> 404</h1>
     <p class="hero__tagline">
         哎呀！您要找的页面不存在。
     </p>
-    <a href="{{ get_url(path='@/documentation/_index.md') }}" class="button">返回文档</a>
+    <a href="{{ get_url(path='@/documentation/_index.md') }}" class="button"><i class="fas fa-book"></i> 返回文档</a>
 </div>
 {% endblock content %}
