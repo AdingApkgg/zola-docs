@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="Anpu | Zola">
-        <meta property="og:description" content="A port of the Hugo Anubis theme">
+        <meta property="og:description" content="Hugo Anubis 主题的移植版">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anpu&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="Anpu | Zola">
-        <meta name="twitter:description" content="A port of the Hugo Anubis theme">
+        <meta name="twitter:description" content="Hugo Anubis 主题的移植版">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "Anpu",
-            "description": "A port of the Hugo Anubis theme",
+            "description": "Hugo Anubis 主题的移植版",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anpu&#x2F;",
             "author": {
                 "@type": "Person",
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anpu&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Anpu</h1>
-            <p>A port of the Hugo Anubis theme</p>
+            <p>Hugo Anubis 主题的移植版</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;zbrox.com">Rostislav Raykov</a>
@@ -171,44 +171,44 @@
 
     <hr>
     <h1 id="anpu-theme-for-zola">Anpu theme for Zola</h1>
-<p>This is a port of the Hugo theme <a class="external" rel="noopener external" target="_blank" href="https://github.com/Mitrichius/hugo-theme-anubis/tree/master/layouts">Anubis</a> for <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a>.</p>
-<h2 id="screenshots">Screenshots</h2>
-<table><thead><tr><th style="text-align: center">Light mode</th><th style="text-align: center">Dark mode</th></tr></thead><tbody>
-<tr><td style="text-align: center"><img src="https://zola.docs.saop.cc/themes/anpu/screenshot-light.png" alt="light mode website screenshot" /></td><td style="text-align: center"><img src="https://zola.docs.saop.cc/themes/anpu/screenshot-dark.png" alt="dark mode website screenshot" /></td></tr>
+<p>这是 Hugo 主题 <a class="external" rel="noopener external" target="_blank" href="https://github.com/Mitrichius/hugo-theme-anubis/tree/master/layouts">Anubis</a> 的 <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> 移植版。</p>
+<h2 id="jie-tu">截图</h2>
+<table><thead><tr><th style="text-align: center">亮色模式</th><th style="text-align: center">暗色模式</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="https://zola.docs.saop.cc/themes/anpu/screenshot-light.png" alt="亮色模式网站截图" /></td><td style="text-align: center"><img src="https://zola.docs.saop.cc/themes/anpu/screenshot-dark.png" alt="暗色模式网站截图" /></td></tr>
 </tbody></table>
-<h2 id="usage">Usage</h2>
-<p>In order to use the theme you need to clone this repository in your <code>themes</code> folder:</p>
+<h2 id="shi-yong">使用</h2>
+<p>为了使用该主题，你需要将此仓库克隆到你的 <code>themes</code> 文件夹中：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/zbrox/anpu-zola-theme.git themes/anpu</span></span></code></pre>
-<p>Then set your theme setting in <code>config.toml</code> to <code>anpu</code>:</p>
+<p>然后在 <code>config.toml</code> 中将主题设置设置为 <code>anpu</code>：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;anpu&quot;</span></span></code></pre>
-<p>This theme requires both the <code>tags</code> and <code>categories</code> taxonomies.</p>
+<p>此主题需要 <code>tags</code> 和 <code>categories</code> 分类法。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;categories&quot;</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;"> },</span></span>
-<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h2 id="how-to-customize">How To Customize</h2>
-<p>There are two things you can customize:</p>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h2 id="ru-he-zi-ding-yi">如何自定义</h2>
+<p>你可以自定义两件事：</p>
 <ul>
-<li>The links to be included in the menu</li>
-<li>The date format of the posts</li>
+<li>要包含在菜单中的链接</li>
+<li>文章的日期格式</li>
 </ul>
-<h3 id="menu-links">Menu links</h3>
-<p>In your <code>config.toml</code> under the <code>[extra]</code> section you need to set the <code>anpu_menu_links</code> list.</p>
-<p>Example:</p>
+<h3 id="cai-dan-lian-jie">菜单链接</h3>
+<p>在你的 <code>config.toml</code> 的 <code>[extra]</code> 部分下，你需要设置 <code>anpu_menu_links</code> 列表。</p>
+<p>示例：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>anpu_menu_links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/about/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;About&quot;</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>If you include <code>$BASE_URL</code> in the url of a link it will be replaced to the base url of your site.</p>
-<h3 id="date-format">Date format</h3>
-<p>In your <code>config.toml</code> under the <code>[extra]</code> section you need to set the <code>anpu_date_format</code> value.</p>
-<p>Example:</p>
+<p>如果你在链接的 url 中包含 <code>$BASE_URL</code>，它将被替换为你站点的 base url。</p>
+<h3 id="ri-qi-ge-shi">日期格式</h3>
+<p>在你的 <code>config.toml</code> 的 <code>[extra]</code> 部分下，你需要设置 <code>anpu_date_format</code> 值。</p>
+<p>示例：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>anpu_date_format</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;%e %B %Y&quot;</span></span></code></pre>
-<p>The formatting uses the standart <code>date</code> filter in Tera. The date format options you can use are listed in the <a class="external" rel="noopener external" target="_blank" href="https://tera.netlify.app/docs/#date">chrono crate documentation</a>.</p>
-<h2 id="attributions">Attributions</h2>
-<p>The icons used are part of <a class="external" rel="noopener external" target="_blank" href="https://uxwing.com/license/">UXWing</a>'s collection.</p>
-<h2 id="license">License</h2>
-<p>Source code is available under <a href="https://zola.docs.saop.cc/themes/anpu/LICENSE">MIT</a>.</p>
+<p>格式化使用 Tera 中的标准 <code>date</code> 过滤器。你可以使用的日期格式选项列在 <a class="external" rel="noopener external" target="_blank" href="https://tera.netlify.app/docs/#date">chrono crate 文档</a> 中。</p>
+<h2 id="gui-shu">归属</h2>
+<p>使用的图标是 <a class="external" rel="noopener external" target="_blank" href="https://uxwing.com/license/">UXWing</a> 收藏的一部分。</p>
+<h2 id="xu-ke-zheng">许可证</h2>
+<p>源代码在 <a href="https://zola.docs.saop.cc/themes/anpu/LICENSE">MIT</a> 下可用。</p>
 
 
     </div>

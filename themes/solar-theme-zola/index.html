@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="solar-theme-zola | Zola">
-        <meta property="og:description" content="A port of solar-theme-hugo for zola">
+        <meta property="og:description" content="一个为 Zola 移植的 solar-theme-hugo 主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;solar-theme-zola&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="solar-theme-zola | Zola">
-        <meta name="twitter:description" content="A port of solar-theme-hugo for zola">
+        <meta name="twitter:description" content="一个为 Zola 移植的 solar-theme-hugo 主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "solar-theme-zola",
-            "description": "A port of solar-theme-hugo for zola",
+            "description": "一个为 Zola 移植的 solar-theme-hugo 主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;solar-theme-zola&#x2F;",
             "author": {
                 "@type": "Person",
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;solar-theme-zola&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> solar-theme-zola</h1>
-            <p>A port of solar-theme-hugo for zola</p>
+            <p>一个为 Zola 移植的 solar-theme-hugo 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;github.com&#x2F;hulufei">hulufei</a>
@@ -171,26 +171,26 @@
 
     <hr>
     <h1 id="solar-theme-for-zola">Solar Theme for Zola</h1>
-<p>Port of <a class="external" rel="noopener external" target="_blank" href="https://github.com/bake/solar-theme-hugo">Solar theme for Hugo</a> to Zola.</p>
-<p><img src="https://zola.docs.saop.cc/themes/solar-theme-zola/./screenshot.png" alt="screenshot" /></p>
-<h2 id="installation">Installation</h2>
-<p>First download this theme to your <code>themes</code> directory:</p>
+<p>将 <a class="external" rel="noopener external" target="_blank" href="https://github.com/bake/solar-theme-hugo">Solar theme for Hugo</a> 移植到 Zola。</p>
+<p><img src="https://zola.docs.saop.cc/themes/solar-theme-zola/./screenshot.png" alt="截图" /></p>
+<h2 id="an-zhuang">安装</h2>
+<p>首先将此主题下载到你的 <code>themes</code> 目录：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cd themes</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git clone https://github.com/hulufei/solar-theme-zola.git</span></span></code></pre>
-<p>and then enable it in your <code>config.toml</code>:</p>
+<p>然后在你的 <code>config.toml</code> 中启用它：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;solar-theme-zola&quot;</span></span></code></pre>
-<p>Add <code>title</code> and <code>description</code>:</p>
+<p>添加 <code>title</code> 和 <code>description</code>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Blog Title&quot;</span></span>
-<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your blog description&quot;</span></span></code></pre><h2 id="options">Options</h2>
-<h3 id="color-schemes">Color schemes</h3>
-<p>Set color scheme to (Solarized) <code>dark</code> or (Solarized) <code>light</code> with <code>highlight_theme</code> option:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>highlight_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;solarized-dark&quot;</span></span></code></pre><h3 id="sidebar-menu">Sidebar menu</h3>
-<p>Set a field in <code>extra</code> with a key of <code>site_menus</code>:</p>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your blog description&quot;</span></span></code></pre><h2 id="xuan-xiang">选项</h2>
+<h3 id="pei-se-fang-an">配色方案</h3>
+<p>使用 <code>highlight_theme</code> 选项将配色方案设置为 (Solarized) <code>dark</code> 或 (Solarized) <code>light</code>：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>highlight_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;solarized-dark&quot;</span></span></code></pre><h3 id="ce-bian-lan-cai-dan">侧边栏菜单</h3>
+<p>在 <code>extra</code> 中设置一个键为 <code>site_menus</code> 的字段：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>site_menus</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/hulufei/solar-theme-zola&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Repository&quot;</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;rss.xml&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;RSS&quot;</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>Each link needs to have a <code>url</code> and a <code>name</code>.</p>
+<p>每个链接都需要有一个 <code>url</code> 和一个 <code>name</code>。</p>
 
 
     </div>

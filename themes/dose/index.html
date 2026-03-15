@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="dose | Zola">
-        <meta property="og:description" content="a small blog theme">
+        <meta property="og:description" content="一个小型博客主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dose&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="dose | Zola">
-        <meta name="twitter:description" content="a small blog theme">
+        <meta name="twitter:description" content="一个小型博客主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "dose",
-            "description": "a small blog theme",
+            "description": "一个小型博客主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dose&#x2F;",
             "author": {
                 "@type": "Person",
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dose&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> dose</h1>
-            <p>a small blog theme</p>
+            <p>一个小型博客主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;oltdaniel.eu">oltdaniel</a>
@@ -172,56 +172,55 @@
     <hr>
     <h1 id="dose">dose</h1>
 <p><img src="https://zola.docs.saop.cc/themes/dose/screenshot.png?raw=true" alt="" /></p>
-<h2 id="installation">Installation</h2>
-<p>First install the theme into the <code>themes</code> directory with one of these options:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If you work with git: </span></span>
+<h2 id="an-zhuang">安装</h2>
+<p>首先通过以下选项之一将主题安装到 <code>themes</code> 目录：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果你使用 git: </span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/oltdaniel/dose.git themes/dose</span></span>
-<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># or just do a download:</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 或者直接下载:</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/oltdaniel/dose.git themes/dose</span></span></code></pre>
-<p>and then enable it in your <code>config.toml</code>:</p>
+<p>然后在你的 <code>config.toml</code> 中启用它：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;dose&quot;</span></span></code></pre>
-<p>You can enable the following taxonomies:</p>
+<p>你可以启用以下分类法：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>And the theme uses the following extras:</p>
+<p>主题使用以下额外配置：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>social_media</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;GitHub&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/oltdaniel&quot;</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Twitter&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://twitter.com/@twitter&quot;</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Mastodon&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://mastodon.social/@Mastodon&quot;</span><span style="color: #9399B2;">,</span><span> rel</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;me&quot;</span><span style="color: #9399B2;"> }</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span>
-<span class="giallo-l"><span>default_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;dark&quot;</span><span style="color: #9399B2;font-style: italic;"> # or &quot;light&quot;</span></span></code></pre>
-<p>The description of yourself with your image, you can modify by using a template. Just create a new
-file <code>myblog/templates/parts/me.html</code>:</p>
+<span class="giallo-l"><span>default_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;dark&quot;</span><span style="color: #9399B2;font-style: italic;"> # 或 &quot;light&quot;</span></span></code></pre>
+<p>你可以通过使用模板修改你的描述和图片。只需创建一个新文件 <code>myblog/templates/parts/me.html</code>：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">img</span><span style="color: #F9E2AF;"> src</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://via.placeholder.com/50&quot;</span><span style="color: #F9E2AF;"> height</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;50px&quot;</span><span style="color: #F9E2AF;"> width</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;50px&quot;</span><span style="color: #94E2D5;">&gt;</span></span>
-<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span><span>Hi, this is me. I write about microcontrollers, programming and cloud software. ...</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span></span></code></pre>
-<p>If you want to have all pages sorted by their date, please create <code>myblog/content/_index.md</code>:</p>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span><span>嗨，这是我。我写关于微控制器、编程和云软件的文章。...</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span></span></code></pre>
+<p>如果你想让所有页面按日期排序，请创建 <code>myblog/content/_index.md</code>：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>sort_by = &quot;date&quot;</span></span>
-<span class="giallo-l"><span>+++</span></span></code></pre><h3 id="about">About</h3>
-<h4 id="inspired">Inspired</h4>
-<p>I created this theme mainly for my personal website. You are free to use it or modify it. It is inspired by the <a class="external" rel="noopener external" target="_blank" href="https://riggraz.dev/no-style-please/"><code>no-style-please</code></a> jekyll theme.</p>
-<h4 id="typography">Typography</h4>
-<p>This theme uses no special font, just the browsers default monospace font. Yes, this can mean that the website could be rendered differently, but users can freely choose their webfont.</p>
-<h4 id="darkmode">Darkmode</h4>
-<p>This theme supports dark and light mode. Currently this will be only switched based on the users preffered system theme. But a manual switch will follow in the future in the footer (see the todo).</p>
-<table><thead><tr><th>light</th><th>dark</th></tr></thead><tbody>
+<span class="giallo-l"><span>+++</span></span></code></pre><h3 id="guan-yu">关于</h3>
+<h4 id="ling-gan">灵感</h4>
+<p>我创建这个主题主要是为了我的个人网站。你可以自由使用或修改它。它的灵感来自于 <a class="external" rel="noopener external" target="_blank" href="https://riggraz.dev/no-style-please/"><code>no-style-please</code></a> jekyll 主题。</p>
+<h4 id="pai-ban">排版</h4>
+<p>此主题不使用特殊字体，只使用浏览器的默认等宽字体。是的，这意味着网站可能会有不同的渲染效果，但用户可以自由选择他们的网页字体。</p>
+<h4 id="an-se-mo-shi">暗色模式</h4>
+<p>此主题支持暗色和亮色模式。目前这将仅根据用户首选的系统主题进行切换。但未来会在页脚添加手动切换（见 todo）。</p>
+<table><thead><tr><th>亮色</th><th>暗色</th></tr></thead><tbody>
 <tr><td><img src="https://zola.docs.saop.cc/themes/dose/screenshot-light.png" alt="" /></td><td><img src="https://zola.docs.saop.cc/themes/dose/screenshot-dark.png" alt="" /></td></tr>
 </tbody></table>
-<h4 id="size">Size</h4>
-<p>The JavaScript has been moved into the page itself to allow minification. Together this results in the following sizes for the <code>index.html</code>:</p>
+<h4 id="da-xiao">大小</h4>
+<p>JavaScript 已移入页面本身以允许压缩。这就导致 <code>index.html</code> 的大小如下：</p>
 <ul>
 <li><code>~ 3kB</code> JavaScript</li>
 <li><code>~ 3kB</code> CSS</li>
-<li><code>~ 17kB</code> Profile Image</li>
+<li><code>~ 17kB</code> 个人资料图片</li>
 <li><code>~5kB - ~3kB = ~2kB</code> HTML</li>
 </ul>
-<p>Which results in a total loading size of <code>3kB + 3kB + 17kB + 2kB = 25kB</code>.</p>
-<h4 id="syntax-highlighting">Syntax Highlighting</h4>
-<p>As I didn't want to invest any time in creating an own syntax color schema for this theme, I suggest to use <code>visual-studio-dark</code>, which is the same one used in the demo page.</p>
-<h4 id="customization">Customization</h4>
-<p>You can create your own version of this theme, by simply changing the sass variables in <code>sass/style.scss</code> to match your taste.</p>
+<p>总加载大小为 <code>3kB + 3kB + 17kB + 2kB = 25kB</code>。</p>
+<h4 id="yu-fa-gao-liang">语法高亮</h4>
+<p>由于我不想花时间为这个主题创建自己的语法颜色方案，我建议使用 <code>visual-studio-dark</code>，这也是演示页面中使用的方案。</p>
+<h4 id="zi-ding-yi">自定义</h4>
+<p>你可以通过简单地更改 <code>sass/style.scss</code> 中的 sass 变量来创建你自己的主题版本，以符合你的口味。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="scss"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;">/**</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"> * Variables</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"> */</span></span>
@@ -231,9 +230,9 @@ file <code>myblog/templates/parts/me.html</code>:</p>
 <span class="giallo-l"><span style="color: #EBA0AC;">$lang-tag</span><span style="color: #94E2D5;">:</span><span style="color: #EBA0AC;"> red</span><span style="color: #9399B2;">;</span></span>
 <span class="giallo-l"><span style="color: #EBA0AC;">$link-color</span><span style="color: #94E2D5;">:</span><span style="color: #EBA0AC;"> blue</span><span style="color: #9399B2;">;</span></span>
 <span class="giallo-l"><span style="color: #EBA0AC;">$target-color</span><span style="color: #94E2D5;">:</span><span style="color: #EBA0AC;"> yellow</span><span style="color: #9399B2;">;</span></span>
-<span class="giallo-l"><span style="color: #EBA0AC;">$separator-decoration</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;//////&quot;</span><span style="color: #9399B2;">;</span></span></code></pre><h2 id="license-contributors">License &amp; Contributors</h2>
+<span class="giallo-l"><span style="color: #EBA0AC;">$separator-decoration</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;//////&quot;</span><span style="color: #9399B2;">;</span></span></code></pre><h2 id="xu-ke-zheng-yu-gong-xian-zhe">许可证与贡献者</h2>
 <p><img src="https://img.shields.io/github/license/oltdaniel/dose" alt="GitHub" /></p>
-<p>This project was created by <a class="external" rel="noopener external" target="_blank" href="https://github.com/oltdaniel">Daniel Oltmanns</a> and has been imporved by these <a class="external" rel="noopener external" target="_blank" href="https://github.com/oltdaniel/dose/graphs/contributors">contributors</a>.</p>
+<p>本项目由 <a class="external" rel="noopener external" target="_blank" href="https://github.com/oltdaniel">Daniel Oltmanns</a> 创建，并由这些 <a class="external" rel="noopener external" target="_blank" href="https://github.com/oltdaniel/dose/graphs/contributors">贡献者</a> 改进。</p>
 
 
     </div>

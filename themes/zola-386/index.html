@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="zola.386 | Zola">
-        <meta property="og:description" content="Zola port of the BOOTSTRA.386 theme.">
+        <meta property="og:description" content="BOOTSTRA.386 主题的 Zola 移植版。">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-386&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="zola.386 | Zola">
-        <meta name="twitter:description" content="Zola port of the BOOTSTRA.386 theme.">
+        <meta name="twitter:description" content="BOOTSTRA.386 主题的 Zola 移植版。">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "zola.386",
-            "description": "Zola port of the BOOTSTRA.386 theme.",
+            "description": "BOOTSTRA.386 主题的 Zola 移植版。",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-386&#x2F;",
             "author": {
                 "@type": "Person",
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-386&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> zola.386</h1>
-            <p>Zola port of the BOOTSTRA.386 theme.</p>
+            <p>BOOTSTRA.386 主题的 Zola 移植版。</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;github.com&#x2F;lopes">José Lopes</a>
@@ -171,52 +171,53 @@
 
     <hr>
     <h1 id="zola-386">ZOLA.386</h1>
-<p><img src="https://github.com/lopes/zola.386/blob/master/screenshot.png?raw=true" alt="ZOLA.386 screenshot" /></p>
-<h2 id="live-demo"><a class="external" rel="noopener external" target="_blank" href="https://zola386.netlify.app/">Live demo</a></h2>
-<p>ZOLA.386 is a port of the BOOTSTRA.386 theme and was based on:</p>
+<p><img src="https://github.com/lopes/zola.386/blob/master/screenshot.png?raw=true" alt="ZOLA.386 截图" /></p>
+<h2 id="zai-xian-yan-shi"><a class="external" rel="noopener external" target="_blank" href="https://zola386.netlify.app/">在线演示</a></h2>
+<p>ZOLA.386 是 BOOTSTRA.386 主题的移植版，基于：</p>
 <ul>
-<li><a class="external" rel="noopener external" target="_blank" href="https://kristopolous.github.io/BOOTSTRA.386/">BOOTSTRA.386</a>: main idea, design.</li>
-<li><a class="external" rel="noopener external" target="_blank" href="https://themes.gohugo.io/hugo.386/">HUGO.386</a>: item placement.</li>
-<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/rust-br/dinkleberg">Dinkleberg</a>: internal structure and SEO.</li>
-<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/after-dark">after-dark</a>: navbar and minor components.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://kristopolous.github.io/BOOTSTRA.386/">BOOTSTRA.386</a>: 主要理念，设计。</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://themes.gohugo.io/hugo.386/">HUGO.386</a>: 项目放置。</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/rust-br/dinkleberg">Dinkleberg</a>: 内部结构和 SEO。</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/after-dark">after-dark</a>: 导航栏和次要组件。</li>
 </ul>
-<p>ZOLA.386 is a theme that refers to the 90s, but with cutting edge features to be fast and responsive.</p>
-<h2 id="installation">Installation</h2>
-<p>The easiest way to install ZOLA.386 is to clone this repository and build your site upon it:</p>
+<p>ZOLA.386 是一个引用 90 年代的主题，但具有快速响应的尖端功能。</p>
+<h2 id="an-zhuang">安装</h2>
+<p>安装 ZOLA.386 最简单的方法是克隆此仓库并在其上构建你的站点：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git clone https://github.com/lopes/zola.386</span></span></code></pre>
-<p>Of course you can install it just as another theme for your site, but ZOLA.386 must be added as a module:</p>
+<p>当然，你也可以将其作为站点的另一个主题安装，但 ZOLA.386 必须作为模块添加：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cd themes</span></span>
-<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git submodule add https://github.com/lopes/zola.386</span><span> </span></span></code></pre><h2 id="configuration">Configuration</h2>
-<p>Configuration is mainly done in <code>config.toml</code> and here I'll describe the main topics.</p>
-<h3 id="global">Global</h3>
-<p><code>config.toml</code> starts with the global variables.  All of these items are important, but it is fundamental to create two taxonomies at least:</p>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git submodule add https://github.com/lopes/zola.386</span><span> </span></span></code></pre><h2 id="pei-zhi">配置</h2>
+<p>配置主要在 <code>config.toml</code> 中完成，这里我将描述主要主题。</p>
+<h3 id="quan-ju">全局</h3>
+<p><code>config.toml</code> 以全局变量开始。所有这些项目都很重要，但至少创建两个分类法是基础：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;categories&quot;</span><span style="color: #9399B2;">,</span><span> rss</span><span style="color: #94E2D5;">=</span><span style="color: #FAB387;">true</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> rss</span><span style="color: #94E2D5;">=</span><span style="color: #FAB387;">true</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>Remember that all descriptions (<code>config.description</code> and <code>page.description</code>) are shown on the index page, one at the header and the others through the body.</p>
-<h3 id="extras">Extras</h3>
-<p>ZOLA.386 comes with a lot of extra variables which eases the creation and maintenance of the site, so it's important to review all of them after installing the theme.</p>
-<p>The <code>zola386_menu</code> composes the navbar and is created by setting up a <code>path</code>, which will be appended to the <code>base_url</code> and the <code>name</code> will appear on the navbar.</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>zola386_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<p>请记住，所有描述（<code>config.description</code> 和 <code>page.description</code>）都显示在索引页上，一个在标题处，其他的通过正文显示。</p>
+<h3 id="e-wai-pei-zhi">额外配置</h3>
+<p>ZOLA.386 附带了许多额外变量，这简化了站点的创建和维护，因此安装主题后检查所有这些变量很重要。</p>
+<p><code>zola386_menu</code> 组成导航栏，通过设置 <code>path</code> 创建，该路径将附加到 <code>base_url</code>，<code>name</code> 将出现在导航栏上。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>zola386_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  {</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Home&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  {</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;categories&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Categories&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  {</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Tags&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  {</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;about&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;About&quot;</span><span style="color: #9399B2;">},</span></span>
-<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="social">Social</h3>
-<p>ZOLA.386 is also prepared to deal with Google Analytics, Disqus, and Twitter --<a class="external" rel="noopener external" target="_blank" href="https://ogp.me/">Open Graph Protocol</a> is welcome.  This theme is prepared to use the output of <a class="external" rel="noopener external" target="_blank" href="https://www.favicon-generator.org/">Favicon Generator</a>, to do so, you'll just need to download the output of that site and extract in <code>static/images</code>.</p>
-<p>As said, Disqus is supported, but besides setting the username in <code>config.toml</code>, you also must to put a <code>comments = true</code> extra option on the pages where Disqus will be enabled --this gives you the freedom to enable or disable comments on certain posts.  You can use the extra option <code>image</code> on each page, to represent that post.</p>
-<h3 id="animations">Animations</h3>
-<p>All JavaScript animations can be set at <code>static/js/zola386.js</code>.  Basically you can disable all animations, use one or two scans, and change the scan speed.  Personally, I prefer only one scan with a speed factor of 5.</p>
-<h3 id="language">Language</h3>
-<p>Under the <code>label_</code> variables, you can set names to better localize your site.  Note that you can change the language of a single page, by using <code>page.extra.lang</code>, which causes <code>&lt;html lang=""&gt;</code> to change only on that page.  A theme to provide information for its owner and SEO-friendly.</p>
-<h3 id="search">Search</h3>
-<p>Search was implemented according to the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/search/">official documentation</a>.  It uses JavaScript to search on an indexed version of the site based on <code>search_index.LANG.js</code>, <code>elasticlunr.min.js</code>, and <code>search.js</code> --the first two are generated after each build.  If you're running your site in other default language other than English, you <strong>must</strong> change the <code>search_index.LANG.js</code> line in <code>index.html</code>, setting up <code>LANG</code> accordingly.</p>
-<h3 id="other-files">Other files</h3>
-<p>The <code>content\_index.md</code> file must be properly configured to provide better experience.  Check out this file for more information.</p>
-<p>The 404 page is almost hardcoded, so you must edit it directly.</p>
-<h2 id="license">License</h2>
-<p>This theme is released under the MIT license.  For more information read the <a class="external" rel="noopener external" target="_blank" href="https://github.com/lopes/zola.386/blob/master/LICENSE">License</a>.</p>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="she-jiao">社交</h3>
+<p>ZOLA.386 也准备处理 Google Analytics, Disqus, 和 Twitter --欢迎使用 <a class="external" rel="noopener external" target="_blank" href="https://ogp.me/">Open Graph Protocol</a>。此主题准备使用 <a class="external" rel="noopener external" target="_blank" href="https://www.favicon-generator.org/">Favicon Generator</a> 的输出，要这样做，你只需要下载该站点的输出并解压到 <code>static/images</code> 中。</p>
+<p>如前所述，支持 Disqus，但除了在 <code>config.toml</code> 中设置用户名外，你还必须在启用 Disqus 的页面上放置 <code>comments = true</code> 额外选项 --这让你有自由在某些文章上启用或禁用评论。你可以在每个页面上使用额外选项 <code>image</code> 来代表该文章。</p>
+<h3 id="dong-hua">动画</h3>
+<p>所有 JavaScript 动画都可以在 <code>static/js/zola386.js</code> 中设置。基本上你可以禁用所有动画，使用一次或两次扫描，并更改扫描速度。个人而言，我更喜欢速度系数为 5 的单次扫描。</p>
+<h3 id="yu-yan">语言</h3>
+<p>在 <code>label_</code> 变量下，你可以设置名称以更好地本地化你的站点。注意你可以通过使用 <code>page.extra.lang</code> 更改单个页面的语言，这会导致 <code>&lt;html lang=""&gt;</code> 仅在该页面上更改。一个为其所有者提供信息且 SEO 友好的主题。</p>
+<h3 id="sou-suo">搜索</h3>
+<p>搜索是根据 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/search/">官方文档</a> 实现的。它使用 JavaScript 根据 <code>search_index.LANG.js</code>, <code>elasticlunr.min.js</code>, 和 <code>search.js</code> --前两个是在每次构建后生成的--搜索站点的索引版本。如果你在英语以外的其他默认语言中运行你的站点，你 <strong>必须</strong> 更改 <code>index.html</code> 中的 <code>search_index.LANG.js</code> 行，相应地设置 <code>LANG</code>。</p>
+<h3 id="qi-ta-wen-jian">其他文件</h3>
+<p><code>content\_index.md</code> 文件必须正确配置以提供更好的体验。查看此文件以获取更多信息。</p>
+<p>404 页面几乎是硬编码的，所以你必须直接编辑它。</p>
+<h2 id="xu-ke-zheng">许可证</h2>
+<p>此主题根据 MIT 许可证发布。有关更多信息，请阅读 <a class="external" rel="noopener external" target="_blank" href="https://github.com/lopes/zola.386/blob/master/LICENSE">许可证</a>。</p>
 <p><a class="external" rel="noopener external" target="_blank" href="https://app.netlify.com/sites/zola386/deploys"><img src="https://api.netlify.com/api/v1/badges/5d6f1986-7bf3-40d3-b298-3339288585d4/deploy-status" alt="Netlify Status" /></a></p>
 
 

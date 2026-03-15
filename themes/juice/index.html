@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="juice | Zola">
-        <meta property="og:description" content="An intuitive, elegant, and lightweight Zola theme for product sites.">
+        <meta property="og:description" content="一个直观、优雅且轻量级的 Zola 主题，适用于产品站点。">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;juice&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="juice | Zola">
-        <meta name="twitter:description" content="An intuitive, elegant, and lightweight Zola theme for product sites.">
+        <meta name="twitter:description" content="一个直观、优雅且轻量级的 Zola 主题，适用于产品站点。">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "juice",
-            "description": "An intuitive, elegant, and lightweight Zola theme for product sites.",
+            "description": "一个直观、优雅且轻量级的 Zola 主题，适用于产品站点。",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;juice&#x2F;",
             "author": {
                 "@type": "Person",
@@ -121,9 +121,9 @@
                         
                             
                                 
-                            
-                                
                                     
+                                
+                            
                                 
                             
                         
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;juice&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> juice</h1>
-            <p>An intuitive, elegant, and lightweight Zola theme for product sites.</p>
+            <p>一个直观、优雅且轻量级的 Zola 主题，适用于产品站点。</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;huhu.io">Huhu teams</a>
@@ -172,56 +172,55 @@
     <hr>
     <h1 id="juice">Juice</h1>
 <img align="right" width="150" height="150" src="/content/juice.svg">
-<p><strong>Juice</strong> is an intuitive, elegant, and responsive Zola theme for product sites.</p>
+<p><strong>Juice</strong> 是一个直观、优雅且响应式的 Zola 主题，适用于产品网站。</p>
 <ul>
-<li>Build for product sites</li>
-<li>Simple and intuitive structure</li>
-<li>Clean and elegant design</li>
-<li>Responsive and mobile device compatible</li>
-<li>Customize and extend friendly</li>
+<li>专为产品网站打造</li>
+<li>简单直观的结构</li>
+<li>干净优雅的设计</li>
+<li>响应式和移动设备兼容</li>
+<li>易于自定义和扩展</li>
 </ul>
 <p>https://juice.huhu.io</p>
-<h1 id="installation">Installation</h1>
-<p>First download this theme to your <code>themes</code> directory:</p>
+<h1 id="an-zhuang">安装</h1>
+<p>首先将此主题下载到你的 <code>themes</code> 目录：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cd themes</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git clone https://github.com/huhu/juice.git</span></span></code></pre>
-<p>or add as a submodule</p>
+<p>或作为子模块添加</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git submodule add https://github.com/huhu/juice  themes/juice</span></span></code></pre>
-<p>and then enable it in your <code>config.toml</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;juice&quot;</span></span></code></pre><h1 id="structure">Structure</h1>
+<p>然后在你的 <code>config.toml</code> 中启用它：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;juice&quot;</span></span></code></pre><h1 id="jie-gou">结构</h1>
 <h3 id="hero">Hero</h3>
-<p><strong>Juice</strong> is designed for product websites, hence we let <strong>hero</strong> part fills whole of screen.
-You can customize your <strong>hero</strong> by using <code>hero</code> block in the <code>templates/index.html</code>.</p>
+<p><strong>Juice</strong> 专为产品网站设计，因此我们让 <strong>hero</strong> 部分填满整个屏幕。
+你可以通过在 <code>templates/index.html</code> 中使用 <code>hero</code> 块来自定义你的 <strong>hero</strong>。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{%/* extends &quot;juice/templates/index.html&quot; */%}</span></span>
 <span class="giallo-l"><span>{%/* block hero */%}</span></span>
 <span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">div</span><span style="color: #94E2D5;">&gt;</span></span>
 <span class="giallo-l"><span>        Your cool hero html...</span></span>
 <span class="giallo-l"><span style="color: #94E2D5;">    &lt;/</span><span style="color: #89B4FA;">div</span><span style="color: #94E2D5;">&gt;</span></span>
-<span class="giallo-l"><span>{%/* endblock hero */%}</span></span></code></pre><h3 id="page">Page</h3>
-<p>Every markdown file located in <code>content</code> directory will become a <strong>Page</strong>. There also will display as
-a navigate link on the top-right corner.
-You can change the frontmatter's <code>weight</code> value to sort the order (ascending order).</p>
+<span class="giallo-l"><span>{%/* endblock hero */%}</span></span></code></pre><h3 id="ye-mian">页面</h3>
+<p>位于 <code>content</code> 目录中的每个 markdown 文件都将成为一个 <strong>页面</strong>。右上角也会显示一个导航链接。
+你可以更改 Front Matter 的 <code>weight</code> 值来对顺序进行排序（升序）。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>title = &quot;Changelog&quot;</span></span>
 <span class="giallo-l"><span>description = &quot;Changelog&quot;</span></span>
 <span class="giallo-l"><span>weight = 2</span></span>
 <span class="giallo-l"><span>+++</span></span>
-<span class="giallo-l"></span></code></pre><h3 id="css-variables">CSS variables</h3>
-<p>You can override theme variable by creating a file named <code>_variables.html</code> in your <code>templates</code> directory.</p>
-<p>See the default value <a href="https://zola.docs.saop.cc/themes/juice/./templates/_variables.html">here</a></p>
+<span class="giallo-l"></span></code></pre><h3 id="css-bian-liang">CSS 变量</h3>
+<p>你可以通过在 <code>templates</code> 目录中创建一个名为 <code>_variables.html</code> 的文件来覆盖主题变量。</p>
+<p>在 <a href="https://zola.docs.saop.cc/themes/juice/./templates/_variables.html">这里</a> 查看默认值。</p>
 <h3 id="favicon">Favicon</h3>
-<p>The same way as changing the <code>hero</code> block in the <code>templates/index.html</code>, you can change the <strong>favicon</strong>.</p>
+<p>与更改 <code>templates/index.html</code> 中的 <code>hero</code> 块相同，你可以更改 <strong>Favicon</strong>。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{%/* extends &quot;juice/templates/index.html&quot; */%}</span></span>
 <span class="giallo-l"><span>{%/* block favicon */%}</span></span>
 <span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">link</span><span style="color: #F9E2AF;"> rel</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;icon&quot;</span><span style="color: #F9E2AF;"> type</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;image/png&quot;</span><span style="color: #F9E2AF;"> href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;/favicon.ico&quot;</span><span style="color: #94E2D5;">&gt;</span></span>
-<span class="giallo-l"><span>{%/* endblock favicon */%}</span></span></code></pre><h3 id="fonts">Fonts</h3>
-<p>If you changed the <code>--xy-font-family</code>-variable in <code>_variables.html</code>, you have to load the mentioned fonts in the <code>templates/index.html</code>.</p>
+<span class="giallo-l"><span>{%/* endblock favicon */%}</span></span></code></pre><h3 id="zi-ti">字体</h3>
+<p>如果你更改了 <code>_variables.html</code> 中的 <code>--xy-font-family</code> 变量，你必须在 <code>templates/index.html</code> 中加载提到的字体。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{%/* extends &quot;juice/templates/index.html&quot; */%}</span></span>
 <span class="giallo-l"><span>{%/* block fonts */%}</span></span>
 <span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">link</span><span style="color: #F9E2AF;"> href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css&quot;</span><span style="color: #F9E2AF;"> rel</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;stylesheet&quot;</span><span style="color: #F9E2AF;"> crossorigin</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;anonymous&quot;</span><span style="color: #94E2D5;">&gt;</span></span>
 <span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">link</span><span style="color: #F9E2AF;"> href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://fonts.googleapis.com/css2?family=Babylonica&amp;display=swap&quot;</span><span style="color: #F9E2AF;"> rel</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;stylesheet&quot;</span><span style="color: #94E2D5;">&gt;</span></span>
-<span class="giallo-l"><span>{%/* endblock fonts */%}</span></span></code></pre><h1 id="configuration">Configuration</h1>
-<p>You can customize some builtin property in <code>config.toml</code> file:</p>
+<span class="giallo-l"><span>{%/* endblock fonts */%}</span></span></code></pre><h1 id="pei-zhi">配置</h1>
+<p>你可以在 <code>config.toml</code> 文件中自定义一些内置属性：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>juice_logo_name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Juice&quot;</span></span>
 <span class="giallo-l"><span>juice_logo_path</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;juice.svg&quot;</span></span>
@@ -231,22 +230,22 @@ You can change the frontmatter's <code>weight</code> value to sort the order (as
 <span class="giallo-l"><span>juice_exclude_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #A6E3A1;">    &quot;exclude_from_nav&quot;</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span>
-<span class="giallo-l"><span>repository_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/huhu/juice&quot;</span></span></code></pre><h1 id="shortcodes">Shortcodes</h1>
-<p><strong>Juice</strong> have some builtin shortcodes available in <code>templates/shortcodes</code> directory.</p>
+<span class="giallo-l"><span>repository_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/huhu/juice&quot;</span></span></code></pre><h1 id="duan-dai-ma">短代码</h1>
+<p><strong>Juice</strong> 在 <code>templates/shortcodes</code> 目录中有一些可用的内置短代码。</p>
 <ul>
-<li><code>issue(id)</code> - A shortcode to render issue url, e.g. <code>issue(id=1)</code> would render to the link <code>https://github.com/huhu/juice/issue/1</code>.</li>
+<li><code>issue(id)</code> - 一个渲染 issue url 的短代码，例如 <code>issue(id=1)</code> 将渲染为链接 <code>https://github.com/huhu/juice/issue/1</code>。</li>
 </ul>
 <blockquote>
-<p>The <code>repository_url</code> is required.</p>
+<p><code>repository_url</code> 是必需的。</p>
 </blockquote>
-<h1 id="showcases">Showcases</h1>
-<p>Please see the <a class="external" rel="noopener external" target="_blank" href="https://juice.huhu.io/showcases">showcases page</a>.</p>
-<h1 id="contributing">Contributing</h1>
-<p>Thank you very much for considering contributing to this project!</p>
-<p>We appreciate any form of contribution:</p>
+<h1 id="zhan-shi">展示</h1>
+<p>请查看 <a class="external" rel="noopener external" target="_blank" href="https://juice.huhu.io/showcases">展示页面</a>。</p>
+<h1 id="gong-xian">贡献</h1>
+<p>非常感谢你考虑为这个项目做贡献！</p>
+<p>我们感谢任何形式的贡献：</p>
 <ul>
-<li>New issues (feature requests, bug reports, questions, ideas, ...)</li>
-<li>Pull requests (documentation improvements, code improvements, new features, ...)</li>
+<li>新 issue（功能请求、bug 报告、问题、想法……）</li>
+<li>Pull requests（文档改进、代码改进、新功能……）</li>
 </ul>
 
 

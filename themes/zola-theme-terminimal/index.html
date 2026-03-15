@@ -173,7 +173,7 @@
     <h1 id="terminimal">Terminimal</h1>
 <p><a class="external" rel="noopener external" target="_blank" href="https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment/badge.svg" alt="Build Status" /></a>
 <img src="https://img.shields.io/badge/JavaScript-none-brightgreen.svg" alt="No JavaScript" /></p>
-<p><img src="../master/screenshot.png?raw=true" alt="Screenshot" /></p>
+<p><img src="../master/screenshot.png?raw=true" alt="截图" /></p>
 <p>See the live demo (of the default configuration) here:
 https://pawroman.github.io/zola-theme-terminimal/</p>
 <p>Tested with Zola v0.19.2.</p>
@@ -203,7 +203,7 @@ and work out if there's any breaking changes.</p>
 <span class="giallo-l"><span>compile_sass</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
 <p>Also see the Zola documentation on using themes:
 https://www.getzola.org/documentation/themes/installing-and-using-themes/</p>
-<h2 id="shortcodes">Shortcodes</h2>
+<h2 id="duan-dai-ma">短代码</h2>
 <p>The theme adds two custom shortcodes related to image handling.</p>
 <h3 id="image"><code>image</code></h3>
 <p>Used to show images.</p>
@@ -235,17 +235,17 @@ https://www.getzola.org/documentation/themes/installing-and-using-themes/</p>
 <span class="giallo-l"><span>          caption_style=&quot;font-style: italic;&quot;) }}</span></span></code></pre><h2 id="opengraph">OpenGraph</h2>
 <p>To add an image to a post, set the <code>og_image</code> extra option to the desired image
 in the same directory of the markdown file:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>og_image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;colocated_image.png&quot;</span></span></code></pre>
 <p>Additionally, for the section pages and for posts to have a fallback image, add
-<code>default_og_image</code> to the <code>[extra]</code> section:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
-<span class="giallo-l"><span>default_og_image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;static/ocean.jpg&quot;</span></span></code></pre><h2 id="configuration">Configuration</h2>
+<code>default_og_image</code> to the <code>[额外配置]</code> section:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>default_og_image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;static/ocean.jpg&quot;</span></span></code></pre><h2 id="pei-zhi">配置</h2>
 <h3 id="only-show-the-post-s-description">Only show the post's description</h3>
 <p>On each post you can specify the following:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;test description&quot;</span></span>
 <span class="giallo-l"></span>
-<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>show_only_description</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
 <p>This will render <code>test description</code> under this
 particular post on the homepage instead of a summary.</p>
@@ -254,9 +254,9 @@ particular post on the homepage instead of a summary.</p>
 configurable.</p>
 <p>By default, both accent and background are set
 to <code>blue</code>.</p>
-<p>To configure menu, add this in <code>[extra]</code> section
+<p>To configure menu, add this in <code>[额外配置]</code> section
 of your <code>config.toml</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># One of: blue, green, orange, pink, red.</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Defaults to blue.</span></span>
@@ -270,7 +270,7 @@ of your <code>config.toml</code>:</p>
 <span class="giallo-l"><span>background_color</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;dark&quot;</span></span></code></pre><h3 id="logo-text-and-link">Logo text and link</h3>
 <p>You can set the "logo" text and what it links to,
 by modifying <code>config.toml</code> like so:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The logo text - defaults to &quot;Terminimal theme&quot;</span></span>
 <span class="giallo-l"><span>logo_text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;My blog&quot;</span></span>
@@ -278,7 +278,7 @@ by modifying <code>config.toml</code> like so:</p>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The logo link - defaults to base_url.</span></span>
 <span class="giallo-l"><span>logo_home_link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/take/me/away!&quot;</span></span></code></pre><h3 id="author-and-copyright">Author and copyright</h3>
 <p>You can set the footer's copyright author name like this:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Author name: when specified, modifies the default</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># copyright text. Apart from author, it will</span></span>
@@ -286,16 +286,16 @@ by modifying <code>config.toml</code> like so:</p>
 <span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;My Name&quot;</span></span></code></pre>
 <p>If you don't like the default copyright text,
 you can set it to completely custom HTML:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Copyright text in HTML format. If specified,</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># entirely replaces default copyright and author.</span></span>
 <span class="giallo-l"><span>copyright_html</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;My custom&amp;nbsp;&lt;b&gt;copyright&lt;/b&gt;&quot;</span></span></code></pre><h3 id="menu">Menu</h3>
 <p>The menu is optional, static (all items are always shown,
 no matter what the screen size) and fully user-configurable.</p>
-<p>To configure menu, add this in <code>[extra]</code> section
+<p>To configure menu, add this in <code>[额外配置]</code> section
 of your <code>config.toml</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># menu is enabled by adding menu_items (optional)</span></span>
 <span class="giallo-l"><span>menu_items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
@@ -311,7 +311,7 @@ of your <code>config.toml</code>:</p>
 <span class="giallo-l"><span>    </span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;">    # set newtab to true to make the link open in new tab</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;url-to-your-github&quot;</span><span style="color: #9399B2;">,</span><span> newtab</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
-<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="tags">Tags</h3>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="biao-qian">标签</h3>
 <p>The theme optionally supports tags. To enable them, create
 a "tags" taxonomy in your <code>config.toml</code>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
@@ -321,7 +321,7 @@ a "tags" taxonomy in your <code>config.toml</code>:</p>
 cause them to show up in <code>archive</code> section. Note
 that you still need to create a menu link to the tags
 page manually.</p>
-<h3 id="pagination">Pagination</h3>
+<h3 id="fen-ye">分页</h3>
 <p>Pagination is fully supported for post list (main site)
 and intra-post (you can navigate to earlier and later posts).</p>
 <p>To make sure pagination works properly, you must first configure
@@ -334,7 +334,7 @@ it in <code>content/_index.md</code>:</p>
 <span class="giallo-l"><span>sort_by = &quot;date&quot;</span></span>
 <span class="giallo-l"><span>+++</span></span></code></pre>
 <p>Then, tweak the theme's pagination config in <code>config.toml</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Whether to show links to earlier and later posts</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># on each post page (defaults to true).</span></span>
@@ -355,7 +355,7 @@ Normal weight font uses full character set
 <p>This results in much smaller transfer sizes, but the subset
 might not contain all the Unicode characters you need.</p>
 <p>You can enable full unicode support in <code>config.toml</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Use full Hack character set, not just a subset.</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Switch this to true if you need full unicode support.</span></span>
@@ -454,7 +454,7 @@ blue (default), green, orange, pink, red.</li>
 <li>The shortcodes <code>image</code> and <code>figure</code> (See Shortcodes.</li>
 <li>Fully responsive.</li>
 </ul>
-<h2 id="license">License</h2>
+<h2 id="xu-ke-zheng">许可证</h2>
 <p>Copyright © 2019 Paweł Romanowski (pawroman)</p>
 <p>Original theme: Copyright © 2019 Radosław Kozieł (<a class="external" rel="noopener external" target="_blank" href="https://twitter.com/panr">@panr</a>)</p>
 <p>The theme is released under the MIT License.

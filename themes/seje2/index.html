@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="Seje2 | Zola">
-        <meta property="og:description" content="A beautiful zola theme">
+        <meta property="og:description" content="一个漂亮的 zola 主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seje2&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="Seje2 | Zola">
-        <meta name="twitter:description" content="A beautiful zola theme">
+        <meta name="twitter:description" content="一个漂亮的 zola 主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "Seje2",
-            "description": "A beautiful zola theme",
+            "description": "一个漂亮的 zola 主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seje2&#x2F;",
             "author": {
                 "@type": "Person",
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seje2&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Seje2</h1>
-            <p>A beautiful zola theme</p>
+            <p>一个漂亮的 zola 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;blog.utopiosphere.net">Mag Mell</a>
@@ -171,39 +171,38 @@
 
     <hr>
     <h1 id="seje2">Seje2</h1>
-<p><img src="https://zola.docs.saop.cc/themes/seje2/screenshot.png" alt="screenshot" /></p>
-<p><a class="external" rel="noopener external" target="_blank" href="https://eatradish.github.io/Seje2">Demo</a>
+<p><img src="https://zola.docs.saop.cc/themes/seje2/screenshot.png" alt="截图" /></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://eatradish.github.io/Seje2">演示</a>
 <a class="external" rel="noopener external" target="_blank" href="https://github.com/eatradish/Seje2/blob/main/README_zh_cn.md">简体中文</a></p>
-<h2 id="installation">Installation</h2>
-<p>First download this theme to your <code>themes</code> directory:</p>
+<h2 id="an-zhuang">安装</h2>
+<p>首先将此主题下载到你的 <code>themes</code> 目录：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/eatradish/Seje2</span></span></code></pre>
-<p>and then enable it in your <code>config.toml</code>:</p>
+<p>然后在你的 <code>config.toml</code> 中启用它：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Seje2&quot;</span></span></code></pre>
-<p>This theme requires your index section (<code>content/_index.md</code>) to be paginated to work:</p>
+<p>此主题需要你的索引部分（<code>content/_index.md</code>）分页才能工作：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 5</span></span></code></pre>
-<p>The posts should therefore be in directly under the <code>content</code> folder.</p>
-<p>and requires your index section (<code>about/_index.md</code>) to be paginated to work:</p>
+<p>因此，文章应直接位于 <code>content</code> 文件夹下。</p>
+<p>并且需要你的索引部分（<code>about/_index.md</code>）分页才能工作：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;...&quot;</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>year</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 2019</span></span>
 <span class="giallo-l"><span>month</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 11</span></span>
-<span class="giallo-l"><span>day</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 3</span></span></code></pre><h2 id="options">Options</h2>
-<h3 id="top-menu">Top-menu</h3>
-<p>Set a field in <code>extra</code> with a key of <code>seje2_menu_links</code>:</p>
+<span class="giallo-l"><span>day</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 3</span></span></code></pre><h2 id="xuan-xiang">选项</h2>
+<h3 id="ding-bu-cai-dan">顶部菜单</h3>
+<p>在 <code>extra</code> 中设置一个键为 <code>seje2_menu_links</code> 的字段：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>seje2_menu_links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/categories&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Categories&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/tags&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://google.com&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Google&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>If you put <code>$BASE_URL</code> in a url, it will automatically be replaced by the actual
-site URL.</p>
-<h3 id="mathjax-latex-support">MathJax Latex Support</h3>
-<p>Set a field in <code>extra</code> with a bool key of <code>seje_mathjax</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>seje_mathjax</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="license">License</h3>
-<p>Set a field in <code>extra</code> with a key of <code>license</code>:</p>
+<p>如果你在 url 中放入 <code>$BASE_URL</code>，它会自动被替换为实际的站点 URL。</p>
+<h3 id="mathjax-latex-zhi-chi">MathJax Latex 支持</h3>
+<p>在 <code>extra</code> 中设置一个布尔键 <code>seje_mathjax</code>：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>seje_mathjax</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="xu-ke-zheng">许可证</h3>
+<p>在 <code>extra</code> 中设置一个键为 <code>license</code> 的字段：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>license</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;@ 宇宙眼镜人&quot;</span></span></code></pre>
 
     </div>

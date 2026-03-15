@@ -121,9 +121,9 @@
                         
                             
                                 
-                            
-                                
                                     
+                                
+                            
                                 
                             
                         
@@ -173,7 +173,7 @@
     <h1 id="even">Even</h1>
 <p>Even is a clean, responsive theme based on the Hugo theme with the same name featuring categories, tags and pagination.</p>
 <p><img src="https://github.com/getzola/even/blob/master/screenshot.png?raw=true" alt="even screenshot" /></p>
-<h2 id="contents">Contents</h2>
+<h2 id="mu-lu">目录</h2>
 <ul>
 <li>Installation</li>
 <li>Options
@@ -183,7 +183,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="installation">Installation</h2>
+<h2 id="an-zhuang">安装</h2>
 <p>First download this theme to your <code>themes</code> directory:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/getzola/even.git</span></span></code></pre>
@@ -201,7 +201,7 @@ as it only works for non-paginated taxonomies by default.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>paginate_by = 5</span></span>
 <span class="giallo-l"><span>sort_by = &quot;date&quot;</span></span>
-<span class="giallo-l"><span>+++</span></span></code></pre><h2 id="options">Options</h2>
+<span class="giallo-l"><span>+++</span></span></code></pre><h2 id="xuan-xiang">选项</h2>
 <h3 id="top-menu">Top-menu</h3>
 <p>Set a field in <code>extra</code> with a key of <code>even_menu</code>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># This is the default menu</span></span>
@@ -213,15 +213,15 @@ as it only works for non-paginated taxonomies by default.</p>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
 <p>If you put <code>$BASE_URL</code> in a url, it will automatically be replaced by the actual
 site URL.</p>
-<h3 id="title">Title</h3>
+<h3 id="biao-ti">标题</h3>
 <p>The site title is shown on the header. As it might be different from the <code>&lt;title&gt;</code>
 element that the <code>title</code> field in the config represents, you can set the <code>even_title</code>
 instead.</p>
 <h3 id="katex-math-formula-support">KaTeX math formula support</h3>
-<p>This theme contains math formula support using <a class="external" rel="noopener external" target="_blank" href="https://katex.org/">KaTeX</a>,
+<p>This theme contains math formula support using <a class="external" rel="noopener external" target="_blank" href="https://katex.org/">KaTeX 公式</a>,
 which can be enabled by setting <code>katex_enable = true</code> in the <code>extra</code> section
 of <code>config.toml</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>katex_enable</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
 <p>After enabling this extension, the <code>katex</code> short code can be used in documents:</p>
 <ul>
@@ -233,7 +233,7 @@ similar to <code>$$...$$</code> in LaTeX</li>
 <h4 id="automatic-rendering-without-short-codes">Automatic rendering without short codes</h4>
 <p>Optionally, <code>\\( \KaTeX \\)</code> inline and <code>\\[ \KaTeX \\]</code> / <code>$$ \KaTeX $$</code>
 block-style automatic rendering is also supported, if enabled in the config:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>katex_enable</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
 <span class="giallo-l"><span>katex_auto_render</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
 

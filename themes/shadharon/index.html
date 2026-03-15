@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="shadharon | Zola">
-        <meta property="og:description" content="Simple blog theme powered by Zola">
+        <meta property="og:description" content="由 Zola 驱动的简单博客主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;shadharon&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="shadharon | Zola">
-        <meta name="twitter:description" content="Simple blog theme powered by Zola">
+        <meta name="twitter:description" content="由 Zola 驱动的简单博客主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "shadharon",
-            "description": "Simple blog theme powered by Zola",
+            "description": "由 Zola 驱动的简单博客主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;shadharon&#x2F;",
             "author": {
                 "@type": "Person",
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;shadharon&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> shadharon</h1>
-            <p>Simple blog theme powered by Zola</p>
+            <p>由 Zola 驱动的简单博客主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;syedzayyan.com">Syed Zayyan Masud</a>
@@ -171,64 +171,64 @@
 
     <hr>
     <h1 id="shadharon">Shadharon</h1>
-<p>Simple blog theme powered by <a href="https://zola.docs.saop.cc/themes/shadharon/getzola.org">Zola</a>. See a live preview <a class="external" rel="noopener external" target="_blank" href="https://shadharon.syedzayyan.com/">here</a>.</p>
+<p>由 <a href="https://zola.docs.saop.cc/themes/shadharon/getzola.org">Zola</a> 驱动的简单博客主题。在此处查看 <a class="external" rel="noopener external" target="_blank" href="https://shadharon.syedzayyan.com/">在线预览</a>。</p>
 <blockquote>
-<p>Name derived from the Bengali Word - সাধারণ which translates to "generic"</p>
+<p>名称源自孟加拉语单词 - সাধারণ，翻译为“通用的”</p>
 </blockquote>
 <details open>
-  <summary>Dark theme</summary>
+  <summary>暗色主题</summary>
 <p><img src="https://raw.githubusercontent.com/syedzayyan/shadharon/main/screenshot.png" alt="blog-dark" /></p>
 </details>
 <details close>
-  <summary>Light theme</summary>
+  <summary>亮色主题</summary>
 <p><img src="https://raw.githubusercontent.com/syedzayyan/shadharon/main/screenshot-light.png" alt="light-dark" /></p>
 </details>
-<h2 id="features">Features</h2>
+<h2 id="te-xing">特性</h2>
 <ul>
 <li><input disabled="" type="checkbox" checked=""/>
-Themes (light, dark). Default theme is dark with a switcher in the navbar</li>
+主题（亮色、暗色）。默认主题为暗色，导航栏中有切换器</li>
 <li><input disabled="" type="checkbox" checked=""/>
-Projects page</li>
+项目页面</li>
 <li><input disabled="" type="checkbox" checked=""/>
-Social Links</li>
+社交链接</li>
 <li><input disabled="" type="checkbox" checked=""/>
-Tags</li>
+标签</li>
 </ul>
-<h2 id="installation">Installation</h2>
+<h2 id="an-zhuang">安装</h2>
 <ol start="0">
 <li>
-<p>Initialize Git Repo if not initialized</p>
+<p>初始化 Git 仓库（如果尚未初始化）</p>
 </li>
 <li>
-<p>Download the theme</p>
+<p>下载主题</p>
 </li>
 </ol>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git submodule add https://github.com/syedzayyan/shadharon themes/shadharon</span></span></code></pre>
 <ol start="2">
 <li>
-<p>Add <code>theme = "shadharon"</code> to your <code>config.toml</code></p>
+<p>将 <code>theme = "shadharon"</code> 添加到你的 <code>config.toml</code></p>
 </li>
 <li>
-<p>Copy the example content</p>
+<p>复制示例内容</p>
 </li>
 </ol>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>cp -R themes/shadharon/content/. content</span></span></code></pre><h2 id="customization">Customization</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>cp -R themes/shadharon/content/. content</span></span></code></pre><h2 id="zi-ding-yi">自定义</h2>
 <ol>
 <li>
-<p>For customization refer to config.toml files, which has comments.</p>
+<p>有关自定义，请参阅 config.toml 文件，其中包含注释。</p>
 </li>
 <li>
-<p>For customizing the banner on the homepage the content/posts/_index.md needs modification. The desc variable under <code>extra</code>, specifically. You could delete this as well to remove banner. For an about page or any aditional page an .md file in the "content" directory will do.</p>
+<p>要自定义主页上的横幅，需要修改 content/posts/_index.md。具体来说是 <code>extra</code> 下的 desc 变量。你也可以将其删除以移除横幅。对于关于页面或任何其他页面，"content" 目录中的 .md 文件即可。</p>
 </li>
 </ol>
-<p>You can add stylesheets to override the theme:</p>
+<p>你可以添加样式表来覆盖主题：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>stylesheets</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #A6E3A1;">    &quot;override.css&quot;</span><span style="color: #9399B2;">,</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>These filenames are relative to the root of the site. In this example, the two CSS files would be in the <code>static</code> folder.</p>
-<h2 id="references">References</h2>
-<p>This theme takes inspiration from</p>
+<p>这些文件名相对于站点的根目录。在此示例中，两个 CSS 文件将位于 <code>static</code> 文件夹中。</p>
+<h2 id="can-kao">参考</h2>
+<p>此主题灵感来自</p>
 <ul>
 <li><a class="external" rel="noopener external" target="_blank" href="https://github.com/not-matthias/apollo">apollo</a>.</li>
 <li><a class="external" rel="noopener external" target="_blank" href="https://tania.dev/">Tania's Website</a></li>

@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="feather | Zola">
-        <meta property="og:description" content="A fuzzy blog theme">
+        <meta property="og:description" content="一个模糊风格的博客主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;feather&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="feather | Zola">
-        <meta name="twitter:description" content="A fuzzy blog theme">
+        <meta name="twitter:description" content="一个模糊风格的博客主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "feather",
-            "description": "A fuzzy blog theme",
+            "description": "一个模糊风格的博客主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;feather&#x2F;",
             "author": {
                 "@type": "Person",
@@ -121,9 +121,9 @@
                         
                             
                                 
-                                    
-                                
                             
+                                
+                                    
                                 
                             
                         
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;feather&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> feather</h1>
-            <p>A fuzzy blog theme</p>
+            <p>一个模糊风格的博客主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;doomy.org">doomy</a>
@@ -171,47 +171,41 @@
 
     <hr>
     <h1 id="feather">feather</h1>
-<p>A lightweight blog theme for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> (and to my knowledge the first of now
-many themes created specifically for Zola).</p>
-<h1 id="live-demo-link"><a class="external" rel="noopener external" target="_blank" href="https://feather.doomy.org/">Live demo 🔗</a></h1>
-<p><a class="external" rel="noopener external" target="_blank" href="https://feather.doomy.org/"><img src="https://zola.docs.saop.cc/themes/feather/screenshot.png" alt="screenshot" /></a></p>
-<h2 id="features">Features</h2>
+<p>一个适用于 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> 的轻量级博客主题（据我所知，这是专门为 Zola 创建的首批主题之一）。</p>
+<h1 id="zai-xian-yan-shi-link"><a class="external" rel="noopener external" target="_blank" href="https://feather.doomy.org/">在线演示 🔗</a></h1>
+<p><a class="external" rel="noopener external" target="_blank" href="https://feather.doomy.org/"><img src="https://zola.docs.saop.cc/themes/feather/screenshot.png" alt="截图" /></a></p>
+<h2 id="te-xing">特性</h2>
 <ul>
-<li>Fully responsive</li>
-<li>Designed for legibility</li>
-<li>All JS is non-critical and fails gracefully</li>
+<li>完全响应式</li>
+<li>为易读性而设计</li>
+<li>所有 JS 都是非关键的，并能优雅降级</li>
 </ul>
-<h2 id="options">Options</h2>
-<p>Zola allows themes to <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">define <code>[extra]</code> variables</a>
-in the config. Here's a full list of theme variables with example values and comments.</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Regular variables you might want to set...</span></span>
-<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;My site&quot;</span><span style="color: #9399B2;font-style: italic;"> # Otherwise, this will read &quot;Home&quot; in the nav</span></span>
+<h2 id="xuan-xiang">选项</h2>
+<p>Zola 允许主题在配置中<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">定义 <code>[extra]</code> 变量</a>。这里是主题变量的完整列表，附带示例值和注释。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 你可能想要设置的常规变量...</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;My site&quot;</span><span style="color: #9399B2;font-style: italic;"> # 否则，这将在导航中显示为 &quot;Home&quot;</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.feather</span><span style="color: #9399B2;">]</span></span>
-<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Specify a specific theme to use, or use system prefs</span></span>
-<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If set, the theme switcher button is hidden</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 指定要使用的主题，或使用系统偏好</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 如果设置，主题切换按钮将被隐藏</span></span>
 <span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;light&quot;</span></span>
-<span class="giallo-l"><span>head</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;script&gt;&lt;/script&gt;&quot;</span><span style="color: #9399B2;font-style: italic;"> # add anything to the head</span></span>
-<span class="giallo-l"><span>hide_nav_image</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # hide the navigation image</span></span>
-<span class="giallo-l"><span>disqus_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;my-site-com&quot;</span><span style="color: #9399B2;font-style: italic;"> # site domain if you want disqus comments</span></span>
-<span class="giallo-l"><span>cusdis_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;12312-31231123-123123123&quot;</span><span style="color: #9399B2;font-style: italic;"> # cusdis id if you use their comment service</span></span>
-<span class="giallo-l"><span>social</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://mastodon.social/@doomy&quot;</span><span style="color: #9399B2;">,</span><span> display</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;@doomy@mastodon.social&quot;</span><span style="color: #9399B2;"> }</span><span style="color: #9399B2;font-style: italic;"> # generic social to show on pages</span></span>
-<span class="giallo-l"><span>timezone</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;America/New_York&quot;</span><span style="color: #9399B2;font-style: italic;"> # timezone to calculate article post times</span></span>
+<span class="giallo-l"><span>head</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;script&gt;&lt;/script&gt;&quot;</span><span style="color: #9399B2;font-style: italic;"> # 添加任何内容到 head</span></span>
+<span class="giallo-l"><span>hide_nav_image</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # 隐藏导航图片</span></span>
+<span class="giallo-l"><span>disqus_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;my-site-com&quot;</span><span style="color: #9399B2;font-style: italic;"> # 如果你想要 disqus 评论，填写站点域名</span></span>
+<span class="giallo-l"><span>cusdis_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;12312-31231123-123123123&quot;</span><span style="color: #9399B2;font-style: italic;"> # 如果你使用 cusdis 评论服务，填写 id</span></span>
+<span class="giallo-l"><span>social</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://mastodon.social/@doomy&quot;</span><span style="color: #9399B2;">,</span><span> display</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;@doomy@mastodon.social&quot;</span><span style="color: #9399B2;"> }</span><span style="color: #9399B2;font-style: italic;"> # 在页面上显示的通用社交信息</span></span>
+<span class="giallo-l"><span>timezone</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;America/New_York&quot;</span><span style="color: #9399B2;font-style: italic;"> # 用于计算文章发布时间的时区</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.feather.analytics</span><span style="color: #9399B2;">]</span></span>
-<span class="giallo-l"><span>goatcounter_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;mydomain-com&quot;</span><span style="color: #9399B2;font-style: italic;"> # privacy-focused analytics https://www.goatcounter.com</span></span></code></pre>
-<p>Per post, these options are available:</p>
+<span class="giallo-l"><span>goatcounter_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;mydomain-com&quot;</span><span style="color: #9399B2;font-style: italic;"> # 隐私优先的分析 https://www.goatcounter.com</span></span></code></pre>
+<p>对于每篇文章，这些选项可用：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.feather.opengraph</span><span style="color: #9399B2;">]</span></span>
-<span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;my_image.jpg&quot;</span><span style="color: #9399B2;font-style: italic;"> # Assumes asset colocation</span></span></code></pre><h1 id="usage">Usage</h1>
-<p>Using feather is easy.  Install <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> and follow
-<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">the guide for creating a site and using a theme</a>.  Then,
-add <code>theme = "feather"</code> to your <code>config.toml</code> file.</p>
-<p>If you intend to publish your site to GitHub Pages, please check out <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/deployment/github-pages/">this
-tutorial</a>.</p>
-<p>You can specify <code>tags</code> taxonomies .</p>
-<h1 id="developing-contributing">Developing &amp; Contributing</h1>
-<p>Because feather comes with example content, you can run the theme just like any Zola
-blog with <code>zola serve</code>.</p>
+<span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;my_image.jpg&quot;</span><span style="color: #9399B2;font-style: italic;"> # 假设资源共存</span></span></code></pre><h1 id="shi-yong">使用</h1>
+<p>使用 feather 很简单。安装 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> 并按照<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">创建站点和使用主题的指南</a>操作。然后，将 <code>theme = "feather"</code> 添加到你的 <code>config.toml</code> 文件中。</p>
+<p>如果你打算将你的站点发布到 GitHub Pages，请查看 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/deployment/github-pages/">这篇教程</a>。</p>
+<p>你可以指定 <code>tags</code> 分类法。</p>
+<h1 id="kai-fa-yu-gong-xian">开发与贡献</h1>
+<p>因为 feather 附带了示例内容，你可以像任何 Zola 博客一样使用 <code>zola serve</code> 运行该主题。</p>
 
 
     </div>

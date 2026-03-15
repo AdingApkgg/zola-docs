@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="particle | Zola">
-        <meta property="og:description" content="Particle theme for Zola">
+        <meta property="og:description" content="Zola 的 Particle 主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;particle&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="particle | Zola">
-        <meta name="twitter:description" content="Particle theme for Zola">
+        <meta name="twitter:description" content="Zola 的 Particle 主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "particle",
-            "description": "Particle theme for Zola",
+            "description": "Zola 的 Particle 主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;particle&#x2F;",
             "author": {
                 "@type": "Person",
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;particle&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> particle</h1>
-            <p>Particle theme for Zola</p>
+            <p>Zola 的 Particle 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;svavs.github.io&#x2F;">Silvano Sallese</a>
@@ -170,60 +170,60 @@
     </div>
 
     <hr>
-    <h1 id="port-for-zola-of-the-particle-jekyll-theme">Port for Zola of the Particle Jekyll theme</h1>
+    <h1 id="particle-jekyll-zhu-ti-de-zola-yi-zhi-ban">Particle Jekyll 主题的 Zola 移植版</h1>
 <p><img src="https://zola.docs.saop.cc/themes/particle/./screenshot.jpg" alt="" /></p>
-<p>This is a simple and minimalist template for Zola designed for developers that want to show of their portfolio.</p>
-<p>The Theme features:</p>
+<p>这是一个简单而极简的 Zola 模板，专为想要展示其作品集的开发者设计。</p>
+<p>主题特性：</p>
 <ul>
 <li>Gulp</li>
 <li>SASS</li>
 <li>Sweet Scroll</li>
 <li>Particle.js</li>
 <li>BrowserSync</li>
-<li>Font Awesome and Devicon icons</li>
+<li>Font Awesome 和 Devicon 图标</li>
 <li>Google Analytics</li>
-<li>Info Customization</li>
+<li>信息自定义</li>
 </ul>
-<h2 id="basic-setup">Basic Setup</h2>
+<h2 id="ji-ben-she-zhi">基本设置</h2>
 <ol>
-<li><a class="external" rel="noopener external" target="_blank" href="https://getzola.com">Install Zola</a></li>
-<li>Clone the particle theme: <code>git clone https://github.com/svavs/particle-zola.git</code></li>
-<li>Edit <code>config.toml</code> to personalize your site.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://getzola.com">安装 Zola</a></li>
+<li>克隆 particle 主题：<code>git clone https://github.com/svavs/particle-zola.git</code></li>
+<li>编辑 <code>config.toml</code> 以个性化你的站点。</li>
 </ol>
-<h2 id="site-and-user-settings">Site and User Settings</h2>
-<p>You have to fill some informations on the <code>[extra]</code> section of the <code>config.toml</code> to customize your site.</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span># Site settings</span></span>
+<h2 id="zhan-dian-he-yong-hu-she-zhi">站点和用户设置</h2>
+<p>你必须在 <code>config.toml</code> 的 <code>[extra]</code> 部分填写一些信息来自定义你的站点。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span># 站点设置</span></span>
 <span class="giallo-l"><span>description = &quot;A blog about lorem ipsum dolor sit amet&quot;</span></span>
 <span class="giallo-l"></span>
-<span class="giallo-l"><span># User settings</span></span>
+<span class="giallo-l"><span># 用户设置</span></span>
 <span class="giallo-l"><span>username = &quot;Lorem Ipsum&quot;</span></span>
 <span class="giallo-l"><span>user_description = &quot;Anon Developer at Lorem Ipsum Dolor&quot;</span></span>
 <span class="giallo-l"><span>user_title = &quot;Anon Developer&quot;</span></span>
 <span class="giallo-l"><span>email = &quot;my@email.com&quot;</span></span>
 <span class="giallo-l"><span>twitter_username = &quot;lorem_ipsum&quot;</span></span>
 <span class="giallo-l"><span>github_username = &quot;lorem_ipsum&quot;</span></span>
-<span class="giallo-l"><span>gplus_username = &quot;lorem_ipsum&quot;</span></span></code></pre><h2 id="color-and-particle-customization">Color and Particle Customization</h2>
+<span class="giallo-l"><span>gplus_username = &quot;lorem_ipsum&quot;</span></span></code></pre><h2 id="yan-se-he-li-zi-zi-ding-yi">颜色和粒子自定义</h2>
 <ul>
-<li>Color Customization
+<li>颜色自定义
 <ul>
-<li>Edit the sass variables (<code>_vars.scss</code>)</li>
+<li>编辑 sass 变量 (<code>_vars.scss</code>)</li>
 </ul>
 </li>
-<li>Particle Customization
+<li>粒子自定义
 <ul>
-<li>Edit the json data in particle function in app.js</li>
-<li>Refer to <a class="external" rel="noopener external" target="_blank" href="https://github.com/VincentGarreau/particles.js/">Particle.js</a> for help</li>
+<li>编辑 app.js 中的 particle 函数中的 json 数据</li>
+<li>参考 <a class="external" rel="noopener external" target="_blank" href="https://github.com/VincentGarreau/particles.js/">Particle.js</a> 获取帮助</li>
 </ul>
 </li>
 </ul>
-<p>To customize the project lists and the about sections, you need to edit the <code>templates/content.html</code> template file.
-In future versions will be provided a simpler way.</p>
-<h2 id="questions">Questions</h2>
-<p>Having any issues file a <a class="external" rel="noopener external" target="_blank" href="https://github.com/svavs/particle-zola/issues/new">GitHub Issue</a>.</p>
-<h2 id="license">License</h2>
-<p>This theme is free and open source software, distributed under the The MIT License. So feel free to use this Jekyll theme anyway you want.</p>
-<h2 id="credits">Credits</h2>
-<p>This theme was partially designed with the inspiration from these fine folks</p>
+<p>要自定义项目列表和关于部分，你需要编辑 <code>templates/content.html</code> 模板文件。
+在未来的版本中将提供更简单的方法。</p>
+<h2 id="wen-ti">问题</h2>
+<p>有任何问题，请提交 <a class="external" rel="noopener external" target="_blank" href="https://github.com/svavs/particle-zola/issues/new">GitHub Issue</a>。</p>
+<h2 id="xu-ke-zheng">许可证</h2>
+<p>此主题是免费和开源软件，根据 MIT 许可证分发。所以随意以任何你想要的方式使用此 Jekyll 主题。</p>
+<h2 id="zhi-xie">致谢</h2>
+<p>此主题的部分设计灵感来自这些优秀的人</p>
 <ul>
 <li><a class="external" rel="noopener external" target="_blank" href="https://github.com/nrandecker/particle">Nathan Randecker</a></li>
 <li><a class="external" rel="noopener external" target="_blank" href="https://github.com/willianjusten/will-jekyll-template">Willian Justen</a></li>

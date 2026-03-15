@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="Course | Zola">
-        <meta property="og:description" content="A zola theme designed for online courses or tutorials">
+        <meta property="og:description" content="一个专为在线课程或教程设计的 Zola 主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-course&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="Course | Zola">
-        <meta name="twitter:description" content="A zola theme designed for online courses or tutorials">
+        <meta name="twitter:description" content="一个专为在线课程或教程设计的 Zola 主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "Course",
-            "description": "A zola theme designed for online courses or tutorials",
+            "description": "一个专为在线课程或教程设计的 Zola 主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-course&#x2F;",
             "author": {
                 "@type": "Person",
@@ -121,9 +121,9 @@
                         
                             
                                 
-                                    
-                                
                             
+                                
+                                    
                                 
                             
                         
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-course&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Course</h1>
-            <p>A zola theme designed for online courses or tutorials</p>
+            <p>一个专为在线课程或教程设计的 Zola 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;ana.gelez.xyz">Ana Gelez</a>
@@ -171,28 +171,25 @@
 
     <hr>
     <h1 id="zola-theme-course">Zola Theme : Course</h1>
-<p>This theme allows you to publish only courses/tutorials structured in
-parts and subparts, using Zola.</p>
-<p><img src="https://zola.docs.saop.cc/themes/zola-theme-course/screenshot.png" alt="Homepage of the demo" /></p>
-<p><img src="https://zola.docs.saop.cc/themes/zola-theme-course/screenshot2.png" alt="Page of a course" /></p>
-<p>It automatically links pages of the course with the next and previous ones
-for easy navigation. There is also a navigation bar at the top of each page
-to easily navigate the whole tutorial, and for the reader to never be lost.</p>
-<p>Each page can have an illustration.</p>
-<p>It lets you customize some parts of the site, like the color palette.</p>
-<p>It also features a light/dark mode switcher.</p>
-<p>It also has some SEO features.</p>
-<p>It was made for french courses, so a few parts of the interface may be in french.
-You can easily adapt it to your language by editing the files in <code>themes/zola-theme-course/templates/</code>.</p>
-<h2 id="usage">Usage</h2>
-<p>Create your Zola site, and import this theme:</p>
+<p>此主题允许你使用 Zola 发布结构化为部分和子部分的课程/教程。</p>
+<p><img src="https://zola.docs.saop.cc/themes/zola-theme-course/screenshot.png" alt="演示首页" /></p>
+<p><img src="https://zola.docs.saop.cc/themes/zola-theme-course/screenshot2.png" alt="课程页面" /></p>
+<p>它会自动链接课程的页面与下一页和上一页，方便导航。每页顶部还有一个导航栏，可以轻松浏览整个教程，让读者永远不会迷路。</p>
+<p>每个页面都可以有插图。</p>
+<p>它允许你自定义站点的某些部分，如调色板。</p>
+<p>它还具有亮色/暗色模式切换器。</p>
+<p>它还有一些 SEO 功能。</p>
+<p>它是为法语课程制作的，所以界面的某些部分可能是法语的。
+你可以通过编辑 <code>themes/zola-theme-course/templates/</code> 中的文件轻松将其调整为你的语言。</p>
+<h2 id="shi-yong">使用</h2>
+<p>创建你的 Zola 站点，并导入此主题：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init NAME</span></span>
 <span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> NAME/themes</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/elegaanz/zola-theme-course.git</span></span>
 <span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> ..</span></span></code></pre>
-<p>Then update your <code>config.toml</code> with this line:</p>
+<p>然后用这一行更新你的 <code>config.toml</code>：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;zola-theme-course&quot;</span></span></code></pre>
-<p>You can also add these lines to customize how the theme behaves:</p>
+<p>你还可以添加这些行来自定义主题的行为：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>site_name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;My course&quot;</span></span>
 <span class="giallo-l"><span>icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;image.png&quot;</span></span>
@@ -201,24 +198,23 @@ You can easily adapt it to your language by editing the files in <code>themes/zo
 <span class="giallo-l"><span>default_illus</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;illus.png&quot;</span></span>
 <span class="giallo-l"><span>primary_color</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#FFFFFF&quot;</span></span>
 <span class="giallo-l"><span>accent_color</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#FFFFFF&quot;</span></span>
-<span class="giallo-l"><span>source_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/me/my-course&quot;</span></span></code></pre><h3 id="file-structure">File structure</h3>
-<p>For your course to be displayed correctly, it needs to follow a specific structure.</p>
+<span class="giallo-l"><span>source_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/me/my-course&quot;</span></span></code></pre><h3 id="wen-jian-jie-gou">文件结构</h3>
+<p>为了正确显示你的课程，它需要遵循特定的结构。</p>
 <ul>
-<li><code>content/_index.md</code> is the text displayed on the homepage</li>
-<li>each part should have its own folder, with an <code>_index.md</code></li>
-<li>each subpart should have its own markdown file (which can be an <code>index.md</code> in a subfolder)</li>
-<li>all <code>_index.md</code> files should have <code>sort_by = "weight"</code> in their frontmatter, and you can then
-order parts and subparts using the <code>weight</code> option.</li>
+<li><code>content/_index.md</code> 是显示在首页的文本</li>
+<li>每个部分应该有自己的文件夹，带有一个 <code>_index.md</code></li>
+<li>每个子部分应该有自己的 markdown 文件（可以是子文件夹中的 <code>index.md</code>）</li>
+<li>所有 <code>_index.md</code> 文件都应该在 Front Matter 中有 <code>sort_by = "weight"</code>，然后你可以使用 <code>weight</code> 选项对部分和子部分进行排序。</li>
 </ul>
-<p>With this theme, pages can also have extra options:</p>
+<p>使用此主题，页面还可以有额外选项：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
-<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Don&#39;t display the page title, useful for the homepage</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 不显示页面标题，对首页很有用</span></span>
 <span class="giallo-l"><span>no_title</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
-<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The name of the image to use as a banner</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 用作横幅的图片名称</span></span>
 <span class="giallo-l"><span>illus</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;illus.jpg&quot;</span></span>
-<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Adds JSON-LD metadata on this page, useful for the homepage</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 在此页面上添加 JSON-LD 元数据，对首页很有用</span></span>
 <span class="giallo-l"><span>jsonld</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
-<p>The standard <code>title</code> and <code>description</code> fields are also taken into account.</p>
+<p>标准的 <code>title</code> 和 <code>description</code> 字段也会被考虑在内。</p>
 
 
     </div>

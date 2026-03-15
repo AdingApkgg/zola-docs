@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="Zulma | Zola">
-        <meta property="og:description" content="A zola theme based off bulma.css">
+        <meta property="og:description" content="一个基于 bulma.css 的 Zola 主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zulma&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="Zulma | Zola">
-        <meta name="twitter:description" content="A zola theme based off bulma.css">
+        <meta name="twitter:description" content="一个基于 bulma.css 的 Zola 主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "Zulma",
-            "description": "A zola theme based off bulma.css",
+            "description": "一个基于 bulma.css 的 Zola 主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zulma&#x2F;",
             "author": {
                 "@type": "Person",
@@ -121,9 +121,9 @@
                         
                             
                                 
-                            
-                                
                                     
+                                
+                            
                                 
                             
                         
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zulma&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Zulma</h1>
-            <p>A zola theme based off bulma.css</p>
+            <p>一个基于 bulma.css 的 Zola 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               Worble
@@ -171,109 +171,109 @@
 
     <hr>
     <h1 id="zulma">Zulma</h1>
-<p>A Bulma theme for Zola. See a live preview <a class="external" rel="noopener external" target="_blank" href="https://festive-morse-47d46c.netlify.com/">here</a></p>
-<p><img src="/screenshot.png" alt="Zulma Screenshot" /></p>
-<h2 id="contents">Contents</h2>
+<p>一个 Bulma 的 Zola 主题。点击 <a class="external" rel="noopener external" target="_blank" href="https://festive-morse-47d46c.netlify.com/">这里</a> 查看在线预览。</p>
+<p><img src="/screenshot.png" alt="Zulma 截图" /></p>
+<h2 id="mu-lu">目录</h2>
 <ul>
 <li>Zulma
 <ul>
-<li>Contents</li>
-<li>Installation</li>
+<li>内容</li>
+<li>安装</li>
 <li>Javascript
 <ul>
-<li>Sources</li>
-<li>Building</li>
+<li>来源</li>
+<li>构建</li>
 </ul>
 </li>
-<li>Options
+<li>选项
 <ul>
-<li>Pagination</li>
-<li>Taxonomies</li>
-<li>Menu Links</li>
-<li>Brand</li>
-<li>Search</li>
-<li>Title</li>
-<li>Theming</li>
+<li>分页</li>
+<li>分类法</li>
+<li>菜单链接</li>
+<li>品牌</li>
+<li>搜索</li>
+<li>标题</li>
+<li>主题化</li>
 </ul>
 </li>
-<li>Original</li>
-<li>Known Bugs</li>
+<li>原作</li>
+<li>已知 Bug</li>
 </ul>
 </li>
 </ul>
-<h2 id="installation">Installation</h2>
-<p>First download this theme to your <code>themes</code> directory:</p>
+<h2 id="an-zhuang">安装</h2>
+<p>首先将此主题下载到你的 <code>themes</code> 目录：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/Worble/Zulma</span></span></code></pre>
-<p>and then enable it in your <code>config.toml</code>:</p>
+<p>然后在你的 <code>config.toml</code> 中启用它：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Zulma&quot;</span></span></code></pre>
-<p>That's it! No more configuration should be required, however it might look a little basic. Head to the Options section to see what you can set for more customizability.</p>
-<h2 id="javascript">Javascript</h2>
-<h3 id="sources">Sources</h3>
-<p>All the source javascript files live in <code>javascript/src</code>. Following is a list of the javascript files, their purpose, and their sources. All files are prefixed with <code>zulma_</code> to avoid any name clashes.</p>
+<p>就是这样！不需要更多的配置，但它可能看起来有点基础。前往选项部分查看你可以设置什么以获得更多自定义性。</p>
+<h2 id="javascript">JavaScript</h2>
+<h3 id="lai-yuan">来源</h3>
+<p>所有源 javascript 文件都在 <code>javascript/src</code> 中。以下是 javascript 文件及其用途和来源的列表。所有文件都以 <code>zulma_</code> 为前缀，以避免名称冲突。</p>
 <ul>
-<li><code>zulma_search.js</code> - Used when a user types into the search box on the navbar (if enabled). Taken from <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/blob/6100a43/docs/static/search.js">Zola's site</a>.</li>
-<li><code>zulma_navbar.js</code> - Used for the mobile navbar toggle. Taken from the <a class="external" rel="noopener external" target="_blank" href="https://github.com/dansup/bulma-templates/blob/6263eb7/js/bulma.js">bulma template</a> at Bulmaswatch</li>
-<li><code>zulma_switchcss.js</code> - Used for swapping themes (if enabled).</li>
+<li><code>zulma_search.js</code> - 当用户在导航栏上的搜索框中输入时使用（如果启用）。取自 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/blob/6100a43/docs/static/search.js">Zola 的站点</a>。</li>
+<li><code>zulma_navbar.js</code> - 用于移动端导航栏切换。取自 Bulmaswatch 的 <a class="external" rel="noopener external" target="_blank" href="https://github.com/dansup/bulma-templates/blob/6263eb7/js/bulma.js">bulma 模板</a></li>
+<li><code>zulma_switchcss.js</code> - 用于切换主题（如果启用）。</li>
 </ul>
-<h3 id="building">Building</h3>
-<p>The JavaScript files are transpiled by babel, minified by webpack, sourcemaps are generated and then everything placed in <code>static/js</code>. The repo already contains the transpiled and minified files along with their corrosponding sourcemaps so you don't need to do anything to use these. If you would prefer to build it yourself, feel free to inspect the js files and then run the build process (please ensure that you have <a class="external" rel="noopener external" target="_blank" href="https://nodejs.org/en/">node, npm</a> and optionally <a class="external" rel="noopener external" target="_blank" href="https://yarnpkg.com/lang/en/">yarn</a> installed):</p>
+<h3 id="gou-jian">构建</h3>
+<p>JavaScript 文件由 babel 转译，由 webpack 压缩，生成 sourcemap，然后全部放置在 <code>static/js</code> 中。仓库已经包含转译和压缩后的文件及其对应的 sourcemap，因此你无需做任何事情即可使用这些文件。如果你更喜欢自己构建它，请随意检查 js 文件，然后运行构建过程（请确保你已安装 <a class="external" rel="noopener external" target="_blank" href="https://nodejs.org/en/">node, npm</a> 和可选的 <a class="external" rel="noopener external" target="_blank" href="https://yarnpkg.com/lang/en/">yarn</a>）：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> javascript</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">yarn</span></span>
-<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">yarn</span><span style="color: #A6E3A1;"> webpack</span></span></code></pre><h3 id="github-warnings">Github warnings</h3>
-<p>You may get warnings about vulnerabilities from the JavaScript dependencies. These shouldn't be an issue since we only have dev-dependencies and none of the them reach the end-user, but if you don't want to run the buld process yourself, and to stop Github pestering you about security warnings, feel free to delete the top level <code>javascript</code> folder when committing.</p>
-<h2 id="options">Options</h2>
-<h3 id="pagination">Pagination</h3>
-<p>Zulma makes no assumptions about your project. You can freely paginate your content folder or your taxonomies and it will adapt accordingly. For example, editing or creating section (<code>content/_index.md</code>) and setting pagination:</p>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">yarn</span><span style="color: #A6E3A1;"> webpack</span></span></code></pre><h3 id="github-jing-gao">Github 警告</h3>
+<p>你可能会收到关于 JavaScript 依赖项漏洞的警告。这不应该是一个问题，因为我们只有开发依赖项，而且它们都不会到达最终用户，但是如果你不想自己运行构建过程，并且想阻止 Github 骚扰你的安全警告，请随意在提交时删除顶级 <code>javascript</code> 文件夹。</p>
+<h2 id="xuan-xiang">选项</h2>
+<h3 id="fen-ye">分页</h3>
+<p>Zulma 对你的项目不做任何假设。你可以自由地分页你的内容文件夹或你的分类法，它会相应地适应。例如，编辑或创建版块（<code>content/_index.md</code>）并设置分页：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 5</span></span></code></pre>
-<p>This is handled internally, no input is needed from the user.</p>
-<h3 id="taxonomies">Taxonomies</h3>
-<p>Zulma has 3 taxonomies already set internally: <code>tags</code>, <code>cateogories</code> and <code>authors</code>. Setting of any these three in your config.toml like so:</p>
+<p>这是在内部处理的，不需要用户输入。</p>
+<h3 id="fen-lei-fa">分类法</h3>
+<p>Zulma 内部已经设置了 3 个分类法：<code>tags</code>, <code>cateogories</code> 和 <code>authors</code>。像这样在你的 config.toml 中设置这三个中的任何一个：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;categories&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 5</span><span style="color: #9399B2;">,</span><span> rss</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;authors&quot;</span><span style="color: #9399B2;">,</span><span> rss</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>and setting any of them in a content file:</p>
+<p>并在内容文件中设置它们中的任何一个：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>categories</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;Hello world&quot;</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;rust&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;ssg&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;other&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;test&quot;</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;Joe Bloggs&quot;</span><span style="color: #9399B2;">]</span></span></code></pre>
-<p>will cause that metadata to appear on the post, either on the header for the name, or at the bottom for tags and categories, and enable those pages.</p>
-<p>Making your own taxonomies is also designed to be as easy as possible. First, add it to your cargo.toml</p>
+<p>这将导致该元数据显示在文章上，要么在标题上显示名称，要么在底部显示标签和分类，并启用这些页面。</p>
+<p>制作你自己的分类法也被设计得尽可能简单。首先，将其添加到你的 cargo.toml</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;links&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>and make the corrosponding folder in your templates, in this case: <code>templates\links</code>, and the necessary files: <code>templates\links\list.html</code> and <code>templates\links\single.html</code></p>
-<p>And then for each, just inherit the taxonomy master page for that page. Before rendering the content block, you may optionally set a variable called <code>title</code> for the hero to display on that page, otherwise it will use the default for that taxonomy.</p>
-<p>In <code>single.html</code>:</p>
+<p>并在你的 templates 中制作相应的文件夹，在这种情况下：<code>templates\links</code>，以及必要的文件：<code>templates\links\list.html</code> 和 <code>templates\links\single.html</code></p>
+<p>然后对于每一个，只需继承该页面的分类法主页面。在渲染内容块之前，你可以选择设置一个名为 <code>title</code> 的变量以在该页面上显示 hero，否则它将使用该分类法的默认值。</p>
+<p>在 <code>single.html</code> 中：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #94E2D5;">/*</span><span> extends</span><span style="color: #A6E3A1;"> &quot;Zulma/templates/taxonomy_single.html&quot;</span><span style="color: #94E2D5;"> */</span><span>%}</span></span></code></pre>
-<p>In <code>list.html</code>:</p>
+<p>在 <code>list.html</code> 中：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #94E2D5;">/*</span><span> extends</span><span style="color: #A6E3A1;"> &quot;Zulma/templates/taxonomy_list.html&quot;</span><span style="color: #94E2D5;"> */</span><span>%}</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>{%</span><span style="color: #94E2D5;">/*</span><span style="color: #CBA6F7;"> block</span><span> content</span><span style="color: #94E2D5;"> */</span><span>%}</span></span>
 <span class="giallo-l"><span>{%</span><span style="color: #94E2D5;">/*</span><span> set title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;These are all the Links&quot;</span><span style="color: #94E2D5;">*/</span><span>%}</span></span>
 <span class="giallo-l"><span>{{ super</span><span style="color: #9399B2;">()</span><span> }}</span></span>
-<span class="giallo-l"><span>{%</span><span style="color: #94E2D5;">/*</span><span> endblock content</span><span style="color: #94E2D5;"> */</span><span>%}</span></span></code></pre><h3 id="menu-links">Menu Links</h3>
-<p>In extra, setting <code>zulma_menu</code> with a list of items will cause them to render to the top menu bar. It has two paramers, <code>url</code> and <code>name</code>. These <em>must</em> be set. If you put $BASE_URL in a url, it will automatically be replaced by the actual site URL. This is the easiest way to allow users to navigate to your taxonomies:</p>
+<span class="giallo-l"><span>{%</span><span style="color: #94E2D5;">/*</span><span> endblock content</span><span style="color: #94E2D5;"> */</span><span>%}</span></span></code></pre><h3 id="cai-dan-lian-jie">菜单链接</h3>
+<p>在 extra 中，设置 <code>zulma_menu</code> 为一个项目列表将导致它们渲染到顶部菜单栏。它有两个参数，<code>url</code> 和 <code>name</code>。这些 <em>必须</em> 设置。如果你在 url 中放入 $BASE_URL，它会自动被替换为实际的站点 URL。这是允许用户导航到你的分类法的最简单方法：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>zulma_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/categories&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Categories&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/tags&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/authors&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Authors&quot;</span><span style="color: #9399B2;">}</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>On mobile, a dropdown burger is rendered using javascript. If the page detects javascript is disabled on the clients machine, it will gracefully degrade to always showing the menu (which isn't pretty, but keeps the site functional).</p>
-<h3 id="brand">Brand</h3>
-<p>In extra, setting <code>zulma_brand</code> will cause a brand image to display in the upper left of the top menu bar. This link will always lead back to the homepage. It has two parameters, <code>image</code>(optional) and <code>text</code>(required). <code>image</code> will set the brand to an image at the location specified, and <code>text</code> will provide the alt text for this image. If you put $BASE_URL in a url, it will automatically be replaced by the actual site URL. If <code>image</code> is not set, the brand will simply be the text specified.</p>
+<p>在移动设备上，使用 javascript 渲染下拉汉堡菜单。如果页面检测到客户端机器禁用了 javascript，它将优雅地降级为始终显示菜单（这不漂亮，但保持了站点的功能）。</p>
+<h3 id="pin-pai">品牌</h3>
+<p>在 extra 中，设置 <code>zulma_brand</code> 将导致在顶部菜单栏的左上角显示品牌图片。此链接将始终导回首页。它有两个参数，<code>image</code>（可选）和 <code>text</code>（必需）。<code>image</code> 将品牌设置为指定位置的图片，<code>text</code> 将为此图片提供 alt 文本。如果你在 url 中放入 $BASE_URL，它会自动被替换为实际的站点 URL。如果未设置 <code>image</code>，品牌将仅为指定的文本。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
-<span class="giallo-l"><span>zulma_brand</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/images/bulma.png&quot;</span><span style="color: #9399B2;">,</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span><span style="color: #9399B2;">}</span></span></code></pre><h3 id="search">Search</h3>
-<p>Zulma provides search built in. So long as <code>build_search_index</code> is set to <code>true</code> in <code>config.toml</code> then a search input will appear on the top navigation bar. This requires javascript to be enabled to function; if the page detects javascript is disabled on the clients machine, it will hide itself.</p>
-<p>The search is shamefully stolen from <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/blob/master/docs/static/search.js">Zola's site</a>. Thanks, Vincent!</p>
-<h3 id="title">Title</h3>
-<p>In extra, setting <code>zulma_title</code> will set a hero banner on the index page to appear with that title inside.</p>
+<span class="giallo-l"><span>zulma_brand</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/images/bulma.png&quot;</span><span style="color: #9399B2;">,</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span><span style="color: #9399B2;">}</span></span></code></pre><h3 id="sou-suo">搜索</h3>
+<p>Zulma 内置搜索功能。只要在 <code>config.toml</code> 中将 <code>build_search_index</code> 设置为 <code>true</code>，顶部导航栏上就会出现一个搜索输入框。这需要启用 javascript 才能通过功能；如果页面检测到客户端机器禁用了 javascript，它将隐藏自己。</p>
+<p>搜索是无耻地从 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/blob/master/docs/static/search.js">Zola 的站点</a> 窃取的。谢谢，Vincent！</p>
+<h3 id="biao-ti">标题</h3>
+<p>在 extra 中，设置 <code>zulma_title</code> 将在索引页上设置一个 hero 横幅，并在其中显示该标题。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>zulma_title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Blog&quot;</span></span></code></pre>
-<p>If you want to get fancy with it, you can set an image behind using sass like so:</p>
+<p>如果你想搞点花样，你可以像这样使用 sass 在后面设置一张图片：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="scss"><span class="giallo-l"><span style="color: #9399B2;">.</span><span style="color: #F9E2AF;">index</span><span style="color: #9399B2;"> .</span><span style="color: #F9E2AF;">hero-body</span><span style="color: #9399B2;"> {</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  background-image</span><span style="color: #94E2D5;">:</span><span style="color: #89B4FA;font-style: italic;"> url</span><span style="color: #9399B2;">(</span><span style="color: #A6E3A1;">https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Plum_trees_Kitano_Tenmangu.jpg/1200px-Plum_trees_Kitano_Tenmangu.jpg</span><span style="color: #9399B2;">);</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  background-position</span><span style="color: #94E2D5;">:</span><span> center</span><span style="color: #9399B2;">;</span></span>
@@ -282,9 +282,9 @@
 <span class="giallo-l"><span style="color: #89B4FA;">  background-color</span><span style="color: #94E2D5;">:</span><span style="color: #89B4FA;font-style: italic;"> rgba</span><span style="color: #9399B2;">(</span><span style="color: #FAB387;">0</span><span style="color: #9399B2;">,</span><span style="color: #FAB387;"> 0</span><span style="color: #9399B2;">,</span><span style="color: #FAB387;"> 0</span><span style="color: #9399B2;">,</span><span style="color: #FAB387;"> 0.6</span><span style="color: #9399B2;">);</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  background-blend-mode</span><span style="color: #94E2D5;">:</span><span> overlay</span><span style="color: #9399B2;">;</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre>
-<p>This will set the image behind the hero, and darken it so the main text can still be easily read.</p>
-<h3 id="theming">Theming</h3>
-<p>In extra, setting <code>zulma_theme</code> to a valid value will change the current colour scheme to that one. All themes were taken from <a class="external" rel="noopener external" target="_blank" href="https://jenil.github.io/bulmaswatch/">Bulmaswatch</a>. Valid theme values are:</p>
+<p>这将在 hero 后面设置图片，并将其变暗，以便主要文本仍然易于阅读。</p>
+<h3 id="zhu-ti-hua">主题化</h3>
+<p>在 extra 中，将 <code>zulma_theme</code> 设置为有效值会将当前的配色方案更改为该值。所有主题均取自 <a class="external" rel="noopener external" target="_blank" href="https://jenil.github.io/bulmaswatch/">Bulmaswatch</a>。有效的主题值为：</p>
 <ul>
 <li>default</li>
 <li>darkly</li>
@@ -296,17 +296,17 @@
 <li>solar</li>
 <li>superhero</li>
 </ul>
-<p>All valid themes can also be found under the <code>extra.zulma_themes</code> variable in the <code>theme.toml</code>. Choosing no theme will set default as the theme. Setting an invalid theme value will cause the site to render improperly.</p>
+<p>所有有效主题也可以在 <code>theme.toml</code> 中的 <code>extra.zulma_themes</code> 变量下找到。选择无主题将设置 default 为主题。设置无效的主题值将导致站点渲染不正确。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>zulma_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;darkly&quot;</span></span></code></pre>
-<p>Additionally, in extra, you can also set the <code>zulma_allow_theme_selection</code> boolean. Setting this to <code>true</code> will allow a menu in the footer to allow users to select their own theme. This option will store their theme choice in their localstorage and apply it on every page, assuming <code>zulma_allow_theme_selection</code> is still true. This requires javascript to be enabled to function; if the page detects javascript is disabled on the clients machine, it will hide itself.</p>
-<p>Each theme contains the entirety of Bulma, and will weigh in at ~180kb. If you're running on a server severely limited on space, then I'd recommend you delete each theme you're not using, either from the source or from <code>/public</code>. Obviously, doing this will cause <code>zulma_allow_theme_selection</code> to work improperly, so make sure you either override <code>extra.zulma_themes</code> in <code>config.toml</code> to only show themes you have left or to not enable this option at all.</p>
+<p>此外，在 extra 中，你还可以设置 <code>zulma_allow_theme_selection</code> 布尔值。将其设置为 <code>true</code> 将允许页脚中的菜单允许用户选择他们自己的主题。此选项将把他们的主题选择存储在本地存储中，并将其应用到每个页面，假设 <code>zulma_allow_theme_selection</code> 仍然为真。这需要启用 javascript 才能通过功能；如果页面检测到客户端机器禁用了 javascript，它将隐藏自己。</p>
+<p>每个主题都包含整个 Bulma，大约 180kb。如果你在空间严重受限的服务器上运行，那么我建议你删除你不使用的每个主题，无论是从源还是从 <code>/public</code>。显然，这样做会导致 <code>zulma_allow_theme_selection</code> 工作不正常，所以确保你要么在 <code>config.toml</code> 中覆盖 <code>extra.zulma_themes</code> 以仅显示你剩下的主题，要么根本不启用此选项。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
-<span class="giallo-l"><span>zulma_allow_theme_selection</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h2 id="original">Original</h2>
-<p>This template is based on the <a class="external" rel="noopener external" target="_blank" href="https://bulmatemplates.github.io/bulma-templates/templates/blog.html">blog template</a> over at <a class="external" rel="noopener external" target="_blank" href="https://bulmatemplates.github.io/bulma-templates/">Free Bulma Templates</a>. All themes were taken from <a class="external" rel="noopener external" target="_blank" href="https://jenil.github.io/bulmaswatch/">Bulmaswatch</a>. The code behind from originally adapted from the <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/after-dark/blob/master/README.md">after-dark</a> zola template.</p>
-<h2 id="known-bugs">Known Bugs</h2>
+<span class="giallo-l"><span>zulma_allow_theme_selection</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h2 id="yuan-zuo">原作</h2>
+<p>此模板基于 <a class="external" rel="noopener external" target="_blank" href="https://bulmatemplates.github.io/bulma-templates/">Free Bulma Templates</a> 上的 <a class="external" rel="noopener external" target="_blank" href="https://bulmatemplates.github.io/bulma-templates/templates/blog.html">博客模板</a>。所有主题均取自 <a class="external" rel="noopener external" target="_blank" href="https://jenil.github.io/bulmaswatch/">Bulmaswatch</a>。背后的代码最初改编自 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/after-dark/blob/master/README.md">after-dark</a> zola 模板。</p>
+<h2 id="yi-zhi-bug">已知 Bug</h2>
 <ul>
-<li>If user theme swapping is enabled and the user selects a theme different to the default, a slight delay will be introduced in page rendering as the css gets swapped out and in by the javascript. This is particularly pronounced when using the dark theme, since it will flash white before going back to black. This is better than the alternative flashes of unstyled content or old theme, but still annoying. I don't know any way around this, but with browser caching it should be fast enough to not cause serious issues.</li>
+<li>如果启用了用户主题切换并且用户选择了不同于默认的主题，页面渲染将会引入轻微的延迟，因为 css 会通过 javascript 被换出和换入。当使用暗色主题时这一点尤为明显，因为它会在回到黑色之前闪烁白色。这比未样式化内容或旧主题的替代闪烁要好，但仍然很烦人。我不知道有什么办法可以解决这个问题，但有了浏览器缓存，它应该足够快，不会造成严重问题。</li>
 </ul>
 
 

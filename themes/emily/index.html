@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="emily_zola_theme | Zola">
-        <meta property="og:description" content="a KISS theme for Zola">
+        <meta property="og:description" content="一个适用于 Zola 的 KISS 主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;emily&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="emily_zola_theme | Zola">
-        <meta name="twitter:description" content="a KISS theme for Zola">
+        <meta name="twitter:description" content="一个适用于 Zola 的 KISS 主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "emily_zola_theme",
-            "description": "a KISS theme for Zola",
+            "description": "一个适用于 Zola 的 KISS 主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;emily&#x2F;",
             "author": {
                 "@type": "Person",
@@ -121,9 +121,9 @@
                         
                             
                                 
-                                    
-                                
                             
+                                
+                                    
                                 
                             
                         
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;emily&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> emily_zola_theme</h1>
-            <p>a KISS theme for Zola</p>
+            <p>一个适用于 Zola 的 KISS 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;github.com&#x2F;kyoheiu">Kyohei Uto</a>
@@ -172,33 +172,33 @@
     <hr>
     <h1 id="emily-zola-theme">emily_zola_theme</h1>
 <p><img src="/static/images/ss01.png" alt="screenshot01" /></p>
-<p>A KISS theme for Zola (static site generator written in Rust).</p>
-<p>Features:</p>
+<p>一个适用于 Zola（用 Rust 编写的静态站点生成器）的 KISS 主题。</p>
+<p>特性：</p>
 <ul>
-<li>simple &amp; clean</li>
-<li>mobile-friendly</li>
-<li>MathJax support</li>
+<li>简单且干净</li>
+<li>移动端友好</li>
+<li>MathJax 支持</li>
 </ul>
-<p>Demo site is <a class="external" rel="noopener external" target="_blank" href="https://emily-zola-theme.netlify.app/">here</a>.</p>
-<h2 id="usage">Usage</h2>
+<p>演示站点在 <a class="external" rel="noopener external" target="_blank" href="https://emily-zola-theme.netlify.app/">这里</a>。</p>
+<h2 id="shi-yong">使用</h2>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>cd YOUR_SITE_DIRECTORY/themes</span></span>
 <span class="giallo-l"><span>git clone https://github.com/kyoheiu/emily_zola_theme.git</span></span></code></pre>
-<p>and set the theme-name in <code>config.toml</code> to <code>emily_zola_theme</code>.</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>theme = &quot;emily_zola_theme&quot;</span></span></code></pre><h2 id="example-articles">example articles</h2>
-<p>In <code>YOUR_SITE_DIRECTORY/themes/emily_zola_theme/content</code>.</p>
-<h2 id="mathjax-support">MathJax support</h2>
-<p>To use MathJax, add the following lines to the front matter in <code>.md</code> file. <code>[extra]</code> is mandatory:</p>
+<p>并在 <code>config.toml</code> 中将主题名称设置为 <code>emily_zola_theme</code>。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>theme = &quot;emily_zola_theme&quot;</span></span></code></pre><h2 id="shi-li-wen-zhang">示例文章</h2>
+<p>在 <code>YOUR_SITE_DIRECTORY/themes/emily_zola_theme/content</code> 中。</p>
+<h2 id="mathjax-zhi-chi">MathJax 支持</h2>
+<p>要使用 MathJax，请在 <code>.md</code> 文件的 Front Matter 中添加以下行。<code>[extra]</code> 是强制性的：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>[extra]</span></span>
-<span class="giallo-l"><span>math = true</span></span></code></pre><h2 id="how-to-customize">How to customize</h2>
-<p>In addition to default values, you can customize following parts easily:</p>
+<span class="giallo-l"><span>math = true</span></span></code></pre><h2 id="ru-he-zi-ding-yi">如何自定义</h2>
+<p>除了默认值外，你还可以轻松自定义以下部分：</p>
 <ul>
-<li>author name (appears in footer)</li>
-<li>header icon (appears in header)</li>
+<li>作者姓名（出现在页脚）</li>
+<li>头部图标（出现在页眉）</li>
 <li>favicon</li>
-<li>header icon size (default width: 70px)</li>
-<li>number of posts in <code>index.html</code> (default 5)</li>
+<li>头部图标大小（默认宽度：70px）</li>
+<li><code>index.html</code> 中的文章数（默认 5）</li>
 </ul>
-<p>Set your own in <code>themes/emily_zola_theme/theme.toml</code>, or to overwrite, copy <code>[extra]</code> block, paste it into your <code>config.toml</code> and edit.</p>
+<p>在 <code>themes/emily_zola_theme/theme.toml</code> 中设置你自己的，或者要覆盖，复制 <code>[extra]</code> 块，将其粘贴到你的 <code>config.toml</code> 中并进行编辑。</p>
 
 
     </div>

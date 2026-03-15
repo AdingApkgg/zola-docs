@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="zerm | Zola">
-        <meta property="og:description" content="A minimalistic and dark theme based on Radek Kozieł&#x27;s theme for Hugo">
+        <meta property="og:description" content="一个基于 Radek Kozieł Hugo 主题的极简暗色主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zerm&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="zerm | Zola">
-        <meta name="twitter:description" content="A minimalistic and dark theme based on Radek Kozieł&#x27;s theme for Hugo">
+        <meta name="twitter:description" content="一个基于 Radek Kozieł Hugo 主题的极简暗色主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "zerm",
-            "description": "A minimalistic and dark theme based on Radek Kozieł&#x27;s theme for Hugo",
+            "description": "一个基于 Radek Kozieł Hugo 主题的极简暗色主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zerm&#x2F;",
             "author": {
                 "@type": "Person",
@@ -121,9 +121,9 @@
                         
                             
                                 
-                                    
-                                
                             
+                                
+                                    
                                 
                             
                         
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zerm&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> zerm</h1>
-            <p>A minimalistic and dark theme based on Radek Kozieł&#x27;s theme for Hugo</p>
+            <p>一个基于 Radek Kozieł Hugo 主题的极简暗色主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;github.com&#x2F;ejmg">elias julian marko garcia</a>
@@ -171,51 +171,39 @@
 
     <hr>
     <h1 id="zerm">zerm</h1>
-<p>a minimalist and dark theme for <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a>.</p>
-<p><img src="../master/zerm-preview.png?raw=true" alt="Screenshot" /></p>
-<p><a class="external" rel="noopener external" target="_blank" href="https://zerm.ejmg.now.sh/"><strong>Live Preview!</strong></a></p>
-<p>Largely a port of Radek Kozieł's <a class="external" rel="noopener external" target="_blank" href="https://github.com/panr/hugo-theme-terminal">Terminal
-Theme</a> for Hugo. 4/5ths of my way
-through porting this theme, I discovered Paweł Romanowski own independent fork
-for Zola, <a class="external" rel="noopener external" target="_blank" href="https://github.com/pawroman/zola-theme-terminimal">Terminimal</a>,
-which helped me get the PostCSS to Sass styling conversion done more
-quickly. My sincerest thanks to both of you!</p>
-<h2 id="differences">differences</h2>
-<p>This theme is largely true to the original by Radek, but there are some mild
-differences. They are almost all stylistic in nature and are intended to
-emphasize minimalism even more. Some of them are as follows:</p>
+<p>一个适用于 <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> 的极简暗色主题。</p>
+<p><img src="../master/zerm-preview.png?raw=true" alt="截图" /></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://zerm.ejmg.now.sh/"><strong>在线预览！</strong></a></p>
+<p>该主题很大程度上移植自 Radek Kozieł 为 Hugo 制作的 <a class="external" rel="noopener external" target="_blank" href="https://github.com/panr/hugo-theme-terminal">Terminal Theme</a>。在移植过程完成了 4/5 时，我发现了 Paweł Romanowski 为 Zola 制作的独立分支 <a class="external" rel="noopener external" target="_blank" href="https://github.com/pawroman/zola-theme-terminimal">Terminimal</a>，它帮助我更快地完成了从 PostCSS 到 Sass 的样式转换。衷心感谢你们两位！</p>
+<h2 id="chai-yi">差异</h2>
+<p>本主题在很大程度上忠实于 Radek 的原作，但也有一些细微的差别。这些差异几乎都是风格上的，旨在进一步强调极简主义。其中一些如下：</p>
 <ul>
-<li>tags are now included in a post's meta data.</li>
-<li>no post image previews.</li>
-<li>categories are included in the taxonomy.</li>
-<li>bullet points have slightly more margin and different symbols for nesting.</li>
-<li>no social media or comment support.</li>
+<li>标签（tags）现在包含在文章的元数据中。</li>
+<li>没有文章图片预览。</li>
+<li>分类（categories）包含在分类法（taxonomy）中。</li>
+<li>项目符号的边距稍大，嵌套使用不同的符号。</li>
+<li>不支持社交媒体或评论。</li>
 </ul>
-<p>Some of these might be added later and <a class="external" rel="noopener external" target="_blank" href="https://github.com/ejmg/zerm/pulls">PR's are always
-welcomed</a>.</p>
-<h2 id="configuration">configuration</h2>
-<p>Please follow the Zola documentation for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/#installing-a-theme">how to use a
-theme</a>.</p>
-<p>In <code>config.toml</code>, you will find all values for customization that are supported
-thus far have documentation explaining how they are used. If there is any confusion or something is not working as intended, <a class="external" rel="noopener external" target="_blank" href="https://github.com/ejmg/zerm/issues">please open an issue</a>!</p>
-<h2 id="math">math</h2>
-<p>You can use KaTeX for mathematical typesetting.
-Assets are only available if you opt-in on a per-page level through
-a single line (<code>math=true</code>) on the extra section of the page frontmatter.</p>
+<p>其中一些功能可能会在以后添加，随时<a class="external" rel="noopener external" target="_blank" href="https://github.com/ejmg/zerm/pulls">欢迎提交 PR</a>。</p>
+<h2 id="pei-zhi">配置</h2>
+<p>请遵循 Zola 文档了解<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/#installing-a-theme">如何使用主题</a>。</p>
+<p>在 <code>config.toml</code> 中，你会发现目前支持的所有自定义值都有文档说明其用法。如果有任何困惑或功能不符合预期，<a class="external" rel="noopener external" target="_blank" href="https://github.com/ejmg/zerm/issues">请提交 issue</a>！</p>
+<h2 id="shu-xue-gong-shi">数学公式</h2>
+<p>你可以使用 KaTeX 进行数学排版。
+只有在页面 Front Matter 的 <code>extra</code> 部分通过单行配置（<code>math=true</code>）选择启用时，资源才会加载。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span style="color: #F38BA8;"># index.md</span></span>
 <span class="giallo-l"><span>+++</span></span>
-<span class="giallo-l"><span>title=&quot;this page title&quot;</span></span>
+<span class="giallo-l"><span>title=&quot;页面标题&quot;</span></span>
 <span class="giallo-l"><span>...</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #B4BEFE;">[extra]</span></span>
 <span class="giallo-l"><span>math=true</span></span>
 <span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"></span>
-<span class="giallo-l"><span>Content</span></span></code></pre>
-<p>Pages wich doesn't opt-in are not affected in any way, so you doesn't have
-to worry about any performance hit.</p>
-<h2 id="license">license</h2>
-<p>MIT. See <code>LICENSE.md</code> for more details.</p>
+<span class="giallo-l"><span>内容</span></span></code></pre>
+<p>未选择启用的页面不会受到任何影响，因此你不必担心性能下降。</p>
+<h2 id="xu-ke-zheng">许可证</h2>
+<p>MIT。详情请参阅 <code>LICENSE.md</code>。</p>
 
 
     </div>

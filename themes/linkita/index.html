@@ -121,9 +121,9 @@
                         
                             
                                 
-                                    
-                                
                             
+                                
+                                    
                                 
                             
                         
@@ -207,13 +207,13 @@ Linkita is based on <a class="external" rel="noopener external" target="_blank" 
 and <a class="external" rel="noopener external" target="_blank" href="https://github.com/nanxiaobei/hugo-paper">Hugo-Paper</a> and is multilingual and SEO friendly.</p>
 <ul>
 <li>See the <a class="external" rel="noopener external" target="_blank" href="https://github.com/salif/linkita-start">quickstart repository</a>.</li>
-<li>See a <a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/">live preview</a> and
+<li>See a <a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/">在线预览</a> and
 <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita-demo">its source code</a>.</li>
 <li>Open bug reports and feature requests on <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita/issues">Codeberg</a>.</li>
 <li>The source code is available on <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita">Codeberg</a>
 and mirrored on <a class="external" rel="noopener external" target="_blank" href="https://github.com/salif/linkita">GitHub</a>.</li>
 </ul>
-<h2 id="features">Features</h2>
+<h2 id="te-xing">特性</h2>
 <ul>
 <li>Easy to use and modify</li>
 <li>No preset limits</li>
@@ -228,7 +228,7 @@ and mirrored on <a class="external" rel="noopener external" target="_blank" href
 <li>Admonition shortcode</li>
 <li>SEO friendly</li>
 <li>Comments using <a class="external" rel="noopener external" target="_blank" href="https://giscus.app/">Giscus</a></li>
-<li>Mathematical notations using <a class="external" rel="noopener external" target="_blank" href="https://katex.org/">KaTeX</a></li>
+<li>Mathematical notations using <a class="external" rel="noopener external" target="_blank" href="https://katex.org/">KaTeX 公式</a></li>
 <li>Diagrams and charts using <a class="external" rel="noopener external" target="_blank" href="https://mermaid.js.org/">Mermaid</a></li>
 <li>Multilingual support</li>
 <li>Search support (elasticlunr_javascript)</li>
@@ -239,7 +239,7 @@ and mirrored on <a class="external" rel="noopener external" target="_blank" href
 <li>Keyboard shortcuts</li>
 <li>Relative URLs support</li>
 </ul>
-<h2 id="installation">Installation</h2>
+<h2 id="an-zhuang">安装</h2>
 <p>The fastest way to create a new site is to use the
 <a class="external" rel="noopener external" target="_blank" href="https://github.com/salif/linkita-start">linkita-start template</a>.
 This gives you a complete blog setup with all the essential configuration ready to go.</p>
@@ -260,7 +260,7 @@ This gives you a complete blog setup with all the essential configuration ready 
 <li>Enable the theme in your <code>zola.toml</code> or <code>config.toml</code> file:</li>
 </ol>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;linkita&quot;</span></span></code></pre>
-<p>Place it near the <code>base_url</code> variable, not under <code>[extra]</code>.</p>
+<p>Place it near the <code>base_url</code> variable, not under <code>[额外配置]</code>.</p>
 <h2 id="managing-versions">Managing versions</h2>
 <p>To update the theme, run:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule update --remote themes/linkita</span></span></code></pre>
@@ -268,20 +268,20 @@ This gives you a complete blog setup with all the essential configuration ready 
 <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita/src/branch/linkita/changelog/linkita.md">changelog/linkita.md</a> file.<br />
 Otherwise, find the changelog file for your version in the <code>changelog</code> directory.</p>
 <p>If you switch to a newer version, there may be breaking changes that require manual involvement.</p>
-<h2 id="usage">Usage</h2>
+<h2 id="shi-yong">使用</h2>
 <p>Linkita uses the following front matter variables.
 All variables are optional.
 Set the ones you need.</p>
 <h3 id="yaml-frontmatter">YAML frontmatter</h3>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml" data-name="frontmatter"><span class="giallo-l"><span style="color: #F5C2E7;">---</span></span>
-<span class="giallo-l"><span style="color: #89B4FA;">title</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
-<span class="giallo-l"><span style="color: #89B4FA;">description</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
-<span class="giallo-l"><span style="color: #89B4FA;">date</span><span style="color: #94E2D5;">:</span><span> </span></span>
-<span class="giallo-l"><span style="color: #89B4FA;">updated</span><span style="color: #94E2D5;">:</span><span> </span></span>
-<span class="giallo-l"><span style="color: #89B4FA;">taxonomies</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">标题</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">描述</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">日期</span><span style="color: #94E2D5;">:</span><span> </span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">更新时间</span><span style="color: #94E2D5;">:</span><span> </span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">分类法</span><span style="color: #94E2D5;">:</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  categories</span><span style="color: #94E2D5;">:</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  tags</span><span style="color: #94E2D5;">:</span></span>
-<span class="giallo-l"><span style="color: #89B4FA;">extra</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">额外配置</span><span style="color: #94E2D5;">:</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  comment</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> false</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  math</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> false</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  mermaid</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> false</span></span>
@@ -297,11 +297,11 @@ Set the ones you need.</p>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The last updated date of the post</span></span>
 <span class="giallo-l"><span>updated</span><span style="color: #94E2D5;"> =</span><span> 2026-12-31</span></span>
 <span class="giallo-l"></span>
-<span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>分类法</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>categories</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> []</span></span>
 <span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> []</span></span>
 <span class="giallo-l"></span>
-<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable comments</span></span>
 <span class="giallo-l"><span>comment</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable KaTeX support</span></span>
@@ -323,7 +323,7 @@ Set the ones you need.</p>
 <span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
 <span class="giallo-l"><span>sort_by</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;date&quot;</span></span>
 <span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 4</span></span>
-<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>profile</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;your_username&quot;</span></span>
 <span class="giallo-l"><span>+++</span></span></code></pre>
 <p>Do it for each language in your site.
@@ -337,7 +337,7 @@ For French, the file name is <code>content/_index.fr.md</code>.</p>
 <span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
 <span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;archive.html&quot;</span></span>
 <span class="giallo-l"><span>transparent</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
-<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>date_format</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;%m-%d&quot;</span></span>
 <span class="giallo-l"><span>+++</span></span></code></pre>
 <p>Create a <code>content/blog/hello.md</code> file:</p>
@@ -378,7 +378,7 @@ Otherwise, set <code>authors</code>:</p>
 <p>Useful if the blog has a team of several authors.
 If you choose this option you should set taxonomies in each post.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="frontmatter"><span class="giallo-l"><span>+++</span></span>
-<span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>分类法</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;author_username&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;author2_username&quot;</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>+++</span></span></code></pre><h3 id="inject-support">Inject support</h3>
 <p>You can easily use inject to add new features to your site without modifying the theme itself.</p>
@@ -397,7 +397,7 @@ If you choose this option you should set taxonomies in each post.</p>
 <tr><td>Table of contents</td><td><kbd>Alt</kbd>+<kbd>=</kbd></td></tr>
 <tr><td>Skip to footer</td><td><kbd>Alt</kbd>+<kbd>_</kbd></td></tr>
 </tbody></table>
-<h2 id="configuration">Configuration</h2>
+<h2 id="pei-zhi">配置</h2>
 <p>Copy and paste the examples into your <code>zola.toml</code> file
 and comment out the variables you don't use instead of setting empty values.
 All variables are optional.</p>
@@ -436,17 +436,17 @@ All variables are optional.</p>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># build_search_index = true</span></span></code></pre>
 <p>Zola has built-in support for taxonomies.
 Linkita has special support for taxonomies named <code>tags</code>, <code>categories</code>, and <code>authors</code>.</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[[</span><span>taxonomies</span><span style="color: #9399B2;">]]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[[</span><span>分类法</span><span style="color: #9399B2;">]]</span></span>
 <span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;categories&quot;</span></span>
 <span class="giallo-l"><span>feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
 <span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 4</span></span>
 <span class="giallo-l"></span>
-<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>taxonomies</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>分类法</span><span style="color: #9399B2;">]]</span></span>
 <span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span></span>
 <span class="giallo-l"><span>feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
 <span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 4</span></span>
 <span class="giallo-l"></span>
-<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>taxonomies</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>分类法</span><span style="color: #9399B2;">]]</span></span>
 <span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;authors&quot;</span></span>
 <span class="giallo-l"><span>feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
 <span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 4</span></span></code></pre>
@@ -468,7 +468,7 @@ You can customize this behavior using the <code>extra.taxonomy_sorting</code> va
 <span class="giallo-l"><span>categories</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;name&quot;</span></span>
 <span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;descending_frequency&quot;</span></span>
 <span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;name&quot;</span></span></code></pre><h3 id="general-config">General config</h3>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>额外配置</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable KaTeX math formula support globally.</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
 <span class="giallo-l"><span>math</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
@@ -763,7 +763,7 @@ as a fallback Open Graph image for all pages.</p>
 <p>Open a page of your site, adding <code>#disable-analytics</code> to the page address.
 Do this once for each browser and device.
 For example, open <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111/#disable-analytics">http://127.0.0.1:1111/#disable-analytics</a>.</p>
-<h3 id="comments">Comments</h3>
+<h3 id="ping-lun">评论</h3>
 <p>See <a class="external" rel="noopener external" target="_blank" href="https://giscus.app/">giscus.app</a>.
 Only available when <code>extra.comment</code> in the front matter or <code>extra.comment</code> in the config is set to <code>true</code>.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.giscus</span><span style="color: #9399B2;">]</span></span>
@@ -790,7 +790,7 @@ Only available when <code>extra.comment</code> in the front matter or <code>extr
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: &quot;en&quot;</span></span>
 <span class="giallo-l"><span>lang</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en&quot;</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: &quot;lazy&quot;</span></span>
-<span class="giallo-l"><span>loading</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;lazy&quot;</span></span></code></pre><h2 id="contributing">Contributing</h2>
+<span class="giallo-l"><span>loading</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;lazy&quot;</span></span></code></pre><h2 id="gong-xian">贡献</h2>
 <p>This project is under the <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita/src/branch/linkita/LICENSE">MIT License</a>.</p>
 <p>Pull requests are welcome on <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita">Codeberg</a> and <a class="external" rel="noopener external" target="_blank" href="https://github.com/salif/linkita">GitHub</a>.
 The main branch is <code>linkita</code>.</p>

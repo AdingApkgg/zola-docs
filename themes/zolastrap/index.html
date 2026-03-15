@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="zolastrap | Zola">
-        <meta property="og:description" content="A bootstrap theme for zola">
+        <meta property="og:description" content="一个 zola 的 bootstrap 主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolastrap&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="zolastrap | Zola">
-        <meta name="twitter:description" content="A bootstrap theme for zola">
+        <meta name="twitter:description" content="一个 zola 的 bootstrap 主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "zolastrap",
-            "description": "A bootstrap theme for zola",
+            "description": "一个 zola 的 bootstrap 主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolastrap&#x2F;",
             "author": {
                 "@type": "Person",
@@ -121,9 +121,9 @@
                         
                             
                                 
-                                    
-                                
                             
+                                
+                                    
                                 
                             
                         
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolastrap&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> zolastrap</h1>
-            <p>A bootstrap theme for zola</p>
+            <p>一个 zola 的 bootstrap 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;marcodpt.github.io">Marco Tomic</a>
@@ -171,142 +171,140 @@
 
     <hr>
     <h1 id="zolastrap">zolastrap</h1>
-<p>A bootstrap theme for zola</p>
-<p><a class="external" rel="noopener external" target="_blank" href="https://marcodpt.github.io/zolastrap/">Live Demo</a></p>
-<h2 id="config-toml-extra-variables"><code>config.toml</code> [extra] variables</h2>
+<p>一个 zola 的 bootstrap 主题</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://marcodpt.github.io/zolastrap/">在线演示</a></p>
+<h2 id="config-toml-extra-bian-liang"><code>config.toml</code> [extra] 变量</h2>
 <h3 id="banner">banner</h3>
 <ul>
-<li>type: string</li>
-<li>default: ""</li>
+<li>类型: 字符串</li>
+<li>默认值: ""</li>
 </ul>
-<p>Path of a banner image, use empty string for no banner</p>
+<p>横幅图片的路径，使用空字符串表示无横幅</p>
 <h3 id="date-format">date_format</h3>
 <ul>
-<li>type: string</li>
-<li>default: "%d/%m/%Y"</li>
+<li>类型: 字符串</li>
+<li>默认值: "%d/%m/%Y"</li>
 </ul>
-<p>date format expression</p>
-<h3 id="theme">theme</h3>
+<p>日期格式表达式</p>
+<h3 id="zhu-ti">主题</h3>
 <ul>
-<li>type: string</li>
-<li>default: "default"</li>
+<li>类型: 字符串</li>
+<li>默认值: "default"</li>
 </ul>
-<p>one of the <a class="external" rel="noopener external" target="_blank" href="https://bootswatch.com">Bootswatch</a> themes</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://bootswatch.com">Bootswatch</a> 主题之一</p>
 <h3 id="bg">bg</h3>
 <ul>
-<li>type: string</li>
-<li>default: "dark"</li>
+<li>类型: 字符串</li>
+<li>默认值: "dark"</li>
 </ul>
-<p>one of the available backgrounds in
-<a class="external" rel="noopener external" target="_blank" href="https://getbootstrap.com/docs/5.1/utilities/background/">Bootstrap5</a>
-for <code>navbar</code> and <code>footer</code></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://getbootstrap.com/docs/5.1/utilities/background/">Bootstrap5</a>
+中用于 <code>navbar</code> 和 <code>footer</code> 的可用背景之一</p>
 <h3 id="inverted">inverted</h3>
 <ul>
-<li>type: boolean</li>
-<li>default: false</li>
+<li>类型: 布尔值</li>
+<li>默认值: false</li>
 </ul>
-<p>Invert font for <code>navbar</code> and <code>footer</code> in case default choice is bad</p>
+<p>反转 <code>navbar</code> 和 <code>footer</code> 的字体，以防默认选择不好</p>
 <h3 id="themes">themes</h3>
 <ul>
-<li>type: string</li>
-<li>default: "Choose a Theme"</li>
+<li>类型: 字符串</li>
+<li>默认值: "Choose a Theme"</li>
 </ul>
-<p>Navbar label for themes dropdown.</p>
-<p>This dropdown will allow user to change
-<a class="external" rel="noopener external" target="_blank" href="https://bootswatch.com">Bootswatch</a> theme.</p>
-<p>Use empty string in case you do not want the user choose a theme.</p>
+<p>主题下拉菜单的导航栏标签。</p>
+<p>此下拉菜单将允许用户更改
+<a class="external" rel="noopener external" target="_blank" href="https://bootswatch.com">Bootswatch</a> 主题。</p>
+<p>如果你不想让用户选择主题，请使用空字符串。</p>
 <h3 id="schemes">schemes</h3>
 <ul>
-<li>type: string</li>
-<li>default: "Choose a Color Scheme"</li>
+<li>类型: 字符串</li>
+<li>默认值: "Choose a Color Scheme"</li>
 </ul>
-<p>Navbar label for schemes dropdown.</p>
-<p>This dropdown will allow user to change footer and navbar
-<a class="external" rel="noopener external" target="_blank" href="https://getbootstrap.com/docs/5.1/utilities/background/">background</a>
-color.</p>
-<p>Use empty string in case you do not want the user choose a theme.</p>
-<h3 id="search">search</h3>
+<p>配色方案下拉菜单的导航栏标签。</p>
+<p>此下拉菜单将允许用户更改页脚和导航栏
+<a class="external" rel="noopener external" target="_blank" href="https://getbootstrap.com/docs/5.1/utilities/background/">背景</a>
+颜色。</p>
+<p>如果你不想让用户选择主题，请使用空字符串。</p>
+<h3 id="sou-suo">搜索</h3>
 <ul>
-<li>type: string</li>
-<li>default: "Search"</li>
+<li>类型: 字符串</li>
+<li>默认值: "Search"</li>
 </ul>
-<p>Placeholder for navbar search input.</p>
-<p>Remember that to enable and disable search you should set variable
-<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">build_search_index</a>.</p>
+<p>导航栏搜索输入的占位符。</p>
+<p>请记住，要启用和禁用搜索，你应该设置变量
+<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">build_search_index</a>。</p>
 <h3 id="tag">tag</h3>
 <ul>
-<li>type: string</li>
-<li>default: "Posts by Topic"</li>
+<li>类型: 字符串</li>
+<li>默认值: "Posts by Topic"</li>
 </ul>
-<p>Taxonomy <code>tag</code> single label. Useful for translations.</p>
-<h3 id="tags">tags</h3>
+<p>分类法 <code>tag</code> 单个标签。对翻译很有用。</p>
+<h3 id="biao-qian">标签</h3>
 <ul>
-<li>type: string</li>
-<li>default: "Posts by Topics"</li>
+<li>类型: 字符串</li>
+<li>默认值: "Posts by Topics"</li>
 </ul>
-<p>Taxonomy <code>tag</code> list label. Useful for translations.
-You can have a nice tag list at the bottom of a page using <code>extra.tags</code> = true
-in the <code>_index.md</code></p>
+<p>分类法 <code>tag</code> 列表标签。对翻译很有用。
+你可以通过在 <code>_index.md</code> 中使用 <code>extra.tags</code> = true 在页面底部拥有一个漂亮的标签列表。</p>
 <h3 id="links">links</h3>
 <ul>
-<li>type: array</li>
-<li>default: []</li>
+<li>类型: 数组</li>
+<li>默认值: []</li>
 </ul>
-<p>Navbar links. Use an empty array to ignore this.</p>
-<p>Items (object):</p>
+<p>导航栏链接。使用空数组忽略此项。</p>
+<p>项目 (对象):</p>
 <ul>
-<li>title (String): label of the navbar link</li>
-<li>url (String): href of associate link</li>
+<li>title (String): 导航栏链接的标签</li>
+<li>url (String): 关联链接的 href</li>
 </ul>
-<h3 id="email">email</h3>
+<h3 id="email">Email</h3>
 <ul>
-<li>type: string</li>
-<li>default: ""</li>
+<li>类型: 字符串</li>
+<li>默认值: ""</li>
 </ul>
-<p>Footer email. Use an empty string to ignore this.</p>
+<p>页脚电子邮件。使用空字符串忽略此项。</p>
 <h3 id="icons">icons</h3>
 <ul>
-<li>type: array</li>
-<li>default: []</li>
+<li>类型: 数组</li>
+<li>默认值: []</li>
 </ul>
-<p>Footer social icons. Use an empty array to ignore this.</p>
-<p>Items (object):</p>
+<p>页脚社交图标。使用空数组忽略此项。</p>
+<p>项目 (对象):</p>
 <ul>
-<li>title (string): Optional title string for icon</li>
-<li>icon (string): One of</li>
-<li>url (string): href of the icon</li>
+<li>title (string): 图标的可选标题字符串</li>
+<li>icon (string): 其中之一</li>
+<li>url (string): 图标的 href</li>
 </ul>
-<h3 id="utterances">utterances</h3>
+<h3 id="utterances">Utterances</h3>
 <ul>
-<li>type: string</li>
-<li>default: ""</li>
+<li>类型: 字符串</li>
+<li>默认值: ""</li>
 </ul>
-<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/utterance/utterances">utterances</a> repo url.</p>
-<p>Use an empty string to ignore utterances widget.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/utterance/utterances">Utterances</a> 仓库 url。</p>
+<p>使用空字符串忽略 utterances 小部件。</p>
 <h3 id="utterances-label">utterances_label</h3>
 <ul>
-<li>type: string</li>
-<li>default: "Comments"</li>
+<li>类型: 字符串</li>
+<li>默认值: "Comments"</li>
 </ul>
-<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/utterance/utterances">utterances</a> widget label.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/utterance/utterances">Utterances</a> 小部件标签。</p>
 <h3 id="utterances-theme">utterances_theme</h3>
 <ul>
-<li>type: string</li>
-<li>default: "github-light"</li>
+<li>类型: 字符串</li>
+<li>默认值: "github-light"</li>
 </ul>
-<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/utterance/utterances">utterances</a> widget theme.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/utterance/utterances">Utterances</a> 小部件主题。</p>
 <h3 id="utterances-issue-term">utterances_issue_term</h3>
 <ul>
-<li>type: string</li>
-<li>default: "pathname"</li>
+<li>类型: 字符串</li>
+<li>默认值: "pathname"</li>
 </ul>
-<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/utterance/utterances">utterances</a> widget pathname.</p>
-<h2 id="contributing">Contributing</h2>
-<p>Any help is greatly appreciated!</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/utterance/utterances">Utterances</a> 小部件路径名。</p>
+<h2 id="gong-xian">贡献</h2>
+<p>非常感谢任何帮助！</p>
 <ul>
-<li><a class="external" rel="noopener external" target="_blank" href="https://tera.netlify.app/docs">Tera template engine</a></li>
-<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/templates/overview/">Zola SSG templates</a></li>
-<li><a class="external" rel="noopener external" target="_blank" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">Bootstrap5 docs</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://tera.netlify.app/docs">Tera 模板引擎</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/templates/overview/">Zola SSG 模板</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">Bootstrap5 文档</a></li>
 <li><a class="external" rel="noopener external" target="_blank" href="https://bootswatch.com">Bootswatch</a></li>
 </ul>
 

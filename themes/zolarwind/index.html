@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="Zolarwind | Zola">
-        <meta property="og:description" content="A GDPR-friendly Zola blog theme: no third-party requests, Tailwind CSS, KaTeX, Mermaid, localization">
+        <meta property="og:description" content="一个 GDPR 友好的 Zola 博客主题：无第三方请求、Tailwind CSS、KaTeX、Mermaid、本地化">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolarwind&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="Zolarwind | Zola">
-        <meta name="twitter:description" content="A GDPR-friendly Zola blog theme: no third-party requests, Tailwind CSS, KaTeX, Mermaid, localization">
+        <meta name="twitter:description" content="一个 GDPR 友好的 Zola 博客主题：无第三方请求、Tailwind CSS、KaTeX、Mermaid、本地化">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "Zolarwind",
-            "description": "A GDPR-friendly Zola blog theme: no third-party requests, Tailwind CSS, KaTeX, Mermaid, localization",
+            "description": "一个 GDPR 友好的 Zola 博客主题：无第三方请求、Tailwind CSS、KaTeX、Mermaid、本地化",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolarwind&#x2F;",
             "author": {
                 "@type": "Person",
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolarwind&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Zolarwind</h1>
-            <p>A GDPR-friendly Zola blog theme: no third-party requests, Tailwind CSS, KaTeX, Mermaid, localization</p>
+            <p>一个 GDPR 友好的 Zola 博客主题：无第三方请求、Tailwind CSS、KaTeX、Mermaid、本地化</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;weitzel.dev">Thomas Weitzel</a>
@@ -170,288 +170,279 @@
     </div>
 
     <hr>
-    <h1 id="zolarwind-theme">Zolarwind Theme</h1>
-<p>Zolarwind is a Zola blog theme with Tailwind CSS, KaTeX, and Mermaid support.
-It targets blogs that want Tailwind-based styling, diagrams, and math rendering.
-Localization is built-in for a single-locale build.</p>
-<p><img src="https://zola.docs.saop.cc/themes/zolarwind/screenshot.png" alt="A screenshot of how the theme looks like" /></p>
+    <h1 id="zolarwind-zhu-ti">Zolarwind 主题</h1>
+<p>Zolarwind 是一个支持 Tailwind CSS、KaTeX 和 Mermaid 的 Zola 博客主题。
+它的目标用户是想要基于 Tailwind 的样式、图表和数学渲染的博客。
+内置了单语言构建的本地化支持。</p>
+<p><img src="https://zola.docs.saop.cc/themes/zolarwind/screenshot.png" alt="主题外观截图" /></p>
 <hr />
-<h2 id="features">Features</h2>
+<h2 id="te-xing">特性</h2>
 <ul>
 <li>
-<p><strong>GDPR-clean by default</strong>: No third-party requests, no cookies, no tracking.
-All JS/CSS is self-hosted, so no consent banner is required for a default Zolarwind site.</p>
+<p><strong>默认 GDPR 友好</strong>：无第三方请求、无 cookie、无跟踪。
+所有 JS/CSS 均为自托管，因此默认的 Zolarwind 站点不需要同意横幅。</p>
 </li>
 <li>
-<p><strong>Tailwind CSS</strong>: Use Tailwind for layout and UI.</p>
+<p><strong>Tailwind CSS</strong>：使用 Tailwind 进行布局和 UI。</p>
 </li>
 <li>
-<p><strong>Mermaid Integration</strong>: Render diagrams from text.</p>
+<p><strong>Mermaid 集成</strong>：从文本渲染图表。</p>
 </li>
 <li>
-<p><strong>KaTeX Integration</strong>: Render math formulas in posts.</p>
+<p><strong>KaTeX 集成</strong>：在文章中渲染数学公式。</p>
 </li>
 <li>
-<p><strong>Localization Support</strong>: Theme strings live in language files; pick the one you want.
-If your language isn't supported yet, just create the resource file with your translations.</p>
+<p><strong>本地化支持</strong>：主题字符串位于语言文件中；选择你想要的一个。
+如果尚未支持你的语言，只需创建包含翻译的资源文件即可。</p>
 </li>
 <li>
-<p><strong>Dark/Light Mode</strong>: Includes a dark/light toggle and persists the preference for the session after a user toggle.</p>
+<p><strong>暗色/亮色模式</strong>：包括暗色/亮色切换，并在用户切换后为会话保留偏好。</p>
 </li>
 <li>
-<p><strong>Client-side Search</strong>: Built-in search page powered by Zola's index and MiniSearch.</p>
+<p><strong>客户端搜索</strong>：由 Zola 索引和 MiniSearch 提供支持的内置搜索页面。</p>
 </li>
 <li>
-<p><strong>Series Support</strong>: Group posts into a series taxonomy with ordered navigation on series posts.</p>
+<p><strong>系列支持</strong>：将文章分组到系列分类法中，并在系列文章上提供有序导航。</p>
 </li>
 <li>
-<p><strong>Artalk Comments</strong>: Optional integration with a self-hosted Artalk server. See <code>docs/artalk.md</code>.</p>
+<p><strong>Artalk 评论</strong>：可选集成自托管的 Artalk 服务器。参见 <code>docs/artalk.md</code>。</p>
 </li>
 </ul>
 <hr />
-<h2 id="important-note">Important Note</h2>
-<p>As of Zola v0.22.0 from 2026-01-09, color syntax highlighting has changed and requires a different configuration.
-The theme reflects this change.
-This theme is not compatible with Zola v0.21.0 and earlier.</p>
+<h2 id="zhong-yao-shuo-ming">重要说明</h2>
+<p>截至 2026-01-09 的 Zola v0.22.0，颜色语法高亮已更改，需要不同的配置。
+该主题反映了这一变化。
+此主题不兼容 Zola v0.21.0 及更早版本。</p>
 <hr />
-<h2 id="table-of-contents">Table of Contents</h2>
+<h2 id="mu-lu">目录</h2>
 <ul>
-<li>Table of Contents</li>
-<li>Features</li>
-<li>Important Note</li>
-<li>Demo Website</li>
-<li>Prerequisites</li>
-<li>Installation
+<li>目录</li>
+<li>特性</li>
+<li>重要说明</li>
+<li>演示网站</li>
+<li>先决条件</li>
+<li>安装
 <ul>
-<li>Standalone (Quick Start)</li>
-<li>As a Theme (Integration)</li>
+<li>独立（快速开始）</li>
+<li>作为主题（集成）</li>
 </ul>
 </li>
-<li>Configuration
+<li>配置
 <ul>
-<li>Basic Configuration</li>
-<li>Markdown Highlighting Configuration</li>
-<li>Extra Configuration</li>
+<li>基本配置</li>
+<li>Markdown 高亮配置</li>
+<li>额外配置</li>
 </ul>
 </li>
-<li>Subpath base_url support</li>
+<li>子路径 base_url 支持</li>
 <li>Front matter
 <ul>
-<li>Example Front Matter</li>
-<li>Fields description</li>
+<li>Front Matter 示例</li>
+<li>字段描述</li>
 </ul>
 </li>
-<li>Series</li>
-<li>Shortcodes</li>
-<li>Search</li>
-<li>Localization</li>
-<li>Integrating the theme folder
+<li>系列</li>
+<li>短代码</li>
+<li>搜索</li>
+<li>本地化</li>
+<li>集成主题文件夹
 <ul>
-<li>Option 1: Automated Integration (Recommended)</li>
-<li>Option 2: Manual Integration</li>
+<li>选项 1：自动集成（推荐）</li>
+<li>选项 2：手动集成</li>
 </ul>
 </li>
-<li>Development</li>
-<li>Privacy</li>
-<li>Remarks</li>
-<li>Contributing</li>
-<li>License</li>
+<li>开发</li>
+<li>隐私</li>
+<li>备注</li>
+<li>贡献</li>
+<li>许可证</li>
 </ul>
 <hr />
-<h2 id="demo-website">Demo Website</h2>
-<p>You can see the theme on the <a class="external" rel="noopener external" target="_blank" href="https://weitzel.dev">demo website</a>.
-Additionally, there is a <a class="external" rel="noopener external" target="_blank" href="https://pureandroid.com">demo in German</a>.</p>
+<h2 id="yan-shi-wang-zhan">演示网站</h2>
+<p>你可以在 <a class="external" rel="noopener external" target="_blank" href="https://weitzel.dev">演示网站</a> 上查看该主题。
+此外，还有一个 <a class="external" rel="noopener external" target="_blank" href="https://pureandroid.com">德语演示</a>。</p>
 <hr />
-<h2 id="prerequisites">Prerequisites</h2>
-<p>To use the theme, you need the following software installed:</p>
+<h2 id="xian-jue-tiao-jian">先决条件</h2>
+<p>要使用该主题，你需要安装以下软件：</p>
 <ul>
 <li>
-<p><a class="external" rel="noopener external" target="_blank" href="https://git-scm.com/downloads">Git</a>, required for version control.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://git-scm.com/downloads">Git</a>，版本控制所需。</p>
 </li>
 <li>
-<p><a class="external" rel="noopener external" target="_blank" href="https://nodejs.org/en/download">Node.js</a>, an open-source, cross-platform JavaScript runtime environment. Node.js is
-<strong>optional</strong>. It is only needed if you want to change the CSS in <code>css/main.css</code>. The theme comes with pre-compiled CSS
-and is fully functional without Node.js.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://nodejs.org/en/download">Node.js</a>，一个开源、跨平台的 JavaScript 运行时环境。Node.js 是 <strong>可选的</strong>。只有当你想要更改 <code>css/main.css</code> 中的 CSS 时才需要它。该主题带有预编译的 CSS，无需 Node.js 即可完全运行。</p>
 </li>
 <li>
-<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/releases">Zola</a>, a static site generator. <strong>This is the only absolute requirement</strong>
-to build your site with Zolarwind.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/releases">Zola</a>，一个静态站点生成器。<strong>这是使用 Zolarwind 构建站点的唯一绝对要求</strong>。</p>
 </li>
 </ul>
 <hr />
-<h2 id="installation">Installation</h2>
-<h3 id="standalone-quick-start">Standalone (Quick Start)</h3>
-<p>If you want to use this repository as the base for your new blog, this is the fastest way:</p>
+<h2 id="an-zhuang">安装</h2>
+<h3 id="du-li-kuai-su-kai-shi">独立（快速开始）</h3>
+<p>如果你想使用此仓库作为新博客的基础，这是最快的方法：</p>
 <ol>
 <li>
-<p><strong>Clone the repository:</strong></p>
+<p><strong>克隆仓库：</strong></p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/thomasweitzel/zolarwind.git</span></span>
 <span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> zolarwind</span></span></code></pre></li>
 <li>
-<p><strong>Run the site:</strong></p>
+<p><strong>运行站点：</strong></p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre>
-<p>Now open the link provided by <code>zola serve</code> in your browser.</p>
+<p>现在在浏览器中打开 <code>zola serve</code> 提供的链接。</p>
 </li>
 <li>
-<p><strong>Configure:</strong>
-Adjust <code>base_url</code> and other settings in <code>zola.toml</code> to your needs.</p>
+<p><strong>配置：</strong>
+根据你的需要在 <code>zola.toml</code> 中调整 <code>base_url</code> 和其他设置。</p>
 </li>
 </ol>
-<h3 id="as-a-theme-integration">As a Theme (Integration)</h3>
-<p>If you already have a Zola site and want to use Zolarwind as a theme in your <code>themes/</code> folder, please refer to
-the Integrating the theme folder section for detailed instructions or to use the
-automated script.</p>
+<h3 id="zuo-wei-zhu-ti-ji-cheng">作为主题（集成）</h3>
+<p>如果你已经有一个 Zola 站点并想将 Zolarwind 作为主题在 <code>themes/</code> 文件夹中使用，请参阅集成主题文件夹部分以获取详细说明或使用自动脚本。</p>
 <hr />
-<h2 id="configuration">Configuration</h2>
-<p>Your <code>zola.toml</code> file controls customization for the Zola site.
-Configuration settings used by this theme:</p>
-<h3 id="basic-configuration">Basic Configuration:</h3>
+<h2 id="pei-zhi">配置</h2>
+<p>你的 <code>zola.toml</code> 文件控制 Zola 站点的自定义。
+此主题使用的配置设置：</p>
+<h3 id="ji-ben-pei-zhi">基本配置：</h3>
 <ul>
 <li>
-<p><strong>base_url</strong>: Specify the URL the site will be built for.
-In this case, the site will be built for <code>https://example.org</code>.
-Adjust this to your own domain.</p>
+<p><strong>base_url</strong>: 指定站点将构建的 URL。
+在这种情况下，站点将为 <code>https://example.org</code> 构建。
+将其调整为你自己的域名。</p>
 </li>
 <li>
-<p><strong>compile_sass</strong>: Determines whether to automatically compile all Sass files present in the <code>sass</code> directory.
-Here, it's set to <code>false</code>, meaning Sass files won't be automatically compiled for this theme.</p>
+<p><strong>compile_sass</strong>: 决定是否自动编译 <code>sass</code> 目录中存在的所有 Sass 文件。
+在这里，它设置为 <code>false</code>，意味着此主题不会自动编译 Sass 文件。</p>
 </li>
 <li>
-<p><strong>default_language</strong>: Sets the default language for the site.
-The provided config uses English (<code>en</code>) as the default language.
-As of now, German (<code>de</code>) is available in the <code>i18n</code> directory.</p>
+<p><strong>default_language</strong>: 设置站点的默认语言。
+提供的配置使用英语 (<code>en</code>) 作为默认语言。
+截至目前，<code>i18n</code> 目录中提供了德语 (<code>de</code>)。</p>
 </li>
 <li>
-<p><strong>theme</strong>: The theme used for the site.
-The provided line is commented out, indicating that the theme's files are taken from the <code>templates</code> directory.
-If you move the theme to the <code>themes/zolarwind</code> directory, use <code>zolarwind</code> for this entry.</p>
+<p><strong>theme</strong>: 站点使用的主题。
+提供的行已被注释掉，表明主题文件取自 <code>templates</code> 目录。
+如果你将主题移动到 <code>themes/zolarwind</code> 目录，请为此条目使用 <code>zolarwind</code>。</p>
 </li>
 <li>
-<p><strong>build_search_index</strong>: If set to <code>true</code>, a search index will be built from the pages and section content for the <code>default_language</code>.
-In this configuration and for this theme, it's enabled (<code>true</code>).</p>
+<p><strong>build_search_index</strong>: 如果设置为 <code>true</code>，将从 <code>default_language</code> 的页面和版块内容构建搜索索引。
+在此配置和此主题中，它已启用 (<code>true</code>)。</p>
 </li>
 <li>
-<p><strong>generate_feeds</strong>: Determines if an Atom feed (file <code>atom.xml</code>) is automatically generated.
-It's set to <code>true</code>, meaning a feed will be generated.</p>
+<p><strong>generate_feeds</strong>: 决定是否自动生成 Atom 订阅（文件 <code>atom.xml</code>）。
+它设置为 <code>true</code>，意味着将生成订阅。</p>
 </li>
 <li>
-<p><strong>taxonomies</strong>: An array of taxonomies (classification systems) used for the site.
-Here, <code>tags</code> (feed enabled) and <code>series</code> (feed disabled) are defined, each with a pagination limit of 6.</p>
+<p><strong>taxonomies</strong>: 站点使用的分类法（分类系统）数组。
+在这里，定义了 <code>tags</code>（启用订阅）和 <code>series</code>（禁用订阅），每个的分页限制为 6。</p>
 </li>
 </ul>
-<h3 id="markdown-highlighting-configuration">Markdown Highlighting Configuration:</h3>
+<h3 id="markdown-gao-liang-pei-zhi">Markdown 高亮配置：</h3>
 <ul>
 <li>
-<p><strong>light_theme</strong> and <strong>dark_theme</strong>: The themes used for code highlighting in light and dark mode.
-Zola writes <code>giallo-light.css</code> and <code>giallo-dark.css</code> into <code>static/</code>.
-Templates load both files and switch them based on the selected theme.
-If you want the same style in both modes, set both to the same theme.
-Zolarwind expects both values to be set, because the highlight files are loaded on templates that render Markdown content (posts/pages).
-If you add code blocks directly in other templates, include the highlight files there as well.
-Note: If you change <code>light_theme</code> or <code>dark_theme</code>, delete <code>static/giallo-light.css</code> and <code>static/giallo-dark.css</code> and run <code>zola build</code> to regenerate them; Zola does not overwrite existing giallo files.</p>
+<p><strong>light_theme</strong> 和 <strong>dark_theme</strong>: 亮色和暗色模式下用于代码高亮的主题。
+Zola 将 <code>giallo-light.css</code> 和 <code>giallo-dark.css</code> 写入 <code>static/</code>。
+模板加载这两个文件并根据选定的主题切换它们。
+如果你想要在两种模式下使用相同的样式，请将两者设置为相同的主题。
+Zolarwind 期望两者都设置，因为高亮文件加载在渲染 Markdown 内容（文章/页面）的模板上。
+如果你直接在其他模板中添加代码块，请在那里也包含高亮文件。
+注意：如果你更改 <code>light_theme</code> 或 <code>dark_theme</code>，请删除 <code>static/giallo-light.css</code> 和 <code>static/giallo-dark.css</code> 并运行 <code>zola build</code> 重新生成它们；Zola 不会覆盖现有的 giallo 文件。</p>
 </li>
 <li>
-<p><strong>error_on_missing_language</strong>: If the language to be highlighted is not found, how should Zola handle this? Set to <code>true</code> so missing languages cause a build error.</p>
+<p><strong>error_on_missing_language</strong>: 如果未找到要高亮的语言，Zola 应如何处理？设置为 <code>true</code> 以便缺失语言导致构建错误。</p>
 </li>
 <li>
-<p><strong>style</strong>: How to highlight code. Options are either <code>class</code> or <code>inline</code>. Here, we use the setting <code>class</code>.</p>
+<p><strong>style</strong>: 如何高亮代码。选项为 <code>class</code> 或 <code>inline</code>。在这里，我们使用设置 <code>class</code>。</p>
 </li>
 <li>
-<p><strong>extra_grammars</strong>: array of additional syntax highlighting configuration files in JSON format for languages not directly supported by Zola/Giallo.</p>
+<p><strong>extra_grammars</strong>: JSON 格式的额外语法高亮配置文件的数组，用于 Zola/Giallo 不直接支持的语言。</p>
 </li>
 </ul>
-<h3 id="extra-configuration">Extra Configuration:</h3>
-<p>The <code>[extra]</code> section is where you can place any custom variables you want to be accessible in your templates.</p>
+<h3 id="e-wai-pei-zhi">额外配置：</h3>
+<p><code>[extra]</code> 部分是你可以放置任何你想在模板中访问的自定义变量的地方。</p>
 <ul>
 <li>
-<p><strong>title</strong>: Required.
-The title of the site.
-Here, it's set to "Zolarwind."</p>
+<p><strong>title</strong>: 必需。
+站点的标题。
+在这里，它设置为 "Zolarwind"。</p>
 </li>
 <li>
-<p><strong>path_language_resources</strong>: Required.
-The path to the directory containing language resource files.
-In this config, it's set to <code>i18n/</code>.
-If you move the theme to the <code>themes/zolarwind</code> directory, use <code>themes/zolarwind/i18n/</code> for this entry.</p>
+<p><strong>path_language_resources</strong>: 必需。
+包含语言资源文件的目录路径。
+在此配置中，它设置为 <code>i18n/</code>。
+如果你将主题移动到 <code>themes/zolarwind</code> 目录，请为此条目使用 <code>themes/zolarwind/i18n/</code>。</p>
 </li>
 <li>
-<p><strong>generator</strong>: Optional.
-Specify the generator used for creating the static website.
-This site is generated using <code>Zola v0.22.1</code>.</p>
+<p><strong>generator</strong>: 可选。
+指定用于创建静态网站的生成器。
+此站点使用 <code>Zola v0.22.1</code> 生成。</p>
 </li>
 <li>
-<p><strong>favicon_svg</strong>: Optional.
-Provides a path to the site's favicon in SVG format.
-The provided path points to <code>/img/yin-yang.svg</code>.</p>
+<p><strong>favicon_svg</strong>: 可选。
+提供 SVG 格式的站点 favicon 路径。
+提供的路径指向 <code>/img/yin-yang.svg</code>。</p>
 </li>
 <li>
-<p><strong>copyright</strong>: Optional.
-A template for the copyright notice.
-It includes a placeholder <code>{year}</code> which is dynamically replaced with the current year of your <code>zola build</code> run.</p>
+<p><strong>copyright</strong>: 可选。
+版权声明的模板。
+它包含一个占位符 <code>{year}</code>，该占位符会动态替换为你 <code>zola build</code> 运行的当前年份。</p>
 </li>
 <li>
-<p><strong>site_description</strong>: Optional.
-A brief description is displayed on the site's banner.</p>
+<p><strong>site_description</strong>: 可选。
+简短描述显示在站点的横幅上。</p>
 </li>
 <li>
-<p><strong>quote</strong>: Optional.
-A structure defining a quote and its author.
-This quote is from Yoda.</p>
+<p><strong>quote</strong>: 可选。
+定义引言及其作者的结构。
+此引言来自尤达。</p>
 </li>
 <li>
-<p><strong>menu_pages</strong>: Optional.
-An array of main navigation menu items.
-Each item has a <code>title</code> and a <code>url</code>.</p>
+<p><strong>menu_pages</strong>: 可选。
+主导航菜单项的数组。
+每个项目都有 <code>title</code> 和 <code>url</code>。</p>
 </li>
 <li>
-<p><strong>footer_pages</strong>: Optional.
-An array of pages that will appear in the site's footer.
-Each item has a <code>title</code> and a <code>url</code>.</p>
+<p><strong>footer_pages</strong>: 可选。
+将出现在站点页脚的页面的数组。
+每个项目都有 <code>title</code> 和 <code>url</code>。</p>
 </li>
 <li>
-<p><strong>social_links</strong>: Optional.
-An array of social media links.
-Each link has a name, a boolean indicating if it's enabled, a URL, and an SVG icon.</p>
+<p><strong>social_links</strong>: 可选。
+社交媒体链接的数组。
+每个链接都有名称、指示是否启用的布尔值、URL 和 SVG 图标。</p>
 </li>
 <li>
-<p><strong>toc</strong>: Optional.
-Default toggle for the in-page table of contents when a page does not set <code>extra.toc</code> in front matter.
-Defaults to <code>false</code> when omitted.</p>
+<p><strong>toc</strong>: 可选。
+当页面未在 Front Matter 中设置 <code>extra.toc</code> 时，页内目录的默认开关。
+省略时默认为 <code>false</code>。</p>
 </li>
 <li>
-<p><strong>toc_levels</strong>: Optional.
-Default heading level range for the in-page table of contents.
-Defaults to <code>{ min = 2, max = 3 }</code> when omitted.
-Valid range is <code>1..6</code> and <code>min</code> must be <code>&lt;= max</code> (values are clamped to this range).</p>
+<p><strong>toc_levels</strong>: 可选。
+页内目录的默认标题级别范围。
+省略时默认为 <code>{ min = 2, max = 3 }</code>。
+有效范围是 <code>1..6</code> 且 <code>min</code> 必须 <code>&lt;= max</code>（值被限制在此范围内）。</p>
 </li>
 <li>
-<p><strong>displaymode.sun</strong> and <strong>displaymode.moon</strong>: Optional.
-Inline SVG icons used by the dark/light mode toggle.
-Define both to enable the toggle; if either is missing, the toggle is not rendered.</p>
+<p><strong>displaymode.sun</strong> 和 <strong>displaymode.moon</strong>: 可选。
+暗色/亮色模式切换使用的内联 SVG 图标。
+定义两者以启用切换；如果缺少任何一个，则不渲染切换。</p>
 </li>
 </ul>
 <hr />
-<h2 id="subpath-base-url-support">Subpath base_url support</h2>
-<p>This theme is safe to run under a subpath (for example <code>https://example.org/blog/</code>), as long as all internal links and
-assets are resolved with Zola's <code>get_url</code> helper. That is why the templates use <code>get_url</code> for CSS, JS, images, and menu
-links. Keep internal links in <code>zola.toml</code> root-relative (for example <code>"/pages/about/"</code>), so Zola can prefix the
-<code>base_url</code> subpath reliably.</p>
-<p>If you add or adjust templates, avoid hardcoded <code>href="/..."</code> or <code>src="/..."</code>. Always prefer:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>{{ get_url(path=&quot;/img/example.jpg&quot;) }}</span></span></code></pre><h3 id="local-testing-with-a-subpath">Local testing with a subpath</h3>
-<p><code>zola serve</code> always mounts at <code>/</code>, so it does not exercise subpath behavior. To test subpaths locally, build into a
-subdirectory and serve the output from there:</p>
+<h2 id="zi-lu-jing-base-url-zhi-chi">子路径 base_url 支持</h2>
+<p>只要所有内部链接和资产都使用 Zola 的 <code>get_url</code> 助手解析，此主题就可以安全地在子路径（例如 <code>https://example.org/blog/</code>）下运行。这就是为什么模板对 CSS、JS、图片和菜单链接使用 <code>get_url</code>。在 <code>zola.toml</code> 中保持内部链接为根相对路径（例如 <code>"/pages/about/"</code>），以便 Zola 可以可靠地添加 <code>base_url</code> 子路径前缀。</p>
+<p>如果你添加或调整模板，避免硬编码 <code>href="/..."</code> 或 <code>src="/..."</code>。总是首选：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>{{ get_url(path=&quot;/img/example.jpg&quot;) }}</span></span></code></pre><h3 id="shi-yong-zi-lu-jing-jin-xing-ben-di-ce-shi">使用子路径进行本地测试</h3>
+<p><code>zola serve</code> 总是挂载在 <code>/</code>，所以它不测试子路径行为。要在本地测试子路径，请构建到子目录并从那里服务输出：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> build --base-url http://127.0.0.1:1111/demo/zolarwind -o public/demo/zolarwind</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">python</span><span style="color: #A6E3A1;"> -m http.server --directory public</span><span style="color: #FAB387;"> 1111</span></span></code></pre>
-<p><code>python -m http.server</code> is only an example static file server; any server that can serve <code>public/</code> works (for example Apache, Nginx, or <code>static-web-server</code>).</p>
-<p>Then open the link provided by the server in your browser.</p>
+<p><code>python -m http.server</code> 只是一个静态文件服务器示例；任何可以服务 <code>public/</code> 的服务器都可以（例如 Apache、Nginx 或 <code>static-web-server</code>）。</p>
+<p>然后在浏览器中打开服务器提供的链接。</p>
 <hr />
 <h2 id="front-matter">Front matter</h2>
-<p>For blog posts (Markdown files in folder <code>content/blog</code>), each post has its own folder.
-This structure keeps all resources for a post in one place, including images, videos, and other files.</p>
-<p>Each post is associated with an image displayed on the blog's main page and on the post's detail page.
-If you do not provide an image under <code>extra.image</code>, a default image is used instead.</p>
-<h3 id="example-front-matter">Example Front Matter</h3>
-<p>You can copy and paste this into a new post (e.g., <code>content/blog/perception-vs-math/index.md</code>):</p>
+<p>对于博客文章（<code>content/blog</code> 文件夹中的 Markdown 文件），每篇文章都有自己的文件夹。
+这种结构将文章的所有资源保存在一个地方，包括图片、视频和其他文件。</p>
+<p>每篇文章都关联一张图片，显示在博客主页和文章详情页上。
+如果你没有在 <code>extra.image</code> 下提供图片，将使用默认图片。</p>
+<h3 id="front-matter-shi-li">Front Matter 示例</h3>
+<p>你可以将其复制并粘贴到新文章中（例如 <code>content/blog/perception-vs-math/index.md</code>）：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>date</span><span style="color: #94E2D5;"> =</span><span> 2026-02-05</span></span>
 <span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Intuition vs. mathematical facts&quot;</span></span>
@@ -465,98 +456,95 @@ If you do not provide an image under <code>extra.image</code>, a default image i
 <span class="giallo-l"><span>math</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
 <span class="giallo-l"><span>diagram</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
 <span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;banner.jpg&quot;</span></span>
-<span class="giallo-l"><span>+++</span></span></code></pre><h3 id="fields-description">Fields description</h3>
+<span class="giallo-l"><span>+++</span></span></code></pre><h3 id="zi-duan-miao-shu">字段描述</h3>
 <ul>
 <li>
-<p><strong>date</strong>: the date of the blog posts, e.g. <code>2026-02-05</code>.</p>
+<p><strong>date</strong>: 博客文章的日期，例如 <code>2026-02-05</code>。</p>
 </li>
 <li>
-<p><strong>title</strong>: the title of the blog posts, e.g. <code>Intuition vs. mathematical facts</code>.</p>
+<p><strong>title</strong>: 博客文章的标题，例如 <code>Intuition vs. mathematical facts</code>。</p>
 </li>
 <li>
-<p><strong>description</strong>: the description of the blog posts. It is used as a summary on the blog's main page.</p>
+<p><strong>description</strong>: 博客文章的描述。它用作博客主页上的摘要。</p>
 </li>
 <li>
-<p><strong>authors</strong>: an optional array of all the post's authors, e.g. <code>["Jane Doe"]</code>.
-You can leave it empty, but then the first author will show up as <code>Unknown</code> in the feed (<code>atom.xml</code>).</p>
+<p><strong>authors</strong>: 所有文章作者的可选数组，例如 <code>["Jane Doe"]</code>。
+你可以将其留空，但这将在 feed (<code>atom.xml</code>) 中显示为 <code>Unknown</code>。</p>
 </li>
 <li>
-<p><strong>taxonomies</strong>: optional <code>tags</code> and <code>series</code> taxonomies are supported.
-Tags are shown on posts and tag index pages, series are shown on series pages and the series navigation at the bottom of series posts.</p>
+<p><strong>taxonomies</strong>: 支持可选的 <code>tags</code> 和 <code>series</code> 分类法。
+标签显示在文章和标签索引页上，系列显示在系列页面和系列文章底部的系列导航上。</p>
 </li>
 <li>
-<p><strong>extra.math</strong>: either <code>false</code> (default) or <code>true</code>.
-If set to <code>true</code>, the post will be rendered with KaTeX support for displaying math formulas.
-If the entry is omitted or set to <code>false</code>, the post will not have KaTeX support.
-Markdown is parsed before KaTeX, so characters like <code>*</code> and backslashes inside <code>$...$</code> are interpreted by Markdown first, which can alter formulas.
-To avoid this, use the safe KaTeX shortcode and omit <code>$</code>/<code>$$</code> delimiters inside the shortcode body:</p>
+<p><strong>extra.math</strong>: <code>false</code>（默认）或 <code>true</code>。
+如果设置为 <code>true</code>，文章将渲染为支持 KaTeX 以显示数学公式。
+如果省略该条目或设置为 <code>false</code>，文章将不支持 KaTeX。
+Markdown 在 KaTeX 之前解析，因此 <code>$...$</code> 内的 <code>*</code> 和反斜杠等字符首先由 Markdown 解释，这可能会改变公式。
+为避免这种情况，请使用安全的 KaTeX 短代码并省略短代码体内的 <code>$</code>/<code>$$</code> 分隔符：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>{% katex() %} a^2 + b^2 {% end %}</span></span>
 <span class="giallo-l"><span>{% katex(inline=true) %} 1*2+3*4 {% end %}</span></span></code></pre></li>
 <li>
-<p><strong>extra.diagram</strong>: either <code>false</code> (default) or <code>true</code>.
-Controls loading of the necessary JavaScript to render the Mermaid diagram.
-If set to <code>true</code>, the post will be rendered with Mermaid support for displaying diagrams
-by using the <code>diagram()</code> shortcode.</p>
+<p><strong>extra.diagram</strong>: <code>false</code>（默认）或 <code>true</code>。
+控制加载渲染 Mermaid 图表所需的 JavaScript。
+如果设置为 <code>true</code>，文章将渲染为支持 Mermaid 以通过使用 <code>diagram()</code> 短代码显示图表。</p>
 </li>
 <li>
-<p><strong>extra.toc</strong>: either <code>false</code> (default) or <code>true</code>.
-Enables the in-page table of contents for this post/page.
-If omitted, the global <code>extra.toc</code> default is used.
-For a consistent TOC, start content headings at <code>##</code> and then nest only in ascending order (<code>##</code> → <code>###</code> → <code>####</code> → <code>#####</code> → <code>######</code>).</p>
+<p><strong>extra.toc</strong>: <code>false</code>（默认）或 <code>true</code>。
+启用此文章/页面的页内目录。
+如果省略，则使用全局 <code>extra.toc</code> 默认值。
+为了获得一致的 TOC，内容标题从 <code>##</code> 开始，然后仅按升序嵌套（<code>##</code> → <code>###</code> → <code>####</code> → <code>#####</code> → <code>######</code>）。</p>
 </li>
 <li>
-<p><strong>extra.toc_levels</strong>: Optional.
-Per-page override for the heading level range used by the table of contents.
-When omitted, the global <code>extra.toc_levels</code> default is used.
-Values outside <code>1..6</code> are clamped.</p>
+<p><strong>extra.toc_levels</strong>: 可选。
+覆盖目录使用的标题级别范围。
+如果省略，则使用全局 <code>extra.toc_levels</code> 默认值。
+<code>1..6</code> 以外的值会被限制。</p>
 </li>
 <li>
-<p><strong>extra.image</strong>: an optional image for the post.
-If omitted, a default image is used instead.
-The image is displayed on the blog's main page and on the post's detail page.</p>
+<p><strong>extra.image</strong>: 文章的可选图片。
+如果省略，将使用默认图片。
+图片显示在博客主页和文章详情页上。</p>
 </li>
 </ul>
 <hr />
-<h2 id="series">Series</h2>
-<p>Zolarwind supports series via Zola taxonomies. Series navigation appears at the bottom of posts that belong to a series.</p>
+<h2 id="xi-lie">系列</h2>
+<p>Zolarwind 通过 Zola 分类法支持系列。系列导航出现在属于系列的文章底部。</p>
 <ol>
 <li>
-<p>Enable the taxonomy in <code>zola.toml</code>:</p>
+<p>在 <code>zola.toml</code> 中启用分类法：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 6</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;series&quot;</span><span style="color: #9399B2;">,</span><span> paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 6</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>Series feeds are less commonly consumed than post/tag feeds, so the default disables it to keep output minimal; enable it if you want subscribers to follow series pages.</p>
+<p>系列订阅不如文章/标签订阅常用，因此默认禁用它以保持输出最小化；如果你希望订阅者关注系列页面，请启用它。</p>
 </li>
 <li>
-<p>Assign a post to a series:</p>
+<p>将文章分配给系列：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>series</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;my-series&quot;</span><span style="color: #9399B2;">]</span></span></code></pre></li>
 <li>
-<p>Optional ordering: set <code>extra.series_order</code> in the post front matter. When omitted, the series list falls back to the post date.</p>
+<p>可选排序：在文章 Front Matter 中设置 <code>extra.series_order</code>。如果省略，系列列表回退到文章日期。</p>
 </li>
 </ol>
-<p>Series index pages are available at <code>/series/</code> and <code>/series/&lt;name&gt;/</code>.
-Note: If no posts use the <code>series</code> taxonomy, Zola does not generate <code>/series/</code>, so it will 404.</p>
+<p>系列索引页面可在 <code>/series/</code> 和 <code>/series/&lt;name&gt;/</code> 处获得。
+注意：如果没有文章使用 <code>series</code> 分类法，Zola 不会生成 <code>/series/</code>，因此它将 404。</p>
 <hr />
-<h2 id="shortcodes">Shortcodes</h2>
-<p>Zolarwind provides some shortcodes. Use them when you want the feature, not as formatting helpers.
-Full documentation with parameters and examples: <code>docs/shortcodes.md</code>.</p>
+<h2 id="duan-dai-ma">短代码</h2>
+<p>Zolarwind 提供了一些短代码。当你想要该功能时使用它们，而不是作为格式化助手。
+带有参数和示例的完整文档：<code>docs/shortcodes.md</code>。</p>
 <ul>
-<li><strong>katex</strong>: render KaTeX safely when Markdown would interfere with math syntax.</li>
-<li><strong>diagram</strong>: render Mermaid diagrams from fenced text blocks.</li>
-<li><strong>image</strong>: render local images with captions and optional light/dark variants.</li>
-<li><strong>audio_simple</strong>: native <code>&lt;audio&gt;</code> player in a themed card.</li>
-<li><strong>audio</strong>: custom audio player using the bundled JS controls.</li>
+<li><strong>KaTeX 公式</strong>: 当 Markdown 会干扰数学语法时安全地渲染 KaTeX。</li>
+<li><strong>diagram</strong>: 从围栏文本块渲染 Mermaid 图表。</li>
+<li><strong>图片</strong>: 渲染带有标题和可选亮色/暗色变体的本地图片。</li>
+<li><strong>audio_simple</strong>: 主题卡片中的原生 <code>&lt;audio&gt;</code> 播放器。</li>
+<li><strong>audio</strong>: 使用捆绑 JS 控件的自定义音频播放器。</li>
 </ul>
 <hr />
-<h2 id="search">Search</h2>
-<p>This theme ships with a local, client-side search page powered by Zola's search index (Elasticlunr output) and MiniSearch.</p>
+<h2 id="sou-suo">搜索</h2>
+<p>此主题附带一个本地、客户端搜索页面，由 Zola 的搜索索引（Elasticlunr 输出）和 MiniSearch 提供支持。</p>
 <ol>
-<li>Enable the search index in <code>zola.toml</code>:<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre></li>
-<li>Create a page that uses the search template (for example <code>content/pages/search.md</code>). If your <code>content/pages/_index.md</code>
-uses <code>sort_by = "date"</code>, the page needs a <code>date</code> (or <code>weight</code>) to avoid being ignored. You can optionally set
-<code>extra.results_per_page</code> to control pagination and <code>extra.pagination_window</code> to control the number of pages shown on each side of the current page.<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
+<li>在 <code>zola.toml</code> 中启用搜索索引：<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre></li>
+<li>创建一个使用搜索模板的页面（例如 <code>content/pages/search.md</code>）。如果你的 <code>content/pages/_index.md</code> 使用 <code>sort_by = "date"</code>，页面需要一个 <code>date</code>（或 <code>weight</code>）以避免被忽略。你可以选择设置 <code>extra.results_per_page</code> 来控制分页，设置 <code>extra.pagination_window</code> 来控制当前页面每侧显示的页数。<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>date</span><span style="color: #94E2D5;"> =</span><span> 2026-01-14</span></span>
 <span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Search&quot;</span></span>
 <span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;search.html&quot;</span></span>
@@ -564,61 +552,57 @@ uses <code>sort_by = "date"</code>, the page needs a <code>date</code> (or <code
 <span class="giallo-l"><span>results_per_page</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 5</span></span>
 <span class="giallo-l"><span>pagination_window</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 2</span></span>
 <span class="giallo-l"><span>+++</span></span></code></pre></li>
-<li>A search icon appears in the header and links to <code>/pages/search/</code>.
-Note: The search icon is only rendered when <code>build_search_index = true</code>.</li>
+<li>搜索图标出现在页眉中并链接到 <code>/pages/search/</code>。
+注意：仅当 <code>build_search_index = true</code> 时才渲染搜索图标。</li>
 </ol>
-<p>When using this theme in another Zola site, add <code>content/pages/search.md</code> in that site repository. Theme <code>content/</code> is not loaded by Zola.</p>
-<p>The search index is built for the current <code>default_language</code> only.</p>
-<p>Note: If <code>build_search_index = true</code> but you don’t create <code>content/pages/search.md</code>, the search link will 404.</p>
+<p>当在另一个 Zola 站点中使用此主题时，在该站点仓库中添加 <code>content/pages/search.md</code>。主题 <code>content/</code> 不会被 Zola 加载。</p>
+<p>搜索索引仅针对当前 <code>default_language</code> 构建。</p>
+<p>注意：如果 <code>build_search_index = true</code> 但你没有创建 <code>content/pages/search.md</code>，搜索链接将 404。</p>
 <hr />
-<h2 id="localization">Localization</h2>
-<p>Consider this text on a page where a blog post is published as an example: <code>Published on July 04, 2023; 1,234 words</code>.
-If your blog is in the German language, you want to have <code>Veröffentlicht am 04. Juli 2023; 1.234 Wörter</code> instead.
-Not only the text should be translated, but also the date and number formats are different.
-And you want a text like <code>1 word</code> or <code>1 Wort</code>, because the singular form should be used where applicable.
-This theme takes care of that.</p>
-<p>To localize your blog with this theme:</p>
+<h2 id="ben-di-hua">本地化</h2>
+<p>考虑博客文章发布页面上的这段文字作为示例：<code>Published on July 04, 2023; 1,234 words</code>。
+如果你的博客是德语的，你希望它是 <code>Veröffentlicht am 04. Juli 2023; 1.234 Wörter</code>。
+不仅文本应该翻译，日期和数字格式也不同。
+并且你想要像 <code>1 word</code> 或 <code>1 Wort</code> 这样的文本，因为在适用的情况下应使用单数形式。
+此主题负责处理这个问题。</p>
+<p>要使用此主题本地化你的博客：</p>
 <ol>
 <li>
-<p>Pick your desired language by setting the <code>default_language</code> in <code>zola.toml</code>.
-As of now, English (<code>en</code>) and German (<code>de</code>) have language resources available in the <code>i18n</code> directory.
-If your language is not supported yet, just create a new resource file with your translations.
-Use the file <code>en.toml</code> as a template for your own translations.
-Use the correct language code for the file name, e.g. <code>eo.toml</code> for Esperanto.
-This theme supports only languages that read from left-to-right (ltr).</p>
+<p>通过在 <code>zola.toml</code> 中设置 <code>default_language</code> 来选择你想要的语言。
+截至目前，<code>i18n</code> 目录中提供了英语 (<code>en</code>) 和德语 (<code>de</code>) 语言资源。
+如果尚未支持你的语言，只需创建包含翻译的新资源文件即可。
+使用 <code>en.toml</code> 文件作为你自己翻译的模板。
+使用正确的语言代码作为文件名，例如世界语用 <code>eo.toml</code>。
+此主题仅支持从左到右 (ltr) 阅读的语言。</p>
 </li>
 <li>
-<p>The theme will automatically display all theme-specific string resources in the chosen language.</p>
+<p>主题将自动以所选语言显示所有特定于主题的字符串资源。</p>
 </li>
 <li>
-<p>The content that you provide should match this language.
-But that is your responsibility.
-The theme will not translate your content.</p>
+<p>你提供的内容应与此语言匹配。
+但这要是你的责任。
+主题不会翻译你的内容。</p>
 </li>
 </ol>
-<p>This theme uses <code>default_language</code> as a build-time switch for a single locale per build.
-It does not target Zola's multi-language output in a single build.</p>
-<p>If you need to define your own date format, look <a class="external" rel="noopener external" target="_blank" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">here</a> for supported specifiers.</p>
+<p>此主题使用 <code>default_language</code> 作为每次构建单个区域设置的构建时开关。
+它不针对单次构建中的 Zola 多语言输出。</p>
+<p>如果你需要定义自己的日期格式，请在 <a class="external" rel="noopener external" target="_blank" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">这里</a> 查看支持的说明符。</p>
 <hr />
-<h2 id="integrating-the-theme-folder">Integrating the theme folder</h2>
-<p>This repository is a standalone Zola site by default.
-If you want to integrate Zolarwind into an existing Zola website as a theme, you have two options:</p>
-<h3 id="option-1-automated-integration-recommended">Option 1: Automated Integration (Recommended)</h3>
-<p>There is a helper script, <code>integrate-theme-folder.sh</code>, which performs all the necessary file moves and configuration
-updates automatically (tested on Linux/Bash).</p>
-<p><strong>Note:</strong> Run it only on a fresh checkout of Zolarwind, as it moves and edits files in place.</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">./integrate-theme-folder.sh</span></span></code></pre><h3 id="option-2-manual-integration">Option 2: Manual Integration</h3>
-<p>This section is for those who prefer to move files manually or are on a non-Linux system.
-You can integrate the theme by moving the relevant theme files to the <code>themes/zolarwind</code> directory.
-All other files stay in the root directory.
-If you have your own files there, you need to merge them with the ones from this theme.
-You also need to adjust the <code>zola.toml</code> and <code>package.json</code> files in the root accordingly.</p>
-<p>Most <code>extra.*</code> settings are optional (except <code>title</code> and <code>path_language_resources</code>), but if omitted the related UI
-elements won’t render (menu, footer links, social icons, or the theme toggle). If search is enabled, add
-<code>content/pages/search.md</code> in the site repository. Theme <code>content/</code> is not loaded by Zola (see the Search
-section).</p>
-<p>The manual integration section shows the directories that need to be moved.
-This is the directory structure of the standalone site, where the theme is in the root directory:</p>
+<h2 id="ji-cheng-zhu-ti-wen-jian-jia">集成主题文件夹</h2>
+<p>默认情况下，此仓库是一个独立的 Zola 站点。
+如果你想将 Zolarwind 作为主题集成到现有的 Zola 网站中，你有两个选项：</p>
+<h3 id="xuan-xiang-1-zi-dong-ji-cheng-tui-jian">选项 1：自动集成（推荐）</h3>
+<p>有一个辅助脚本 <code>integrate-theme-folder.sh</code>，它自动执行所有必要的文件移动和配置更新（在 Linux/Bash 上测试）。</p>
+<p><strong>注意：</strong> 仅在 Zolarwind 的全新检出上运行它，因为它会就地移动和编辑文件。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">./integrate-theme-folder.sh</span></span></code></pre><h3 id="xuan-xiang-2-shou-dong-ji-cheng">选项 2：手动集成</h3>
+<p>此部分适用于那些喜欢手动移动文件或在非 Linux 系统上的人。
+你可以通过将相关主题文件移动到 <code>themes/zolarwind</code> 目录来集成主题。
+所有其他文件保留在根目录中。
+如果你那里有自己的文件，你需要将它们与此主题的文件合并。
+你还需要相应地调整根目录中的 <code>zola.toml</code> 和 <code>package.json</code> 文件。</p>
+<p>大多数 <code>extra.*</code> 设置是可选的（除了 <code>title</code> 和 <code>path_language_resources</code>），但如果省略，相关的 UI 元素将不会渲染（菜单、页脚链接、社交图标或主题切换）。如果启用了搜索，请在站点仓库中添加 <code>content/pages/search.md</code>。主题 <code>content/</code> 不会被 Zola 加载（参见搜索部分）。</p>
+<p>手动集成部分显示了需要移动的目录。
+这是独立站点的目录结构，其中主题在根目录中：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>/</span></span>
 <span class="giallo-l"><span>├── css</span></span>
 <span class="giallo-l"><span>├── i18n</span></span>
@@ -631,7 +615,7 @@ This is the directory structure of the standalone site, where the theme is in th
 <span class="giallo-l"><span>├── syntaxes</span></span>
 <span class="giallo-l"><span>├── templates</span></span>
 <span class="giallo-l"><span>└── theme.toml</span></span></code></pre>
-<p>Create a new directory <code>themes/zolarwind</code> and move the theme-specific files there. The tree below shows what stays in the site root and what moves under <code>themes/zolarwind</code>:</p>
+<p>创建一个新目录 <code>themes/zolarwind</code> 并将特定于主题的文件移动到那里。下面的树显示了保留在站点根目录的内容和移动到 <code>themes/zolarwind</code> 下的内容：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>/</span></span>
 <span class="giallo-l"><span>├── static</span></span>
 <span class="giallo-l"><span>│   ├── css</span></span>
@@ -647,106 +631,103 @@ This is the directory structure of the standalone site, where the theme is in th
 <span class="giallo-l"><span>        │   └── js</span></span>
 <span class="giallo-l"><span>        ├── templates</span></span>
 <span class="giallo-l"><span>        └── theme.toml</span></span></code></pre>
-<p>The directory <code>syntaxes</code> stays in its original location. If you want to move it, you have to adjust the <code>extra_grammars</code> entries in <code>zola.toml</code>.</p>
-<p>The <code>static/css</code> directory is a special case.
-It contains the generated Tailwind CSS file with the name <code>generated.css</code>.
-It will stay in its original location.
-Zola always serves the site’s <code>static/</code> directory, even when a theme is used.
-This file is generated from the file <code>css/main.css</code>, which is the input for the CSS generation.</p>
-<p>The <code>giallo-dark.css</code> and <code>giallo-light.css</code> files also stay in the root <code>static/</code> directory, because templates load them from there.</p>
-<p>The generation process can be triggered with a script in the <code>package.json</code> file.
-You <strong>only</strong> need to adjust and run the script in <code>package.json</code> if you make changes to the theme's template files or use new Tailwind CSS classes directly in your content files.
-Since the source file <code>css/main.css</code> has moved to the directory <code>themes/zolarwind/css/main.css</code>, we need to adjust the script in <code>package.json</code> accordingly.</p>
-<p>This is what the relevant part of it looks like for the stand-alone site:</p>
+<p>目录 <code>syntaxes</code> 保留在其原始位置。如果你想移动它，你必须调整 <code>zola.toml</code> 中的 <code>extra_grammars</code> 条目。</p>
+<p><code>static/css</code> 目录是一个特殊情况。
+它包含生成的名为 <code>generated.css</code> 的 Tailwind CSS 文件。
+它将保留在其原始位置。
+Zola 总是服务站点的 <code>static/</code> 目录，即使使用了主题。
+此文件是从 <code>css/main.css</code> 文件生成的，它是 CSS 生成的输入。</p>
+<p><code>giallo-dark.css</code> 和 <code>giallo-light.css</code> 文件也保留在根 <code>static/</code> 目录中，因为模板从那里加载它们。</p>
+<p>生成过程可以通过 <code>package.json</code> 文件中的脚本触发。
+你 <strong>仅</strong> 需要在更改主题的模板文件或直接在内容文件中使用新的 Tailwind CSS 类时调整并运行 <code>package.json</code> 中的脚本。
+由于源文件 <code>css/main.css</code> 已移动到目录 <code>themes/zolarwind/css/main.css</code>，我们需要相应地调整 <code>package.json</code> 中的脚本。</p>
+<p>这是独立站点的相关部分的样子：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="json"><span class="giallo-l"><span style="color: #A6E3A1;">&quot;scripts&quot;</span><span>: </span><span style="color: #9399B2;">{</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  &quot;</span><span style="color: #89B4FA;">css:build</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;npx tailwindcss -i ./css/main.css -o ./static/css/generated.css --minify&quot;</span><span style="color: #9399B2;">,</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  &quot;</span><span style="color: #89B4FA;">css:watch</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;npx tailwindcss -i ./css/main.css -o ./static/css/generated.css --watch&quot;</span><span style="color: #9399B2;">,</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  &quot;</span><span style="color: #89B4FA;">server</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;zola serve&quot;</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre>
-<p>Now change it so that the input file <code>css/main.css</code> will be the file <code>themes/zolarwind/css/main.css</code>:</p>
+<p>现在更改它，使输入文件 <code>css/main.css</code> 变为文件 <code>themes/zolarwind/css/main.css</code>：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="json"><span class="giallo-l"><span style="color: #A6E3A1;">&quot;scripts&quot;</span><span>: </span><span style="color: #9399B2;">{</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  &quot;</span><span style="color: #89B4FA;">css:build</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;npx tailwindcss -i ./themes/zolarwind/css/main.css -o ./static/css/generated.css --minify&quot;</span><span style="color: #9399B2;">,</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  &quot;</span><span style="color: #89B4FA;">css:watch</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;npx tailwindcss -i ./themes/zolarwind/css/main.css -o ./static/css/generated.css --watch&quot;</span><span style="color: #9399B2;">,</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  &quot;</span><span style="color: #89B4FA;">server</span><span style="color: #9399B2;">&quot;:</span><span style="color: #A6E3A1;"> &quot;zola serve&quot;</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre>
-<p>Since you now use Zolarwind as a theme, you need to declare it in the <code>zola.toml</code> file.
-The theme's files have moved to the directory <code>themes/zolarwind</code>, so you need to adjust the only reference to the theme's files in the <code>zola.toml</code> file accordingly by changing the <code>path_language_resources</code> entry:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The site theme to use</span></span>
+<p>由于你现在将 Zolarwind 用作主题，你需要在 <code>zola.toml</code> 文件中声明它。
+主题文件已移动到目录 <code>themes/zolarwind</code>，因此你需要通过更改 <code>path_language_resources</code> 条目相应地调整 <code>zola.toml</code> 文件中对主题文件的唯一引用：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 使用的站点主题</span></span>
 <span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;zolarwind&quot;</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># ...</span></span>
 <span class="giallo-l"></span>
-<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Path to the language resource files</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 语言资源文件的路径</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>path_language_resources</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;themes/zolarwind/i18n/&quot;</span></span></code></pre>
 <hr />
-<h2 id="development">Development</h2>
-<p>To customize the CSS, edit the files in the <code>templates</code> and <code>css</code> directories.
-Ensure that the CSS file <code>static/css/generated.css</code> is updated.
-This file is generated from <code>css/main.css</code> and the files identified via automatic content detection.</p>
-<p>The theme uses a custom color palette (<code>neutral</code>, <code>primary</code>, <code>ok</code>, <code>warn</code>, <code>fail</code>) instead of the default Tailwind colors.
-When new classes are added in templates or content, rebuild the CSS to include the generated palette classes.</p>
-<p>If a source file is excluded by default, it can be added with the <code>@source</code> directive in <code>css/main.css</code>:</p>
+<h2 id="kai-fa">开发</h2>
+<p>要自定义 CSS，请编辑 <code>templates</code> 和 <code>css</code> 目录中的文件。
+确保 CSS 文件 <code>static/css/generated.css</code> 已更新。
+此文件是从 <code>css/main.css</code> 和通过自动内容检测识别的文件生成的。</p>
+<p>主题使用自定义调色板（<code>neutral</code>, <code>primary</code>, <code>ok</code>, <code>warn</code>, <code>fail</code>）而不是默认的 Tailwind 颜色。
+当在模板或内容中添加新类时，重建 CSS 以包含生成的调色板类。</p>
+<p>如果源文件默认被排除，可以使用 <code>@source</code> 指令将其添加到 <code>css/main.css</code> 中：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="css"><span class="giallo-l"><span style="color: #CBA6F7;">@source</span><span> &quot;../node_modules/@my-company/ui-lib&quot;</span><span style="color: #9399B2;">;</span></span></code></pre>
-<p>When these files change, run the <code>css:build</code> script from <code>package.json</code>. This requires <code>Node.js</code> and the dependencies
-from <code>package.json</code> (installed with <code>npm install</code>). Running <code>npm run css:watch</code> monitors the files and triggers CSS
-generation on changes. This ensures <code>static/css/generated.css</code> remains current.</p>
-<p>It is recommended to have two terminals open: one for the Zola server (<code>zola serve</code>) and another for the CSS watch
-script (<code>npm run css:watch</code>). The browser reloads with updated CSS when files are modified.</p>
+<p>当这些文件更改时，运行 <code>package.json</code> 中的 <code>css:build</code> 脚本。这需要 <code>Node.js</code> 和 <code>package.json</code> 中的依赖项（通过 <code>npm install</code> 安装）。运行 <code>npm run css:watch</code> 监视文件并在更改时触发 CSS 生成。这确保 <code>static/css/generated.css</code> 保持最新。</p>
+<p>建议打开两个终端：一个用于 Zola 服务器 (<code>zola serve</code>)，另一个用于 CSS 监视脚本 (<code>npm run css:watch</code>)。当文件被修改时，浏览器会重新加载更新后的 CSS。</p>
 <hr />
-<h2 id="privacy">Privacy</h2>
-<p>This theme sets no cookies and does not load resources from third-party sites. The dark/light mode preference is stored in <code>sessionStorage</code> only after a user explicitly toggles the theme.</p>
-<p>KaTeX, Mermaid, and MiniSearch are bundled in <code>static/</code> so they can be served from your own domain and remain pinned to known versions.
-If you instead load them from a Content Delivery Network (CDN), consider the following GDPR implications:</p>
+<h2 id="yin-si">隐私</h2>
+<p>此主题不设置 cookie，也不从第三方站点加载资源。暗色/亮色模式偏好仅在用户显式切换主题后存储在 <code>sessionStorage</code> 中。</p>
+<p>KaTeX、Mermaid 和 MiniSearch 捆绑在 <code>static/</code> 中，因此它们可以从你自己的域提供服务并保持固定在已知版本。
+如果你改为从内容分发网络 (CDN) 加载它们，请考虑以下 GDPR 影响：</p>
 <ul>
 <li>
-<p><strong>Third-Party Requests &amp; Data Privacy</strong>: When you load resources from a CDN, it triggers third-party requests to the CDN's servers.
-These servers might log your IP address, user agent, and other request-related metadata.
-Under GDPR, IP addresses can be considered personal data.
-By serving these libraries from your domain, you reduce third-party data transfers, limiting the amount of personal data you expose to external entities.</p>
+<p><strong>第三方请求和数据隐私</strong>：当你从 CDN 加载资源时，它会触发对 CDN 服务器的第三方请求。
+这些服务器可能会记录你的 IP 地址、用户代理和其他请求相关的元数据。
+在 GDPR 下，IP 地址可以被视为个人数据。
+通过从你的域提供这些库，你减少了第三方数据传输，限制了你向外部实体暴露的个人数据量。</p>
 </li>
 <li>
-<p><strong>Cookies</strong>: Many CDNs set cookies for various reasons, including analytics or performance optimizations.
-These cookies can track users across different websites that use the same CDN, potentially infringing on their privacy rights.
-By hosting these libraries on your domain, you control cookies and can ensure compliance with GDPR.</p>
+<p><strong>Cookies</strong>：许多 CDN 出于各种原因（包括分析或性能优化）设置 cookie。
+这些 cookie 可以跨使用同一 CDN 的不同网站跟踪用户，可能会侵犯他们的隐私权。
+通过在你的域上托管这些库，你可以控制 cookie 并确保符合 GDPR。</p>
 </li>
 <li>
-<p><strong>Consent</strong>: If you're using a CDN that sets cookies or collects data, you might need to get explicit user consent before loading resources from that CDN.
-This can complicate user experience and lead to a reduced site performance for users who opt-out.
-By self-hosting, you circumvent this issue.</p>
+<p><strong>同意</strong>：如果你使用的 CDN 设置 cookie 或收集数据，你可能需要在从该 CDN 加载资源之前获得用户的明确同意。
+这可能会使用户体验复杂化，并导致选择退出的用户站点性能下降。
+通过自托管，你可以规避此问题。</p>
 </li>
 <li>
-<p><strong>Transparency &amp; Control</strong>: By self-hosting, you know exactly which versions of these libraries you're using and can ensure there are no modifications or unexpected behaviors.
-With CDNs, there's a risk of the library being compromised, which could affect all sites using that resource.</p>
+<p><strong>透明度和控制</strong>：通过自托管，你确切知道你正在使用的这些库的版本，并可以确保没有修改或意外行为。
+使用 CDN，库存在被破坏的风险，这可能会影响所有使用该资源的站点。</p>
 </li>
 <li>
-<p><strong>Data Transfer Outside the EU</strong>: If the CDN servers are located outside the European Union, you might be transferring data out of the EU,
-which adds another layer of GDPR compliance requirements.
-By self-hosting, you ensure that user data doesn't leave the region unless you specifically choose a hosting solution outside the EU.</p>
+<p><strong>欧盟以外的数据传输</strong>：如果 CDN 服务器位于欧盟以外，你可能会将数据传输到欧盟以外，
+这增加了另一层 GDPR 合规要求。
+通过自托管，你确保用户数据不会离开该地区，除非你专门选择欧盟以外的托管解决方案。</p>
 </li>
 </ul>
 <hr />
-<h2 id="remarks">Remarks</h2>
-<h3 id="typography-for-markdown">Typography for Markdown</h3>
-<p>This theme does not use <code>@tailwindcss/typography</code> for styling of Markdown files.
-Instead, it uses <code>@apply</code> in the <code>css/main.css</code> file.
-The <code>@apply</code> directive in Tailwind CSS enables composing utility classes into custom CSS classes.
-This allows applying multiple utility styles within a single class for Markdown content styling.</p>
-<p>This approach provides control over the visual result.
-It requires manual styling instead of using the <code>@tailwindcss/typography</code> plugin.</p>
-<p>This recreates common typographic patterns that the typography plugin already provides.</p>
+<h2 id="bei-zhu">备注</h2>
+<h3 id="markdown-pai-ban">Markdown 排版</h3>
+<p>此主题不使用 <code>@tailwindcss/typography</code> 来设置 Markdown 文件的样式。
+相反，它在 <code>css/main.css</code> 文件中使用 <code>@apply</code>。
+Tailwind CSS 中的 <code>@apply</code> 指令允许将实用程序类组合成自定义 CSS 类。
+这允许在单个类中应用多个实用程序样式以进行 Markdown 内容样式设置。</p>
+<p>这种方法提供了对视觉结果的控制。
+它需要手动设置样式，而不是使用 <code>@tailwindcss/typography</code> 插件。</p>
+<p>这重新创建了排版插件已经提供的常见排版模式。</p>
 <hr />
-<h2 id="contributing">Contributing</h2>
-<p>Contributions are always welcome!
-If you see areas of improvement or want to add features, please submit a PR.</p>
-<p>I'm especially interested in more translations.
-See folder <code>i18n</code> for what's available and what is not.
-Use the file <code>en.toml</code> as a template for your own translations.</p>
+<h2 id="gong-xian">贡献</h2>
+<p>总是欢迎贡献！
+如果你看到改进的地方或想要添加功能，请提交 PR。</p>
+<p>我特别对更多翻译感兴趣。
+查看 <code>i18n</code> 文件夹以了解可用的内容和不可用的内容。
+使用文件 <code>en.toml</code> 作为你自己翻译的模板。</p>
 <hr />
-<h2 id="license">License</h2>
-<p>This theme is under the MIT License.
-For details, please refer to the LICENSE file.</p>
-<h3 id="third-party-notices">Third-Party Notices</h3>
+<h2 id="xu-ke-zheng">许可证</h2>
+<p>此主题遵循 MIT 许可证。
+有关详细信息，请参阅 LICENSE 文件。</p>
+<h3 id="di-san-fang-sheng-ming">第三方声明</h3>
 <ul>
 <li>Heroicons (MIT License): https://heroicons.com</li>
 <li>KaTeX (MIT License): https://katex.org</li>

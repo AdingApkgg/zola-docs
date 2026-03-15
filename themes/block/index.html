@@ -171,28 +171,27 @@
 
     <hr>
     <h1 id="block">Block</h1>
-<p>Pure black, blog focused theme for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a>, powered by
-<a class="external" rel="noopener external" target="_blank" href="https://tailwindcss.com/">TailwindCSS</a>.</p>
-<p>Demo: https://block-zola.netlify.app/</p>
-<p><img src="https://zola.docs.saop.cc/themes/block/./screenshot.png" alt="sreenshot" /></p>
-<h2 id="setup">Setup</h2>
-<p>In your zola site directory</p>
+<p>纯黑、以博客为中心的 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> 主题，由 <a class="external" rel="noopener external" target="_blank" href="https://tailwindcss.com/">TailwindCSS</a> 驱动。</p>
+<p>演示: https://block-zola.netlify.app/</p>
+<p><img src="https://zola.docs.saop.cc/themes/block/./screenshot.png" alt="截图" /></p>
+<h2 id="she-zhi">设置</h2>
+<p>在你的 zola 站点目录中</p>
 <ul>
 <li>
-<p>Get theme</p>
+<p>获取主题</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/ssiyad/block themes/block</span></span></code></pre></li>
 <li>
-<p>Build CSS</p>
+<p>构建 CSS</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes/block</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">npm</span><span style="color: #A6E3A1;"> ci</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">npm</span><span style="color: #A6E3A1;"> run css:build</span></span></code></pre></li>
 <li>
-<p>Build your site</p>
+<p>构建你的站点</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> ../..</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> build</span></span></code></pre></li>
 </ul>
-<h2 id="variables">Variables</h2>
-<p>You can use the following variables in your <code>config.toml</code>.</p>
+<h2 id="bian-liang">变量</h2>
+<p>你可以在 <code>config.toml</code> 中使用以下变量。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.intro</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>heading</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Blog/Black theme for Zola&quot;</span></span>
 <span class="giallo-l"><span>subheading</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Thoughts, stories and ideas.&quot;</span></span>
@@ -200,11 +199,10 @@
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.footer</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>license_text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span></code></pre>
-<p>Check <a href="https://zola.docs.saop.cc/themes/block/./theme.toml">theme.toml</a> for more info.</p>
-<h2 id="blocks">Blocks</h2>
-<p>You can override individual blocks by following
-<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/extending-a-theme/#overriding-a-block">this</a>.</p>
-<p>Example: <code>templates/base_layout.html</code></p>
+<p>查看 <a href="https://zola.docs.saop.cc/themes/block/./theme.toml">theme.toml</a> 了解更多信息。</p>
+<h2 id="kuai">块</h2>
+<p>你可以通过遵循 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/extending-a-theme/#overriding-a-block">这里</a> 的说明覆盖单个块。</p>
+<p>示例：<code>templates/base_layout.html</code></p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{%/* extends &quot;block/templates/base_layout.html&quot; */%}</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>{%/* block license_text */%}</span></span>
@@ -230,10 +228,8 @@
 <span class="giallo-l"><span style="color: #94E2D5;">      &gt;</span><span>GPLv3</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">a</span></span>
 <span class="giallo-l"><span style="color: #94E2D5;">    &gt;</span><span>.</span></span>
 <span class="giallo-l"><span style="color: #94E2D5;">  &lt;/</span><span style="color: #89B4FA;">div</span><span style="color: #94E2D5;">&gt;</span></span>
-<span class="giallo-l"><span>{%/* endblock */%}</span></span></code></pre><h2 id="self-promotion">Self Promotion</h2>
-<p>Like this project? Give it a star! ⭐, and spread the word! 🚀. And if you are
-feeling especially charitable, follow <a class="external" rel="noopener external" target="_blank" href="https://ssiyad.com">Sabu Siyad</a> on
-<a class="external" rel="noopener external" target="_blank" href="https://github.com/ssiyad">GitHub</a>. Thanks!</p>
+<span class="giallo-l"><span>{%/* endblock */%}</span></span></code></pre><h2 id="zi-wo-tui-xiao">自我推销</h2>
+<p>喜欢这个项目吗？给它一个星！⭐，并传播出去！🚀。如果你感觉特别慷慨，请在 <a class="external" rel="noopener external" target="_blank" href="https://github.com/ssiyad">GitHub</a> 上关注 <a class="external" rel="noopener external" target="_blank" href="https://ssiyad.com">Sabu Siyad</a>。谢谢！</p>
 
 
     </div>

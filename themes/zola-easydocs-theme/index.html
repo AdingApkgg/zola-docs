@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="EasyDocs | Zola">
-        <meta property="og:description" content="An easy way to create docs for your project">
+        <meta property="og:description" content="为你的项目创建文档的简单方法">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-easydocs-theme&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="EasyDocs | Zola">
-        <meta name="twitter:description" content="An easy way to create docs for your project">
+        <meta name="twitter:description" content="为你的项目创建文档的简单方法">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "EasyDocs",
-            "description": "An easy way to create docs for your project",
+            "description": "为你的项目创建文档的简单方法",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-easydocs-theme&#x2F;",
             "author": {
                 "@type": "Person",
@@ -121,9 +121,9 @@
                         
                             
                                 
-                            
-                                
                                     
+                                
+                            
                                 
                             
                         
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-easydocs-theme&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> EasyDocs</h1>
-            <p>An easy way to create docs for your project</p>
+            <p>为你的项目创建文档的简单方法</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;codeandmedia.com">Roman Soldatenkov</a>
@@ -170,42 +170,42 @@
     </div>
 
     <hr>
-    <h2 id="an-easy-way-to-create-a-document-library-for-your-project">An easy way to create a document library for your project</h2>
-<p>Demo: <a class="external" rel="noopener external" target="_blank" href="https://easydocs.codeandmedia.com/">https://easydocs.codeandmedia.com/</a></p>
-<p>This theme for <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> (static site engine) helps you build and publish your project docs easily and fast. Zola is just one binary that outputs html-pages and additional static assets after building your docs written in Markdown. Thus, you can take the theme, your md-files, Zola and gain flexible and simple website for documentation.</p>
-<h3 id="step-by-step">Step-by-step</h3>
-<p>As you may have heard Zola is quite flexible :) So, the scenario below is one of hundreds possible ways to make things done, feel free to find your best. Also, Zola provides their own mechanism to install and use themes, see <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">the docs</a>.</p>
+    <h2 id="wei-ni-de-xiang-mu-chuang-jian-wen-dang-ku-de-jian-dan-fang-fa">为你的项目创建文档库的简单方法</h2>
+<p>演示: <a class="external" rel="noopener external" target="_blank" href="https://easydocs.codeandmedia.com/">https://easydocs.codeandmedia.com/</a></p>
+<p>此 <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a>（静态站点引擎）主题可帮助你轻松快速地构建和发布项目文档。Zola 只是一个二进制文件，在构建用 Markdown 编写的文档后输出 html 页面和其他静态资产。因此，你可以使用主题、你的 md 文件、Zola 并获得灵活简单的文档网站。</p>
+<h3 id="yi-bu-yi-bu">一步一步</h3>
+<p>正如你可能听说过的那样，Zola 非常灵活 :) 因此，下面的场景是完成任务的数百种可能方法之一，请随时寻找最适合你的方法。此外，Zola 提供了自己的机制来安装和使用主题，请参阅 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">文档</a>。</p>
 <ol>
-<li>Fork the repo and replace demo-content inside content folder with yours. But take a look to _index.md files. It contains <code>title</code> and when you want to have anchor right of your headers add <code>insert_anchor_links = "right"</code> to each index. <code>theme.toml</code>, screenshot and readme may be deleted too.</li>
-<li>Inside <code>config.toml</code> change URL and title on your own. In extra section you can specify path to your GitHub API for version below the logo on nav, favicon and logo itself. Or just remove the lines if you don't need it. Also, you can configure or turn on some additional settings related to Zola. <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">Specification is here</a>.</li>
-<li>In sass/_variables.scss you may change font, color or background if you want.</li>
-<li>Almost done. Now, you should decide how you want to build and where will be hosted your website. You can build it locally and upload to somewhere. Or build in GitHub Actions and host on GitHub Pages / Netlify / CloudFlare Pages / AnyS3CloudStorage. <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/deployment/github-pages/">Howto for GitHub Pages</a>. <a class="external" rel="noopener external" target="_blank" href="https://github.com/o365hq/o365hq.com/blob/main/.github/workflows/main.yml">My example</a> of GitHub workflow with 2-steps build (the first checks for links and spelling errors, the second uploads to Azure). <a class="external" rel="noopener external" target="_blank" href="https://github.com/codeandmedia/zola_docsascode_theme/blob/master/Dockerfile">Dockerfile</a> to make Docker image.</li>
+<li>Fork 仓库并将 content 文件夹内的演示内容替换为你的内容。但是请查看 _index.md 文件。它包含 <code>title</code>，当你想要在标题右侧有锚点时，请向每个 index 添加 <code>insert_anchor_links = "right"</code>。<code>theme.toml</code>、截图和自述文件也可以删除。</li>
+<li>在 <code>config.toml</code> 中更改 URL 和标题为你自己的。在 extra 部分，你可以指定 GitHub API 的路径，以便在导航栏上的 logo 下方显示版本、favicon 和 logo 本身。或者如果你不需要，只需删除这些行。此外，你可以配置或打开一些与 Zola 相关的其他设置。<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">规范在这里</a>。</li>
+<li>在 sass/_variables.scss 中，你可以根据需要更改字体、颜色或背景。</li>
+<li>差不多完成了。现在，你应该决定如何构建以及在哪里托管你的网站。你可以在本地构建并上传到某个地方。或者在 GitHub Actions 中构建并托管在 GitHub Pages / Netlify / CloudFlare Pages / AnyS3CloudStorage 上。<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/deployment/github-pages/">GitHub Pages 指南</a>。<a class="external" rel="noopener external" target="_blank" href="https://github.com/o365hq/o365hq.com/blob/main/.github/workflows/main.yml">我的示例</a> GitHub 工作流，包含 2 步构建（第一步检查链接和拼写错误，第二步上传到 Azure）。用于制作 Docker 镜像的 <a class="external" rel="noopener external" target="_blank" href="https://github.com/codeandmedia/zola_docsascode_theme/blob/master/Dockerfile">Dockerfile</a>。</li>
 </ol>
-<h2 id="zola-v0-22-update">Zola v0.22 update</h2>
-<p>It seems like for Zola 0.22 config.toml got updated and some fields lost backward compatibility</p>
-<p>before:</p>
+<h2 id="zola-v0-22-geng-xin">Zola v0.22 更新</h2>
+<p>看来对于 Zola 0.22，config.toml 已更新，某些字段失去了向后兼容性</p>
+<p>之前:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>[markdown]</span></span>
 <span class="giallo-l"><span>highlight_code = true</span></span>
 <span class="giallo-l"><span>highlight_theme = &quot;base16-ocean-light&quot;</span></span>
 <span class="giallo-l"></span></code></pre>
-<p>now</p>
+<p>现在</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>[markdown]</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>[markdown.highlighting]</span></span>
 <span class="giallo-l"><span>theme = &quot;github-light&quot;   </span></span></code></pre>
-<p>Please, take a look to a version you're using and pick up the proper one config.</p>
-<h2 id="provided-configurations-options">Provided configurations options</h2>
-<p>These options can be configured in the <code>extra</code> section of the <a href="https://zola.docs.saop.cc/themes/zola-easydocs-theme/config.toml">config.toml</a>.
-If any are not present it has the same behaviour as the default which is shown in the starter <a href="https://zola.docs.saop.cc/themes/zola-easydocs-theme/config.toml">config.toml</a>.</p>
+<p>请查看你使用的版本并选择正确的配置。</p>
+<h2 id="ti-gong-de-pei-zhi-xuan-xiang">提供的配置选项</h2>
+<p>这些选项可以在 <a href="https://zola.docs.saop.cc/themes/zola-easydocs-theme/config.toml">config.toml</a> 的 <code>extra</code> 部分进行配置。
+如果不存在任何选项，则其行为与入门 <a href="https://zola.docs.saop.cc/themes/zola-easydocs-theme/config.toml">config.toml</a> 中显示的默认值相同。</p>
 <ul>
-<li><strong>easydocs_logo_always_clickable</strong> controls if the logo is always clickable. By default the logo is only clickable if you are not on the home page. If this is enabled it will make the logo clickable when you are on the home page as well. Thus on the home page it will basically just refresh the page as it will take you to the same page.</li>
-<li><strong>easydocs_uglyurls</strong> provides support for offline sites that do not use a webserver. If set to true links in the nav are generated with the full path indcluding <code>index.html</code>. This functionality was  insired by <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/themes/abridge/">Abridge theme</a>. Note that for this to work it also requries the base URL to be set to the local folder where the site will be stored eg. <code>base_url = file:///home/user/mysite/public/</code>. Therefore this is not portable and only works with a specific local folder, but does not require a webserver to navigate the site.</li>
-<li><strong>easydocs_heading_threshold</strong> controls minimum number of headings needed on a page before the headings show in the navigation on the left. Defaults to 5. Can be used for example to always show headings on each page by setting it to 1.</li>
+<li><strong>easydocs_logo_always_clickable</strong> 控制 logo 是否始终可点击。默认情况下，仅当你不在首页时 logo 才可点击。如果启用此选项，它将使 logo 在首页上也可点击。因此，在首页上，它基本上只会刷新页面，因为它会将你带到同一页面。</li>
+<li><strong>easydocs_uglyurls</strong> 为不使用网络服务器的离线站点提供支持。如果设置为 true，导航中的链接将生成包含 <code>index.html</code> 的完整路径。此功能的灵感来自 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/themes/abridge/">Abridge 主题</a>。请注意，要使其工作，还需要将 base URL 设置为存储站点的本地文件夹，例如 <code>base_url = file:///home/user/mysite/public/</code>。因此，这不是可移植的，仅适用于特定的本地文件夹，但不需要网络服务器即可导航站点。</li>
+<li><strong>easydocs_heading_threshold</strong> 控制在左侧导航栏中显示标题之前页面所需的最小标题数。默认为 5。例如，可以通过将其设置为 1 来始终显示每个页面上的标题。</li>
 </ul>
-<p>Enjoy your docs!</p>
+<p>享受你的文档吧！</p>
 <ul>
-<li><em>Icons: <a class="external" rel="noopener external" target="_blank" href="https://uifabricicons.azurewebsites.net/">Office UI Fabric Icons</a></em></li>
-<li><em>Copy-code-button: <a class="external" rel="noopener external" target="_blank" href="https://aaronluna.dev/blog/add-copy-button-to-code-blocks-hugo-chroma/">Aaron Luna</a></em></li>
+<li><em>图标: <a class="external" rel="noopener external" target="_blank" href="https://uifabricicons.azurewebsites.net/">Office UI Fabric Icons</a></em></li>
+<li><em>复制代码按钮: <a class="external" rel="noopener external" target="_blank" href="https://aaronluna.dev/blog/add-copy-button-to-code-blocks-hugo-chroma/">Aaron Luna</a></em></li>
 </ul>
 
 

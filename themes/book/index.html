@@ -13,7 +13,7 @@
 
         <!-- Open Graph -->
         <meta property="og:title" content="book | Zola">
-        <meta property="og:description" content="A book theme inspired from GitBook&#x2F;mdBook">
+        <meta property="og:description" content="一个受 GitBook&#x2F;mdBook 启发的书籍主题">
         <meta property="og:type" content="article">
         <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;book&#x2F;">
         <meta property="og:site_name" content="Zola">
@@ -22,7 +22,7 @@
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="book | Zola">
-        <meta name="twitter:description" content="A book theme inspired from GitBook&#x2F;mdBook">
+        <meta name="twitter:description" content="一个受 GitBook&#x2F;mdBook 启发的书籍主题">
         <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
 
         <!-- AI Indexing -->
@@ -34,7 +34,7 @@
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": "book",
-            "description": "A book theme inspired from GitBook&#x2F;mdBook",
+            "description": "一个受 GitBook&#x2F;mdBook 启发的书籍主题",
             "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;book&#x2F;",
             "author": {
                 "@type": "Person",
@@ -150,7 +150,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;book&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> book</h1>
-            <p>A book theme inspired from GitBook&#x2F;mdBook</p>
+            <p>一个受 GitBook&#x2F;mdBook 启发的书籍主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;www.vincentprouillet.com">Vincent Prouillet</a>
@@ -171,46 +171,40 @@
 
     <hr>
     <h1 id="book">book</h1>
-<p>A theme based on <a class="external" rel="noopener external" target="_blank" href="https://www.gitbook.com">Gitbook</a>, to write documentation
-or books.</p>
-<p><img src="https://github.com/Keats/book/blob/master/screenshot.png?raw=true" alt="book screenshot" /></p>
-<p>Demo: https://getzola.github.io/book/</p>
-<h2 id="contents">Contents</h2>
+<p>一个基于 <a class="external" rel="noopener external" target="_blank" href="https://www.gitbook.com">Gitbook</a> 的主题，用于编写文档或书籍。</p>
+<p><img src="https://github.com/Keats/book/blob/master/screenshot.png?raw=true" alt="book 截图" /></p>
+<p>演示: https://getzola.github.io/book/</p>
+<h2 id="mu-lu">目录</h2>
 <ul>
-<li>Installation</li>
-<li>Options
+<li>安装</li>
+<li>选项
 <ul>
-<li>Numbered chapters</li>
+<li>章节编号</li>
 </ul>
 </li>
 </ul>
-<h2 id="installation">Installation</h2>
-<p>First download this theme to your <code>themes</code> directory:</p>
+<h2 id="an-zhuang">安装</h2>
+<p>首先将此主题下载到你的 <code>themes</code> 目录：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cd themes</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git clone https://github.com/getzola/book.git</span></span></code></pre>
-<p>and then enable it in your <code>config.toml</code>:</p>
+<p>然后在你的 <code>config.toml</code> 中启用它：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;book&quot;</span></span>
-<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Optional, if you want search</span></span>
-<span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h2 id="usage">Usage</h2>
-<p>Book will generate a book from the files you place in the <code>content</code> directory.  Your book
-can have two levels of hierarchy: chapters and subchapters.</p>
-<p>Each chapter should be a <code>section</code> within the Gutenberg site and should have an <code>_index.md</code>
-file that sets its <code>weight</code> front-matter variable to its chapter number.  For example,
-chapter 2 should have <code>weight = 2</code>.  Additionally, each chapter should also set the
-<code>sort_by = "weight"</code> in its front matter.</p>
-<p>Each subchapter should be a <code>page</code> and should have its <code>weight</code> variable set to the subchapter
-number.  For example, subchapter 3.4 should have <code>weight = 4</code>.</p>
-<p>Finally, you should create an <code>_index.md</code> file and set the <code>redirect_to</code> front-matter variable
-to redirect to the first section of your content.  For example, if your first section has the
-slug <code>introduction</code>, then you would set <code>redirect_to = "introduction"</code>.</p>
-<h2 id="options">Options</h2>
-<h3 id="numbered-chapters">Numbered chapters</h3>
-<p>By default, the <code>book</code> theme will number the chapters and pages in the left menu.
-You can disable that by setting the <code>book_number_chapters</code> in <code>extra</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>book_number_chapters</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre><h3 id="current-section-pages-only">Current section pages only</h3>
-<p>By default, the <code>book</code> theme will list all the pages in the current section.
-You can disable that by setting the <code>book_only_current_section_pages</code> in <code>extra</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>book_only_current_section_pages</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 可选，如果你想要搜索</span></span>
+<span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h2 id="shi-yong">使用</h2>
+<p>Book 将根据你放置在 <code>content</code> 目录中的文件生成一本书。你的书可以有两个层级：章和子章。</p>
+<p>每一章应该是 Gutenberg 站点中的一个 <code>section</code>，并且应该有一个 <code>_index.md</code> 文件，其 <code>weight</code> Front Matter 变量设置为其章节号。例如，第 2 章应有 <code>weight = 2</code>。此外，每一章还应在 Front Matter 中设置 <code>sort_by = "weight"</code>。</p>
+<p>每个子章应该是一个 <code>page</code>，其 <code>weight</code> 变量应设置为子章号。例如，子章 3.4 应有 <code>weight = 4</code>。</p>
+<p>最后，你应该创建一个 <code>_index.md</code> 文件并设置 <code>redirect_to</code> Front Matter 变量以重定向到你内容的第一部分。例如，如果你的第一部分 slug 为 <code>introduction</code>，那么你应该设置 <code>redirect_to = "introduction"</code>。</p>
+<h2 id="xuan-xiang">选项</h2>
+<h3 id="zhang-jie-bian-hao">章节编号</h3>
+<p>默认情况下，<code>book</code> 主题将在左侧菜单中对章节和页面进行编号。
+你可以通过在 <code>extra</code> 中设置 <code>book_number_chapters</code> 来禁用它：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>book_number_chapters</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre><h3 id="jin-dang-qian-bu-fen-ye-mian">仅当前部分页面</h3>
+<p>默认情况下，<code>book</code> 主题将列出当前部分的所有页面。
+你可以通过在 <code>extra</code> 中设置 <code>book_only_current_section_pages</code> 来禁用它：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>book_only_current_section_pages</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre>
 
     </div>
 
