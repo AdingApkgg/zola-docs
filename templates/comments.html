@@ -6,12 +6,17 @@
     <link href="{{ get_url(path='css/Artalk.css') }}" rel="stylesheet">
     <script src="{{ get_url(path='js/Artalk.js') }}" defer></script>
     <script>
-    document.addEventListener('turbo:load', () => {
+    const pageKey = '{{ page.path | safe }}';
+    const initComments = (retry = 0) => {
         const el = document.getElementById('Comments');
         if (!el) return;
-        const pageKey = '{{ page.path | safe }}';
         if (el.dataset.artalkInited === pageKey) return;
-        if (typeof Artalk === 'undefined') return;
+        if (typeof Artalk === 'undefined') {
+            if (retry < 50) {
+                setTimeout(() => initComments(retry + 1), 100);
+            }
+            return;
+        }
         Artalk.init({
             el:        '#Comments',
             pageKey:   pageKey,
@@ -21,7 +26,14 @@
             darkMode:  'auto',
         });
         el.dataset.artalkInited = pageKey;
-    });
+    };
+
+    document.addEventListener('turbo:load', () => initComments());
+    if (document.readyState !== 'loading') {
+        initComments();
+    } else {
+        document.addEventListener('DOMContentLoaded', () => initComments());
+    }
     </script>
 {% endblock head %}
 
