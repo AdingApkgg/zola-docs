@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
         <meta name="author" content="Vincent Prouillet">
@@ -45,9 +46,9 @@
         <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
         <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
         <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.2.0/css/all.min.css" integrity="sha512-c7v2mEghMrX9YKC1iSb93skFX4CVpTvFJxTiEek0DDQZc2zq/WsnlmeBARTTBr/M3Pzd9RwLZ/6ePHPFRYPldA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
         <script type="module">
-            import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.23/+esm';
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
         </script>
         <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
         <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
@@ -367,12 +368,12 @@
         })();
         </script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha512-ZuFPKJIIsSeG2DiU5DvfCbE9wAIM4iE4Wz0ndUgoLnSoJK+YQ9dJPzx5WWy73K0VH5QfsofoFoAXHzpp6P6xRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js"></script>
         <script>
         window.addEventListener('load', () => {
           quicklink.listen();
         });
         </script>
-        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84GO0uHryzYj/+CxJeCmfVk7hG+6gVoCq"></script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
     </body>
 </html>
