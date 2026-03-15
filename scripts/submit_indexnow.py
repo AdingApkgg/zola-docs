@@ -6,6 +6,8 @@ import urllib.error
 import xml.etree.ElementTree as ET
 from urllib.parse import urlparse
 
+import time
+
 def get_base_url():
     """从 config.toml 读取 base_url"""
     try:
@@ -19,6 +21,32 @@ def get_base_url():
     except Exception as e:
         print(f"Error reading config.toml: {e}")
     return None
+
+def verify_key_accessibility(host, key, max_retries=18, delay=10):
+    """验证 Key 文件是否已生效，因为 GitHub Pages 部署有延迟 (默认等待 3 分钟)"""
+    url = f"https://{host}/{key}.txt"
+    print(f"Verifying key file availability at: {url}")
+    
+    for i in range(max_retries):
+        try:
+            req = urllib.request.Request(url)
+            with urllib.request.urlopen(req) as response:
+                if response.status == 200:
+                    content = response.read().decode('utf-8').strip()
+                    if content == key:
+                        print("Key file verification successful!")
+                        return True
+                    else:
+                        print(f"Key file found but content mismatch. Expected {key}, got {content}")
+        except urllib.error.HTTPError as e:
+            print(f"Attempt {i+1}/{max_retries}: Key file not ready yet ({e.code}). Waiting {delay}s...")
+        except Exception as e:
+            print(f"Attempt {i+1}/{max_retries}: Error checking key file: {e}. Waiting {delay}s...")
+        
+        time.sleep(delay)
+    
+    print("Warning: Key file verification timed out. Submitting anyway but might fail.")
+    return False
 
 def get_api_key():
     """从 static 目录查找 API Key 文件"""
@@ -110,6 +138,9 @@ def main():
     if not urls:
         print("No URLs found in sitemap.")
         return
+
+    # 等待验证文件生效
+    verify_key_accessibility(host, api_key)
 
     # IndexNow limit is 10,000 URLs per request
     submit_to_indexnow(host, api_key, urls)
