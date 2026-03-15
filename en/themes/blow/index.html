@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;blow&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Blow | Zola">
+        <meta property="og:description" content="A Zola theme made with Tailwindcss">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;blow&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Blow | Zola">
+        <meta name="twitter:description" content="A Zola theme made with Tailwindcss">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Blow",
+            "description": "A Zola theme made with Tailwindcss",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;blow&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>Blow | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;blow&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;blow&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> Blow</h1>
+            <p>A Zola theme made with Tailwindcss</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;tchartron.com">Thomas Chartron</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.9.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;tchartron&#x2F;blow">https:&#x2F;&#x2F;github.com&#x2F;tchartron&#x2F;blow</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;tchartron.com">https:&#x2F;&#x2F;tchartron.com</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2024-09-29T16:55:23+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="blow">Blow</h1>
+<p>A <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> theme built with <a class="external" rel="noopener external" target="_blank" href="https://tailwindcss.com/">tailwindcss</a></p>
+<p>(WIP) Example : <a class="external" rel="noopener external" target="_blank" href="https://tchartron.com">Here</a></p>
+<h2 id="preview">Preview</h2>
+<p><img src="https://zola.docs.saop.cc/en/themes/blow/screenshot.png" alt="preview" /></p>
+<h2 id="usage">Usage</h2>
+<p>You should follow the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">official documentation</a> about installing a Zola theme.</p>
+<p>I recommend adding the theme as a git submodule :</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> my-zola-website</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add -b main git@github.com:tchartron/blow.git themes/blow</span></span></code></pre>
+<p>Edit the theme used in your <code>config.toml</code> file</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The site theme to use.</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;blow&quot;</span></span></code></pre>
+<p>Then edit your <code>config.toml</code> file to override values from the theme :</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>enable_search</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>enable_sidebar</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>enable_adsense</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>enable_multilingue</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>adsense_link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=myclientid&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.lang</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> lang</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en&quot;</span><span style="color: #9399B2;">,</span><span> links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;English&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/fr&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;French&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    ] },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> lang</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fr&quot;</span><span style="color: #9399B2;">,</span><span> links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Anglais&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/fr&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Français&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    ] },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.navbar</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> lang</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en&quot;</span><span style="color: #9399B2;">,</span><span> links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/categories&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Categories&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/tags&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    ] },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> lang</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fr&quot;</span><span style="color: #9399B2;">,</span><span> links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/fr&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Accueil&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/fr/categories&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Categories&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/fr/tags&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    ] },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;title&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.sidebar</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> lang</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en&quot;</span><span style="color: #9399B2;">,</span><span> links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/markdown&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Markdown&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/blog&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Blog&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    ] },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> lang</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fr&quot;</span><span style="color: #9399B2;">,</span><span> links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/fr/markdown&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Markdown&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/fr/blog&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Blog&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    ] },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Index page</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.index</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Main title&quot;</span></span>
+<span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://via.placeholder.com/200&quot;</span></span>
+<span class="giallo-l"><span>image_alt</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Placeholder text describing the index&#39;s image.&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.default_author</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;John Doe&quot;</span></span>
+<span class="giallo-l"><span>avatar</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://via.placeholder.com/200&quot;</span></span>
+<span class="giallo-l"><span>avatar_alt</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Placeholder text describing the default author&#39;s avatar.&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.social</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>codeberg</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://codeberg.org/johndoe&quot;</span></span>
+<span class="giallo-l"><span>github</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/johndoe&quot;</span></span>
+<span class="giallo-l"><span>gitlab</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://gitlab.com/johndoe&quot;</span></span>
+<span class="giallo-l"><span>twitter</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://twitter.com/johndoe&quot;</span></span>
+<span class="giallo-l"><span>mastodon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://social.somewhere.com/users/johndoe&quot;</span></span>
+<span class="giallo-l"><span>linkedin</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://www.linkedin.com/in/john-doe-b1234567/&quot;</span></span>
+<span class="giallo-l"><span>stackoverflow</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://stackoverflow.com/users/01234567/johndoe&quot;</span><span> </span></span>
+<span class="giallo-l"><span>telegram</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://t.me/johndoe&quot;</span></span>
+<span class="giallo-l"><span>email</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;john.doe@gmail.com&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.favicon</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>favicon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/favicon.ico&quot;</span></span>
+<span class="giallo-l"><span>favicon_16x16</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/favicon-16x16.png&quot;</span></span>
+<span class="giallo-l"><span>favicon_32x32</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/favicon-32x32.png&quot;</span></span>
+<span class="giallo-l"><span>apple_touch_icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/apple-touch-icon.png&quot;</span></span>
+<span class="giallo-l"><span>android_chrome_512</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/android-chrome-512x512.png&quot;</span></span>
+<span class="giallo-l"><span>android_chrome_192</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/android-chrome-192x192.png&quot;</span></span>
+<span class="giallo-l"><span>manifest</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icons/site.webmanifest&quot;</span></span></code></pre>
+<p>You can now run <code>zola serve</code> and visit : <code>http://127.0.0.1:1111/</code> to see your site</p>
+<h2 id="syntax-highlighting">Syntax Highlighting</h2>
+<p>Blow makes use of Zola code highlighting feature.<br />
+It supports setting a different color scheme depending on the user selected theme (Dark / Light)<br />
+In order to use it you should select the color scheme you want to use for light and dark themes in the list provided <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting">here</a> and edit your <code>config.toml</code> file like this example :</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>highlight_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;css&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>highlight_themes_css</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;ayu-dark&quot;</span><span style="color: #9399B2;">,</span><span> filename</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;syntax-dark.css&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;ayu-light&quot;</span><span style="color: #9399B2;">,</span><span> filename</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;syntax-light.css&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h2 id="custom-footer-content">Custom Footer Content</h2>
+<p>To overwrite the default footer (copyright notice), extend the <code>layout.html</code> template of the theme as described in the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/extending-a-theme/#overriding-a-block">Zola documentation</a> by creating a <code>layout.html</code> with the following content in your <code>templates</code> directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{%</span><span style="color: #94E2D5;">/*</span><span> extends</span><span style="color: #A6E3A1;"> &quot;blow/templates/layout.html&quot;</span><span style="color: #94E2D5;"> */</span><span>%}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>{%</span><span style="color: #94E2D5;">/*</span><span style="color: #CBA6F7;"> block</span><span> content_footer</span><span style="color: #94E2D5;"> */</span><span>%}</span></span>
+<span class="giallo-l"><span>Here is my own footer with a &lt;a href=&quot;http://example.com&quot;&gt;link&lt;/a&gt;.</span></span>
+<span class="giallo-l"><span>{%</span><span style="color: #94E2D5;">/*</span><span> endblock</span><span style="color: #94E2D5;"> */</span><span>%}</span></span></code></pre><h2 id="features">Features</h2>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Dark/Light modes (with syntax highlighting depending on selected theme)</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Customizable navbar links</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Tags and Categories taxonomies</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Search functionality supporting Command + K shortcut</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Social links (github, gitlab, twitter, linkedin, email)</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Postcss build process with cssnano (and tailwindcss tree shaking to reduce final bundle size)</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Uglifyjs build process with minification</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Example script to deploy to Github Pages</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Pagination</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Sidemenu menu with sections links</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Table of content (2 levels and currently viewed part highlighted)</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Multilingue</li>
+<li><input disabled="" type="checkbox" checked=""/>
+404</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Mobile responsive</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Favicon</li>
+<li><input disabled="" type="checkbox"/>
+Adsense</li>
+</ul>
+<h2 id="deployment">Deployment</h2>
+<p>There is a section about deployment in Zola <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/deployment/overview/">documentation</a> but you'll find an <a class="external" rel="noopener external" target="_blank" href="https://github.com/tchartron/blow/blob/main/deploy-github.sh">example</a> to deploy your site to github pages</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

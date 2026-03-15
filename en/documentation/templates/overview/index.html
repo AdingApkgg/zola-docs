@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> Forum</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -130,7 +135,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
                         
                     </li>
                 </ul>
@@ -372,10 +377,10 @@
     <div class="documentation__content">
         
     <h1>Overview</h1>
-    <p>Zola uses the <a class="external" rel="external" href="https://keats.github.io/tera">Tera</a> template engine, which is very similar
+    <p>Zola uses the <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera">Tera</a> template engine, which is very similar
 to Jinja2, Liquid and Twig.</p>
 <p>As this documentation will only talk about how templates work in Zola, please read
-the <a class="external" rel="external" href="https://keats.github.io/tera/docs/#templates">Tera template documentation</a> if you want
+the <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera/docs/#templates">Tera template documentation</a> if you want
 to learn more about it first.</p>
 <p>All templates live in the <code>templates</code> directory.  If you are not sure what variables are available in a template,
 you can place <code>{{ __tera_context }}</code> in the template to print the whole context.</p>
@@ -418,12 +423,12 @@ directory.  These custom templates will not be used by default.  Instead, a cust
 <p>Custom templates are not required to live at the root of your <code>templates</code> directory.
 For example, <code>product_pages/with_pictures.html</code> is a valid template.</p>
 <h2 id="built-in-filters"><a class="zola-anchor" href="#built-in-filters" aria-label="Anchor link for: built-in-filters">🔗</a>Built-in filters</h2>
-<p>Zola adds a few filters in addition to <a class="external" rel="external" href="https://keats.github.io/tera/docs/#filters">those</a> already present
+<p>Zola adds a few filters in addition to <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera/docs/#filters">those</a> already present
 in Tera.</p>
 <h3 id="markdown"><a class="zola-anchor" href="#markdown" aria-label="Anchor link for: markdown">🔗</a>markdown</h3>
 <p>Converts the given variable to HTML using Markdown. There are a few differences compared to page/section Markdown rendering:</p>
 <ul>
-<li>shortcodes evaluated by this filter cannot access the current rendering context: <code>config</code> will be available, but accessing <code>section</code> or <code>page</code> (among others) from a shortcode called within the <code>markdown</code> filter will prevent your site from building (see <a class="external" rel="external" href="https://github.com/getzola/zola/pull/1358">this discussion</a>)</li>
+<li>shortcodes evaluated by this filter cannot access the current rendering context: <code>config</code> will be available, but accessing <code>section</code> or <code>page</code> (among others) from a shortcode called within the <code>markdown</code> filter will prevent your site from building (see <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/pull/1358">this discussion</a>)</li>
 <li><code>lang</code> in shortcodes will always be equal to the site's <code>config.default_language</code> (or <code>en</code> otherwise) ; it should not be a problem, but if it is in most cases, but if you need to use language-aware shortcodes in this filter, please refer to the <a href="https://zola.docs.saop.cc/documentation/content/shortcodes/#shortcode-context">Shortcode context</a> section of the docs.</li>
 </ul>
 <p>By default, the filter will wrap all text in a paragraph. To disable this behaviour, you can
@@ -445,7 +450,7 @@ pass <code>true</code> to the inline argument:</p>
 <p>To format a number for a specific locale, you can use the <code>locale</code> argument and pass the name of the desired locale:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ 1000000 </span><span style="color: #9399B2;">|</span><span> num_format</span><span style="color: #9399B2;">(</span><span>locale</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;en-IN&quot;</span><span style="color: #9399B2;">)</span><span> }}</span></span>
 <span class="giallo-l"><span>&lt;!-- 10,00,000 --&gt;</span></span></code></pre><h2 id="built-in-functions"><a class="zola-anchor" href="#built-in-functions" aria-label="Anchor link for: built-in-functions">🔗</a>Built-in functions</h2>
-<p>Zola adds a few Tera functions to <a class="external" rel="external" href="https://keats.github.io/tera/docs#built-in-functions">those built-in in Tera</a>
+<p>Zola adds a few Tera functions to <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera/docs#built-in-functions">those built-in in Tera</a>
 to make it easier to develop complex sites.</p>
 <h3 id="file-searching-logic"><a class="zola-anchor" href="#file-searching-logic" aria-label="Anchor link for: file-searching-logic">🔗</a>File searching logic</h3>
 <p>For functions that are searching for a file on disk other than through <code>get_page</code> and <code>get_section</code>, the following
@@ -548,7 +553,7 @@ See <a href="https://zola.docs.saop.cc/documentation/templates/overview/#file-se
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ get_hash</span><span style="color: #9399B2;">(</span><span>literal</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Hello World&quot;</span><span style="color: #9399B2;">,</span><span> sha_type</span><span style="color: #94E2D5;">=</span><span>256</span><span style="color: #9399B2;">)</span><span> }}</span></span>
 <span class="giallo-l"><span>{{ get_hash</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;static/js/app.js&quot;</span><span style="color: #9399B2;">,</span><span> sha_type</span><span style="color: #94E2D5;">=</span><span>256</span><span style="color: #9399B2;">)</span><span> }}</span></span></code></pre>
 <p>The function can also output a base64-encoded hash value when its <code>base64</code>
-parameter is set to <code>true</code>. This can be used to implement <a class="external" rel="external" href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">subresource
+parameter is set to <code>true</code>. This can be used to implement <a class="external" rel="noopener external" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">subresource
 integrity</a>.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>&lt;script src=&quot;{{ get_url</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;static/js/app.js&quot;</span><span style="color: #9399B2;">)</span><span> }}&quot;</span></span>
 <span class="giallo-l"><span>  integrity=&quot;sha384-{{ get_hash</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;static/js/app.js&quot;</span><span style="color: #9399B2;">,</span><span> sha_type</span><span style="color: #94E2D5;">=</span><span>384</span><span style="color: #9399B2;">,</span><span> base64</span><span style="color: #94E2D5;">=</span><span style="color: #F38BA8;">true</span><span style="color: #9399B2;">) |</span><span> safe }}&quot;&gt;&lt;/script&gt;</span></span></code></pre>
@@ -603,7 +608,7 @@ template:</p>
 <span class="giallo-l"><span style="color: #9399B2;">    ],</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre>
 <p>The <code>bibtex</code> format loads data into a structure matching the format used by the
-<a class="external" rel="external" href="https://crates.io/crates/nom-bibtex">nom-bibtex crate</a>. The following is an example of data
+<a class="external" rel="noopener external" target="_blank" href="https://crates.io/crates/nom-bibtex">nom-bibtex crate</a>. The following is an example of data
 in bibtex format:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>@preamble{&quot;A bibtex preamble&quot; # &quot; this is.&quot;}</span></span>
 <span class="giallo-l"></span>
@@ -706,7 +711,7 @@ Please refer to <a href="https://zola.docs.saop.cc/documentation/content/image-p
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
         </footer>
 

@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;andromeda&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;andromeda&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -174,11 +179,11 @@
 <img src="https://zola.docs.saop.cc/themes/andromeda/post_demo.png" alt="Post demo graphic" /></p>
 <hr />
 <h2 id="installation">Installation</h2>
-<p>Assuming you already have a site set up (see the <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/overview/">Zola guide for setting up a site</a>),</p>
+<p>Assuming you already have a site set up (see the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview/">Zola guide for setting up a site</a>),</p>
 <ol>
 <li>Create a <code>themes</code> directory in the root of your site if it does not already exist.</li>
 <li>Clone the theme into your themes directory:<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git clone https://github.com/Pixadus/andromeda-theme themes/andromeda</span></span></code></pre></li>
-<li>Duplicate the structure of the the <code>config.toml</code> file found in <code>themes/andromeda/config.toml</code> or <a class="external" rel="external" href="https://github.com/Pixadus/andromeda-theme/blob/main/config.toml">this repository</a> within your own <code>config.toml</code>.</li>
+<li>Duplicate the structure of the the <code>config.toml</code> file found in <code>themes/andromeda/config.toml</code> or <a class="external" rel="noopener external" target="_blank" href="https://github.com/Pixadus/andromeda-theme/blob/main/config.toml">this repository</a> within your own <code>config.toml</code>.</li>
 <li>Set the theme to Andromeda, by including <code>theme = andromeda</code> in your <code>config.toml</code> file.</li>
 </ol>
 <h2 id="creating-pages">Creating pages</h2>
@@ -197,20 +202,20 @@
 <span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">a</span><span style="color: #F9E2AF;"> href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;original_photo1.jpg&quot;</span><span style="color: #F9E2AF;"> data-ngthumb</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;thumbnail_photo1.jpg&quot;</span><span style="color: #94E2D5;">&gt;&lt;/</span><span style="color: #89B4FA;">a</span><span style="color: #94E2D5;">&gt;</span></span>
 <span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">a</span><span style="color: #F9E2AF;"> href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;original_photo2.jpg&quot;</span><span style="color: #F9E2AF;"> data-ngthumb</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;thumbnail_photo2.jpg&quot;</span><span style="color: #94E2D5;">&gt;&lt;/</span><span style="color: #89B4FA;">a</span><span style="color: #94E2D5;">&gt;</span></span>
 <span class="giallo-l"><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">div</span><span style="color: #94E2D5;">&gt;</span></span></code></pre>
-<p>For more or less photos, use <code>&lt;a href&gt;</code> tags. <a class="external" rel="external" href="https://www.flickr.com/">Flickr</a> provides a good hosting option as it automatically generates thumbnails for you.</p>
+<p>For more or less photos, use <code>&lt;a href&gt;</code> tags. <a class="external" rel="noopener external" target="_blank" href="https://www.flickr.com/">Flickr</a> provides a good hosting option as it automatically generates thumbnails for you.</p>
 <h2 id="configuration">Configuration</h2>
-<p>Andromeda supports custom navbar links - see <a class="external" rel="external" href="https://github.com/Pixadus/andromeda-theme/blob/main/config.toml">config.toml</a> for an example. You may also set a custom <code>favicon.ico</code> though <code>config.toml</code>.</p>
-<p>If you wish to customize the design of the gallery, basic Javascript knowledge will be necessary. Andromeda uses <code>nanogallery2</code> by default - the <a class="external" rel="external" href="https://nanogallery2.nanostudio.org/documentation.html">documentation can be found here</a>. Customizations to the gallery design are done within the <code>{%/* macro pagefooter() */%}</code> block within <code>/templates/macros.html</code>.</p>
+<p>Andromeda supports custom navbar links - see <a class="external" rel="noopener external" target="_blank" href="https://github.com/Pixadus/andromeda-theme/blob/main/config.toml">config.toml</a> for an example. You may also set a custom <code>favicon.ico</code> though <code>config.toml</code>.</p>
+<p>If you wish to customize the design of the gallery, basic Javascript knowledge will be necessary. Andromeda uses <code>nanogallery2</code> by default - the <a class="external" rel="noopener external" target="_blank" href="https://nanogallery2.nanostudio.org/documentation.html">documentation can be found here</a>. Customizations to the gallery design are done within the <code>{%/* macro pagefooter() */%}</code> block within <code>/templates/macros.html</code>.</p>
 <p>By default, this script is divided into three sections (indicated by <code>item==</code>): single-image, two-image and three+ image gallery setups.</p>
 <h2 id="credits">Credits</h2>
-<p>The demo images used included <a class="external" rel="external" href="https://www.flickr.com/photos/anishkumar_sugumaran/52831738797/in/explore-2023-04-26/">Antelope Canyon by Anishkumar Sugumaran</a> and <a class="external" rel="external" href="https://www.flickr.com/photos/27263572@N05/52838617702/in/explore-2023-04-26/">Bryce Canyon by Marco Isler</a>.</p>
+<p>The demo images used included <a class="external" rel="noopener external" target="_blank" href="https://www.flickr.com/photos/anishkumar_sugumaran/52831738797/in/explore-2023-04-26/">Antelope Canyon by Anishkumar Sugumaran</a> and <a class="external" rel="noopener external" target="_blank" href="https://www.flickr.com/photos/27263572@N05/52838617702/in/explore-2023-04-26/">Bryce Canyon by Marco Isler</a>.</p>
 
 
     </div>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

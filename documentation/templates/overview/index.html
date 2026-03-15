@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;templates&#x2F;overview&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -374,8 +379,8 @@
     <div class="documentation__content">
         
     <h1>概览</h1>
-    <p>Zola 使用 <a class="external" rel="external" href="https://keats.github.io/tera">Tera</a> 模板引擎，它与 Jinja2、Liquid 和 Twig 非常相似。</p>
-<p>由于本文档仅讨论模板如何在 Zola 中工作，如果你想先了解更多相关信息，请阅读 <a class="external" rel="external" href="https://keats.github.io/tera/docs/#templates">Tera 模板文档</a>。</p>
+    <p>Zola 使用 <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera">Tera</a> 模板引擎，它与 Jinja2、Liquid 和 Twig 非常相似。</p>
+<p>由于本文档仅讨论模板如何在 Zola 中工作，如果你想先了解更多相关信息，请阅读 <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera/docs/#templates">Tera 模板文档</a>。</p>
 <p>所有模板都位于 <code>templates</code> 目录中。如果你不确定模板中有哪些变量可用，可以在模板中放置 <code>{{ __tera_context }}</code> 以打印整个上下文。</p>
 <p>除 feeds 和 sitemap 外，所有模板都有一些变量可用：</p>
 <ul>
@@ -404,11 +409,11 @@
 <p>自定义模板不需要位于 <code>templates</code> 目录的根目录下。
 例如，<code>product_pages/with_pictures.html</code> 是一个有效的模板。</p>
 <h2 id="nei-zhi-guo-lu-qi"><a class="zola-anchor" href="#nei-zhi-guo-lu-qi" aria-label="Anchor link for: nei-zhi-guo-lu-qi">🔗</a>内置过滤器</h2>
-<p>Zola 在 Tera 中已有的 <a class="external" rel="external" href="https://keats.github.io/tera/docs/#filters">过滤器</a> 之外添加了一些过滤器。</p>
+<p>Zola 在 Tera 中已有的 <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera/docs/#filters">过滤器</a> 之外添加了一些过滤器。</p>
 <h3 id="markdown"><a class="zola-anchor" href="#markdown" aria-label="Anchor link for: markdown">🔗</a>markdown</h3>
 <p>使用 Markdown 将给定变量转换为 HTML。与 page/section Markdown 渲染相比，有一些区别：</p>
 <ul>
-<li>此过滤器评估的 shortcodes 无法访问当前的渲染上下文：<code>config</code> 可用，但在 <code>markdown</code> 过滤器调用的 shortcode 中访问 <code>section</code> 或 <code>page</code>（以及其他变量）将阻止你的站点构建（请参阅 <a class="external" rel="external" href="https://github.com/getzola/zola/pull/1358">此讨论</a>）</li>
+<li>此过滤器评估的 shortcodes 无法访问当前的渲染上下文：<code>config</code> 可用，但在 <code>markdown</code> 过滤器调用的 shortcode 中访问 <code>section</code> 或 <code>page</code>（以及其他变量）将阻止你的站点构建（请参阅 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/pull/1358">此讨论</a>）</li>
 <li>shortcodes 中的 <code>lang</code> 将始终等于站点的 <code>config.default_language</code>（否则为 <code>en</code>）；这应该不是问题，但在大多数情况下如果需要在过滤器中使用感知语言的 shortcodes，请参考文档的 <a href="https://zola.docs.saop.cc/documentation/content/shortcodes/#shortcode-context">Shortcode context</a> 部分。</li>
 </ul>
 <p>默认情况下，过滤器会将所有文本包裹在一个段落中。要禁用此行为，你可以将 <code>true</code> 传递给 inline 参数：</p>
@@ -429,7 +434,7 @@
 <p>要为特定语言环境格式化数字，你可以使用 <code>locale</code> 参数并传递所需语言环境的名称：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ 1000000 </span><span style="color: #9399B2;">|</span><span> num_format</span><span style="color: #9399B2;">(</span><span>locale</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;en-IN&quot;</span><span style="color: #9399B2;">)</span><span> }}</span></span>
 <span class="giallo-l"><span>&lt;!-- 10,00,000 --&gt;</span></span></code></pre><h2 id="nei-zhi-han-shu"><a class="zola-anchor" href="#nei-zhi-han-shu" aria-label="Anchor link for: nei-zhi-han-shu">🔗</a>内置函数</h2>
-<p>Zola 添加了一些 Tera 函数到 <a class="external" rel="external" href="https://keats.github.io/tera/docs#built-in-functions">Tera 内置函数</a> 中，以便更轻松地开发复杂的站点。</p>
+<p>Zola 添加了一些 Tera 函数到 <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera/docs#built-in-functions">Tera 内置函数</a> 中，以便更轻松地开发复杂的站点。</p>
 <h3 id="wen-jian-sou-suo-luo-ji"><a class="zola-anchor" href="#wen-jian-sou-suo-luo-ji" aria-label="Anchor link for: wen-jian-sou-suo-luo-ji">🔗</a>文件搜索逻辑</h3>
 <p>对于通过 <code>get_page</code> 和 <code>get_section</code> 以外的方式在磁盘上搜索文件的函数，适用以下逻辑。</p>
 <ol>
@@ -524,7 +529,7 @@
 <p>必须给出 <code>path</code> 或 <code>literal</code>。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>{{ get_hash</span><span style="color: #9399B2;">(</span><span>literal</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Hello World&quot;</span><span style="color: #9399B2;">,</span><span> sha_type</span><span style="color: #94E2D5;">=</span><span>256</span><span style="color: #9399B2;">)</span><span> }}</span></span>
 <span class="giallo-l"><span>{{ get_hash</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;static/js/app.js&quot;</span><span style="color: #9399B2;">,</span><span> sha_type</span><span style="color: #94E2D5;">=</span><span>256</span><span style="color: #9399B2;">)</span><span> }}</span></span></code></pre>
-<p>当其 <code>base64</code> 参数设置为 <code>true</code> 时，该函数还可以输出 base64 编码的哈希值。这可用于实现 <a class="external" rel="external" href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">子资源完整性</a>。</p>
+<p>当其 <code>base64</code> 参数设置为 <code>true</code> 时，该函数还可以输出 base64 编码的哈希值。这可用于实现 <a class="external" rel="noopener external" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">子资源完整性</a>。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="jinja"><span class="giallo-l"><span>&lt;script src=&quot;{{ get_url</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;static/js/app.js&quot;</span><span style="color: #9399B2;">)</span><span> }}&quot;</span></span>
 <span class="giallo-l"><span>  integrity=&quot;sha384-{{ get_hash</span><span style="color: #9399B2;">(</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;static/js/app.js&quot;</span><span style="color: #9399B2;">,</span><span> sha_type</span><span style="color: #94E2D5;">=</span><span>384</span><span style="color: #9399B2;">,</span><span> base64</span><span style="color: #94E2D5;">=</span><span style="color: #F38BA8;">true</span><span style="color: #9399B2;">) |</span><span> safe }}&quot;&gt;&lt;/script&gt;</span></span></code></pre>
 <p>请注意，子资源完整性通常用于使用外部脚本时，<code>get_hash</code> 不支持此功能。</p>
@@ -572,7 +577,7 @@
 <span class="giallo-l"><span style="color: #9399B2;">        [</span><span style="color: #A6E3A1;">&quot;2&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;Printing&quot;</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    ],</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre>
-<p><code>bibtex</code> 格式将数据加载到与 <a class="external" rel="external" href="https://crates.io/crates/nom-bibtex">nom-bibtex crate</a> 使用的格式匹配的结构中。以下是 bibtex 格式的数据示例：</p>
+<p><code>bibtex</code> 格式将数据加载到与 <a class="external" rel="noopener external" target="_blank" href="https://crates.io/crates/nom-bibtex">nom-bibtex crate</a> 使用的格式匹配的结构中。以下是 bibtex 格式的数据示例：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>@preamble{&quot;A bibtex preamble&quot; # &quot; this is.&quot;}</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>@Comment{</span></span>
@@ -668,7 +673,7 @@ URL 基于 URL 缓存，数据文件基于文件修改时间缓存。
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

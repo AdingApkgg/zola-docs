@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zulma&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zulma&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -164,7 +169,7 @@
 
     <hr>
     <h1 id="zulma">Zulma</h1>
-<p>A Bulma theme for Zola. See a live preview <a class="external" rel="external" href="https://festive-morse-47d46c.netlify.com/">here</a></p>
+<p>A Bulma theme for Zola. See a live preview <a class="external" rel="noopener external" target="_blank" href="https://festive-morse-47d46c.netlify.com/">here</a></p>
 <p><img src="/screenshot.png" alt="Zulma Screenshot" /></p>
 <h2 id="contents">Contents</h2>
 <ul>
@@ -205,12 +210,12 @@
 <h3 id="sources">Sources</h3>
 <p>All the source javascript files live in <code>javascript/src</code>. Following is a list of the javascript files, their purpose, and their sources. All files are prefixed with <code>zulma_</code> to avoid any name clashes.</p>
 <ul>
-<li><code>zulma_search.js</code> - Used when a user types into the search box on the navbar (if enabled). Taken from <a class="external" rel="external" href="https://github.com/getzola/zola/blob/6100a43/docs/static/search.js">Zola's site</a>.</li>
-<li><code>zulma_navbar.js</code> - Used for the mobile navbar toggle. Taken from the <a class="external" rel="external" href="https://github.com/dansup/bulma-templates/blob/6263eb7/js/bulma.js">bulma template</a> at Bulmaswatch</li>
+<li><code>zulma_search.js</code> - Used when a user types into the search box on the navbar (if enabled). Taken from <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/blob/6100a43/docs/static/search.js">Zola's site</a>.</li>
+<li><code>zulma_navbar.js</code> - Used for the mobile navbar toggle. Taken from the <a class="external" rel="noopener external" target="_blank" href="https://github.com/dansup/bulma-templates/blob/6263eb7/js/bulma.js">bulma template</a> at Bulmaswatch</li>
 <li><code>zulma_switchcss.js</code> - Used for swapping themes (if enabled).</li>
 </ul>
 <h3 id="building">Building</h3>
-<p>The JavaScript files are transpiled by babel, minified by webpack, sourcemaps are generated and then everything placed in <code>static/js</code>. The repo already contains the transpiled and minified files along with their corrosponding sourcemaps so you don't need to do anything to use these. If you would prefer to build it yourself, feel free to inspect the js files and then run the build process (please ensure that you have <a class="external" rel="external" href="https://nodejs.org/en/">node, npm</a> and optionally <a class="external" rel="external" href="https://yarnpkg.com/lang/en/">yarn</a> installed):</p>
+<p>The JavaScript files are transpiled by babel, minified by webpack, sourcemaps are generated and then everything placed in <code>static/js</code>. The repo already contains the transpiled and minified files along with their corrosponding sourcemaps so you don't need to do anything to use these. If you would prefer to build it yourself, feel free to inspect the js files and then run the build process (please ensure that you have <a class="external" rel="noopener external" target="_blank" href="https://nodejs.org/en/">node, npm</a> and optionally <a class="external" rel="noopener external" target="_blank" href="https://yarnpkg.com/lang/en/">yarn</a> installed):</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> javascript</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">yarn</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">yarn</span><span style="color: #A6E3A1;"> webpack</span></span></code></pre><h3 id="github-warnings">Github warnings</h3>
@@ -261,7 +266,7 @@
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>zulma_brand</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/images/bulma.png&quot;</span><span style="color: #9399B2;">,</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span><span style="color: #9399B2;">}</span></span></code></pre><h3 id="search">Search</h3>
 <p>Zulma provides search built in. So long as <code>build_search_index</code> is set to <code>true</code> in <code>config.toml</code> then a search input will appear on the top navigation bar. This requires javascript to be enabled to function; if the page detects javascript is disabled on the clients machine, it will hide itself.</p>
-<p>The search is shamefully stolen from <a class="external" rel="external" href="https://github.com/getzola/zola/blob/master/docs/static/search.js">Zola's site</a>. Thanks, Vincent!</p>
+<p>The search is shamefully stolen from <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/blob/master/docs/static/search.js">Zola's site</a>. Thanks, Vincent!</p>
 <h3 id="title">Title</h3>
 <p>In extra, setting <code>zulma_title</code> will set a hero banner on the index page to appear with that title inside.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
@@ -277,7 +282,7 @@
 <span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre>
 <p>This will set the image behind the hero, and darken it so the main text can still be easily read.</p>
 <h3 id="theming">Theming</h3>
-<p>In extra, setting <code>zulma_theme</code> to a valid value will change the current colour scheme to that one. All themes were taken from <a class="external" rel="external" href="https://jenil.github.io/bulmaswatch/">Bulmaswatch</a>. Valid theme values are:</p>
+<p>In extra, setting <code>zulma_theme</code> to a valid value will change the current colour scheme to that one. All themes were taken from <a class="external" rel="noopener external" target="_blank" href="https://jenil.github.io/bulmaswatch/">Bulmaswatch</a>. Valid theme values are:</p>
 <ul>
 <li>default</li>
 <li>darkly</li>
@@ -296,7 +301,7 @@
 <p>Each theme contains the entirety of Bulma, and will weigh in at ~180kb. If you're running on a server severely limited on space, then I'd recommend you delete each theme you're not using, either from the source or from <code>/public</code>. Obviously, doing this will cause <code>zulma_allow_theme_selection</code> to work improperly, so make sure you either override <code>extra.zulma_themes</code> in <code>config.toml</code> to only show themes you have left or to not enable this option at all.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>zulma_allow_theme_selection</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h2 id="original">Original</h2>
-<p>This template is based on the <a class="external" rel="external" href="https://bulmatemplates.github.io/bulma-templates/templates/blog.html">blog template</a> over at <a class="external" rel="external" href="https://bulmatemplates.github.io/bulma-templates/">Free Bulma Templates</a>. All themes were taken from <a class="external" rel="external" href="https://jenil.github.io/bulmaswatch/">Bulmaswatch</a>. The code behind from originally adapted from the <a class="external" rel="external" href="https://github.com/getzola/after-dark/blob/master/README.md">after-dark</a> zola template.</p>
+<p>This template is based on the <a class="external" rel="noopener external" target="_blank" href="https://bulmatemplates.github.io/bulma-templates/templates/blog.html">blog template</a> over at <a class="external" rel="noopener external" target="_blank" href="https://bulmatemplates.github.io/bulma-templates/">Free Bulma Templates</a>. All themes were taken from <a class="external" rel="noopener external" target="_blank" href="https://jenil.github.io/bulmaswatch/">Bulmaswatch</a>. The code behind from originally adapted from the <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/after-dark/blob/master/README.md">after-dark</a> zola template.</p>
 <h2 id="known-bugs">Known Bugs</h2>
 <ul>
 <li>If user theme swapping is enabled and the user selects a theme different to the default, a slight delay will be introduced in page rendering as the css gets swapped out and in by the javascript. This is particularly pronounced when using the dark theme, since it will flash white before going back to black. This is better than the alternative flashes of unstyled content or old theme, but still annoying. I don't know any way around this, but with browser caching it should be fast enough to not cause serious issues.</li>
@@ -307,7 +312,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-pages&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -387,7 +392,7 @@
 <li>最后，保存并部署。</li>
 </ol>
 <p>你的网站现在已构建并部署到 Cloudflare 的网络！你可以在 Pages 仪表板中添加自定义域名或修改设置。</p>
-<p>你可以在开发者门户中找到诸如 <a class="external" rel="external" href="https://developers.cloudflare.com/pages/getting-started">Getting started with Cloudflare Pages</a> 和 <a class="external" rel="external" href="https://developers.cloudflare.com/pages/how-to/deploy-a-zola-site#deploying-with-cloudflare-pages">Deploying Zola with Cloudflare Pages</a> 之类的文档和指南。</p>
+<p>你可以在开发者门户中找到诸如 <a class="external" rel="noopener external" target="_blank" href="https://developers.cloudflare.com/pages/getting-started">Getting started with Cloudflare Pages</a> 和 <a class="external" rel="noopener external" target="_blank" href="https://developers.cloudflare.com/pages/how-to/deploy-a-zola-site#deploying-with-cloudflare-pages">Deploying Zola with Cloudflare Pages</a> 之类的文档和指南。</p>
 <h2 id="chu-li-yu-lan-bu-shu"><a class="zola-anchor" href="#chu-li-yu-lan-bu-shu" aria-label="Anchor link for: chu-li-yu-lan-bu-shu">🔗</a>处理预览部署</h2>
 <p>在使用 Cloudflare Pages 时，你通常会使用预览部署在合并到主分支之前测试更改。默认情况下，这些预览部署使用不同的 URL（如 <code>https://your-branch-name.your-project.pages.dev</code>），如果你的 <code>base_url</code> 在 <code>config.toml</code> 中是硬编码的，这可能会导致资源加载问题。</p>
 <p>要解决此问题，请修改 Cloudflare Pages 配置中的构建命令，以根据环境动态设置基本 URL：</p>
@@ -408,7 +413,7 @@
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">23:03:54.635</span><span style="color: #A6E3A1;">	Failed: Error while executing user command. Exited with error code:</span><span style="color: #FAB387;"> 127</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">23:03:54.644</span><span style="color: #A6E3A1;">	Failed: build command exited with code:</span><span style="color: #FAB387;"> 1</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">23:03:55.699</span><span style="color: #A6E3A1;">	Failed: error occurred while running build command</span></span></code></pre>
-<p>那么这可能是由于一个 <a class="external" rel="external" href="https://github.com/cloudflare/pages-build-image/issues/3#issuecomment-1646873666">未解决的问题</a>。目前有两种推荐的解决方法：</p>
+<p>那么这可能是由于一个 <a class="external" rel="noopener external" target="_blank" href="https://github.com/cloudflare/pages-build-image/issues/3#issuecomment-1646873666">未解决的问题</a>。目前有两种推荐的解决方法：</p>
 <h4 id="jiang-build-system-version-geng-gai-wei-v1"><a class="zola-anchor" href="#jiang-build-system-version-geng-gai-wei-v1" aria-label="Anchor link for: jiang-build-system-version-geng-gai-wei-v1">🔗</a>将 <strong>build system version</strong> 更改为 <code>v1</code></h4>
 <p>在 workers &amp; pages 仪表板中，转到以下位置：
 <Your Project> Settings &gt; Builds &amp; deployments &gt; Build system version &gt; Configure build system</p>
@@ -424,7 +429,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

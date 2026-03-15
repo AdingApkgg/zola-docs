@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> Forum</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -116,11 +121,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -130,7 +135,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
                         
                     </li>
                 </ul>
@@ -377,10 +382,10 @@ maintenance of large sets of CSS rules. If you're curious about what Sass
 is and why it might be useful for styling your static site, the following links
 may be of interest:</p>
 <ul>
-<li>The <a class="external" rel="external" href="https://sass-lang.com/">official Sass website</a></li>
-<li><a class="external" rel="external" href="https://alistapart.com/article/why-sass">Why Sass?</a>, by Dan Cederholm</li>
+<li>The <a class="external" rel="noopener external" target="_blank" href="https://sass-lang.com/">official Sass website</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://alistapart.com/article/why-sass">Why Sass?</a>, by Dan Cederholm</li>
 </ul>
-<p>It currently uses <a class="external" rel="external" href="https://github.com/connorskees/grass">grass</a>, a Rust implementation of Sass roughly equivalent
+<p>It currently uses <a class="external" rel="noopener external" target="_blank" href="https://github.com/connorskees/grass">grass</a>, a Rust implementation of Sass roughly equivalent
 with dart-sass.</p>
 <h2 id="using-sass-in-zola"><a class="zola-anchor" href="#using-sass-in-zola" aria-label="Anchor link for: using-sass-in-zola">🔗</a>Using Sass in Zola</h2>
 <p>Zola always compiles Sass files in theme directories.
@@ -402,9 +407,9 @@ structure and base name into the <code>public</code> folder:</p>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">        └──</span><span style="color: #A6E3A1;"> style.scss //</span><span> -</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> ./public/secret-side-project/style.css</span></span></code></pre>
 <p>Files with a leading underscore in the name are not placed into the <code>public</code>
 folder, but can still be used as <code>@import</code> dependencies. For more information, see the "Partials" section of
-<a class="external" rel="external" href="https://sass-lang.com/guide">Sass Basics</a>.</p>
+<a class="external" rel="noopener external" target="_blank" href="https://sass-lang.com/guide">Sass Basics</a>.</p>
 <p>Files with the <code>scss</code> extension use "Sassy CSS" syntax,
-while files with the <code>sass</code> extension use the "indented" syntax: <a class="external" rel="external" href="https://sass-lang.com/documentation/syntax">https://sass-lang.com/documentation/syntax</a>.
+while files with the <code>sass</code> extension use the "indented" syntax: <a class="external" rel="noopener external" target="_blank" href="https://sass-lang.com/documentation/syntax">https://sass-lang.com/documentation/syntax</a>.
 Zola will return an error if <code>scss</code> and <code>sass</code> files with the same
 base name exist in the same folder to avoid confusion -- see the example above.</p>
 
@@ -414,7 +419,7 @@ base name exist in the same folder to avoid confusion -- see the example above.<
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
         </footer>
 

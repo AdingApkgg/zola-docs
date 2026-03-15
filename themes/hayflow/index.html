@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;hayflow&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;hayflow&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -168,28 +173,28 @@
 <div align="center">
 ![Preview screenshot](https://gitlab.com/cyril-marpaud/hayflow/-/raw/main/screenshot.png "Preview screenshot")
 </div>
-<p><a class="external" rel="external" href="https://gitlab.com/cyril-marpaud/hayflow">HayFlow</a> is a modular landing page made as a theme for <a class="external" rel="external" href="https://www.getzola.org">Zola</a>, a static site generator written in <a class="external" rel="external" href="https://www.rust-lang.org">Rust</a>. It features a dark theme with a particles background, vertical arrows for navigation and a few card types which you are free to include to best suit your needs. Nearly all UI elements are subtly animated to convey a professional look (although I'm no designer 🤷 merely an <a class="external" rel="external" href="https://www.linkedin.com/in/cyrilmarpaud">embedded systems engineer</a>).</p>
-<p>It has been designed to require only <a class="external" rel="external" href="https://www.markdownguide.org">Markdown</a> editing (no HTML/CSS), but feel free to do so if you need to. I'll be glad to review a <a class="external" rel="external" href="https://gitlab.com/cyril-marpaud/hayflow/-/merge_requests">Merge Request</a> if you implement a new card type !</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://gitlab.com/cyril-marpaud/hayflow">HayFlow</a> is a modular landing page made as a theme for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org">Zola</a>, a static site generator written in <a class="external" rel="noopener external" target="_blank" href="https://www.rust-lang.org">Rust</a>. It features a dark theme with a particles background, vertical arrows for navigation and a few card types which you are free to include to best suit your needs. Nearly all UI elements are subtly animated to convey a professional look (although I'm no designer 🤷 merely an <a class="external" rel="noopener external" target="_blank" href="https://www.linkedin.com/in/cyrilmarpaud">embedded systems engineer</a>).</p>
+<p>It has been designed to require only <a class="external" rel="noopener external" target="_blank" href="https://www.markdownguide.org">Markdown</a> editing (no HTML/CSS), but feel free to do so if you need to. I'll be glad to review a <a class="external" rel="noopener external" target="_blank" href="https://gitlab.com/cyril-marpaud/hayflow/-/merge_requests">Merge Request</a> if you implement a new card type !</p>
 <p>[[<em>TOC</em>]]</p>
 <h2 id="live-demo">Live demo</h2>
-<p>See <a class="external" rel="external" href="https://cyril-marpaud.gitlab.io">my personal website</a> for an example of what can be accomplished in a few minutes with this theme. Its source code is also available as an example in my <a class="external" rel="external" href="https://gitlab.com/cyril-marpaud/cyril-marpaud.gitlab.io">Gitlab website repository</a>.</p>
+<p>See <a class="external" rel="noopener external" target="_blank" href="https://cyril-marpaud.gitlab.io">my personal website</a> for an example of what can be accomplished in a few minutes with this theme. Its source code is also available as an example in my <a class="external" rel="noopener external" target="_blank" href="https://gitlab.com/cyril-marpaud/cyril-marpaud.gitlab.io">Gitlab website repository</a>.</p>
 <h2 id="built-with">Built with</h2>
 <ul>
-<li><a class="external" rel="external" href="https://www.getzola.org">Zola</a></li>
-<li><a class="external" rel="external" href="https://vincentgarreau.com/particles.js/">Particles.js</a></li>
-<li><a class="external" rel="external" href="https://fontawesome.com">Font Awesome</a></li>
-<li><a class="external" rel="external" href="https://github.com/sindresorhus/modern-normalize">Modern Normalize</a></li>
-<li>Inspiration came from <a class="external" rel="external" href="https://github.com/svavs/particle-zola">particle-zola</a>, another theme.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org">Zola</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://vincentgarreau.com/particles.js/">Particles.js</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://fontawesome.com">Font Awesome</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/sindresorhus/modern-normalize">Modern Normalize</a></li>
+<li>Inspiration came from <a class="external" rel="noopener external" target="_blank" href="https://github.com/svavs/particle-zola">particle-zola</a>, another theme.</li>
 </ul>
 <h2 id="quick-start">Quick start</h2>
 <p>Initialize a Zola website and install HayFlow:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init mywebsite</span></span>
 <span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> mywebsite</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone git@gitlab.com:cyril-marpaud/hayflow.git themes/hayflow</span></span></code></pre>
-<p>Add <code>theme = "hayflow"</code> at the top of <code>config.toml</code> file to tell Zola to use HayFlow (as described in <a class="external" rel="external" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">the documentation</a>).</p>
+<p>Add <code>theme = "hayflow"</code> at the top of <code>config.toml</code> file to tell Zola to use HayFlow (as described in <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">the documentation</a>).</p>
 <p>Finally, run...</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre>
-<p>...and go to <a class="external" rel="external" href="http://localhost:1111">http://localhost:1111</a> to see the landing page in action with the default name displayed (John Doe).</p>
+<p>...and go to <a class="external" rel="noopener external" target="_blank" href="http://localhost:1111">http://localhost:1111</a> to see the landing page in action with the default name displayed (John Doe).</p>
 <h2 id="landing-page-customization">Landing page customization</h2>
 <p>Customizing the landing page boils down to two things:</p>
 <ul>
@@ -200,7 +205,7 @@
 <ul>
 <li><code>name</code> speaks for itself.</li>
 <li><code>roles</code> is an array of strings. Each string is displayed on a separate line.</li>
-<li><code>links</code> is an array of <code>{icon, url}</code> objects. You can use any <strong>free</strong> icon from <a class="external" rel="external" href="https://fontawesome.com/search?o=r&amp;m=free">Font Awesome</a> here, all you need is the icon's code. The <a class="external" rel="external" href="https://fontawesome.com/icons/envelope?s=solid&amp;f=classic">enveloppe icon</a>'s code is <code>fa-solid fa-envelope</code>. The <a class="external" rel="external" href="https://fontawesome.com/icons/pizza-slice?s=solid&amp;f=classic">pizza-slice icon</a>'s code is <code>fa-solid fa-pizza-slice</code>.</li>
+<li><code>links</code> is an array of <code>{icon, url}</code> objects. You can use any <strong>free</strong> icon from <a class="external" rel="noopener external" target="_blank" href="https://fontawesome.com/search?o=r&amp;m=free">Font Awesome</a> here, all you need is the icon's code. The <a class="external" rel="noopener external" target="_blank" href="https://fontawesome.com/icons/envelope?s=solid&amp;f=classic">enveloppe icon</a>'s code is <code>fa-solid fa-envelope</code>. The <a class="external" rel="noopener external" target="_blank" href="https://fontawesome.com/icons/pizza-slice?s=solid&amp;f=classic">pizza-slice icon</a>'s code is <code>fa-solid fa-pizza-slice</code>.</li>
 </ul>
 <p>This is what the <code>config.toml</code>'s <code>[extra]</code> section might look like after customization:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
@@ -307,7 +312,7 @@ The <code>flag</code> variable is optional and you can use simple text instead o
 <span class="giallo-l"><span>+++</span></span></code></pre><h2 id="whoami">Whoami</h2>
 <p>My name is Cyril Marpaud, I'm an embedded systems freelance engineer and a Rust enthusiast 🦀 I have nearly 10 years experience and am currently living in Lyon (France).</p>
 <div align="center">
-<p><a class="external" rel="external" href="https://www.linkedin.com/in/cyrilmarpaud/"><img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&amp;logo=linkedin&amp;colorB=grey&amp;logoColor=blue" alt="LinkedIn" /></a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.linkedin.com/in/cyrilmarpaud/"><img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&amp;logo=linkedin&amp;colorB=grey&amp;logoColor=blue" alt="LinkedIn" /></a></p>
 </div>
 
 
@@ -315,7 +320,7 @@ The <code>flag</code> variable is optional and you can use simple text instead o
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

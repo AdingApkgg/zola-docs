@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;apollo&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;apollo&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -164,7 +169,7 @@
 
     <hr>
     <h1 id="apollo">apollo</h1>
-<p>Modern and minimalistic blog theme powered by <a class="external" rel="external" href="https://getzola.org">Zola</a>. See a live preview <a class="external" rel="external" href="https://not-matthias.github.io/apollo">here</a>.</p>
+<p>Modern and minimalistic blog theme powered by <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a>. See a live preview <a class="external" rel="noopener external" target="_blank" href="https://not-matthias.github.io/apollo">here</a>.</p>
 <p><sub><sup>Named after the greek god of knowledge, wisdom and intellect</sup></sub></p>
 <details open>
   <summary>Dark theme</summary>
@@ -183,7 +188,7 @@ Themes (light, dark, auto)</li>
 <li><input disabled="" type="checkbox" checked=""/>
 Projects page</li>
 <li><input disabled="" type="checkbox" checked=""/>
-Analytics using <a class="external" rel="external" href="https://www.goatcounter.com/">GoatCounter</a> / <a class="external" rel="external" href="https://umami.is/">Umami</a> / <a class="external" rel="external" href="https://analytics.google.com/">Google Analytics</a></li>
+Analytics using <a class="external" rel="noopener external" target="_blank" href="https://www.goatcounter.com/">GoatCounter</a> / <a class="external" rel="noopener external" target="_blank" href="https://umami.is/">Umami</a> / <a class="external" rel="noopener external" target="_blank" href="https://analytics.google.com/">Google Analytics</a></li>
 <li><input disabled="" type="checkbox" checked=""/>
 Social Links</li>
 <li><input disabled="" type="checkbox" checked=""/>
@@ -234,14 +239,14 @@ Configurable cards layout</li>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>cp -r themes/apollo/content/* content/</span></span></code></pre><h2 id="configuration">Configuration</h2>
 <p>Checkout all the <a href="https://zola.docs.saop.cc/themes/apollo/./content/posts/configuration.md">options you can configure</a> and the <a href="https://zola.docs.saop.cc/themes/apollo/./content/posts/">example pages</a>.</p>
 <h2 id="references">References</h2>
-<p>This theme is based on <a class="external" rel="external" href="https://github.com/XXXMrG/archie-zola/">archie-zola</a>.</p>
+<p>This theme is based on <a class="external" rel="noopener external" target="_blank" href="https://github.com/XXXMrG/archie-zola/">archie-zola</a>.</p>
 
 
     </div>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

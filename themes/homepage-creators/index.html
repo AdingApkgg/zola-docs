@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;homepage-creators&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;homepage-creators&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -167,18 +172,18 @@
 <h1>Homepage Creators</h1>
 <p align="center">
 <p>主题预览](#-预览) | <a href="https://zola.docs.saop.cc/themes/homepage-creators/#-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a> | [加入讨论</p>
-<p><a class="external" rel="external" href="https://github.com/iWangJiaxiang/Homepage-Creators/blob/main/README.md">中文</a> | <a class="external" rel="external" href="https://github.com/iWangJiaxiang/Homepage-Creators/blob/main/README.en.md">English</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/Homepage-Creators/blob/main/README.md">中文</a> | <a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/Homepage-Creators/blob/main/README.en.md">English</a></p>
 </p>
 </div>
-<p><a class="external" rel="external" href="https://jiaxiang.wang"><img src="https://github.com/iWangJiaxiang/Homepage-Creators/raw/refs/heads/main/screenshot.png" alt="preview" /></a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://jiaxiang.wang"><img src="https://github.com/iWangJiaxiang/Homepage-Creators/raw/refs/heads/main/screenshot.png" alt="preview" /></a></p>
 <h2 id="fire-yu-lan">🔥 预览</h2>
 <table><thead><tr><th style="text-align: center">站点名称</th><th style="text-align: left">站点地址</th></tr></thead><tbody>
-<tr><td style="text-align: center">王嘉祥 个人主页</td><td style="text-align: left"><a class="external" rel="external" href="https://www.jiaxiang.wang">https://www.jiaxiang.wang</a></td></tr>
+<tr><td style="text-align: center">王嘉祥 个人主页</td><td style="text-align: left"><a class="external" rel="noopener external" target="_blank" href="https://www.jiaxiang.wang">https://www.jiaxiang.wang</a></td></tr>
 </tbody></table>
 <h2 id="information-source-jian-jie">ℹ️ 简介</h2>
-<p><a class="external" rel="external" href="https://github.com/iWangJiaxiang/Homepage-Creators">Homepage Creators</a> 是一款适用于 <a class="external" rel="external" href="https://github.com/getzola/zola">Zola</a> 的个人主页主题，风格接近 Apple，美观大气。</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/Homepage-Creators">Homepage Creators</a> 是一款适用于 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> 的个人主页主题，风格接近 Apple，美观大气。</p>
 <blockquote>
-<p>注意：本主题移植于的开源 <a class="external" rel="external" href="https://github.com/zhheo/HeoWeb">HeoWeb</a> 纯静态主题，感谢 <a class="external" rel="external" href="https://blog.zhheo.com/">张洪 Heo</a> 的无私分享。</p>
+<p>注意：本主题移植于的开源 <a class="external" rel="noopener external" target="_blank" href="https://github.com/zhheo/HeoWeb">HeoWeb</a> 纯静态主题，感谢 <a class="external" rel="noopener external" target="_blank" href="https://blog.zhheo.com/">张洪 Heo</a> 的无私分享。</p>
 </blockquote>
 <p>本主题使用简单，只需修改<code>config.toml</code>文件即可动态调整内容。无需像上游仓库一样修改 HTML 内容，极大降低用户的心智负担。</p>
 <h3 id="electric-plug-gong-neng">🔌 功能</h3>
@@ -245,7 +250,7 @@ ICP备案</li>
 <h3 id="mian-fei-jing-tai-ye-mian-tuo-guan-fu-wu">免费静态页面托管服务</h3>
 <h4 id="github-pages">GitHub Pages</h4>
 <ol>
-<li><a class="external" rel="external" href="https://github.com/iWangJiaxiang/Homepage-Creators/fork">Fork</a> 本仓库。</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/Homepage-Creators/fork">Fork</a> 本仓库。</li>
 <li>确保仓库已经包含 <code>.github/workflows/deploy.yml</code> 文件，无需额外配置。</li>
 <li>在仓库的 <strong>Actions</strong> 页面启用 <code>Build GH Pages</code> 工作流，然后手动触发构建。</li>
 <li>提交更改后，GitHub Actions 将自动构建并部署到 <code>gh-pages</code> 分支，等待完成。</li>
@@ -255,8 +260,8 @@ ICP备案</li>
 </ol>
 <h4 id="cloudflare-pages">CloudFlare Pages</h4>
 <ol>
-<li><a class="external" rel="external" href="https://github.com/iWangJiaxiang/Homepage-Creators/fork">Folk</a> 本仓库</li>
-<li>登录 <a class="external" rel="external" href="https://dash.cloudflare.com/">Cloudflare</a> 并进入 <strong>Pages</strong> 页面。</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/Homepage-Creators/fork">Folk</a> 本仓库</li>
+<li>登录 <a class="external" rel="noopener external" target="_blank" href="https://dash.cloudflare.com/">Cloudflare</a> 并进入 <strong>Pages</strong> 页面。</li>
 <li>点击 <strong>Create a project</strong> 按钮。</li>
 <li>选择 <strong>Connect to Git</strong>，然后授权 Cloudflare 访问您的 GitHub 仓库。</li>
 <li>在仓库列表中选择您的 <code>Homepage-Creators</code> 仓库。</li>
@@ -268,7 +273,7 @@ ICP备案</li>
 <li><strong>Build output directory 构建输出</strong>: 输入 <code>public</code>。</li>
 <li>添加环境变量<code>UNSTABLE_PRE_BUILD</code>，填写<code>asdf plugin add zola https://github.com/salasrod/asdf-zola &amp;&amp; asdf install zola $ZOLA_VERSION &amp;&amp; asdf global zola $ZOLA_VERSION</code></li>
 <li>添加环境变量<code>ZOLA_VERSION</code>，填写<code>0.20.0</code></li>
-<li>如果这里遇到问题，请参考<a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/cloudflare-pages/">官方文档</a></li>
+<li>如果这里遇到问题，请参考<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/deployment/cloudflare-pages/">官方文档</a></li>
 </ul>
 <ol>
 <li>点击 <strong>Save and Deploy</strong> 按钮，Cloudflare Pages 将开始构建和部署您的站点。</li>
@@ -278,7 +283,7 @@ ICP备案</li>
 <h3 id="ben-di-bu-shu">本地部署</h3>
 <ol>
 <li>
-<p>参考<a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/installation/">官方说明</a>安装 Zola 命令行工具</p>
+<p>参考<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">官方说明</a>安装 Zola 命令行工具</p>
 </li>
 <li>
 <p>将本仓库克隆到本地</p>
@@ -294,9 +299,9 @@ ICP备案</li>
 <li>
 <p>参考官方资料进一步并定制您的主页</p>
 <ul>
-<li><a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/cli-usage/">zola 命令说明</a></li>
-<li><a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/directory-structure/">理解项目结构</a></li>
-<li><a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/configuration/">自定义</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/cli-usage/">zola 命令说明</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/directory-structure/">理解项目结构</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">自定义</a></li>
 </ul>
 </li>
 <li>
@@ -308,9 +313,9 @@ ICP备案</li>
 </ol>
 <h2 id="zheng-shi-shi-yong">正式使用</h2>
 <p>本章节提供的方案和直接修改本仓库代码的最大区别就是内容隔离。基于 Zola 博客框架的机制，将本仓库的代码安装为主题，这样主题更新和用户自己的修改将完全隔离，能够长期使用，避免产生技术债务。</p>
-<p>正式使用时，假定你已经对 <a class="external" rel="external" href="https://github.com/getzola/zola">Zola</a> 框架和 Git Submodule 具备基础的了解，具体操作步骤如下：</p>
+<p>正式使用时，假定你已经对 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> 框架和 Git Submodule 具备基础的了解，具体操作步骤如下：</p>
 <ol>
-<li>本地安装 Zola 命令行工具，参考<a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/installation/">官方说明</a></li>
+<li>本地安装 Zola 命令行工具，参考<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">官方说明</a></li>
 <li>使用 <code>zola</code> 命令行本地初始化一个新的网站，也就是你的个人主页，并初始化为 Git 仓库。命令格式为<code>zola init &lt;site name&gt;</code></li>
 <li>将本主题仓库作为 Git Submodule 安装在你的网站<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add -b main https://github.com/iWangJiaxiang/Homepage-Creators themes</span></span></code></pre>此时，你的仓库应该自动创建了<code>themes/Homepage-Creators</code>文件夹</li>
 <li>下载本仓库内容<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule update --init</span></span></code></pre>此时，<code>themes/Homepage-Creators</code>文件夹应该具有内容了</li>
@@ -326,7 +331,7 @@ ICP备案</li>
 <li>修改 <code>config.toml</code> 文件，配置板块、文字内容和引用的图片</li>
 <li>运行<code>zola serve</code>命令，本地预览主页，支持实时刷新</li>
 </ol>
-<p>要进行主页定制，你需要对 Zola 框架具有基本的了解，例如<a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/directory-structure/">理解项目结构</a>和<a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/configuration/">配置文件</a>，这些内容十分简单，只需要通读一遍即可。</p>
+<p>要进行主页定制，你需要对 Zola 框架具有基本的了解，例如<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/directory-structure/">理解项目结构</a>和<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">配置文件</a>，这些内容十分简单，只需要通读一遍即可。</p>
 <blockquote>
 <p><strong>V2 新版说明</strong>：内容配置现在支持两种方式：</p>
 <ol>
@@ -386,7 +391,7 @@ ICP备案</li>
 <p>你可以根据需求对板块进行灵活定制，除了顶部导航栏之外，页面的任何板块都是<strong>模块化组件</strong>，可以<strong>无限自定义顺序、数量</strong>，随心所需，做你所想！</p>
 <p>板块的使用十分简单，将<strong>板块的配置代码粘贴在 <code>config.toml</code> 的最后部分</strong>，也就是 <code>[extra.other]</code> Section 的后面即可。配置代码的第一行统一为 <code>[[extra.index.widgets]]</code>，<code>[[ ]]</code>在 Toml 语法中表示数组的意思</p>
 <p><strong>板块的顺序和添加的顺序一致</strong>，也就是说，你可以在 <code>config.toml</code> 文件中通过复制粘贴调整代码顺序以达到控制页面展示顺序的目的。</p>
-<p>如果有疑惑的地方，最快的方法是参考本项目的 <a class="external" rel="external" href="https://github.com/iWangJiaxiang/Homepage-Creators/blob/main/config.toml">config.toml 文件</a>，相信你会有所收获。</p>
+<p>如果有疑惑的地方，最快的方法是参考本项目的 <a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/Homepage-Creators/blob/main/config.toml">config.toml 文件</a>，相信你会有所收获。</p>
 <p>目前支持的模块化组件如下：</p>
 <h4 id="mo-kuai-hua-zu-jian-ban-kuai-shou-ping-nei-rong">模块化组件板块：首屏内容</h4>
 <p>配置代码</p>
@@ -561,18 +566,18 @@ ICP备案</li>
 <h2 id="speech-balloon-tao-lun">💬 讨论</h2>
 <p>如果你对主题有什么建议或者意见，欢迎提 PR &amp; Issue。</p>
 <h2 id="closed-lock-with-key-xu-ke">🔐 许可</h2>
-<p><a class="external" rel="external" href="https://github.com/iWangJiaxiang/Homepage-Creators">Homepage Creators</a> 使用 <a href="https://zola.docs.saop.cc/themes/homepage-creators/./LICENSE">AGPL</a> 协议开源，请遵守开源协议。</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/Homepage-Creators">Homepage Creators</a> 使用 <a href="https://zola.docs.saop.cc/themes/homepage-creators/./LICENSE">AGPL</a> 协议开源，请遵守开源协议。</p>
 <h2 id="memo-zhi-xie">📝 致谢</h2>
-<p>该项目的CDN加速和安全防护由<a class="external" rel="external" href="https://edgeone.ai/?from=github">腾讯EdgeOne</a>赞助。</p>
-<p>CDN acceleration and security protection for this project are sponsored by <a class="external" rel="external" href="https://edgeone.ai/?from=github">Tencent EdgeOne</a>.</p>
-<p><a class="external" rel="external" href="https://edgeone.ai/?from=github"><img src="https://edgeone.ai/media/34fe3a45-492d-4ea4-ae5d-ea1087ca7b4b.png" alt="Edge One" /></a></p>
+<p>该项目的CDN加速和安全防护由<a class="external" rel="noopener external" target="_blank" href="https://edgeone.ai/?from=github">腾讯EdgeOne</a>赞助。</p>
+<p>CDN acceleration and security protection for this project are sponsored by <a class="external" rel="noopener external" target="_blank" href="https://edgeone.ai/?from=github">Tencent EdgeOne</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://edgeone.ai/?from=github"><img src="https://edgeone.ai/media/34fe3a45-492d-4ea4-ae5d-ea1087ca7b4b.png" alt="Edge One" /></a></p>
 
 
     </div>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

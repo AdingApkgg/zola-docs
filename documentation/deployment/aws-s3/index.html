@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;aws-s3&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -376,7 +381,7 @@
     <h1>AWS S3 Bucket</h1>
     <p>Amazon Simple Storage Service (Amazon S3) 是一种对象存储服务，提供静态网站托管。我们将看看通过 GitHub Actions 构建 Zola 网站并将其部署到 S3 所需的设置。</p>
 <h2 id="aws-she-zhi"><a class="zola-anchor" href="#aws-she-zhi" aria-label="Anchor link for: aws-she-zhi">🔗</a>AWS 设置</h2>
-<p><a class="external" rel="external" href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started-cloudfront-overview.html">AWS 官方开发者指南</a> 详细说明了如何创建存储桶并正确设置它以进行静态网站托管。在 AWS 中，你不仅可以托管网站文件，还可以购买域名并通过他们的全球 CDN (CloudFront) 加速你的网站。</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started-cloudfront-overview.html">AWS 官方开发者指南</a> 详细说明了如何创建存储桶并正确设置它以进行静态网站托管。在 AWS 中，你不仅可以托管网站文件，还可以购买域名并通过他们的全球 CDN (CloudFront) 加速你的网站。</p>
 <p>为了让 GitHub Actions 修改存储桶中的文件，你需要在你的 AWS 帐户中创建一个 IAM 用户，该用户具有刚好足够的权限来执行我们需要执行的操作，而不会更多。</p>
 <p>首先，我们需要创建一个新策略，方法是登录 AWS 控制台并转到 <strong>IAM</strong> &gt; <strong>Policies</strong> &gt; <strong>Create policy</strong>。从可视化编辑器切换到 <strong>JSON</strong> 并粘贴以下代码段。请记住更新你的存储桶名称：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="json"><span class="giallo-l"><span style="color: #9399B2;">{</span></span>
@@ -451,7 +456,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

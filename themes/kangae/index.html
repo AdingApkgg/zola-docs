@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;kangae&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;kangae&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -164,7 +169,7 @@
 
     <hr>
     <h1 id="kangae-kao-e-idea-or-thought">kangae (考え, idea or thought)</h1>
-<p><a class="external" rel="external" href="https://kangae.ayushnix.com/">kangae</a> is a lightweight microblog theme for <a class="external" rel="external" href="https://www.getzola.org/">zola</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://kangae.ayushnix.com/">kangae</a> is a lightweight microblog theme for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">zola</a>.</p>
 <details>
   <summary>kangae screenshots on desktop and mobile</summary>
 <p><img src="https://zola.docs.saop.cc/themes/kangae/static/images/kangae-desktop-light.webp" alt="kangae screenshot light mode on desktop" />
@@ -173,17 +178,17 @@
 <img src="https://zola.docs.saop.cc/themes/kangae/static/images/kangae-mobile-dark.webp" alt="kangae screenshot dark mode on mobile" /></p>
 </details>
 <p>I've created kangae from scratch and it is not based on any other theme. However, I was inspired to
-create kangae after I came across <a class="external" rel="external" href="https://zunzuncito.oriole.systems/">Wolfgang Müller's microblog</a>. Thanks Wolf!</p>
+create kangae after I came across <a class="external" rel="noopener external" target="_blank" href="https://zunzuncito.oriole.systems/">Wolfgang Müller's microblog</a>. Thanks Wolf!</p>
 <p>kangae is licensed under the <a href="https://zola.docs.saop.cc/themes/kangae/LICENSE">NCSA license</a>, which is quite similar to the BSD-3-Clause license.
 Unlike BSD-3-Clause, NCSA also covers documentation of a project.</p>
 <h1 id="showcase">Showcase</h1>
 <p>Here's a list of websites using the kangae theme</p>
 <ul>
-<li><a class="external" rel="external" href="https://microblog.ayushnix.com">ayushnix microblog</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://microblog.ayushnix.com">ayushnix microblog</a></li>
 </ul>
 <p>If you want to mention your website in this section, please raise a pull request.</p>
 <h1 id="installation">Installation</h1>
-<p>Before using this theme, <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/installation/">install zola</a>. After you've installed zola,</p>
+<p>Before using this theme, <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">install zola</a>. After you've installed zola,</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>$ zola init microblog</span></span>
 <span class="giallo-l"><span>&gt; What is the URL of your site? (https://example.com):</span></span>
 <span class="giallo-l"><span>&gt; Do you want to enable Sass compilation? [Y/n]:</span></span>
@@ -210,7 +215,7 @@ using</p>
 <span class="giallo-l"><span>$ sed -i &#39;s;# theme =\(.*\);theme =\1;&#39; config.toml</span></span></code></pre>
 <p>The <a href="https://zola.docs.saop.cc/themes/kangae/config.toml"><code>config.toml</code></a> file of kangae has been documented carefully using TOML comments. If you have
 any questions about configuring kangae which haven't been answered in the <code>config.toml</code> file itself,
-please <a class="external" rel="external" href="https://github.com/ayushnix/kangae/issues/new">raise an issue</a>.</p>
+please <a class="external" rel="noopener external" target="_blank" href="https://github.com/ayushnix/kangae/issues/new">raise an issue</a>.</p>
 <h2 id="shortcodes">Shortcodes</h2>
 <p>kangae provides several shortcodes that can be used to add content in an accessible manner</p>
 <h3 id="kaomoji-no">kaomoji <code>(・_・)ノ</code></h3>
@@ -237,11 +242,11 @@ the source is borrowed.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>{% quote(author=&quot;Edward Snowden&quot;, citeurl=&quot;https://old.reddit.com/r/IAmA/comments/36ru89/just_days_left_to_kill_mass_surveillance_under/crglgh2/&quot;) %}</span></span>
 <span class="giallo-l"><span>Arguing that you don&#39;t care about the right to privacy because you have nothing to hide is no different than saying you don&#39;t care about free speech because you have nothing to say.</span></span>
 <span class="giallo-l"><span>{% end %}</span></span></code></pre>
-<p>A live preview of these how these shortcodes look like can be found on <a class="external" rel="external" href="https://kangae.ayushnix.com/being-shikamaru-102/">this blog post</a>.</p>
+<p>A live preview of these how these shortcodes look like can be found on <a class="external" rel="noopener external" target="_blank" href="https://kangae.ayushnix.com/being-shikamaru-102/">this blog post</a>.</p>
 <h2 id="optional-features">Optional Features</h2>
 <p>kangae includes some optional features that aren't enabled by default</p>
 <ul>
-<li><a class="external" rel="external" href="https://github.com/ayushnix/kangae/blob/master/static/css/style-external-links.css">style external links using a ↗ unicode symbol</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/ayushnix/kangae/blob/master/static/css/style-external-links.css">style external links using a ↗ unicode symbol</a></li>
 </ul>
 <h1 id="donate">Donate</h1>
 <p>If you found kangae helpful in creating your own microblog website, please consider supporting me by
@@ -251,16 +256,16 @@ buying me a coffee :coffee:</p>
 <p>If you're in India, you can also use UPI for donations. My UPI address is <code>ayushnix@ybl</code>.</p>
 <h1 id="notes">Notes</h1>
 <p>Although I'm not a web developer, I am interested in learning HTML and CSS to create lightweight
-textual websites. You may be interested in reading <a class="external" rel="external" href="https://wiki.ayushnix.com/frontend/creating-a-website/">my log about how I learned HTML and CSS</a>.
+textual websites. You may be interested in reading <a class="external" rel="noopener external" target="_blank" href="https://wiki.ayushnix.com/frontend/creating-a-website/">my log about how I learned HTML and CSS</a>.
 However, that page is just an unorganized dump of my thoughts and isn't a polished blog post.
-<a class="external" rel="external" href="https://seirdy.one/2020/11/23/website-best-practices.html">Seirdy's blog post on creating textual websites</a> is probably a better reference.</p>
+<a class="external" rel="noopener external" target="_blank" href="https://seirdy.one/2020/11/23/website-best-practices.html">Seirdy's blog post on creating textual websites</a> is probably a better reference.</p>
 <h1 id="todo-maybe">TODO (maybe?)</h1>
 <ul>
 <li>(responsive) image shortcodes</li>
 <li>run prettier on HTML and CSS before deployment</li>
 <li>twitter and mastodon shortcodes</li>
 <li>add optional support for cross posting and commenting on mastodon without using JS</li>
-<li>add optional support for <a class="external" rel="external" href="https://giscus.app/">giscus</a> and <a class="external" rel="external" href="https://carlschwan.eu/2020/12/29/adding-comments-to-your-static-blog-with-mastodon/">loading mastodon comments</a></li>
+<li>add optional support for <a class="external" rel="noopener external" target="_blank" href="https://giscus.app/">giscus</a> and <a class="external" rel="noopener external" target="_blank" href="https://carlschwan.eu/2020/12/29/adding-comments-to-your-static-blog-with-mastodon/">loading mastodon comments</a></li>
 <li>add shortcode for asciinema</li>
 <li>add shortcode for blockquote and citation</li>
 <li>pagination</li>
@@ -274,7 +279,7 @@ However, that page is just an unorganized dump of my thoughts and isn't a polish
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

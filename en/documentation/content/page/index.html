@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> Forum</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -116,11 +121,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -130,7 +135,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;content&#x2F;page&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
                         
                     </li>
                 </ul>
@@ -373,7 +378,7 @@
         
     <h1>Page</h1>
     <p>A page is any file ending with <code>.md</code> in the <code>content</code> directory, except files
-named <code>_index.md</code>. <strong>Note:</strong> page file names must not contain <code>_index.</code> <a class="external" rel="external" href="https://github.com/getzola/zola/pull/1694">at all</a>.</p>
+named <code>_index.md</code>. <strong>Note:</strong> page file names must not contain <code>_index.</code> <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/pull/1694">at all</a>.</p>
 <p>If a file ending with <code>.md</code> is named <code>index.md</code>, it will generate a page
 with the name of its directory (for example, <code>/content/about/index.md</code> would
 create a page at <code>[base_url]/about</code>). (Note the lack of an underscore; if the file
@@ -383,7 +388,7 @@ create a <strong>page</strong> at <code>[base_url]/about</code>).</p>
 <p>If the file is given any name <em>other</em> than <code>index.md</code> or <code>_index.md</code>, then it will
 create a page with that name (without the <code>.md</code>). For example, naming a file in the root of your
 content directory <code>about.md</code> would create a page at <code>[base_url]/about</code>.</p>
-<p>Another exception to this rule is that a filename starting with a datetime (YYYY-mm-dd or <a class="external" rel="external" href="https://www.ietf.org/rfc/rfc3339.txt">an RFC3339 datetime</a>)
+<p>Another exception to this rule is that a filename starting with a datetime (YYYY-mm-dd or <a class="external" rel="noopener external" target="_blank" href="https://www.ietf.org/rfc/rfc3339.txt">an RFC3339 datetime</a>)
 will use that date as the page date, unless already set
 in the front matter. A datetime filename can optionally be followed by an underscore (<code>_</code>) or a dash (<code>-</code>), and slug.
 The page name will be either the datetime or anything after <code>_</code>/<code>-</code>,
@@ -402,7 +407,7 @@ the <code>about</code> directory allows you to use asset co-location, as discuss
 <li>its filename</li>
 </ul>
 <p>Either way, these proposed path will be sanitized before being used.
-If <code>slugify.paths</code> is set to <code>"on"</code> in the site's config - the default - paths are <a class="external" rel="external" href="https://en.wikipedia.org/wiki/Clean_URL#Slug">slugified</a>.
+If <code>slugify.paths</code> is set to <code>"on"</code> in the site's config - the default - paths are <a class="external" rel="noopener external" target="_blank" href="https://en.wikipedia.org/wiki/Clean_URL#Slug">slugified</a>.
 If it is set to <code>"safe"</code>, only sanitation is performed, with the following characters being removed: <code>&lt;</code>, <code>&gt;</code>, <code>:</code>, <code>/</code>, <code>|</code>, <code>?</code>, <code>*</code>, <code>#</code>, <code>\\</code>, <code>(</code>, <code>)</code>, <code>[</code>, <code>]</code> as well as newlines and tabulations. This ensures that the path can be represented on all operating systems.
 Additionally, trailing whitespace and dots are removed and whitespaces are replaced by <code>_</code>.</p>
 <p>If <code>slugify.paths</code> is set to <code>"off"</code>, no modifications are made.</p>
@@ -422,7 +427,7 @@ Additionally, trailing whitespace and dots are removed and whitespaces are repla
 <li>if the filename is <code>index.md</code>, its parent folder name (<code>bar</code>) is used as output path</li>
 <li>otherwise, the output path is extracted from <code>thing</code> (the filename without the <code>.md</code> extension)</li>
 </ul>
-<p>If the path found starts with a datetime string (<code>YYYY-mm-dd</code> or <a class="external" rel="external" href="https://www.ietf.org/rfc/rfc3339.txt">a RFC3339 datetime</a>) followed by optional whitespace and then an underscore (<code>_</code>) or a dash (<code>-</code>), this date is removed from the output path and will be used as the page date (unless already set in the front-matter). Note that the full RFC3339 datetime contains colons, which is not a valid character in a filename on Windows.</p>
+<p>If the path found starts with a datetime string (<code>YYYY-mm-dd</code> or <a class="external" rel="noopener external" target="_blank" href="https://www.ietf.org/rfc/rfc3339.txt">a RFC3339 datetime</a>) followed by optional whitespace and then an underscore (<code>_</code>) or a dash (<code>-</code>), this date is removed from the output path and will be used as the page date (unless already set in the front-matter). Note that the full RFC3339 datetime contains colons, which is not a valid character in a filename on Windows.</p>
 <p>The output path extracted from the file path is then slugified or not, depending on the <code>slugify.paths</code> config, as explained previously.</p>
 <p><strong>Example:</strong>
 The file <code>content/blog/2018-10-10-hello-world.md</code> will yield a page at <code>[base_url]/blog/hello-world</code>. With optional whitespace, the file <code>content/blog/2021-01-23 -hello new world.md</code> will yield a page at <code>[base_url]/blog/hello-new-world</code></p>
@@ -472,6 +477,7 @@ default values.</p>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Use aliases if you are moving content but want to redirect previous URLs to the</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># current one. This takes an array of paths, not URLs.</span></span>
+<span class="giallo-l"><span>aliases</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> []</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># A list of page authors. If a site feed is enabled, the first author (if any)</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># will be used as the page&#39;s author in the default feed template.</span></span>
@@ -511,7 +517,7 @@ upon the summary before the cutoff.</p>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
         </footer>
 

@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-theme-jiaxiang-wang&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-theme-jiaxiang-wang&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -168,21 +173,21 @@
 <h4>为创造者而生的开源 Zola 主题</h4>
 <p align="center">
 <p>主题预览](#-预览) | <a href="https://zola.docs.saop.cc/themes/zola-theme-jiaxiang-wang/#-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a> | [加入讨论</p>
-<p><a class="external" rel="external" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang/blob/main/README.md">中文</a> | <a class="external" rel="external" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang/blob/main/README.en.md">English</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang/blob/main/README.md">中文</a> | <a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang/blob/main/README.en.md">English</a></p>
 </p>
 </div>
-<p><a class="external" rel="external" href="https://blog.jiaxiang.wang"><img src="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang/raw/refs/heads/main/content/articles/docs/01%20Read%20Me/preview.webp" alt="preview" /></a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://blog.jiaxiang.wang"><img src="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang/raw/refs/heads/main/content/articles/docs/01%20Read%20Me/preview.webp" alt="preview" /></a></p>
 <h2 id="information-source-jian-jie">ℹ️ 简介</h2>
-<p><a class="external" rel="external" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang">zola-theme-jiaxiang.wang</a> 是一款适用于 <a class="external" rel="external" href="https://github.com/getzola/zola">Zola</a> 的博客主题。</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang">zola-theme-jiaxiang.wang</a> 是一款适用于 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> 的博客主题。</p>
 <blockquote>
-<p>本主题由 <a class="external" rel="external" href="https://blog.jiaxiang.wang">王嘉祥</a> 移植自 <a class="external" rel="external" href="https://github.com/halo-dev/halo">Halo</a> 主题 <a class="external" rel="external" href="https://github.com/chengzhongxue/halo-theme-hao">Halo-Theme-Hao</a>，<a class="external" rel="external" href="https://github.com/chengzhongxue/halo-theme-hao">Halo-Theme-Hao</a> 主题移植自 <a class="external" rel="external" href="https://hexo.io/zh-cn/index.html">Hexo</a> 社区中 <a class="external" rel="external" href="https://blog.zhheo.com/">张洪 Heo</a> 对 <a class="external" rel="external" href="https://github.com/chengzhongxue/halo-theme-hao">Hexo-Theme-Butterfly</a> 主题的魔改与重设计版本。</p>
+<p>本主题由 <a class="external" rel="noopener external" target="_blank" href="https://blog.jiaxiang.wang">王嘉祥</a> 移植自 <a class="external" rel="noopener external" target="_blank" href="https://github.com/halo-dev/halo">Halo</a> 主题 <a class="external" rel="noopener external" target="_blank" href="https://github.com/chengzhongxue/halo-theme-hao">Halo-Theme-Hao</a>，<a class="external" rel="noopener external" target="_blank" href="https://github.com/chengzhongxue/halo-theme-hao">Halo-Theme-Hao</a> 主题移植自 <a class="external" rel="noopener external" target="_blank" href="https://hexo.io/zh-cn/index.html">Hexo</a> 社区中 <a class="external" rel="noopener external" target="_blank" href="https://blog.zhheo.com/">张洪 Heo</a> 对 <a class="external" rel="noopener external" target="_blank" href="https://github.com/chengzhongxue/halo-theme-hao">Hexo-Theme-Butterfly</a> 主题的魔改与重设计版本。</p>
 </blockquote>
 <h2 id="fire-yu-lan">🔥 预览</h2>
 <blockquote>
 <p>如果你的站点也使用了本主题，欢迎通过 PR 的形式在 <code>readme.md</code> 和 <code>/static/data/friends.json</code> 中添加站点信息</p>
 </blockquote>
 <table><thead><tr><th style="text-align: center">站点名称</th><th style="text-align: left">站点地址</th></tr></thead><tbody>
-<tr><td style="text-align: center">王嘉祥 Jiaxiang Wang</td><td style="text-align: left"><a class="external" rel="external" href="https://blog.jiaxiang.wang">https://blog.jiaxiang.wang</a></td></tr>
+<tr><td style="text-align: center">王嘉祥 Jiaxiang Wang</td><td style="text-align: left"><a class="external" rel="noopener external" target="_blank" href="https://blog.jiaxiang.wang">https://blog.jiaxiang.wang</a></td></tr>
 </tbody></table>
 <h3 id="electric-plug-gong-neng">🔌 功能</h3>
 <blockquote>
@@ -313,7 +318,7 @@ ICP备案</li>
 <h2 id="memo-kuai-su-shang-shou">📝 快速上手</h2>
 <ol>
 <li>
-<p>参考<a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/installation/">官方说明</a>安装 Zola 命令行工具</p>
+<p>参考<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">官方说明</a>安装 Zola 命令行工具</p>
 </li>
 <li>
 <p>将本仓库克隆到本地</p>
@@ -329,23 +334,23 @@ ICP备案</li>
 <li>
 <p>参考官方资料进一步探索并定制您的博客</p>
 <ul>
-<li><a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/cli-usage/">zola 命令说明</a></li>
-<li><a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/directory-structure/">理解项目结构</a></li>
-<li><a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/configuration/">自定义</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/cli-usage/">zola 命令说明</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/directory-structure/">理解项目结构</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">自定义</a></li>
 </ul>
 </li>
 </ol>
 <h2 id="speech-balloon-tao-lun">💬 讨论</h2>
 <p>如果你对主题有什么建议或者意见，欢迎提 PR &amp; Issue。</p>
 <h2 id="closed-lock-with-key-xu-ke">🔐 许可</h2>
-<p><a class="external" rel="external" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang">Zola-Theme-Jiaxiang</a> 使用 <a href="https://zola.docs.saop.cc/themes/zola-theme-jiaxiang-wang/./LICENSE">AGPL</a> 协议开源，请遵守开源协议。</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang">Zola-Theme-Jiaxiang</a> 使用 <a href="https://zola.docs.saop.cc/themes/zola-theme-jiaxiang-wang/./LICENSE">AGPL</a> 协议开源，请遵守开源协议。</p>
 
 
     </div>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

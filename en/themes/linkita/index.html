@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;linkita&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Linkita | Zola">
+        <meta property="og:description" content="A clean and elegant blog theme for Zola. Linkita is based on Kita and Hugo-Paper and is multilingual and SEO friendly.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;linkita&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Linkita | Zola">
+        <meta name="twitter:description" content="A clean and elegant blog theme for Zola. Linkita is based on Kita and Hugo-Paper and is multilingual and SEO friendly.">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Linkita",
+            "description": "A clean and elegant blog theme for Zola. Linkita is based on Kita and Hugo-Paper and is multilingual and SEO friendly.",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;linkita&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>Linkita | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;linkita&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;linkita&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> Linkita</h1>
+            <p>A clean and elegant blog theme for Zola. Linkita is based on Kita and Hugo-Paper and is multilingual and SEO friendly.</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;salif.eu">Salif Mehmed</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.19.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;codeberg.org&#x2F;salif&#x2F;linkita">https:&#x2F;&#x2F;codeberg.org&#x2F;salif&#x2F;linkita</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;salif.github.io&#x2F;linkita&#x2F;">https:&#x2F;&#x2F;salif.github.io&#x2F;linkita&#x2F;</a></p>
+            
+            
+              <div>
+              <p><i class="fas fa-tags"></i> 标签:</p>
+              <ul style="list-style-type: none;">
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;blog&#x2F;"><i class="fas fa-tag"></i> Blog</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;multilingual&#x2F;"><i class="fas fa-tag"></i> Multilingual</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;responsive&#x2F;"><i class="fas fa-tag"></i> Responsive</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;seo&#x2F;"><i class="fas fa-tag"></i> SEO</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;search&#x2F;"><i class="fas fa-tag"></i> Search</a></li>
+                
+              
+              </div>
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2026-03-01T20:09:26+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="linkita">Linkita</h1>
+<p>A clean and elegant blog theme for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a>.
+Linkita is based on <a class="external" rel="noopener external" target="_blank" href="https://github.com/st1020/kita">Kita</a>
+and <a class="external" rel="noopener external" target="_blank" href="https://github.com/nanxiaobei/hugo-paper">Hugo-Paper</a> and is multilingual and SEO friendly.</p>
+<ul>
+<li>See the <a class="external" rel="noopener external" target="_blank" href="https://github.com/salif/linkita-start">quickstart repository</a>.</li>
+<li>See a <a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/">live preview</a> and
+<a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita-demo">its source code</a>.</li>
+<li>Open bug reports and feature requests on <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita/issues">Codeberg</a>.</li>
+<li>The source code is available on <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita">Codeberg</a>
+and mirrored on <a class="external" rel="noopener external" target="_blank" href="https://github.com/salif/linkita">GitHub</a>.</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li>Easy to use and modify</li>
+<li>No preset limits</li>
+<li>Inject support</li>
+<li>Dark mode</li>
+<li>Responsive design</li>
+<li>Social icons</li>
+<li>Taxonomy support</li>
+<li>Projects page</li>
+<li>Archive page</li>
+<li>Table of Contents</li>
+<li>Admonition shortcode</li>
+<li>SEO friendly</li>
+<li>Comments using <a class="external" rel="noopener external" target="_blank" href="https://giscus.app/">Giscus</a></li>
+<li>Mathematical notations using <a class="external" rel="noopener external" target="_blank" href="https://katex.org/">KaTeX</a></li>
+<li>Diagrams and charts using <a class="external" rel="noopener external" target="_blank" href="https://mermaid.js.org/">Mermaid</a></li>
+<li>Multilingual support</li>
+<li>Search support (elasticlunr_javascript)</li>
+<li>Improved search engine optimization</li>
+<li>Improved configurability</li>
+<li>Author profiles</li>
+<li>Projects shortcode</li>
+<li>Keyboard shortcuts</li>
+<li>Relative URLs support</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>The fastest way to create a new site is to use the
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/salif/linkita-start">linkita-start template</a>.
+This gives you a complete blog setup with all the essential configuration ready to go.</p>
+<h3 id="manual-installation">Manual installation</h3>
+<ol start="0">
+<li>Create a new Zola site if you haven't already:</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init myblog</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> myblog</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span></span></code></pre>
+<ol>
+<li>Add the theme as a git submodule:</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add -b v4 https://codeberg.org/salif/linkita.git themes/linkita</span></span></code></pre>
+<p>If you don't want to use git submodules, you can clone the repository instead:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone -b v4 https://codeberg.org/salif/linkita.git themes/linkita</span></span></code></pre>
+<ol start="2">
+<li>Enable the theme in your <code>zola.toml</code> or <code>config.toml</code> file:</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;linkita&quot;</span></span></code></pre>
+<p>Place it near the <code>base_url</code> variable, not under <code>[extra]</code>.</p>
+<h2 id="managing-versions">Managing versions</h2>
+<p>To update the theme, run:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule update --remote themes/linkita</span></span></code></pre>
+<p>If you use the <code>linkita</code> branch of the theme, check the
+<a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita/src/branch/linkita/changelog/linkita.md">changelog/linkita.md</a> file.<br />
+Otherwise, find the changelog file for your version in the <code>changelog</code> directory.</p>
+<p>If you switch to a newer version, there may be breaking changes that require manual involvement.</p>
+<h2 id="usage">Usage</h2>
+<p>Linkita uses the following front matter variables.
+All variables are optional.
+Set the ones you need.</p>
+<h3 id="yaml-frontmatter">YAML frontmatter</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml" data-name="frontmatter"><span class="giallo-l"><span style="color: #F5C2E7;">---</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">title</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">description</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">date</span><span style="color: #94E2D5;">:</span><span> </span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">updated</span><span style="color: #94E2D5;">:</span><span> </span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">taxonomies</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  categories</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  tags</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">extra</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  comment</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  math</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  mermaid</span><span style="color: #94E2D5;">:</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  cover</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    image</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">    alt</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #F5C2E7;">---</span></span></code></pre><h3 id="toml-frontmatter">TOML frontmatter</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="frontmatter"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The date of the post</span></span>
+<span class="giallo-l"><span>date</span><span style="color: #94E2D5;"> =</span><span> 2026-12-30</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The last updated date of the post</span></span>
+<span class="giallo-l"><span>updated</span><span style="color: #94E2D5;"> =</span><span> 2026-12-31</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>categories</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> []</span></span>
+<span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> []</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable comments</span></span>
+<span class="giallo-l"><span>comment</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable KaTeX support</span></span>
+<span class="giallo-l"><span>math</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable Mermaid support</span></span>
+<span class="giallo-l"><span>mermaid</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.cover</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Path to the cover image</span></span>
+<span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># A description of the cover image</span></span>
+<span class="giallo-l"><span>alt</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre><h3 id="other-extra-front-matter-variables">Other extra front matter variables</h3>
+<p>Linkita supports <a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/extra-frontmatter/">more extra variables, listed here</a>.</p>
+<h3 id="pages-and-posts">Pages and Posts</h3>
+<h4 id="home-page">Home page</h4>
+<p>Create a <code>content/_index.md</code> file and set <code>extra.profile</code> to your username:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="content/_index.md"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span>sort_by</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;date&quot;</span></span>
+<span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 4</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>profile</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;your_username&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p>Do it for each language in your site.
+For French, the file name is <code>content/_index.fr.md</code>.</p>
+<p>See Profiles for more.</p>
+<h4 id="posts">Posts</h4>
+<p>In the <code>content</code> directory, create a subdirectory named <code>blog</code> or another name of your choice.</p>
+<p>Create a <code>content/blog/_index.md</code> file:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="content/blog/_index.md"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Archive&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;archive.html&quot;</span></span>
+<span class="giallo-l"><span>transparent</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>date_format</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;%m-%d&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p>Create a <code>content/blog/hello.md</code> file:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown" data-name="content/blog/hello.md"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;Title&quot;</span></span>
+<span class="giallo-l"><span>date = 2026-12-30</span></span>
+<span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>Summary </span><span style="color: #9399B2;font-style: italic;">&lt;!-- more --&gt;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FAB387;">## Hello, world!</span></span></code></pre><h4 id="pages">Pages</h4>
+<p>The default page template <code>page.html</code> is for blog posts.
+For pages that are not blog posts, you can use the <code>pages.html</code> template.</p>
+<p>In the <code>content</code> directory, create a subdirectory named <code>pages</code> and
+create a <code>content/pages/_index.md</code> file:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="content/pages/_index.md"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>render</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"><span>page_template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;pages.html&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p>Create a <code>content/pages/about.md</code> file:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown" data-name="content/pages/about.md"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;About me&quot;</span></span>
+<span class="giallo-l"><span>description = &quot;&quot;</span></span>
+<span class="giallo-l"><span>path = &quot;about&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #FAB387;">## Hello, world!</span></span></code></pre>
+<p>If you want, you can also create <a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/shortcodes/#projects">a page for your projects</a>.</p>
+<h3 id="setting-page-authors">Setting page authors</h3>
+<p>Choose one of the following options or skip if you don't know what you're doing:</p>
+<h4 id="option-a-using-page-authors-and-config-author">Option A: Using <code>page.authors</code> and <code>config.author</code></h4>
+<p>The default author for posts is set using the <code>author</code> variable in the <code>zola.toml</code> file.</p>
+<p>You don't need to set <code>authors</code> in the front matter if the default author is the only author of the post.
+Otherwise, set <code>authors</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="frontmatter"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;author_username&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre><h4 id="option-b-using-taxonomies">Option B: Using Taxonomies</h4>
+<p>Useful if the blog has a team of several authors.
+If you choose this option you should set taxonomies in each post.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="frontmatter"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;author_username&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;author2_username&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre><h3 id="inject-support">Inject support</h3>
+<p>You can easily use inject to add new features to your site without modifying the theme itself.</p>
+<p>To use inject, you need to add some HTML files to the <code>templates/injects</code> directory.</p>
+<p>The available inject points are: <code>head.html</code>, <code>head_end.html</code>, <code>header_nav.html</code>,
+<code>body_start.html</code>, <code>body_end.html</code>, <code>page_start.html</code>, <code>page_end.html</code>, <code>footer.html</code>.</p>
+<p>For example, you can add JavaScript files and CSS stylesheets in the <code>templates/injects/head_end.html</code> file.</p>
+<h3 id="keyboard-shortcuts">Keyboard shortcuts</h3>
+<table><thead><tr><th>Action</th><th>Shortcut</th></tr></thead><tbody>
+<tr><td>Home</td><td><kbd>Alt</kbd>+<kbd>!</kbd></td></tr>
+<tr><td>Search</td><td><kbd>Alt</kbd>+<kbd>/</kbd></td></tr>
+<tr><td>Toggle menu</td><td><kbd>Alt</kbd>+<kbd>+</kbd></td></tr>
+<tr><td>Toggle dark mode</td><td><kbd>Alt</kbd>+<kbd>$</kbd></td></tr>
+<tr><td>Go to prev page</td><td><kbd>Alt</kbd>+<kbd>,</kbd></td></tr>
+<tr><td>Go to next page</td><td><kbd>Alt</kbd>+<kbd>.</kbd></td></tr>
+<tr><td>Table of contents</td><td><kbd>Alt</kbd>+<kbd>=</kbd></td></tr>
+<tr><td>Skip to footer</td><td><kbd>Alt</kbd>+<kbd>_</kbd></td></tr>
+</tbody></table>
+<h2 id="configuration">Configuration</h2>
+<p>Copy and paste the examples into your <code>zola.toml</code> file
+and comment out the variables you don't use instead of setting empty values.
+All variables are optional.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The URL the site will be built for.</span></span>
+<span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The site theme to use.</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;linkita&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The default language.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># &quot;en&quot; is for English.</span></span>
+<span class="giallo-l"><span>default_language</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The default author for pages.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># See &quot;extra.profiles&quot;.</span></span>
+<span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;your_username&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The site title.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Will be in all page titles.</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The site description.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Used in feeds by default.</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Automatically generate a feed.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>generate_feeds</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The filenames to use for the feeds.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># e.g. [&quot;rss.xml&quot;]</span></span>
+<span class="giallo-l"><span>feed_filenames</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;atom.xml&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Build a search index from the pages and section content</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># for &quot;default_language&quot;.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># build_search_index = true</span></span></code></pre>
+<p>Zola has built-in support for taxonomies.
+Linkita has special support for taxonomies named <code>tags</code>, <code>categories</code>, and <code>authors</code>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[[</span><span>taxonomies</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;categories&quot;</span></span>
+<span class="giallo-l"><span>feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 4</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>taxonomies</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span></span>
+<span class="giallo-l"><span>feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 4</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>taxonomies</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;authors&quot;</span></span>
+<span class="giallo-l"><span>feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 4</span></span></code></pre>
+<p>You can add more languages by replacing <code>fr</code> from the following example with the language code:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>languages.fr</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Site title in French&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Site description in French&quot;</span></span>
+<span class="giallo-l"><span>generate_feeds</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>feed_filenames</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;atom.xml&quot;</span><span style="color: #9399B2;">]</span><span style="color: #9399B2;font-style: italic;"> # or [&quot;rss.xml&quot;]</span></span>
+<span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">,</span><span> paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 4</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>By default, taxonomy pages are sorted in descending order by the number of posts.
+You can customize this behavior using the <code>extra.taxonomy_sorting</code> variable:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.taxonomy_sorting</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># &quot;ascending_frequency&quot;, &quot;descending_frequency&quot; or &quot;name&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: &quot;descending_frequency&quot;</span></span>
+<span class="giallo-l"><span>categories</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;name&quot;</span></span>
+<span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;descending_frequency&quot;</span></span>
+<span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;name&quot;</span></span></code></pre><h3 id="general-config">General config</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable KaTeX math formula support globally.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>math</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable Mermaid support globally.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>mermaid</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable comments globally.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>comment</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Title separator.</span></span>
+<span class="giallo-l"><span>title_separator</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot; | &quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The top menu.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># See &quot;extra.menus&quot;.</span></span>
+<span class="giallo-l"><span>header_menu_name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;menu_name&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># See &quot;extra.menus&quot;.</span></span>
+<span class="giallo-l"><span>menu_i18n</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If you disable default favicons, you can use</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># the inject support to set your own favicons.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>disable_default_favicon</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If you want to implement the JS code</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># yourself, set to true and use the inject support.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>disable_javascript</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Use a CDN for libraries like KaTeX.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>use_cdn</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Use relative URLs.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># It doesn&#39;t apply to content yet.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>relative_urls</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If you want to view the site without a webserver</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># set this and &quot;relative_urls&quot; to true.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>ugly_urls</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Prioritize the summary over the description.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>page_summary_on_paginator</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Reverse the order of prev and next post links.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>invert_page_navigation</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Header buttons.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Valid values:</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">#  &quot;site_title&quot;, &quot;home_button&quot;, &quot;theme_select&quot;, &quot;theme_button&quot;,</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">#  &quot;search_button&quot;, &quot;translations_select&quot;, &quot;translations_button&quot;.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Can be set to an empty array.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># header_buttons = [&quot;site_title&quot;, &quot;theme_select&quot;, &quot;search_button&quot;, &quot;translations_select&quot;]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Information shown on post pages.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Valid &quot;when&quot; values:</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">#  &quot;date&quot;, &quot;date_updated&quot;, &quot;reading_time&quot;, &quot;word_count&quot;, &quot;authors&quot;, &quot;tags&quot;, &quot;&quot;.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The &quot;prepend&quot; and &quot;append&quot; are used when the value of &quot;when&quot; is defined for the page.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># e.g. [{when=&quot;&quot;, prepend=&quot;Page Info: &quot;},{when=&quot;date&quot;,prepend=&quot;Published on &quot;},{when=&quot;authors&quot;,prepend=&quot;By &quot;}]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># page_info = [{ when=&quot;date&quot; }, { when=&quot;date_updated&quot;, prepend=&quot;(&quot;, append=&quot;)&quot; }, { when=&quot;reading_time&quot; }]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Information shown for posts on paginators.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># page_info_on_paginator = [{ when=&quot;date&quot; }, { when=&quot;reading_time&quot; }]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable table of contents on all pages.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If not set, toc is enabled only on posts.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If set to false, toc is disabled on all pages.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Type: boolean or object</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># toc = true</span></span></code></pre><h3 id="style-config">Style config</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.style</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The custom background color.</span></span>
+<span class="giallo-l"><span>bg_color</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#f4f4f5&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The custom background color in dark mode.</span></span>
+<span class="giallo-l"><span>bg_dark_color</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#18181b&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable header blur.</span></span>
+<span class="giallo-l"><span>header_blur</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The custom header color, only available</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># when &quot;header_blur&quot; is false.</span></span>
+<span class="giallo-l"><span>header_color</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#e4e4e7&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The custom header color in dark mode, only available</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># when &quot;header_blur&quot; is false.</span></span>
+<span class="giallo-l"><span>header_dark_color</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#27272a&quot;</span></span></code></pre><h3 id="menus">Menus</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.menus</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>menu_name</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/blog/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Archive&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/categories/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Categories&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/tags/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/about/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;About&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Example multilingual menu using `names`.</span></span>
+<span class="giallo-l"><span>multilingual_menu_name</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/about/&quot;</span><span style="color: #9399B2;">,</span><span> names</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span> en</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;About&quot;</span><span style="color: #9399B2;">,</span><span> fr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;About in French&quot;</span><span style="color: #9399B2;"> } },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/projects/&quot;</span><span style="color: #9399B2;">,</span><span> names</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span> en</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Projects&quot;</span><span style="color: #9399B2;">,</span><span> fr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Projects in French&quot;</span><span style="color: #9399B2;"> } },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/blog/&quot;</span><span style="color: #9399B2;">,</span><span> names</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span> en</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Archive&quot;</span><span style="color: #9399B2;">,</span><span> fr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Archive in French&quot;</span><span style="color: #9399B2;"> } },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/categories/&quot;</span><span style="color: #9399B2;">,</span><span> names</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span> en</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Categories&quot;</span><span style="color: #9399B2;">,</span><span> fr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Categories in French&quot;</span><span style="color: #9399B2;"> } },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/tags/&quot;</span><span style="color: #9399B2;">,</span><span> names</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span> en</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags&quot;</span><span style="color: #9399B2;">,</span><span> fr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags in French&quot;</span><span style="color: #9399B2;"> } },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/authors/&quot;</span><span style="color: #9399B2;">,</span><span> names</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span> en</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Authors&quot;</span><span style="color: #9399B2;">,</span><span> fr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Authors in French&quot;</span><span style="color: #9399B2;"> } },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>To use a menu, set <code>extra.header_menu_name</code>.</p>
+<p><code>$BASE_URL</code> in <code>url</code> will be automatically replaced with the language specific base URL.
+You can use <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/linking/#internal-links">Internal links</a>
+instead of <code>$BASE_URL</code>.</p>
+<p>If your site is multilingual, you can choose one of the following options or combine them:</p>
+<ol>
+<li>Set <code>names</code> as in the <code>multilingual_menu_name</code> example.</li>
+<li>Set <code>extra.menu_i18n</code> to <code>true</code> in order to use the <code>static/i18n/menu.json</code> file.</li>
+<li>Set <code>header_menu_name</code> for each language using the language specific options.</li>
+</ol>
+<h3 id="profiles">Profiles</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Replace &quot;your_username&quot; with your username.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.profiles.your_username</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The URL of the avatar.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># e.g. &quot;icons/github.svg&quot;</span></span>
+<span class="giallo-l"><span>avatar_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># A description of what is in the avatar.</span></span>
+<span class="giallo-l"><span>avatar_alt</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Invert avatar color in dark mode.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: false</span></span>
+<span class="giallo-l"><span>avatar_invert</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Profile name.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: the username</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Profile bio.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Supports Markdown.</span></span>
+<span class="giallo-l"><span>bio</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Social icons.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># &quot;name&quot; should be the file name of &quot;static/icons/*.svg&quot; or</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># the icon name of https://simpleicons.org/</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># &quot;url&quot; supports &quot;$BASE_URL&quot;.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Other variables: &quot;urls&quot;, &quot;title&quot;, &quot;titles&quot;.</span></span>
+<span class="giallo-l"><span>social</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;bluesky&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://bsky.app/profile/username&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/username&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;email&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;mailto:example@example.com&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;rss&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;$BASE_URL/atom.xml&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="profile-translations">Profile translations</h3>
+<p>Skip if your site is not multilingual.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># For French. Replace &quot;your_username&quot; with your username.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.profiles.your_username.languages.fr</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># A description of what is in the avatar.</span></span>
+<span class="giallo-l"><span>avatar_alt</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Profile name.</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Profile bio.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Supports Markdown.</span></span>
+<span class="giallo-l"><span>bio</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Social icons.</span></span>
+<span class="giallo-l"><span>social</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> []</span></span></code></pre><h3 id="open-graph-for-profiles">Open Graph for profiles</h3>
+<p>See <a class="external" rel="noopener external" target="_blank" href="https://ogp.me/">the Open Graph protocol</a>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Replace &quot;your_username&quot; with your username.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.profiles.your_username.open_graph</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The URL of the social image.</span></span>
+<span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># A description of what is in the social image.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: &quot;&quot;</span></span>
+<span class="giallo-l"><span>image_alt</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Your first name. No default value.</span></span>
+<span class="giallo-l"><span>first_name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Your last name. No default value.</span></span>
+<span class="giallo-l"><span>last_name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Your username. No default value.</span></span>
+<span class="giallo-l"><span>username</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># e.g. &quot;female&quot; or &quot;male&quot;. No default value.</span></span>
+<span class="giallo-l"><span>gender</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># fb_app_id = &quot;Your fb app ID&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># fb_admins = [&quot;YOUR_USER_ID&quot;]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Set if you have a Fediverse account.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">#  handle – Your Fediverse handle.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">#  domain – Your Fediverse instance.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">#  url – Your Fediverse account URL. Optional.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Example for @me@mastodon.social:</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># { handle = &quot;me&quot;, domain = &quot;mastodon.social&quot; }</span></span>
+<span class="giallo-l"><span>fediverse_creator</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span> handle</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;">,</span><span> domain</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;"> }</span></span></code></pre>
+<p><code>image</code> and <code>image_alt</code> of the default author's profile will be used
+as a fallback Open Graph image for all pages.</p>
+<h4 id="open-graph-translations">Open Graph translations</h4>
+<p>Skip if your site is not multilingual.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># For French. Replace &quot;your_username&quot; with your username.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.profiles.your_username.open_graph.languages.fr</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># A description of what is in the social image.</span></span>
+<span class="giallo-l"><span>image_alt</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span></code></pre><h3 id="the-page-footer">The page footer</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.footer</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Replace with the correct year.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: the current year</span></span>
+<span class="giallo-l"><span>since</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 2025</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Replace with the URL of the license you want.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># No default value. Supports &quot;$BASE_URL&quot;.</span></span>
+<span class="giallo-l"><span>license_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://creativecommons.org/licenses/by-sa/4.0/deed&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Replace &quot;Your Name&quot; with your name and &quot;CC BY-SA 4.0&quot; with the name of the license you want.</span></span>
+<span class="giallo-l"><span>copyright</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&amp;copy; $YEAR Your Name &amp;vert; [CC BY-SA 4.0]($LICENSE_URL)&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Not used yet.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Supports &quot;$BASE_URL&quot;.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># privacy_policy_url = &quot;$BASE_URL/privacy-policy/&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Not used yet.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Supports &quot;$BASE_URL&quot;.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># terms_of_service_url = &quot;$BASE_URL/terms-of-service/&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Not used yet.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Supports &quot;$BASE_URL&quot;.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># search_page_url = &quot;$BASE_URL/search/&quot;</span></span></code></pre>
+<p>The <code>copyright</code> variable supports Markdown,
+<code>$BASE_URL</code>, <code>$YEAR</code> (uses <code>since</code>), and <code>$LICENSE_URL</code> (uses <code>license_url</code>).</p>
+<h3 id="language-specific-options">Language specific options</h3>
+<p>For date format, see <a class="external" rel="noopener external" target="_blank" href="https://docs.rs/chrono/0.4/chrono/format/strftime/index.html">chrono docs</a>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># For English</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.languages.en</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># No default value.</span></span>
+<span class="giallo-l"><span>locale</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en_US&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: &quot;%F&quot;</span></span>
+<span class="giallo-l"><span>date_format</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;%x&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: extra.page_info</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># page_info = []</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: extra.page_info_on_paginator</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># page_info_on_paginator = []</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: extra.header_menu_name</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># header_menu_name = &quot;menu_name&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: extra.header_buttons</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># header_buttons = []</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># To set a different lang attribute of the document.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Also changes the interface language. e.g. &quot;en-GB&quot;.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># hreflang = &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># To format numbers for a different locale. e.g. &quot;en-GB&quot;.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Useful if lang is not a valid locale.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># num_format = &quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Set a description for taxonomy pages.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.languages.en.taxonomy_descriptions</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>categories</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;A map of all categories on this site. Start exploring!&quot;</span></span>
+<span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;A map of all tags on this site. Start exploring!&quot;</span></span>
+<span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;A map of all authors on this site. Start exploring!&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Set a description for term pages.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># &quot;$NAME&quot; will be automatically replaced.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.languages.en.term_descriptions</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>categories</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Browse articles related to $NAME. Start exploring!&quot;</span></span>
+<span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Browse articles related to $NAME. Start exploring!&quot;</span></span>
+<span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Browse articles written by $NAME. Start exploring!&quot;</span></span></code></pre><pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># For French</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.languages.fr</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>locale</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fr_FR&quot;</span></span>
+<span class="giallo-l"><span>date_format</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;%x&quot;</span></span></code></pre><h3 id="web-analytics">Web analytics</h3>
+<h4 id="goatcounter">GoatCounter</h4>
+<p>Set only if you use <a class="external" rel="noopener external" target="_blank" href="https://www.goatcounter.com/">GoatCounter</a>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.goatcounter</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># No default value.</span></span>
+<span class="giallo-l"><span>endpoint</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://MYCODE.goatcounter.com/count&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># To enable tracking pixel, set to an empty string.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If your &quot;base_url&quot; includes a subpath, set to</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># the subpath without a trailing slash.</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># noscript_prefix = &quot;&quot;</span></span></code></pre><h4 id="vercel-analytics">Vercel Analytics</h4>
+<p>Set only if you use <a class="external" rel="noopener external" target="_blank" href="https://vercel.com/docs/analytics">Vercel Web Analytics</a>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.vercel_analytics</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># No default value.</span></span>
+<span class="giallo-l"><span>src</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/_vercel/insights/script.js&quot;</span></span></code></pre><h4 id="prevent-tracking-own-pageviews">Prevent tracking own pageviews</h4>
+<p>Open a page of your site, adding <code>#disable-analytics</code> to the page address.
+Do this once for each browser and device.
+For example, open <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111/#disable-analytics">http://127.0.0.1:1111/#disable-analytics</a>.</p>
+<h3 id="comments">Comments</h3>
+<p>See <a class="external" rel="noopener external" target="_blank" href="https://giscus.app/">giscus.app</a>.
+Only available when <code>extra.comment</code> in the front matter or <code>extra.comment</code> in the config is set to <code>true</code>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml" data-name="zola.toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.giscus</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># No default value.</span></span>
+<span class="giallo-l"><span>repo</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># No default value.</span></span>
+<span class="giallo-l"><span>repo_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># No default value.</span></span>
+<span class="giallo-l"><span>category</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># No default value.</span></span>
+<span class="giallo-l"><span>category_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: &quot;pathname&quot;</span></span>
+<span class="giallo-l"><span>mapping</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;pathname&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: 1</span></span>
+<span class="giallo-l"><span>strict</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 1</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: 0</span></span>
+<span class="giallo-l"><span>reactions_enabled</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 0</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: 0</span></span>
+<span class="giallo-l"><span>emit_metadata</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 0</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: &quot;top&quot;</span></span>
+<span class="giallo-l"><span>input_position</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;top&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: &quot;preferred_color_scheme&quot;</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;preferred_color_scheme&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: &quot;en&quot;</span></span>
+<span class="giallo-l"><span>lang</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Default value: &quot;lazy&quot;</span></span>
+<span class="giallo-l"><span>loading</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;lazy&quot;</span></span></code></pre><h2 id="contributing">Contributing</h2>
+<p>This project is under the <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita/src/branch/linkita/LICENSE">MIT License</a>.</p>
+<p>Pull requests are welcome on <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita">Codeberg</a> and <a class="external" rel="noopener external" target="_blank" href="https://github.com/salif/linkita">GitHub</a>.
+The main branch is <code>linkita</code>.</p>
+<h3 id="localization">Localization</h3>
+<p>Feel free to contribute new translations or improve existing ones.</p>
+<p>To add a new language, create a file <code>LANG_CODE.json</code> in the <code>static/i18n</code> directory.
+See <a class="external" rel="noopener external" target="_blank" href="https://localizely.com/iso-639-1-list/">ISO 639-1</a> codes.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #A6E3A1;"> &#39;{}&#39;</span><span style="color: #94E2D5;"> &gt;</span><span style="color: #A6E3A1;"> static/i18n/LANG_CODE.json</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">node</span><span style="color: #A6E3A1;"> ./static/i18n/sync.js</span></span></code></pre>
+<p>See also the <code>static/i18n/menu.json</code> file and
+the <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/linkita-demo">demo repository</a>.</p>
+<p>Live preview is available in the following languages:</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/ar/">Arabic</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/bg/">Bulgarian</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/cs/">Czech</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/eo/">Esperanto</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/es/">Spanish</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/fi/">Finnish</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/fr/">French</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/gb/">Globasa</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/ja/">Japanese</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/ko/">Korean</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/">English</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/tr/">Turkish</a>,
+<a class="external" rel="noopener external" target="_blank" href="https://salif.github.io/linkita/zh/">Chinese</a>.</p>
+<h2 id="sites-using-linkita">Sites using Linkita</h2>
+<ul>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/salif/zola-themes-collection">Zola Themes Collection</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/personal-web-page">Salif's site</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/Rratic/rratic.github.io">Rratic's blog</a></li>
+</ul>
+<p>If your blog is using Linkita and is open source, feel free to create a pull request to add it to this list.</p>
+<h2 id="other-zola-themes">Other Zola themes</h2>
+<p>Linkita is one of several Zola themes I maintain.
+Other themes include:</p>
+<ul>
+<li><a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/salif/tukan">Tukan</a> – Fork of zola-blog-theme, inspired by the Toucan theme.</li>
+</ul>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

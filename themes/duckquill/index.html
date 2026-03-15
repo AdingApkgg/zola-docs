@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;duckquill&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;duckquill&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -163,13 +168,13 @@
     </div>
 
     <hr>
-    <p><a class="external" rel="external" href="https://nogithub.codeberg.page"><img src="https://nogithub.codeberg.page/badge.svg" alt="Please don&#39;t upload to GitHub" /></a>
-<a class="external" rel="external" href="https://mit-license.org"><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT license" /></a></p>
-<h1 id="duckquill"><a class="external" rel="external" href="https://duckquill.daudix.one">Duckquill</a></h1>
-<p>Duckquill is an opinionated, modern, pretty, and clean <a class="external" rel="external" href="https://www.getzola.org">Zola</a> theme that has the purpose of greatly simplifying the process of rolling up your blog. It aims to provide all the necessary options for comfortable writing, while keeping the balance of simplicity.</p>
+    <p><a class="external" rel="noopener external" target="_blank" href="https://nogithub.codeberg.page"><img src="https://nogithub.codeberg.page/badge.svg" alt="Please don&#39;t upload to GitHub" /></a>
+<a class="external" rel="noopener external" target="_blank" href="https://mit-license.org"><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT license" /></a></p>
+<h1 id="duckquill"><a class="external" rel="noopener external" target="_blank" href="https://duckquill.daudix.one">Duckquill</a></h1>
+<p>Duckquill is an opinionated, modern, pretty, and clean <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org">Zola</a> theme that has the purpose of greatly simplifying the process of rolling up your blog. It aims to provide all the necessary options for comfortable writing, while keeping the balance of simplicity.</p>
 <p><img src="https://zola.docs.saop.cc/themes/duckquill/screenshot.png" alt="Screenshot" /></p>
 <h2 id="docs">Docs</h2>
-<p>Docs are provided in form of a <a class="external" rel="external" href="https://duckquill.daudix.one">live demo</a>.</p>
+<p>Docs are provided in form of a <a class="external" rel="noopener external" target="_blank" href="https://duckquill.daudix.one">live demo</a>.</p>
 <h2 id="know-your-rights">Know your rights</h2>
 <p>This project is under the MIT license:</p>
 <ul>
@@ -191,15 +196,15 @@
 <li>Submitting feature requests</li>
 <li>Providing feedback</li>
 </ul>
-<p>When making any sort of contribution, please make sure to follow <a class="external" rel="external" href="https://codeberg.org/forgejo/code-of-conduct">Forgejo's Code of Conduct</a>. If you don't have the time to read it, just know that all you have to do is be nice, and you'll be just fine.</p>
-<p><em>&lt;/&gt; with &lt;3 by <a class="external" rel="external" href="https://daudix.one">daudix</a> | README based on <a class="external" rel="external" href="https://codeberg.org/libreivan/libreivan.com">libreivan's</a></em></p>
+<p>When making any sort of contribution, please make sure to follow <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/forgejo/code-of-conduct">Forgejo's Code of Conduct</a>. If you don't have the time to read it, just know that all you have to do is be nice, and you'll be just fine.</p>
+<p><em>&lt;/&gt; with &lt;3 by <a class="external" rel="noopener external" target="_blank" href="https://daudix.one">daudix</a> | README based on <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/libreivan/libreivan.com">libreivan's</a></em></p>
 
 
     </div>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

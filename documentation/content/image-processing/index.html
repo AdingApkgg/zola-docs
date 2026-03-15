@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -511,28 +516,28 @@ JPEG 用于 JPEG 和其他有损格式，PNG 用于 PNG 和其他无损格式。
 <p>结果如下：</p>
 <div>
 
-    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/01-zola.png" target="_blank">
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/01-zola.png" target="_blank" rel="noopener noreferrer">
       <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;01-zola.13b6432894d881a2.png" />
     </a>
-    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/02-zola-manet.png" target="_blank">
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/02-zola-manet.png" target="_blank" rel="noopener noreferrer">
       <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;02-zola-manet.4f840f11f489db10.png" />
     </a>
-    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/03-zola-cezanne.png" target="_blank">
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/03-zola-cezanne.png" target="_blank" rel="noopener noreferrer">
       <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;03-zola-cezanne.f6f2bb89a89534af.png" />
     </a>
-    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/04-gutenberg.jpg" target="_blank">
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/04-gutenberg.jpg" target="_blank" rel="noopener noreferrer">
       <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;04-gutenberg.80d0a640faca9728.jpg" />
     </a>
-    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/05-example.jpg" target="_blank">
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/05-example.jpg" target="_blank" rel="noopener noreferrer">
       <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;05-example.1f23f78b8b1299b3.jpg" />
     </a>
-    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/06-example.jpg" target="_blank">
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/06-example.jpg" target="_blank" rel="noopener noreferrer">
       <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;06-example.97bc5d9d9d2e0e58.jpg" />
     </a>
-    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/07-example.jpg" target="_blank">
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/07-example.jpg" target="_blank" rel="noopener noreferrer">
       <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;07-example.a75f2921cf2eb066.jpg" />
     </a>
-    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/08-example.jpg" target="_blank">
+    <a href="https://zola.docs.saop.cc/documentation/content/image-processing/08-example.jpg" target="_blank" rel="noopener noreferrer">
       <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;processed_images&#x2F;08-example.4a264b2369a63855.jpg" />
     </a>
 </div>
@@ -567,7 +572,7 @@ JPEG 用于 JPEG 和其他有损格式，PNG 用于 PNG 和其他无损格式。
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

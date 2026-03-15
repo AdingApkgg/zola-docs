@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;feather&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="feather | Zola">
+        <meta property="og:description" content="A fuzzy blog theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;feather&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="feather | Zola">
+        <meta name="twitter:description" content="A fuzzy blog theme">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "feather",
+            "description": "A fuzzy blog theme",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;feather&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>feather | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;feather&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;feather&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> feather</h1>
+            <p>A fuzzy blog theme</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;doomy.org">doomy</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.19.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;piedoom&#x2F;feather">https:&#x2F;&#x2F;github.com&#x2F;piedoom&#x2F;feather</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="http:&#x2F;&#x2F;feather.doomy.org&#x2F;">http:&#x2F;&#x2F;feather.doomy.org&#x2F;</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2026-01-26T07:40:26-05:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="feather">feather</h1>
+<p>A lightweight blog theme for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> (and to my knowledge the first of now
+many themes created specifically for Zola).</p>
+<h1 id="live-demo-link"><a class="external" rel="noopener external" target="_blank" href="https://feather.doomy.org/">Live demo 🔗</a></h1>
+<p><a class="external" rel="noopener external" target="_blank" href="https://feather.doomy.org/"><img src="https://zola.docs.saop.cc/en/themes/feather/screenshot.png" alt="screenshot" /></a></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Fully responsive</li>
+<li>Designed for legibility</li>
+<li>All JS is non-critical and fails gracefully</li>
+</ul>
+<h2 id="options">Options</h2>
+<p>Zola allows themes to <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">define <code>[extra]</code> variables</a>
+in the config. Here's a full list of theme variables with example values and comments.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Regular variables you might want to set...</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;My site&quot;</span><span style="color: #9399B2;font-style: italic;"> # Otherwise, this will read &quot;Home&quot; in the nav</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.feather</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Specify a specific theme to use, or use system prefs</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If set, the theme switcher button is hidden</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;light&quot;</span></span>
+<span class="giallo-l"><span>head</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&lt;script&gt;&lt;/script&gt;&quot;</span><span style="color: #9399B2;font-style: italic;"> # add anything to the head</span></span>
+<span class="giallo-l"><span>hide_nav_image</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # hide the navigation image</span></span>
+<span class="giallo-l"><span>disqus_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;my-site-com&quot;</span><span style="color: #9399B2;font-style: italic;"> # site domain if you want disqus comments</span></span>
+<span class="giallo-l"><span>cusdis_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;12312-31231123-123123123&quot;</span><span style="color: #9399B2;font-style: italic;"> # cusdis id if you use their comment service</span></span>
+<span class="giallo-l"><span>social</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://mastodon.social/@doomy&quot;</span><span style="color: #9399B2;">,</span><span> display</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;@doomy@mastodon.social&quot;</span><span style="color: #9399B2;"> }</span><span style="color: #9399B2;font-style: italic;"> # generic social to show on pages</span></span>
+<span class="giallo-l"><span>timezone</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;America/New_York&quot;</span><span style="color: #9399B2;font-style: italic;"> # timezone to calculate article post times</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.feather.analytics</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>goatcounter_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;mydomain-com&quot;</span><span style="color: #9399B2;font-style: italic;"> # privacy-focused analytics https://www.goatcounter.com</span></span></code></pre>
+<p>Per post, these options are available:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.feather.opengraph</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;my_image.jpg&quot;</span><span style="color: #9399B2;font-style: italic;"> # Assumes asset colocation</span></span></code></pre><h1 id="usage">Usage</h1>
+<p>Using feather is easy.  Install <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> and follow
+<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">the guide for creating a site and using a theme</a>.  Then,
+add <code>theme = "feather"</code> to your <code>config.toml</code> file.</p>
+<p>If you intend to publish your site to GitHub Pages, please check out <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/deployment/github-pages/">this
+tutorial</a>.</p>
+<p>You can specify <code>tags</code> taxonomies .</p>
+<h1 id="developing-contributing">Developing &amp; Contributing</h1>
+<p>Because feather comes with example content, you can run the theme just like any Zola
+blog with <code>zola serve</code>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

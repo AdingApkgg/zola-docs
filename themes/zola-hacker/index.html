@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-hacker&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-hacker&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -164,11 +169,11 @@
 
     <hr>
     <h1 id="hacker-theme-for-zola">Hacker theme for Zola</h1>
-<p>Zola Hacker is a minimalistic theme for Zola, inspired by the <a class="external" rel="external" href="https://pages-themes.github.io/hacker/">Hacker theme</a> for Jekyll. It is designed for developers who want to write blogs.</p>
+<p>Zola Hacker is a minimalistic theme for Zola, inspired by the <a class="external" rel="noopener external" target="_blank" href="https://pages-themes.github.io/hacker/">Hacker theme</a> for Jekyll. It is designed for developers who want to write blogs.</p>
 <h2 id="demo">Demo</h2>
-<p><a class="external" rel="external" href="https://zola-hacker.enginerd.io/">Live Preview</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://zola-hacker.enginerd.io/">Live Preview</a>.</p>
 <h2 id="requirements">Requirements</h2>
-<p>Before using the theme, you need to install the <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a> ≥ 0.19.1.</p>
+<p>Before using the theme, you need to install the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a> ≥ 0.19.1.</p>
 <h2 id="quick-start">Quick Start</h2>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone git@github.com:en9inerd/zola-hacker.git</span></span>
 <span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> zola-hacker</span></span>
@@ -220,9 +225,9 @@ repo for an idea.</p>
 <li><code>timezone</code> - the timezone for the blog article published date</li>
 <li><code>edit_page</code> - whether to show the edit page in the github repo for your posts</li>
 <li><code>menu</code> - set the menu items for your site</li>
-<li><code>contact_form_script_id</code> - the script id for the contact form based on <a class="external" rel="external" href="https://github.com/en9inerd/learn-to-send-email-via-google-script-html-no-server">Google Script</a></li>
+<li><code>contact_form_script_id</code> - the script id for the contact form based on <a class="external" rel="noopener external" target="_blank" href="https://github.com/en9inerd/learn-to-send-email-via-google-script-html-no-server">Google Script</a></li>
 <li><code>[extra.github]</code> - set the GitHub metadata for your site</li>
-<li><code>[extra.giscus]</code> - set the Giscus settings for your site to enable the comments. Please use own settings from the <a class="external" rel="external" href="https://giscus.app/">Giscus</a> website</li>
+<li><code>[extra.giscus]</code> - set the Giscus settings for your site to enable the comments. Please use own settings from the <a class="external" rel="noopener external" target="_blank" href="https://giscus.app/">Giscus</a> website</li>
 <li><code>[extra.opengraph]</code> - set the Open Graph metadata for your site</li>
 <li><code>[extra.pgp_key]</code> - set pgp key in the footer for certain pages</li>
 <li><code>social_links</code> - set the social media links in the footer
@@ -233,7 +238,7 @@ repo for an idea.</p>
 <h3 id="shortcodes">Shortcodes</h3>
 <p>The theme provides some shortcodes to help you write your content:</p>
 <p><code>contact_form</code>
-The <code>contact_form</code> shortcode is based on <a class="external" rel="external" href="https://github.com/en9inerd/learn-to-send-email-via-google-script-html-no-server">Google Apps Mail</a> to send emails without a server.
+The <code>contact_form</code> shortcode is based on <a class="external" rel="noopener external" target="_blank" href="https://github.com/en9inerd/learn-to-send-email-via-google-script-html-no-server">Google Apps Mail</a> to send emails without a server.
 It depends on <code>contact_form_script_id</code> in the <code>zola.toml</code>.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>{{ contact_form() }}</span></span></code></pre>
 <p><code>cv</code>
@@ -246,19 +251,19 @@ The <code>github_avatar</code> shortcode is used to display the GitHub avatar im
 The <code>projects</code> shortcode is used to display repositories from GitHub. It depends on <code>extra.github.username</code> in the <code>zola.toml</code> and <code>extra.repo_names</code> in page front matter to filter the repositories.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>{{ projects() }}</span></span></code></pre><h2 id="reporting-issues">Reporting Issues</h2>
 <p>We use GitHub Issues as the official bug tracker for the <strong>Zola Hacker Theme</strong>. Please
-search <a class="external" rel="external" href="https://github.com/en9inerd/zola-hacker/issues">existing issues</a>. It’s
+search <a class="external" rel="noopener external" target="_blank" href="https://github.com/en9inerd/zola-hacker/issues">existing issues</a>. It’s
 possible someone has already reported the same problem.</p>
-<p>If your problem or idea is not addressed yet, <a class="external" rel="external" href="https://github.com/en9inerd/zola-hacker/issues/new">open a new issue</a>.</p>
+<p>If your problem or idea is not addressed yet, <a class="external" rel="noopener external" target="_blank" href="https://github.com/en9inerd/zola-hacker/issues/new">open a new issue</a>.</p>
 <h2 id="license">License</h2>
 <p><strong>Zola Hacker Theme</strong> is distributed under the terms of the
-<a class="external" rel="external" href="https://github.com/en9inerd/zola-hacker/blob/master/LICENSE">MIT license</a>.</p>
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/en9inerd/zola-hacker/blob/master/LICENSE">MIT license</a>.</p>
 
 
     </div>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

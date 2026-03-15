@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-theme-jiaxiang-wang&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="jiaxiang.wang | Zola">
+        <meta property="og:description" content="A fast and beautiful theme for creators, used by https:&#x2F;&#x2F;blog.jiaxiang.wang, porting from Halo-theme-hao.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-theme-jiaxiang-wang&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="jiaxiang.wang | Zola">
+        <meta name="twitter:description" content="A fast and beautiful theme for creators, used by https:&#x2F;&#x2F;blog.jiaxiang.wang, porting from Halo-theme-hao.">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "jiaxiang.wang",
+            "description": "A fast and beautiful theme for creators, used by https:&#x2F;&#x2F;blog.jiaxiang.wang, porting from Halo-theme-hao.",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-theme-jiaxiang-wang&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>jiaxiang.wang | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-jiaxiang-wang&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-theme-jiaxiang-wang&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> jiaxiang.wang</h1>
+            <p>A fast and beautiful theme for creators, used by https:&#x2F;&#x2F;blog.jiaxiang.wang, porting from Halo-theme-hao.</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;blog.jiaxiang.wang">Jiaxiang Wang</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.19.2 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> AGPL</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;iWangJiaxiang&#x2F;zola-theme-jiaxiang.wang">https:&#x2F;&#x2F;github.com&#x2F;iWangJiaxiang&#x2F;zola-theme-jiaxiang.wang</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;theme.jiaxiang.wang&#x2F;">https:&#x2F;&#x2F;theme.jiaxiang.wang&#x2F;</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2025-09-18T15:43:02Z</p>
+        </div>
+    </div>
+
+    <hr>
+    <div align="center">
+<h1>Zola Theme for jiaxiang.wang</h1>
+<h4>为创造者而生的开源 Zola 主题</h4>
+<p align="center">
+<p>主题预览](#-预览) | <a href="https://zola.docs.saop.cc/en/themes/zola-theme-jiaxiang-wang/#-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a> | [加入讨论</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang/blob/main/README.md">中文</a> | <a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang/blob/main/README.en.md">English</a></p>
+</p>
+</div>
+<p><a class="external" rel="noopener external" target="_blank" href="https://blog.jiaxiang.wang"><img src="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang/raw/refs/heads/main/content/articles/docs/01%20Read%20Me/preview.webp" alt="preview" /></a></p>
+<h2 id="information-source-jian-jie">ℹ️ 简介</h2>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang">zola-theme-jiaxiang.wang</a> 是一款适用于 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> 的博客主题。</p>
+<blockquote>
+<p>本主题由 <a class="external" rel="noopener external" target="_blank" href="https://blog.jiaxiang.wang">王嘉祥</a> 移植自 <a class="external" rel="noopener external" target="_blank" href="https://github.com/halo-dev/halo">Halo</a> 主题 <a class="external" rel="noopener external" target="_blank" href="https://github.com/chengzhongxue/halo-theme-hao">Halo-Theme-Hao</a>，<a class="external" rel="noopener external" target="_blank" href="https://github.com/chengzhongxue/halo-theme-hao">Halo-Theme-Hao</a> 主题移植自 <a class="external" rel="noopener external" target="_blank" href="https://hexo.io/zh-cn/index.html">Hexo</a> 社区中 <a class="external" rel="noopener external" target="_blank" href="https://blog.zhheo.com/">张洪 Heo</a> 对 <a class="external" rel="noopener external" target="_blank" href="https://github.com/chengzhongxue/halo-theme-hao">Hexo-Theme-Butterfly</a> 主题的魔改与重设计版本。</p>
+</blockquote>
+<h2 id="fire-yu-lan">🔥 预览</h2>
+<blockquote>
+<p>如果你的站点也使用了本主题，欢迎通过 PR 的形式在 <code>readme.md</code> 和 <code>/static/data/friends.json</code> 中添加站点信息</p>
+</blockquote>
+<table><thead><tr><th style="text-align: center">站点名称</th><th style="text-align: left">站点地址</th></tr></thead><tbody>
+<tr><td style="text-align: center">王嘉祥 Jiaxiang Wang</td><td style="text-align: left"><a class="external" rel="noopener external" target="_blank" href="https://blog.jiaxiang.wang">https://blog.jiaxiang.wang</a></td></tr>
+</tbody></table>
+<h3 id="electric-plug-gong-neng">🔌 功能</h3>
+<blockquote>
+<p>由于精力有限。目前只移植了主要功能，更多功能持续更新。</p>
+</blockquote>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+基本功能
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+评论
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Twikoo</li>
+<li><input disabled="" type="checkbox"/>
+Artalk</li>
+<li><input disabled="" type="checkbox"/>
+Waline</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox" checked=""/>
+搜索
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Algolia</li>
+<li><input disabled="" type="checkbox" checked=""/>
+MeiliSearch</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Markdown</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Katex</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Prism 代码高亮</li>
+<li><input disabled="" type="checkbox" checked=""/>
+随机访问文章</li>
+<li><input disabled="" type="checkbox" checked=""/>
+右键菜单</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Pjax</li>
+<li><input disabled="" type="checkbox"/>
+i18n 国际化</li>
+<li><input disabled="" type="checkbox" checked=""/>
+AVIF 图片格式支持</li>
+<li><input disabled="" type="checkbox"/>
+文章摘要
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+抽取本地文章描述</li>
+<li><input disabled="" type="checkbox"/>
+基于 Post GPT by Tianli</li>
+<li><input disabled="" type="checkbox"/>
+基于自定义 LLM 接口</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"/>
+特殊页面
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+个人装备</li>
+<li><input disabled="" type="checkbox" checked=""/>
+友链</li>
+<li><input disabled="" type="checkbox"/>
+赞赏
+<ul>
+<li><input disabled="" type="checkbox"/>
+爱发电</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox" checked=""/>
+订阅</li>
+<li><input disabled="" type="checkbox" checked=""/>
+关于我</li>
+<li><input disabled="" type="checkbox" checked=""/>
+音乐</li>
+<li><input disabled="" type="checkbox"/>
+留言板</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox" checked=""/>
+日常运营
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+每日推荐</li>
+<li><input disabled="" type="checkbox" checked=""/>
+文章推荐</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox" checked=""/>
+文章
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+图片压缩</li>
+<li><input disabled="" type="checkbox" checked=""/>
+公众号链接</li>
+<li><input disabled="" type="checkbox" checked=""/>
+动态目录</li>
+<li><input disabled="" type="checkbox" checked=""/>
+分类/标签</li>
+<li><input disabled="" type="checkbox" checked=""/>
+访问热度（基于Twikoo）</li>
+<li><input disabled="" type="checkbox" checked=""/>
+相关文章</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox" checked=""/>
+合集/知识库
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+多种类合集</li>
+<li><input disabled="" type="checkbox" checked=""/>
+合集内文件夹导航</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox" checked=""/>
+合规
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+ICP备案</li>
+<li><input disabled="" type="checkbox" checked=""/>
+公安备案</li>
+</ul>
+</li>
+</ul>
+<h2 id="memo-kuai-su-shang-shou">📝 快速上手</h2>
+<ol>
+<li>
+<p>参考<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">官方说明</a>安装 Zola 命令行工具</p>
+</li>
+<li>
+<p>将本仓库克隆到本地</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone --depth=1 https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang.git</span></span></code></pre></li>
+<li>
+<p>进入本地仓库</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> zola-theme-jiaxiang.wang</span></span></code></pre></li>
+<li>
+<p>运行预览命令，然后在浏览器打开提示的预览地址</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre>
+<p>此时您应该成功访问到博客网站啦</p>
+</li>
+<li>
+<p>参考官方资料进一步探索并定制您的博客</p>
+<ul>
+<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/cli-usage/">zola 命令说明</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/directory-structure/">理解项目结构</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">自定义</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="speech-balloon-tao-lun">💬 讨论</h2>
+<p>如果你对主题有什么建议或者意见，欢迎提 PR &amp; Issue。</p>
+<h2 id="closed-lock-with-key-xu-ke">🔐 许可</h2>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang">Zola-Theme-Jiaxiang</a> 使用 <a href="https://zola.docs.saop.cc/en/themes/zola-theme-jiaxiang-wang/./LICENSE">AGPL</a> 协议开源，请遵守开源协议。</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

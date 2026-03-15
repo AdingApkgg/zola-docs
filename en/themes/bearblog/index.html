@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;bearblog&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Bear | Zola">
+        <meta property="og:description" content="Bear blog theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;bearblog&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Bear | Zola">
+        <meta name="twitter:description" content="Bear blog theme">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Bear",
+            "description": "Bear blog theme",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;bearblog&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>Bear | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;bearblog&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;bearblog&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> Bear</h1>
+            <p>Bear blog theme</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;alin.ovh">Alin</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.4.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;codeberg.org&#x2F;alinnow&#x2F;zola-bearblog">https:&#x2F;&#x2F;codeberg.org&#x2F;alinnow&#x2F;zola-bearblog</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;zola-bearblog.alin.ovh&#x2F;">https:&#x2F;&#x2F;zola-bearblog.alin.ovh&#x2F;</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2026-02-24T15:58:49+01:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="zola-bear-blog">Zola ʕ•ᴥ•ʔ Bear Blog</h1>
+<p><a class="external" rel="noopener external" target="_blank" href="https://app.netlify.com/sites/zola-bearblog/deploys"><img src="http://img.shields.io/netlify/121b53ce-c913-4604-9179-eb3cca31cd2c?logo=netlify" alt="Netlify Deploy" /></a>
+<a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/alanpearce/zola-bearblog/actions"><img src="https://codeberg.org/alanpearce/zola-bearblog/badges/workflows/zola.yaml/badge.svg" alt="Forgejo Actions Status" /></a>
+<a class="external" rel="noopener external" target="_blank" href="https://gitlab.com/alanpearce/zola-bearblog/-/commits/main"><img src="https://gitlab.com/alanpearce/zola-bearblog/badges/main/pipeline.svg" alt="Gitlab Pipeline Status" /></a></p>
+<p>🧸 A <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a>-theme based on <a class="external" rel="noopener external" target="_blank" href="https://bearblog.dev">Bear Blog</a>.</p>
+<blockquote>
+<p>Free, no-nonsense, super-fast blogging.</p>
+</blockquote>
+<h2 id="demo">Demo</h2>
+<p>This theme has multiple demo sites, to provide examples of how to set up deployment.</p>
+<h3 id="recommended">Recommended</h3>
+<ul>
+<li><a class="external" rel="noopener external" target="_blank" href="https://zola-bearblog.netlify.app/">Netlify</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://alanpearce.grebedoc.dev/zola-bearblog/">Grebedoc</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://alanpearce.codeberg.page/zola-bearblog/">Codeberg Pages</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://alanpearce.gitlab.io/zola-bearblog">Gitlab Pages</a></li>
+</ul>
+<h3 id="not-recommended">Not recommended</h3>
+<p>These providers' build environments aren't yet compatible with Zola 0.21.0.</p>
+<ul>
+<li><a class="external" rel="noopener external" target="_blank" href="https://zola-bearblog.pages.dev/">Cloudflare Pages</a></li>
+</ul>
+<h2 id="screenshot">Screenshot</h2>
+<p><img src="https://codeberg.org/alanpearce/zola-bearblog/raw/branch/main/screenshot.png" alt="Screenshot" /></p>
+<p>When the user's browser is running »dark mode«, the dark color scheme will be used automatically. The default is the light/white color scheme. Check out the <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/alanpearce/zola-bearblog/src/branch/main/templates/style.html"><code>style.html</code></a>-file for the implementation.</p>
+<h2 id="installation">Installation</h2>
+<p>If you already have a Zola site on your machine, you can simply add this theme via</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git submodule add https://codeberg.org/alanpearce/zola-bearblog themes/zola-bearblog</span></span></code></pre>
+<p>Then, adjust the <code>config.toml</code> as detailed below.</p>
+<p>For more information, read the official <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">setup guide</a> of Zola.</p>
+<p>Alternatively, you can quickly deploy a copy of the theme site to Netlify using this button:</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://app.netlify.com/start/deploy?repository=https://gitlab.com/alanpearce/zola-bearblog"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a></p>
+<p>(Note that this method makes it harder to keep up-to-date with theme updates, which might be necessary for newer versions of Zola.)</p>
+<h2 id="adjust-configuration-config-toml">Adjust configuration / config.toml</h2>
+<p>Please check out the included <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/alanpearce/zola-bearblog/src/branch/main/config.toml">config.toml</a></p>
+<h2 id="content-structure">Content &amp; structure</h2>
+<h3 id="menu">Menu</h3>
+<p>Create an array in <code>extra</code> with a key of <code>main_menu</code>. <code>url</code> is passed to <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/templates/overview/#get-url"><code>get_url</code></a></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.main_menu</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span></span>
+<span class="giallo-l"><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;@/_index.md&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.main_menu</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Bear&quot;</span></span>
+<span class="giallo-l"><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;@/bear.md&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.main_menu</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Zola&quot;</span></span>
+<span class="giallo-l"><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;@/zola.md&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.main_menu</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Blog&quot;</span></span>
+<span class="giallo-l"><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;@/blog/_index.md&quot;</span></span></code></pre><h3 id="adding-editing-content">Adding / editing content</h3>
+<h4 id="index-page">Index-Page</h4>
+<p>The contents of the <code>index</code>-page may be changed by editing your <code>content/_index.md</code>-file.</p>
+<h3 id="adding-your-branding-colors-css">Adding your branding / colors / css</h3>
+<p>Add a <code>custom_head.html</code>-file to your <code>templates/</code>-directory. In there you may add a <code>&lt;style&gt;</code>-tag, <em>or</em> you may add a <code>&lt;link&gt;</code>-tag referencing your own <code>custom.css</code> (in case you prefer to have a separate <code>.css</code>-file). Check out the <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/alanpearce/zola-bearblog/src/branch/main/templates/style.css.html"><code>style.html</code></a>-file to find out which CSS-styles are applied by default.</p>
+<h3 id="table-of-contents">Table of contents</h3>
+<p>Table of contents are not rendered by default. To render them, set <code>extra.table_of_contents.show = true</code> in <code>config.toml</code>.</p>
+<p>The table of contents is rendered inside a <code>details</code> element.
+If you want the section to be collapsed on page load, set <code>extra.table_of_contents.visible_on_load = false</code>.
+This defaults to <code>true</code>.</p>
+<p>In addition, <code>extra.table_of_contents.max_level</code> can limit the maximum level of headers to show.
+To show only <code>h1</code>s, set <code>max_level = 1</code>, to show <code>h1</code>s and <code>h2</code>s, set <code>max_level = 2</code>, and so on.
+By default, <code>max_level</code> is set to 6, so all headers on the page are shown.</p>
+<p>Below is an example of how to configure the table of contents in <code>config.toml</code>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.table_of_contents</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>show</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>max_level</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 2</span></span>
+<span class="giallo-l"><span>visible_on_load</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre>
+<p>It can also be toggled on page-by-page basis. Add <code>extra.hide_table_of_contents = true</code> to the page's frontmatter to hide the table of contents for that specific page.</p>
+<h2 id="issues-feedback-contributing">Issues / Feedback / Contributing</h2>
+<p>Please use <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/alanpearce/zola-bearblog/issues">Codeberg issues</a> and <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/alanpearce/zola-bearblog/pulls">Pull Requests</a>.</p>
+<h2 id="special-thanks-gift">Special Thanks 🎁</h2>
+<p>A special thank you goes out to <a class="external" rel="noopener external" target="_blank" href="https://herman.bearblog.dev">Herman</a>, for creating the original <a class="external" rel="noopener external" target="_blank" href="https://bearblog.dev/">ʕ•ᴥ•ʔ Bear Blog</a> and <a class="external" rel="noopener external" target="_blank" href="https://www.janraasch.com">Jan Raasch</a> for creating the hugo port of the Bear Blog theme.</p>
+<h2 id="license">License</h2>
+<p><a class="external" rel="noopener external" target="_blank" href="http://en.wikipedia.org/wiki/MIT_License">MIT License</a> © <a class="external" rel="noopener external" target="_blank" href="https://www.alanpearce.eu/">Alan Pearce</a></p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

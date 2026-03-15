@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;austere&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;austere&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -208,9 +213,9 @@
 <h1 align="center">austere</h1>
 <p align="center">A minimal theme for <a href="https://getzola.org">Zola</a> with a focus on writing.</p>
 <hr />
-<p><strong>Live Demo:</strong> <a class="external" rel="external" href="https://tomwrw.com">My personal website</a></p>
+<p><strong>Live Demo:</strong> <a class="external" rel="noopener external" target="_blank" href="https://tomwrw.com">My personal website</a></p>
 <p>The austere theme is designed with readability in mind. It uses the core functionality of Zola, and doesn't require additional third-party integrations. Currently, the only external link is to Google Fonts. Styles are internal to the base template, and colour can be applied directly in the site configuration.</p>
-<p>The design and simplicity of austere was heavily influenced by the excellent <a class="external" rel="external" href="https://github.com/jimmyff/zola-zap">Zap</a> theme by <a class="external" rel="external" href="https://github.com/jimmyff">jimmyff</a>.</p>
+<p>The design and simplicity of austere was heavily influenced by the excellent <a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff/zola-zap">Zap</a> theme by <a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff">jimmyff</a>.</p>
 <h2 id="features">Features</h2>
 <ul>
 <li>Internal CSS (~2KB) - no external stylesheets</li>
@@ -468,11 +473,11 @@
 <p>MIT</p>
 <h2 id="credits">Credits</h2>
 <ul>
-<li><a class="external" rel="external" href="https://github.com/jimmyff/zap">Zap</a> by <a class="external" rel="external" href="https://github.com/jimmyff">jimmyff</a> - Original theme inspiration</li>
-<li><a class="external" rel="external" href="https://getzola.org">Zola</a> - Static site generator</li>
-<li><a class="external" rel="external" href="https://fusejs.io">Fuse.js</a> - Client-side search</li>
-<li><a class="external" rel="external" href="https://fonts.google.com/specimen/Source+Serif+4">Source Serif 4</a> - Typography</li>
-<li>Favicon by <a class="external" rel="external" href="https://iconarchive.com/artist/iconsmind.html">IconsMind</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff/zap">Zap</a> by <a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff">jimmyff</a> - Original theme inspiration</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> - Static site generator</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://fusejs.io">Fuse.js</a> - Client-side search</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://fonts.google.com/specimen/Source+Serif+4">Source Serif 4</a> - Typography</li>
+<li>Favicon by <a class="external" rel="noopener external" target="_blank" href="https://iconarchive.com/artist/iconsmind.html">IconsMind</a></li>
 </ul>
 
 
@@ -480,7 +485,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

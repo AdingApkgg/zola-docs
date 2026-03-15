@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> Forum</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -116,11 +121,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -130,7 +135,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
                         
                     </li>
                 </ul>
@@ -382,10 +387,10 @@ for <code>atom.xml</code> (in the preferred Atom 1.0 format), and <code>rss.xml<
 2.0 format). If you choose a different filename (e.g. <code>feed.xml</code>), you will
 need to provide a template yourself.</p>
 <p>In case you want to extend, or modify, the built-in templates, you can get a
-copy from <a class="external" rel="external" href="https://github.com/getzola/zola/tree/master/components/templates/src/builtins">the source code here</a>
+copy from <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/tree/master/components/templates/src/builtins">the source code here</a>
 and place it in the <code>templates/</code> directory with the appropriate name. You can
 check the documentation for the specifications for Atom 1.0 and RSS 2.0 in
-<a class="external" rel="external" href="https://validator.w3.org/feed/docs/">W3C Feed Validation Service</a>.</p>
+<a class="external" rel="noopener external" target="_blank" href="https://validator.w3.org/feed/docs/">W3C Feed Validation Service</a>.</p>
 <p><strong>Only pages with a date will be available.</strong></p>
 <p>The author in the feed is set as</p>
 <ul>
@@ -396,9 +401,9 @@ check the documentation for the specifications for Atom 1.0 and RSS 2.0 in
 <li>If that is also not preset it is set to <code>Unknown</code>.</li>
 </ul>
 <p>Note that <code>atom.xml</code> and <code>rss.xml</code> require different formats for specifying the
-author. According to <a class="external" rel="external" href="https://www.rfc-editor.org/rfc/rfc4287">RFC 4287</a> <code>atom.xml</code> requires the author's
+author. According to <a class="external" rel="noopener external" target="_blank" href="https://www.rfc-editor.org/rfc/rfc4287">RFC 4287</a> <code>atom.xml</code> requires the author's
 name, for example <code>"John Doe"</code>. While according to the
-<a class="external" rel="external" href="https://www.rssboard.org/rss-specification#ltauthorgtSubelementOfLtitemgt">RSS 2.0 Specification</a> the email address is required, and the name
+<a class="external" rel="noopener external" target="_blank" href="https://www.rssboard.org/rss-specification#ltauthorgtSubelementOfLtitemgt">RSS 2.0 Specification</a> the email address is required, and the name
 optionally included, for example <code>"lawyer@boyer.net"</code> or
 <code>"lawyer@boyer.net (Lawyer Boyer)"</code>.</p>
 <p>The feed template gets five variables:</p>
@@ -424,7 +429,7 @@ Section feeds, in addition to the five feed template variables, get the
 <code>section</code> variable from the <a href="https://zola.docs.saop.cc/documentation/templates/pages-sections/">section
 template</a>.</p>
 <p>Enable feed autodiscovery allows feed readers and browsers to notify user about a RSS or Atom feed available on your web site. So it is easier for user to subscribe.
-As an example this is how it looks like using <a class="external" rel="external" href="https://en.wikipedia.org/wiki/Mozilla_Firefox">Firefox</a> <a class="external" rel="external" href="https://addons.mozilla.org/en-US/firefox/addon/livemarks/?src=search">Livemarks</a> addon.</p>
+As an example this is how it looks like using <a class="external" rel="noopener external" target="_blank" href="https://en.wikipedia.org/wiki/Mozilla_Firefox">Firefox</a> <a class="external" rel="noopener external" target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/livemarks/?src=search">Livemarks</a> addon.</p>
 <p><img src="https://zola.docs.saop.cc/en/documentation/templates/feeds/rss_feed.png" alt="RSS feed autodiscovery example." /></p>
 <p>You can enable posts autodiscovery modifying your blog <code>base.html</code> template adding the following code in between the <code>&lt;head&gt;</code> tags.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{% block rss %}</span></span>
@@ -445,7 +450,7 @@ As an example this is how it looks like using <a class="external" rel="external"
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
         </footer>
 

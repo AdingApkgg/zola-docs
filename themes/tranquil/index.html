@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;tranquil&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;tranquil&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -166,28 +171,28 @@
     <p><img src="https://github.com/TeaDrinkingProgrammer/tranquil/blob/main/screenshot.png?raw=true" alt="A screenshot (dark theme) of the example page of the demo website" />
 <img src="https://github.com/TeaDrinkingProgrammer/tranquil/blob/main/screenshot-light.png?raw=true" alt="A screenshot (light theme) of the example page of the demo website" />
 <br />
-A blog theme for <a class="external" rel="external" href="https://www.getzola.org">Zola</a>. Simple, elegant and uses Tailwind. Based on <a class="external" rel="external" href="https://github.com/isunjn/serene">Isunjns Serene theme</a>.</p>
+A blog theme for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org">Zola</a>. Simple, elegant and uses Tailwind. Based on <a class="external" rel="noopener external" target="_blank" href="https://github.com/isunjn/serene">Isunjns Serene theme</a>.</p>
 <h2 id="demo">Demo</h2>
 <ul>
-<li><a class="external" rel="external" href="https://teadrinkingprogrammer.github.io/tranquil-demo/">https://teadrinkingprogrammer.github.io/tranquil-demo/</a></li>
-<li>My own blog: <a class="external" rel="external" href="https://teadrinkingprogrammer.github.io">https://teadrinkingprogrammer.github.io</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://teadrinkingprogrammer.github.io/tranquil-demo/">https://teadrinkingprogrammer.github.io/tranquil-demo/</a></li>
+<li>My own blog: <a class="external" rel="noopener external" target="_blank" href="https://teadrinkingprogrammer.github.io">https://teadrinkingprogrammer.github.io</a></li>
 </ul>
 <h2 id="features">Features</h2>
 <ul>
 <li>A simple and elegant design.</li>
 <li>Projects page: display a list of the projects you have worked on with links.</li>
 <li>Theme toggle: switch between light and dark theme regardless of your browser preference.</li>
-<li>Image zooming using <a class="external" rel="external" href="https://github.com/sparanoid/lightense-images">Lightense</a>: zoom in on images by clicking on them.</li>
+<li>Image zooming using <a class="external" rel="noopener external" target="_blank" href="https://github.com/sparanoid/lightense-images">Lightense</a>: zoom in on images by clicking on them.</li>
 <li>Out-of-date alert: show alerts when your post is outdated.</li>
 <li>Callouts (note, warning, alert, etc.) that can be used right in Markdown.</li>
-<li>Comments using <a class="external" rel="external" href="https://giscus.app">Giscus</a>.</li>
-<li>Mathematical notations using <a class="external" rel="external" href="https://katex.org">KaTeX</a>.</li>
-<li>Diagrams and visualizations using <a class="external" rel="external" href="https://github.com/mermaid-js/mermaid">Mermaid</a>.</li>
+<li>Comments using <a class="external" rel="noopener external" target="_blank" href="https://giscus.app">Giscus</a>.</li>
+<li>Mathematical notations using <a class="external" rel="noopener external" target="_blank" href="https://katex.org">KaTeX</a>.</li>
+<li>Diagrams and visualizations using <a class="external" rel="noopener external" target="_blank" href="https://github.com/mermaid-js/mermaid">Mermaid</a>.</li>
 </ul>
 <h2 id="shoutouts">Shoutouts</h2>
-<p>This theme wouldn't have existed without <a class="external" rel="external" href="https://github.com/isunjn/serene">Isunjns Serene theme</a>. It's a great theme, so go check that one out as well.</p>
-<p>When I doubted about layout, I always went to look at <a class="external" rel="external" href="https://fasterthanli.me">FasterThanLimes blog</a> to see how he did it.</p>
-<p>Of course, this website wouldn't render without <a class="external" rel="external" href="https://getzola.org">Zola</a> and it wouldn't show anything without <a class="external" rel="external" href="https://tailwindcss.com/">Tailwind</a>.</p>
+<p>This theme wouldn't have existed without <a class="external" rel="noopener external" target="_blank" href="https://github.com/isunjn/serene">Isunjns Serene theme</a>. It's a great theme, so go check that one out as well.</p>
+<p>When I doubted about layout, I always went to look at <a class="external" rel="noopener external" target="_blank" href="https://fasterthanli.me">FasterThanLimes blog</a> to see how he did it.</p>
+<p>Of course, this website wouldn't render without <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> and it wouldn't show anything without <a class="external" rel="noopener external" target="_blank" href="https://tailwindcss.com/">Tailwind</a>.</p>
 <h2 id="tranquil-vs-serene">Tranquil vs Serene</h2>
 <p>Tranquil is a fork of Serene. The main reason to fork was not that I thought Serene was bad: I just wanted to try out Tailwind for a while and reimplementing a blog theme seemed like the perfect way to do so.</p>
 <p>The main and pretty much only difference between Tranquil and Serene is that the styling is built from scratch with Tailwind. The icons have also been changed to align better with Tailwind.</p>
@@ -205,7 +210,7 @@ A blog theme for <a class="external" rel="external" href="https://www.getzola.or
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

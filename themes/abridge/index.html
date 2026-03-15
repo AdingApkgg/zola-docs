@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;abridge&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;abridge&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -166,49 +171,49 @@
     <div align="center">
 <img src="https://raw.githubusercontent.com/Jieiku/abridge/master/abridge.svg"/>
 <h1 id="abridge-zola-theme">Abridge Zola Theme</h1>
-<p>A fast, lightweight, and modern <a class="external" rel="external" href="https://getzola.org">Zola</a> theme utilizing <a class="external" rel="external" href="https://github.com/Jieiku/abridge.css">abridge.css</a> (a class-light semantic HTML CSS Framework). Perfect <a class="external" rel="external" href="https://pagespeed.web.dev/report?url=abridge.pages.dev">Lighthouse</a>, <a class="external" rel="external" href="https://yellowlab.tools/">YellowLabTools</a>, and <a class="external" rel="external" href="https://developer.mozilla.org/en-US/observatory/analyze?host=abridge.netlify.app">Observatory</a> scores. Here is a <a class="external" rel="external" href="https://github.com/Jieiku/zola-themes-benchmarks/blob/main/README.md">Zola Themes Benchmarks</a> Page.</p>
+<p>A fast, lightweight, and modern <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> theme utilizing <a class="external" rel="noopener external" target="_blank" href="https://github.com/Jieiku/abridge.css">abridge.css</a> (a class-light semantic HTML CSS Framework). Perfect <a class="external" rel="noopener external" target="_blank" href="https://pagespeed.web.dev/report?url=abridge.pages.dev">Lighthouse</a>, <a class="external" rel="noopener external" target="_blank" href="https://yellowlab.tools/">YellowLabTools</a>, and <a class="external" rel="noopener external" target="_blank" href="https://developer.mozilla.org/en-US/observatory/analyze?host=abridge.netlify.app">Observatory</a> scores. Here is a <a class="external" rel="noopener external" target="_blank" href="https://github.com/Jieiku/zola-themes-benchmarks/blob/main/README.md">Zola Themes Benchmarks</a> Page.</p>
 <p><img src="https://raw.githubusercontent.com/Jieiku/abridge/master/content/overview-abridge/lighthouse.png" alt="Lighthouse Score" /></p>
 <p>Maintenance of this project is made possible by all the <a href="https://github.com/Jieiku/abridge/graphs/contributors">contributors</a> and <a href="https://github.com/sponsors/Jieiku">sponsors</a>. If you'd like to sponsor this project and have your avatar or company logo appear below <a href="https://github.com/sponsors/Jieiku">click here</a>. 💖</p>
 <!-- sponsors --><a href="https://github.com/yugfletcher"><img src="https:&#x2F;&#x2F;github.com&#x2F;yugfletcher.png" width="60px" alt="User avatar: " /></a><a href="https://github.com/samueloph"><img src="https:&#x2F;&#x2F;github.com&#x2F;samueloph.png" width="60px" alt="User avatar: Samuel Henrique" /></a><a href="https://github.com/bensuperpc"><img src="https:&#x2F;&#x2F;github.com&#x2F;bensuperpc.png" width="60px" alt="User avatar: Bensuperpc" /></a><!-- sponsors -->
 <hr />
-<p><strong><a class="external" rel="external" href="https://abridge.pages.dev/overview-abridge/">View Abridge demo</a></strong></p>
-<p><strong><a class="external" rel="external" href="https://abridge-css.pages.dev/overview-abridge/">View Abridge.css demo</a></strong> [<a class="external" rel="external" href="https://github.com/Jieiku/abridge.css/tree/master/dist">abridge.css framework</a>]</p>
-<p>The Abridge.css demo is simply using Abridge theme as a submodule: <a class="external" rel="external" href="https://github.com/Jieiku/abridge.css/blob/master/config.toml">config.toml</a>, <a class="external" rel="external" href="https://github.com/Jieiku/abridge.css/blob/master/sass/abridge.scss">sass/abridge.scss</a></p>
+<p><strong><a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-abridge/">View Abridge demo</a></strong></p>
+<p><strong><a class="external" rel="noopener external" target="_blank" href="https://abridge-css.pages.dev/overview-abridge/">View Abridge.css demo</a></strong> [<a class="external" rel="noopener external" target="_blank" href="https://github.com/Jieiku/abridge.css/tree/master/dist">abridge.css framework</a>]</p>
+<p>The Abridge.css demo is simply using Abridge theme as a submodule: <a class="external" rel="noopener external" target="_blank" href="https://github.com/Jieiku/abridge.css/blob/master/config.toml">config.toml</a>, <a class="external" rel="noopener external" target="_blank" href="https://github.com/Jieiku/abridge.css/blob/master/sass/abridge.scss">sass/abridge.scss</a></p>
 </div>
 <h2 id="features">Features</h2>
 <ul>
-<li>Perfect <a class="external" rel="external" href="https://pagespeed.web.dev/report?url=abridge.pages.dev">Lighthouse</a>, <a class="external" rel="external" href="https://yellowlab.tools/">YellowLabTools</a>, and <a class="external" rel="external" href="https://developer.mozilla.org/en-US/observatory/analyze?host=abridge.netlify.app">Observatory</a> scores.</li>
-<li><a class="external" rel="external" href="https://abridge.pages.dev/overview-abridge/#pwa-progressive-web-app">PWA support</a> (Progressive Web Application).</li>
-<li>All JavaScript can be <a class="external" rel="external" href="https://abridge.pages.dev/overview-abridge/#javascript-files">fully disabled</a>.</li>
+<li>Perfect <a class="external" rel="noopener external" target="_blank" href="https://pagespeed.web.dev/report?url=abridge.pages.dev">Lighthouse</a>, <a class="external" rel="noopener external" target="_blank" href="https://yellowlab.tools/">YellowLabTools</a>, and <a class="external" rel="noopener external" target="_blank" href="https://developer.mozilla.org/en-US/observatory/analyze?host=abridge.netlify.app">Observatory</a> scores.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-abridge/#pwa-progressive-web-app">PWA support</a> (Progressive Web Application).</li>
+<li>All JavaScript can be <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-abridge/#javascript-files">fully disabled</a>.</li>
 <li>Dark, Light, Auto, and Switcher themes. (colors can be customized, css variables)</li>
-<li>Code <a class="external" rel="external" href="https://abridge.pages.dev/overview-code-blocks/">syntax highlighting</a>. (colors can be customized, css variables)</li>
-<li>Numbered code blocks with <a class="external" rel="external" href="https://abridge.pages.dev/overview-code-blocks/#toml">line highlighting</a>.</li>
+<li>Code <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-code-blocks/">syntax highlighting</a>. (colors can be customized, css variables)</li>
+<li>Numbered code blocks with <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-code-blocks/#toml">line highlighting</a>.</li>
 <li>Entirely Offline Site by using the PWA <strong>or</strong> by setting <code>search_library = "offline"</code> in <code>config.toml</code>.</li>
 <li>Multi-language support.</li>
-<li>Search support. (<a class="external" rel="external" href="https://abridge.pages.dev/">elasticlunr</a>, <a class="external" rel="external" href="https://abridge-pagefind.pages.dev/">pagefind</a>, <a class="external" rel="external" href="https://abridge-tinysearch.pages.dev/">tinysearch</a>)</li>
+<li>Search support. (<a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/">elasticlunr</a>, <a class="external" rel="noopener external" target="_blank" href="https://abridge-pagefind.pages.dev/">pagefind</a>, <a class="external" rel="noopener external" target="_blank" href="https://abridge-tinysearch.pages.dev/">tinysearch</a>)</li>
 <li>Search Suggestions navigation keys, <code>/</code> focus, <code>arrow</code> move, <code>enter</code> select, <code>escape</code> close.</li>
 <li>Search Results Page, type search query then hit <code>Enter Key</code> or <code>click</code> the search button icon.</li>
-<li><a class="external" rel="external" href="https://abridge.pages.dev/overview-abridge/#seo-and-header-tags">SEO</a> support. (Search Engine Optimization)</li>
-<li><a class="external" rel="external" href="https://abridge.pages.dev/overview-abridge/#pagination">Pagination</a> with numbered paginator on index.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-abridge/#seo-and-header-tags">SEO</a> support. (Search Engine Optimization)</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-abridge/#pagination">Pagination</a> with numbered paginator on index.</li>
 <li>Title Based Previous and Next Article links at bottom of Article.</li>
 <li>Table of Contents in page Index (Optional, clickable links)</li>
 <li>Recent Posts Block. (Optional)</li>
 <li>Back to Top button. (uses css only)</li>
 <li>Code Blocks copy button.</li>
 <li>Email link in footer obfuscation. (anti-spam)</li>
-<li><a class="external" rel="external" href="https://katex.org/">KaTeX</a> support.</li>
-<li><a class="external" rel="external" href="https://abridge.pages.dev/archive/">Archive page</a>.</li>
-<li><a class="external" rel="external" href="https://abridge.pages.dev/tags/">Tags</a>.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://katex.org/">KaTeX</a> support.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/archive/">Archive page</a>.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/tags/">Tags</a>.</li>
 <li>Categories. (similar to Tags, disabled/commented out by default)</li>
 <li>Social icon links in footer.</li>
 <li>Responsive design. (mobile first)</li>
-<li>Video Shortcodes: <a class="external" rel="external" href="https://abridge.pages.dev/video-streaming-sites/overview-embed-youtube/">Youtube</a>, <a class="external" rel="external" href="https://abridge.pages.dev/video-streaming-sites/overview-embed-vimeo/">Vimeo</a>, <a class="external" rel="external" href="https://abridge.pages.dev/video-streaming-sites/overview-embed-streamable/">Streamable</a>.</li>
-<li>Media Shortcodes: <a class="external" rel="external" href="https://abridge.pages.dev/overview-rich-content/#video">video</a>, <a class="external" rel="external" href="https://abridge.pages.dev/overview-images/#img-shortcode">img</a>, <a class="external" rel="external" href="https://abridge.pages.dev/overview-images/#imgswap-shortcode">imgswap</a>, <a class="external" rel="external" href="https://abridge.pages.dev/overview-rich-content/#image">image</a>, <a class="external" rel="external" href="https://abridge.pages.dev/overview-rich-content/#gif">gif</a>, <a class="external" rel="external" href="https://abridge.pages.dev/overview-rich-content/#audio">audio</a>.</li>
-<li>Other Shortcodes: <a class="external" rel="external" href="https://abridge.pages.dev/overview-showdata/">showdata</a>, <a class="external" rel="external" href="https://abridge.pages.dev/overview-math/#usage-1">katex</a>.</li>
+<li>Video Shortcodes: <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/video-streaming-sites/overview-embed-youtube/">Youtube</a>, <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/video-streaming-sites/overview-embed-vimeo/">Vimeo</a>, <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/video-streaming-sites/overview-embed-streamable/">Streamable</a>.</li>
+<li>Media Shortcodes: <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-rich-content/#video">video</a>, <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-images/#img-shortcode">img</a>, <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-images/#imgswap-shortcode">imgswap</a>, <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-rich-content/#image">image</a>, <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-rich-content/#gif">gif</a>, <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-rich-content/#audio">audio</a>.</li>
+<li>Other Shortcodes: <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-showdata/">showdata</a>, <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-math/#usage-1">katex</a>.</li>
 </ul>
-<p><strong><a class="external" rel="external" href="https://abridge.pages.dev/overview-abridge/">Complete Documentation is available here</a></strong></p>
+<p><strong><a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-abridge/">Complete Documentation is available here</a></strong></p>
 <h2 id="quick-start">Quick Start</h2>
-<p>This theme requires version 0.19.1 or later of <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a></p>
+<p>This theme requires version 0.19.1 or later of <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a></p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/jieiku/abridge.git</span></span>
 <span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> abridge</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span>
@@ -249,22 +254,22 @@
 <p>Zola will start the dev web server, accessible by default at <code>http://127.0.0.1:1111</code>.</p>
 <p>Saved changes will live reload in the browser. (press <code>ctrl+f5</code>, or while developing set <code>pwa=false</code> in <code>config.toml</code>)</p>
 <h2 id="customization">Customization</h2>
-<p>For further customization be sure to <a class="external" rel="external" href="https://abridge.pages.dev/overview-abridge/">check the docs</a>.</p>
+<p>For further customization be sure to <a class="external" rel="noopener external" target="_blank" href="https://abridge.pages.dev/overview-abridge/">check the docs</a>.</p>
 <h2 id="sponsor">Sponsor</h2>
-<p>Do you love this theme? Was it useful to you? Please leave a github star, and if you feel inclined to donate you can make a donation to me through <a class="external" rel="external" href="https://github.com/sponsors/Jieiku/">github sponsors</a>.</p>
+<p>Do you love this theme? Was it useful to you? Please leave a github star, and if you feel inclined to donate you can make a donation to me through <a class="external" rel="noopener external" target="_blank" href="https://github.com/sponsors/Jieiku/">github sponsors</a>.</p>
 <h2 id="contributing-and-philosophy">Contributing and Philosophy</h2>
 <p>We'd love your help! Especially with fixes to issues, or improvements to existing features.</p>
 <p>The goal is for Abridge to be lightweight, fast, and to work properly even if javascript is disabled or blocked.</p>
 <p>The only feature that may be considered a necessity that relies on javascript is the Search.</p>
 <h2 id="license">License</h2>
-<p><strong>Abridge</strong> is distributed under the terms of the <a class="external" rel="external" href="https://github.com/jieiku/abridge/blob/master/LICENSE">MIT license</a>.</p>
+<p><strong>Abridge</strong> is distributed under the terms of the <a class="external" rel="noopener external" target="_blank" href="https://github.com/jieiku/abridge/blob/master/LICENSE">MIT license</a>.</p>
 
 
     </div>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

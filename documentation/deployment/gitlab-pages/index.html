@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;gitlab-pages&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -376,10 +381,10 @@
     <h1>GitLab Pages</h1>
     <p>我们将使用 GitLab CI/CD 中的 GitLab Runner 在 GitLab Pages 上托管站点。</p>
 <h2 id="pei-zhi-ni-de-cang-ku"><a class="zola-anchor" href="#pei-zhi-ni-de-cang-ku" aria-label="Anchor link for: pei-zhi-ni-de-cang-ku">🔗</a>配置你的仓库</h2>
-<p>可以将你的 Zola 站点托管在 GitLab 提供的 SaaS 实例 (<a class="external" rel="external" href="https://gitlab.com">https://gitlab.com</a>) 或自托管实例上。</p>
-<p>建议在 GitLab 上创建一个仅包含你的 Zola 项目的仓库。<a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/directory-structure/">Zola 的目录结构</a> 应该位于你的仓库的根目录中。</p>
+<p>可以将你的 Zola 站点托管在 GitLab 提供的 SaaS 实例 (<a class="external" rel="noopener external" target="_blank" href="https://gitlab.com">https://gitlab.com</a>) 或自托管实例上。</p>
+<p>建议在 GitLab 上创建一个仅包含你的 Zola 项目的仓库。<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/directory-structure/">Zola 的目录结构</a> 应该位于你的仓库的根目录中。</p>
 <p>有关如何在 GitLab 上创建和管理仓库的信息，请参阅：</p>
-<p><a class="external" rel="external" href="https://docs.gitlab.com/ee/user/project/repository/">https://docs.gitlab.com/ee/user/project/repository/</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://docs.gitlab.com/ee/user/project/repository/">https://docs.gitlab.com/ee/user/project/repository/</a></p>
 <h2 id="que-bao-runner-ke-yi-fang-wen-ni-de-zhu-ti"><a class="zola-anchor" href="#que-bao-runner-ke-yi-fang-wen-ni-de-zhu-ti" aria-label="Anchor link for: que-bao-runner-ke-yi-fang-wen-ni-de-zhu-ti">🔗</a>确保 runner 可以访问你的主题</h2>
 <p>根据你添加主题的方式，你的仓库可能不包含它。
 确保添加主题的最佳方法是使用子模块。
@@ -432,11 +437,11 @@
 <span class="giallo-l"><span style="color: #89B4FA;">  rules</span><span style="color: #94E2D5;">:</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;">    # 此规则使你的网站仅当你推送到仓库的默认分支（例如 &quot;master&quot; 或 &quot;main&quot;）时才发布和更新。</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    -</span><span style="color: #89B4FA;"> if</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH</span></span></code></pre>
-<p>请记住，此模板假设你在 GitLab Runner 上使用 <a class="external" rel="external" href="https://docs.gitlab.com/runner/executors/docker.html">Docker executor</a>。
+<p>请记住，此模板假设你在 GitLab Runner 上使用 <a class="external" rel="noopener external" target="_blank" href="https://docs.gitlab.com/runner/executors/docker.html">Docker executor</a>。
 随意根据你的工作流程和特定要求调整文件。</p>
 <p>当你将此文件推送到仓库的默认分支（例如 "master" 或 "main"）后，你的站点将准备就绪。GitLab CI/CD 管道将确保你的站点自动发布和更新。</p>
 <p>在 GitLab 的左侧栏中，导航到 <strong>Deploy &gt; Pages</strong> 以在 <strong>Access pages</strong> 部分找到你的网站的 URL。</p>
-<p>有关如何在 GitLab Pages 上托管你的站点的更多信息，请参阅 <a class="external" rel="external" href="https://docs.gitlab.com/ee/user/project/pages/">GitLab 官方文档</a>。</p>
+<p>有关如何在 GitLab Pages 上托管你的站点的更多信息，请参阅 <a class="external" rel="noopener external" target="_blank" href="https://docs.gitlab.com/ee/user/project/pages/">GitLab 官方文档</a>。</p>
 
 
     </div>
@@ -444,7 +449,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

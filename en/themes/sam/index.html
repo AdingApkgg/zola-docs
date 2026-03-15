@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;sam&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="sam | Zola">
+        <meta property="og:description" content="A Simple and Minimalist theme with a focus on typography and content.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;sam&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="sam | Zola">
+        <meta name="twitter:description" content="A Simple and Minimalist theme with a focus on typography and content.">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "sam",
+            "description": "A Simple and Minimalist theme with a focus on typography and content.",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;sam&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>sam | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;sam&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;sam&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> sam</h1>
+            <p>A Simple and Minimalist theme with a focus on typography and content.</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;janbaudisch.dev">Jan Baudisch</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.4.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> AGPL-3.0</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;janbaudisch&#x2F;zola-sam">https:&#x2F;&#x2F;github.com&#x2F;janbaudisch&#x2F;zola-sam</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;zola-sam.janbaudisch.dev">https:&#x2F;&#x2F;zola-sam.janbaudisch.dev</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2025-09-24T11:42:47+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <p><a class="external" rel="noopener external" target="_blank" href="https://builds.sr.ht/~janbaudisch/zola-sam"><img src="https://builds.sr.ht/~janbaudisch/zola-sam.svg" alt="Build Status" /></a>
+<a class="external" rel="noopener external" target="_blank" href="https://zola-sam.janbaudisch.dev"><img src="https://img.shields.io/badge/demo-live-green.svg" alt="Demo" /></a></p>
+<h1 id="sam">Sam</h1>
+<blockquote>
+<p>A Simple and Minimalist theme with a focus on typography and content.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> port of <a class="external" rel="noopener external" target="_blank" href="https://github.com/victoriadotdev/hugo-theme-sam">hugo-theme-sam</a>.</p>
+</blockquote>
+<p><img src="https://zola.docs.saop.cc/en/themes/sam/screenshot.png" alt="Screenshot" /></p>
+<h2 id="original">Original</h2>
+<p>This is a port of the original <a class="external" rel="noopener external" target="_blank" href="https://github.com/victoriadotdev/hugo-theme-sam">hugo-theme-sam</a> theme for Hugo (<a class="external" rel="noopener external" target="_blank" href="https://github.com/janbaudisch/zola-sam/blob/master/upstream/LICENSE">License</a>).</p>
+<p>See <a class="external" rel="noopener external" target="_blank" href="https://github.com/janbaudisch/zola-sam/blob/master/upstream"><code>upstream</code></a> for source code take from there.</p>
+<h2 id="installation">Installation</h2>
+<p>The easiest way to install this theme is to either clone it ...</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git clone https://github.com/janbaudisch/zola-sam.git themes/sam</span></span></code></pre>
+<p>... or to use it as a submodule.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git submodule add https://github.com/janbaudisch/zola-sam.git themes/sam</span></span></code></pre>
+<p>Either way, you will have to enable the theme in your <code>config.toml</code>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;sam&quot;</span></span></code></pre><h2 id="taxonomies">Taxonomies</h2>
+<p>Sam supports the <code>tags</code> and <code>authors</code> taxonomies.</p>
+<p>To use them, declare them in your <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> rss</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;authors&quot;</span><span style="color: #9399B2;">,</span><span> rss</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>Set them in your page's frontmatter:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;some&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;tag&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;Alice&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;Sam&quot;</span><span style="color: #9399B2;">]</span></span></code></pre>
+<p>See <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/taxonomies">Zola's documentation</a> for more details.</p>
+<h2 id="options">Options</h2>
+<p>See <a class="external" rel="noopener external" target="_blank" href="https://github.com/janbaudisch/zola-sam/blob/master/config.toml"><code>config.toml</code></a> for an example configuration.</p>
+<h3 id="menu">Menu</h3>
+<p>The menu on the index page is created as follows: If the <code>sam_menu</code> variable is set, it gets used.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>sam_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;posts&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/posts&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;about&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/about&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com&quot;</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>If it is not set, all sections under <code>content</code> will get linked.</p>
+<h4 id="bottom-menu">Bottom menu</h4>
+<p>This variable decides wether the menu - as mentioned above - will also be displayed at the bottom of pages.</p>
+<p>Default: <code>false</code></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>sam_bottom_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="home"><code>home</code></h3>
+<p>Sets the name for all links referring to the home page in the menus and the 404 page.</p>
+<p>Default: <code>home</code></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>home</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;home&quot;</span></span></code></pre><h3 id="date-format">Date format</h3>
+<p>Specifies how to display dates. The format is described <a class="external" rel="noopener external" target="_blank" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">here</a>.</p>
+<p>Default: <code>%a %b %e, %Y</code></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>date_format</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;%a %b %e, %Y&quot;</span></span></code></pre><h3 id="word-count-and-reading-time">Word count and reading time</h3>
+<p>You can enable or disable word count and reading time for posts across the whole site:</p>
+<p>Default: <code>true</code> (both)</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>show_word_count</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>show_reading_time</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
+<p>If enabled, you can opt-out per page via front-matter:</p>
+<p>Default: <code>false</code> (both)</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>[extra]</span></span>
+<span class="giallo-l"><span>hide_word_count = true</span></span>
+<span class="giallo-l"><span>hide_reading_time = true</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre><h3 id="disable-page-header">Disable page header</h3>
+<p>If you want to disable the complete header of a page (for example a page which is explicitly not a post), you can do so via front-matter:</p>
+<p>Default: <code>false</code></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>[extra]</span></span>
+<span class="giallo-l"><span>no_header = true</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre><h3 id="footer">Footer</h3>
+<p>To place some text at the end of pages, set the following:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.sam_footer</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Some footer text.&quot;</span></span></code></pre>
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

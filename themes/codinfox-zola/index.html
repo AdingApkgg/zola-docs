@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;codinfox-zola&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;codinfox-zola&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -165,12 +170,12 @@
     <hr>
     <h1 id="codinfox-zola">Codinfox-Zola</h1>
 <p><img src="https://github.com/svavs/codinfox-zola/workflows/Zola%20Deploy%20to%20Pages%20on%20push/badge.svg?branch=master" alt="Zola Deploy to Github Pages on push" /></p>
-<p>This is a <a class="external" rel="external" href="https://www.getzola.com">Zola</a> theme inspired to <a class="external" rel="external" href="https://codinfox.github.com/">Codinfox-Lanyon</a>, a Lanyon based theme for <a class="external" rel="external" href="http://jekyllrb.com">Jekyll</a>. See a live demo <a class="external" rel="external" href="https://codinfox-zola.vercel.app/">here</a>.</p>
+<p>This is a <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.com">Zola</a> theme inspired to <a class="external" rel="noopener external" target="_blank" href="https://codinfox.github.com/">Codinfox-Lanyon</a>, a Lanyon based theme for <a class="external" rel="noopener external" target="_blank" href="http://jekyllrb.com">Jekyll</a>. See a live demo <a class="external" rel="noopener external" target="_blank" href="https://codinfox-zola.vercel.app/">here</a>.</p>
 <p>This theme places content first by tucking away navigation in a hidden drawer.</p>
 <ul>
-<li>Built for <a class="external" rel="external" href="https://www.getzola.com">Zola</a></li>
-<li>Developed on GitHub and hosted for free on <a class="external" rel="external" href="https://pages.github.com">GitHub Pages</a> and <a class="external" rel="external" href="https://vercel.com">Vercel</a></li>
-<li>Coded with <a class="external" rel="external" href="https://www.spacemacs.org">Spacemacs</a></li>
+<li>Built for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.com">Zola</a></li>
+<li>Developed on GitHub and hosted for free on <a class="external" rel="noopener external" target="_blank" href="https://pages.github.com">GitHub Pages</a> and <a class="external" rel="noopener external" target="_blank" href="https://vercel.com">Vercel</a></li>
+<li>Coded with <a class="external" rel="noopener external" target="_blank" href="https://www.spacemacs.org">Spacemacs</a></li>
 </ul>
 <p>This theme supports:</p>
 <ol>
@@ -189,10 +194,10 @@
 <li><code>_config.scss</code> (for the definition of some css customizations)</li>
 </ul>
 <p>The options are fairly straightforward and described in comments.</p>
-<p>Learn more and contribute on <a class="external" rel="external" href="https://github.com/svavs/codinfox-zola">GitHub</a>.</p>
-<p>Have questions or suggestions? Feel free to <a class="external" rel="external" href="https://github.com/svavs/codinfox-zola/issues/new">open an issue on GitHub</a> or <a class="external" rel="external" href="https://twitter.com/svavs">ask me on Twitter</a>.</p>
+<p>Learn more and contribute on <a class="external" rel="noopener external" target="_blank" href="https://github.com/svavs/codinfox-zola">GitHub</a>.</p>
+<p>Have questions or suggestions? Feel free to <a class="external" rel="noopener external" target="_blank" href="https://github.com/svavs/codinfox-zola/issues/new">open an issue on GitHub</a> or <a class="external" rel="noopener external" target="_blank" href="https://twitter.com/svavs">ask me on Twitter</a>.</p>
 <h3 id="before-you-start">Before you start</h3>
-<p><a class="external" rel="external" href="https://gravatar.com">Get a gravatar account</a> and set this up with a profile image.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://gravatar.com">Get a gravatar account</a> and set this up with a profile image.</p>
 <h4 id="add-gravatar-profile-image-to-codinfox-zola-theme">Add gravatar profile image to codinfox-zola theme</h4>
 <ol>
 <li>login to gravatar.com</li>
@@ -208,7 +213,7 @@
 <p>Then, define the required extra variables in the config.toml (take it from the config.toml file of the theme), create and define the author.toml and nav.toml configuration files in the main folder of your site (the same level of the config.toml), and that's it!</p>
 <p>To define your own home picture, put an image file in the <code>static/img/</code> folder and set the path in the config.extra.image variable.</p>
 <p>Now is possible to create the content inside the <code>content</code> folder as usual for Zola sites.</p>
-<p>If you want to have a Blog with this theme, then create a folder inside the <code>content</code> folder containing all the blog posts in Markdown format. Zola automatically generate a section that you can manage as a blog. See an example in the <a class="external" rel="external" href="https://codinfox-zola.vercel.app/blog/">live demo</a>.</p>
+<p>If you want to have a Blog with this theme, then create a folder inside the <code>content</code> folder containing all the blog posts in Markdown format. Zola automatically generate a section that you can manage as a blog. See an example in the <a class="external" rel="noopener external" target="_blank" href="https://codinfox-zola.vercel.app/blog/">live demo</a>.</p>
 <h2 id="license">License</h2>
 <p>Open sourced under the <a href="https://zola.docs.saop.cc/themes/codinfox-zola/LICENSE.md">MIT license</a>.</p>
 <h2 id="todo">TODO</h2>
@@ -222,7 +227,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

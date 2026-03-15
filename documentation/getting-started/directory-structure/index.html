@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -394,13 +399,13 @@
 <code>content</code> 目录的每个子目录代表一个 <a href="https://zola.docs.saop.cc/documentation/content/section/">section</a>，其中包含 <a href="https://zola.docs.saop.cc/documentation/content/page/">pages</a>（你的 <code>.md</code> 文件）。</p>
 <p>要了解更多信息，请阅读 <a href="https://zola.docs.saop.cc/documentation/content/overview/">内容概览页面</a>。</p>
 <h2 id="sass"><a class="zola-anchor" href="#sass" aria-label="Anchor link for: sass">🔗</a><code>sass</code></h2>
-<p>包含要编译的 <a class="external" rel="external" href="https://sass-lang.com">Sass</a> 文件。非 Sass 文件将被忽略。
+<p>包含要编译的 <a class="external" rel="noopener external" target="_blank" href="https://sass-lang.com">Sass</a> 文件。非 Sass 文件将被忽略。
 复制编译后的文件时，将保留 <code>sass</code> 文件夹的目录结构；例如，<code>sass/something/site.scss</code> 处的文件将被编译为 <code>public/something/site.css</code>。</p>
 <h2 id="static"><a class="zola-anchor" href="#static" aria-label="Anchor link for: static">🔗</a><code>static</code></h2>
 <p>包含任何类型的文件。<code>static</code> 目录中的所有文件/目录都将原样复制到输出目录。
-如果你的静态文件很大，你可以通过在配置文件中设置 <code>hard_link_static = true</code> 来配置 Zola 对它们进行 <a class="external" rel="external" href="https://zh.wikipedia.org/wiki/%E7%A1%AC%E9%93%BE%E6%8E%A5">硬链接</a> 而不是复制它们。</p>
+如果你的静态文件很大，你可以通过在配置文件中设置 <code>hard_link_static = true</code> 来配置 Zola 对它们进行 <a class="external" rel="noopener external" target="_blank" href="https://zh.wikipedia.org/wiki/%E7%A1%AC%E9%93%BE%E6%8E%A5">硬链接</a> 而不是复制它们。</p>
 <h2 id="templates"><a class="zola-anchor" href="#templates" aria-label="Anchor link for: templates">🔗</a><code>templates</code></h2>
-<p>包含将用于渲染站点的所有 <a class="external" rel="external" href="https://keats.github.io/tera">Tera</a> 模板。
+<p>包含将用于渲染站点的所有 <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera">Tera</a> 模板。
 查看 <a href="https://zola.docs.saop.cc/documentation/templates/">模板文档</a> 以了解有关默认模板和可用变量的更多信息。</p>
 <h2 id="themes"><a class="zola-anchor" href="#themes" aria-label="Anchor link for: themes">🔗</a><code>themes</code></h2>
 <p>包含可用于你的站点的主题。如果你不打算使用主题，请将此目录留空。
@@ -412,7 +417,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

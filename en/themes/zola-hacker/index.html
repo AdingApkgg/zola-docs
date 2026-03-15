@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-hacker&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="zola-hacker | Zola">
+        <meta property="og:description" content="Hacker is a theme for Zola">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-hacker&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="zola-hacker | Zola">
+        <meta name="twitter:description" content="Hacker is a theme for Zola">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "zola-hacker",
+            "description": "Hacker is a theme for Zola",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-hacker&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>zola-hacker | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-hacker&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-hacker&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> zola-hacker</h1>
+            <p>Hacker is a theme for Zola</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;en9inerd">Vladimir Loskutov</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.19.1 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;en9inerd&#x2F;zola-hacker">https:&#x2F;&#x2F;github.com&#x2F;en9inerd&#x2F;zola-hacker</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;zola-hacker.enginerd.io&#x2F;">https:&#x2F;&#x2F;zola-hacker.enginerd.io&#x2F;</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2026-03-08T12:41:26-04:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="hacker-theme-for-zola">Hacker theme for Zola</h1>
+<p>Zola Hacker is a minimalistic theme for Zola, inspired by the <a class="external" rel="noopener external" target="_blank" href="https://pages-themes.github.io/hacker/">Hacker theme</a> for Jekyll. It is designed for developers who want to write blogs.</p>
+<h2 id="demo">Demo</h2>
+<p><a class="external" rel="noopener external" target="_blank" href="https://zola-hacker.enginerd.io/">Live Preview</a>.</p>
+<h2 id="requirements">Requirements</h2>
+<p>Before using the theme, you need to install the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a> ≥ 0.19.1.</p>
+<h2 id="quick-start">Quick Start</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone git@github.com:en9inerd/zola-hacker.git</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> zola-hacker</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># open http://127.0.0.1:1111/ in the browser</span></span></code></pre><h2 id="installation">Installation</h2>
+<p>Just earlier we showed you how to run the theme directly. Now we start to
+install the theme in an existing site step by step.</p>
+<h3 id="step-1-create-a-new-zola-site">Step 1: Create a new zola site</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init mysite</span></span></code></pre><h3 id="step-2-install-zola-hacker-theme">Step 2: Install Zola Hacker Theme</h3>
+<p>Download this theme to your themes directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> mysite/themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone git@github.com:en9inerd/zola-hacker.git</span></span></code></pre>
+<p>Or install as a submodule:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> mysite</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span><span style="color: #9399B2;font-style: italic;">  # if your project is a git repository already, ignore this command</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add git@github.com:en9inerd/zola-hacker.git themes/hacker</span></span></code></pre><h3 id="step-3-configuration">Step 3: Configuration</h3>
+<p>Enable the theme in your <code>zola.toml</code> in the site directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;hacker&quot;</span></span></code></pre>
+<p>Or copy the <code>zola.toml</code> from the theme directory to your project's
+root directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> themes/hacker/zola.toml zola.toml</span></span></code></pre><h3 id="step-4-add-new-content">Step 4: Add new content</h3>
+<p>You can copy the content from the theme directory to your project:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> -r themes/hacker/content .</span></span></code></pre>
+<p>You can modify or add new posts in the <code>content/posts</code>, <code>content/pages</code> or other
+content directories as needed.</p>
+<h3 id="step-5-run-the-project">Step 5: Run the project</h3>
+<p>Just run <code>zola serve</code> in the root path of the project:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre>
+<p>This command will start the Zola development web server accessible by default at
+<code>http://127.0.0.1:1111</code>. Saved changes will live reload in the browser.</p>
+<h2 id="customization">Customization</h2>
+<p>You can customize your configurations, templates and content for yourself. Look
+at the <code>zola.toml</code>, <code>theme.toml</code>, <code>content</code> files and templates files in this
+repo for an idea.</p>
+<h3 id="global-configuration">Global Configuration</h3>
+<p>There are some configuration options that you can customize in <code>zola.toml</code>.</p>
+<h4 id="configuration-options-before-extra-options">Configuration options before <code>extra</code> options</h4>
+<p>Set the tags taxonomy in the <code>zola.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h4 id="configuration-options-under-the-extra">Configuration options under the <code>extra</code></h4>
+<p>The following options should be under the <code>[extra]</code> in <code>zola.toml</code></p>
+<ul>
+<li><code>language_code</code> - set HTML file language (default to <code>en-US</code>)</li>
+<li><code>title_separator</code> - the separator to your site title, like <code>|</code> and <code>-</code> (defaults to <code>|</code>)</li>
+<li><code>logo</code> - path to the logo image</li>
+<li><code>google_analytics</code> - Google Analytics tracking ID</li>
+<li><code>timeformat</code> - the timeformat for the blog article published date</li>
+<li><code>timezone</code> - the timezone for the blog article published date</li>
+<li><code>edit_page</code> - whether to show the edit page in the github repo for your posts</li>
+<li><code>menu</code> - set the menu items for your site</li>
+<li><code>contact_form_script_id</code> - the script id for the contact form based on <a class="external" rel="noopener external" target="_blank" href="https://github.com/en9inerd/learn-to-send-email-via-google-script-html-no-server">Google Script</a></li>
+<li><code>[extra.github]</code> - set the GitHub metadata for your site</li>
+<li><code>[extra.giscus]</code> - set the Giscus settings for your site to enable the comments. Please use own settings from the <a class="external" rel="noopener external" target="_blank" href="https://giscus.app/">Giscus</a> website</li>
+<li><code>[extra.opengraph]</code> - set the Open Graph metadata for your site</li>
+<li><code>[extra.pgp_key]</code> - set pgp key in the footer for certain pages</li>
+<li><code>social_links</code> - set the social media links in the footer
+...</li>
+</ul>
+<h3 id="templates">Templates</h3>
+<p>All pages extend the <code>base.html</code>, and you can customize them as need.</p>
+<h3 id="shortcodes">Shortcodes</h3>
+<p>The theme provides some shortcodes to help you write your content:</p>
+<p><code>contact_form</code>
+The <code>contact_form</code> shortcode is based on <a class="external" rel="noopener external" target="_blank" href="https://github.com/en9inerd/learn-to-send-email-via-google-script-html-no-server">Google Apps Mail</a> to send emails without a server.
+It depends on <code>contact_form_script_id</code> in the <code>zola.toml</code>.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>{{ contact_form() }}</span></span></code></pre>
+<p><code>cv</code>
+The <code>cv</code> shortcode is used to display the CV in the page. Data for CV is stored in yaml format in the <code>data/cv</code> directory.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>{{ cv() }}</span></span></code></pre>
+<p><code>github_avatar</code>
+The <code>github_avatar</code> shortcode is used to display the GitHub avatar image. It depends on <code>extra.github.username</code> in the <code>zola.toml</code>. Also, you can pass size as an argument.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>{{ github_avatar(size=100) }}</span></span></code></pre>
+<p><code>projects</code>
+The <code>projects</code> shortcode is used to display repositories from GitHub. It depends on <code>extra.github.username</code> in the <code>zola.toml</code> and <code>extra.repo_names</code> in page front matter to filter the repositories.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>{{ projects() }}</span></span></code></pre><h2 id="reporting-issues">Reporting Issues</h2>
+<p>We use GitHub Issues as the official bug tracker for the <strong>Zola Hacker Theme</strong>. Please
+search <a class="external" rel="noopener external" target="_blank" href="https://github.com/en9inerd/zola-hacker/issues">existing issues</a>. It’s
+possible someone has already reported the same problem.</p>
+<p>If your problem or idea is not addressed yet, <a class="external" rel="noopener external" target="_blank" href="https://github.com/en9inerd/zola-hacker/issues/new">open a new issue</a>.</p>
+<h2 id="license">License</h2>
+<p><strong>Zola Hacker Theme</strong> is distributed under the terms of the
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/en9inerd/zola-hacker/blob/master/LICENSE">MIT license</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

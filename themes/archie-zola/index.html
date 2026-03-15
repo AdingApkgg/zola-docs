@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;archie-zola&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;archie-zola&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -164,7 +169,7 @@
 
     <hr>
     <h1 id="archie-zola">archie-zola</h1>
-<p>A clean, minimal Zola theme forked from <a class="external" rel="external" href="https://github.com/athul/archie">archie</a>. Perfect for personal blogs and portfolios with dark/light mode support.</p>
+<p>A clean, minimal Zola theme forked from <a class="external" rel="noopener external" target="_blank" href="https://github.com/athul/archie">archie</a>. Perfect for personal blogs and portfolios with dark/light mode support.</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
 <li>Demo</li>
@@ -178,7 +183,7 @@
 <li>Contributing</li>
 </ul>
 <h2 id="demo">Demo</h2>
-<p><strong>Live Demo:</strong> <a class="external" rel="external" href="https://archie-zola.netlify.app">https://archie-zola.netlify.app</a></p>
+<p><strong>Live Demo:</strong> <a class="external" rel="noopener external" target="_blank" href="https://archie-zola.netlify.app">https://archie-zola.netlify.app</a></p>
 <h3 id="screenshots">Screenshots</h3>
 <table><thead><tr><th>Light Mode</th><th>Dark Mode</th></tr></thead><tbody>
 <tr><td><img src="https://archie-zola.netlify.app/screenshot/screenshot-light.png" alt="Light" /></td><td><img src="https://archie-zola.netlify.app/screenshot/screenshot-dark.png" alt="Dark" /></td></tr>
@@ -378,7 +383,7 @@
 <span class="giallo-l"><span>$$</span></span>
 <span class="giallo-l"><span>\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}</span></span>
 <span class="giallo-l"><span>$$</span></span></code></pre><h3 id="extending-the-theme">Extending the Theme</h3>
-<p>Follow Zola's <a class="external" rel="external" href="https://www.getzola.org/documentation/themes/extending-a-theme/">theme extension guide</a> to override templates and add custom functionality.</p>
+<p>Follow Zola's <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/extending-a-theme/">theme extension guide</a> to override templates and add custom functionality.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="common-issues">Common Issues</h3>
 <p><strong>Theme not loading</strong></p>
@@ -431,9 +436,9 @@
 <p>This theme is released under the MIT License. See <a href="https://zola.docs.saop.cc/themes/archie-zola/LICENSE">LICENSE</a> for details.</p>
 <h2 id="credits">Credits</h2>
 <ul>
-<li>Original <a class="external" rel="external" href="https://github.com/athul/archie">Archie theme</a> by @athul</li>
+<li>Original <a class="external" rel="noopener external" target="_blank" href="https://github.com/athul/archie">Archie theme</a> by @athul</li>
 <li>Ported to Zola by @XXXMrG</li>
-<li>Icons by <a class="external" rel="external" href="https://feathericons.com/">Feather Icons</a></li>
+<li>Icons by <a class="external" rel="noopener external" target="_blank" href="https://feathericons.com/">Feather Icons</a></li>
 </ul>
 <hr />
 <p>⭐ <strong>Star this repo</strong> if you find it useful!</p>
@@ -443,7 +448,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

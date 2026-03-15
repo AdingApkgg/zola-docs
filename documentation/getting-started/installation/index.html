@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -374,22 +379,22 @@
     <div class="documentation__content">
         
     <h1>安装</h1>
-    <p>Zola 在 <a class="external" rel="external" href="https://github.com/getzola/zola/releases">GitHub 发布页面</a> 上提供了适用于 MacOS、Linux 和 Windows 的预构建二进制文件。</p>
+    <p>Zola 在 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/releases">GitHub 发布页面</a> 上提供了适用于 MacOS、Linux 和 Windows 的预构建二进制文件。</p>
 <h3 id="macos"><a class="zola-anchor" href="#macos" aria-label="Anchor link for: macos">🔗</a>macOS</h3>
-<p>Zola 可通过 <a class="external" rel="external" href="https://brew.sh">Brew</a> 获取：</p>
+<p>Zola 可通过 <a class="external" rel="noopener external" target="_blank" href="https://brew.sh">Brew</a> 获取：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> brew install zola</span></span></code></pre>
-<p>Zola 也可通过 <a class="external" rel="external" href="https://www.macports.org">MacPorts</a> 获取：</p>
+<p>Zola 也可通过 <a class="external" rel="noopener external" target="_blank" href="https://www.macports.org">MacPorts</a> 获取：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo port install zola</span></span></code></pre><h3 id="arch-linux"><a class="zola-anchor" href="#arch-linux" aria-label="Anchor link for: arch-linux">🔗</a>Arch Linux</h3>
 <p>Zola 已收录在官方 Arch Linux 仓库中。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> pacman -S zola</span></span></code></pre><h3 id="alpine-linux"><a class="zola-anchor" href="#alpine-linux" aria-label="Anchor link for: alpine-linux">🔗</a>Alpine Linux</h3>
 <p>自 Alpine v3.13 起，Zola 已收录在官方 Alpine Linux 社区仓库中。</p>
 <p>如有必要，请参阅 Alpine Wiki 的这一部分，了解如何启用社区仓库：https://wiki.alpinelinux.org/wiki/Repositories#Enabling_the_community_repository</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> apk add zola</span></span></code></pre><h3 id="debian"><a class="zola-anchor" href="#debian" aria-label="Anchor link for: debian">🔗</a>Debian</h3>
-<p>Zola 可在 <a class="external" rel="external" href="https://github.com/barnumbirr/zola-debian">barnumbirr/zola-debian</a> 获取。
+<p>Zola 可在 <a class="external" rel="noopener external" target="_blank" href="https://github.com/barnumbirr/zola-debian">barnumbirr/zola-debian</a> 获取。
 下载适用于您的 Debian 版本的最新 <code>.deb</code> 包，然后运行：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo dpkg -i zola_</span><span style="color: #94E2D5;">&lt;</span><span style="color: #A6E3A1;">versio</span><span>n</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;">_amd64_debian_</span><span style="color: #94E2D5;">&lt;</span><span style="color: #A6E3A1;">debian_versio</span><span>n</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;">.deb</span></span></code></pre><h3 id="gentoo"><a class="zola-anchor" href="#gentoo" aria-label="Anchor link for: gentoo">🔗</a>Gentoo</h3>
-<p>Zola 可通过 <a class="external" rel="external" href="https://wiki.gentoo.org/wiki/Project:GURU">GURU</a> 获取。</p>
-<p>请参阅最终用户文档以了解如何<a class="external" rel="external" href="https://wiki.gentoo.org/wiki/Project:GURU/Information_for_End_Users#Adding_the_GURU_repository">启用</a> GURU 仓库。之后只需运行：</p>
+<p>Zola 可通过 <a class="external" rel="noopener external" target="_blank" href="https://wiki.gentoo.org/wiki/Project:GURU">GURU</a> 获取。</p>
+<p>请参阅最终用户文档以了解如何<a class="external" rel="noopener external" target="_blank" href="https://wiki.gentoo.org/wiki/Project:GURU/Information_for_End_Users#Adding_the_GURU_repository">启用</a> GURU 仓库。之后只需运行：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo emerge --ask www-apps/zola</span></span></code></pre><h3 id="void-linux"><a class="zola-anchor" href="#void-linux" aria-label="Anchor link for: void-linux">🔗</a>Void Linux</h3>
 <p>Zola 已收录在官方 Void Linux 仓库中。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo xbps-install zola</span></span></code></pre><h3 id="freebsd"><a class="zola-anchor" href="#freebsd" aria-label="Anchor link for: freebsd">🔗</a>FreeBSD</h3>
@@ -398,30 +403,30 @@
 <p>Zola 已收录在官方软件包仓库中。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> doas pkg_add zola</span></span></code></pre><h3 id="opensuse"><a class="zola-anchor" href="#opensuse" aria-label="Anchor link for: opensuse">🔗</a>openSUSE</h3>
 <h4 id="opensuse-tumbleweed"><a class="zola-anchor" href="#opensuse-tumbleweed" aria-label="Anchor link for: opensuse-tumbleweed">🔗</a>openSUSE Tumbleweed</h4>
-<p>Zola 已<a class="external" rel="external" href="https://software.opensuse.org/package/zola?baseproject=ALL">收录</a>在官方 openSUSE Tumbleweed 主 OSS 仓库中。</p>
+<p>Zola 已<a class="external" rel="noopener external" target="_blank" href="https://software.opensuse.org/package/zola?baseproject=ALL">收录</a>在官方 openSUSE Tumbleweed 主 OSS 仓库中。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo zypper install zola</span></span></code></pre><h4 id="opensuse-leap"><a class="zola-anchor" href="#opensuse-leap" aria-label="Anchor link for: opensuse-leap">🔗</a>openSUSE Leap</h4>
-<p>Zola 已<a class="external" rel="external" href="https://software.opensuse.org/package/zola?baseproject=ALL">收录</a>在官方实验性 <em>utilities</em> 仓库中。</p>
+<p>Zola 已<a class="external" rel="noopener external" target="_blank" href="https://software.opensuse.org/package/zola?baseproject=ALL">收录</a>在官方实验性 <em>utilities</em> 仓库中。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo zypper addrepo https://download.opensuse.org/repositories/utilities/15.6/utilities.repo</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo zypper refresh</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo zypper install zola</span></span></code></pre><h3 id="pkgsrc"><a class="zola-anchor" href="#pkgsrc" aria-label="Anchor link for: pkgsrc">🔗</a>pkgsrc</h3>
-<p>Zola 已收录在官方软件包仓库中，可通过 <a class="external" rel="external" href="https://pkgin.net/">pkgin</a> 安装。</p>
+<p>Zola 已收录在官方软件包仓库中，可通过 <a class="external" rel="noopener external" target="_blank" href="https://pkgin.net/">pkgin</a> 安装。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> pkgin install zola</span></span></code></pre><h3 id="snapcraft"><a class="zola-anchor" href="#snapcraft" aria-label="Anchor link for: snapcraft">🔗</a>Snapcraft</h3>
 <p>Zola 可在 snapcraft 上获取：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> snap install --edge zola</span></span></code></pre><h3 id="flatpak"><a class="zola-anchor" href="#flatpak" aria-label="Anchor link for: flatpak">🔗</a>Flatpak</h3>
-<p>Zola 作为 flatpak 可在 <a class="external" rel="external" href="https://flathub.org">flathub</a> 上获取：</p>
+<p>Zola 作为 flatpak 可在 <a class="external" rel="noopener external" target="_blank" href="https://flathub.org">flathub</a> 上获取：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> flatpak install flathub org.getzola.zola</span></span></code></pre>
 <p>要使用 zola：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> flatpak run org.getzola.zola</span><span> [command]</span></span></code></pre>
 <p>为了避免每次都输入这个命令，可以在 <code>~/.bashrc</code> 中创建一个别名：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> alias zola=&quot;flatpak run org.getzola.zola&quot;</span></span></code></pre><h3 id="nixos-nixpkgs"><a class="zola-anchor" href="#nixos-nixpkgs" aria-label="Anchor link for: nixos-nixpkgs">🔗</a>NixOS / Nixpkgs</h3>
-<p>Zola 已<a class="external" rel="external" href="https://search.nixos.org/packages?show=zola&amp;query=zola">收录</a>
+<p>Zola 已<a class="external" rel="noopener external" target="_blank" href="https://search.nixos.org/packages?show=zola&amp;query=zola">收录</a>
 在 nixpkgs 仓库中。如果您使用的是 NixOS，可以通过将以下内容添加到 <code>/etc/nixos/configuration.nix</code> 来安装 Zola：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>environment.systemPackages = [</span></span>
 <span class="giallo-l"><span>  pkgs.zola</span></span>
 <span class="giallo-l"><span>];</span></span></code></pre>
 <p>如果您在其他操作系统中使用 Nix 作为包管理器，可以使用以下命令安装：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>nix-env -iA nixpkgs.zola</span></span></code></pre><h3 id="tong-guo-github-actions"><a class="zola-anchor" href="#tong-guo-github-actions" aria-label="Anchor link for: tong-guo-github-actions">🔗</a>通过 Github Actions</h3>
-<p>Zola 可以通过 <a class="external" rel="external" href="https://github.com/taiki-e/install-action">taiki-e/install-action</a> 在 GHA 工作流中安装。
+<p>Zola 可以通过 <a class="external" rel="noopener external" target="_blank" href="https://github.com/taiki-e/install-action">taiki-e/install-action</a> 在 GHA 工作流中安装。
 只需将其添加到您的 CI 配置中，例如：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #89B4FA;">jobs</span><span style="color: #94E2D5;">:</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  foo</span><span style="color: #94E2D5;">:</span></span>
@@ -432,8 +437,8 @@
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;">      # ...</span></span></code></pre>
 <p>查看 action 仓库以获取文档和更多示例。</p>
 <h3 id="docker"><a class="zola-anchor" href="#docker" aria-label="Anchor link for: docker">🔗</a>Docker</h3>
-<p>Zola 可在 <a class="external" rel="external" href="https://github.com/getzola/zola/pkgs/container/zola">GitHub 容器注册表</a>上获取。
-它没有 <code>latest</code> 标签，您需要指定<a class="external" rel="external" href="https://github.com/getzola/zola/pkgs/container/zola/versions">特定的版本来拉取</a>。</p>
+<p>Zola 可在 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/pkgs/container/zola">GitHub 容器注册表</a>上获取。
+它没有 <code>latest</code> 标签，您需要指定<a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/pkgs/container/zola/versions">特定的版本来拉取</a>。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> docker pull ghcr.io/getzola/zola:v0.19.1</span></span></code></pre><h4 id="gou-jian-build"><a class="zola-anchor" href="#gou-jian-build" aria-label="Anchor link for: gou-jian-build">🔗</a>构建 (Build)</h4>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> docker run -u &quot;</span><span style="color: #9399B2;">$(</span><span style="color: #89B4FA;font-style: italic;">id</span><span style="color: #A6E3A1;"> -u</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;">:</span><span style="color: #9399B2;">$(</span><span style="color: #89B4FA;font-style: italic;">id</span><span style="color: #A6E3A1;"> -g</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;">&quot; -v</span><span> $PWD</span><span style="color: #A6E3A1;">:/app --workdir /app ghcr.io/getzola/zola:v0.19.1 build</span></span></code></pre><h4 id="fu-wu-serve"><a class="zola-anchor" href="#fu-wu-serve" aria-label="Anchor link for: fu-wu-serve">🔗</a>服务 (Serve)</h4>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> docker run -u &quot;</span><span style="color: #9399B2;">$(</span><span style="color: #89B4FA;font-style: italic;">id</span><span style="color: #A6E3A1;"> -u</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;">:</span><span style="color: #9399B2;">$(</span><span style="color: #89B4FA;font-style: italic;">id</span><span style="color: #A6E3A1;"> -g</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;">&quot; -v</span><span> $PWD</span><span style="color: #A6E3A1;">:/app --workdir /app -p 8080:8080 ghcr.io/getzola/zola:v0.19.1 serve --interface</span><span style="color: #FAB387;"> 0.0.0.0</span><span style="color: #A6E3A1;"> --port</span><span style="color: #FAB387;"> 8080</span><span style="color: #A6E3A1;"> --base-url localhost</span></span></code></pre>
@@ -448,13 +453,13 @@
 <span class="giallo-l"><span style="color: #CBA6F7;">RUN</span><span> [</span><span style="color: #A6E3A1;">&quot;zola&quot;</span><span>, </span><span style="color: #A6E3A1;">&quot;build&quot;</span><span>]</span></span></code></pre><h2 id="windows"><a class="zola-anchor" href="#windows" aria-label="Anchor link for: windows">🔗</a>Windows</h2>
 <p>Zola 可以使用官方 Winget 命令安装：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> winget install getzola.zola</span></span></code></pre>
-<p>也可以在 <a class="external" rel="external" href="https://scoop.sh">Scoop</a> 上获取：</p>
+<p>也可以在 <a class="external" rel="noopener external" target="_blank" href="https://scoop.sh">Scoop</a> 上获取：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> scoop install zola</span></span></code></pre>
-<p>以及 <a class="external" rel="external" href="https://chocolatey.org/">Chocolatey</a>：</p>
+<p>以及 <a class="external" rel="noopener external" target="_blank" href="https://chocolatey.org/">Chocolatey</a>：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> choco install zola</span></span></code></pre>
 <p>Zola 在 PowerShell ISE 中无法工作。</p>
 <h2 id="cong-yuan-ma-gou-jian"><a class="zola-anchor" href="#cong-yuan-ma-gou-jian" aria-label="Anchor link for: cong-yuan-ma-gou-jian">🔗</a>从源码构建</h2>
-<p>要从源码构建 Zola，您需要安装 <a class="external" rel="external" href="https://www.rust-lang.org/">Rust 和 Cargo</a>。</p>
+<p>要从源码构建 Zola，您需要安装 <a class="external" rel="noopener external" target="_blank" href="https://www.rust-lang.org/">Rust 和 Cargo</a>。</p>
 <p>在终端中，您现在可以运行以下命令：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cargo install --locked --git https://github.com/getzola/zola</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> zola --version</span></span></code></pre>
@@ -469,7 +474,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

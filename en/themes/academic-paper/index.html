@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;academic-paper&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Academic Paper | Zola">
+        <meta property="og:description" content="A Zola theme for a blog-post-style website to facilitate scientific communication of your academic paper">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;academic-paper&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Academic Paper | Zola">
+        <meta name="twitter:description" content="A Zola theme for a blog-post-style website to facilitate scientific communication of your academic paper">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Academic Paper",
+            "description": "A Zola theme for a blog-post-style website to facilitate scientific communication of your academic paper",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;academic-paper&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>Academic Paper | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;academic-paper&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;academic-paper&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> Academic Paper</h1>
+            <p>A Zola theme for a blog-post-style website to facilitate scientific communication of your academic paper</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;avt.im">Alexander Terenin</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.18.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;aterenin&#x2F;academic-paper">https:&#x2F;&#x2F;github.com&#x2F;aterenin&#x2F;academic-paper</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;aterenin.github.io&#x2F;academic-paper">https:&#x2F;&#x2F;aterenin.github.io&#x2F;academic-paper</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2025-10-21T20:33:42-04:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="academic-paper-a-zola-theme">Academic Paper: a Zola theme</h1>
+<p><a class="external" rel="noopener external" target="_blank" href="https://aterenin.github.io/academic-paper">Academic Paper</a> is a Zola theme designed for hosting a website for scientific communication of an academic paper in the style of a blog post.
+A demo website built with Academic Paper can be found at <a class="external" rel="noopener external" target="_blank" href="https://aterenin.github.io/academic-paper">aterenin.github.io/academic-paper</a>, and an example repository using this theme can be found at <a class="external" rel="noopener external" target="_blank" href="https://github.com/aterenin/papers.avt.im">github.com/aterenin/papers.avt.im</a>, with links to the pages in this repository found at <a class="external" rel="noopener external" target="_blank" href="https://avt.im/archive?papers">avt.im/archive?papers</a>.</p>
+<h1 id="features">Features</h1>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/aterenin/academic-paper">Academic Paper</a> is designed to be reasonably feature-complete. Its features include:</p>
+<ul>
+<li>An automatic header which lists the title, author, venue, year, and along with customizable buttons.</li>
+<li>Syntax highlighting and math rendering via KaTeX which can be done both client-side and server-side with appropriate configuration.</li>
+<li>Figures via a Zola shortcode <code>figure(alt=['Image alt text'],src=['path/to/image.png'])</code>, which supports captions, subfigures, subcaptions, and is rendered using responsive flexbox.</li>
+<li>Markdown footnotes via Zola's footnote support.</li>
+<li>Metadata including Twitter Summary Card, OpenGraph, and JSON-LD, implemented similar to <a class="external" rel="noopener external" target="_blank" href="https://github.com/jekyll/jekyll-seo-tag">Jekyll SEO Tag</a>: these ensure pages are search-engine-fiendly and provide social media websites with links which are displayed when links are shared,</li>
+</ul>
+<h1 id="design-and-maintainability">Design and maintainability</h1>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/aterenin/academic-paper">Academic Paper</a> is <a class="external" rel="noopener external" target="_blank" href="https://jeffhuang.com/designed_to_last/">designed to last</a>.
+This means it follows a set of best practices which try to ensure websites correctly built with it will work correctly in the indefinite future with minimal maintenance, even as the internet changes and links break over time.
+As consequence, the theme has no JavaScript or CSS dependencies if KaTeX is used server-side.</p>
+<h1 id="documentation">Documentation</h1>
+<p>The examples below document the theme's options which are available in the TOML files, which are listed as comments within each file.</p>
+<h2 id="config-toml">Config.toml</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span></span>
+<span class="giallo-l"><span>compile_sass</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;"> # should be set to true</span></span>
+<span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # not used by the theme</span></span>
+<span class="giallo-l"><span>generate_feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # not used by the theme</span></span>
+<span class="giallo-l"><span>minify_html</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;"> # to ensure correct rendering due to minification of whitespace, should be set to true, unless there is a reason to override it</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>markdown</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>highlight_code</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;"> # should be set to true unless the page has no code to highlight</span></span>
+<span class="giallo-l"><span>highlight_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;css&quot;</span><span style="color: #9399B2;font-style: italic;"> # this theme includes its own CSS-based styling of highlighting, so this should be set to CSS</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># other Markdown options - as described in the Zola documentation - go here, and set according to user preference</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>footer_text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;This website is built using [Zola](https://www.getzola.org) and the [Academic Paper](http://github.com/aterenin/academic-paper/) theme, which is [designed to last](https://jeffhuang.com/designed_to_last/).&quot;</span><span style="color: #9399B2;font-style: italic;"> # by default this page adds a small and non-intrusive footer with some text linking to this repository - you can set this to false to remove the footer if you prefer</span></span>
+<span class="giallo-l"><span>server_side_katex</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # set to true to enable server-side KaTeX rendering via scripts/katex.js, this will also include KaTeX CSS and fonts in the build</span></span></code></pre><h2 id="page-and-section-configuration">Page and section configuration</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Paper Title&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #9399B2;font-style: italic;"> # authors should be listed as an array in [extra] rather than via Zola&#39;s built-in support</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Author 1&quot;</span><span style="color: #9399B2;">,</span><span> star</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span><span style="color: #9399B2;font-style: italic;"> # prints a star next to the author name, often useful for &#39;equal contribution&#39; or similar flags</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Author 2&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com/&quot;</span><span style="color: #9399B2;">,</span><span> star</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span><span style="color: #9399B2;font-style: italic;"> # url is optional</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Author 3&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>star</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &#39;Equal contribution&#39;</span><span style="color: #9399B2;font-style: italic;"> # adds the text &#39;Equal contribution&#39; with a star superscript to the title</span></span>
+<span class="giallo-l"><span>venue</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Example Conference&quot;</span><span style="color: #9399B2;">,</span><span> date</span><span style="color: #94E2D5;"> =</span><span> 2023-12-10</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.org/&quot;</span><span style="color: #9399B2;">}</span><span style="color: #9399B2;font-style: italic;"> # date of publication should be listed here, to distinguish it from the date the website itself was written and updated, which can be added via Zola&#39;s built-in support</span></span>
+<span class="giallo-l"><span>buttons</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #9399B2;font-style: italic;"> # this theme supports any set of buttons, but and will by default include an SVG icon for the examples listed below</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Paper&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span><span style="color: #9399B2;">,</span><span> no_icon</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;">},</span><span style="color: #9399B2;font-style: italic;"> # to disable drawing the icon, set no_icon to true</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;PDF&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Code&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Video&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Slides&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Poster&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Your custom button&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com&quot;</span><span style="color: #9399B2;">},</span><span style="color: #9399B2;font-style: italic;"> # to add an icon, add it as an include, and override the macro icons.html</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>katex</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;"> # to enable math via katex - whether using server-side or client-side rendering - set katex to true</span></span>
+<span class="giallo-l"><span>favicon</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # set to true to use favicon.ico as the page&#39;s favicon</span></span>
+<span class="giallo-l"><span>large_card</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span><span style="color: #9399B2;font-style: italic;"> # set to true to generate a large-size Twitter card</span></span>
+<span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>Your page&#39;s Markdown content goes here...</span></span></code></pre>
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

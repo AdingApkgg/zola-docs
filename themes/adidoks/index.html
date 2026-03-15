@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;adidoks&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;adidoks&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -165,17 +170,17 @@
     <hr>
     <h1 id="zola-theme-adidoks">Zola Theme AdiDoks</h1>
 <p>AdiDoks is a modern documentation theme, which is a port of the Hugo
-theme <a class="external" rel="external" href="https://github.com/h-enk/doks">Doks</a> for Zola.</p>
+theme <a class="external" rel="noopener external" target="_blank" href="https://github.com/h-enk/doks">Doks</a> for Zola.</p>
 <h2 id="demo">Demo</h2>
-<p><a class="external" rel="external" href="https://adidoks.netlify.app/">Live Preview</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://adidoks.netlify.app/">Live Preview</a>.</p>
 <h2 id="requirements">Requirements</h2>
-<p>Before using the theme, you need to install the <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a> ≥ 0.15.0.</p>
+<p>Before using the theme, you need to install the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">Zola</a> ≥ 0.15.0.</p>
 <h2 id="quick-start">Quick Start</h2>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/aaranxu/adidoks.git</span></span>
 <span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> adidoks</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># open http://127.0.0.1:1111/ in the browser</span></span></code></pre>
-<p>Read more from <a class="external" rel="external" href="https://adidoks.org/docs/getting-started/introduction/">the document of the AdiDoks</a>.</p>
+<p>Read more from <a class="external" rel="noopener external" target="_blank" href="https://adidoks.org/docs/getting-started/introduction/">the document of the AdiDoks</a>.</p>
 <h2 id="installation">Installation</h2>
 <p>Just earlier we showed you how to run the theme directly. Now we start to
 install the theme in an existing site step by step.</p>
@@ -253,22 +258,22 @@ section under the <code>content</code> folder.</p>
 </ul>
 <h2 id="reporting-issues">Reporting Issues</h2>
 <p>We use GitHub Issues as the official bug tracker for the <strong>AdiDoks</strong>. Please
-search <a class="external" rel="external" href="https://github.com/aaranxu/adidoks/issues">existing issues</a>. It’s
+search <a class="external" rel="noopener external" target="_blank" href="https://github.com/aaranxu/adidoks/issues">existing issues</a>. It’s
 possible someone has already reported the same problem.</p>
-<p>If your problem or idea is not addressed yet, <a class="external" rel="external" href="https://github.com/aaranxu/adidoks/issues/new">open a new issue</a>.</p>
+<p>If your problem or idea is not addressed yet, <a class="external" rel="noopener external" target="_blank" href="https://github.com/aaranxu/adidoks/issues/new">open a new issue</a>.</p>
 <h2 id="contributing">Contributing</h2>
 <p>We'd love your help! Please see <a href="https://zola.docs.saop.cc/themes/adidoks/./CONTRIBUTING.md">CONTRIBUTING.md</a> to learn
 about the kinds of contributions we're looking for.</p>
 <h2 id="license">License</h2>
 <p><strong>AdiDoks</strong> is distributed under the terms of the
-<a class="external" rel="external" href="https://github.com/aaranxu/adidoks/blob/main/LICENSE">MIT license</a>.</p>
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/aaranxu/adidoks/blob/main/LICENSE">MIT license</a>.</p>
 
 
     </div>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

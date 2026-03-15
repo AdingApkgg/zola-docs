@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zolanight&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="zolanight | Zola">
+        <meta property="og:description" content="ZolaNight is a dark theme inspired by the Tokyo Night color palette">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zolanight&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="zolanight | Zola">
+        <meta name="twitter:description" content="ZolaNight is a dark theme inspired by the Tokyo Night color palette">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "zolanight",
+            "description": "ZolaNight is a dark theme inspired by the Tokyo Night color palette",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zolanight&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>zolanight | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolanight&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zolanight&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> zolanight</h1>
+            <p>ZolaNight is a dark theme inspired by the Tokyo Night color palette</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;www.codedmaster.com">mxaddict</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.18.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;mxaddict&#x2F;zolanight">https:&#x2F;&#x2F;github.com&#x2F;mxaddict&#x2F;zolanight</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;zolanight.codedmaster.com">https:&#x2F;&#x2F;zolanight.codedmaster.com</a></p>
+            
+            
+              <div>
+              <p><i class="fas fa-tags"></i> 标签:</p>
+              <ul style="list-style-type: none;">
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;dark&#x2F;"><i class="fas fa-tag"></i> dark</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;blog&#x2F;"><i class="fas fa-tag"></i> blog</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;responsive&#x2F;"><i class="fas fa-tag"></i> responsive</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;syntax-highlighting&#x2F;"><i class="fas fa-tag"></i> syntax-highlighting</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;tokyo-night&#x2F;"><i class="fas fa-tag"></i> tokyo-night</a></li>
+                
+              
+              </div>
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2026-02-09T23:01:22+08:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="zolanight">ZolaNight</h1>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/mxaddict/zolanight">ZolaNight</a> is a dark theme for the
+<a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> static site generator, inspired by the
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/folke/tokyonight.nvim">Tokyo Night</a> color palette. It's
+designed to be lightweight and focus on clear content presentation.</p>
+<p><img src="https://zola.docs.saop.cc/en/themes/zolanight/screenshot.png" alt="Demo Screenshot" /></p>
+<h2 id="live-demo">Live Demo</h2>
+<p>Explore a live demo of the ZolaNight theme here:
+<a class="external" rel="noopener external" target="_blank" href="https://zolanight.codedmaster.com">https://zolanight.codedmaster.com</a></p>
+<p>You can find my personal blog using this theme at
+<a class="external" rel="noopener external" target="_blank" href="https://www.codedmaster.com/">codedmaster.com</a></p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Dark Themes:</strong> Offers multiple dark color schemes: <code>tokyonight</code> (default),
+<code>tokyostorm</code>, <code>tokyomoon</code>, and <code>tokyoday</code>.</li>
+<li><strong>Responsive Design:</strong> Adapts to various screen sizes for optimal viewing on
+any device.</li>
+<li><strong>Syntax Highlighting:</strong> Beautiful syntax highlighting for code blocks using
+the <code>catppuccin-mocha</code> theme.</li>
+<li><strong>Clean Typography:</strong> Utilizes the <code>Source Code Pro</code> font for a modern,
+readable appearance.</li>
+<li><strong>Basic Navigation:</strong> Provides essential navigation for root sections and
+pages.</li>
+<li><strong>Blog-Ready:</strong> Displays recent blog posts on the home page (configurable) and
+includes tag support for categorization.</li>
+<li><strong>Modern Reset:</strong> Built on a modern CSS reset for consistent styling across
+browsers.</li>
+<li><strong>Easy Customization:</strong> Designed for straightforward modification and
+personalization.</li>
+</ul>
+<h2 id="installation-and-usage">Installation and Usage</h2>
+<ol>
+<li>
+<p><strong>Download the Theme:</strong> Place the <code>zolanight</code> theme directory into your Zola
+site's <code>themes</code> folder.</p>
+</li>
+<li>
+<p><strong>Enable the Theme:</strong> Update your <code>config.toml</code> (or <code>zola.toml</code>) file to use
+the theme:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;zolanight&quot;</span></span></code></pre></li>
+<li>
+<p><strong>Optional: Sample Content:</strong> To see the theme in action with pre-filled
+content, copy the <code>content</code> directory from the theme repository into your
+project's root directory.</p>
+</li>
+<li>
+<p><strong>Change Color Scheme:</strong> Customize the color scheme by adding the following
+to your <code>config.toml</code> (or <code>zola.toml</code>) under the <code>[extra.zolanight]</code> section:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.zolanight</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tokyostorm&quot;</span><span style="color: #9399B2;font-style: italic;"> # Choose from &quot;tokyonight&quot;, &quot;tokyostorm&quot;, &quot;tokyomoon&quot;, &quot;tokyoday&quot;</span></span></code></pre></li>
+</ol>
+<h2 id="configuration">Configuration</h2>
+<p>The <code>zola.toml</code> file contains the following theme-specific configurations:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://zolanight.codedmaster.com&quot;</span><span style="color: #9399B2;font-style: italic;">       # Your site&#39;s base URL</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;ZolaNight Theme Demo&quot;</span><span style="color: #9399B2;font-style: italic;">                       # Your site&#39;s title</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;A demo site for the ZolaNight theme.&quot;</span><span style="color: #9399B2;font-style: italic;"> # Your site&#39;s description</span></span>
+<span class="giallo-l"><span>compile_sass</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                                  # Enable Sass compilation</span></span>
+<span class="giallo-l"><span>generate_feeds</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;">                                # Generate RSS/Atom feeds</span></span>
+<span class="giallo-l"><span>feed_limit</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 10</span><span style="color: #9399B2;font-style: italic;">                                      # Number of items in feeds</span></span>
+<span class="giallo-l"><span>feed_filenames</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;atom.xml&quot;</span><span style="color: #9399B2;">]</span><span style="color: #9399B2;font-style: italic;">                        # Feed filenames</span></span>
+<span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [{</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;"> }]</span><span style="color: #9399B2;font-style: italic;">                     # Enable tags taxonomy</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>markdown.highlighting</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;catppuccin-mocha&quot;</span><span style="color: #9399B2;font-style: italic;"> # Code highlighting theme</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.zolanight</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tokyonight&quot;</span><span style="color: #9399B2;font-style: italic;">               # Default theme, override as shown above</span></span>
+<span class="giallo-l"><span>home_list_latest_blog_posts</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;font-style: italic;"> # Toggles latest posts on homepage</span></span>
+<span class="giallo-l"><span>google_analytics_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;font-style: italic;">           # Set a GA ID to use with analytics snippet</span></span>
+<span class="giallo-l"><span>ko_fi_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;font-style: italic;">                     # Link to your Ko-fi page for donations.</span></span></code></pre><h2 id="license">License</h2>
+<p>This theme is licensed under the <a href="https://zola.docs.saop.cc/en/themes/zolanight/LICENSE">MIT License</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

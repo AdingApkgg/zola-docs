@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;anemone&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="anemone | Zola">
+        <meta property="og:description" content="A minimalist Zola theme that prioritizes clean CSS and avoids heavy JavaScript. Enjoy a seamless user experience with lightning-fast load times. Let your content take center stage in a clutter-free, elegant design that enhances readability. Responsive and efficient, anemone brings focus to your ideas.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;anemone&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="anemone | Zola">
+        <meta name="twitter:description" content="A minimalist Zola theme that prioritizes clean CSS and avoids heavy JavaScript. Enjoy a seamless user experience with lightning-fast load times. Let your content take center stage in a clutter-free, elegant design that enhances readability. Responsive and efficient, anemone brings focus to your ideas.">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "anemone",
+            "description": "A minimalist Zola theme that prioritizes clean CSS and avoids heavy JavaScript. Enjoy a seamless user experience with lightning-fast load times. Let your content take center stage in a clutter-free, elegant design that enhances readability. Responsive and efficient, anemone brings focus to your ideas.",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;anemone&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>anemone | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anemone&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;anemone&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> anemone</h1>
+            <p>A minimalist Zola theme that prioritizes clean CSS and avoids heavy JavaScript. Enjoy a seamless user experience with lightning-fast load times. Let your content take center stage in a clutter-free, elegant design that enhances readability. Responsive and efficient, anemone brings focus to your ideas.</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;speyllsite.pages.dev&#x2F;">Speyll</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.4.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;Speyll&#x2F;anemone">https:&#x2F;&#x2F;github.com&#x2F;Speyll&#x2F;anemone</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;anemone.pages.dev">https:&#x2F;&#x2F;anemone.pages.dev</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2026-02-20T02:49:31+01:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="anemone">anemone</h1>
+<p>Introducing "anemone," a minimalist <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org">Zola</a> theme that prioritizes clean CSS and avoids heavy JavaScript. Enjoy a seamless user experience with lightning-fast load times. Let your content take center stage in a clutter-free, elegant design that enhances readability. Responsive and efficient, anemone brings focus to your ideas.</p>
+<p>You can browse the demo website <a class="external" rel="noopener external" target="_blank" href="https://anemone.pages.dev/">here</a></p>
+<p>Anemone is a versatile Zola theme that comes with both light and dark variants. You can easily switch between the light and dark themes to suit your preferences.</p>
+<p><img src="https://zola.docs.saop.cc/en/themes/anemone/screenshot.png" alt="Anemone Light and Dark Theme" /></p>
+<h2 id="installation">Installation</h2>
+<p>To get started with Anemone, follow these simple steps:</p>
+<ol>
+<li>Download the theme to your <code>themes</code> directory:</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/Speyll/anemone</span></span></code></pre>
+<ol start="2">
+<li>Enable Anemone in your <code>config.toml</code>:</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;anemone&quot;</span></span></code></pre><h2 id="release-notes">Release Notes</h2>
+<h4 id="2025-04-09">2025-04-09</h4>
+<p>This release introduces a <strong>complete rewrite</strong> of the project: simplified, improved, and optimized across the board.</p>
+<p><strong>If you are updating from an older release:</strong></p>
+<ol>
+<li>Open your <code>config.toml</code> file and update it as needed (compare with the latest release for reference).</li>
+<li>Remove the following line from <code>content/blog/_index.md</code>:<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>page_template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;blog-page.html&quot;</span></span></code></pre></li>
+</ol>
+<h4 id="2024-03-02">2024-03-02</h4>
+<p>This release brings several improvements and enhancements, focusing mainly on optimizing performance and user experience. Here's a summary of the key changes:</p>
+<ul>
+<li>
+<p><strong>suCSS Integration:</strong> The core CSS now leverages the lightweight <a class="external" rel="noopener external" target="_blank" href="https://speyll.github.io/suCSS/">suCSS framework</a> made by yours truly, providing better maintainability, robustness, and scalability. With suCSS, the theme should maintain consistent appearance across different browsers.</p>
+</li>
+<li>
+<p><strong>Enhanced Theme Toggle:</strong> The dark and light theme toggle has been revamped for more consistency. Now, the website respects the user's system-wide theme settings, ensuring a seamless experience. Additionally, the toggle retains the selected theme for future visits, offering improved usability.</p>
+</li>
+<li>
+<p><strong>Smooth Transition and Sound Effect:</strong> Enjoy a smoother transition between the dark and light mode accompanied by a subtle sound effect. Rest assured, the added sound effect incurs minimal performance overhead, with the file size being just 1kb.</p>
+</li>
+<li>
+<p><strong>Class Names and Shortcodes Update:</strong> Some class names and shortcodes have been modified for better organization and clarity. I apologize for any inconvenience this may cause.</p>
+</li>
+<li>
+<p><strong>Slight change in Color Choice:</strong> Some dark mode colors have been changed for the sake of readability, still using <a class="external" rel="noopener external" target="_blank" href="https://github.com/Speyll/veqev">veqev</a>.</p>
+</li>
+</ul>
+<h2 id="options">Options</h2>
+<p>Anemone provides various options to customize your website:</p>
+<h4 id="default-taxonomies">Default Taxonomies</h4>
+<p>To use tags, add the following code to a page's metadata:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;tag1&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;tag2&quot;</span><span style="color: #9399B2;">]</span></span></code></pre><h4 id="pages-list-in-homepage">Pages List in Homepage</h4>
+<p>Enable listing of pages in the homepage by adding the following code to <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>list_pages</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h4 id="multilanguage">Multilanguage</h4>
+<p>The theme has a built-in feature that allows you to use multiple languages. For detailed instructions on how to use this feature, you can refer to the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/multilingual/">Zola Multilingual documentation</a>. This documentation provides additional information on how to make the most out of this multilingual capability.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>languages.fr</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>weight</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 2</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;anemone&quot;</span></span>
+<span class="giallo-l"><span>languageName</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Français&quot;</span></span>
+<span class="giallo-l"><span>languageCode</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fr&quot;</span></span></code></pre><h4 id="multilanguage-ready-navigation-bar">Multilanguage-Ready Navigation Bar</h4>
+<p>Customize the header navigation links with the following code in the <code>extra</code> section of <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>header_nav</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/&quot;</span><span style="color: #9399B2;">,</span><span> name_en</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/home/&quot;</span><span style="color: #9399B2;">,</span><span> name_fr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/accueil/&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/about&quot;</span><span style="color: #9399B2;">,</span><span> name_en</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/about/&quot;</span><span style="color: #9399B2;">,</span><span> name_fr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/concernant/&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/journal&quot;</span><span style="color: #9399B2;">,</span><span> name_en</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/journal/&quot;</span><span style="color: #9399B2;">,</span><span> name_fr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/journal/&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/blog&quot;</span><span style="color: #9399B2;">,</span><span> name_en</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/blog/&quot;</span><span style="color: #9399B2;">,</span><span> name_fr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/blog/&quot;</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h4 id="add-table-of-contents-toc-to-pages">Add Table of Contents (TOC) to Pages</h4>
+<p>In a page's frontmatter, set <code>extra.toc</code> to <code>true</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>toc</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h4 id="display-author-name-in-blog-posts">Display Author Name in Blog Posts</h4>
+<p>Customize the display of the author's name in your blog posts by toggling the <code>display_author</code> variable to either <code>true</code> or <code>false</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>display_author</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="webrings">Webrings</h3>
+<p>Add a webring with a shortcode:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{{ webring(prev=&quot;#&quot;, webring=&quot;#&quot;, webringName=&quot;Random Webring&quot;, next=&quot;#&quot;) }}</span></span></code></pre><h3 id="extra-data">Extra Data</h3>
+<ul>
+<li>Set the <code>author</code> in both the main config and in pages metadata.</li>
+<li>Similarly, set <code>favicon</code> in the main config, and it will be used as the site icon.</li>
+<li>Set <code>footer_content_license</code> and <code>footer_content_license_link</code> if you wish to display content license information in the footer.</li>
+</ul>
+<h3 id="license">License</h3>
+<p>The Anemone theme is available as open source under the terms of the <a href="https://zola.docs.saop.cc/en/themes/anemone/LICENSE">GPLv3 License</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

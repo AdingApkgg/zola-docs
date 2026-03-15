@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> Forum</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -116,11 +121,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -130,7 +135,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;directory-structure&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
                         
                     </li>
                 </ul>
@@ -393,15 +398,15 @@ Each child directory of the <code>content</code> directory represents a <a href=
 that contains <a href="https://zola.docs.saop.cc/documentation/content/page/">pages</a> (your <code>.md</code> files).</p>
 <p>To learn more, read the <a href="https://zola.docs.saop.cc/documentation/content/overview/">content overview page</a>.</p>
 <h2 id="sass"><a class="zola-anchor" href="#sass" aria-label="Anchor link for: sass">🔗</a><code>sass</code></h2>
-<p>Contains the <a class="external" rel="external" href="https://sass-lang.com">Sass</a> files to be compiled. Non-Sass files will be ignored.
+<p>Contains the <a class="external" rel="noopener external" target="_blank" href="https://sass-lang.com">Sass</a> files to be compiled. Non-Sass files will be ignored.
 The directory structure of the <code>sass</code> folder will be preserved when copying over the compiled files; for example, a file at
 <code>sass/something/site.scss</code> will be compiled to <code>public/something/site.css</code>.</p>
 <h2 id="static"><a class="zola-anchor" href="#static" aria-label="Anchor link for: static">🔗</a><code>static</code></h2>
 <p>Contains any kind of file. All the files/directories in the <code>static</code> directory will be copied as-is to the output directory.
-If your static files are large, you can configure Zola to <a class="external" rel="external" href="https://en.wikipedia.org/wiki/Hard_link">hard link</a> them
+If your static files are large, you can configure Zola to <a class="external" rel="noopener external" target="_blank" href="https://en.wikipedia.org/wiki/Hard_link">hard link</a> them
 instead of copying them by setting <code>hard_link_static = true</code> in the config file.</p>
 <h2 id="templates"><a class="zola-anchor" href="#templates" aria-label="Anchor link for: templates">🔗</a><code>templates</code></h2>
-<p>Contains all the <a class="external" rel="external" href="https://keats.github.io/tera">Tera</a> templates that will be used to render your site.
+<p>Contains all the <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera">Tera</a> templates that will be used to render your site.
 Have a look at the <a href="https://zola.docs.saop.cc/documentation/templates/">templates documentation</a> to learn more about default templates
 and available variables.</p>
 <h2 id="themes"><a class="zola-anchor" href="#themes" aria-label="Anchor link for: themes">🔗</a><code>themes</code></h2>
@@ -414,7 +419,7 @@ If you want to learn about themes, see the <a href="https://zola.docs.saop.cc/do
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
         </footer>
 

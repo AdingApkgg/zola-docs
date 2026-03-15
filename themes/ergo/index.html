@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;ergo&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;ergo&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -163,18 +168,18 @@
     </div>
 
     <hr>
-    <p><a class="external" rel="external" href="http://ergo.liquidthink.net">ergo LIVE DEMO</a></p>
+    <p><a class="external" rel="noopener external" target="_blank" href="http://ergo.liquidthink.net">ergo LIVE DEMO</a></p>
 <p><img src="https://i.imgur.com/l182IYg.jpg" alt="Ergo Screenshot" /></p>
 <p>A light, simple &amp; beautiful Zola theme made with a focus on writing. Inspired by sbvtle and Pixyll.</p>
 <p>Like both those web designs, Ergo is a theme that emphasizes content, but still tries to be stylish. Frankly, the design is
 most like sbvtle (http://sbvtle.com) but without the clever svbtle Engine, Javascript, community or kudos button (kudos is on the list of additions, though! But then i'll have to use JS...)
-If you find that you like all those things, please check out <a class="external" rel="external" href="http://svbtle.com">svbtle</a>; this theme is meant as a lighter (free) alternative,
+If you find that you like all those things, please check out <a class="external" rel="noopener external" target="_blank" href="http://svbtle.com">svbtle</a>; this theme is meant as a lighter (free) alternative,
 and ergo's design will most likely diverge more in the future as this theme evolves with me and it's users (if there are any).
 This is not meant as a svbtle clone.</p>
 <p>Here's a timelapse:
-<a class="external" rel="external" href="https://www.youtube.com/watch?v=ogEjvM-v_-s"><img src="https://img.youtube.com/vi/ogEjvM-v_-s/0.jpg" alt="Ergo Creation Timelapse" /></a></p>
+<a class="external" rel="noopener external" target="_blank" href="https://www.youtube.com/watch?v=ogEjvM-v_-s"><img src="https://img.youtube.com/vi/ogEjvM-v_-s/0.jpg" alt="Ergo Creation Timelapse" /></a></p>
 <h2 id="installation">Installation</h2>
-<p>Get <a class="external" rel="external" href="https://www.getzola.org/">Zola</a> and/or follow their guide on <a class="external" rel="external" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">installing a theme</a>.
+<p>Get <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> and/or follow their guide on <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">installing a theme</a>.
 Make sure to add <code>theme = "ergo"</code> to your <code>config.toml</code></p>
 <p>Ergo relies on having <code>paginate_by</code> variable set in <code>content/_index.md</code>.</p>
 <h4 id="check-zola-version-only-0-11-0">Check zola version (only 0.11.0+)</h4>
@@ -182,7 +187,7 @@ Make sure to add <code>theme = "ergo"</code> to your <code>config.toml</code></p
 <h3 id="how-to-serve">how to serve</h3>
 <p>go into your sites directory, and type <code>zola serve</code>. You should see your new site at <code>localhost:1111</code>.</p>
 <h3 id="deployment-to-github-pages-or-netlify">Deployment to Github Pages or Netlify</h3>
-<p><a class="external" rel="external" href="https://www.getzola.org">Zola</a> already has great documentation for deploying to <a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/netlify/">Netlify</a> or <a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/github-pages/">Github Pages</a>. I won't bore you with a regurgitated explanation.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org">Zola</a> already has great documentation for deploying to <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/deployment/netlify/">Netlify</a> or <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/deployment/github-pages/">Github Pages</a>. I won't bore you with a regurgitated explanation.</p>
 <h3 id="customizing-the-theme">Customizing the Theme</h3>
 <p>All colors used on the site are from <code>sass/colors.scss</code>. There's only about 5-6 colors total.
 Change them however you like! Feel free to go into theme and edit the colors. However, editing anything other than <code>sass/colors.scss</code> is strongly advised against. Continue at your own peril!</p>
@@ -274,7 +279,7 @@ user-requested: Open a Issue, or, if you're feeling up to it, a Pull Request</li
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

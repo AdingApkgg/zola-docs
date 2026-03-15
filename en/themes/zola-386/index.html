@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-386&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="zola.386 | Zola">
+        <meta property="og:description" content="Zola port of the BOOTSTRA.386 theme.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-386&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="zola.386 | Zola">
+        <meta name="twitter:description" content="Zola port of the BOOTSTRA.386 theme.">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "zola.386",
+            "description": "Zola port of the BOOTSTRA.386 theme.",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-386&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>zola.386 | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-386&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-386&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> zola.386</h1>
+            <p>Zola port of the BOOTSTRA.386 theme.</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;lopes">José Lopes</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.10.1 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;lopes&#x2F;zola.386">https:&#x2F;&#x2F;github.com&#x2F;lopes&#x2F;zola.386</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;zola386.netlify.com">https:&#x2F;&#x2F;zola386.netlify.com</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2022-03-24T12:08:20-03:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="zola-386">ZOLA.386</h1>
+<p><img src="https://github.com/lopes/zola.386/blob/master/screenshot.png?raw=true" alt="ZOLA.386 screenshot" /></p>
+<h2 id="live-demo"><a class="external" rel="noopener external" target="_blank" href="https://zola386.netlify.app/">Live demo</a></h2>
+<p>ZOLA.386 is a port of the BOOTSTRA.386 theme and was based on:</p>
+<ul>
+<li><a class="external" rel="noopener external" target="_blank" href="https://kristopolous.github.io/BOOTSTRA.386/">BOOTSTRA.386</a>: main idea, design.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://themes.gohugo.io/hugo.386/">HUGO.386</a>: item placement.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/rust-br/dinkleberg">Dinkleberg</a>: internal structure and SEO.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/after-dark">after-dark</a>: navbar and minor components.</li>
+</ul>
+<p>ZOLA.386 is a theme that refers to the 90s, but with cutting edge features to be fast and responsive.</p>
+<h2 id="installation">Installation</h2>
+<p>The easiest way to install ZOLA.386 is to clone this repository and build your site upon it:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git clone https://github.com/lopes/zola.386</span></span></code></pre>
+<p>Of course you can install it just as another theme for your site, but ZOLA.386 must be added as a module:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cd themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git submodule add https://github.com/lopes/zola.386</span><span> </span></span></code></pre><h2 id="configuration">Configuration</h2>
+<p>Configuration is mainly done in <code>config.toml</code> and here I'll describe the main topics.</p>
+<h3 id="global">Global</h3>
+<p><code>config.toml</code> starts with the global variables.  All of these items are important, but it is fundamental to create two taxonomies at least:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;categories&quot;</span><span style="color: #9399B2;">,</span><span> rss</span><span style="color: #94E2D5;">=</span><span style="color: #FAB387;">true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> rss</span><span style="color: #94E2D5;">=</span><span style="color: #FAB387;">true</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>Remember that all descriptions (<code>config.description</code> and <code>page.description</code>) are shown on the index page, one at the header and the others through the body.</p>
+<h3 id="extras">Extras</h3>
+<p>ZOLA.386 comes with a lot of extra variables which eases the creation and maintenance of the site, so it's important to review all of them after installing the theme.</p>
+<p>The <code>zola386_menu</code> composes the navbar and is created by setting up a <code>path</code>, which will be appended to the <code>base_url</code> and the <code>name</code> will appear on the navbar.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>zola386_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;/&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Home&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;categories&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Categories&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Tags&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;about&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;About&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="social">Social</h3>
+<p>ZOLA.386 is also prepared to deal with Google Analytics, Disqus, and Twitter --<a class="external" rel="noopener external" target="_blank" href="https://ogp.me/">Open Graph Protocol</a> is welcome.  This theme is prepared to use the output of <a class="external" rel="noopener external" target="_blank" href="https://www.favicon-generator.org/">Favicon Generator</a>, to do so, you'll just need to download the output of that site and extract in <code>static/images</code>.</p>
+<p>As said, Disqus is supported, but besides setting the username in <code>config.toml</code>, you also must to put a <code>comments = true</code> extra option on the pages where Disqus will be enabled --this gives you the freedom to enable or disable comments on certain posts.  You can use the extra option <code>image</code> on each page, to represent that post.</p>
+<h3 id="animations">Animations</h3>
+<p>All JavaScript animations can be set at <code>static/js/zola386.js</code>.  Basically you can disable all animations, use one or two scans, and change the scan speed.  Personally, I prefer only one scan with a speed factor of 5.</p>
+<h3 id="language">Language</h3>
+<p>Under the <code>label_</code> variables, you can set names to better localize your site.  Note that you can change the language of a single page, by using <code>page.extra.lang</code>, which causes <code>&lt;html lang=""&gt;</code> to change only on that page.  A theme to provide information for its owner and SEO-friendly.</p>
+<h3 id="search">Search</h3>
+<p>Search was implemented according to the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/search/">official documentation</a>.  It uses JavaScript to search on an indexed version of the site based on <code>search_index.LANG.js</code>, <code>elasticlunr.min.js</code>, and <code>search.js</code> --the first two are generated after each build.  If you're running your site in other default language other than English, you <strong>must</strong> change the <code>search_index.LANG.js</code> line in <code>index.html</code>, setting up <code>LANG</code> accordingly.</p>
+<h3 id="other-files">Other files</h3>
+<p>The <code>content\_index.md</code> file must be properly configured to provide better experience.  Check out this file for more information.</p>
+<p>The 404 page is almost hardcoded, so you must edit it directly.</p>
+<h2 id="license">License</h2>
+<p>This theme is released under the MIT license.  For more information read the <a class="external" rel="noopener external" target="_blank" href="https://github.com/lopes/zola.386/blob/master/LICENSE">License</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://app.netlify.com/sites/zola386/deploys"><img src="https://api.netlify.com/api/v1/badges/5d6f1986-7bf3-40d3-b298-3339288585d4/deploy-status" alt="Netlify Status" /></a></p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

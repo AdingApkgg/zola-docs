@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;parchment&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;parchment&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -164,10 +169,10 @@
 
     <hr>
     <h1 id="parchment-zola-theme">Parchment Zola Theme</h1>
-<p>A website theme for the static site generator <a class="external" rel="external" href="https://getzola.org">Zola</a>.</p>
+<p>A website theme for the static site generator <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a>.</p>
 <p>Written to produce clean, semantic, simple-to-read HTML and CSS. The aim is for a novice to press <code>F12</code> and be able to understand what is going on. No div-soup, No javascript, no third party frameworks.</p>
-<p>Used at <a class="external" rel="external" href="https://jasonfry.co.uk">jasonfry.co.uk</a>.</p>
-<p>Demo available at <a class="external" rel="external" href="https://whispers-on-parchment.jasonfry.co.uk">whispers-on-parchment.jasonfry.co.uk</a></p>
+<p>Used at <a class="external" rel="noopener external" target="_blank" href="https://jasonfry.co.uk">jasonfry.co.uk</a>.</p>
+<p>Demo available at <a class="external" rel="noopener external" target="_blank" href="https://whispers-on-parchment.jasonfry.co.uk">whispers-on-parchment.jasonfry.co.uk</a></p>
 <p><img src="https://zola.docs.saop.cc/themes/parchment/screenshot.png" alt="Parchment screenshot" /></p>
 <h2 id="installation">Installation</h2>
 <p>First download this theme to your <code>themes</code> directory:</p>
@@ -219,7 +224,7 @@
 <span class="giallo-l"><span style="color: #F9E2AF;">      defer</span></span>
 <span class="giallo-l"><span style="color: #94E2D5;">    &gt;</span><span>&lt;</span><span style="color: #94E2D5;">/</span><span style="color: #89B4FA;">script</span><span style="color: #94E2D5;">&gt;</span></span>
 <span class="giallo-l"><span>{%/* endblock body_end */%}</span></span></code></pre><h3 id="colors">Colors</h3>
-<p>The color scheme is based on <a class="external" rel="external" href="https://ethanschoonover.com/solarized/">Solarized</a> and has both a dark and light theme included, that will follow the browser / OS setting. The colors are set with CSS variables, which you can override by setting your own CSS in <code>head</code> block (or however you set your CSS).</p>
+<p>The color scheme is based on <a class="external" rel="noopener external" target="_blank" href="https://ethanschoonover.com/solarized/">Solarized</a> and has both a dark and light theme included, that will follow the browser / OS setting. The colors are set with CSS variables, which you can override by setting your own CSS in <code>head</code> block (or however you set your CSS).</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="css"><span class="giallo-l"><span style="color: #9399B2;">    :</span><span style="color: #94E2D5;">root</span><span style="color: #9399B2;"> {</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">        --background</span><span style="color: #94E2D5;">:</span><span> white</span><span style="color: #9399B2;">;</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">        --background-highlights</span><span style="color: #94E2D5;">:</span><span> white</span><span style="color: #9399B2;">;</span></span>
@@ -259,7 +264,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

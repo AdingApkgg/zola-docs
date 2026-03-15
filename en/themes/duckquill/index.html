@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;duckquill&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Duckquill | Zola">
+        <meta property="og:description" content="Modern, pretty, and clean theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;duckquill&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Duckquill | Zola">
+        <meta name="twitter:description" content="Modern, pretty, and clean theme">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Duckquill",
+            "description": "Modern, pretty, and clean theme",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;duckquill&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>Duckquill | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;duckquill&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;duckquill&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> Duckquill</h1>
+            <p>Modern, pretty, and clean theme</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;daudix.one">David Lapshin</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.19.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;codeberg.org&#x2F;daudix&#x2F;duckquill">https:&#x2F;&#x2F;codeberg.org&#x2F;daudix&#x2F;duckquill</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;duckquill.daudix.one">https:&#x2F;&#x2F;duckquill.daudix.one</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2026-02-27T21:38:10+01:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <p><a class="external" rel="noopener external" target="_blank" href="https://nogithub.codeberg.page"><img src="https://nogithub.codeberg.page/badge.svg" alt="Please don&#39;t upload to GitHub" /></a>
+<a class="external" rel="noopener external" target="_blank" href="https://mit-license.org"><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT license" /></a></p>
+<h1 id="duckquill"><a class="external" rel="noopener external" target="_blank" href="https://duckquill.daudix.one">Duckquill</a></h1>
+<p>Duckquill is an opinionated, modern, pretty, and clean <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org">Zola</a> theme that has the purpose of greatly simplifying the process of rolling up your blog. It aims to provide all the necessary options for comfortable writing, while keeping the balance of simplicity.</p>
+<p><img src="https://zola.docs.saop.cc/en/themes/duckquill/screenshot.png" alt="Screenshot" /></p>
+<h2 id="docs">Docs</h2>
+<p>Docs are provided in form of a <a class="external" rel="noopener external" target="_blank" href="https://duckquill.daudix.one">live demo</a>.</p>
+<h2 id="know-your-rights">Know your rights</h2>
+<p>This project is under the MIT license:</p>
+<ul>
+<li><strong>Freedom to Use</strong>: You have the right to use the software for any purpose, whether it's personal, academic, or commercial.</li>
+<li><strong>Freedom to Modify</strong>: You can modify the source code of the software to suit your needs or preferences.</li>
+<li><strong>Freedom to Distribute</strong>: You have the right to distribute the software, whether in its original form or modified, to others.</li>
+<li><strong>Collaboration</strong>: You can collaborate with others on the software's development and improvement.</li>
+<li><strong>No License Compatibility Issues</strong>: You can combine the MIT-licensed software with other software, even if they use different licenses.</li>
+<li><strong>No Usage Restrictions</strong>: There are no restrictions on the technologies or fields of use, giving you maximum flexibility.</li>
+<li><strong>No Royalties</strong>: You are not required to pay any royalties or fees for using, modifying, or distributing the software.</li>
+</ul>
+<h2 id="contributing-guidelines">Contributing guidelines</h2>
+<p>There are several ways to contribute to this project:</p>
+<ul>
+<li>Reporting issues</li>
+<li>Discussing potential improvements</li>
+<li>Contributing code</li>
+<li>Writing documentation</li>
+<li>Submitting feature requests</li>
+<li>Providing feedback</li>
+</ul>
+<p>When making any sort of contribution, please make sure to follow <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/forgejo/code-of-conduct">Forgejo's Code of Conduct</a>. If you don't have the time to read it, just know that all you have to do is be nice, and you'll be just fine.</p>
+<p><em>&lt;/&gt; with &lt;3 by <a class="external" rel="noopener external" target="_blank" href="https://daudix.one">daudix</a> | README based on <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/libreivan/libreivan.com">libreivan's</a></em></p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

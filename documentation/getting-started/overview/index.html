@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -375,9 +380,9 @@
         
     <h1>概览</h1>
     <h2 id="zola-yi-pie"><a class="zola-anchor" href="#zola-yi-pie" aria-label="Anchor link for: zola-yi-pie">🔗</a>Zola 一瞥</h2>
-<p>Zola 是一个静态站点生成器 (SSG)，类似于 <a class="external" rel="external" href="https://gohugo.io/">Hugo</a>、<a class="external" rel="external" href="https://blog.getpelican.com/">Pelican</a> 和 <a class="external" rel="external" href="https://jekyllrb.com/">Jekyll</a> (有关 SSG 的完整列表，请参阅 <a class="external" rel="external" href="https://jamstack.org/generators">Jamstack</a>)。它使用 <a class="external" rel="external" href="https://www.rust-lang.org/">Rust</a> 编写，并使用 <a class="external" rel="external" href="https://keats.github.io/tera/">Tera</a> 模板引擎，该引擎类似于 <a class="external" rel="external" href="https://jinja.palletsprojects.com/en/2.10.x/">Jinja2</a>、<a class="external" rel="external" href="https://docs.djangoproject.com/en/2.2/topics/templates/">Django 模板</a>、<a class="external" rel="external" href="https://shopify.github.io/liquid/">Liquid</a> 和 <a class="external" rel="external" href="https://twig.symfony.com/">Twig</a>。</p>
-<p>内容使用 <a class="external" rel="external" href="https://commonmark.org/">CommonMark</a> 编写，这是一种定义明确、高度兼容的 <a class="external" rel="external" href="https://www.markdownguide.org/">Markdown</a> 规范。Zola 使用 <a class="external" rel="external" href="https://github.com/raphlinus/pulldown-cmark#pulldown-cmark">pulldown-cmark</a> 解析 markdown 文件。该库的目标是 100% 符合 CommonMark 规范。它添加了一些额外功能，例如解析脚注、Github 风格的表格、Github 风格的任务列表和删除线。</p>
-<p>SSG 使用动态模板将内容转换为静态 HTML 页面。因此，静态站点非常快，不需要数据库，这使得它们易于托管。关于静态站点和动态站点（如 WordPress、Drupal 和 Django）的比较，可以在<a class="external" rel="external" href="https://dev.to/ashenmaster/static-vs-dynamic-sites-61f">这里</a>找到。</p>
+<p>Zola 是一个静态站点生成器 (SSG)，类似于 <a class="external" rel="noopener external" target="_blank" href="https://gohugo.io/">Hugo</a>、<a class="external" rel="noopener external" target="_blank" href="https://blog.getpelican.com/">Pelican</a> 和 <a class="external" rel="noopener external" target="_blank" href="https://jekyllrb.com/">Jekyll</a> (有关 SSG 的完整列表，请参阅 <a class="external" rel="noopener external" target="_blank" href="https://jamstack.org/generators">Jamstack</a>)。它使用 <a class="external" rel="noopener external" target="_blank" href="https://www.rust-lang.org/">Rust</a> 编写，并使用 <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera/">Tera</a> 模板引擎，该引擎类似于 <a class="external" rel="noopener external" target="_blank" href="https://jinja.palletsprojects.com/en/2.10.x/">Jinja2</a>、<a class="external" rel="noopener external" target="_blank" href="https://docs.djangoproject.com/en/2.2/topics/templates/">Django 模板</a>、<a class="external" rel="noopener external" target="_blank" href="https://shopify.github.io/liquid/">Liquid</a> 和 <a class="external" rel="noopener external" target="_blank" href="https://twig.symfony.com/">Twig</a>。</p>
+<p>内容使用 <a class="external" rel="noopener external" target="_blank" href="https://commonmark.org/">CommonMark</a> 编写，这是一种定义明确、高度兼容的 <a class="external" rel="noopener external" target="_blank" href="https://www.markdownguide.org/">Markdown</a> 规范。Zola 使用 <a class="external" rel="noopener external" target="_blank" href="https://github.com/raphlinus/pulldown-cmark#pulldown-cmark">pulldown-cmark</a> 解析 markdown 文件。该库的目标是 100% 符合 CommonMark 规范。它添加了一些额外功能，例如解析脚注、Github 风格的表格、Github 风格的任务列表和删除线。</p>
+<p>SSG 使用动态模板将内容转换为静态 HTML 页面。因此，静态站点非常快，不需要数据库，这使得它们易于托管。关于静态站点和动态站点（如 WordPress、Drupal 和 Django）的比较，可以在<a class="external" rel="noopener external" target="_blank" href="https://dev.to/ashenmaster/static-vs-dynamic-sites-61f">这里</a>找到。</p>
 <p>要体验 Zola，请参阅下面的快速概览。</p>
 <h2 id="zola-di-yi-bu"><a class="zola-anchor" href="#zola-di-yi-bu" aria-label="Anchor link for: zola-di-yi-bu">🔗</a>Zola 第一步</h2>
 <p>与某些 SSG 不同，Zola 对站点的结构没有任何假设。在本概览中，我们将制作一个简单的博客站点。</p>
@@ -489,12 +494,12 @@
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>Listening for changes in .../myblog/{config.toml,content,sass,static,templates}</span></span>
 <span class="giallo-l"><span>Press Ctrl+C to stop</span></span></code></pre>
-<p>如果您将 Web 浏览器指向 <a class="external" rel="external" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a>，您将看到一条消息说："This is my blog made with Zola."</p>
-<p>如果您转到 <a class="external" rel="external" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>，您目前将获得 404，我们将在接下来修复它。</p>
+<p>如果您将 Web 浏览器指向 <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a>，您将看到一条消息说："This is my blog made with Zola."</p>
+<p>如果您转到 <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>，您目前将获得 404，我们将在接下来修复它。</p>
 <h3 id="nei-rong"><a class="zola-anchor" href="#nei-rong" aria-label="Anchor link for: nei-rong">🔗</a>内容</h3>
 <p>我们现在将创建一些内容，Zola 将使用这些内容根据我们的模板生成站点页面。</p>
 <h4 id="sections-lan-mu"><a class="zola-anchor" href="#sections-lan-mu" aria-label="Anchor link for: sections-lan-mu">🔗</a>Sections (栏目)</h4>
-<p>我们将从创建 <code>content/blog/_index.md</code> 开始。该文件告诉 Zola <code>blog</code> 是一个 <a href="https://zola.docs.saop.cc/documentation/content/section/">section</a>，这是 Zola 中对内容进行分类的方式。在 <code>_index.md</code> 文件中，我们将以 <a class="external" rel="external" href="https://github.com/toml-lang/toml">TOML</a> 格式设置以下变量：</p>
+<p>我们将从创建 <code>content/blog/_index.md</code> 开始。该文件告诉 Zola <code>blog</code> 是一个 <a href="https://zola.docs.saop.cc/documentation/content/section/">section</a>，这是 Zola 中对内容进行分类的方式。在 <code>_index.md</code> 文件中，我们将以 <a class="external" rel="noopener external" target="_blank" href="https://github.com/toml-lang/toml">TOML</a> 格式设置以下变量：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>title = &quot;List of blog posts&quot;</span></span>
 <span class="giallo-l"><span>sort_by = &quot;date&quot;</span></span>
@@ -511,7 +516,7 @@
 </ul>
 <p>有关 section 变量的完整列表，请参阅 <a href="https://zola.docs.saop.cc/documentation/content/section/">section</a> 文档。</p>
 <p>这里的 <code>title</code> 变量的值可用于模板，例如 <code>blog.html</code> 中的 <code>{{ section.title }}</code>。</p>
-<p>如果您现在转到 <a class="external" rel="external" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>，您将看到一个空的帖子列表。</p>
+<p>如果您现在转到 <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>，您将看到一个空的帖子列表。</p>
 <h4 id="markdown"><a class="zola-anchor" href="#markdown" aria-label="Anchor link for: markdown">🔗</a>Markdown</h4>
 <p>我们现在将创建一些博客文章。使用以下内容创建 <code>content/blog/first.md</code>。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
@@ -521,14 +526,14 @@
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>This is my first blog post.</span></span></code></pre>
 <p><em>title</em> 和 <em>date</em> 将分别在 <code>blog-page.html</code> 模板中作为 <code>{{ page.title }}</code> 和 <code>{{ page.date }}</code> 可用。结束 <code>+++</code> 下方的所有文本都将作为 <code>{{ page.content }}</code> 可用于模板。</p>
-<p>如果您现在回到我们的博客列表页面 <a class="external" rel="external" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>，您应该会看到我们孤独的帖子。让我们再加一个。使用以下内容创建 <code>content/blog/second.md</code>：</p>
+<p>如果您现在回到我们的博客列表页面 <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>，您应该会看到我们孤独的帖子。让我们再加一个。使用以下内容创建 <code>content/blog/second.md</code>：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>title = &quot;My second post&quot;</span></span>
 <span class="giallo-l"><span>date = 2019-11-28</span></span>
 <span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>This is my second blog post.</span></span></code></pre>
-<p>回到 <a class="external" rel="external" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>，我们的第二篇文章显示在列表顶部，因为它比第一篇文章更新，并且我们在 <code>_index.md</code> 文件中设置了 <em>sort_by = "date"</em>。</p>
+<p>回到 <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>，我们的第二篇文章显示在列表顶部，因为它比第一篇文章更新，并且我们在 <code>_index.md</code> 文件中设置了 <em>sort_by = "date"</em>。</p>
 <p>作为最后一步，让我们修改 <code>templates/index.html</code>（我们的主页）以链接到我们的博客文章列表：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{% extends &quot;base.html&quot; %}</span></span>
 <span class="giallo-l"></span>
@@ -546,7 +551,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

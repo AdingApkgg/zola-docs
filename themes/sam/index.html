@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;sam&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;sam&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -163,17 +168,17 @@
     </div>
 
     <hr>
-    <p><a class="external" rel="external" href="https://builds.sr.ht/~janbaudisch/zola-sam"><img src="https://builds.sr.ht/~janbaudisch/zola-sam.svg" alt="Build Status" /></a>
-<a class="external" rel="external" href="https://zola-sam.janbaudisch.dev"><img src="https://img.shields.io/badge/demo-live-green.svg" alt="Demo" /></a></p>
+    <p><a class="external" rel="noopener external" target="_blank" href="https://builds.sr.ht/~janbaudisch/zola-sam"><img src="https://builds.sr.ht/~janbaudisch/zola-sam.svg" alt="Build Status" /></a>
+<a class="external" rel="noopener external" target="_blank" href="https://zola-sam.janbaudisch.dev"><img src="https://img.shields.io/badge/demo-live-green.svg" alt="Demo" /></a></p>
 <h1 id="sam">Sam</h1>
 <blockquote>
 <p>A Simple and Minimalist theme with a focus on typography and content.</p>
-<p><a class="external" rel="external" href="https://getzola.org">Zola</a> port of <a class="external" rel="external" href="https://github.com/victoriadotdev/hugo-theme-sam">hugo-theme-sam</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> port of <a class="external" rel="noopener external" target="_blank" href="https://github.com/victoriadotdev/hugo-theme-sam">hugo-theme-sam</a>.</p>
 </blockquote>
 <p><img src="https://zola.docs.saop.cc/themes/sam/screenshot.png" alt="Screenshot" /></p>
 <h2 id="original">Original</h2>
-<p>This is a port of the original <a class="external" rel="external" href="https://github.com/victoriadotdev/hugo-theme-sam">hugo-theme-sam</a> theme for Hugo (<a class="external" rel="external" href="https://github.com/janbaudisch/zola-sam/blob/master/upstream/LICENSE">License</a>).</p>
-<p>See <a class="external" rel="external" href="https://github.com/janbaudisch/zola-sam/blob/master/upstream"><code>upstream</code></a> for source code take from there.</p>
+<p>This is a port of the original <a class="external" rel="noopener external" target="_blank" href="https://github.com/victoriadotdev/hugo-theme-sam">hugo-theme-sam</a> theme for Hugo (<a class="external" rel="noopener external" target="_blank" href="https://github.com/janbaudisch/zola-sam/blob/master/upstream/LICENSE">License</a>).</p>
+<p>See <a class="external" rel="noopener external" target="_blank" href="https://github.com/janbaudisch/zola-sam/blob/master/upstream"><code>upstream</code></a> for source code take from there.</p>
 <h2 id="installation">Installation</h2>
 <p>The easiest way to install this theme is to either clone it ...</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git clone https://github.com/janbaudisch/zola-sam.git themes/sam</span></span></code></pre>
@@ -191,9 +196,9 @@
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;some&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;tag&quot;</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>authors</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;Alice&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;Sam&quot;</span><span style="color: #9399B2;">]</span></span></code></pre>
-<p>See <a class="external" rel="external" href="https://www.getzola.org/documentation/content/taxonomies">Zola's documentation</a> for more details.</p>
+<p>See <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/taxonomies">Zola's documentation</a> for more details.</p>
 <h2 id="options">Options</h2>
-<p>See <a class="external" rel="external" href="https://github.com/janbaudisch/zola-sam/blob/master/config.toml"><code>config.toml</code></a> for an example configuration.</p>
+<p>See <a class="external" rel="noopener external" target="_blank" href="https://github.com/janbaudisch/zola-sam/blob/master/config.toml"><code>config.toml</code></a> for an example configuration.</p>
 <h3 id="menu">Menu</h3>
 <p>The menu on the index page is created as follows: If the <code>sam_menu</code> variable is set, it gets used.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
@@ -212,7 +217,7 @@
 <p>Default: <code>home</code></p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>home</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;home&quot;</span></span></code></pre><h3 id="date-format">Date format</h3>
-<p>Specifies how to display dates. The format is described <a class="external" rel="external" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">here</a>.</p>
+<p>Specifies how to display dates. The format is described <a class="external" rel="noopener external" target="_blank" href="https://docs.rs/chrono/latest/chrono/format/strftime/index.html">here</a>.</p>
 <p>Default: <code>%a %b %e, %Y</code></p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>date_format</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;%a %b %e, %Y&quot;</span></span></code></pre><h3 id="word-count-and-reading-time">Word count and reading time</h3>
@@ -242,7 +247,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

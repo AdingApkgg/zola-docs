@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-easydocs-theme&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-easydocs-theme&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -164,15 +169,15 @@
 
     <hr>
     <h2 id="an-easy-way-to-create-a-document-library-for-your-project">An easy way to create a document library for your project</h2>
-<p>Demo: <a class="external" rel="external" href="https://easydocs.codeandmedia.com/">https://easydocs.codeandmedia.com/</a></p>
-<p>This theme for <a class="external" rel="external" href="https://getzola.org">Zola</a> (static site engine) helps you build and publish your project docs easily and fast. Zola is just one binary that outputs html-pages and additional static assets after building your docs written in Markdown. Thus, you can take the theme, your md-files, Zola and gain flexible and simple website for documentation.</p>
+<p>Demo: <a class="external" rel="noopener external" target="_blank" href="https://easydocs.codeandmedia.com/">https://easydocs.codeandmedia.com/</a></p>
+<p>This theme for <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> (static site engine) helps you build and publish your project docs easily and fast. Zola is just one binary that outputs html-pages and additional static assets after building your docs written in Markdown. Thus, you can take the theme, your md-files, Zola and gain flexible and simple website for documentation.</p>
 <h3 id="step-by-step">Step-by-step</h3>
-<p>As you may have heard Zola is quite flexible :) So, the scenario below is one of hundreds possible ways to make things done, feel free to find your best. Also, Zola provides their own mechanism to install and use themes, see <a class="external" rel="external" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">the docs</a>.</p>
+<p>As you may have heard Zola is quite flexible :) So, the scenario below is one of hundreds possible ways to make things done, feel free to find your best. Also, Zola provides their own mechanism to install and use themes, see <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">the docs</a>.</p>
 <ol>
 <li>Fork the repo and replace demo-content inside content folder with yours. But take a look to _index.md files. It contains <code>title</code> and when you want to have anchor right of your headers add <code>insert_anchor_links = "right"</code> to each index. <code>theme.toml</code>, screenshot and readme may be deleted too.</li>
-<li>Inside <code>config.toml</code> change URL and title on your own. In extra section you can specify path to your GitHub API for version below the logo on nav, favicon and logo itself. Or just remove the lines if you don't need it. Also, you can configure or turn on some additional settings related to Zola. <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/configuration/">Specification is here</a>.</li>
+<li>Inside <code>config.toml</code> change URL and title on your own. In extra section you can specify path to your GitHub API for version below the logo on nav, favicon and logo itself. Or just remove the lines if you don't need it. Also, you can configure or turn on some additional settings related to Zola. <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/configuration/">Specification is here</a>.</li>
 <li>In sass/_variables.scss you may change font, color or background if you want.</li>
-<li>Almost done. Now, you should decide how you want to build and where will be hosted your website. You can build it locally and upload to somewhere. Or build in GitHub Actions and host on GitHub Pages / Netlify / CloudFlare Pages / AnyS3CloudStorage. <a class="external" rel="external" href="https://www.getzola.org/documentation/deployment/github-pages/">Howto for GitHub Pages</a>. <a class="external" rel="external" href="https://github.com/o365hq/o365hq.com/blob/main/.github/workflows/main.yml">My example</a> of GitHub workflow with 2-steps build (the first checks for links and spelling errors, the second uploads to Azure). <a class="external" rel="external" href="https://github.com/codeandmedia/zola_docsascode_theme/blob/master/Dockerfile">Dockerfile</a> to make Docker image.</li>
+<li>Almost done. Now, you should decide how you want to build and where will be hosted your website. You can build it locally and upload to somewhere. Or build in GitHub Actions and host on GitHub Pages / Netlify / CloudFlare Pages / AnyS3CloudStorage. <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/deployment/github-pages/">Howto for GitHub Pages</a>. <a class="external" rel="noopener external" target="_blank" href="https://github.com/o365hq/o365hq.com/blob/main/.github/workflows/main.yml">My example</a> of GitHub workflow with 2-steps build (the first checks for links and spelling errors, the second uploads to Azure). <a class="external" rel="noopener external" target="_blank" href="https://github.com/codeandmedia/zola_docsascode_theme/blob/master/Dockerfile">Dockerfile</a> to make Docker image.</li>
 </ol>
 <h2 id="zola-v0-22-update">Zola v0.22 update</h2>
 <p>It seems like for Zola 0.22 config.toml got updated and some fields lost backward compatibility</p>
@@ -192,13 +197,13 @@
 If any are not present it has the same behaviour as the default which is shown in the starter <a href="https://zola.docs.saop.cc/themes/zola-easydocs-theme/config.toml">config.toml</a>.</p>
 <ul>
 <li><strong>easydocs_logo_always_clickable</strong> controls if the logo is always clickable. By default the logo is only clickable if you are not on the home page. If this is enabled it will make the logo clickable when you are on the home page as well. Thus on the home page it will basically just refresh the page as it will take you to the same page.</li>
-<li><strong>easydocs_uglyurls</strong> provides support for offline sites that do not use a webserver. If set to true links in the nav are generated with the full path indcluding <code>index.html</code>. This functionality was  insired by <a class="external" rel="external" href="https://www.getzola.org/themes/abridge/">Abridge theme</a>. Note that for this to work it also requries the base URL to be set to the local folder where the site will be stored eg. <code>base_url = file:///home/user/mysite/public/</code>. Therefore this is not portable and only works with a specific local folder, but does not require a webserver to navigate the site.</li>
+<li><strong>easydocs_uglyurls</strong> provides support for offline sites that do not use a webserver. If set to true links in the nav are generated with the full path indcluding <code>index.html</code>. This functionality was  insired by <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/themes/abridge/">Abridge theme</a>. Note that for this to work it also requries the base URL to be set to the local folder where the site will be stored eg. <code>base_url = file:///home/user/mysite/public/</code>. Therefore this is not portable and only works with a specific local folder, but does not require a webserver to navigate the site.</li>
 <li><strong>easydocs_heading_threshold</strong> controls minimum number of headings needed on a page before the headings show in the navigation on the left. Defaults to 5. Can be used for example to always show headings on each page by setting it to 1.</li>
 </ul>
 <p>Enjoy your docs!</p>
 <ul>
-<li><em>Icons: <a class="external" rel="external" href="https://uifabricicons.azurewebsites.net/">Office UI Fabric Icons</a></em></li>
-<li><em>Copy-code-button: <a class="external" rel="external" href="https://aaronluna.dev/blog/add-copy-button-to-code-blocks-hugo-chroma/">Aaron Luna</a></em></li>
+<li><em>Icons: <a class="external" rel="noopener external" target="_blank" href="https://uifabricicons.azurewebsites.net/">Office UI Fabric Icons</a></em></li>
+<li><em>Copy-code-button: <a class="external" rel="noopener external" target="_blank" href="https://aaronluna.dev/blog/add-copy-button-to-code-blocks-hugo-chroma/">Aaron Luna</a></em></li>
 </ul>
 
 
@@ -206,7 +211,7 @@ If any are not present it has the same behaviour as the default which is shown i
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

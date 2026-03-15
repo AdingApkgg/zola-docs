@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> Forum</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -116,11 +121,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -130,7 +135,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;installation&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
                         
                     </li>
                 </ul>
@@ -373,22 +378,22 @@
         
     <h1>Installation</h1>
     <p>Zola provides pre-built binaries for MacOS, Linux and Windows on the
-<a class="external" rel="external" href="https://github.com/getzola/zola/releases">GitHub release page</a>.</p>
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/releases">GitHub release page</a>.</p>
 <h3 id="macos"><a class="zola-anchor" href="#macos" aria-label="Anchor link for: macos">🔗</a>macOS</h3>
-<p>Zola is available on <a class="external" rel="external" href="https://brew.sh">Brew</a>:</p>
+<p>Zola is available on <a class="external" rel="noopener external" target="_blank" href="https://brew.sh">Brew</a>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> brew install zola</span></span></code></pre>
-<p>Zola is also available on <a class="external" rel="external" href="https://www.macports.org">MacPorts</a>:</p>
+<p>Zola is also available on <a class="external" rel="noopener external" target="_blank" href="https://www.macports.org">MacPorts</a>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo port install zola</span></span></code></pre><h3 id="arch-linux"><a class="zola-anchor" href="#arch-linux" aria-label="Anchor link for: arch-linux">🔗</a>Arch Linux</h3>
 <p>Zola is available in the official Arch Linux repositories.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> pacman -S zola</span></span></code></pre><h3 id="alpine-linux"><a class="zola-anchor" href="#alpine-linux" aria-label="Anchor link for: alpine-linux">🔗</a>Alpine Linux</h3>
 <p>Zola is available in the official Alpine Linux community repository since Alpine v3.13.</p>
 <p>See this section of the Alpine Wiki explaining how to enable the community repository if necessary: https://wiki.alpinelinux.org/wiki/Repositories#Enabling_the_community_repository</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> apk add zola</span></span></code></pre><h3 id="debian"><a class="zola-anchor" href="#debian" aria-label="Anchor link for: debian">🔗</a>Debian</h3>
-<p>Zola is available over at <a class="external" rel="external" href="https://github.com/barnumbirr/zola-debian">barnumbirr/zola-debian</a>.
+<p>Zola is available over at <a class="external" rel="noopener external" target="_blank" href="https://github.com/barnumbirr/zola-debian">barnumbirr/zola-debian</a>.
 Grab the latest <code>.deb</code> for your Debian version then simply run:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo dpkg -i zola_</span><span style="color: #94E2D5;">&lt;</span><span style="color: #A6E3A1;">versio</span><span>n</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;">_amd64_debian_</span><span style="color: #94E2D5;">&lt;</span><span style="color: #A6E3A1;">debian_versio</span><span>n</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;">.deb</span></span></code></pre><h3 id="gentoo"><a class="zola-anchor" href="#gentoo" aria-label="Anchor link for: gentoo">🔗</a>Gentoo</h3>
-<p>Zola is available via <a class="external" rel="external" href="https://wiki.gentoo.org/wiki/Project:GURU">GURU</a>.</p>
-<p>See the end user documentation for how to <a class="external" rel="external" href="https://wiki.gentoo.org/wiki/Project:GURU/Information_for_End_Users#Adding_the_GURU_repository">enable</a> the GURU repository. Afterwards simply run:</p>
+<p>Zola is available via <a class="external" rel="noopener external" target="_blank" href="https://wiki.gentoo.org/wiki/Project:GURU">GURU</a>.</p>
+<p>See the end user documentation for how to <a class="external" rel="noopener external" target="_blank" href="https://wiki.gentoo.org/wiki/Project:GURU/Information_for_End_Users#Adding_the_GURU_repository">enable</a> the GURU repository. Afterwards simply run:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo emerge --ask www-apps/zola</span></span></code></pre><h3 id="void-linux"><a class="zola-anchor" href="#void-linux" aria-label="Anchor link for: void-linux">🔗</a>Void Linux</h3>
 <p>Zola is available in the official Void Linux repositories.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo xbps-install zola</span></span></code></pre><h3 id="freebsd"><a class="zola-anchor" href="#freebsd" aria-label="Anchor link for: freebsd">🔗</a>FreeBSD</h3>
@@ -397,23 +402,23 @@ Grab the latest <code>.deb</code> for your Debian version then simply run:</p>
 <p>Zola is available in the official package repository.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> doas pkg_add zola</span></span></code></pre><h3 id="opensuse"><a class="zola-anchor" href="#opensuse" aria-label="Anchor link for: opensuse">🔗</a>openSUSE</h3>
 <h4 id="opensuse-tumbleweed"><a class="zola-anchor" href="#opensuse-tumbleweed" aria-label="Anchor link for: opensuse-tumbleweed">🔗</a>openSUSE Tumbleweed</h4>
-<p>Zola is <a class="external" rel="external" href="https://software.opensuse.org/package/zola?baseproject=ALL">available</a> in the official openSUSE Tumbleweed main OSS repository.</p>
+<p>Zola is <a class="external" rel="noopener external" target="_blank" href="https://software.opensuse.org/package/zola?baseproject=ALL">available</a> in the official openSUSE Tumbleweed main OSS repository.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo zypper install zola</span></span></code></pre><h4 id="opensuse-leap"><a class="zola-anchor" href="#opensuse-leap" aria-label="Anchor link for: opensuse-leap">🔗</a>openSUSE Leap</h4>
-<p>Zola is <a class="external" rel="external" href="https://software.opensuse.org/package/zola?baseproject=ALL">available</a> in the official experimental <em>utilities</em> repository.</p>
+<p>Zola is <a class="external" rel="noopener external" target="_blank" href="https://software.opensuse.org/package/zola?baseproject=ALL">available</a> in the official experimental <em>utilities</em> repository.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo zypper addrepo https://download.opensuse.org/repositories/utilities/15.6/utilities.repo</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo zypper refresh</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> sudo zypper install zola</span></span></code></pre><h3 id="pkgsrc"><a class="zola-anchor" href="#pkgsrc" aria-label="Anchor link for: pkgsrc">🔗</a>pkgsrc</h3>
-<p>Zola is available in the official package repository, with <a class="external" rel="external" href="https://pkgin.net/">pkgin</a>.</p>
+<p>Zola is available in the official package repository, with <a class="external" rel="noopener external" target="_blank" href="https://pkgin.net/">pkgin</a>.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> pkgin install zola</span></span></code></pre><h3 id="snapcraft"><a class="zola-anchor" href="#snapcraft" aria-label="Anchor link for: snapcraft">🔗</a>Snapcraft</h3>
 <p>Zola is available on snapcraft:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> snap install --edge zola</span></span></code></pre><h3 id="flatpak"><a class="zola-anchor" href="#flatpak" aria-label="Anchor link for: flatpak">🔗</a>Flatpak</h3>
-<p>Zola is available as a flatpak on <a class="external" rel="external" href="https://flathub.org">flathub</a>:</p>
+<p>Zola is available as a flatpak on <a class="external" rel="noopener external" target="_blank" href="https://flathub.org">flathub</a>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> flatpak install flathub org.getzola.zola</span></span></code></pre>
 <p>To use zola:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> flatpak run org.getzola.zola</span><span> [command]</span></span></code></pre>
 <p>To avoid having to type this every time, an alias can be created in <code>~/.bashrc</code>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> alias zola=&quot;flatpak run org.getzola.zola&quot;</span></span></code></pre><h3 id="nixos-nixpkgs"><a class="zola-anchor" href="#nixos-nixpkgs" aria-label="Anchor link for: nixos-nixpkgs">🔗</a>NixOS / Nixpkgs</h3>
-<p>Zola is <a class="external" rel="external" href="https://search.nixos.org/packages?show=zola&amp;query=zola">available</a>
+<p>Zola is <a class="external" rel="noopener external" target="_blank" href="https://search.nixos.org/packages?show=zola&amp;query=zola">available</a>
 in the nixpkgs repository. If you're using NixOS, you can install Zola
 by adding the following to <code>/etc/nixos/configuration.nix</code>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>environment.systemPackages = [</span></span>
@@ -421,7 +426,7 @@ by adding the following to <code>/etc/nixos/configuration.nix</code>:</p>
 <span class="giallo-l"><span>];</span></span></code></pre>
 <p>If you're using Nix as a package manager in another OS, you can install it using:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>nix-env -iA nixpkgs.zola</span></span></code></pre><h3 id="via-github-actions"><a class="zola-anchor" href="#via-github-actions" aria-label="Anchor link for: via-github-actions">🔗</a>Via Github Actions</h3>
-<p>Zola can be installed in a GHA workflow with <a class="external" rel="external" href="https://github.com/taiki-e/install-action">taiki-e/install-action</a>.
+<p>Zola can be installed in a GHA workflow with <a class="external" rel="noopener external" target="_blank" href="https://github.com/taiki-e/install-action">taiki-e/install-action</a>.
 Simply add it in your CI config, for example:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #89B4FA;">jobs</span><span style="color: #94E2D5;">:</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  foo</span><span style="color: #94E2D5;">:</span></span>
@@ -432,8 +437,8 @@ Simply add it in your CI config, for example:</p>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;">      # ...</span></span></code></pre>
 <p>See the action repo for docs and more examples.</p>
 <h3 id="docker"><a class="zola-anchor" href="#docker" aria-label="Anchor link for: docker">🔗</a>Docker</h3>
-<p>Zola is available on <a class="external" rel="external" href="https://github.com/getzola/zola/pkgs/container/zola">the GitHub registry</a>.
-It has no <code>latest</code> tag, you will need to specify a <a class="external" rel="external" href="https://github.com/getzola/zola/pkgs/container/zola/versions">specific version to pull</a>.</p>
+<p>Zola is available on <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/pkgs/container/zola">the GitHub registry</a>.
+It has no <code>latest</code> tag, you will need to specify a <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/pkgs/container/zola/versions">specific version to pull</a>.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> docker pull ghcr.io/getzola/zola:v0.19.1</span></span></code></pre><h4 id="build"><a class="zola-anchor" href="#build" aria-label="Anchor link for: build">🔗</a>Build</h4>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> docker run -u &quot;</span><span style="color: #9399B2;">$(</span><span style="color: #89B4FA;font-style: italic;">id</span><span style="color: #A6E3A1;"> -u</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;">:</span><span style="color: #9399B2;">$(</span><span style="color: #89B4FA;font-style: italic;">id</span><span style="color: #A6E3A1;"> -g</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;">&quot; -v</span><span> $PWD</span><span style="color: #A6E3A1;">:/app --workdir /app ghcr.io/getzola/zola:v0.19.1 build</span></span></code></pre><h4 id="serve"><a class="zola-anchor" href="#serve" aria-label="Anchor link for: serve">🔗</a>Serve</h4>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> docker run -u &quot;</span><span style="color: #9399B2;">$(</span><span style="color: #89B4FA;font-style: italic;">id</span><span style="color: #A6E3A1;"> -u</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;">:</span><span style="color: #9399B2;">$(</span><span style="color: #89B4FA;font-style: italic;">id</span><span style="color: #A6E3A1;"> -g</span><span style="color: #9399B2;">)</span><span style="color: #A6E3A1;">&quot; -v</span><span> $PWD</span><span style="color: #A6E3A1;">:/app --workdir /app -p 8080:8080 ghcr.io/getzola/zola:v0.19.1 serve --interface</span><span style="color: #FAB387;"> 0.0.0.0</span><span style="color: #A6E3A1;"> --port</span><span style="color: #FAB387;"> 8080</span><span style="color: #A6E3A1;"> --base-url localhost</span></span></code></pre>
@@ -448,13 +453,13 @@ exec form of <code>RUN</code>, like:</p>
 <span class="giallo-l"><span style="color: #CBA6F7;">RUN</span><span> [</span><span style="color: #A6E3A1;">&quot;zola&quot;</span><span>, </span><span style="color: #A6E3A1;">&quot;build&quot;</span><span>]</span></span></code></pre><h2 id="windows"><a class="zola-anchor" href="#windows" aria-label="Anchor link for: windows">🔗</a>Windows</h2>
 <p>Zola could be installed using official Winget command:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> winget install getzola.zola</span></span></code></pre>
-<p>Also it is available on <a class="external" rel="external" href="https://scoop.sh">Scoop</a>:</p>
+<p>Also it is available on <a class="external" rel="noopener external" target="_blank" href="https://scoop.sh">Scoop</a>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> scoop install zola</span></span></code></pre>
-<p>and <a class="external" rel="external" href="https://chocolatey.org/">Chocolatey</a>:</p>
+<p>and <a class="external" rel="noopener external" target="_blank" href="https://chocolatey.org/">Chocolatey</a>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> choco install zola</span></span></code></pre>
 <p>Zola does not work in PowerShell ISE.</p>
 <h2 id="from-source"><a class="zola-anchor" href="#from-source" aria-label="Anchor link for: from-source">🔗</a>From source</h2>
-<p>To build Zola from source, you will need to have <a class="external" rel="external" href="https://www.rust-lang.org/">Rust and Cargo</a>
+<p>To build Zola from source, you will need to have <a class="external" rel="noopener external" target="_blank" href="https://www.rust-lang.org/">Rust and Cargo</a>
 installed.</p>
 <p>From a terminal, you can now run the following commands:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cargo install --locked --git https://github.com/getzola/zola</span></span>
@@ -470,7 +475,7 @@ You can move it into the repository of your site if you want.</p>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
         </footer>
 

@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;content&#x2F;page&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;content&#x2F;page&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -374,10 +379,10 @@
     <div class="documentation__content">
         
     <h1>Page</h1>
-    <p>页面是 <code>content</code> 目录中除名为 <code>_index.md</code> 的文件之外的任何以 <code>.md</code> 结尾的文件。**注意：**页面文件名不能包含 <code>_index.</code> <a class="external" rel="external" href="https://github.com/getzola/zola/pull/1694">字样</a>。</p>
+    <p>页面是 <code>content</code> 目录中除名为 <code>_index.md</code> 的文件之外的任何以 <code>.md</code> 结尾的文件。**注意：**页面文件名不能包含 <code>_index.</code> <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/pull/1694">字样</a>。</p>
 <p>如果以 <code>.md</code> 结尾的文件名为 <code>index.md</code>，它将生成一个以其目录名称命名的页面（例如，<code>/content/about/index.md</code> 将在 <code>[base_url]/about</code> 创建一个页面）。（注意没有下划线；如果文件名为 <code>_index.md</code>，它将在 <code>[base_url]/about</code> 创建一个 <strong>section</strong>，如本文档前一部分所讨论的那样。相反，将文件命名为 <code>index.md</code> 将在 <code>[base_url]/about</code> 创建一个 <strong>page</strong>）。</p>
 <p>如果文件被赋予 <code>index.md</code> 或 <code>_index.md</code> <em>以外</em> 的任何名称，那么它将创建一个具有该名称的页面（不带 <code>.md</code>）。例如，在你的 content 目录根目录中命名一个文件 <code>about.md</code> 将在 <code>[base_url]/about</code> 创建一个页面。</p>
-<p>此规则的另一个例外是，以日期时间（YYYY-mm-dd 或 <a class="external" rel="external" href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339 日期时间</a>）开头的文件名将使用该日期作为页面日期，除非已在 front matter 中设置。日期时间文件名后面可以跟一个下划线 (<code>_</code>) 或破折号 (<code>-</code>) 和 slug。
+<p>此规则的另一个例外是，以日期时间（YYYY-mm-dd 或 <a class="external" rel="noopener external" target="_blank" href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339 日期时间</a>）开头的文件名将使用该日期作为页面日期，除非已在 front matter 中设置。日期时间文件名后面可以跟一个下划线 (<code>_</code>) 或破折号 (<code>-</code>) 和 slug。
 页面名称将是日期时间或 <code>_</code>/<code>-</code> 之后的任何内容，因此文件 <code>2018-10-10.md</code> 将在 <code>[base_url]/2018-10-10</code> 可用，而 <code>2018-10-10-hello-world.md</code> 将在 <code>[base_url]/hello-world</code> 可用。请注意，完整的 RFC3339 日期时间包含冒号，这在 Windows 上的文件名中不是有效字符。
 可以通过将 <code>slugify.paths_keep_dates</code> 设置为 <code>true</code>（默认为 <code>false</code>）来禁用此行为。请注意，当 <code>slugify.paths</code> 的默认值为 <code>"on"</code> 时，分隔日期的 <code>_</code> 将被 slugify 为 <code>-</code>。</p>
 <p>如你所见，创建 <code>about.md</code> 文件等同于创建 <code>about/index.md</code> 文件。这两种方法之间的唯一区别是，创建 <code>about</code> 目录允许你使用资源共置，如 <a href="https://zola.docs.saop.cc/documentation/content/overview/#asset-colocation">概览</a> section 中所讨论的那样。</p>
@@ -388,7 +393,7 @@
 <li>其文件名</li>
 </ul>
 <p>无论哪种方式，这些建议的路径在使用前都会被清理。
-如果在站点的配置中将 <code>slugify.paths</code> 设置为 <code>"on"</code> - 默认值 - 路径将被 <a class="external" rel="external" href="https://en.wikipedia.org/wiki/Clean_URL#Slug">slugified</a>。
+如果在站点的配置中将 <code>slugify.paths</code> 设置为 <code>"on"</code> - 默认值 - 路径将被 <a class="external" rel="noopener external" target="_blank" href="https://en.wikipedia.org/wiki/Clean_URL#Slug">slugified</a>。
 如果设置为 <code>"safe"</code>，则仅执行清理，删除以下字符：<code>&lt;</code>, <code>&gt;</code>, <code>:</code>, <code>/</code>, <code>|</code>, <code>?</code>, <code>*</code>, <code>#</code>, <code>\\</code>, <code>(</code>, <code>)</code>, <code>[</code>, <code>]</code> 以及换行符和制表符。这确保了路径可以在所有操作系统上表示。
 此外，尾随空格和点被删除，空格被替换为 <code>_</code>。</p>
 <p>如果 <code>slugify.paths</code> 设置为 <code>"off"</code>，则不进行任何修改。</p>
@@ -408,7 +413,7 @@
 <li>如果文件名是 <code>index.md</code>，其父文件夹名称 (<code>bar</code>) 用作输出路径</li>
 <li>否则，输出路径从 <code>thing</code>（不带 <code>.md</code> 扩展名的文件名）中提取</li>
 </ul>
-<p>如果找到的路径以日期时间字符串（<code>YYYY-mm-dd</code> 或 <a class="external" rel="external" href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339 日期时间</a>）开头，后跟可选空格，然后是下划线 (<code>_</code>) 或破折号 (<code>-</code>)，则此日期将从输出路径中删除，并将用作页面日期（除非已在 front-matter 中设置）。请注意，完整的 RFC3339 日期时间包含冒号，这在 Windows 上的文件名中不是有效字符。</p>
+<p>如果找到的路径以日期时间字符串（<code>YYYY-mm-dd</code> 或 <a class="external" rel="noopener external" target="_blank" href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339 日期时间</a>）开头，后跟可选空格，然后是下划线 (<code>_</code>) 或破折号 (<code>-</code>)，则此日期将从输出路径中删除，并将用作页面日期（除非已在 front-matter 中设置）。请注意，完整的 RFC3339 日期时间包含冒号，这在 Windows 上的文件名中不是有效字符。</p>
 <p>从文件路径提取的输出路径随后根据 <code>slugify.paths</code> 配置进行 slugify 或不进行 slugify，如前所述。</p>
 <p><strong>示例：</strong>
 文件 <code>content/blog/2018-10-10-hello-world.md</code> 将生成页面 <code>[base_url]/blog/hello-world</code>。带有可选空格的文件 <code>content/blog/2021-01-23 -hello new world.md</code> 将生成页面 <code>[base_url]/blog/hello-new-world</code>。</p>
@@ -484,7 +489,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

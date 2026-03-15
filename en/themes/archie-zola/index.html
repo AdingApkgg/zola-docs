@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;archie-zola&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="archie-zola | Zola">
+        <meta property="og:description" content="A zola theme based on Hugo archie.">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;archie-zola&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="archie-zola | Zola">
+        <meta name="twitter:description" content="A zola theme based on Hugo archie.">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "archie-zola",
+            "description": "A zola theme based on Hugo archie.",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;archie-zola&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>archie-zola | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;archie-zola&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;archie-zola&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> archie-zola</h1>
+            <p>A zola theme based on Hugo archie.</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;XXXMrG">Keith</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.14.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;XXXMrG&#x2F;archie-zola">https:&#x2F;&#x2F;github.com&#x2F;XXXMrG&#x2F;archie-zola</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;archie-zola.netlify.app&#x2F;">https:&#x2F;&#x2F;archie-zola.netlify.app&#x2F;</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2026-02-28T15:01:13+08:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="archie-zola">archie-zola</h1>
+<p>A clean, minimal Zola theme forked from <a class="external" rel="noopener external" target="_blank" href="https://github.com/athul/archie">archie</a>. Perfect for personal blogs and portfolios with dark/light mode support.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li>Demo</li>
+<li>Features</li>
+<li>Installation</li>
+<li>Quick Start</li>
+<li>Configuration</li>
+<li>Content Management</li>
+<li>Customization</li>
+<li>Troubleshooting</li>
+<li>Contributing</li>
+</ul>
+<h2 id="demo">Demo</h2>
+<p><strong>Live Demo:</strong> <a class="external" rel="noopener external" target="_blank" href="https://archie-zola.netlify.app">https://archie-zola.netlify.app</a></p>
+<h3 id="screenshots">Screenshots</h3>
+<table><thead><tr><th>Light Mode</th><th>Dark Mode</th></tr></thead><tbody>
+<tr><td><img src="https://archie-zola.netlify.app/screenshot/screenshot-light.png" alt="Light" /></td><td><img src="https://archie-zola.netlify.app/screenshot/screenshot-dark.png" alt="Dark" /></td></tr>
+</tbody></table>
+<h2 id="features">Features</h2>
+<ul>
+<li>✅ <strong>Responsive Design</strong> - Works on desktop, tablet, and mobile</li>
+<li>✅ <strong>Dark/Light Mode</strong> - Auto-detection + manual toggle</li>
+<li>✅ <strong>Fast &amp; Lightweight</strong> - Minimal CSS and JavaScript</li>
+<li>✅ <strong>SEO Optimized</strong> - Meta tags, Open Graph, structured data</li>
+<li>✅ <strong>Syntax Highlighting</strong> - Code blocks with theme support</li>
+<li>✅ <strong>LaTeX Math</strong> - KaTeX integration for mathematical expressions</li>
+<li>✅ <strong>Custom CSS/JS</strong> - Easy theme customization</li>
+<li>✅ <strong>Google Analytics</strong> - Built-in GA4 support</li>
+<li>✅ <strong>Tags &amp; Pagination</strong> - Organize and navigate content</li>
+<li>✅ <strong>Social Links</strong> - Footer social media integration</li>
+</ul>
+<h3 id="coming-soon">Coming Soon</h3>
+<ul>
+<li>🔄 <strong>Twitter Cards</strong> - Rich social media previews</li>
+<li>🔄 <strong>YouTube Embeds</strong> - Video integration</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<h3 id="method-1-git-submodule-recommended">Method 1: Git Submodule (Recommended)</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Add as submodule</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/XXXMrG/archie-zola.git themes/archie-zola</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable in config.toml</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #A6E3A1;"> &#39;theme = &quot;archie-zola&quot;&#39;</span><span style="color: #94E2D5;"> &gt;&gt;</span><span style="color: #A6E3A1;"> config.toml</span></span></code></pre><h3 id="method-2-direct-clone">Method 2: Direct Clone</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Clone to themes directory</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/XXXMrG/archie-zola.git themes/archie-zola</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable in config.toml</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #A6E3A1;"> &#39;theme = &quot;archie-zola&quot;&#39;</span><span style="color: #94E2D5;"> &gt;&gt;</span><span style="color: #A6E3A1;"> config.toml</span></span></code></pre><h3 id="updating-the-theme">Updating the Theme</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Initialize submodules (first time)</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule update --init</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Update to latest version</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule update --remote</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Commit the update</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> add themes/archie-zola</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> commit -m &quot;Update archie-zola theme&quot;</span></span></code></pre><h2 id="quick-start">Quick Start</h2>
+<ol>
+<li><strong>Install the theme</strong> (see above)</li>
+<li><strong>Copy example config</strong> to your <code>config.toml</code>:</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://yourdomain.com&quot;</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Blog&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your blog description&quot;</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;archie-zola&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>mode</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;toggle&quot;</span><span style="color: #9399B2;font-style: italic;">  # auto | dark | toggle</span></span>
+<span class="giallo-l"><span>subtitle</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your tagline here&quot;</span></span></code></pre>
+<ol start="3">
+<li><strong>Create your first post</strong>:</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">mkdir</span><span style="color: #A6E3A1;"> -p content/posts</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #A6E3A1;"> &#39;+++</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">title = &quot;Hello World&quot;</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">date = 2024-01-01</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">+++</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">Your first post content here.&#39;</span><span style="color: #94E2D5;"> &gt;</span><span style="color: #A6E3A1;"> content/posts/hello-world.md</span></span></code></pre>
+<ol start="4">
+<li><strong>Build and serve</strong>:</li>
+</ol>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre><h2 id="configuration">Configuration</h2>
+<h3 id="basic-settings">Basic Settings</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://yourdomain.com&quot;</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Site Title&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your site description&quot;</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;archie-zola&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Theme mode: &quot;auto&quot; | &quot;dark&quot; | &quot;toggle&quot;</span></span>
+<span class="giallo-l"><span>mode</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;toggle&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Subtitle shown under title on homepage</span></span>
+<span class="giallo-l"><span>subtitle</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your tagline or description&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Use CDN for fonts and icons (default: false)</span></span>
+<span class="giallo-l"><span>useCDN</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Favicon path</span></span>
+<span class="giallo-l"><span>favicon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/icon/favicon.png&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Footer copyright text</span></span>
+<span class="giallo-l"><span>copyright</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Name&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Google Analytics ID (optional)</span></span>
+<span class="giallo-l"><span>ga</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;G-XXXXXXXXXX&quot;</span></span></code></pre><h3 id="dark-mode-options">Dark Mode Options</h3>
+<ul>
+<li><strong><code>auto</code></strong> - Automatically follows system preference</li>
+<li><strong><code>dark</code></strong> - Always dark mode</li>
+<li><strong><code>toggle</code></strong> - Shows a toggle button for user choice</li>
+</ul>
+<h3 id="navigation-menu">Navigation Menu</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.translations.en</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>show_more</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Read more ⟶&quot;</span></span>
+<span class="giallo-l"><span>previous_page</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;← Previous&quot;</span></span>
+<span class="giallo-l"><span>next_page</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Next →&quot;</span></span>
+<span class="giallo-l"><span>posted_on</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;on &quot;</span></span>
+<span class="giallo-l"><span>posted_by</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Published by&quot;</span></span>
+<span class="giallo-l"><span>read_time</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;minute read&quot;</span></span>
+<span class="giallo-l"><span>all_tags</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;All tags&quot;</span></span>
+<span class="giallo-l"><span>menus</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Home&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/&quot;</span><span style="color: #9399B2;">,</span><span> weight</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 1</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Posts&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/posts&quot;</span><span style="color: #9399B2;">,</span><span> weight</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 2</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/tags&quot;</span><span style="color: #9399B2;">,</span><span> weight</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 3</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;About&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/about&quot;</span><span style="color: #9399B2;">,</span><span> weight</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 4</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="social-links">Social Links</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.social</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github&quot;</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;GitHub&quot;</span></span>
+<span class="giallo-l"><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/yourusername&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.social</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;twitter&quot;</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Twitter&quot;</span></span>
+<span class="giallo-l"><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://twitter.com/yourusername&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.social</span><span style="color: #9399B2;">]]</span></span>
+<span class="giallo-l"><span>icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;linkedin&quot;</span></span>
+<span class="giallo-l"><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;LinkedIn&quot;</span></span>
+<span class="giallo-l"><span>url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://linkedin.com/in/yourusername&quot;</span></span></code></pre><h3 id="custom-meta-tags">Custom Meta Tags</h3>
+<p>Add custom meta tags to individual pages:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Post Title&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Post description&quot;</span></span>
+<span class="giallo-l"><span>date</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;2024-01-01&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>meta</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>property</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;og:title&quot;</span><span style="color: #9399B2;">,</span><span> content</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Custom OG Title&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>property</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;og:description&quot;</span><span style="color: #9399B2;">,</span><span> content</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Custom OG Description&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>property</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;og:image&quot;</span><span style="color: #9399B2;">,</span><span> content</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://example.com/image.jpg&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>If not specified, the theme will automatically generate Open Graph tags from your page title and description.</p>
+<h2 id="content-management">Content Management</h2>
+<h3 id="posts-and-pagination">Posts and Pagination</h3>
+<p>Create posts in <code>content/posts/</code> directory. Configure pagination in <code>content/posts/_index.md</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 5</span></span>
+<span class="giallo-l"><span>sort_by</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;date&quot;</span></span>
+<span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;posts.html&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre><h3 id="tags">Tags</h3>
+<p>Add tags to any post:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Post&quot;</span></span>
+<span class="giallo-l"><span>date</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;2024-01-01&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>taxonomies</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>tags</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;tech&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;programming&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;"> &quot;rust&quot;</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p>Enable tags in your main <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="author-information">Author Information</h3>
+<p>Add author info to posts:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Name&quot;</span><span style="color: #9399B2;">,</span><span> social</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/yourusername&quot;</span><span style="color: #9399B2;"> }</span></span></code></pre><h3 id="tl-dr-summary">TL;DR Summary</h3>
+<p>Add a quick summary to posts:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>tldr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Quick summary of what this post is about&quot;</span></span></code></pre><h2 id="customization">Customization</h2>
+<h3 id="custom-css-javascript">Custom CSS &amp; JavaScript</h3>
+<p>Add custom styling and functionality:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Custom CSS files (placed in static/css/)</span></span>
+<span class="giallo-l"><span>custom_css</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">    &quot;css/custom.css&quot;</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">    &quot;css/my-theme.css&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Custom JS files (placed in static/js/)</span></span>
+<span class="giallo-l"><span>custom_js</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">    &quot;js/custom.js&quot;</span><span style="color: #9399B2;">,</span></span>
+<span class="giallo-l"><span style="color: #A6E3A1;">    &quot;js/analytics.js&quot;</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p><strong>File structure:</strong></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>static/</span></span>
+<span class="giallo-l"><span>├── css/</span></span>
+<span class="giallo-l"><span>│   ├── custom.css</span></span>
+<span class="giallo-l"><span>│   └── my-theme.css</span></span>
+<span class="giallo-l"><span>└── js/</span></span>
+<span class="giallo-l"><span>    ├── custom.js</span></span>
+<span class="giallo-l"><span>    └── analytics.js</span></span></code></pre>
+<p>The files will be automatically included in the <code>&lt;head&gt;</code> section of all pages.</p>
+<h3 id="latex-math-support">LaTeX Math Support</h3>
+<p>Enable mathematical expressions with KaTeX:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>katex_enable</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
+<p>Then use in your content:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>Inline math: </span><span style="color: #F5C2E7;">\\</span><span>( E = mc^2 </span><span style="color: #F5C2E7;">\\</span><span>)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>Block math:</span></span>
+<span class="giallo-l"><span>$$</span></span>
+<span class="giallo-l"><span>\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}</span></span>
+<span class="giallo-l"><span>$$</span></span></code></pre><h3 id="extending-the-theme">Extending the Theme</h3>
+<p>Follow Zola's <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/extending-a-theme/">theme extension guide</a> to override templates and add custom functionality.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<p><strong>Theme not loading</strong></p>
+<ul>
+<li>Ensure <code>theme = "archie-zola"</code> is in your <code>config.toml</code></li>
+<li>Check that the theme is in <code>themes/archie-zola/</code></li>
+</ul>
+<p><strong>Submodule not updating</strong></p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule update --init --recursive</span></span></code></pre>
+<p><strong>Build errors</strong></p>
+<ul>
+<li>Check your <code>config.toml</code> syntax</li>
+<li>Ensure all required fields are present</li>
+<li>Verify custom CSS/JS files exist</li>
+</ul>
+<p><strong>Dark mode not working</strong></p>
+<ul>
+<li>Set <code>mode = "toggle"</code> or <code>"auto"</code> in <code>[extra]</code> section</li>
+<li>Clear browser cache</li>
+</ul>
+<h3 id="performance-tips">Performance Tips</h3>
+<ul>
+<li>Set <code>useCDN = true</code> for faster font loading</li>
+<li>Optimize images in <code>static/</code> directory</li>
+<li>Use <code>zola build --drafts</code> during development</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>We welcome contributions! Here's how you can help:</p>
+<ol>
+<li><strong>Report bugs</strong> - Open an issue with reproduction steps</li>
+<li><strong>Suggest features</strong> - Describe your use case</li>
+<li><strong>Submit PRs</strong> - Follow the existing code style</li>
+<li><strong>Improve docs</strong> - Help make this README better</li>
+</ol>
+<h3 id="development-setup">Development Setup</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Fork and clone the repo</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/yourusername/archie-zola.git</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> archie-zola</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Create a test site</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init test-site</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> test-site</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #A6E3A1;"> &#39;theme = &quot;archie-zola&quot;&#39;</span><span style="color: #94E2D5;"> &gt;&gt;</span><span style="color: #A6E3A1;"> config.toml</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Link your local theme</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">ln</span><span style="color: #A6E3A1;"> -s ../archie-zola themes/</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Start developing</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre><h2 id="license">License</h2>
+<p>This theme is released under the MIT License. See <a href="https://zola.docs.saop.cc/en/themes/archie-zola/LICENSE">LICENSE</a> for details.</p>
+<h2 id="credits">Credits</h2>
+<ul>
+<li>Original <a class="external" rel="noopener external" target="_blank" href="https://github.com/athul/archie">Archie theme</a> by @athul</li>
+<li>Ported to Zola by @XXXMrG</li>
+<li>Icons by <a class="external" rel="noopener external" target="_blank" href="https://feathericons.com/">Feather Icons</a></li>
+</ul>
+<hr />
+<p>⭐ <strong>Star this repo</strong> if you find it useful!</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-386&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-386&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -165,13 +170,13 @@
     <hr>
     <h1 id="zola-386">ZOLA.386</h1>
 <p><img src="https://github.com/lopes/zola.386/blob/master/screenshot.png?raw=true" alt="ZOLA.386 screenshot" /></p>
-<h2 id="live-demo"><a class="external" rel="external" href="https://zola386.netlify.app/">Live demo</a></h2>
+<h2 id="live-demo"><a class="external" rel="noopener external" target="_blank" href="https://zola386.netlify.app/">Live demo</a></h2>
 <p>ZOLA.386 is a port of the BOOTSTRA.386 theme and was based on:</p>
 <ul>
-<li><a class="external" rel="external" href="https://kristopolous.github.io/BOOTSTRA.386/">BOOTSTRA.386</a>: main idea, design.</li>
-<li><a class="external" rel="external" href="https://themes.gohugo.io/hugo.386/">HUGO.386</a>: item placement.</li>
-<li><a class="external" rel="external" href="https://github.com/rust-br/dinkleberg">Dinkleberg</a>: internal structure and SEO.</li>
-<li><a class="external" rel="external" href="https://github.com/getzola/after-dark">after-dark</a>: navbar and minor components.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://kristopolous.github.io/BOOTSTRA.386/">BOOTSTRA.386</a>: main idea, design.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://themes.gohugo.io/hugo.386/">HUGO.386</a>: item placement.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/rust-br/dinkleberg">Dinkleberg</a>: internal structure and SEO.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/after-dark">after-dark</a>: navbar and minor components.</li>
 </ul>
 <p>ZOLA.386 is a theme that refers to the 90s, but with cutting edge features to be fast and responsive.</p>
 <h2 id="installation">Installation</h2>
@@ -197,27 +202,27 @@
 <span class="giallo-l"><span style="color: #9399B2;">  {</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Tags&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  {</span><span>path</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;about&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;About&quot;</span><span style="color: #9399B2;">},</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="social">Social</h3>
-<p>ZOLA.386 is also prepared to deal with Google Analytics, Disqus, and Twitter --<a class="external" rel="external" href="https://ogp.me/">Open Graph Protocol</a> is welcome.  This theme is prepared to use the output of <a class="external" rel="external" href="https://www.favicon-generator.org/">Favicon Generator</a>, to do so, you'll just need to download the output of that site and extract in <code>static/images</code>.</p>
+<p>ZOLA.386 is also prepared to deal with Google Analytics, Disqus, and Twitter --<a class="external" rel="noopener external" target="_blank" href="https://ogp.me/">Open Graph Protocol</a> is welcome.  This theme is prepared to use the output of <a class="external" rel="noopener external" target="_blank" href="https://www.favicon-generator.org/">Favicon Generator</a>, to do so, you'll just need to download the output of that site and extract in <code>static/images</code>.</p>
 <p>As said, Disqus is supported, but besides setting the username in <code>config.toml</code>, you also must to put a <code>comments = true</code> extra option on the pages where Disqus will be enabled --this gives you the freedom to enable or disable comments on certain posts.  You can use the extra option <code>image</code> on each page, to represent that post.</p>
 <h3 id="animations">Animations</h3>
 <p>All JavaScript animations can be set at <code>static/js/zola386.js</code>.  Basically you can disable all animations, use one or two scans, and change the scan speed.  Personally, I prefer only one scan with a speed factor of 5.</p>
 <h3 id="language">Language</h3>
 <p>Under the <code>label_</code> variables, you can set names to better localize your site.  Note that you can change the language of a single page, by using <code>page.extra.lang</code>, which causes <code>&lt;html lang=""&gt;</code> to change only on that page.  A theme to provide information for its owner and SEO-friendly.</p>
 <h3 id="search">Search</h3>
-<p>Search was implemented according to the <a class="external" rel="external" href="https://www.getzola.org/documentation/content/search/">official documentation</a>.  It uses JavaScript to search on an indexed version of the site based on <code>search_index.LANG.js</code>, <code>elasticlunr.min.js</code>, and <code>search.js</code> --the first two are generated after each build.  If you're running your site in other default language other than English, you <strong>must</strong> change the <code>search_index.LANG.js</code> line in <code>index.html</code>, setting up <code>LANG</code> accordingly.</p>
+<p>Search was implemented according to the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/search/">official documentation</a>.  It uses JavaScript to search on an indexed version of the site based on <code>search_index.LANG.js</code>, <code>elasticlunr.min.js</code>, and <code>search.js</code> --the first two are generated after each build.  If you're running your site in other default language other than English, you <strong>must</strong> change the <code>search_index.LANG.js</code> line in <code>index.html</code>, setting up <code>LANG</code> accordingly.</p>
 <h3 id="other-files">Other files</h3>
 <p>The <code>content\_index.md</code> file must be properly configured to provide better experience.  Check out this file for more information.</p>
 <p>The 404 page is almost hardcoded, so you must edit it directly.</p>
 <h2 id="license">License</h2>
-<p>This theme is released under the MIT license.  For more information read the <a class="external" rel="external" href="https://github.com/lopes/zola.386/blob/master/LICENSE">License</a>.</p>
-<p><a class="external" rel="external" href="https://app.netlify.com/sites/zola386/deploys"><img src="https://api.netlify.com/api/v1/badges/5d6f1986-7bf3-40d3-b298-3339288585d4/deploy-status" alt="Netlify Status" /></a></p>
+<p>This theme is released under the MIT license.  For more information read the <a class="external" rel="noopener external" target="_blank" href="https://github.com/lopes/zola.386/blob/master/LICENSE">License</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://app.netlify.com/sites/zola386/deploys"><img src="https://api.netlify.com/api/v1/badges/5d6f1986-7bf3-40d3-b298-3339288585d4/deploy-status" alt="Netlify Status" /></a></p>
 
 
     </div>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;codinfox-zola&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="codinfox-zola | Zola">
+        <meta property="og:description" content="Codinfox theme for Zola">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;codinfox-zola&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="codinfox-zola | Zola">
+        <meta name="twitter:description" content="Codinfox theme for Zola">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "codinfox-zola",
+            "description": "Codinfox theme for Zola",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;codinfox-zola&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>codinfox-zola | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;codinfox-zola&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;codinfox-zola&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> codinfox-zola</h1>
+            <p>Codinfox theme for Zola</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;svavs.github.io&#x2F;">Silvano Sallese</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.11.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;svavs&#x2F;codinfox-zola">https:&#x2F;&#x2F;github.com&#x2F;svavs&#x2F;codinfox-zola</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;codinfox-zola.vercel.app&#x2F;">https:&#x2F;&#x2F;codinfox-zola.vercel.app&#x2F;</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2023-05-11T01:34:05+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="codinfox-zola">Codinfox-Zola</h1>
+<p><img src="https://github.com/svavs/codinfox-zola/workflows/Zola%20Deploy%20to%20Pages%20on%20push/badge.svg?branch=master" alt="Zola Deploy to Github Pages on push" /></p>
+<p>This is a <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.com">Zola</a> theme inspired to <a class="external" rel="noopener external" target="_blank" href="https://codinfox.github.com/">Codinfox-Lanyon</a>, a Lanyon based theme for <a class="external" rel="noopener external" target="_blank" href="http://jekyllrb.com">Jekyll</a>. See a live demo <a class="external" rel="noopener external" target="_blank" href="https://codinfox-zola.vercel.app/">here</a>.</p>
+<p>This theme places content first by tucking away navigation in a hidden drawer.</p>
+<ul>
+<li>Built for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.com">Zola</a></li>
+<li>Developed on GitHub and hosted for free on <a class="external" rel="noopener external" target="_blank" href="https://pages.github.com">GitHub Pages</a> and <a class="external" rel="noopener external" target="_blank" href="https://vercel.com">Vercel</a></li>
+<li>Coded with <a class="external" rel="noopener external" target="_blank" href="https://www.spacemacs.org">Spacemacs</a></li>
+</ul>
+<p>This theme supports:</p>
+<ol>
+<li>Theme colors: you can choose your favorite theme color (changing in <code>_config.scss</code>)</li>
+<li>Changable sidebar locations (reverse it by changing the boolean value in <code>_config.scss</code>)</li>
+<li>Integration of FontAwesome, MathJax, Disqus and Google Analytics</li>
+<li>Support for multilingual sites</li>
+<li>Support for Gravatar</li>
+<li>and numerous improvements over original Lanyon and Codinfox-Lanyon</li>
+</ol>
+<p>All the configuration variables and their meaning are inside:</p>
+<ul>
+<li><code>config.toml</code> (for the zola config variables and some extra variables required by this theme),</li>
+<li><code>author.toml</code> (for the personal informations to be displayed about the author of the site),</li>
+<li><code>nav.toml</code> (for the navigation menu structure available in the site's sidebar)</li>
+<li><code>_config.scss</code> (for the definition of some css customizations)</li>
+</ul>
+<p>The options are fairly straightforward and described in comments.</p>
+<p>Learn more and contribute on <a class="external" rel="noopener external" target="_blank" href="https://github.com/svavs/codinfox-zola">GitHub</a>.</p>
+<p>Have questions or suggestions? Feel free to <a class="external" rel="noopener external" target="_blank" href="https://github.com/svavs/codinfox-zola/issues/new">open an issue on GitHub</a> or <a class="external" rel="noopener external" target="_blank" href="https://twitter.com/svavs">ask me on Twitter</a>.</p>
+<h3 id="before-you-start">Before you start</h3>
+<p><a class="external" rel="noopener external" target="_blank" href="https://gravatar.com">Get a gravatar account</a> and set this up with a profile image.</p>
+<h4 id="add-gravatar-profile-image-to-codinfox-zola-theme">Add gravatar profile image to codinfox-zola theme</h4>
+<ol>
+<li>login to gravatar.com</li>
+<li>click My Profile</li>
+<li>click <strong>view profile</strong> in RH sidebar beneath profile name</li>
+<li>click JSON</li>
+<li>copy the <code>hash</code> value on line 4</li>
+<li>paste the <code>hash</code> value to <code>author.toml</code> line 10</li>
+</ol>
+<h3 id="install-and-use">Install and use</h3>
+<p>To use this theme you can follow the instruction required by any Zola theme.</p>
+<p>Simply clone this repository under the <code>themes</code> folder of your site's main folder.</p>
+<p>Then, define the required extra variables in the config.toml (take it from the config.toml file of the theme), create and define the author.toml and nav.toml configuration files in the main folder of your site (the same level of the config.toml), and that's it!</p>
+<p>To define your own home picture, put an image file in the <code>static/img/</code> folder and set the path in the config.extra.image variable.</p>
+<p>Now is possible to create the content inside the <code>content</code> folder as usual for Zola sites.</p>
+<p>If you want to have a Blog with this theme, then create a folder inside the <code>content</code> folder containing all the blog posts in Markdown format. Zola automatically generate a section that you can manage as a blog. See an example in the <a class="external" rel="noopener external" target="_blank" href="https://codinfox-zola.vercel.app/blog/">live demo</a>.</p>
+<h2 id="license">License</h2>
+<p>Open sourced under the <a href="https://zola.docs.saop.cc/en/themes/codinfox-zola/LICENSE.md">MIT license</a>.</p>
+<h2 id="todo">TODO</h2>
+<ul>
+<li>recaptcha for hiding email address link (https://developers.google.com/recaptcha/intro)</li>
+<li>hidden multilingual links in topbar for main index section pages</li>
+</ul>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;resume&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="resume | Zola">
+        <meta property="og:description" content="A resume theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;resume&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="resume | Zola">
+        <meta name="twitter:description" content="A resume theme">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "resume",
+            "description": "A resume theme",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;resume&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>resume | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;resume&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;resume&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> resume</h1>
+            <p>A resume theme</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;www.alongwy.top">Feng Yunlong</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.11.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;alongwy&#x2F;zola-resume">https:&#x2F;&#x2F;github.com&#x2F;alongwy&#x2F;zola-resume</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;resume.alongwy.top">https:&#x2F;&#x2F;resume.alongwy.top</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2021-09-04T01:10:58+08:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="zola-resume">Zola Resume</h1>
+<p><a href="https://zola.docs.saop.cc/en/themes/resume/README.CN.md">Chinese Version</a></p>
+<p>Redesigned form <a class="external" rel="noopener external" target="_blank" href="https://github.com/eddiewebb/hugo-resume">hugo resume</a>.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>This is basically a single-page website with auto-scrolling based on left-hand nav.</li>
+<li>Dedicated project/publications pages allow more detail.</li>
+<li>Includes a client-side search at '/search'.</li>
+<li>Includes an <code>/admin</code> endpoint that can allow authorized users to use a WYSIWYG editor and commit files back to markdown, but with a Wordpress/CMS like experience.</li>
+</ul>
+<h2 id="quick-start">Quick Start</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone git@github.com:alongwy/zola-resume.git</span></span>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> zola-resume</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># open http://127.0.0.1:1111/</span></span></code></pre><h2 id="installation">Installation</h2>
+<p>Just earlier we showed you how to run the theme directly. Now we start to install the theme in an existing site step by step.</p>
+<h3 id="step-1-create-a-new-zola-site">Step 1: Create a new zola site</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init mysite</span></span></code></pre><h3 id="step-2-install-zola-resume">Step 2: Install zola-resume</h3>
+<p>Download this theme to your themes directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> mysite/themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone git@github.com:alongwy/zola-resume.git</span></span></code></pre>
+<p>Or install as a submodule:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> mysite</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span><span style="color: #9399B2;font-style: italic;">  # if your project is a git repository already, ignore this command</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add git@github.com:alongwy/zola-resume.git themes/zola-resume</span></span></code></pre><h3 id="step-3-configuration">Step 3: Configuration</h3>
+<p>Enable the theme in your config.toml in the site derectory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;zola-resume&quot;</span></span></code></pre>
+<p>Or copy the config.toml.example from the theme directory to your project's root directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> themes/zola-resume/config.toml.example config.toml</span></span></code></pre><h4 id="for-cms">For CMS</h4>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> themes/zola-resume/static/admin/config.yml static/admin/config.yml</span></span></code></pre>
+<p>and change those</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># static/admin/config.yml</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #89B4FA;">backend</span><span style="color: #94E2D5;">:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  name</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> github</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  repo</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> USERNAME/REPO</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  branch</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> BRANCH</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  cms_label_prefix</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> netlify-cms/</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;">  site_domain</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> DOMAIN.netlify.com</span></span></code></pre><h3 id="step-4-add-new-content">Step 4: Add new content</h3>
+<p>You can copy the content from the theme directory to your project:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>cp -r themes/zola-resume/data .</span></span>
+<span class="giallo-l"><span>cp -r themes/zola-resume/content .</span></span></code></pre>
+<p>You can modify or add new posts in the content/blog, content/projects or other content directories as needed.</p>
+<h3 id="step-5-run-the-project">Step 5: Run the project</h3>
+<p>Just run zola serve in the root path of the project:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>zola serve</span></span></code></pre>
+<p>This will start the Zola development web server accessible by default at http://127.0.0.1:1111. Saved changes will live reload in the browser.</p>
+<h2 id="examples">Examples</h2>
+<p><img src="https://raw.githubusercontent.com/alongwy/zola-resume/master/screenshot.png" alt="screenshot" /></p>
+<p>See <a class="external" rel="noopener external" target="_blank" href="https://resume.alongwy.top">along's site</a> for a live example.</p>
+<h2 id="setup-use">Setup &amp; Use</h2>
+<p>This theme uses a combination of custom sections and some data files to drive content.</p>
+<h3 id="summary">Summary</h3>
+<p>Edit the main <code>contents/_index.md with a brief bio/summary</code></p>
+<h3 id="data-files">Data files</h3>
+<p>Data files are used for simple content presented on the homepage.</p>
+<ul>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/data/certifications.json">data/certifications.json</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/data/social.json">data/social.json</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/data/skills.json">data/skills.json</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/data/experience.json">data/experience.json</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/data/education.json">data/education.json</a></li>
+</ul>
+<h3 id="projects-opensource">Projects/Opensource</h3>
+<p>The difference indicates your role as originator or colaborator.</p>
+<h3 id="publications">Publications</h3>
+<p>Similar to projects, create them under <code>publications</code>. Include any papers, speaking engagements, articles, etc.</p>
+<h3 id="blog-posts">Blog / Posts</h3>
+<p>Similar to posts, create them under <code>blog</code>. Include any thoughts, musiings, etc.
+<strong>This template does not support a <code>posts</code> folder</strong></p>
+<h3 id="template-params">Template params</h3>
+<p>Almost All personal information outside the above details is captured by extra in <a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/config.toml"><code>config.toml</code></a>, or can be edited in the "Settings" collection if using CMS.</p>
+<h2 id="cms-editor-with-netlify-cms">CMS Editor with Netlify CMS</h2>
+<p><strong>Does not require deployment to Netlify!</strong></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.netlifycms.org/">Netlify CMS</a> is an open source project that enables CMS like experience for static site generation tools like Hugo. This theme includes a fully working integration and guide in <a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/tree/main/static/admin">static/admin</a></p>
+<h2 id="credits">Credits</h2>
+<p>This project ports the Hugo Resume theme by Feng Yunlong to support zola.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

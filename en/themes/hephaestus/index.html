@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;hephaestus&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="hephaestus | Zola">
+        <meta property="og:description" content="A portfolio theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;hephaestus&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="hephaestus | Zola">
+        <meta name="twitter:description" content="A portfolio theme">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "hephaestus",
+            "description": "A portfolio theme",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;hephaestus&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>hephaestus | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hephaestus&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;hephaestus&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> hephaestus</h1>
+            <p>A portfolio theme</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;bryantconquest.com">Bryant Conquest</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.4.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> AGPL</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;BConquest&#x2F;hephaestus">https:&#x2F;&#x2F;github.com&#x2F;BConquest&#x2F;hephaestus</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;bryantconquest.com">https:&#x2F;&#x2F;bryantconquest.com</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2023-03-19T11:40:54-05:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="hephaestus">hephaestus</h1>
+<p>Hephaestus is a portfolio theme for zola. It uses bulma css and supports using icons from ion-icon.</p>
+<p><img src="https://zola.docs.saop.cc/en/themes/hephaestus/screenshot.png?raw=true" alt="hephaestus screenshot" /></p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Installation</li>
+<li>Options
+<ul>
+<li>Navigation Bar</li>
+<li>Education</li>
+<li>Projects</li>
+<li>Skills</li>
+<li>Social Links</li>
+</ul>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>First, you will download the theme into your <code>themes</code> directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cd themes</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git clone https://github.com/BConquest/hephaestus</span></span></code></pre>
+<p>Second, you will enable the theme in your <code>config.toml</code> directory:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;hephaestus&quot;</span></span></code></pre><h2 id="options">Options</h2>
+<h3 id="navigation-bar">Navigation Bar</h3>
+<p>To edit the navigation bar you will need to edit your <code>config.toml</code> to include:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">{</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;foo&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/foo&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">{</span><span> text</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;bar&quot;</span><span style="color: #9399B2;">,</span><span> link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/bar&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>You can have as many items as you want to have and the links can be to anything.</p>
+<h3 id="education">Education</h3>
+<p>To edit the education that is displayed you will need to create a directory in <code>content</code>.
+In the <code>_index.md</code> the frontmatter needs to include:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;foo&quot;</span></span>
+<span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;education.html&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Name&quot;</span></span></code></pre>
+<p>For every educational level you want to add you will need to create a new markdown file that includes the frontmatter:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>title = &quot;place of education&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>[extra]</span></span>
+<span class="giallo-l"><span>image = &quot;image-location&quot;</span></span>
+<span class="giallo-l"><span>link = &quot;link to school&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p>Any content that is typed will be rendered underneath these two items.</p>
+<h3 id="projects">Projects</h3>
+<p>To edit the projects that are displayed you will need to create a directory in <code>content</code>.
+In the <code>_index.md</code> the frontmatter needs to include:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;foo&quot;</span></span>
+<span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;projects.html&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;bar&quot;</span></span></code></pre>
+<p>Then for every project you want to add you will need to format the <code>*.md</code> as:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;foo&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #B4BEFE;">[extra]</span></span>
+<span class="giallo-l"><span>image = &quot;/image_location&quot;</span></span>
+<span class="giallo-l"><span>link = &quot;link to project&quot;</span></span>
+<span class="giallo-l"><span>technologies = [&quot;bar&quot;, &quot;baz&quot;]</span></span>
+<span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>Description of project named foo.</span></span></code></pre><h3 id="skills">Skills</h3>
+<p>To edit the skills that you want to display it is important to note that there are two types of skills that can be
+displayed (lan, and tools). To format the look you will need to create a directory in <code>content</code> that includes the
+frontmatter of:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;foo&quot;</span></span>
+<span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;skills.html&quot;</span></span>
+<span class="giallo-l"><span>page_template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;skills.html&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;author-name&quot;</span></span>
+<span class="giallo-l"><span>image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;image-location&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>lan</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">{</span><span> lang</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;language&quot;</span><span style="color: #9399B2;">,</span><span> expr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;num between 1-5&quot;</span><span style="color: #9399B2;">,</span><span> image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;image-location&quot;</span><span style="color: #9399B2;">,</span><span> comfort</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;word to describe comfort&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>tools</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">{</span><span> tool</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tool-name&quot;</span><span style="color: #9399B2;">,</span><span> expr</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;num between 1-5&quot;</span><span style="color: #9399B2;">,</span><span> image</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tool-image&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h3 id="social-links">Social Links</h3>
+<p>To edit the social links that appear in the footer of the page, you need to edit your <code>config.toml</code> to include:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>social = [</span></span>
+<span class="giallo-l"><span>{ user = &quot;username&quot;, link = &quot;link&quot;, icon = &quot;icon-name from ion-icon&quot;},</span></span>
+<span class="giallo-l"><span>]</span></span></code></pre>
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

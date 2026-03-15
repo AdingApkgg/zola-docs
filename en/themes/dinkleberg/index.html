@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;dinkleberg&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="dinkleberg | Zola">
+        <meta property="og:description" content="The Rust BR theme for Gutenberg">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;dinkleberg&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="dinkleberg | Zola">
+        <meta name="twitter:description" content="The Rust BR theme for Gutenberg">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "dinkleberg",
+            "description": "The Rust BR theme for Gutenberg",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;dinkleberg&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>dinkleberg | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dinkleberg&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;dinkleberg&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> dinkleberg</h1>
+            <p>The Rust BR theme for Gutenberg</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;github.com&#x2F;guidiego">Guilherme Diego</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.4.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;rust-br&#x2F;dinkleberg">https:&#x2F;&#x2F;github.com&#x2F;rust-br&#x2F;dinkleberg</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;rust-br.github.io&#x2F;blog&#x2F;">https:&#x2F;&#x2F;rust-br.github.io&#x2F;blog&#x2F;</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2019-10-18T00:30:44-03:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <p><img src="https://user-images.githubusercontent.com/10289071/40806112-dd79ae78-64f6-11e8-8f24-63f387d5bb8f.jpg" alt="753986_1" /></p>
+<p>Rust BR Blog template for Gutenberg</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>A kind of i18n for base words as: "Next", "Previous", "Pages", "Categories"</li>
+<li>Blog Title and Logo on extra configurations</li>
+<li>Auto-sidebar links by configuration</li>
+<li>Simple design based on Medium</li>
+<li>SEO using structured data and another features</li>
+</ul>
+<h2 id="configurations">Configurations</h2>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>blog_logo</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;/imgs/common/logo.png&quot;</span><span style="color: #9399B2;font-style: italic;"> #will appear on top header</span></span>
+<span class="giallo-l"><span>blog_title</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;rust::br::Blog&quot;</span><span style="color: #9399B2;font-style: italic;"> #will appear on top header after logo</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">## i18n words</span></span>
+<span class="giallo-l"><span>label_tags</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tags&quot;</span></span>
+<span class="giallo-l"><span>label_tag</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tag&quot;</span></span>
+<span class="giallo-l"><span>label_categories</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Categorias&quot;</span></span>
+<span class="giallo-l"><span>label_category</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Categoria&quot;</span></span>
+<span class="giallo-l"><span>label_relative_posts</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Postagens Relacionadas&quot;</span></span>
+<span class="giallo-l"><span>label_next</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Próxima&quot;</span></span>
+<span class="giallo-l"><span>label_previous</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Anterior&quot;</span></span>
+<span class="giallo-l"><span>label_page</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Página&quot;</span></span>
+<span class="giallo-l"><span>label_of</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;de&quot;</span></span>
+<span class="giallo-l"><span>label_minutes</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;minutos&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>og_image</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;&quot;</span><span style="color: #9399B2;font-style: italic;"> # Image that will appear on social media</span></span>
+<span class="giallo-l"><span>og_alt_image</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;&quot;</span><span style="color: #9399B2;font-style: italic;"> # Alt for og_image</span></span>
+<span class="giallo-l"><span>og_site_name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;&quot;</span><span style="color: #9399B2;font-style: italic;"> # Site Name for Open Graphic</span></span>
+<span class="giallo-l"><span>keywords</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;&quot;</span><span style="color: #9399B2;font-style: italic;"> # Keywords for SEO</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>educational_use</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;knowledge share&quot;</span><span style="color: #9399B2;font-style: italic;"> # OPTIONAL</span></span>
+<span class="giallo-l"><span>copyright_year</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;2018&quot;</span><span style="color: #9399B2;font-style: italic;"> # OPTIONAL</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>fb_app_id</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;???&quot;</span><span style="color: #9399B2;font-style: italic;"> # OPTIONAL, Facebook App Id to help in metrics</span></span>
+<span class="giallo-l"><span>twitter_username</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;@???&quot;</span><span style="color: #9399B2;font-style: italic;"> # OPTIONAL, Twitter User to help with metrics</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;">## Sidebar automatic links</span></span>
+<span class="giallo-l"><span>sidebar</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Social&quot;</span><span style="color: #9399B2;">,</span><span> urls</span><span style="color: #94E2D5;">=</span><span style="color: #9399B2;">[</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Telegram&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://t.me/rustlangbr&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Github&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://github.com/rust-br&quot;</span><span style="color: #9399B2;">},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    ]},</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span>name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Divida Conhecimento!&quot;</span><span style="color: #9399B2;">,</span><span> urls</span><span style="color: #94E2D5;">=</span><span style="color: #9399B2;">[</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">        {</span><span>name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Contribuir!&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://rust-br.github.io/blog/hello-world&quot;</span><span style="color: #9399B2;">}</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    ]}</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"></span></code></pre>
+<p>This configuration was the same configuration that we use on <a class="external" rel="noopener external" target="_blank" href="https://rust-br.github.io/blog">RustBR Blog</a></p>
+<h3 id="favicons-and-other-stuff">Favicons and other stuff</h3>
+<p>By default Dinkleberg wait that you have all icons on root of your static, for it you can use the site <a class="external" rel="noopener external" target="_blank" href="https://www.favicon-generator.org/">https://www.favicon-generator.org/</a> to generate that bundle and put it inside you <code>/static</code> :D</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

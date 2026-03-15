@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;terminus&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="terminus | Zola">
+        <meta property="og:description" content="A dark duotone retro theme for Zola">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;terminus&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="terminus | Zola">
+        <meta name="twitter:description" content="A dark duotone retro theme for Zola">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "terminus",
+            "description": "A dark duotone retro theme for Zola",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;terminus&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>terminus | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                            
+                                
+                                    
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;terminus&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;terminus&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> terminus</h1>
+            <p>A dark duotone retro theme for Zola</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;eyalkalderon.com">Eyal Kalderon</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.22.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;ebkalderon&#x2F;terminus">https:&#x2F;&#x2F;github.com&#x2F;ebkalderon&#x2F;terminus</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;ebkalderon.github.io&#x2F;terminus&#x2F;">https:&#x2F;&#x2F;ebkalderon.github.io&#x2F;terminus&#x2F;</a></p>
+            
+            
+              <div>
+              <p><i class="fas fa-tags"></i> 标签:</p>
+              <ul style="list-style-type: none;">
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;dark&#x2F;"><i class="fas fa-tag"></i> dark</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;blog&#x2F;"><i class="fas fa-tag"></i> blog</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;minimal&#x2F;"><i class="fas fa-tag"></i> minimal</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;personal&#x2F;"><i class="fas fa-tag"></i> personal</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;responsive&#x2F;"><i class="fas fa-tag"></i> responsive</a></li>
+                
+              
+                
+                
+                  <li><a href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;theme-tags&#x2F;seo&#x2F;"><i class="fas fa-tag"></i> seo</a></li>
+                
+              
+              </div>
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2026-03-07T15:47:17+01:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="terminus">Terminus</h1>
+<p>An accessible <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> theme with a dark color
+scheme and retro computer terminal-like vibe, multi-language support, zero
+required JavaScript, pretty font ligatures, and a perfect baseline Lighthouse
+score.</p>
+<p><strong>Try the demo now:</strong> https://ebkalderon.github.io/terminus/</p>
+<p><img src="https://github.com/user-attachments/assets/ae7c378b-2987-4dbd-a84e-7d272e8856bc" alt="Screenshot of the Terminus demo website on a desktop browser" /></p>
+<p>Terminus is largely a port of Radek Kozieł's <a class="external" rel="noopener external" target="_blank" href="https://github.com/panr/hugo-theme-terminal">Terminal Theme for
+Hugo</a> but with several key
+differences. Credit to the <a class="external" rel="noopener external" target="_blank" href="https://github.com/ejmg/zerm">zerm</a> and
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/welpo/tabi">tabi</a> themes for inspiring some of these
+changes.</p>
+<ul>
+<li>Better accessibility (WCAG 2.2 Level AA minimum target)</li>
+<li>Mobile-first design with improved responsiveness</li>
+<li>Social media icons in footer</li>
+<li>Support for <a class="external" rel="noopener external" target="_blank" href="https://ebkalderon.github.io/terminus/blog/shortcodes/#alert-shortcode">GitHub-style alerts</a></li>
+<li>SEO friendly (better OpenGraph support, will add Schema.org eventually)</li>
+<li>No post image previews for a cleaner look</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+Perfect baseline Lighthouse score (Performance, Accessibility, Best Practices and SEO).</li>
+<li><input disabled="" type="checkbox" checked=""/>
+<a href="https://zola.docs.saop.cc/en/themes/terminus/./theme.toml#L70-L73">Social media icons in footer</a></li>
+<li><input disabled="" type="checkbox" checked=""/>
+<a class="external" rel="noopener external" target="_blank" href="https://ebkalderon.github.io/terminus/blog/shortcodes/">Custom shortcodes</a></li>
+<li><input disabled="" type="checkbox" checked=""/>
+Copy button on code blocks</li>
+<li><input disabled="" type="checkbox"/>
+<a class="external" rel="noopener external" target="_blank" href="https://ebkalderon.github.io/terminus/">Comprehensive documentation</a> (still working on it!)</li>
+<li><input disabled="" type="checkbox"/>
+Searchable archive page</li>
+<li><input disabled="" type="checkbox"/>
+Projects portfolio page</li>
+<li><input disabled="" type="checkbox"/>
+Site navigation submenus</li>
+<li><input disabled="" type="checkbox" checked=""/>
+Customizable <a href="https://zola.docs.saop.cc/en/themes/terminus/./theme.toml#L22-L27">color schemes</a></li>
+<li><input disabled="" type="checkbox" checked=""/>
+<a class="external" rel="noopener external" target="_blank" href="https://katex.org/">KaTeX</a> support for mathematical notation</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="manual-installation">Manual Installation</h3>
+<ol>
+<li>Initialize a Git repository in your <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/cli-usage/#init">Zola project directory</a>, if you haven't
+already:<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span></span></code></pre></li>
+<li>Add the theme as a Git submodule:<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git submodule add https://github.com/ebkalderon/terminus.git themes/terminus</span></span></code></pre></li>
+<li>Enable the theme in your <code>config.toml</code>:<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;terminus&quot;</span></span></code></pre></li>
+<li>Set a website <code>title</code> in your  <code>config.toml</code>:<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Site Title&quot;</span></span></code></pre></li>
+<li>Create a text file named <code>content/_index.md</code>. This file controls how your
+home page looks and behaves. Choose <em>exactly one</em> of the following options:
+<ol>
+<li><strong>Serve blog posts from <code>/</code>:</strong><pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;Home&quot;</span></span>
+<span class="giallo-l"><span>paginate_by = 5  # Show 5 posts per page.</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre></li>
+<li><strong>Serve posts from a different path, e.g. <code>blog/</code>:</strong><pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;Home&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #B4BEFE;">[extra]</span></span>
+<span class="giallo-l"><span>section_path = &quot;blog/_index.md&quot;  # Where to find your posts.</span></span>
+<span class="giallo-l"><span>max_posts = 5  # Show 5 posts and a link to blog section on home page.</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre></li>
+</ol>
+</li>
+</ol>
+<h3 id="updating-terminus">Updating Terminus</h3>
+<p>To update the Terminus theme as a Git submodule, run:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule update --remote themes/terminus</span></span></code></pre><h2 id="license">License</h2>
+<p>This project is licensed under the terms of the <a href="https://zola.docs.saop.cc/en/themes/terminus/./LICENSE">MIT license</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

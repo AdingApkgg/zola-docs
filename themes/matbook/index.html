@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;matbook&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;matbook&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -164,8 +169,8 @@
 
     <hr>
     <h1 id="matbook">MATbook</h1>
-<p>A <a class="external" rel="external" href="https://github.com/getzola/zola">Zola</a> theme for personal notebooks or chapter books. Based on  <a class="external" rel="external" href="https://www.vincentprouillet.com/">Vincent Prouillet</a>'s <a class="external" rel="external" href="https://github.com/getzola/book">Book</a>, inspired by <a class="external" rel="external" href="https://web.stanford.edu/~dkim04/">Dongryul Kim</a>'s <a class="external" rel="external" href="https://github.com/dongryul-kim/olivine">Olivine</a>.</p>
-<p>Live Demo: <a class="external" rel="external" href="https://srliu3264.github.io/MATbook-live-demo/">https://srliu3264.github.io/MATbook-live-demo</a></p>
+<p>A <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> theme for personal notebooks or chapter books. Based on  <a class="external" rel="noopener external" target="_blank" href="https://www.vincentprouillet.com/">Vincent Prouillet</a>'s <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/book">Book</a>, inspired by <a class="external" rel="noopener external" target="_blank" href="https://web.stanford.edu/~dkim04/">Dongryul Kim</a>'s <a class="external" rel="noopener external" target="_blank" href="https://github.com/dongryul-kim/olivine">Olivine</a>.</p>
+<p>Live Demo: <a class="external" rel="noopener external" target="_blank" href="https://srliu3264.github.io/MATbook-live-demo/">https://srliu3264.github.io/MATbook-live-demo</a></p>
 <h2 id="contents">Contents</h2>
 <ul>
 <li>MATbook
@@ -211,7 +216,7 @@
 <li>Mathjax, Tikzjax, and basic theorem enviroments included for mathematics and commutative diagrams.</li>
 </ul>
 <h2 id="installation">Installation</h2>
-<p>Please follow the Zola documentation on <a class="external" rel="external" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">installing and using themes</a> to install.</p>
+<p>Please follow the Zola documentation on <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">installing and using themes</a> to install.</p>
 <h2 id="configurations">Configurations</h2>
 <h3 id="enable-the-theme">Enable the theme</h3>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;MATbook&quot;</span></span>
@@ -282,19 +287,19 @@ You can disable that by setting the <code>book_only_current_section_pages</code>
 <p>Then in each chapter(folder), each section should be a <code>page</code> and should have its <code>weight</code> variable set to its section
 number.</p>
 <p>If you don't want welcome/preface page of the book or of a chapter, you can use <code>redirect_to</code> front-matter variable in the corresponding <code>_index.md</code>.</p>
-<p>You can write a shell scripts to automate creating new chapters or new notes. For example, you can consult my <code>zshconfig</code> project on my <a class="external" rel="external" href="https://github.com/srliu3264">github</a> (If you can not see it, probably it is bacasue I currently make it private. You can email me for access.)</p>
+<p>You can write a shell scripts to automate creating new chapters or new notes. For example, you can consult my <code>zshconfig</code> project on my <a class="external" rel="noopener external" target="_blank" href="https://github.com/srliu3264">github</a> (If you can not see it, probably it is bacasue I currently make it private. You can email me for access.)</p>
 <h3 id="hotkeys">Hotkeys</h3>
 <p>In a browser, you can always type <code>?</code> to toggle the help page, reminding you of hotkeys.</p>
-<p>The rule is inspired by Vim, Zathura, and <a class="external" rel="external" href="https://github.com/dongryul-kim/olivine">Olivine</a>.</p>
+<p>The rule is inspired by Vim, Zathura, and <a class="external" rel="noopener external" target="_blank" href="https://github.com/dongryul-kim/olivine">Olivine</a>.</p>
 <p>The list of hotkeys may keep expanding, so I will not list all here. You can use <code>?</code> the help page, or see <code>hotkeys.js</code> manually to check existing functions.</p>
-<p>The hotkey <code>i</code> will allow you to idle inside MATRIX (inspired by <a class="external" rel="external" href="https://github.com/abishekvashok/cmatrix">cmatrix</a>), and since MAT is both initials for matrix and math, I lazily named this project after it.</p>
+<p>The hotkey <code>i</code> will allow you to idle inside MATRIX (inspired by <a class="external" rel="noopener external" target="_blank" href="https://github.com/abishekvashok/cmatrix">cmatrix</a>), and since MAT is both initials for matrix and math, I lazily named this project after it.</p>
 
 
     </div>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

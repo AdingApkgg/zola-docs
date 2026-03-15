@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> Forum</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -116,11 +121,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -130,7 +135,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;getting-started&#x2F;overview&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
                         
                     </li>
                 </ul>
@@ -373,9 +378,9 @@
         
     <h1>Overview</h1>
     <h2 id="zola-at-a-glance"><a class="zola-anchor" href="#zola-at-a-glance" aria-label="Anchor link for: zola-at-a-glance">🔗</a>Zola at a Glance</h2>
-<p>Zola is a static site generator (SSG), similar to <a class="external" rel="external" href="https://gohugo.io/">Hugo</a>, <a class="external" rel="external" href="https://blog.getpelican.com/">Pelican</a>, and <a class="external" rel="external" href="https://jekyllrb.com/">Jekyll</a> (for a comprehensive list of SSGs, please see <a class="external" rel="external" href="https://jamstack.org/generators">Jamstack</a>). It is written in <a class="external" rel="external" href="https://www.rust-lang.org/">Rust</a> and uses the <a class="external" rel="external" href="https://keats.github.io/tera/">Tera</a> template engine, which is similar to <a class="external" rel="external" href="https://jinja.palletsprojects.com/en/2.10.x/">Jinja2</a>, <a class="external" rel="external" href="https://docs.djangoproject.com/en/2.2/topics/templates/">Django templates</a>, <a class="external" rel="external" href="https://shopify.github.io/liquid/">Liquid</a>, and <a class="external" rel="external" href="https://twig.symfony.com/">Twig</a>.</p>
-<p>Content is written in <a class="external" rel="external" href="https://commonmark.org/">CommonMark</a>, a strongly defined, highly compatible specification of <a class="external" rel="external" href="https://www.markdownguide.org/">Markdown</a>. Zola uses <a class="external" rel="external" href="https://github.com/raphlinus/pulldown-cmark#pulldown-cmark">pulldown-cmark</a> to parse markdown files. The goal of this library is 100% compliance with the CommonMark spec. It adds a few additional features such as parsing footnotes, Github flavored tables, Github flavored task lists and strikethrough.</p>
-<p>SSGs use dynamic templates to transform content into static HTML pages. Static sites are thus very fast and require no databases, making them easy to host. A comparison between static and dynamic sites, such as WordPress, Drupal, and Django, can be found <a class="external" rel="external" href="https://dev.to/ashenmaster/static-vs-dynamic-sites-61f">here</a>.</p>
+<p>Zola is a static site generator (SSG), similar to <a class="external" rel="noopener external" target="_blank" href="https://gohugo.io/">Hugo</a>, <a class="external" rel="noopener external" target="_blank" href="https://blog.getpelican.com/">Pelican</a>, and <a class="external" rel="noopener external" target="_blank" href="https://jekyllrb.com/">Jekyll</a> (for a comprehensive list of SSGs, please see <a class="external" rel="noopener external" target="_blank" href="https://jamstack.org/generators">Jamstack</a>). It is written in <a class="external" rel="noopener external" target="_blank" href="https://www.rust-lang.org/">Rust</a> and uses the <a class="external" rel="noopener external" target="_blank" href="https://keats.github.io/tera/">Tera</a> template engine, which is similar to <a class="external" rel="noopener external" target="_blank" href="https://jinja.palletsprojects.com/en/2.10.x/">Jinja2</a>, <a class="external" rel="noopener external" target="_blank" href="https://docs.djangoproject.com/en/2.2/topics/templates/">Django templates</a>, <a class="external" rel="noopener external" target="_blank" href="https://shopify.github.io/liquid/">Liquid</a>, and <a class="external" rel="noopener external" target="_blank" href="https://twig.symfony.com/">Twig</a>.</p>
+<p>Content is written in <a class="external" rel="noopener external" target="_blank" href="https://commonmark.org/">CommonMark</a>, a strongly defined, highly compatible specification of <a class="external" rel="noopener external" target="_blank" href="https://www.markdownguide.org/">Markdown</a>. Zola uses <a class="external" rel="noopener external" target="_blank" href="https://github.com/raphlinus/pulldown-cmark#pulldown-cmark">pulldown-cmark</a> to parse markdown files. The goal of this library is 100% compliance with the CommonMark spec. It adds a few additional features such as parsing footnotes, Github flavored tables, Github flavored task lists and strikethrough.</p>
+<p>SSGs use dynamic templates to transform content into static HTML pages. Static sites are thus very fast and require no databases, making them easy to host. A comparison between static and dynamic sites, such as WordPress, Drupal, and Django, can be found <a class="external" rel="noopener external" target="_blank" href="https://dev.to/ashenmaster/static-vs-dynamic-sites-61f">here</a>.</p>
 <p>To get a taste of Zola, please see the quick overview below.</p>
 <h2 id="first-steps-with-zola"><a class="zola-anchor" href="#first-steps-with-zola" aria-label="Anchor link for: first-steps-with-zola">🔗</a>First Steps with Zola</h2>
 <p>Unlike some SSGs, Zola makes no assumptions regarding the structure of your site. In this overview, we'll be making a simple blog site.</p>
@@ -487,12 +492,12 @@
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>Listening for changes in .../myblog/{config.toml,content,sass,static,templates}</span></span>
 <span class="giallo-l"><span>Press Ctrl+C to stop</span></span></code></pre>
-<p>If you point your web browser to <a class="external" rel="external" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a>, you will see a message saying, "This is my blog made with Zola."</p>
-<p>If you go to <a class="external" rel="external" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>, you will currently get a 404 which we will fix next.</p>
+<p>If you point your web browser to <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a>, you will see a message saying, "This is my blog made with Zola."</p>
+<p>If you go to <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>, you will currently get a 404 which we will fix next.</p>
 <h3 id="content"><a class="zola-anchor" href="#content" aria-label="Anchor link for: content">🔗</a>Content</h3>
 <p>We'll now create some content that Zola will use to generate site pages based on our templates.</p>
 <h4 id="sections"><a class="zola-anchor" href="#sections" aria-label="Anchor link for: sections">🔗</a>Sections</h4>
-<p>We'll start by creating <code>content/blog/_index.md</code>. This file tells Zola that <code>blog</code> is a <a href="https://zola.docs.saop.cc/documentation/content/section/">section</a>, which is how content is categorized in Zola. In the <code>_index.md</code> file, we'll set the following variables in <a class="external" rel="external" href="https://github.com/toml-lang/toml">TOML</a> format:</p>
+<p>We'll start by creating <code>content/blog/_index.md</code>. This file tells Zola that <code>blog</code> is a <a href="https://zola.docs.saop.cc/documentation/content/section/">section</a>, which is how content is categorized in Zola. In the <code>_index.md</code> file, we'll set the following variables in <a class="external" rel="noopener external" target="_blank" href="https://github.com/toml-lang/toml">TOML</a> format:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>title = &quot;List of blog posts&quot;</span></span>
 <span class="giallo-l"><span>sort_by = &quot;date&quot;</span></span>
@@ -509,7 +514,7 @@
 </ul>
 <p>For a full list of section variables, please see the <a href="https://zola.docs.saop.cc/documentation/content/section/">section</a> documentation.</p>
 <p>The value of our <code>title</code> variable here is available to templates such as <code>blog.html</code> as <code>{{ section.title }}</code>.</p>
-<p>If you now go to <a class="external" rel="external" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>, you will see an empty list of posts.</p>
+<p>If you now go to <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>, you will see an empty list of posts.</p>
 <h4 id="markdown"><a class="zola-anchor" href="#markdown" aria-label="Anchor link for: markdown">🔗</a>Markdown</h4>
 <p>We'll now create some blog posts. Create <code>content/blog/first.md</code> with the following content.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
@@ -519,14 +524,14 @@
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>This is my first blog post.</span></span></code></pre>
 <p>The <em>title</em> and <em>date</em> will be available to us in the <code>blog-page.html</code> template as <code>{{ page.title }}</code> and <code>{{ page.date }}</code>, respectively. All text below the closing <code>+++</code> will be available to templates as <code>{{ page.content }}</code>.</p>
-<p>If you now go back to our blog list page at <a class="external" rel="external" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>, you should see our lonely post. Let's add another. Create <code>content/blog/second.md</code> with the contents:</p>
+<p>If you now go back to our blog list page at <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>, you should see our lonely post. Let's add another. Create <code>content/blog/second.md</code> with the contents:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>title = &quot;My second post&quot;</span></span>
 <span class="giallo-l"><span>date = 2019-11-28</span></span>
 <span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>This is my second blog post.</span></span></code></pre>
-<p>Back at <a class="external" rel="external" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>, our second post shows up on top of the list because it's newer than the first post and we had set <em>sort_by = "date"</em> in our <code>_index.md</code> file.</p>
+<p>Back at <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111/blog/">http://127.0.0.1:1111/blog/</a>, our second post shows up on top of the list because it's newer than the first post and we had set <em>sort_by = "date"</em> in our <code>_index.md</code> file.</p>
 <p>As a final step, let's modify <code>templates/index.html</code> (our home page) to link to our list of blog posts:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{% extends &quot;base.html&quot; %}</span></span>
 <span class="giallo-l"></span>
@@ -544,7 +549,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
         </footer>
 

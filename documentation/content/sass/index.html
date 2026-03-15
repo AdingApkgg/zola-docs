@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;content&#x2F;sass&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -376,10 +381,10 @@
     <h1>Sass</h1>
     <p>Sass 是一种流行的 CSS 预处理器，它添加了特殊功能（如变量、嵌套规则）以方便维护大型 CSS 规则集。如果你好奇 Sass 是什么以及为什么它对你的静态站点样式有用，以下链接可能会让你感兴趣：</p>
 <ul>
-<li><a class="external" rel="external" href="https://sass-lang.com/">Sass 官方网站</a></li>
-<li><a class="external" rel="external" href="https://alistapart.com/article/why-sass">为什么选择 Sass?</a>, 作者 Dan Cederholm</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://sass-lang.com/">Sass 官方网站</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://alistapart.com/article/why-sass">为什么选择 Sass?</a>, 作者 Dan Cederholm</li>
 </ul>
-<p>它目前使用 <a class="external" rel="external" href="https://github.com/connorskees/grass">grass</a>，这是一个大致等同于 dart-sass 的 Rust 实现。</p>
+<p>它目前使用 <a class="external" rel="noopener external" target="_blank" href="https://github.com/connorskees/grass">grass</a>，这是一个大致等同于 dart-sass 的 Rust 实现。</p>
 <h2 id="zai-zola-zhong-shi-yong-sass"><a class="zola-anchor" href="#zai-zola-zhong-shi-yong-sass" aria-label="Anchor link for: zai-zola-zhong-shi-yong-sass">🔗</a>在 Zola 中使用 Sass</h2>
 <p>Zola 总是编译主题目录中的 Sass 文件。
 但是，为了让 Zola 处理 <code>sass</code> 文件夹中的文件，你需要在 <code>config.toml</code> 中设置 <code>compile_sass = true</code>。</p>
@@ -396,8 +401,8 @@
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    │</span><span style="color: #A6E3A1;">   └── _common_mixins.scss</span><span style="color: #9399B2;font-style: italic;"> # 此文件不会被放入 `public` 文件夹，但其他文件可以 @import 它。</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    └──</span><span style="color: #A6E3A1;"> secret-side-project</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">        └──</span><span style="color: #A6E3A1;"> style.scss //</span><span> -</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> ./public/secret-side-project/style.css</span></span></code></pre>
-<p>名称中带有前导下划线的文件不会被放置在 <code>public</code> 文件夹中，但仍可用作 <code>@import</code> 依赖项。有关更多信息，请参阅 <a class="external" rel="external" href="https://sass-lang.com/guide">Sass 基础</a> 的 "Partials" section。</p>
-<p>带有 <code>scss</code> 扩展名的文件使用 "Sassy CSS" 语法，而带有 <code>sass</code> 扩展名的文件使用 "缩进" 语法：<a class="external" rel="external" href="https://sass-lang.com/documentation/syntax">https://sass-lang.com/documentation/syntax</a>。
+<p>名称中带有前导下划线的文件不会被放置在 <code>public</code> 文件夹中，但仍可用作 <code>@import</code> 依赖项。有关更多信息，请参阅 <a class="external" rel="noopener external" target="_blank" href="https://sass-lang.com/guide">Sass 基础</a> 的 "Partials" section。</p>
+<p>带有 <code>scss</code> 扩展名的文件使用 "Sassy CSS" 语法，而带有 <code>sass</code> 扩展名的文件使用 "缩进" 语法：<a class="external" rel="noopener external" target="_blank" href="https://sass-lang.com/documentation/syntax">https://sass-lang.com/documentation/syntax</a>。
 如果同一文件夹中存在具有相同基本名称的 <code>scss</code> 和 <code>sass</code> 文件，Zola 将返回错误以避免混淆——见上面的示例。</p>
 
 
@@ -406,7 +411,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

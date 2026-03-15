@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;cloudflare-workers&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -376,7 +381,7 @@
     <h1>Cloudflare Workers</h1>
     <p>Cloudflare 是一家云解决方案提供商，拥有庞大的专有内容分发网络 (CDN)。像 Netlify 或 Vercel 一样，Cloudflare Workers 使部署过程灵活而简单。你可以将 GitHub 仓库添加到该服务，并在每次 PR 后自动构建和托管基于 Zola 的网站。</p>
 <h2 id="zhun-bei-ni-de-cang-ku"><a class="zola-anchor" href="#zhun-bei-ni-de-cang-ku" aria-label="Anchor link for: zhun-bei-ni-de-cang-ku">🔗</a>准备你的仓库</h2>
-<p>在创建 Cloudflare Worker 之前，你必须为 <a class="external" rel="external" href="https://developers.cloudflare.com/workers/wrangler/">Wrangler</a> 添加配置，以便在调用默认命令 <code>npx wrangler deploy</code> 时构建你的站点。</p>
+<p>在创建 Cloudflare Worker 之前，你必须为 <a class="external" rel="noopener external" target="_blank" href="https://developers.cloudflare.com/workers/wrangler/">Wrangler</a> 添加配置，以便在调用默认命令 <code>npx wrangler deploy</code> 时构建你的站点。</p>
 <h3 id="chuang-jian-gou-jian-jiao-ben"><a class="zola-anchor" href="#chuang-jian-gou-jian-jiao-ben" aria-label="Anchor link for: chuang-jian-gou-jian-jiao-ben">🔗</a>创建构建脚本</h3>
 <p>首先，你需要一个构建脚本，用于从 GitHub Releases 获取并提取 Zola。如果你的站点仓库有子模块，例如主题，执行子模块更新也是必要的，因为 Cloudflare 不会递归克隆仓库。让我们将脚本命名为 <code>build.sh</code> 并将其添加到仓库的根目录。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F5C2E7;font-style: italic;">#!/usr/bin/env bash</span></span>
@@ -408,7 +413,7 @@
 <li>保持默认设置并点击 <em>"Deploy"</em></li>
 </ol>
 <p>你的网站现在已构建并部署到 Cloudflare 的网络！你可以在 Workers 仪表板中添加自定义域名或修改设置。</p>
-<p>你可以在 <a class="external" rel="external" href="https://developers.cloudflare.com/workers/get-started/dashboard/">使用 Cloudflare 仪表板创建 Workers 应用程序</a> 中找到更多文档。</p>
+<p>你可以在 <a class="external" rel="noopener external" target="_blank" href="https://developers.cloudflare.com/workers/get-started/dashboard/">使用 Cloudflare 仪表板创建 Workers 应用程序</a> 中找到更多文档。</p>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
 <p>https://developers.cloudflare.com/workers/wrangler/configuration/#inheritable-keys</p>
 </div>
@@ -419,7 +424,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

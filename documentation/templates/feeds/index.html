@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;templates&#x2F;feeds&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -376,7 +381,7 @@
     <h1>Feeds (订阅源)</h1>
     <p>如果站点 <code>config.toml</code> 文件设置 <code>generate_feeds = true</code>，那么 Zola 将为站点生成 feed 文件，根据 <code>config.toml</code> 中的 <code>feed_filenames</code> 设置命名，默认为 <code>atom.xml</code>。给定 feed 文件名 <code>atom.xml</code>，生成的文件将位于 <code>base_url/atom.xml</code>，基于 <code>templates</code> 目录中的 <code>atom.xml</code> 文件，或内置的 Atom 模板。</p>
 <p><code>feed_filenames</code> 可以设置为任何值，但提供了内置模板 <code>atom.xml</code>（首选 Atom 1.0 格式）和 <code>rss.xml</code>（RSS 2.0 格式）。如果你选择不同的文件名（例如 <code>feed.xml</code>），你需要自己提供模板。</p>
-<p>如果你想扩展或修改内置模板，你可以从 <a class="external" rel="external" href="https://github.com/getzola/zola/tree/master/components/templates/src/builtins">源代码</a> 获取副本，并将其以适当的名称放置在 <code>templates/</code> 目录中。你可以在 <a class="external" rel="external" href="https://validator.w3.org/feed/docs/">W3C Feed Validation Service</a> 中查看 Atom 1.0 和 RSS 2.0 的规范文档。</p>
+<p>如果你想扩展或修改内置模板，你可以从 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/tree/master/components/templates/src/builtins">源代码</a> 获取副本，并将其以适当的名称放置在 <code>templates/</code> 目录中。你可以在 <a class="external" rel="noopener external" target="_blank" href="https://validator.w3.org/feed/docs/">W3C Feed Validation Service</a> 中查看 Atom 1.0 和 RSS 2.0 的规范文档。</p>
 <p><strong>只有带有日期的页面才可用。</strong></p>
 <p>Feed 中的作者设置为：</p>
 <ul>
@@ -384,7 +389,7 @@
 <li>如果不存在，则回退到 <a href="https://zola.docs.saop.cc/documentation/getting-started/configuration/">配置</a> 中的 <code>author</code></li>
 <li>如果也未预设，则设置为 <code>Unknown</code>。</li>
 </ul>
-<p>请注意，<code>atom.xml</code> 和 <code>rss.xml</code> 需要不同的格式来指定作者。根据 <a class="external" rel="external" href="https://www.rfc-editor.org/rfc/rfc4287">RFC 4287</a>，<code>atom.xml</code> 需要作者的名字，例如 <code>"John Doe"</code>。而根据 <a class="external" rel="external" href="https://www.rssboard.org/rss-specification#ltauthorgtSubelementOfLtitemgt">RSS 2.0 规范</a>，电子邮件地址是必需的，名字是可选的，例如 <code>"lawyer@boyer.net"</code> 或 <code>"lawyer@boyer.net (Lawyer Boyer)"</code>。</p>
+<p>请注意，<code>atom.xml</code> 和 <code>rss.xml</code> 需要不同的格式来指定作者。根据 <a class="external" rel="noopener external" target="_blank" href="https://www.rfc-editor.org/rfc/rfc4287">RFC 4287</a>，<code>atom.xml</code> 需要作者的名字，例如 <code>"John Doe"</code>。而根据 <a class="external" rel="noopener external" target="_blank" href="https://www.rssboard.org/rss-specification#ltauthorgtSubelementOfLtitemgt">RSS 2.0 规范</a>，电子邮件地址是必需的，名字是可选的，例如 <code>"lawyer@boyer.net"</code> 或 <code>"lawyer@boyer.net (Lawyer Boyer)"</code>。</p>
 <p>Feed 模板获得五个变量：</p>
 <ul>
 <li><code>config</code>: 站点配置</li>
@@ -402,7 +407,7 @@
 Section feeds 将使用与 <code>config.toml</code> 文件中指示的相同的模板。
 Section feeds 除了五个 feed 模板变量外，还可以从 <a href="https://zola.docs.saop.cc/documentation/templates/pages-sections/">section 模板</a> 获得 <code>section</code> 变量。</p>
 <p>启用 feed 自动发现允许 feed 阅读器和浏览器通知用户你的网站上有可用的 RSS 或 Atom feed。这样用户更容易订阅。
-例如，这是使用 <a class="external" rel="external" href="https://en.wikipedia.org/wiki/Mozilla_Firefox">Firefox</a> <a class="external" rel="external" href="https://addons.mozilla.org/en-US/firefox/addon/livemarks/?src=search">Livemarks</a> 插件时的样子。</p>
+例如，这是使用 <a class="external" rel="noopener external" target="_blank" href="https://en.wikipedia.org/wiki/Mozilla_Firefox">Firefox</a> <a class="external" rel="noopener external" target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/livemarks/?src=search">Livemarks</a> 插件时的样子。</p>
 <p><img src="https://zola.docs.saop.cc/documentation/templates/feeds/rss_feed.png" alt="RSS feed 自动发现示例。" /></p>
 <p>你可以通过修改博客 <code>base.html</code> 模板并在 <code>&lt;head&gt;</code> 标签之间添加以下代码来启用文章自动发现。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span>{% block rss %}</span></span>
@@ -423,7 +428,7 @@ Section feeds 除了五个 feed 模板变量外，还可以从 <a href="https://
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

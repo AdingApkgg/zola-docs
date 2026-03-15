@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> Forum</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -130,7 +135,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;codeberg-pages&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
                         
                     </li>
                 </ul>
@@ -374,15 +379,15 @@
     <h1>Codeberg Pages</h1>
     <p>We are going to use the Woodpecker CI hosted by Codeberg to host the site on Codeberg Pages.</p>
 <h2 id="configuring-your-repository"><a class="zola-anchor" href="#configuring-your-repository" aria-label="Anchor link for: configuring-your-repository">🔗</a>Configuring your repository</h2>
-<p>It is required that you create a repository on Codeberg that contains only your Zola project. The <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/directory-structure/">Zola directory structure</a> should be in the root of your repository.</p>
-<p>Information on how to create and manage a repository on Codeberg can be found at <a class="external" rel="external" href="https://docs.codeberg.org/getting-started/first-repository/">https://docs.codeberg.org/getting-started/first-repository/</a>.</p>
+<p>It is required that you create a repository on Codeberg that contains only your Zola project. The <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/directory-structure/">Zola directory structure</a> should be in the root of your repository.</p>
+<p>Information on how to create and manage a repository on Codeberg can be found at <a class="external" rel="noopener external" target="_blank" href="https://docs.codeberg.org/getting-started/first-repository/">https://docs.codeberg.org/getting-started/first-repository/</a>.</p>
 <h2 id="ensuring-that-woodpecker-ci-can-access-your-theme"><a class="zola-anchor" href="#ensuring-that-woodpecker-ci-can-access-your-theme" aria-label="Anchor link for: ensuring-that-woodpecker-ci-can-access-your-theme">🔗</a>Ensuring that Woodpecker CI can access your theme</h2>
 <p>Depending on how you added your theme, your repository may not contain it. The best way to ensure that the theme is added is to use submodules. Make sure you use the <code>https</code> version of the URL.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add</span><span style="color: #94E2D5;"> &lt;</span><span style="color: #A6E3A1;">theme_ur</span><span>l</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> themes/</span><span style="color: #94E2D5;">&lt;</span><span style="color: #A6E3A1;">theme_nam</span><span>e</span><span style="color: #94E2D5;">&gt;</span></span></code></pre>
 <p>For example, this could look like:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/getzola/hyde.git themes/hyde</span></span></code></pre><h2 id="setting-up-woodpecker-ci"><a class="zola-anchor" href="#setting-up-woodpecker-ci" aria-label="Anchor link for: setting-up-woodpecker-ci">🔗</a>Setting up Woodpecker CI</h2>
-<p>Assuming you have access to <a class="external" rel="external" href="https://docs.codeberg.org/ci/">Codeberg's Woodpecker CI</a>, we can build the site and automatically deploy it to <a class="external" rel="external" href="https://codeberg.page">Codeberg Pages</a> on every commit.</p>
-<p>First, place the following sample <a class="external" rel="external" href="https://codeberg.org/Codeberg-CI/examples/src/branch/main/Zola/.woodpecker.yaml">Zola CI file</a> in the root of your project:</p>
+<p>Assuming you have access to <a class="external" rel="noopener external" target="_blank" href="https://docs.codeberg.org/ci/">Codeberg's Woodpecker CI</a>, we can build the site and automatically deploy it to <a class="external" rel="noopener external" target="_blank" href="https://codeberg.page">Codeberg Pages</a> on every commit.</p>
+<p>First, place the following sample <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/Codeberg-CI/examples/src/branch/main/Zola/.woodpecker.yaml">Zola CI file</a> in the root of your project:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Exclude the pipeline to run on the pages branch</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">when</span><span style="color: #94E2D5;">:</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  branch</span><span style="color: #94E2D5;">:</span></span>
@@ -430,14 +435,14 @@
 <span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> git push</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">    when</span><span style="color: #94E2D5;">:</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">      event</span><span style="color: #94E2D5;">:</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">push</span><span style="color: #9399B2;">]</span></span></code></pre>
-<p>Then add the following secrets to <a class="external" rel="external" href="https://ci.codeberg.org/">Woodpecker</a>:</p>
+<p>Then add the following secrets to <a class="external" rel="noopener external" target="_blank" href="https://ci.codeberg.org/">Woodpecker</a>:</p>
 <ul>
 <li><code>mail</code>: Your email address as used by Codeberg.</li>
-<li><code>codeberg_token</code>: <a class="external" rel="external" href="https://docs.codeberg.org/advanced/access-token/">Codeberg access token</a> with <code>write:repository</code> permission.</li>
+<li><code>codeberg_token</code>: <a class="external" rel="noopener external" target="_blank" href="https://docs.codeberg.org/advanced/access-token/">Codeberg access token</a> with <code>write:repository</code> permission.</li>
 </ul>
 <p>Once done, you can trigger the CI by pushing something to the repository, and Woodpecker will build the site and copy the resulting site to the <code>pages</code> branch and it will be available at <code>https://&lt;user&gt;.codeberg.page/&lt;repository&gt;</code>.</p>
-<p>For <a class="external" rel="external" href="https://docs.codeberg.org/codeberg-pages/using-custom-domain/">custom domain</a>, create the <code>.domains</code> file inside the <code>./static/</code> directory so that it will be copied to the resulting build.</p>
-<p>More information about Codeberg Pages is available in the <a class="external" rel="external" href="https://docs.codeberg.org/codeberg-pages/">official Codeberg documentation</a>.</p>
+<p>For <a class="external" rel="noopener external" target="_blank" href="https://docs.codeberg.org/codeberg-pages/using-custom-domain/">custom domain</a>, create the <code>.domains</code> file inside the <code>./static/</code> directory so that it will be copied to the resulting build.</p>
+<p>More information about Codeberg Pages is available in the <a class="external" rel="noopener external" target="_blank" href="https://docs.codeberg.org/codeberg-pages/">official Codeberg documentation</a>.</p>
 
 
     </div>
@@ -445,7 +450,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
         </footer>
 

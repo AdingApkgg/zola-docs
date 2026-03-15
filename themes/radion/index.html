@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;radion&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;radion&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -185,8 +190,8 @@
 
     <hr>
     <h1 id="radion">radion</h1>
-<p>A sleek, modern blog theme for <a class="external" rel="external" href="https://www.getzola.org/">Zola</a>. See the live
-site demo <a class="external" rel="external" href="https://micahkepe.com/radion/">here</a>.</p>
+<p>A sleek, modern blog theme for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a>. See the live
+site demo <a class="external" rel="noopener external" target="_blank" href="https://micahkepe.com/radion/">here</a>.</p>
 <blockquote>
 <p><strong>radion</strong>
 noun</p>
@@ -269,7 +274,7 @@ Open Graph cover image selection</li>
 <blockquote>
 <p>[!IMPORTANT]
 <strong>Requires Zola &gt;= 0.22.</strong> For older Zola versions (0.20–0.21), use
-<a class="external" rel="external" href="https://github.com/micahkepe/radion/releases/tag/v1.0.0">v1.0.0</a>.</p>
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/micahkepe/radion/releases/tag/v1.0.0">v1.0.0</a>.</p>
 </blockquote>
 <p>First download this theme to your <code>themes</code> directory:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span>
@@ -346,7 +351,7 @@ want <code>extra.author</code> to take precedence.</p>
 <ol>
 <li>
 <p>Create your own favicon folder with the following site:
-<a class="external" rel="external" href="https://realfavicongenerator.net/">RealFaviconGenerator</a></p>
+<a class="external" rel="noopener external" target="_blank" href="https://realfavicongenerator.net/">RealFaviconGenerator</a></p>
 <ul>
 <li>Set the 'Favicon path' option to <code>/icons/favicon/</code></li>
 </ul>
@@ -381,9 +386,9 @@ Mastodon logo with this link.</p>
 <span class="giallo-l"><span>fediverse</span><span style="color: #9399B2;">.</span><span>rel_me</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://my.instance.example.com/@username&quot;</span></span>
 <span class="giallo-l"><span>mastodon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://my.instance.example.com/@username&quot;</span></span></code></pre><h3 id="code-snippets">Code Snippets</h3>
 <h4 id="syntax-highlighting">Syntax Highlighting:</h4>
-<p>This theme uses <a class="external" rel="external" href="https://github.com/getzola/giallo">giallo</a> for <strong>class-based
+<p>This theme uses <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/giallo">giallo</a> for <strong>class-based
 syntax highlighting</strong>, which was introduced in Zola 0.22 as a replacement for
-<a class="external" rel="external" href="https://github.com/trishume/syntect">syntect</a>.</p>
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/trishume/syntect">syntect</a>.</p>
 <p>In your <code>config.toml</code>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>markdown.highlighting</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>style</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;class&quot;</span></span>
@@ -394,15 +399,15 @@ mode and the <code>gruvbox-dark-medium</code> theme for light mode. Zola will au
 generate <code>giallo-dark.css</code> and <code>giallo-light.css</code> in the build output.</p>
 <h5 id="choosing-themes">Choosing Themes</h5>
 <ol>
-<li>Browse available themes in the <a class="external" rel="external" href="https://github.com/getzola/giallo">giallo
+<li>Browse available themes in the <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/giallo">giallo
 README</a> or preview them at
-<a class="external" rel="external" href="https://textmate-grammars-themes.netlify.app/">textmate-grammars-themes.netlify.app</a></li>
+<a class="external" rel="noopener external" target="_blank" href="https://textmate-grammars-themes.netlify.app/">textmate-grammars-themes.netlify.app</a></li>
 <li>Update <code>dark_theme</code> and <code>light_theme</code> with your preferred themes</li>
 <li>Run <code>zola serve</code> or <code>zola build</code> — the CSS files will be regenerated
 automatically</li>
 </ol>
 <h5 id="migration-from-v1-0-0-syntect">Migration from v1.0.0 (syntect)</h5>
-<p>If upgrading from <a class="external" rel="external" href="https://github.com/micahkepe/radion/releases/tag/v1.0.0">v1.0.0</a>
+<p>If upgrading from <a class="external" rel="noopener external" target="_blank" href="https://github.com/micahkepe/radion/releases/tag/v1.0.0">v1.0.0</a>
 or earlier (Zola &lt;0.22):</p>
 <ol>
 <li>
@@ -467,7 +472,7 @@ of the page:</p>
 Giscus comments assumes that you are hosting the blog site via GitHub Pages
 and thus have access to GitHub Discussions.</p>
 </blockquote>
-<p>First, follow the instructions at <a class="external" rel="external" href="https://giscus.app/">giscus.app</a>.
+<p>First, follow the instructions at <a class="external" rel="noopener external" target="_blank" href="https://giscus.app/">giscus.app</a>.
 This includes installing the Giscus app and enabling discussions on the
 GitHub repository that you host the website code. Additionally, fill in the
 repository path in the prompt. Then, from the generated script, fill in the
@@ -502,7 +507,7 @@ following to a page's front matter:</p>
 links directly to the GitHub commit history for that specific content file,
 allowing readers to see how the post has evolved over time.</p>
 <h3 id="set-post-open-graph-image-cover-image">Set Post Open Graph Image (Cover Image)</h3>
-<p><a class="external" rel="external" href="https://ogp.me/">Open Graph</a> is a standard for embedding rich previews of
+<p><a class="external" rel="noopener external" target="_blank" href="https://ogp.me/">Open Graph</a> is a standard for embedding rich previews of
 content on the Internet. It is used by social media platforms like Facebook,
 Twitter, and LinkedIn to display a preview of a page when a user shares the
 page on their social media network.</p>
@@ -540,9 +545,9 @@ a path like <code>"assets/cover.png"</code>). The first filename match will be u
 <h3 id="custom-fonts">Custom Fonts</h3>
 <p>Currently three font CDN sites are supported:</p>
 <ol>
-<li><a class="external" rel="external" href="https://fonts.google.com/">Google Font (<code>"googlefont"</code>)</a>: Fonts from <code>fonts.google.com</code></li>
-<li><a class="external" rel="external" href="https://fontsource.org/">Fontsource (<code>"fontsource"</code>)</a>: Self-hosted fonts from <code>fontsource.org</code>. Uses WOFF2 files.</li>
-<li><a class="external" rel="external" href="https://fonts.zeoseven.com/">ZeoSeven Font (<code>"zeoseven"</code>)</a>: Fonts from
+<li><a class="external" rel="noopener external" target="_blank" href="https://fonts.google.com/">Google Font (<code>"googlefont"</code>)</a>: Fonts from <code>fonts.google.com</code></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://fontsource.org/">Fontsource (<code>"fontsource"</code>)</a>: Self-hosted fonts from <code>fontsource.org</code>. Uses WOFF2 files.</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://fonts.zeoseven.com/">ZeoSeven Font (<code>"zeoseven"</code>)</a>: Fonts from
 <code>fonts.zeoseven.com</code>. Requires a <code>font_id</code> for URL construction.</li>
 </ol>
 <p>To configure, add entries under <code>[extra]</code> in your <code>config.toml</code>:</p>
@@ -594,16 +599,16 @@ a path like <code>"assets/cover.png"</code>). The first filename match will be u
 <p>Lots of inspiration and code snippets taken from these awesome Zola themes:</p>
 <ul>
 <li>
-<p><a class="external" rel="external" href="https://github.com/getzola/after-dark"><code>after-dark</code></a> by
-<a class="external" rel="external" href="https://www.vincentprouillet.com/">Vincent Prouillet</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/after-dark"><code>after-dark</code></a> by
+<a class="external" rel="noopener external" target="_blank" href="https://www.vincentprouillet.com/">Vincent Prouillet</a></p>
 </li>
 <li>
-<p><a class="external" rel="external" href="https://github.com/not-matthias/apollo/tree/main"><code>apollo</code></a> by
-<a class="external" rel="external" href="https://github.com/not-matthias">not-matthias</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/not-matthias/apollo/tree/main"><code>apollo</code></a> by
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/not-matthias">not-matthias</a></p>
 </li>
 <li>
-<p><a class="external" rel="external" href="https://github.com/SeniorMars/redux"><code>redux</code></a> by
-<a class="external" rel="external" href="https://github.com/SeniorMars">SeniorMars</a>.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/SeniorMars/redux"><code>redux</code></a> by
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/SeniorMars">SeniorMars</a>.</p>
 </li>
 </ul>
 
@@ -612,7 +617,7 @@ a path like <code>"assets/cover.png"</code>). The first filename match will be u
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

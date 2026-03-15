@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;belresume&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;belresume&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -181,12 +186,12 @@
     <hr>
     <h1 id="belresume">BelResumé</h1>
 <p><em><strong>A beautiful, modern, and minimal single-page resume site</strong></em></p>
-<p>Powered by <a class="external" rel="external" href="https://getzola.org/">Zola</a>. Styled with Tailwind CSS &amp; Font Awesome</p>
+<p>Powered by <a class="external" rel="noopener external" target="_blank" href="https://getzola.org/">Zola</a>. Styled with Tailwind CSS &amp; Font Awesome</p>
 <blockquote>
 <p>“Bel” in French means beautiful — this is your beautiful resumé!</p>
 </blockquote>
 <h2 id="preview">Preview</h2>
-<p><a class="external" rel="external" href="https://cx48.github.io/BelResume/">BelResumé</a> can be deployed for free using GitHub Pages or Vercel</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://cx48.github.io/BelResume/">BelResumé</a> can be deployed for free using GitHub Pages or Vercel</p>
 <h4 id="light-mode">Light Mode</h4>
 <p><img src="https://raw.githubusercontent.com/cx48/BelResume/refs/heads/main/static/images/light.png" alt="Light Mode" /></p>
 <h4 id="dark-mode">Dark Mode</h4>
@@ -214,7 +219,7 @@
 <h2 id="quick-start">Quick Start</h2>
 <ol>
 <li>
-<p><strong>Install Zola</strong>: <a class="external" rel="external" href="https://getzola.org/documentation/getting-started/installation/">https://getzola.org/documentation/getting-started/installation/</a></p>
+<p><strong>Install Zola</strong>: <a class="external" rel="noopener external" target="_blank" href="https://getzola.org/documentation/getting-started/installation/">https://getzola.org/documentation/getting-started/installation/</a></p>
 </li>
 <li>
 <p><strong>Clone repository</strong>:</p>
@@ -223,7 +228,7 @@
 <li>
 <p><strong>Serve locally</strong>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre>
-<p>After making necessary changes to HTML files present under <code>partials/</code> visit <a class="external" rel="external" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a></p>
+<p>After making necessary changes to HTML files present under <code>partials/</code> visit <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a></p>
 </li>
 <li>
 <p><strong>Build static site</strong>:</p>
@@ -254,7 +259,7 @@
 </blockquote>
 <ol>
 <li>
-<p>Login to <a class="external" rel="external" href="https://vercel.com">Vercel</a> and import your GitHub repo</p>
+<p>Login to <a class="external" rel="noopener external" target="_blank" href="https://vercel.com">Vercel</a> and import your GitHub repo</p>
 </li>
 <li>
 <p>Set <strong>Build Command</strong> to:</p>
@@ -305,7 +310,7 @@
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span><span>Best Hackathon Project</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span></span>
 <span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span><span>DefCon 2025</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h2 id="get-in-touch">Get in Touch</h2>
 <p>Have feedback, questions, or just want to say hello?<br />
-Feel free to <a class="external" rel="external" href="https://github.com/cx48/BelResume/issues">open an issue</a> or reach out directly:</p>
+Feel free to <a class="external" rel="noopener external" target="_blank" href="https://github.com/cx48/BelResume/issues">open an issue</a> or reach out directly:</p>
 <blockquote>
 <p>Check my GitHub profile for contact links</p>
 </blockquote>
@@ -315,7 +320,7 @@ Feel free to <a class="external" rel="external" href="https://github.com/cx48/Be
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

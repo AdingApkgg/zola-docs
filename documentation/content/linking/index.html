@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;content&#x2F;linking&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -376,7 +381,7 @@
     <h1>内部链接和深度链接</h1>
     <h2 id="biao-ti-id-he-mao-dian-cha-ru"><a class="zola-anchor" href="#biao-ti-id-he-mao-dian-cha-ru" aria-label="Anchor link for: biao-ti-id-he-mao-dian-cha-ru">🔗</a>标题 ID 和锚点插入</h2>
 <p>在渲染 Markdown 内容时，将自动为每个标题分配一个唯一 ID。
-如果 <code>slugify.anchors</code> 设置为 <code>"on"</code>（默认值），则此 ID 是通过将标题文本转换为 <a class="external" rel="external" href="https://zh.wikipedia.org/wiki/Slug_(%E7%BD%91%E7%BB%9C%E5%87%BA%E7%89%88)">slug</a> 来创建的。
+如果 <code>slugify.anchors</code> 设置为 <code>"on"</code>（默认值），则此 ID 是通过将标题文本转换为 <a class="external" rel="noopener external" target="_blank" href="https://zh.wikipedia.org/wiki/Slug_(%E7%BD%91%E7%BB%9C%E5%87%BA%E7%89%88)">slug</a> 来创建的。
 如果 <code>slugify.paths</code> 设置为 <code>"safe"</code>，空格将被替换为 <code>-</code>，并删除以下字符：<code>#</code>, <code>%</code>, <code>&lt;</code>, <code>&gt;</code>, <code>[</code>, <code>]</code>, <code>(</code>, <code>)</code>, `, <code>^</code>, <code>{</code>, <code>|</code>, <code>}</code>。
 如果 <code>slugify.paths</code> 设置为 <code>"off"</code>，则不进行任何修改，你可能会留下名义上非法的 ID。
 如果该文章的 slug 已经存在，则在末尾附加一个数字。
@@ -393,7 +398,7 @@
 <p>Zola 可以自动在标题旁边插入锚点链接，如果你将鼠标悬停在标题上或覆盖整个标题文本，你可以在本文档中看到这一点。</p>
 <p>此选项在全局 <a href="https://zola.docs.saop.cc/documentation/getting-started/configuration/"><code>config.toml</code></a> 的 <code>[markdown]</code> section 中设置，并可以通过 <a href="https://zola.docs.saop.cc/documentation/content/section/#front-matter">section front matter 页面</a> 上的 <code>insert_anchor_links</code> 变量在 section 级别覆盖。</p>
 <p>默认模板非常基础，需要在你的项目中进行 CSS 调整才能看起来体面。
-如果你想更改锚点模板，可以通过在 <code>templates</code> 目录中创建 <code>anchor-link.html</code> 文件来轻松覆盖它。在 <a class="external" rel="external" href="https://github.com/getzola/zola/blob/master/components/templates/src/builtins/anchor-link.html">这里</a> 你可以找到默认模板。</p>
+如果你想更改锚点模板，可以通过在 <code>templates</code> 目录中创建 <code>anchor-link.html</code> 文件来轻松覆盖它。在 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola/blob/master/components/templates/src/builtins/anchor-link.html">这里</a> 你可以找到默认模板。</p>
 <p>锚点链接模板具有以下变量：</p>
 <ul>
 <li><code>id</code>: 应用 <code>slugify.anchors</code> 定义的规则后的标题 ID</li>
@@ -413,7 +418,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

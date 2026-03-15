@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
+                            
+                                
                                     
                                 
                             
-                                
-                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;content&#x2F;syntax-highlighting&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -380,8 +385,8 @@
 <span class="giallo-l"><span>let highlight = true;</span></span>
 <span class="giallo-l"><span>```</span></span></code></pre>
 <p>你可以将 <code>rust</code> 替换为另一种语言，或者不放任何东西以使文本被解释为纯文本。</p>
-<p>Zola 使用 <a class="external" rel="external" href="https://github.com/getzola/giallo">Giallo</a>，这是一个使用 VSCode 语法和主题的库。</p>
-<p>你可以在 README 中看到支持的语言和主题的完整列表：<a class="external" rel="external" href="https://github.com/getzola/giallo?tab=readme-ov-file#built-in">https://github.com/getzola/giallo?tab=readme-ov-file#built-in</a></p>
+<p>Zola 使用 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/giallo">Giallo</a>，这是一个使用 VSCode 语法和主题的库。</p>
+<p>你可以在 README 中看到支持的语言和主题的完整列表：<a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/giallo?tab=readme-ov-file#built-in">https://github.com/getzola/giallo?tab=readme-ov-file#built-in</a></p>
 <p>如果不支持你想要高亮的主题或语言，你可以找到 JSON 语法文件和 JSON 主题文件，将它们复制到你站点的某个位置，并通过 <code>[markdown.highlighting]</code> section 中的 <code>extra_grammars</code> 和 <code>extra_themes</code> 从配置中加载它们。
 你可以在 https://textmate-grammars-themes.netlify.app/ 查看支持的主题列表。</p>
 <p>在任何情况下，你需要将以下 CSS 添加到你的站点 CSS 中，以便正确显示：</p>
@@ -404,7 +409,7 @@
 <p>如果你想要双重主题，请使用 <code>light_theme</code> 和 <code>dark_theme</code> 键：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>light_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github-light&quot;</span><span>                                                                                     </span></span>
 <span class="giallo-l"><span>dark_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;github-dark&quot;</span></span></code></pre><h2 id="xuan-ran-yang-shi"><a class="zola-anchor" href="#xuan-ran-yang-shi" aria-label="Anchor link for: xuan-ran-yang-shi">🔗</a>渲染样式</h2>
-<p>默认渲染样式是 <code>inline</code>，这意味着颜色直接设置在具有十六进制值的 <code>&lt;span&gt;</code> 元素上，例如单个主题的 <code>&lt;span style="color: #83A598;"&gt;base_url&lt;/span&gt;</code> 和双重主题的 <code>&lt;span style="color: light-dark(#076678, #83A598);"&gt;base_url&lt;/span&gt;</code>。<a class="external" rel="external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark">light-dark()</a> CSS 函数将自动使用用户的首选配色方案，无法从 JS 覆盖它。</p>
+<p>默认渲染样式是 <code>inline</code>，这意味着颜色直接设置在具有十六进制值的 <code>&lt;span&gt;</code> 元素上，例如单个主题的 <code>&lt;span style="color: #83A598;"&gt;base_url&lt;/span&gt;</code> 和双重主题的 <code>&lt;span style="color: light-dark(#076678, #83A598);"&gt;base_url&lt;/span&gt;</code>。<a class="external" rel="noopener external" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/light-dark">light-dark()</a> CSS 函数将自动使用用户的首选配色方案，无法从 JS 覆盖它。</p>
 <p>如果你想要一个浅色/深色主题切换按钮或有禁止内联样式的规则，你可以将 <code>markdown.highlighting.style</code> 设置为 <code>class</code>，以便渲染器改用 CSS 类，并为静态文件夹中的每个主题生成一个 CSS 文件，如下所示：</p>
 <ul>
 <li>单个主题 -&gt; <code>giallo.css</code></li>
@@ -478,7 +483,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

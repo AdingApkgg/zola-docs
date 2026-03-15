@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;matbook&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="MATbook | Zola">
+        <meta property="og:description" content="A zola chapter book theme inspired from book and olivine">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;matbook&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="MATbook | Zola">
+        <meta name="twitter:description" content="A zola chapter book theme inspired from book and olivine">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "MATbook",
+            "description": "A zola chapter book theme inspired from book and olivine",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;matbook&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>MATbook | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;matbook&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;matbook&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> MATbook</h1>
+            <p>A zola chapter book theme inspired from book and olivine</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;shurui.people.stanford.edu&#x2F;">Shurui Liu</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 v1.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;srliu3264&#x2F;MATbook">https:&#x2F;&#x2F;github.com&#x2F;srliu3264&#x2F;MATbook</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;srliu3264.github.io&#x2F;MATbook-live-demo&#x2F;">https:&#x2F;&#x2F;srliu3264.github.io&#x2F;MATbook-live-demo&#x2F;</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2025-12-06T14:37:37-08:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="matbook">MATbook</h1>
+<p>A <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> theme for personal notebooks or chapter books. Based on  <a class="external" rel="noopener external" target="_blank" href="https://www.vincentprouillet.com/">Vincent Prouillet</a>'s <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/book">Book</a>, inspired by <a class="external" rel="noopener external" target="_blank" href="https://web.stanford.edu/~dkim04/">Dongryul Kim</a>'s <a class="external" rel="noopener external" target="_blank" href="https://github.com/dongryul-kim/olivine">Olivine</a>.</p>
+<p>Live Demo: <a class="external" rel="noopener external" target="_blank" href="https://srliu3264.github.io/MATbook-live-demo/">https://srliu3264.github.io/MATbook-live-demo</a></p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>MATbook
+<ul>
+<li>
+<p>Features</p>
+</li>
+<li>
+<p>Contents</p>
+</li>
+<li>
+<p>Installation</p>
+</li>
+<li>
+<p>Configurations</p>
+<ul>
+<li>Enable the theme</li>
+<li>Numbered chapters</li>
+<li>Current section pages only</li>
+<li>Math</li>
+<li>Paths</li>
+<li>Example toml</li>
+</ul>
+</li>
+<li>
+<p>Usage</p>
+<ul>
+<li>File structure</li>
+<li>Hotkeys</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li>Idle inside Matrix (MATbook is short for Matrix Book)</li>
+<li>Searching</li>
+<li>Light/dark mode</li>
+<li>Book structure (table of chapters and sections in left sidebar, table of contents of current section in right sidebar)</li>
+<li>Keyboard shortcuts</li>
+<li>Backlinks</li>
+<li>Mathjax, Tikzjax, and basic theorem enviroments included for mathematics and commutative diagrams.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Please follow the Zola documentation on <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">installing and using themes</a> to install.</p>
+<h2 id="configurations">Configurations</h2>
+<h3 id="enable-the-theme">Enable the theme</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;MATbook&quot;</span></span>
+<span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="numbered-chapters">Numbered chapters</h3>
+<p>By default, the <code>MATbook</code> theme will number the chapters and pages in the left menu.
+You can disable that by setting the <code>book_number_chapters</code> in <code>extra.booktheme</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>book_number_chapters</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre><h3 id="current-section-pages-only">Current section pages only</h3>
+<p>By default, the <code>MATbook</code> theme will list all the pages in the current section.
+You can disable that by setting the <code>book_only_current_section_pages</code> in <code>extra.booktheme</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>book_only_current_section_pages</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre>
+<p>NOTE: you need to disabe this if you want to use hotkey <code>v</code> to toggle it.</p>
+<h3 id="math">Math</h3>
+<p>Enable mathjax and tikzjax in <code>extra</code> if you need mathematics and tikzcd diagrams in your book.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>tikzjax</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>mathjax</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="paths">Paths</h3>
+<p>You need to set up two paths:</p>
+<p>First, in <code>[extra]</code>, you need to make sure that <code>upload_prefix</code> is the path to the directory where you put all images.</p>
+<p>For example, if you put all your images in folder <code>/static/upload</code>, then you should set</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>upload_prefix</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/upload&quot;</span></span></code></pre>
+<p>Second, Home link in <code>[extra.booktheme]</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>home_url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://shurui.people.stanford.edu/&quot;</span></span></code></pre>
+<p>It may be link to your homepage, or a guide/TOC page which collects links to all your books (in this way you can organize multiple books with this theme).</p>
+<h3 id="example-toml">Example toml</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Shurui Liu&#39;s Coding Notes&quot;</span></span>
+<span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Personal Notes&quot;</span></span>
+<span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://web.stanford.edu/~srliu/Notes&quot;</span></span>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;MATbook&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>compile_sass</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">  {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> paginate_by</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> 10</span><span style="color: #9399B2;">,</span><span> rss</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>markdown</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>highlight_code</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>highlight_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;css&quot;</span></span>
+<span class="giallo-l"><span>external_links_target_blank</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>smart_punctuation</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>upload_prefix</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://web.stanford.edu/~srliu/Notes/upload&quot;</span></span>
+<span class="giallo-l"><span>tikzjax</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>mathjax</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.booktheme</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>book_number_chapters</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
+<span class="giallo-l"><span>book_only_current_section_pages</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
+<span class="giallo-l"><span>home_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://shurui.sites.stanford.edu/&quot;</span></span></code></pre><h2 id="usage">Usage</h2>
+<h3 id="file-structure">File structure</h3>
+<p>All content should be put in <code>/content</code> folder as general Zola projects. Each chapter should be a folder inside <code>/content</code>, which contains its sections (markdown files). Here is an example of the file structure:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>.</span></span>
+<span class="giallo-l"><span>├── chapter1</span></span>
+<span class="giallo-l"><span>│   ├── _index.md</span></span>
+<span class="giallo-l"><span>│   ├── section1.md</span></span>
+<span class="giallo-l"><span>│   └── section2.md</span></span>
+<span class="giallo-l"><span>├── chapter2</span></span>
+<span class="giallo-l"><span>│   ├── _index.md</span></span>
+<span class="giallo-l"><span>│   └── section1.md</span></span>
+<span class="giallo-l"><span>├── chapter3</span></span>
+<span class="giallo-l"><span>│   ├── _index.md</span></span>
+<span class="giallo-l"><span>│   ├── section1.md</span></span>
+<span class="giallo-l"><span>│   ├── section2.md</span></span>
+<span class="giallo-l"><span>│   └── section3.md</span></span>
+<span class="giallo-l"><span>└── _index.md</span></span></code></pre>
+<p>In <code>/content</code> folder, there should be one <code>_index.md</code>, which contains title and welcome/preface infomation of the book. In its front matter, you should set <code>sort_by = "weight" </code> to manually control the order of chapters (or you can use sort by slug or date for your notebook).</p>
+<p>Each chapter(folder) must have an <code>_index.md</code> file. It should sets its <code>weight</code> front-matter variable to its chapter number, and set <code>sort_by = "weight"</code> in its front matter.</p>
+<p>Then in each chapter(folder), each section should be a <code>page</code> and should have its <code>weight</code> variable set to its section
+number.</p>
+<p>If you don't want welcome/preface page of the book or of a chapter, you can use <code>redirect_to</code> front-matter variable in the corresponding <code>_index.md</code>.</p>
+<p>You can write a shell scripts to automate creating new chapters or new notes. For example, you can consult my <code>zshconfig</code> project on my <a class="external" rel="noopener external" target="_blank" href="https://github.com/srliu3264">github</a> (If you can not see it, probably it is bacasue I currently make it private. You can email me for access.)</p>
+<h3 id="hotkeys">Hotkeys</h3>
+<p>In a browser, you can always type <code>?</code> to toggle the help page, reminding you of hotkeys.</p>
+<p>The rule is inspired by Vim, Zathura, and <a class="external" rel="noopener external" target="_blank" href="https://github.com/dongryul-kim/olivine">Olivine</a>.</p>
+<p>The list of hotkeys may keep expanding, so I will not list all here. You can use <code>?</code> the help page, or see <code>hotkeys.js</code> manually to check existing functions.</p>
+<p>The hotkey <code>i</code> will allow you to idle inside MATRIX (inspired by <a class="external" rel="noopener external" target="_blank" href="https://github.com/abishekvashok/cmatrix">cmatrix</a>), and since MAT is both initials for matrix and math, I lazily named this project after it.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

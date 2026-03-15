@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;sourcehut&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -374,9 +379,9 @@
     <div class="documentation__content">
         
     <h1>Sourcehut Pages</h1>
-    <p>在 <a class="external" rel="external" href="https://srht.site">Sourcehut Pages</a> 上部署你的静态 Zola 网站非常简单。</p>
+    <p>在 <a class="external" rel="noopener external" target="_blank" href="https://srht.site">Sourcehut Pages</a> 上部署你的静态 Zola 网站非常简单。</p>
 <p>你需要在 Zola 项目的根文件夹中创建一个 <code>.build.yml</code> 清单文件，并将更改推送到 Sourcehut git/hg 仓库。
-要创建你的 <code>.build.yml</code> 文件，你可以从 <a class="external" rel="external" href="https://git.sr.ht/~sircmpwn/pages.sr.ht-examples">模板</a> 开始或使用以下示例：</p>
+要创建你的 <code>.build.yml</code> 文件，你可以从 <a class="external" rel="noopener external" target="_blank" href="https://git.sr.ht/~sircmpwn/pages.sr.ht-examples">模板</a> 开始或使用以下示例：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #89B4FA;">image</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> alpine/edge</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">packages</span><span style="color: #94E2D5;">:</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  -</span><span style="color: #A6E3A1;"> hut</span></span>
@@ -410,7 +415,7 @@
 请注意，Sourcehut 返回指向构建页面的直接链接，你可以在其中检查进度和成功状态。</p>
 <p>默认情况下，你可以使用 Sourcehut Pages 的子域来托管你的静态网站 - <code>your_username.srht.site</code>。
 如果你想使用自定义域名（例如 "blog.mydomain.org"），你需要配置 DNS 记录以指向 Sourcehut 服务器。
-有关如何执行此操作的说明可在 <a class="external" rel="external" href="https://srht.site/custom-domains">Sourcehut</a> 上找到。</p>
+有关如何执行此操作的说明可在 <a class="external" rel="noopener external" target="_blank" href="https://srht.site/custom-domains">Sourcehut</a> 上找到。</p>
 
 
     </div>
@@ -418,7 +423,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

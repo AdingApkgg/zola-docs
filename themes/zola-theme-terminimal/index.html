@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-theme-terminimal&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-theme-terminimal&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -164,7 +169,7 @@
 
     <hr>
     <h1 id="terminimal">Terminimal</h1>
-<p><a class="external" rel="external" href="https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment/badge.svg" alt="Build Status" /></a>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment/badge.svg" alt="Build Status" /></a>
 <img src="https://img.shields.io/badge/JavaScript-none-brightgreen.svg" alt="No JavaScript" /></p>
 <p><img src="../master/screenshot.png?raw=true" alt="Screenshot" /></p>
 <p>See the live demo (of the default configuration) here:
@@ -181,8 +186,8 @@ Changes compared to the original theme below.</p>
 <h2 id="versioning">Versioning</h2>
 <p>This theme used to be non-versioned, e.g. you'd pull the master branch, and occasionally new features or fixes would
 be released.</p>
-<p>Starting from version v1.0.0, the project adopted <a class="external" rel="external" href="https://semver.org/">Semantic Versioning</a>.</p>
-<p>Please check the <a class="external" rel="external" href="https://github.com/pawroman/zola-theme-terminimal/releases">GitHub releases</a> to see a change log
+<p>Starting from version v1.0.0, the project adopted <a class="external" rel="noopener external" target="_blank" href="https://semver.org/">Semantic Versioning</a>.</p>
+<p>Please check the <a class="external" rel="noopener external" target="_blank" href="https://github.com/pawroman/zola-theme-terminimal/releases">GitHub releases</a> to see a change log
 and work out if there's any breaking changes.</p>
 <h2 id="how-to-start">How to start</h2>
 <p>Option A: clone the theme directly into your Zola site folder:</p>
@@ -354,7 +359,7 @@ might not contain all the Unicode characters you need.</p>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Switch this to true if you need full unicode support.</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Defaults to false.</span></span>
 <span class="giallo-l"><span>use_full_hack_font</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
-<p>Also see <a class="external" rel="external" href="https://github.com/source-foundry/Hack/blob/master/docs/WEBFONT_USAGE.md">Hack's docs</a>.</p>
+<p>Also see <a class="external" rel="noopener external" target="_blank" href="https://github.com/source-foundry/Hack/blob/master/docs/WEBFONT_USAGE.md">Hack's docs</a>.</p>
 <h3 id="favicon">Favicon</h3>
 <p>The theme supports adding a global favicon (applies to
 all pages) to the site:</p>
@@ -390,7 +395,7 @@ base template, <code>index.html</code>, create file like this in <code>templates
 <span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">meta</span><span style="color: #F9E2AF;"> name</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;keywords&quot;</span><span style="color: #F9E2AF;"> content</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;Hacking,Programming,Ranting&quot;</span><span style="color: #94E2D5;">/&gt;</span></span>
 <span class="giallo-l"><span>{%/* endblock */%}</span></span></code></pre><h2 id="how-to-contribute">How to contribute</h2>
 <p>If you spot any bugs or wish to contribute new features, please create a new
-<a class="external" rel="external" href="https://github.com/pawroman/zola-theme-terminimal/pulls">Pull Request</a>.</p>
+<a class="external" rel="noopener external" target="_blank" href="https://github.com/pawroman/zola-theme-terminimal/pulls">Pull Request</a>.</p>
 <h2 id="changes-compared-to-the-original-theme">Changes compared to the original theme</h2>
 <p>This theme has been forked from https://github.com/panr/hugo-theme-terminal</p>
 <ul>
@@ -402,7 +407,7 @@ base template, <code>index.html</code>, create file like this in <code>templates
 <li>Tweaks to pagination, especially on mobile (small screens).</li>
 <li>The post title underline is dashed instead of doubly-dotted.</li>
 <li>All links are underlined, as per
-<a class="external" rel="external" href="https://www.brutalist-web.design/">Brutalist Web Design Guidelines</a>.</li>
+<a class="external" rel="noopener external" target="_blank" href="https://www.brutalist-web.design/">Brutalist Web Design Guidelines</a>.</li>
 <li>Tweaks to header font sizes.</li>
 <li>Minor footer tweaks.</li>
 </ul>
@@ -415,7 +420,7 @@ Zola with its Sass pre-processor is the only dependency.</li>
 <li>There's no menu trigger.</li>
 <li>Things load crazy fast, as it's all static content.</li>
 <li>Prism.js syntax highlighting is not supported (you can use
-<a class="external" rel="external" href="https://www.getzola.org/documentation/content/syntax-highlighting/">Zola's</a>).</li>
+<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/syntax-highlighting/">Zola's</a>).</li>
 </ul>
 </li>
 <li>
@@ -426,7 +431,7 @@ Zola with its Sass pre-processor is the only dependency.</li>
 This theme's static assets are meant to be served from where it's hosted.</p>
 </li>
 <li>
-<p><a class="external" rel="external" href="https://github.com/source-foundry/Hack">Hack</a> is the default font.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/source-foundry/Hack">Hack</a> is the default font.</p>
 </li>
 <li>
 <p>The default color theme is blue (original uses orange).</p>
@@ -449,7 +454,7 @@ blue (default), green, orange, pink, red.</li>
 </ul>
 <h2 id="license">License</h2>
 <p>Copyright © 2019 Paweł Romanowski (pawroman)</p>
-<p>Original theme: Copyright © 2019 Radosław Kozieł (<a class="external" rel="external" href="https://twitter.com/panr">@panr</a>)</p>
+<p>Original theme: Copyright © 2019 Radosław Kozieł (<a class="external" rel="noopener external" target="_blank" href="https://twitter.com/panr">@panr</a>)</p>
 <p>The theme is released under the MIT License.
 Check the <a href="../master/LICENSE.md">license file</a>
 for more information.</p>
@@ -461,7 +466,7 @@ for more information.</p>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

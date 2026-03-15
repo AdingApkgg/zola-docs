@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;coffee&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;coffee&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -195,9 +200,9 @@
 <ul>
 <li>demo site</li>
 </ul>
-<p><a class="external" rel="external" href="https://zola-coffee-theme.netlify.app/">https://zola-coffee-theme.netlify.app/</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://zola-coffee-theme.netlify.app/">https://zola-coffee-theme.netlify.app/</a></p>
 <ul>
-<li><a class="external" rel="external" href="https://github.com/Myxogastria0808/coffee/blob/main/logo/README.md">theme logo</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://github.com/Myxogastria0808/coffee/blob/main/logo/README.md">theme logo</a></li>
 </ul>
 <div align="center">
   <img src="https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/logo/coffee.svg" width="300px" height="300px" />
@@ -213,7 +218,7 @@
 <li>Install zola</li>
 </ol>
 <p>Please install zola by referring to the following.</p>
-<p><a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/installation/">https://www.getzola.org/documentation/getting-started/installation/</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">https://www.getzola.org/documentation/getting-started/installation/</a></p>
 <ol start="2">
 <li>Setup coffee theme</li>
 </ol>
@@ -408,11 +413,11 @@ This repository includes the coffee theme repository as a submodule.</p>
 <ul>
 <li>repository</li>
 </ul>
-<p><a class="external" rel="external" href="https://github.com/Myxogastria0808/coffee-sample.git">https://github.com/Myxogastria0808/coffee-sample.git</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/Myxogastria0808/coffee-sample.git">https://github.com/Myxogastria0808/coffee-sample.git</a></p>
 <ul>
 <li>demo site</li>
 </ul>
-<p><a class="external" rel="external" href="https://zola-coffee-theme-sample.netlify.app/">https://zola-coffee-theme-sample.netlify.app/</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://zola-coffee-theme-sample.netlify.app/">https://zola-coffee-theme-sample.netlify.app/</a></p>
 <h2 id="post-example">Post Example</h2>
 <p>You can see the post example below.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
@@ -446,14 +451,14 @@ This repository includes the coffee theme repository as a submodule.</p>
 <ul>
 <li>markdown example</li>
 </ul>
-<p><a class="external" rel="external" href="https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md">https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md">https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md</a></p>
 <ul>
 <li>preview URL</li>
 </ul>
-<p><a class="external" rel="external" href="https://zola-coffee-theme.netlify.app/sample/">https://zola-coffee-theme.netlify.app/sample/</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://zola-coffee-theme.netlify.app/sample/">https://zola-coffee-theme.netlify.app/sample/</a></p>
 <h2 id="coffee-theme-specific-notation">coffee Theme Specific Notation</h2>
 <h3 id="list-of-languages-in-code-block">List of languages in Code Block</h3>
-<p><a class="external" rel="external" href="https://www.getzola.org/documentation/content/syntax-highlighting/">https://www.getzola.org/documentation/content/syntax-highlighting/</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/syntax-highlighting/">https://www.getzola.org/documentation/content/syntax-highlighting/</a></p>
 <h4 id="example">Example</h4>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>```rs</span></span>
 <span class="giallo-l"><span>fn main() {</span></span>
@@ -468,11 +473,11 @@ This repository includes the coffee theme repository as a submodule.</p>
 <ul>
 <li>markdown example</li>
 </ul>
-<p><a class="external" rel="external" href="https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md">https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md">https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md</a></p>
 <ul>
 <li>preview URL</li>
 </ul>
-<p><a class="external" rel="external" href="https://zola-coffee-theme.netlify.app/sample/">https://zola-coffee-theme.netlify.app/sample/</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://zola-coffee-theme.netlify.app/sample/">https://zola-coffee-theme.netlify.app/sample/</a></p>
 <h4 id="example-applying-all-of-width-height-and-caption">Example applying all of <code>width</code>, <code>height</code>, and <code>caption</code></h4>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>{{ image(path=&quot;/content/sample/image.jpg&quot;, width=1000, height=200, caption=&quot;caption&quot;) }}</span></span></code></pre>
 <p><img src="https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/image.png" alt="image" /></p>
@@ -558,17 +563,17 @@ Images are automatically converted to webp, so you don't need to worry about ima
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>&lt;base.html&gt;</span></span>
 <span class="giallo-l"><span>  &lt;404.html&gt;&lt;/404.html&gt;</span></span>
 <span class="giallo-l"><span>&lt;/base.html&gt;</span></span></code></pre><h2 id="references">References</h2>
-<p><a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/overview/#content">https://www.getzola.org/documentation/getting-started/overview/#content</a></p>
-<p><a class="external" rel="external" href="https://swaits.com/adding-mermaid-js-to-zola/">https://swaits.com/adding-mermaid-js-to-zola/</a></p>
-<p><a class="external" rel="external" href="https://sippo.work/blog/20231105-deploy-zola-with-cloudflare-pages/">https://sippo.work/blog/20231105-deploy-zola-with-cloudflare-pages/</a></p>
-<p><a class="external" rel="external" href="https://zenn.dev/com4dc/scraps/c6c0f5fb87a1f9">https://zenn.dev/com4dc/scraps/c6c0f5fb87a1f9</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview/#content">https://www.getzola.org/documentation/getting-started/overview/#content</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://swaits.com/adding-mermaid-js-to-zola/">https://swaits.com/adding-mermaid-js-to-zola/</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://sippo.work/blog/20231105-deploy-zola-with-cloudflare-pages/">https://sippo.work/blog/20231105-deploy-zola-with-cloudflare-pages/</a></p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://zenn.dev/com4dc/scraps/c6c0f5fb87a1f9">https://zenn.dev/com4dc/scraps/c6c0f5fb87a1f9</a></p>
 
 
     </div>
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

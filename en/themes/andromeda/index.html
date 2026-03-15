@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;andromeda&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Andromeda | Zola">
+        <meta property="og:description" content="Photography journal blog theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;andromeda&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Andromeda | Zola">
+        <meta name="twitter:description" content="Photography journal blog theme">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Andromeda",
+            "description": "Photography journal blog theme",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;andromeda&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>Andromeda | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;andromeda&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;andromeda&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> Andromeda</h1>
+            <p>Photography journal blog theme</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;blog.andromeda.is">Parker Lamb</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.16.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;Pixadus&#x2F;andromeda-theme">https:&#x2F;&#x2F;github.com&#x2F;Pixadus&#x2F;andromeda-theme</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;andromeda-theme.netlify.app&#x2F;">https:&#x2F;&#x2F;andromeda-theme.netlify.app&#x2F;</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2024-11-02T09:34:09-07:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="andromeda-theme-for-zola">Andromeda Theme for Zola</h1>
+<blockquote>
+<p>Andromeda is a lightweight <strong>photojournal &amp; blog</strong> theme designed for Zola.</p>
+</blockquote>
+<p>With built-in support for galleries and some options for customization, Andromeda is designed for photojournalism without complications.</p>
+<p>Index demo:
+<img src="https://zola.docs.saop.cc/en/themes/andromeda/index_demo.jpg" alt="Index demo graphic" /></p>
+<p>Post demo:
+<img src="https://zola.docs.saop.cc/en/themes/andromeda/post_demo.png" alt="Post demo graphic" /></p>
+<hr />
+<h2 id="installation">Installation</h2>
+<p>Assuming you already have a site set up (see the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview/">Zola guide for setting up a site</a>),</p>
+<ol>
+<li>Create a <code>themes</code> directory in the root of your site if it does not already exist.</li>
+<li>Clone the theme into your themes directory:<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git clone https://github.com/Pixadus/andromeda-theme themes/andromeda</span></span></code></pre></li>
+<li>Duplicate the structure of the the <code>config.toml</code> file found in <code>themes/andromeda/config.toml</code> or <a class="external" rel="noopener external" target="_blank" href="https://github.com/Pixadus/andromeda-theme/blob/main/config.toml">this repository</a> within your own <code>config.toml</code>.</li>
+<li>Set the theme to Andromeda, by including <code>theme = andromeda</code> in your <code>config.toml</code> file.</li>
+</ol>
+<h2 id="creating-pages">Creating pages</h2>
+<p>To create a new post, create a <code>.md</code> file within <code>/content</code>, with the header format:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;Post title&quot;</span></span>
+<span class="giallo-l"><span>date = 2023-04-25</span></span>
+<span class="giallo-l"><span>description = &quot;Post description&quot;</span></span>
+<span class="giallo-l"><span>extra = {header_img = &quot;image-url&quot;}</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre>
+<p><strong>Note</strong>: The +++ are necessary.</p>
+<p>The <code>header_img</code> field is the image shown on the homepage of the blog and in the heading of each page. It can be a remote URL or local - if local, by default this will be files stored in the <code>static</code> folder, or <code>/images</code> in the URL.</p>
+<h3 id="galleries">Galleries</h3>
+<p>Galleries can be set up by using the following template in your Markdown file:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">div</span><span style="color: #F9E2AF;"> class</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;gallery&quot;</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">a</span><span style="color: #F9E2AF;"> href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;original_photo1.jpg&quot;</span><span style="color: #F9E2AF;"> data-ngthumb</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;thumbnail_photo1.jpg&quot;</span><span style="color: #94E2D5;">&gt;&lt;/</span><span style="color: #89B4FA;">a</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">    &lt;</span><span style="color: #89B4FA;">a</span><span style="color: #F9E2AF;"> href</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;original_photo2.jpg&quot;</span><span style="color: #F9E2AF;"> data-ngthumb</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;thumbnail_photo2.jpg&quot;</span><span style="color: #94E2D5;">&gt;&lt;/</span><span style="color: #89B4FA;">a</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">div</span><span style="color: #94E2D5;">&gt;</span></span></code></pre>
+<p>For more or less photos, use <code>&lt;a href&gt;</code> tags. <a class="external" rel="noopener external" target="_blank" href="https://www.flickr.com/">Flickr</a> provides a good hosting option as it automatically generates thumbnails for you.</p>
+<h2 id="configuration">Configuration</h2>
+<p>Andromeda supports custom navbar links - see <a class="external" rel="noopener external" target="_blank" href="https://github.com/Pixadus/andromeda-theme/blob/main/config.toml">config.toml</a> for an example. You may also set a custom <code>favicon.ico</code> though <code>config.toml</code>.</p>
+<p>If you wish to customize the design of the gallery, basic Javascript knowledge will be necessary. Andromeda uses <code>nanogallery2</code> by default - the <a class="external" rel="noopener external" target="_blank" href="https://nanogallery2.nanostudio.org/documentation.html">documentation can be found here</a>. Customizations to the gallery design are done within the <code>{%/* macro pagefooter() */%}</code> block within <code>/templates/macros.html</code>.</p>
+<p>By default, this script is divided into three sections (indicated by <code>item==</code>): single-image, two-image and three+ image gallery setups.</p>
+<h2 id="credits">Credits</h2>
+<p>The demo images used included <a class="external" rel="noopener external" target="_blank" href="https://www.flickr.com/photos/anishkumar_sugumaran/52831738797/in/explore-2023-04-26/">Antelope Canyon by Anishkumar Sugumaran</a> and <a class="external" rel="noopener external" target="_blank" href="https://www.flickr.com/photos/27263572@N05/52838617702/in/explore-2023-04-26/">Bryce Canyon by Marco Isler</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

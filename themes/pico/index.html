@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -114,11 +119,11 @@
                         
                             
                                 
-                            
-                                
                                     
                                 
                             
+                                
+                            
                         
 
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;pico&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;pico&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -172,7 +177,7 @@ I intentionally using the bigger fonts to make, feel free to change it in main.c
 <h1 id="important">Important</h1>
 <p>Please make sure to set up your base_url with trailing slash:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://kuznetsov17.github.io/pico/&quot;</span></span></code></pre><h1 id="comments">Comments</h1>
-<p>Theme supports <a class="external" rel="external" href="https://giscuss.app">Giscuss</a> for comments. The configuration is done via config.toml. Here you can see the example section used for this page deployment:</p>
+<p>Theme supports <a class="external" rel="noopener external" target="_blank" href="https://giscuss.app">Giscuss</a> for comments. The configuration is done via config.toml. Here you can see the example section used for this page deployment:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.giscus</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>data_repo</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;kuznetsov17/pico&quot;</span></span>
 <span class="giallo-l"><span>data_repo_id</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;R_kgDOLIfXYA&quot;</span></span>
@@ -193,10 +198,10 @@ I intentionally using the bigger fonts to make, feel free to change it in main.c
 <span class="giallo-l"><span>show_shares</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># enables / disables section with social share buttons</span></span>
 <span class="giallo-l"><span>show_toc</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># enables / disable TOC</span></span>
 <span class="giallo-l"><span>show_date</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># displays publication date in page</span></span></code></pre><h1 id="blog">Blog</h1>
-<p>I am using this theme for my <a class="external" rel="external" href="https://viku.me/notes/">notes</a>, or probably blog.
+<p>I am using this theme for my <a class="external" rel="noopener external" target="_blank" href="https://viku.me/notes/">notes</a>, or probably blog.
 The section template supports pagination, tags, sorts the pages by publication date. You may see the working example <a href="https://zola.docs.saop.cc/themes/pico/content/notes/_index.md">here</a></p>
 <h1 id="search">Search</h1>
-<p>The theme supports the search using <a class="external" rel="external" href="http://elasticlunr.com">elasticrunrjs</a>. To enable the search, you will need the following configuration in <strong>config.toml</strong>:</p>
+<p>The theme supports the search using <a class="external" rel="noopener external" target="_blank" href="http://elasticlunr.com">elasticrunrjs</a>. To enable the search, you will need the following configuration in <strong>config.toml</strong>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;">[</span><span>search</span><span style="color: #9399B2;">]</span></span>
@@ -230,7 +235,7 @@ The section template supports pagination, tags, sorts the pages by publication d
 <span class="giallo-l"><span>{% callout(type = &#39;info&#39;) %}</span></span>
 <span class="giallo-l"><span>This is an example of **Info** callout. [Some link](#)</span></span>
 <span class="giallo-l"><span>{% end %}</span></span></code></pre><h1 id="mermaid">Mermaid</h1>
-<p>Read more on how to use mermaid in their <a class="external" rel="external" href="https://mermaid.js.org/syntax/examples.html">documentation</a></p>
+<p>Read more on how to use mermaid in their <a class="external" rel="noopener external" target="_blank" href="https://mermaid.js.org/syntax/examples.html">documentation</a></p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>{% mermaid() %}</span></span>
 <span class="giallo-l"><span>gitGraph</span></span>
 <span class="giallo-l"><span>       commit</span></span>
@@ -251,10 +256,10 @@ The section template supports pagination, tags, sorts the pages by publication d
 <span class="giallo-l"><span>    C --&gt; D</span></span>
 <span class="giallo-l"><span>{% end %}</span></span></code></pre><h1 id="thanks-to">Thanks to</h1>
 <ul>
-<li><a class="external" rel="external" href="https://giscuss.app">Giscuss</a> for excellent comments system</li>
-<li><a class="external" rel="external" href="https://icons.getbootstrap.com">bootstrap icons</a> for great social icons</li>
-<li><a class="external" rel="external" href="https://fonts.google.com/specimen/Urbanist">Urbanist Font</a></li>
-<li><a class="external" rel="external" href="https://fonts.google.com/specimen/Mulish">Mulush Font</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://giscuss.app">Giscuss</a> for excellent comments system</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://icons.getbootstrap.com">bootstrap icons</a> for great social icons</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://fonts.google.com/specimen/Urbanist">Urbanist Font</a></li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://fonts.google.com/specimen/Mulish">Mulush Font</a></li>
 </ul>
 <h1 id="screenshot">Screenshot</h1>
 <p><img src="https://github.com/kuznetsov17/pico/blob/main/screenshot.png?raw=true" alt="Screenshot" /></p>
@@ -264,7 +269,7 @@ The section template supports pagination, tags, sorts the pages by publication d
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

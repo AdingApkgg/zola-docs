@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;vercel&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -376,7 +381,7 @@
     <h1>Vercel</h1>
     <p>Vercel（以前叫 Zeit）类似于 Netlify，使你的站点部署变得易如反掌。
 站点由 Vercel 托管，只要我们向选定的生产分支（例如 master）推送提交，就会自动部署。</p>
-<p>如果你没有 Vercel 帐户，可以在 <a class="external" rel="external" href="https://vercel.com/signup">这里</a> 注册。</p>
+<p>如果你没有 Vercel 帐户，可以在 <a class="external" rel="noopener external" target="_blank" href="https://vercel.com/signup">这里</a> 注册。</p>
 <h2 id="zi-dong-bu-shu"><a class="zola-anchor" href="#zi-dong-bu-shu" aria-label="Anchor link for: zi-dong-bu-shu">🔗</a>自动部署</h2>
 <p>注册后，你可以从 Git 提供商（Github、GitLab 或 Bitbucket）导入你的站点。
 导入仓库时，Vercel 将尝试找出你的站点使用的框架。</p>
@@ -385,13 +390,13 @@
 <li>将 "Framework Preset" 设置为 <strong>Zola</strong>。</li>
 </ul>
 <p>默认情况下，Vercel 选择输出目录为 <code>public</code>。如果你使用不同的目录，请在 "Build and Output Settings" 下拉菜单下指定输出目录。
-你可以通过 <a class="external" rel="external" href="https://vercel.com/docs">他们的文档</a> 了解更多关于如何设置自定义域名以及如何充分利用 Vercel 的信息。</p>
+你可以通过 <a class="external" rel="noopener external" target="_blank" href="https://vercel.com/docs">他们的文档</a> 了解更多关于如何设置自定义域名以及如何充分利用 Vercel 的信息。</p>
 <p>点击蓝色的 "Deploy" 按钮后，就可以开始了！</p>
-<p>要使用特定版本的 Zola，请在项目设置中将 <a class="external" rel="external" href="https://vercel.com/docs/deployments/environments#specifying-framework-versions"><code>ZOLA_VERSION</code></a> 环境变量设置为有效的发布标签，例如 <code>0.17.2</code>。</p>
+<p>要使用特定版本的 Zola，请在项目设置中将 <a class="external" rel="noopener external" target="_blank" href="https://vercel.com/docs/deployments/environments#specifying-framework-versions"><code>ZOLA_VERSION</code></a> 环境变量设置为有效的发布标签，例如 <code>0.17.2</code>。</p>
 <h2 id="gu-zhang-pai-chu"><a class="zola-anchor" href="#gu-zhang-pai-chu" aria-label="Anchor link for: gu-zhang-pai-chu">🔗</a>故障排除</h2>
 <h3 id="glibc-x-xx-not-found"><a class="zola-anchor" href="#glibc-x-xx-not-found" aria-label="Anchor link for: glibc-x-xx-not-found">🔗</a><code>GLIBC_X.XX</code> not found</h3>
 <p>这是因为 Vercel 的构建镜像不包含 Zola 所需的 <code>glibc</code> 版本。
-Vercel 为不同的 Node.js 版本提供 <a class="external" rel="external" href="https://vercel.com/docs/builds/build-image">不同的构建镜像</a>，因此即使 Zola 与 Node.js 没有任何关系，你也可以从项目设置中升级 Node.js 版本，使 Vercel 使用较新的构建环境，从而允许 Zola 正常工作。</p>
+Vercel 为不同的 Node.js 版本提供 <a class="external" rel="noopener external" target="_blank" href="https://vercel.com/docs/builds/build-image">不同的构建镜像</a>，因此即使 Zola 与 Node.js 没有任何关系，你也可以从项目设置中升级 Node.js 版本，使 Vercel 使用较新的构建环境，从而允许 Zola 正常工作。</p>
 <p>如果你的项目是在默认 Node.js 版本为 <code>20.x</code> 时创建的，将 Node.js 版本升级到 <code>22.x</code>（这是新的默认值）应该适用于 Zola 版本高达 <code>0.19.2</code>（含）而无需进一步配置。</p>
 <p>由于 Vercel 不提供更新的镜像，当使用内置的 Zola 框架预设时，后续版本的 Zola 将无法再次工作。但是，从 Zola 版本 <code>0.21.0</code> 开始，发布了静态链接的 <code>musl</code> 二进制文件，这在 glibc 不足的系统（如 Vercel 的构建镜像）中提供了最高的兼容性。要使用 <code>musl</code> 编译的二进制文件，你必须确保 Vercel <a href="https://zola.docs.saop.cc/documentation/deployment/vercel/#using-a-custom-zola-binary">不使用其内置的 Zola 预设，而是你自己提供二进制文件。</a></p>
 <h2 id="qi-ta-xuan-xiang"><a class="zola-anchor" href="#qi-ta-xuan-xiang" aria-label="Anchor link for: qi-ta-xuan-xiang">🔗</a>其他选项</h2>
@@ -424,7 +429,7 @@ Vercel 为不同的 Node.js 版本提供 <a class="external" rel="external" href
 <span class="giallo-l"><span style="color: #9399B2;">}</span></span></code></pre>
 <p>如果你想使用自己的 fork 并使用在那里发布的二进制文件，你可以根据自己的意愿修改命令。</p>
 <h2 id="ling-qing-can-yue"><a class="zola-anchor" href="#ling-qing-can-yue" aria-label="Anchor link for: ling-qing-can-yue">🔗</a>另请参阅</h2>
-<p>请参阅 <a class="external" rel="external" href="https://vercel.com/docs/projects/project-configuration">Vercel 自己的文档</a> 以获取 <code>vercel.json</code> 中的所有可用选项。</p>
+<p>请参阅 <a class="external" rel="noopener external" target="_blank" href="https://vercel.com/docs/projects/project-configuration">Vercel 自己的文档</a> 以获取 <code>vercel.json</code> 中的所有可用选项。</p>
 
 
     </div>
@@ -432,7 +437,7 @@ Vercel 为不同的 Node.js 版本提供 <a class="external" rel="external" href
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

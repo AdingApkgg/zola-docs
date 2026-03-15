@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;dose&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="dose | Zola">
+        <meta property="og:description" content="a small blog theme">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;dose&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="dose | Zola">
+        <meta name="twitter:description" content="a small blog theme">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "dose",
+            "description": "a small blog theme",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;dose&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>dose | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        document.addEventListener('turbo:load', async () => {
+          const pv = document.getElementById('pv');
+          const uv = document.getElementById('uv');
+          const ppv = document.getElementById('ppv');
+          if (!pv || !uv || !ppv) return;
+          try {
+            const res = await fetch('https://bsz.saop.cc/api', {
+              method: 'POST',
+              credentials: 'include',
+              headers: { 'x-bsz-referer': location.href }
+            });
+            const { success, data } = await res.json();
+            if (success) {
+              pv.textContent = data.site_pv;
+              uv.textContent = data.site_uv;
+              ppv.textContent = data.page_pv;
+            }
+          } catch (_) {}
+        });
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li>
+                        
+                        
+                            
+                        
+
+                        
+
+                        
+                        
+                            
+                                
+                                    
+                                
+                            
+                                
+                            
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dose&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+    <div class="theme-info">
+        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;dose&#x2F;screenshot.png" class="thumb">
+        <div class="metadata">
+            <h1><i class="fas fa-cube"></i> dose</h1>
+            <p>a small blog theme</p>
+            <p><b><i class="fas fa-user"></i> 作者:</b>
+            
+              <a href="https:&#x2F;&#x2F;oltdaniel.eu">oltdaniel</a>
+            
+            </p>
+            
+              <p><i class="fas fa-code-branch"></i> 此主题需要 Zola 版本 0.14.0 及以上</p>
+            
+            <p><b><i class="fas fa-balance-scale"></i> 许可证:</b> MIT</p>
+            <p><b><i class="fas fa-home"></i> 主页:</b> <a href="https:&#x2F;&#x2F;github.com&#x2F;oltdaniel&#x2F;dose">https:&#x2F;&#x2F;github.com&#x2F;oltdaniel&#x2F;dose</a></p>
+            
+              <p><b><i class="fas fa-desktop"></i> 在线演示:</b> <a href="https:&#x2F;&#x2F;oltdaniel.github.io&#x2F;dose">https:&#x2F;&#x2F;oltdaniel.github.io&#x2F;dose</a></p>
+            
+            
+            <p><b><i class="fas fa-clock"></i> 最后更新:</b> 2023-05-07T12:14:01+02:00</p>
+        </div>
+    </div>
+
+    <hr>
+    <h1 id="dose">dose</h1>
+<p><img src="https://zola.docs.saop.cc/en/themes/dose/screenshot.png?raw=true" alt="" /></p>
+<h2 id="installation">Installation</h2>
+<p>First install the theme into the <code>themes</code> directory with one of these options:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># If you work with git: </span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/oltdaniel/dose.git themes/dose</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># or just do a download:</span></span>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/oltdaniel/dose.git themes/dose</span></span></code></pre>
+<p>and then enable it in your <code>config.toml</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;dose&quot;</span></span></code></pre>
+<p>You can enable the following taxonomies:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>taxonomies</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tags&quot;</span><span style="color: #9399B2;">,</span><span> feed</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
+<p>And the theme uses the following extras:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>social_media</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;GitHub&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://github.com/oltdaniel&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Twitter&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://twitter.com/@twitter&quot;</span><span style="color: #9399B2;"> },</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Mastodon&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://mastodon.social/@Mastodon&quot;</span><span style="color: #9399B2;">,</span><span> rel</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;me&quot;</span><span style="color: #9399B2;"> }</span></span>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span>
+<span class="giallo-l"><span>default_theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;dark&quot;</span><span style="color: #9399B2;font-style: italic;"> # or &quot;light&quot;</span></span></code></pre>
+<p>The description of yourself with your image, you can modify by using a template. Just create a new
+file <code>myblog/templates/parts/me.html</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">img</span><span style="color: #F9E2AF;"> src</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://via.placeholder.com/50&quot;</span><span style="color: #F9E2AF;"> height</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;50px&quot;</span><span style="color: #F9E2AF;"> width</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;50px&quot;</span><span style="color: #94E2D5;">&gt;</span></span>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span><span>Hi, this is me. I write about microcontrollers, programming and cloud software. ...</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span></span></code></pre>
+<p>If you want to have all pages sorted by their date, please create <code>myblog/content/_index.md</code>:</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>sort_by = &quot;date&quot;</span></span>
+<span class="giallo-l"><span>+++</span></span></code></pre><h3 id="about">About</h3>
+<h4 id="inspired">Inspired</h4>
+<p>I created this theme mainly for my personal website. You are free to use it or modify it. It is inspired by the <a class="external" rel="noopener external" target="_blank" href="https://riggraz.dev/no-style-please/"><code>no-style-please</code></a> jekyll theme.</p>
+<h4 id="typography">Typography</h4>
+<p>This theme uses no special font, just the browsers default monospace font. Yes, this can mean that the website could be rendered differently, but users can freely choose their webfont.</p>
+<h4 id="darkmode">Darkmode</h4>
+<p>This theme supports dark and light mode. Currently this will be only switched based on the users preffered system theme. But a manual switch will follow in the future in the footer (see the todo).</p>
+<table><thead><tr><th>light</th><th>dark</th></tr></thead><tbody>
+<tr><td><img src="https://zola.docs.saop.cc/en/themes/dose/screenshot-light.png" alt="" /></td><td><img src="https://zola.docs.saop.cc/en/themes/dose/screenshot-dark.png" alt="" /></td></tr>
+</tbody></table>
+<h4 id="size">Size</h4>
+<p>The JavaScript has been moved into the page itself to allow minification. Together this results in the following sizes for the <code>index.html</code>:</p>
+<ul>
+<li><code>~ 3kB</code> JavaScript</li>
+<li><code>~ 3kB</code> CSS</li>
+<li><code>~ 17kB</code> Profile Image</li>
+<li><code>~5kB - ~3kB = ~2kB</code> HTML</li>
+</ul>
+<p>Which results in a total loading size of <code>3kB + 3kB + 17kB + 2kB = 25kB</code>.</p>
+<h4 id="syntax-highlighting">Syntax Highlighting</h4>
+<p>As I didn't want to invest any time in creating an own syntax color schema for this theme, I suggest to use <code>visual-studio-dark</code>, which is the same one used in the demo page.</p>
+<h4 id="customization">Customization</h4>
+<p>You can create your own version of this theme, by simply changing the sass variables in <code>sass/style.scss</code> to match your taste.</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="scss"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;">/**</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"> * Variables</span></span>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"> */</span></span>
+<span class="giallo-l"><span style="color: #EBA0AC;">$base-background</span><span style="color: #94E2D5;">:</span><span style="color: #EBA0AC;"> white</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #EBA0AC;">$text-color</span><span style="color: #94E2D5;">:</span><span style="color: #EBA0AC;"> black</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #EBA0AC;">$article-tag</span><span style="color: #94E2D5;">:</span><span style="color: #EBA0AC;"> green</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #EBA0AC;">$lang-tag</span><span style="color: #94E2D5;">:</span><span style="color: #EBA0AC;"> red</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #EBA0AC;">$link-color</span><span style="color: #94E2D5;">:</span><span style="color: #EBA0AC;"> blue</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #EBA0AC;">$target-color</span><span style="color: #94E2D5;">:</span><span style="color: #EBA0AC;"> yellow</span><span style="color: #9399B2;">;</span></span>
+<span class="giallo-l"><span style="color: #EBA0AC;">$separator-decoration</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> &quot;//////&quot;</span><span style="color: #9399B2;">;</span></span></code></pre><h2 id="license-contributors">License &amp; Contributors</h2>
+<p><img src="https://img.shields.io/github/license/oltdaniel/dose" alt="GitHub" /></p>
+<p>This project was created by <a class="external" rel="noopener external" target="_blank" href="https://github.com/oltdaniel">Daniel Oltmanns</a> and has been imporved by these <a class="external" rel="noopener external" target="_blank" href="https://github.com/oltdaniel/dose/graphs/contributors">contributors</a>.</p>
+
+
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+    </body>
+</html>

@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="&#x2F;en&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="&#x2F;en&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -374,9 +379,9 @@
     <div class="documentation__content">
         
     <h1>Azure Static Web Apps</h1>
-    <p><a class="external" rel="external" href="https://learn.microsoft.com/en-us/azure/static-web-apps/overview">Azure Static Web Apps</a> 是一项托管的 Azure 服务，用于处理从 GitHub 或 Azure DevOps 仓库的更改自动部署静态站点内容。我们将介绍如何配置通过 GitHub Actions 将你的站点部署到 Azure Static Web Apps。</p>
+    <p><a class="external" rel="noopener external" target="_blank" href="https://learn.microsoft.com/en-us/azure/static-web-apps/overview">Azure Static Web Apps</a> 是一项托管的 Azure 服务，用于处理从 GitHub 或 Azure DevOps 仓库的更改自动部署静态站点内容。我们将介绍如何配置通过 GitHub Actions 将你的站点部署到 Azure Static Web Apps。</p>
 <h3 id="she-zhi-azure-static-web-apps"><a class="zola-anchor" href="#she-zhi-azure-static-web-apps" aria-label="Anchor link for: she-zhi-azure-static-web-apps">🔗</a>设置 Azure Static Web Apps</h3>
-<p>按照 <a class="external" rel="external" href="https://learn.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript&amp;pivots=github">官方文档</a> 在 Azure 门户中配置静态 Web 应用程序，选择 <code>GitHub</code> 作为代码托管平台，但 <code>Build Details</code> 部分除外。</p>
+<p>按照 <a class="external" rel="noopener external" target="_blank" href="https://learn.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript&amp;pivots=github">官方文档</a> 在 Azure 门户中配置静态 Web 应用程序，选择 <code>GitHub</code> 作为代码托管平台，但 <code>Build Details</code> 部分除外。</p>
 <p>相反，对于 <code>Build Details</code> 部分，将 App location 设置为 <code>./public</code>，因为这是 <code>zola build</code> 默认写入站点内容的位置。将其他框留空。</p>
 <p>创建 Web 应用程序后，记下 Azure 自动创建的域，并将你的仓库的 <code>config.toml</code> 中的 <code>base_url</code> 更新为该 URL。</p>
 <h3 id="pei-zhi-github-actions"><a class="zola-anchor" href="#pei-zhi-github-actions" aria-label="Anchor link for: pei-zhi-github-actions">🔗</a>配置 GitHub Actions</h3>
@@ -442,7 +447,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 

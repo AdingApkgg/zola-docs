@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta content="Zola" name="generator">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,11 @@
         <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
         <script>
         document.addEventListener('turbo:load', () => {
-          quicklink.listen();
+          quicklink.listen({
+            ignores: [
+              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
+            ]
+          });
         });
         </script>
         <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
@@ -102,8 +107,8 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
                     <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
                     <li>
                         
                         
@@ -128,7 +133,7 @@
                         
 
                         
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;papaya&#x2F;" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;papaya&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                         
                     </li>
                 </ul>
@@ -164,9 +169,9 @@
 
     <hr>
     <h1 id="papaya">Papaya</h1>
-<p>A clean <a class="external" rel="external" href="https://getzola.org">Zola</a> theme for blogging and projects, forked from <a class="external" rel="external" href="https://github.com/zbrox/anpu-zola-theme">Anpu</a>.</p>
+<p>A clean <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> theme for blogging and projects, forked from <a class="external" rel="noopener external" target="_blank" href="https://github.com/zbrox/anpu-zola-theme">Anpu</a>.</p>
 <h2 id="preview">Preview</h2>
-<p><strong>Demo site</strong>: <a class="external" rel="external" href="https://justintennant.me/papaya/">https://justintennant.me/papaya/</a></p>
+<p><strong>Demo site</strong>: <a class="external" rel="noopener external" target="_blank" href="https://justintennant.me/papaya/">https://justintennant.me/papaya/</a></p>
 <p><img src="https://raw.githubusercontent.com/justint/papaya/main/pics/blendedindex.png" alt="index light/dark" /></p>
 <p align="center">
   <img alt="Light Projects" src="https://raw.githubusercontent.com/justint/papaya/main/pics/projects.png" width="45%">
@@ -189,8 +194,8 @@
 <li>Featured images for posts/pages</li>
 <li>Smart image embedding shortcode (<code>{{ img() }}</code>)</li>
 <li>GitHub repository star/fork counts</li>
-<li><a class="external" rel="external" href="https://ogp.me/">Open Graph Protocol</a> tags</li>
-<li><a class="external" rel="external" href="https://utteranc.es/">Utterances</a> support</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://ogp.me/">Open Graph Protocol</a> tags</li>
+<li><a class="external" rel="noopener external" target="_blank" href="https://utteranc.es/">Utterances</a> support</li>
 <li>Social/contact links</li>
 <li>100% Google Lighthouse score</li>
 </ul>
@@ -203,7 +208,7 @@
 <p>Set your theme setting in <code>config.toml</code> to <code>papaya</code>:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;papaya&quot;</span></span></code></pre></li>
 <li>
-<p>Copy the following sections and keys (and their contents/values) from papaya's <a class="external" rel="external" href="https://github.com/justint/papaya/blob/main/config.toml"><code>config.toml</code></a> and paste them into your site's <code>config.toml</code>:</p>
+<p>Copy the following sections and keys (and their contents/values) from papaya's <a class="external" rel="noopener external" target="_blank" href="https://github.com/justint/papaya/blob/main/config.toml"><code>config.toml</code></a> and paste them into your site's <code>config.toml</code>:</p>
 <ul>
 <li><code>[languages]</code>
 <ul>
@@ -274,7 +279,7 @@
 <p>The Papaya theme can be set to <code>"light"</code>, <code>"dark"</code>, or <code>"auto"</code> mode in the <code>config.toml</code>.</p>
 <p>In <code>"auto"</code>, the light and dark modes are implicitly chosen by the <code>prefers-color-scheme</code> CSS media feature. The theme will switch automatically based on the viewer's OS or user agent setting.</p>
 <h3 id="multilingual-support">Multilingual support</h3>
-<p>Currently Zola has basic internationalization (<code>i18n</code>) support, you can read more in <a class="external" rel="external" href="https://www.getzola.org/documentation/content/multilingual/">zola's Multilingual Sites doc</a>.</p>
+<p>Currently Zola has basic internationalization (<code>i18n</code>) support, you can read more in <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/multilingual/">zola's Multilingual Sites doc</a>.</p>
 <p>To write a multilingual site, follow the steps below (English and Chinese in this example):</p>
 <ol>
 <li>
@@ -354,7 +359,7 @@
 </li>
 </ul>
 <h4 id="configuring-section-menu-items">Configuring section menu items</h4>
-<p>A section is created whenever a directory (or subdirectory) in the content section contains an <code>_index.md</code> file; see the <a class="external" rel="external" href="https://www.getzola.org/documentation/content/section/">Zola docs on sections</a>.</p>
+<p>A section is created whenever a directory (or subdirectory) in the content section contains an <code>_index.md</code> file; see the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/section/">Zola docs on sections</a>.</p>
 <p>Papaya has two sections by default: <code>projects</code> and <code>blog</code>. You can add additional sections or change section names.  For example, you can add a section called <em>Diary</em>. In order to add this section, you need to:</p>
 <ol>
 <li>
@@ -464,7 +469,7 @@
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;">[</span><span>languages.zh.translations</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>date_format</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;%Y 年 %m 月 %d 日&quot;</span></span></code></pre>
-<p>The formatting uses the standard <code>date</code> filter in Tera. The date format options you can use are listed in the <a class="external" rel="external" href="https://tera.netlify.app/docs/#date">chrono crate documentation</a>.</p>
+<p>The formatting uses the standard <code>date</code> filter in Tera. The date format options you can use are listed in the <a class="external" rel="noopener external" target="_blank" href="https://tera.netlify.app/docs/#date">chrono crate documentation</a>.</p>
 <h3 id="post-project-featured-images">Post/project featured images</h3>
 <p>Posts and projects can have featured images which display at the top of their page before the page contents.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
@@ -480,7 +485,7 @@
 <h3 id="open-graph-protocol-locale-profile-information">Open Graph Protocol locale/profile information</h3>
 <p>In your <code>config.toml</code> you can add a <code>[extra.ogp]</code> section to specify your Open Graph Protocol locale and profile information.</p>
 <p>Open Graph Protocol provides you control over how your website's content should be displayed on social media sites.</p>
-<p>For the more information on Open Graph Protocol and valid property values, visit the official <a class="external" rel="external" href="https://ogp.me/">website</a>.</p>
+<p>For the more information on Open Graph Protocol and valid property values, visit the official <a class="external" rel="noopener external" target="_blank" href="https://ogp.me/">website</a>.</p>
 <p>Example:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.ogp</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>locale</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;en_US&quot;</span></span>
@@ -488,11 +493,11 @@
 <span class="giallo-l"><span>last_name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Tiliqua&quot;</span></span>
 <span class="giallo-l"><span>gender</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;female&quot;</span></span>
 <span class="giallo-l"><span>username</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;tiliquasp&quot;</span></span></code></pre><h3 id="utterances">Utterances</h3>
-<p><a class="external" rel="external" href="https://utteranc.es/">Utterances</a> is a comments widget built on GitHub issues. When enabled, Papaya can display GitHub issues as comments on your blog posts.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://utteranc.es/">Utterances</a> is a comments widget built on GitHub issues. When enabled, Papaya can display GitHub issues as comments on your blog posts.</p>
 <p>To enable:</p>
 <ol>
 <li>
-<p>Follow instructions on the <a class="external" rel="external" href="https://utteranc.es/">utterances</a> website.</p>
+<p>Follow instructions on the <a class="external" rel="noopener external" target="_blank" href="https://utteranc.es/">utterances</a> website.</p>
 </li>
 <li>
 <p>Once you're at the "Enable Utterances" step, enter the following keys into your <code>config.toml</code>:</p>
@@ -518,7 +523,7 @@
 <span class="giallo-l"><span>other</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;BTC&quot;</span><span style="color: #9399B2;">,</span><span> font_awesome</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;fa-brands fa-btc&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://www.bitcoin.com/&quot;</span><span style="color: #9399B2;"> }</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>The <code>font_awesome</code> attribute specifies the Font Awesome classes; you can find them in <a class="external" rel="external" href="https://fontawesome.com/">Font Awesome</a>. Be aware that different versions of Font Awesome may include different sets of icons; you can change your version of Font Awesome by updating the CDN path in the <code>[extra.cdn]</code> section:</p>
+<p>The <code>font_awesome</code> attribute specifies the Font Awesome classes; you can find them in <a class="external" rel="noopener external" target="_blank" href="https://fontawesome.com/">Font Awesome</a>. Be aware that different versions of Font Awesome may include different sets of icons; you can change your version of Font Awesome by updating the CDN path in the <code>[extra.cdn]</code> section:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.cdn</span><span style="color: #9399B2;">]</span></span>
@@ -532,7 +537,7 @@
 <p><code>path</code>: The path to the image. It can be either:</p>
 <ul>
 <li>a full path (eg: <code>https://somesite.com/my-image.jpg</code>),</li>
-<li>relative to the <code>content</code> directory in the <a class="external" rel="external" href="https://www.getzola.org/documentation/getting-started/directory-structure/">directory structure</a> (eg: <code>@/projects/project-1/my-image.jpg</code>), or</li>
+<li>relative to the <code>content</code> directory in the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/directory-structure/">directory structure</a> (eg: <code>@/projects/project-1/my-image.jpg</code>), or</li>
 <li>relative to the current markdown file (eg: <code>./my-image.jpg</code>).</li>
 </ul>
 </li>
@@ -557,7 +562,7 @@
 </ul>
 <p>The benefits of using this shortcode over regular Markdown/HTML image embedding are:</p>
 <ul>
-<li>Images are automatically resized for best performance, using Zola's <a class="external" rel="external" href="https://www.getzola.org/documentation/content/image-processing/">image processing functions</a></li>
+<li>Images are automatically resized for best performance, using Zola's <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/image-processing/">image processing functions</a></li>
 <li>Images &amp; captions are ✨pre-styled✨ for you</li>
 <li>Images can have their width extended past the document's width (see: Extended width images</li>
 <li>Less HTML/CSS boilerplate to write</li>
@@ -598,7 +603,7 @@
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors"><i class="fas fa-users"></i> Contributors</a>
+            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
             <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 
