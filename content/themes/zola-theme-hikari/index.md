@@ -28,11 +28,11 @@ homepage = "https://waynee95.me"
 
 Hikari is a simple theme perfect for dev-savvy bloggers.
 
-![screenshot](screenshot.png)
+![截图](screenshot.png)
 
 [View demo](https://waynee95.github.io/zola-theme-hikari/)
 
-## Installation
+## 安装
 
 First download the theme to your `themes` directory:
 
@@ -46,10 +46,10 @@ and then enable it in your `config.toml`:
 theme = "hikari"
 ```
 
-## Configuration
+## 配置
 
 ```toml
-[extra]
+[额外配置]
 author = "John Doge"
 author_bio = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, pariatur!"
 twitter = "waynee955"
@@ -58,7 +58,7 @@ instagram = false
 enable_mathjax = false
 ```
 
-## License
+## 许可证
 
 [MIT](LICENSE)
 

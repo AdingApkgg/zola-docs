@@ -1,7 +1,7 @@
 
 +++
 title = "lightspeed"
-description = "Zola theme with a perfect Lighthouse score"
+description = "一个在 Lighthouse 评分中获得满分的 Zola 主题"
 template = "theme.html"
 date = 2025-07-05T15:37:03+02:00
 
@@ -24,51 +24,54 @@ homepage = "https://github.com/carpetscheme"
 
 # Light Speed
 
-A small Zola theme, ported from [Light Speed Jekyll](https://github.com/bradleytaunt/lightspeed).
+一个小型 Zola 主题，移植自 [Light Speed Jekyll](https://github.com/bradleytaunt/lightspeed)。
 
-* Perfect score on Google's Lighthouse audit
-* Only ~700 bytes of CSS
-* No JavaScript
+* 在 Google Lighthouse 审计中获得满分
+* 只有约 700 字节的 CSS
+* 无 JavaScript
 
-Demo: [carpetscheme.github.io/lightspeed](https://carpetscheme.github.io/lightspeed)
+演示: [carpetscheme.github.io/lightspeed](https://carpetscheme.github.io/lightspeed)
 
 -----
 
-## Contents
+## 目录
 
-- Installation
-- Options
-  - Title
-  - Footer menu
+- 安装
+- 选项
+  - 标题
+  - 页脚菜单
   - Sass
-- Original
-- License
+- 原作
+- 许可证
 
-## Installation
-Download this theme to your `themes` directory:
+## 安装
+
+下载此主题到你的 `themes` 目录：
 
 ```bash
 $ cd themes
 $ git clone https://github.com/carpetscheme/lightspeed.git
 ```
-and then enable it in your `config.toml`:
+
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "lightspeed"
 ```
 
-Posts should be placed directly in the `content` folder.
+文章应直接放置在 `content` 文件夹中。
 
-To sort the post index by date, enable sort in your index section `content/_index.md`:
+要按日期排序文章索引，请在索引部分 `content/_index.md` 中启用排序：
 
 ```toml
 sort_by = "date"
 ```
 
-## Options
+## 选项
 
-### Title
-Set a title and description in the config to appear in the site header:
+### 标题
+
+在配置中设置标题和描述以出现在站点页眉中：
 
 ```toml
 title = "Different strokes"
@@ -76,8 +79,9 @@ description = "for different folks"
 
 ```
 
-### Footer-menu
-Set a field in `extra` with a key of `footer_links`:
+### 页脚菜单
+
+在 `extra` 中设置一个键为 `footer_links` 的字段：
 
 ```toml
 [extra]
@@ -89,34 +93,32 @@ footer_links = [
 ]
 ```
 
-Create pages such as `$BASE_URL/about` by placing them in a subfolder of the content directory, and specifying the path in the frontmatter:
+通过将页面放置在 content 目录的子文件夹中并在 Front Matter 中指定路径来创建页面，例如 `$BASE_URL/about`：
 
 ```toml
 path = "about"
 ```
 
-The footer credit to Zola and Lightspeed can be disabled with the `footer_credits` option.
+可以通过 `footer_credits` 选项禁用页脚对 Zola 和 Lightspeed 的致谢。
 
 ### Sass
 
-Styles are compiled from sass and imported inline to the header.
+样式从 sass 编译并内联导入到页眉中。
 
-You can overide the styles by enabling sass compilation in the config:
+你可以通过在配置中启用 sass 编译来覆盖样式：
 
 ```toml
 compile_sass = true
 ```
 
-and placing a replacement `style.scss` file in your sass folder.
+并将替换的 `style.scss` 文件放置在你的 sass 文件夹中。
 
-## Original
-This template is based on the Jekyll template [Light Speed Jekyll](https://github.com/bradleytaunt/lightspeed) by Bradley Taunt.
+## 原作
 
-## License
+此模板基于 Bradley Taunt 的 Jekyll 模板 [Light Speed Jekyll](https://github.com/bradleytaunt/lightspeed)。
 
-Open sourced under the [MIT license](LICENSE.md).
+## 许可证
 
-This project is open source except for example articles found in `content`.
+根据 [MIT 许可证](LICENSE.md) 开源。
 
-
-        
+本项目开源，但在 `content` 中找到的示例文章除外。

@@ -1,7 +1,7 @@
 
 +++
 title = "Course"
-description = "A zola theme designed for online courses or tutorials"
+description = "一个专为在线课程或教程设计的 Zola 主题"
 template = "theme.html"
 date = 2023-03-21T12:00:20+01:00
 
@@ -24,31 +24,28 @@ homepage = "https://ana.gelez.xyz"
 
 # Zola Theme : Course
 
-This theme allows you to publish only courses/tutorials structured in
-parts and subparts, using Zola.
+此主题允许你使用 Zola 发布结构化为部分和子部分的课程/教程。
 
-![Homepage of the demo](screenshot.png)
+![演示首页](screenshot.png)
 
-![Page of a course](screenshot2.png)
+![课程页面](screenshot2.png)
 
-It automatically links pages of the course with the next and previous ones
-for easy navigation. There is also a navigation bar at the top of each page
-to easily navigate the whole tutorial, and for the reader to never be lost.
+它会自动链接课程的页面与下一页和上一页，方便导航。每页顶部还有一个导航栏，可以轻松浏览整个教程，让读者永远不会迷路。
 
-Each page can have an illustration.
+每个页面都可以有插图。
 
-It lets you customize some parts of the site, like the color palette.
+它允许你自定义站点的某些部分，如调色板。
 
-It also features a light/dark mode switcher.
+它还具有亮色/暗色模式切换器。
 
-It also has some SEO features.
+它还有一些 SEO 功能。
 
-It was made for french courses, so a few parts of the interface may be in french.
-You can easily adapt it to your language by editing the files in `themes/zola-theme-course/templates/`.
+它是为法语课程制作的，所以界面的某些部分可能是法语的。
+你可以通过编辑 `themes/zola-theme-course/templates/` 中的文件轻松将其调整为你的语言。
 
-## Usage
+## 使用
 
-Create your Zola site, and import this theme:
+创建你的 Zola 站点，并导入此主题：
 
 ```bash
 zola init NAME
@@ -57,13 +54,13 @@ git clone https://github.com/elegaanz/zola-theme-course.git
 cd ..
 ```
 
-Then update your `config.toml` with this line:
+然后用这一行更新你的 `config.toml`：
 
 ```toml
 theme = "zola-theme-course"
 ```
 
-You can also add these lines to customize how the theme behaves:
+你还可以添加这些行来自定义主题的行为：
 
 ```toml
 [extra]
@@ -77,27 +74,25 @@ accent_color = "#FFFFFF"
 source_url = "https://github.com/me/my-course"
 ```
 
-### File structure
+### 文件结构
 
-For your course to be displayed correctly, it needs to follow a specific structure.
+为了正确显示你的课程，它需要遵循特定的结构。
 
-- `content/_index.md` is the text displayed on the homepage
-- each part should have its own folder, with an `_index.md`
-- each subpart should have its own markdown file (which can be an `index.md` in a subfolder)
-- all `_index.md` files should have `sort_by = "weight"` in their frontmatter, and you can then
-  order parts and subparts using the `weight` option.
+- `content/_index.md` 是显示在首页的文本
+- 每个部分应该有自己的文件夹，带有一个 `_index.md`
+- 每个子部分应该有自己的 markdown 文件（可以是子文件夹中的 `index.md`）
+- 所有 `_index.md` 文件都应该在 Front Matter 中有 `sort_by = "weight"`，然后你可以使用 `weight` 选项对部分和子部分进行排序。
 
-With this theme, pages can also have extra options:
+使用此主题，页面还可以有额外选项：
 
 ```toml
 [extra]
-# Don't display the page title, useful for the homepage
+# 不显示页面标题，对首页很有用
 no_title = true
-# The name of the image to use as a banner
+# 用作横幅的图片名称
 illus = "illus.jpg"
-# Adds JSON-LD metadata on this page, useful for the homepage
+# 在此页面上添加 JSON-LD 元数据，对首页很有用
 jsonld = true
 ```
 
-The standard `title` and `description` fields are also taken into account.
-        
+标准的 `title` 和 `description` 字段也会被考虑在内。

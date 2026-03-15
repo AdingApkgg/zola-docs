@@ -1,81 +1,386 @@
 
 +++
 title = "Zap"
-description = "A fast, ultra-minimal Zola theme"
+description = "一个极简的 Zola 博客主题。"
 template = "theme.html"
-date = 2025-12-08T18:11:59Z
+date = 2025-01-09T03:32:00-05:00
 
 [taxonomies]
 theme-tags = []
 
 [extra]
-created = 2025-12-08T18:11:59Z
-updated = 2025-12-08T18:11:59Z
+created = 2025-01-09T03:32:00-05:00
+updated = 2025-01-09T03:32:00-05:00
 repository = "https://github.com/jimmyff/zola-zap.git"
-homepage = "https://github.com/jimmyff/zola-zap"
-minimum_version = "0.17.0"
+homepage = "https://github.com/jimmyff/zap"
+minimum_version = "0.14.0"
 license = "MIT"
-demo = "https://www.jimmyff.co.uk/zola-zap/"
+demo = "https://zap-theme.netlify.app"
 
 [extra.author]
-name = "jimmyff"
-homepage = "https://www.jimmyff.co.uk"
+name = "James F"
+homepage = "https://jimmy.codes"
 +++        
 
-# Zap
+<p align="center">
+  <img src="logo.svg" alt="Zap" width="200">
+</p>
 
-A fast, ultra-minimal Zola theme by [jimmyff](https://www.jimmyff.co.uk). Perfect PageSpeed scores (100 performance, 100 accessibility, 100 best practices, 100 SEO). See the [demo](https://www.jimmyff.co.uk/zola-zap/) or read the [blog post](https://www.jimmyff.co.uk/blog/zap-theme/).
+<h1 align="center">Zap</h1>
 
-[![Screenshot](screenshot.png)](https://www.jimmyff.co.uk/zola-zap/)
+<p align="center">一个极简的 <a href="https://getzola.org">Zola</a> 博客主题。</p>
 
-## Features
+---
 
-- Inline CSS (~2KB) with OKLCH colors
-- Inline SVG icons via spritesheet
-- Responsive grid nav (auto-splits on mobile)
-- Responsive image gallery grid
-- Click-to-enlarge lightbox
-- Responsive images with srcset
-- Light/dark mode toggle
-- OpenGraph & Twitter Cards
-- Atom & RSS feeds
-- Fuse.js search
+**在线演示：** [https://zap-theme.netlify.app/](https://zap-theme.netlify.app/)
 
-## Installation
+Zap 主题的设计考虑了可读性。它使用了 Zola 的核心功能，不需要额外的第三方集成。目前，唯一的外部链接是指向 Google Fonts。样式在基本模板内部，颜色可以直接在站点配置中应用。
 
-```bash
-cd themes
-git clone https://github.com/jimmyff/zola-zap zap
-```
+## 特性
 
-In your `config.toml`:
+- 内部 CSS (~2KB) - 无外部样式表
+- 可配置的颜色主题
+- 衬线排版
+- 响应式图片
+- Atom 和 RSS 订阅
+- Fuse.js 搜索
+
+## 截图
+
+<p align="center">
+  <img src="screenshot.png" alt="Zap" width="1000">
+</p>
+
+## 安装
+
+1. 下载此主题到你的 `themes` 目录：
+   ```bash
+   cd your-zola-site
+   git submodule add https://github.com/jimmyff/zola-zap themes/zap
+   ```
+
+2. 在你的 `config.toml` 中设置主题：
+   ```toml
+   theme = "zap"
+   ```
+
+3. 复制示例内容以开始（可选）：
+   ```bash
+   cp -r themes/zap/content/* content/
+   ```
+
+## 配置
+
+### 示例配置
+
+在这里你可以找到一个用于 Zap 主题的 config.toml 示例。确保你更改了：
+
+- Title
+- Description
+- Base URL
+
 
 ```toml
-theme = "zap"
+# 站点标题。
+title = "Zap"
+# 站点描述。
+description = "A minimal theme for Zola"
+# 你的站点基础 URL。
+base_url = "https://your-site.com"
+# 无 SASS - CSS 是内部的（位于 base.html 模板中）。
+compile_sass = false
+# 启用搜索索引。
+build_search_index = true
+# 默认站点语言。
+default_language = "en"
+# 订阅。
+generate_feeds = true
+# 指定订阅文件名。
+feed_filenames = ["atom.xml", "rss.xml"]
+# 分类法。
+taxonomies = [{ name = "tags", feed = true }]
+
+[search]
+# 搜索页面工作所必需。
+index_format = "fuse_javascript"
+
+[markdown]
+# 代码高亮块所必需。
+highlight_code = true
+highlight_theme = "css"
+
+[slugify]
+# 控制页面/版块 URL 的 slug 化。
+paths = "on"
+# 控制分类法术语（标签、分类等）的 slug 化。
+taxonomies = "on"
+# 控制标题锚点（H1 到 H6 等）的 slug 化。
+anchors = "on"
+
+[extra]
+# SEO 关键词。
+keywords = "zola, theme, minimal"
+# 页眉中的站点图标（可选 - 注释掉以隐藏）。
+site_icon = "zap.svg"
+# 页眉标语（可选 - 注释掉以隐藏）。
+strapline = "A minimal theme for Zola"
+# 页脚文本（可选 - 注释掉以隐藏）。
+footer_text = "Zap - made for <a href='https://getzola.org'>Zola</a>"
+# Favicon（可选 - 注释掉以隐藏）。
+favicon = "/favicon.ico"
+# 首页上的个人资料图片（可选 - 注释掉以隐藏）。
+profile_picture = "/images/profile.jpg"
+
+# 启用内联 SVG 图标（使用精灵图）。
+inline_icons = true
+icon_path = "static/icons/"
+icons = ["light", "asleep", "rss"]
+
+# 响应式图片
+image_format = "auto"
+image_quality = 80
+images_default_size = 1024
+images_sizes = [512, 1024, 2048]
+
+# 导航菜单。
+menu_links = [
+  { url = "$BASE_URL/", name = "Home" },
+  { url = "$BASE_URL/posts/", name = "Posts" },
+  { url = "$BASE_URL/about/", name = "About" },
+  { url = "$BASE_URL/projects/", name = "Projects" },
+  { url = "$BASE_URL/tags/", name = "Tags" },
+  { url = "$BASE_URL/search/", name = "Search" },
+]
+
+# 自定义颜色主题。在此调整以应用自己的颜色。
+[extra.colours]
+background = "#FAF7F2"
+text = "#1a1a1a"
+text_muted = "#3a3a3a"
+accent = "#E07A5F"
+accent_hover = "#F4A594"
+code_bg = "#f0ebe3"
+border = "#e0d9ce"
+
 ```
 
-## Configuration
+### 主题选项
 
-See `config.toml` for available options.
+所有主题选项都在 `config.toml` 中的 `[extra]` 下：
 
-## Icons
+#### 站点标识
 
-Configure which icons to load in `config.toml`:
+| 选项 | 描述 | 默认值 |
+|--------|-------------|---------|
+| `strapline` | 页眉显示的标语 | *(无)* |
+| `favicon` | favicon 路径 | *(无)* |
+| `profile_picture` | 首页个人资料图片 | *(无)* |
+| `keywords` | SEO meta 关键词 | *(无)* |
+| `footer_text` | 页脚 HTML 内容 | *(无)* |
 
 ```toml
 [extra]
-inline_icons = true
-icon_path = "static/icons/"
-icons = ["home", "chat", "search", "light", "asleep", "rss"]
+strapline = "Welcome to my website"
+favicon = "/favicon.ico"
+profile_picture = "/images/me.png"
+keywords = "blog, writing, zola"
+footer_text = "Made with <a href='https://getzola.org'>Zola</a>"
 ```
 
-Place SVG icons in your `static/icons/` folder. The theme includes icons from [Carbon Design System](https://carbondesignsystem.com/elements/icons/library/).
+#### 导航
 
-## Using the responsive image shortcode
-
-```md
-{{/* image(src="yourimage.jpg", alt="This is my image") */}}
+```toml
+[extra]
+menu_links = [
+  { url = "$BASE_URL/", name = "Home" },
+  { url = "$BASE_URL/posts/", name = "Posts" },
+  { url = "$BASE_URL/about/", name = "About" },
+  { url = "$BASE_URL/projects/", name = "Projects" },
+  { url = "$BASE_URL/tags/", name = "Tags" },
+  { url = "$BASE_URL/search/", name = "Search" },
+]
 ```
 
+#### 颜色
 
-        
+自定义你的配色方案：
+
+```toml
+[extra.colours]
+background = "#FAF7F2"
+text = "#1a1a1a"
+text_muted = "#3a3a3a"
+accent = "#E07A5F"
+accent_hover = "#F4A594"
+code_bg = "#f0ebe3"
+border = "#e0d9ce"
+```
+
+#### 响应式图片
+
+```toml
+[extra]
+image_format = "auto"      # auto, webp, jpg, png
+image_quality = 80         # 1-100
+images_default_size = 1024
+images_sizes = [512, 1024, 2048]
+```
+
+#### 分析（可选）
+
+```toml
+[extra]
+# Umami Analytics
+umami_website_id = "your-website-id"
+umami_src = "https://cloud.umami.is/script.js"  # optional, custom domain
+umami_domains = "yoursite.com"                  # optional, limit tracking
+
+# OR Google Analytics
+google_analytics_tag_id = "G-XXXXXXXXXX"
+```
+
+## 内容
+
+### 文章
+
+在 `content/posts/` 中创建文章：
+
+```markdown
++++
+title = "My Post Title"
+date = 2024-01-15
+description = "A brief description for SEO"
+[taxonomies]
+tags = ["zola", "blogging"]
++++
+
+Your content here...
+```
+
+对于带有图片的文章，使用文件夹结构：
+
+```
+content/posts/my-post/
+├── index.md
+└── image.jpg
+```
+
+### 页面
+
+在 `content/` 中创建独立页面：
+
+```markdown
++++
+title = "About"
+template = "page.html"
++++
+
+Page content...
+```
+
+### 项目
+
+创建 `content/projects/_index.md`:
+
+```markdown
++++
+title = "Projects"
+template = "projects.html"
++++
+```
+
+然后创建 `content/projects/projects.toml`:
+
+```toml
+[[projects]]
+title = "Project Name"
+emoji = "🚀"
+description = "What this project does"
+url = "https://github.com/you/project"
+image = "screenshot.png"  # optional, relative to projects folder
+date = "2024"
+status = "Active"
+tags = ["rust", "web"]
+```
+
+### 搜索
+
+创建 `content/search.md`:
+
+```markdown
++++
+title = "Search"
+template = "search.html"
++++
+```
+
+## 短代码
+
+### 响应式图片
+
+```markdown
+{{/* image(src="photo.jpg", alt="Description") */}}
+```
+
+### YouTube 嵌入
+
+```markdown
+{{/* youtube(id="dQw4w9WgXcQ") */}}
+{{/* youtube(id="dQw4w9WgXcQ", autoplay=true) */}}
+```
+
+### Spotify 嵌入
+
+```markdown
+{{/* spotify(id="album-id") */}}
+```
+
+## 自定义
+
+### 模板钩子
+
+在你自己 `templates/macros/hooks.html` 中覆盖这些宏：
+
+```html
+{%/* macro post_above_content(page) */%}
+<!-- Content before post body -->
+{%/* endmacro */%}
+
+{%/* macro post_below_content(page) */%}
+<!-- Content after post body -->
+{%/* endmacro */%}
+
+{%/* macro post_below_tags(page) */%}
+<!-- Content after post tags -->
+{%/* endmacro */%}
+
+{%/* macro posts_below_title(page) */%}
+<!-- Content after post title in list view -->
+{%/* endmacro */%}
+```
+
+### OpenGraph 图片
+
+为任何页面添加预览图片：
+
+```markdown
++++
+[extra]
+og_preview_img = "preview.jpg"
++++
+```
+
+## 要求
+
+- Zola 0.17.0 或更高版本
+
+## 许可证
+
+MIT
+
+## 致谢
+
+- [Zola](https://getzola.org) - 静态站点生成器
+- [Fuse.js](https://fusejs.io) - 客户端搜索
+- [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) - 排版
+- Favicon by [IconsMind](https://iconarchive.com/artist/iconsmind.html)

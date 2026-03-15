@@ -1,7 +1,7 @@
 
 +++
 title = "HayFlow"
-description = "HayFlow is a minimal and completely modular Zola theme for anyone wishing to have their own landing page."
+description = "HayFlow 是一个极简且完全模块化的 Zola 主题，适合任何希望拥有自己落地页的人。"
 template = "theme.html"
 date = 2023-03-15T12:00:30+01:00
 
@@ -22,64 +22,64 @@ name = "Cyril Marpaud"
 homepage = "https://cyril-marpaud.gitlab.io"
 +++        
 
-# HayFlow - Modular Zola Theme
+# HayFlow - 模块化 Zola 主题
 
-## About
+## 关于
 
 <div align="center">
-![Preview screenshot](https://gitlab.com/cyril-marpaud/hayflow/-/raw/main/screenshot.png "Preview screenshot")
+![预览截图](https://gitlab.com/cyril-marpaud/hayflow/-/raw/main/screenshot.png "预览截图")
 </div>
 
-[HayFlow](https://gitlab.com/cyril-marpaud/hayflow) is a modular landing page made as a theme for [Zola](https://www.getzola.org), a static site generator written in [Rust](https://www.rust-lang.org). It features a dark theme with a particles background, vertical arrows for navigation and a few card types which you are free to include to best suit your needs. Nearly all UI elements are subtly animated to convey a professional look (although I'm no designer 🤷 merely an [embedded systems engineer](https://www.linkedin.com/in/cyrilmarpaud)).
+[HayFlow](https://gitlab.com/cyril-marpaud/hayflow) 是一个模块化落地页，作为 [Zola](https://www.getzola.org)（一个用 [Rust](https://www.rust-lang.org) 编写的静态站点生成器）的主题制作。它具有带有粒子背景的暗色主题、用于导航的垂直箭头以及几种卡片类型，你可以自由包含这些卡片以最适合你的需求。几乎所有 UI 元素都经过微妙的动画处理，以传达专业的外观（虽然我不是设计师 🤷 仅仅是一个 [嵌入式系统工程师](https://www.linkedin.com/in/cyrilmarpaud)）。
 
-It has been designed to require only [Markdown](https://www.markdownguide.org) editing (no HTML/CSS), but feel free to do so if you need to. I'll be glad to review a [Merge Request](https://gitlab.com/cyril-marpaud/hayflow/-/merge_requests) if you implement a new card type !
+它的设计目的是只需要编辑 [Markdown](https://www.markdownguide.org)（没有 HTML/CSS），但如果你需要，可以随意编辑。如果你实现了一个新的卡片类型，我很乐意审查 [Merge Request](https://gitlab.com/cyril-marpaud/hayflow/-/merge_requests)！
 
 [[_TOC_]]
 
-## Live demo
+## 在线演示
 
-See [my personal website](https://cyril-marpaud.gitlab.io) for an example of what can be accomplished in a few minutes with this theme. Its source code is also available as an example in my [Gitlab website repository](https://gitlab.com/cyril-marpaud/cyril-marpaud.gitlab.io).
+查看 [我的个人网站](https://cyril-marpaud.gitlab.io) 以获取使用此主题在几分钟内可以完成的示例。其源代码也可以在我的 [Gitlab 网站仓库](https://gitlab.com/cyril-marpaud/cyril-marpaud.gitlab.io) 中作为示例获得。
 
-## Built with
+## 构建于
 
 - [Zola](https://www.getzola.org)
 - [Particles.js](https://vincentgarreau.com/particles.js/)
 - [Font Awesome](https://fontawesome.com)
 - [Modern Normalize](https://github.com/sindresorhus/modern-normalize)
-- Inspiration came from [particle-zola](https://github.com/svavs/particle-zola), another theme.
+- 灵感来自 [particle-zola](https://github.com/svavs/particle-zola)，另一个主题。
 
-## Quick start
+## 快速开始
 
-Initialize a Zola website and install HayFlow:
+初始化一个 Zola 网站并安装 HayFlow：
 ```bash
 zola init mywebsite
 cd mywebsite
 git clone git@gitlab.com:cyril-marpaud/hayflow.git themes/hayflow
 ```
 
-Add `theme = "hayflow"` at the top of `config.toml` file to tell Zola to use HayFlow (as described in [the documentation](https://www.getzola.org/documentation/themes/installing-and-using-themes/)).
+在 `config.toml` 文件顶部添加 `theme = "hayflow"` 以告诉 Zola 使用 HayFlow（如 [文档](https://www.getzola.org/documentation/themes/installing-and-using-themes/) 中所述）。
 
-Finally, run...
+最后，运行...
 
 ```bash
 zola serve
 ```
-...and go to [http://localhost:1111](http://localhost:1111) to see the landing page in action with the default name displayed (John Doe).
+...并前往 [http://localhost:1111](http://localhost:1111) 查看带有默认名称（John Doe）的落地页。
 
-## Landing page customization
+## 落地页自定义
 
-Customizing the landing page boils down to two things:
+自定义落地页归结为两件事：
 
-- adding the `name` and `links` variables to the `config.toml`'s `[extra]` section (`links` is optional. So is `name` if your name is John Doe)
-- adding the `roles` variable to the `content/_index.md`'s `[extra]` section (also optional)
+- 将 `name` 和 `links` 变量添加到 `config.toml` 的 `[extra]` 部分（`links` 是可选的。如果你的名字是 John Doe，`name` 也是可选的）
+- 将 `roles` 变量添加到 `content/_index.md` 的 `[extra]` 部分（也是可选的）
 
-The difference comes from the fact that you might need to translate the `roles` into other languages. For that to be possible, they must be placed in a MarkDown file. See multilingual support for more info.
+区别在于你可能需要将 `roles` 翻译成其他语言。为了实现这一点，它们必须放在 MarkDown 文件中。有关更多信息，请参阅多语言支持。
 
-- `name` speaks for itself.
-- `roles` is an array of strings. Each string is displayed on a separate line.
-- `links` is an array of `{icon, url}` objects. You can use any **free** icon from [Font Awesome](https://fontawesome.com/search?o=r&m=free) here, all you need is the icon's code. The [enveloppe icon](https://fontawesome.com/icons/envelope?s=solid&f=classic)'s code is `fa-solid fa-envelope`. The [pizza-slice icon](https://fontawesome.com/icons/pizza-slice?s=solid&f=classic)'s code is `fa-solid fa-pizza-slice`.
+- `name` 不言自明。
+- `roles` 是一个字符串数组。每个字符串显示在单独的行上。
+- `links` 是 `{icon, url}` 对象的数组。你可以在这里使用 [Font Awesome](https://fontawesome.com/search?o=r&m=free) 中的任何 **免费** 图标，你只需要图标的代码。[信封图标](https://fontawesome.com/icons/envelope?s=solid&f=classic) 的代码是 `fa-solid fa-envelope`。[披萨切片图标](https://fontawesome.com/icons/pizza-slice?s=solid&f=classic) 的代码是 `fa-solid fa-pizza-slice`。
 
-This is what the `config.toml`'s `[extra]` section might look like after customization:
+这是自定义后 `config.toml` 的 `[extra]` 部分可能的样子：
 
 ```TOML
 [extra]
@@ -91,7 +91,7 @@ links = [
 ]
 ```
 
-And here's a customized version of `content/_index.md`:
+这是 `content/_index.md` 的自定义版本：
 
 ```TOML
 +++
@@ -100,9 +100,9 @@ roles = ["Green 🟢", "Turtle 🐢", "Pizza enthusiast 🍕"]
 +++
 ```
 
-## Adding a section
+## 添加版块
 
-Inside the `content` directory, create a `pizza` folder and place this `_index.md` file inside:
+在 `content` 目录内，创建一个 `pizza` 文件夹并在其中放置此 `_index.md` 文件：
 
 ```TOML
 +++
@@ -112,18 +112,18 @@ title = "Pizza"
 What a mouthful !
 ```
 
-Then, add this `sections` variable (an array of strings) to the `config.toml`'s `[extra]` section:
+然后，将此 `sections` 变量（字符串数组）添加到 `config.toml` 的 `[extra]` 部分：
 
 ```TOML
 [extra]
 sections = ["pizza"]
 ```
 
-A new internal link pointing to that section will appear on the landing page. Click it and see what happens ! This is called a "simple card" section.
+一个新的指向该版块的内部链接将出现在落地页上。点击它看看会发生什么！这被称为“简单卡片”版块。
 
-## Customizing sections
+## 自定义版块
 
-HayFlow currently supports three card types : `simple`, `columns` and `list`. If left unspecified, the type will default to `simple`. To change it, add a `card_type` variable to the `_index.md`'s `[extra]` section:
+HayFlow 目前支持三种卡片类型：`simple`、`columns` 和 `list`。如果未指定，类型将默认为 `simple`。要更改它，请将 `card_type` 变量添加到 `_index.md` 的 `[extra]` 部分：
 
 ```TOML
 +++
@@ -136,9 +136,9 @@ card_type = "simple"
 What a mouthful !
 ```
 
-### Columns card
+### 列卡片
 
-Add a new section and set its card type to `columns`. Then, alongside the `_index.md` file, create three other files: `one.md`, `two.md` and `three.md`. These will be the ingredients of your new pizza. Their content is similar to `_index.md`:
+添加一个新版块并将其卡片类型设置为 `columns`。然后，在 `_index.md` 文件旁边，创建另外三个文件：`one.md`、`two.md` 和 `three.md`。这些将是你新披萨的配料。它们的内容类似于 `_index.md`：
 
 ```TOML
 +++
@@ -151,11 +151,11 @@ icons = ["fa-solid fa-tomato"]
 The basis of any self-respecting pizza. It is the edible berry of the plant Solanum lycopersicum.
 ```
 
-The `icons` variable is optional.
+`icons` 变量是可选的。
 
-### List card
+### 列表卡片
 
-Add a new section and set its card type to `list`. Then, alongside the `_index.md` file, create three other files: `one.md`, `two.md` and `three.md`. These will be your favourite pizzas. Their content is similar to `_index.md`:
+添加一个新版块并将其卡片类型设置为 `list`。然后，在 `_index.md` 文件旁边，创建另外三个文件：`one.md`、`two.md` 和 `three.md`。这些将是你最喜欢的披萨。它们的内容类似于 `_index.md`：
 
 ```TOML
 +++
@@ -168,15 +168,15 @@ link = "https://en.wikipedia.org/wiki/Pizza_Margherita"
 Margherita pizza is a typical [Neapolitan pizza](https://en.wikipedia.org/wiki/Neapolitan_pizza), made with San Marzano tomatoes, mozzarella cheese, fresh basil, salt, and extra-virgin olive oil.
 ```
 
-The `link` variable is optional.
+`link` 变量是可选的。
 
-## Multilingual support
+## 多语言支持
 
-HayFlow supports multilingual websites out of the box.
+HayFlow 开箱即支持多语言网站。
 
-### Declare more languages
+### 声明更多语言
 
-In `config.toml`, add the languages you want to support like so:
+在 `config.toml` 中，添加你想要支持的语言，如下所示：
 
 ```TOML
 default_language = "fr"
@@ -192,14 +192,14 @@ flag = "🇬🇧"
 flag = "🇮🇹"
 ```
 
-This will make the language-select block in the top-right corner visible. It consists of clickable links to the translated versions of your website.
-The `flag` variable is optional and you can use simple text instead of an emoji flag. If left unspecified, it will default to the country code you chose for that language (`fr`, `en` and `italian` in this example).
+这将使右上角的语言选择块可见。它由指向网站翻译版本的可点击链接组成。
+`flag` 变量是可选的，你可以使用简单的文本而不是 emoji 旗帜。如果未指定，它将默认为你为该语言选择的国家代码（本例中为 `fr`、`en` 和 `italian`）。
 
-### Translate the content
+### 翻译内容
 
-Each `.md` file in the `content` folder now needs to be translated into every additional language previously declared in `config.toml`.
+现在需要将 `content` 文件夹中的每个 `.md` 文件翻译成之前在 `config.toml` 中声明的每种其他语言。
 
-Following the above example (three languages, french, english and italian) and given this initial filetree:
+按照上面的示例（三种语言，法语、英语和意大利语）并给定此初始文件树：
 
 ```
 content/
@@ -210,7 +210,7 @@ content/
       capricciosa.md
 ```
 
-The final filetree should look like this for the translation to be complete:
+为了完成翻译，最终的文件树应该如下所示：
 
 ```
 content/
@@ -229,9 +229,9 @@ content/
       capricciosa.italian.md
 ```
 
-### List cards
+### 列表卡片
 
-Additionally, if your website includes any "list card" sections, you might want to specify a `discover` variable in their `[extra]` sections like so:
+此外，如果你的网站包含任何“列表卡片”版块，你可能希望在其 `[extra]` 部分指定一个 `discover` 变量，如下所示：
 
 ```TOML
 +++
@@ -243,9 +243,9 @@ discover = "Découvrir"
 +++
 ```
 
-## Whoami
+## 我是谁
 
-My name is Cyril Marpaud, I'm an embedded systems freelance engineer and a Rust enthusiast 🦀 I have nearly 10 years experience and am currently living in Lyon (France).
+我叫 Cyril Marpaud，我是一名嵌入式系统自由工程师和 Rust 爱好者 🦀 我有近 10 年的经验，目前居住在里昂（法国）。
 
 <div align="center">
 
@@ -255,5 +255,3 @@ My name is Cyril Marpaud, I'm an embedded systems freelance engineer and a Rust 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=grey&logoColor=blue
 
 </div>
-
-        

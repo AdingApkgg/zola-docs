@@ -1,7 +1,7 @@
 
 +++
 title = "emily_zola_theme"
-description = "a KISS theme for Zola"
+description = "一个适用于 Zola 的 KISS 主题"
 template = "theme.html"
 date = 2023-11-05T15:26:56+09:00
 
@@ -27,50 +27,48 @@ homepage = "https://github.com/kyoheiu"
 ![screenshot01](/static/images/ss01.png)
 
 
-A KISS theme for Zola (static site generator written in Rust). 
+一个适用于 Zola（用 Rust 编写的静态站点生成器）的 KISS 主题。
 
-Features:
-- simple & clean
-- mobile-friendly
-- MathJax support
+特性：
+- 简单且干净
+- 移动端友好
+- MathJax 支持
 
-Demo site is [here](https://emily-zola-theme.netlify.app/).
+演示站点在 [这里](https://emily-zola-theme.netlify.app/)。
 
-## Usage
+## 使用
 
 ```
 cd YOUR_SITE_DIRECTORY/themes
 git clone https://github.com/kyoheiu/emily_zola_theme.git
 ```
 
-and set the theme-name in `config.toml` to `emily_zola_theme`.
+并在 `config.toml` 中将主题名称设置为 `emily_zola_theme`。
 
 ```
 theme = "emily_zola_theme"
 ```
 
-## example articles
+## 示例文章
 
-In `YOUR_SITE_DIRECTORY/themes/emily_zola_theme/content`.
+在 `YOUR_SITE_DIRECTORY/themes/emily_zola_theme/content` 中。
 
-## MathJax support
+## MathJax 支持
 
-To use MathJax, add the following lines to the front matter in `.md` file. `[extra]` is mandatory:
+要使用 MathJax，请在 `.md` 文件的 Front Matter 中添加以下行。`[extra]` 是强制性的：
 
 ```
 [extra]
 math = true
 ```
 
-## How to customize
-In addition to default values, you can customize following parts easily:
+## 如何自定义
+除了默认值外，你还可以轻松自定义以下部分：
 
-- author name (appears in footer)
-- header icon (appears in header)
+- 作者姓名（出现在页脚）
+- 头部图标（出现在页眉）
 - favicon
-- header icon size (default width: 70px)
-- number of posts in `index.html` (default 5)
+- 头部图标大小（默认宽度：70px）
+- `index.html` 中的文章数（默认 5）
 
-Set your own in `themes/emily_zola_theme/theme.toml`, or to overwrite, copy `[extra]` block, paste it into your `config.toml` and edit.
-
-        
+在 `themes/emily_zola_theme/theme.toml` 中设置你自己的，或者要覆盖，复制 `[extra]` 块，将其粘贴到你的 `config.toml` 中并进行编辑。

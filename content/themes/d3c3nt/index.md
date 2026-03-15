@@ -1,7 +1,7 @@
 
 +++
 title = "d3c3nt"
-description = "A simple, clean, and flexible theme for personal sites."
+description = "一个简单、干净且灵活的个人站点主题。"
 template = "theme.html"
 date = 2022-06-13T18:37:21-07:00
 
@@ -24,42 +24,31 @@ homepage = "https://figbert.com"
 
 # d3c3nt
 
-d3c3nt is a simple, clean, and flexible theme for personal sites, made
-by [FIGBERT] for the [Zola static site engine][zola]. This theme is
-developed mainly for use on my personal site, so new features and styles
-will be added when I stumble onto the need to make them.
+d3c3nt 是一个简单、干净且灵活的个人站点主题，由 [FIGBERT] 为 [Zola 静态站点引擎][Zola] 制作。此主题主要是为我的个人网站开发的，因此当我有需要制作新功能和样式时，就会添加它们。
 
-All in all, it's fairly... decent.
+总而言之，它相当……decent（不错）。
 
-## installation
+## 安装
 
-To use d3c3nt in your own site, you have to add it to your `themes`
-directory. You can do this in a variety of ways, but I recommend adding
-it as a git submodule:
+要在你自己的站点中使用 d3c3nt，你必须将其添加到你的 `themes` 目录中。你可以通过多种方式做到这一点，但我建议将其添加为 git 子模块：
 
 ```
 $ cd themes/
 $ git submodule add git://git.figbert.com/d3c3nt.git
 ```
 
-After installing the theme, set the top-level `theme` variable to
-`"d3c3nt"` in your `config.toml`.
+安装主题后，在你的 `config.toml` 中将顶级 `theme` 变量设置为 `"d3c3nt"`。
 
-For more information about Zola themes in general, check out Zola's
-[official site][zola-docs]. To find out more about d3c3nt's features and
-configuration, head over to the [project's docs][docs].
+有关 Zola 主题的一般信息，请查看 Zola 的 [官方网站][zola-docs]。要了解有关 d3c3nt 的特性和配置的更多信息，请前往 [项目文档][docs]。
 
 ## whoami
 
-To learn more about me, feel free to check out [my website][FIGBERT] and
-subscribe via the [Atom feed][atom]. You can contact me via email at:
-[figbert+d3c3nt@figbert.com][email].
+要了解更多关于我的信息，请随意查看 [我的网站][FIGBERT] 并通过 [Atom 订阅][Atom] 订阅。你可以通过电子邮件联系我：
+[figbert+d3c3nt@figbert.com][Email]。
 
 [FIGBERT]: https://figbert.com/
-[zola]: https://getzola.org/
+[Zola]: https://getzola.org/
 [zola-docs]: https://www.getzola.org/documentation/themes/overview/
 [docs]: https://d3c3nt.figbert.com/config/
-[atom]: https://figbert.com/atom.xml
-[email]: mailto:figbert+d3c3nt@figbert.com
-
-        
+[Atom]: https://figbert.com/atom.xml
+[Email]: mailto:figbert+d3c3nt@figbert.com

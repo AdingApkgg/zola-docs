@@ -1,7 +1,7 @@
 
 +++
 title = "zola-folio"
-description = "A fork of the Jekyll *folio theme to zola"
+description = "Jekyll *folio 主题的 Zola 移植版"
 template = "theme.html"
 date = 2024-12-31T14:02:39-06:00
 
@@ -26,26 +26,26 @@ homepage = "http://everettsprojects.com"
 
 [![zola-folio](static/img/zola-folio.png)](https://zola-folio.pages.dev/)
 
-*folio is a [Zola](https://www.getzola.org) theme forked from the [original Jekyll theme by Lia Boegev](https://github.com/bogoli/-folio/tree/master).
+*folio 是一个 [Zola](https://www.getzola.org) 主题，移植自 [Lia Boegev 的原始 Jekyll 主题](https://github.com/bogoli/-folio/tree/master)。
 
-**[Live Demo](https://zola-folio.pages.dev/)**
+**[在线演示](https://zola-folio.pages.dev/)**
 
-## Features
+## 特性
 
-- [x] Menu bar
-- [x] Social links
-- [x] Tags
+- [x] 菜单栏
+- [x] 社交链接
+- [x] 标签
 - [x] MathJax
-- [x] Search
-- [x] Customizable color
-- [x] SEO tags
-- [ ] Multi-language support
+- [x] 搜索
+- [x] 可自定义颜色
+- [x] SEO 标签
+- [ ] 多语言支持
 
-## Installation
+## 安装
 
-In the git repo of your zola site:
+在你的 zola 站点的 git 仓库中：
 
-### Add the theme as a git submodule:
+### 将主题添加为 git 子模块：
 
 ```bash
 git submodule add https://github.com/evjrob/zola-folio themes/zola-folio
@@ -53,19 +53,19 @@ git submodule update --init --recursive
 git submodule update --remote --merge
 ```
 
-### Or clone the theme directly into your themes directory:
+### 或者直接克隆主题到你的 themes 目录：
 
 ```bash
 git clone https://github.com/evjrob/zola-folio themes/zola-folio
 ```
 
-Then set `theme = "zola-folio"` in your config.toml file. You can now test the theme locally by running `zola serve` in the terminal and navigating to the localhost URL displayed by the command.
+然后在你的 config.toml 文件中设置 `theme = "zola-folio"`。你现在可以通过在终端运行 `zola serve` 并导航到命令显示的 localhost URL 来本地测试主题。
 
-## Configuration
+## 配置
 
-### Menu Bar
+### 菜单栏
 
-Items in the top menu bar can be controlled with the `extra.menu_items` setting in config.toml:
+顶部菜单栏中的项目可以通过 config.toml 中的 `extra.menu_items` 设置进行控制：
 
 ```toml
 menu_items = [
@@ -75,9 +75,9 @@ menu_items = [
 ]
 ```
 
-### About Page Social Contacts
+### 关于页面的社交联系方式
 
-If you have an about page, you can add social contact links using the `extra.socials` setting in the frontmatter of the page:
+如果你有一个关于页面，你可以使用页面 Front Matter 中的 `extra.socials` 设置添加社交联系链接：
 
 ```toml
 +++
@@ -93,19 +93,19 @@ socials = [
 +++
 ```
 
-### MathJax
+### MathJax 支持
 
-MathJax can be enabled by setting `extra.math` in config.toml:
+可以通过在 config.toml 中设置 `extra.math` 来启用 MathJax：
 
 ```toml
 [extra]
 math = true
 ```
-[Example](https://zola-folio.pages.dev/math/).
+[示例](https://zola-folio.pages.dev/math/).
 
-### Search
+### 搜索
 
-Search using elasticlunr.js:
+使用 elasticlunr.js 进行搜索：
 
 ```toml
 default_language = "en"
@@ -119,15 +119,15 @@ include_content = true
 index_format = "elasticlunr_json"
 ```
 
-### Customizable Colors
+### 可自定义颜色
 
-Simply set the `extra.theme_color` in the config.toml:
+只需在 config.toml 中设置 `extra.theme_color`：
 
 ```toml
 [extra]
 theme_color = "red"|"blue"|"green"|"purple"
 ```
-If the existing colors are not to your liking, then you can create your own by adding a **sass/color/custom.scss** file with the following:
+如果现有的颜色不合你意，你可以通过添加一个 **sass/color/custom.scss** 文件来创建你自己的颜色，内容如下：
 
 ```scss
 :root {
@@ -135,14 +135,13 @@ If the existing colors are not to your liking, then you can create your own by a
     --theme-color-light: #ffffff;
 }
 ```
-Then set `theme_color = "custom"`.
+然后设置 `theme_color = "custom"`。
 
-### SEO Tags
+### SEO 标签
 
-The typical `<meta>` tags including Open Graph and Twitter are automatically set for posts using the information in the frontmatter of each post. To ensure an image is set for Open Graph and Twitter cards, please ensure the frontmatter contains the `extra.feature_image` value:
+典型的 `<meta>` 标签（包括 Open Graph 和 Twitter）会自动使用每篇文章 Front Matter 中的信息进行设置。为了确保为 Open Graph 和 Twitter 卡片设置图片，请确保 Front Matter 包含 `extra.feature_image` 值：
 
 ```toml
 [extra]
 feature_image = "my_image.ext"
 ```
-        

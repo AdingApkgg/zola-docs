@@ -1,7 +1,7 @@
 
 +++
 title = "zolastrap"
-description = "A bootstrap theme for zola"
+description = "一个 zola 的 bootstrap 主题"
 template = "theme.html"
 date = 2022-02-20T19:12:59-03:00
 
@@ -23,148 +23,145 @@ homepage = "https://marcodpt.github.io"
 +++        
 
 # zolastrap
-A bootstrap theme for zola
+一个 zola 的 bootstrap 主题
 
-[Live Demo](https://marcodpt.github.io/zolastrap/)
+[在线演示](https://marcodpt.github.io/zolastrap/)
 
-## `config.toml` [extra] variables
+## `config.toml` [extra] 变量
+
 ### banner
- - type: string
- - default: ""
+ - 类型: 字符串
+ - 默认值: ""
 
-Path of a banner image, use empty string for no banner
+横幅图片的路径，使用空字符串表示无横幅
 
 ### date_format
- - type: string
- - default: "%d/%m/%Y"
+ - 类型: 字符串
+ - 默认值: "%d/%m/%Y"
 
-date format expression
+日期格式表达式
 
-### theme
- - type: string
- - default: "default"
+### 主题
+ - 类型: 字符串
+ - 默认值: "default"
 
-one of the [Bootswatch](https://bootswatch.com) themes
+[Bootswatch](https://bootswatch.com) 主题之一
 
 ### bg
- - type: string
- - default: "dark"
+ - 类型: 字符串
+ - 默认值: "dark"
 
-one of the available backgrounds in
 [Bootstrap5](https://getbootstrap.com/docs/5.1/utilities/background/)
-for `navbar` and `footer`
+中用于 `navbar` 和 `footer` 的可用背景之一
 
 ### inverted
- - type: boolean
- - default: false
+ - 类型: 布尔值
+ - 默认值: false
 
-Invert font for `navbar` and `footer` in case default choice is bad
+反转 `navbar` 和 `footer` 的字体，以防默认选择不好
 
 ### themes
- - type: string
- - default: "Choose a Theme"
+ - 类型: 字符串
+ - 默认值: "Choose a Theme"
 
-Navbar label for themes dropdown.
+主题下拉菜单的导航栏标签。
 
-This dropdown will allow user to change
-[Bootswatch](https://bootswatch.com) theme.
+此下拉菜单将允许用户更改
+[Bootswatch](https://bootswatch.com) 主题。
 
-Use empty string in case you do not want the user choose a theme.
+如果你不想让用户选择主题，请使用空字符串。
 
 ### schemes
- - type: string
- - default: "Choose a Color Scheme"
+ - 类型: 字符串
+ - 默认值: "Choose a Color Scheme"
 
-Navbar label for schemes dropdown.
+配色方案下拉菜单的导航栏标签。
 
-This dropdown will allow user to change footer and navbar
-[background](https://getbootstrap.com/docs/5.1/utilities/background/)
-color.
+此下拉菜单将允许用户更改页脚和导航栏
+[背景](https://getbootstrap.com/docs/5.1/utilities/background/)
+颜色。
 
-Use empty string in case you do not want the user choose a theme.
+如果你不想让用户选择主题，请使用空字符串。
 
-### search
- - type: string
- - default: "Search"
+### 搜索
+ - 类型: 字符串
+ - 默认值: "Search"
 
-Placeholder for navbar search input.
+导航栏搜索输入的占位符。
 
-Remember that to enable and disable search you should set variable
-[build_search_index](https://www.getzola.org/documentation/getting-started/configuration/).
+请记住，要启用和禁用搜索，你应该设置变量
+[build_search_index](https://www.getzola.org/documentation/getting-started/configuration/)。
 
 ### tag
- - type: string
- - default: "Posts by Topic"
+ - 类型: 字符串
+ - 默认值: "Posts by Topic"
 
-Taxonomy `tag` single label. Useful for translations.
+分类法 `tag` 单个标签。对翻译很有用。
 
-### tags
- - type: string
- - default: "Posts by Topics"
+### 标签
+ - 类型: 字符串
+ - 默认值: "Posts by Topics"
 
-Taxonomy `tag` list label. Useful for translations.
-You can have a nice tag list at the bottom of a page using `extra.tags` = true
-in the `_index.md`
+分类法 `tag` 列表标签。对翻译很有用。
+你可以通过在 `_index.md` 中使用 `extra.tags` = true 在页面底部拥有一个漂亮的标签列表。
 
 ### links
- - type: array
- - default: []
+ - 类型: 数组
+ - 默认值: []
 
-Navbar links. Use an empty array to ignore this.
+导航栏链接。使用空数组忽略此项。
 
-Items (object):
- - title (String): label of the navbar link
- - url (String): href of associate link
+项目 (对象):
+ - title (String): 导航栏链接的标签
+ - url (String): 关联链接的 href
 
-### email
- - type: string
- - default: ""
+### Email
+ - 类型: 字符串
+ - 默认值: ""
 
-Footer email. Use an empty string to ignore this.
+页脚电子邮件。使用空字符串忽略此项。
 
 ### icons
- - type: array
- - default: []
+ - 类型: 数组
+ - 默认值: []
 
-Footer social icons. Use an empty array to ignore this.
+页脚社交图标。使用空数组忽略此项。
 
-Items (object):
- - title (string): Optional title string for icon
- - icon (string): One of 
- - url (string): href of the icon
+项目 (对象):
+ - title (string): 图标的可选标题字符串
+ - icon (string): 其中之一
+ - url (string): 图标的 href
 
-### utterances
- - type: string
- - default: "" 
+### Utterances
+ - 类型: 字符串
+ - 默认值: "" 
 
-[utterances](https://github.com/utterance/utterances) repo url.
+[Utterances](https://github.com/utterance/utterances) 仓库 url。
 
-Use an empty string to ignore utterances widget.
+使用空字符串忽略 utterances 小部件。
 
 ### utterances_label
- - type: string
- - default: "Comments" 
+ - 类型: 字符串
+ - 默认值: "Comments" 
 
-[utterances](https://github.com/utterance/utterances) widget label.
+[Utterances](https://github.com/utterance/utterances) 小部件标签。
 
 ### utterances_theme
- - type: string
- - default: "github-light" 
+ - 类型: 字符串
+ - 默认值: "github-light" 
 
-[utterances](https://github.com/utterance/utterances) widget theme.
+[Utterances](https://github.com/utterance/utterances) 小部件主题。
 
 ### utterances_issue_term
- - type: string
- - default: "pathname" 
+ - 类型: 字符串
+ - 默认值: "pathname" 
 
-[utterances](https://github.com/utterance/utterances) widget pathname.
+[Utterances](https://github.com/utterance/utterances) 小部件路径名。
 
-## Contributing
-Any help is greatly appreciated!
+## 贡献
+非常感谢任何帮助！
 
- - [Tera template engine](https://tera.netlify.app/docs)
- - [Zola SSG templates](https://www.getzola.org/documentation/templates/overview/)
- - [Bootstrap5 docs](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+ - [Tera 模板引擎](https://tera.netlify.app/docs)
+ - [Zola SSG 模板](https://www.getzola.org/documentation/templates/overview/)
+ - [Bootstrap5 文档](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
  - [Bootswatch](https://bootswatch.com)
-
-        

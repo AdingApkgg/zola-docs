@@ -1,7 +1,7 @@
 
 +++
 title = "halve-z"
-description = "Retro two-column theme"
+description = "复古双栏主题"
 template = "theme.html"
 date = 2026-02-19T18:51:13-05:00
 
@@ -25,55 +25,53 @@ homepage = "https://failsafe.monster/"
 # `halve-z`
 [![Netlify Status](https://api.netlify.com/api/v1/badges/352a12ed-cdba-4545-9256-9fb698f5a94f/deploy-status?branch=trunk)](https://app.netlify.com/sites/halve-z/deploys)
 
-A two-column theme for **Zola**.
+一个用于 **Zola** 的双栏主题。
 
 ![logo](https://raw.githubusercontent.com/charlesrocket/halve-z/trunk/static/favicon-32x32.png)
 
-## Features
+## 特性
 
-This is a _retro_ port of [Halve](https://github.com/TaylanTatli/Halve) (**Jekyll**). It features:
+这是 [Halve](https://github.com/TaylanTatli/Halve) (**Jekyll**) 的 _复古_ 移植版。它具有：
 
-* search
-* taxonomies
-* PWA (dynamic cache/offline mode)
-* notifications
-* auto color schemes
-* ToC
-* pagination
-* media shortcodes
+* 搜索
+* 分类法
+* PWA（动态缓存/离线模式）
+* 通知
+* 自动配色方案
+* 目录 (ToC)
+* 分页
+* 媒体短代码
 * SEO
 * CSP
-* project cards
-* comments ([Mastodon](https://mastodon.social)/[Cactus](https://gitlab.com/cactus-comments/)/[Giscus](https://github.com/giscus/giscus))
-* read time
+* 项目卡片
+* 评论 ([Mastodon](https://mastodon.social)/[Cactus](https://gitlab.com/cactus-comments/)/[Giscus](https://github.com/giscus/giscus))
+* 阅读时间
 
-## Installation
+## 安装
 
-Add theme submodule using `git`:
+使用 `git` 添加主题子模块：
 
 ```sh
 git submodule add https://github.com/charlesrocket/halve-z themes/halve-z
 ```
 
-### Updates
+### 更新
 
-Use the following command to update theme to the latest version:
+使用以下命令将主题更新到最新版本：
 
 ```
 git submodule update --recursive --remote
 ```
 
-## Configuration
+## 配置
 
-1. Copy theme's [config.toml](https://github.com/charlesrocket/halve-z/blob/trunk/config.toml) into your project's root directory. Set variables as required and add `theme = "halve-z"` at the **top** of the config file.
-2. Copy the content to get started:
+1. 将主题的 [config.toml](https://github.com/charlesrocket/halve-z/blob/trunk/config.toml) 复制到你的项目根目录。根据需要设置变量，并在配置文件的 **顶部** 添加 `theme = "halve-z"`。
+2. 复制内容以开始：
 
 ```
 cp -R -f themes/halve-z/content/ content/
 ```
 
-## Usage
+## 使用
 
-See demo [posts](https://halve-z.netlify.app/posts/).
-
-        
+查看演示 [文章](https://halve-z.netlify.app/posts/)。

@@ -27,7 +27,7 @@ homepage = "https://github.com/pawroman"
 [![Build Status](https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/pawroman/zola-theme-terminimal/actions/workflows/pages/pages-build-deployment)
 ![No JavaScript](https://img.shields.io/badge/JavaScript-none-brightgreen.svg)
 
-![Screenshot](../master/screenshot.png?raw=true)
+![截图](../master/screenshot.png?raw=true)
 
 See the live demo (of the default configuration) here:
 https://pawroman.github.io/zola-theme-terminimal/
@@ -83,7 +83,7 @@ compile_sass = true
 Also see the Zola documentation on using themes:
 https://www.getzola.org/documentation/themes/installing-and-using-themes/
 
-## Shortcodes
+## 短代码
 
 The theme adds two custom shortcodes related to image handling.
 
@@ -133,19 +133,19 @@ To add an image to a post, set the `og_image` extra option to the desired image
 in the same directory of the markdown file:
 
 ```toml
-[extra]
+[额外配置]
 og_image = "colocated_image.png"
 ```
 
 Additionally, for the section pages and for posts to have a fallback image, add
-`default_og_image` to the `[extra]` section:
+`default_og_image` to the `[额外配置]` section:
 
 ```toml
-[extra]
+[额外配置]
 default_og_image = "static/ocean.jpg"
 ```
 
-## Configuration
+## 配置
 
 ### Only show the post's description
 
@@ -154,7 +154,7 @@ On each post you can specify the following:
 ```toml
 description = "test description"
 
-[extra]
+[额外配置]
 show_only_description = true
 ```
 
@@ -169,11 +169,11 @@ configurable.
 By default, both accent and background are set
 to `blue`.
 
-To configure menu, add this in `[extra]` section
+To configure menu, add this in `[额外配置]` section
 of your `config.toml`:
 
 ```toml
-[extra]
+[额外配置]
 
 # One of: blue, green, orange, pink, red.
 # Defaults to blue.
@@ -193,7 +193,7 @@ You can set the "logo" text and what it links to,
 by modifying `config.toml` like so:
 
 ```toml
-[extra]
+[额外配置]
 
 # The logo text - defaults to "Terminimal theme"
 logo_text = "My blog"
@@ -207,7 +207,7 @@ logo_home_link = "/take/me/away!"
 You can set the footer's copyright author name like this:
 
 ```toml
-[extra]
+[额外配置]
 
 # Author name: when specified, modifies the default
 # copyright text. Apart from author, it will
@@ -219,7 +219,7 @@ If you don't like the default copyright text,
 you can set it to completely custom HTML:
 
 ```toml
-[extra]
+[额外配置]
 
 # Copyright text in HTML format. If specified,
 # entirely replaces default copyright and author.
@@ -231,11 +231,11 @@ copyright_html = "My custom&nbsp;<b>copyright</b>"
 The menu is optional, static (all items are always shown,
 no matter what the screen size) and fully user-configurable.
 
-To configure menu, add this in `[extra]` section
+To configure menu, add this in `[额外配置]` section
 of your `config.toml`:
 
 ```toml
-[extra]
+[额外配置]
 
 # menu is enabled by adding menu_items (optional)
 menu_items = [
@@ -254,7 +254,7 @@ menu_items = [
 ]
 ```
 
-### Tags
+### 标签
 
 The theme optionally supports tags. To enable them, create
 a "tags" taxonomy in your `config.toml`:
@@ -270,7 +270,7 @@ cause them to show up in `archive` section. Note
 that you still need to create a menu link to the tags
 page manually.
 
-### Pagination
+### 分页
 
 Pagination is fully supported for post list (main site)
 and intra-post (you can navigate to earlier and later posts).
@@ -291,7 +291,7 @@ sort_by = "date"
 Then, tweak the theme's pagination config in `config.toml`:
 
 ```toml
-[extra]
+[额外配置]
 
 # Whether to show links to earlier and later posts
 # on each post page (defaults to true).
@@ -326,7 +326,7 @@ might not contain all the Unicode characters you need.
 You can enable full unicode support in `config.toml`:
 
 ```toml
-[extra]
+[额外配置]
 
 # Use full Hack character set, not just a subset.
 # Switch this to true if you need full unicode support.
@@ -440,7 +440,7 @@ This theme has been forked from https://github.com/panr/hugo-theme-terminal
 - The shortcodes `image` and `figure` (See Shortcodes.
 - Fully responsive.
 
-## License
+## 许可证
 
 Copyright © 2019 Paweł Romanowski (pawroman)
 

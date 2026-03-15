@@ -1,7 +1,7 @@
 
 +++
 title = "PaperMod"
-description = "A fast, clean, responsive theme ported to Zola."
+description = "一个快速、干净、响应式的主题，移植到 Zola。"
 template = "theme.html"
 date = 2025-12-12T10:01:47-05:00
 
@@ -24,81 +24,73 @@ homepage = "https://github.com/cydave"
 
 # Zola PaperMod
 
-This repository is the unofficial successor to [cydave's papermod](https://github.com/cydave/zola-theme-papermod)!
+此仓库是 [cydave's papermod](https://github.com/cydave/zola-theme-papermod) 的非官方继任者！
 
-This theme is the backbone of my site [Seq.rs](https://github.com/dawnandrew100/seq.rs)
-and will primarily be updated to meet my needs for that site.
+此主题是我的网站 [Seq.rs](https://github.com/dawnandrew100/seq.rs) 的骨干，主要会根据我对该网站的需求进行更新。
 
-With that being said, if others have additions they'd like to see, you're more
-than welcome to open a pull request on this fork!
+话虽如此，如果其他人有想要添加的内容，非常欢迎在这个分叉上提交 pull request！
 
-![Screenshot of papermod homepage](screenshot.png)
+![papermod 首页截图](screenshot.png)
 
-A work in progress port of the [hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod)
-theme by [@adityatelange](https://github.com/adityatelange) to [Zola](https://www.getzola.org/)
+一个正在进行的 [hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod) 主题（由 [@adityatelange](https://github.com/adityatelange) 制作）到 [Zola](https://www.getzola.org/) 的移植版。
 
-Due to config changes introduced with Zola 0.19, only Zola 0.19.1 and later are
-currently supported.
+由于 Zola 0.19 引入的配置更改，目前仅支持 Zola 0.19.1 及更高版本。
 
-Demo @ https://dawnandrew100.github.io/zola-theme-papermod-2/
+演示 @ https://dawnandrew100.github.io/zola-theme-papermod-2/
 
-## Features
+## 特性
 
-+ [x] Blog post archive
-+ [x] Blog post RSS feeds
-+ [x] Tags
-+ [x] Tag-based RSS feeds
-+ [x] Optional: Custom taxonomies
-+ [x] Light / Dark theme switching (with configurable default preference)
-+ [x] Syntax highlighting for code snippets (Zola's built-in syntax highlighting)
-+ [x] Custom navigation
-+ [x] Hide pages from home page by adding `extra = {exclude_from_home = true}` to front matter or adding markdown file to `content/static/` folder
-+ [x] Code copy buttons
-+ [x] Search page
-+ [ ] SEO Metadata
-+ [ ] Language switcher (multi-language support)
++ [x] 博客文章归档
++ [x] 博客文章 RSS 订阅
++ [x] 标签
++ [x] 基于标签的 RSS 订阅
++ [x] 可选：自定义分类法
++ [x] 亮色 / 暗色主题切换（具有可配置的默认偏好）
++ [x] 代码片段的语法高亮（Zola 内置语法高亮）
++ [x] 自定义导航
++ [x] 通过在 Front Matter 中添加 `extra = {exclude_from_home = true}` 或将 markdown 文件添加到 `content/static/` 文件夹来从首页隐藏页面
++ [x] 代码复制按钮
++ [x] 搜索页面
++ [ ] SEO 元数据
++ [ ] 语言切换器（多语言支持）
 
-## Installation
+## 安装
 
-1. Download the Theme
+1. 下载主题
 
 ```sh
 git submodule add https://github.com/dawnandrew100/zola-theme-papermod-2 themes/papermod_2
 ```
 
-2. Add `theme = "papermod_2"` to your zola `config.toml`
-3. Copy over the example content to get started
+2. 将 `theme = "papermod_2"` 添加到你的 zola `config.toml`
+3. 复制示例内容以开始
 
 ```sh
 cp -r themes/papermod_2/content content
 ```
 
-## Switching from papermod to papermod_2
+## 从 papermod 切换到 papermod_2
 
-1. Remove papermod submodule
+1. 移除 papermod 子模块
 
 ```sh
 git submodule deinit -f path/to/papermod
 git rm -f path/to/papermod
-rm -rf .git/modules/path/to/papermod # Or manually remove
+rm -rf .git/modules/path/to/papermod # 或者手动移除
 ```
 
-2. Download papermod_2
+2. 下载 papermod_2
 
 ```sh
 git submodule add https://github.com/dawnandrew100/zola-theme-papermod-2 themes/papermod_2
 git submodule update --init --recursive
 ```
 
-## Options
+## 选项
 
-Papermod customizations exist under a designated `extra.papermod` section.
-Refer to [config.toml](config.toml) for available options.
+Papermod 自定义项存在于指定的 `extra.papermod` 部分下。
+请参阅 [config.toml](config.toml) 了解可用选项。
 
-## Contributing
+## 贡献
 
-If you would like to help out with porting hugo-Papermod to Zola, feel free to pick
-up a feature and start working on it. All help, no matter how small the
-contribution is highly appreciated.
-
-        
+如果你想帮助将 hugo-PaperMod 移植到 Zola，请随意选择一个功能并开始工作。所有帮助，无论多小的贡献，都非常感激。

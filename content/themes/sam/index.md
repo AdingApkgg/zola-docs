@@ -1,7 +1,7 @@
 
 +++
 title = "sam"
-description = "A Simple and Minimalist theme with a focus on typography and content."
+description = "一个简单极简的主题，专注于排版和内容。"
 template = "theme.html"
 date = 2025-09-24T11:42:47+02:00
 
@@ -23,47 +23,47 @@ homepage = "https://janbaudisch.dev"
 +++        
 
 [![Build Status][build-img]][build-url]
-[![Demo][demo-img]][demo-url]
+[![演示][demo-img]][demo-url]
 
 # Sam
 
-> A Simple and Minimalist theme with a focus on typography and content.
+> 一个简单极简的主题，专注于排版和内容。
 >
-> [Zola][zola] port of [hugo-theme-sam][hugo-sam].
+> [hugo-theme-sam][hugo-sam] 的 [Zola][Zola] 移植版。
 
-![Screenshot](screenshot.png)
+![截图](screenshot.png)
 
-## Original
+## 原作
 
-This is a port of the original [hugo-theme-sam][hugo-sam] theme for Hugo ([License][upstream-license]).
+这是 Hugo 主题 [hugo-theme-sam][hugo-sam] ([许可证][upstream-license]) 的移植版。
 
-See [`upstream`][upstream] for source code take from there.
+参见 [`upstream`][upstream] 了解源代码来源。
 
-## Installation
+## 安装
 
-The easiest way to install this theme is to either clone it ...
+安装此主题最简单的方法是克隆它...
 
 ```
 git clone https://github.com/janbaudisch/zola-sam.git themes/sam
 ```
 
-... or to use it as a submodule.
+... 或者将其用作子模块。
 
 ```
 git submodule add https://github.com/janbaudisch/zola-sam.git themes/sam
 ```
 
-Either way, you will have to enable the theme in your `config.toml`.
+无论哪种方式，你都必须在 `config.toml` 中启用该主题。
 
 ```toml
 theme = "sam"
 ```
 
-## Taxonomies
+## 分类法
 
-Sam supports the `tags` and `authors` taxonomies.
+Sam 支持 `tags` 和 `authors` 分类法。
 
-To use them, declare them in your `config.toml`:
+要使用它们，请在 `config.toml` 中声明它们：
 
 ```toml
 taxonomies = [
@@ -72,7 +72,7 @@ taxonomies = [
 ]
 ```
 
-Set them in your page's frontmatter:
+在你的页面 Front Matter 中设置它们：
 
 ```toml
 [taxonomies]
@@ -80,15 +80,15 @@ tags = ["some", "tag"]
 authors = ["Alice", "Sam"]
 ```
 
-See [Zola's documentation][taxonomies-docs] for more details.
+有关更多详细信息，请参阅 [Zola 文档][taxonomies-docs]。
 
-## Options
+## 选项
 
-See [`config.toml`][config] for an example configuration.
+有关示例配置，请参阅 [`config.toml`][config]。
 
-### Menu
+### 菜单
 
-The menu on the index page is created as follows: If the `sam_menu` variable is set, it gets used.
+首页上的菜单创建如下：如果设置了 `sam_menu` 变量，则使用它。
 
 ```toml
 [extra]
@@ -99,13 +99,13 @@ sam_menu = [
 ]
 ```
 
-If it is not set, all sections under `content` will get linked.
+如果未设置，则会链接 `content` 下的所有版块。
 
-#### Bottom menu
+#### 底部菜单
 
-This variable decides wether the menu - as mentioned above - will also be displayed at the bottom of pages.
+此变量决定菜单（如上所述）是否也会显示在页面底部。
 
-Default: `false`
+默认值：`false`
 
 ```toml
 [extra]
@@ -114,31 +114,31 @@ sam_bottom_menu = true
 
 ### `home`
 
-Sets the name for all links referring to the home page in the menus and the 404 page.
+设置菜单和 404 页面中指向首页的所有链接的名称。
 
-Default: `home`
+默认值：`home`
 
 ```toml
 [extra]
 home = "home"
 ```
 
-### Date format
+### 日期格式
 
-Specifies how to display dates. The format is described [here][date-format-docs].
+指定如何显示日期。格式在 [这里][date-format-docs] 描述。
 
-Default: `%a %b %e, %Y`
+默认值：`%a %b %e, %Y`
 
 ```toml
 [extra]
 date_format = "%a %b %e, %Y"
 ```
 
-### Word count and reading time
+### 字数统计和阅读时间
 
-You can enable or disable word count and reading time for posts across the whole site:
+你可以为整个网站的文章启用或禁用字数统计和阅读时间：
 
-Default: `true` (both)
+默认值：`true` (两者)
 
 ```toml
 [extra]
@@ -146,9 +146,9 @@ show_word_count = true
 show_reading_time = true
 ```
 
-If enabled, you can opt-out per page via front-matter:
+如果启用，你可以通过 Front Matter 在每个页面上选择退出：
 
-Default: `false` (both)
+默认值：`false` (两者)
 
 ```
 +++
@@ -158,11 +158,11 @@ hide_reading_time = true
 +++
 ```
 
-### Disable page header
+### 禁用页面页眉
 
-If you want to disable the complete header of a page (for example a page which is explicitly not a post), you can do so via front-matter:
+如果你想禁用页面的完整页眉（例如明确不是文章的页面），你可以通过 Front Matter 这样做：
 
-Default: `false`
+默认值：`false`
 
 ```
 +++
@@ -171,9 +171,9 @@ no_header = true
 +++
 ```
 
-### Footer
+### 页脚
 
-To place some text at the end of pages, set the following:
+要在页面末尾放置一些文本，请设置以下内容：
 
 ```toml
 [extra.sam_footer]
@@ -184,12 +184,10 @@ text = "Some footer text."
 [build-url]: https://builds.sr.ht/~janbaudisch/zola-sam
 [demo-img]: https://img.shields.io/badge/demo-live-green.svg
 [demo-url]: https://zola-sam.janbaudisch.dev
-[zola]: https://getzola.org
+[Zola]: https://getzola.org
 [hugo-sam]: https://github.com/victoriadotdev/hugo-theme-sam
 [upstream]: https://github.com/janbaudisch/zola-sam/blob/master/upstream
 [upstream-license]: https://github.com/janbaudisch/zola-sam/blob/master/upstream/LICENSE
 [taxonomies-docs]: https://www.getzola.org/documentation/content/taxonomies
 [config]: https://github.com/janbaudisch/zola-sam/blob/master/config.toml
 [date-format-docs]: https://docs.rs/chrono/latest/chrono/format/strftime/index.html
-
-        

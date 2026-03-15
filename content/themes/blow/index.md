@@ -1,7 +1,7 @@
 
 +++
 title = "Blow"
-description = "A Zola theme made with Tailwindcss"
+description = "一个用 Tailwindcss 制作的 Zola 主题"
 template = "theme.html"
 date = 2024-09-29T16:55:23+02:00
 
@@ -23,29 +23,29 @@ homepage = "https://tchartron.com"
 +++        
 
 # Blow
-A [Zola](https://www.getzola.org/) theme built with [tailwindcss](https://tailwindcss.com/)  
+一个使用 [tailwindcss](https://tailwindcss.com/) 构建的 [Zola](https://www.getzola.org/) 主题。
 
-(WIP) Example : [Here](https://tchartron.com)  
+(WIP) 示例 : [这里](https://tchartron.com)  
 
-## Preview
-![preview](screenshot.png)
+## 预览
+![预览](screenshot.png)
 
-## Usage
-You should follow the [official documentation](https://www.getzola.org/documentation/themes/installing-and-using-themes/) about installing a Zola theme.  
+## 使用
+你应该遵循关于安装 Zola 主题的 [官方文档](https://www.getzola.org/documentation/themes/installing-and-using-themes/)。
 
-I recommend adding the theme as a git submodule :  
+我建议将主题添加为 git 子模块：
 ```bash
 cd my-zola-website
 git submodule add -b main git@github.com:tchartron/blow.git themes/blow
 ```
 
-Edit the theme used in your `config.toml` file
+编辑你的 `config.toml` 文件中使用的主题
 ```toml
-# The site theme to use.
+# 使用的站点主题。
 theme = "blow"
 ```
 
-Then edit your `config.toml` file to override values from the theme :
+然后编辑你的 `config.toml` 文件以覆盖主题的值：
 ```toml
 [extra]
 enable_search = true
@@ -93,7 +93,7 @@ items = [
     ] },
 ]
 
-# Index page
+# 首页
 [extra.index]
 title = "Main title"
 image = "https://via.placeholder.com/200"
@@ -125,12 +125,12 @@ android_chrome_192 = "/icons/android-chrome-192x192.png"
 manifest = "/icons/site.webmanifest"
 ```
 
-You can now run `zola serve` and visit : `http://127.0.0.1:1111/` to see your site
+你现在可以运行 `zola serve` 并访问 : `http://127.0.0.1:1111/` 查看你的站点
 
-## Syntax Highlighting
-Blow makes use of Zola code highlighting feature.  
-It supports setting a different color scheme depending on the user selected theme (Dark / Light)  
-In order to use it you should select the color scheme you want to use for light and dark themes in the list provided [here](https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting) and edit your `config.toml` file like this example :  
+## 语法高亮
+Blow 利用了 Zola 代码高亮功能。
+它支持根据用户选择的主题（暗色 / 亮色）设置不同的配色方案。
+为了使用它，你应该在 [这里](https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting) 提供的列表中选择你想用于亮色和暗色主题的配色方案，并像此示例一样编辑你的 `config.toml` 文件：
 ```toml
 highlight_theme = "css"
 
@@ -140,8 +140,8 @@ highlight_themes_css = [
 ]
 ```
 
-## Custom Footer Content
-To overwrite the default footer (copyright notice), extend the `layout.html` template of the theme as described in the [Zola documentation](https://www.getzola.org/documentation/themes/extending-a-theme/#overriding-a-block) by creating a `layout.html` with the following content in your `templates` directory:
+## 自定义页脚内容
+要覆盖默认页脚（版权声明），请按照 [Zola 文档](https://www.getzola.org/documentation/themes/extending-a-theme/#overriding-a-block) 中的描述，通过在你的 `templates` 目录中创建一个包含以下内容的 `layout.html` 来扩展主题的 `layout.html` 模板：
 
 ```jinja
 {%/* extends "blow/templates/layout.html" */%}
@@ -151,25 +151,23 @@ Here is my own footer with a <a href="http://example.com">link</a>.
 {%/* endblock */%}
 ```
 
-## Features
-- [X] Dark/Light modes (with syntax highlighting depending on selected theme)
-- [X] Customizable navbar links
-- [X] Tags and Categories taxonomies
-- [X] Search functionality supporting Command + K shortcut
-- [X] Social links (github, gitlab, twitter, linkedin, email) 
-- [X] Postcss build process with cssnano (and tailwindcss tree shaking to reduce final bundle size)
-- [X] Uglifyjs build process with minification
-- [X] Example script to deploy to Github Pages
-- [X] Pagination
-- [X] Sidemenu menu with sections links
-- [X] Table of content (2 levels and currently viewed part highlighted)
-- [X] Multilingue
+## 特性
+- [X] 暗色/亮色模式（根据所选主题进行语法高亮）
+- [X] 可自定义的导航栏链接
+- [X] 标签和分类分类法
+- [X] 支持 Command + K 快捷键的搜索功能
+- [X] 社交链接（github, gitlab, twitter, linkedin, email）
+- [X] 使用 cssnano 的 Postcss 构建过程（以及 tailwindcss tree shaking 以减小最终包大小）
+- [X] 使用 minification 的 Uglifyjs 构建过程
+- [X] 部署到 Github Pages 的示例脚本
+- [X] 分页
+- [X] 带有部分链接的侧边菜单
+- [X] 目录（2 级和当前查看部分高亮）
+- [X] 多语言
 - [X] 404
-- [X] Mobile responsive
+- [X] 移动端响应式
 - [X] Favicon
 - [ ] Adsense
 
-## Deployment
-There is a section about deployment in Zola [documentation](https://www.getzola.org/documentation/deployment/overview/) but you'll find an [example](https://github.com/tchartron/blow/blob/main/deploy-github.sh) to deploy your site to github pages
-
-        
+## 部署
+Zola [文档](https://www.getzola.org/documentation/deployment/overview/) 中有一节关于部署，但你会找到一个将你的站点部署到 github pages 的 [示例](https://github.com/tchartron/blow/blob/main/deploy-github.sh)

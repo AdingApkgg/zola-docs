@@ -28,7 +28,7 @@ Hyde is a brazen two-column [Zola](https://github.com/getzola/zola) based on the
 ![Hyde screenshot](https://f.cloud.github.com/assets/98681/1831228/42af6c6a-7384-11e3-98fb-e0b923ee0468.png)
 
 
-## Contents
+## 目录
 
 - Installation
 - Options
@@ -37,7 +37,7 @@ Hyde is a brazen two-column [Zola](https://github.com/getzola/zola) based on the
   - Themes
   - Reverse layout
 
-## Installation
+## 安装
 First download this theme to your `themes` directory:
 
 ```bash
@@ -50,12 +50,12 @@ and then enable it in your `config.toml`:
 theme = "hyde"
 ```
 
-## Options
+## 选项
 
 ### Sidebar menu
 Set a field in `extra` with a key of `hyde_links`:
 ```toml
-[extra]
+[额外配置]
 hyde_links = [
     {url = "https://google.com", name = "Google.com"},
     {url = "https://google.fr", name = "Google.fr"},
@@ -78,7 +78,7 @@ There are eight themes available at this time.
 To use a theme, set the `hyde_theme` field in `config.toml` to any of the themes name:
 
 ```toml
-[extra]
+[额外配置]
 hyde_theme = "theme-base-08"
 ```
 

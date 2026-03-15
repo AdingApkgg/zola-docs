@@ -1,7 +1,7 @@
 
 +++
 title = "re137"
-description = "A Chinese friendly zola theme. Inspired by lightspeed."
+description = "一个中文友好的 zola 主题。灵感来自 lightspeed。"
 template = "theme.html"
 date = 2025-02-10T15:39:54+09:00
 
@@ -24,67 +24,67 @@ homepage = "https://tinikov.com"
 
 # re137
 
-![screenshot](screenshot.png)
+![截图](screenshot.png)
 
-[Demo](https://re137.vercel.app)
+[演示](https://re137.vercel.app)
 
-## Installation
+## 安装
 
-Clone this theme to your `themes` directory:
+克隆此主题到你的 `themes` 目录：
 
 ```bash
 cd themes
 git clone https://github.com/tinikov/re137
 ```
 
-or add it by submodule:
+或通过子模块添加：
 
 ```bash
 cd themes
 git submodule add git@github.com:tinikov/re137
 ```
 
-Then enable it in your `config.toml`:
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "re137"
 ```
 
-## Structure and must configs
+## 结构和必须配置
 
-The posts should be directly under the `content` folder, and the single pages (e.g. `about.md`) should be under the `content/pages` folder.
+文章应直接位于 `content` 文件夹下，单页（例如 `about.md`）应位于 `content/pages` 文件夹下。
 
-Your index section in content (`content/_index.md`) should enable the posts sorted by date:
+内容中的索引部分（`content/_index.md`）应启用按日期排序的文章：
 
 ```toml
 sort_by = "date"
 ```
 
-And the index section in pages (`content/pages/_index.md`) should disable the `render` option:
+页面中的索引部分（`content/pages/_index.md`）应禁用 `render` 选项：
 
 ```toml
 render = false
 ```
 
-In both index sections, it's recommended to enable the option for anchors:
+在两个索引部分中，建议启用锚点选项：
 
 ```toml
 insert_anchor_links = "right"
 ```
 
-## Options
+## 选项
 
-### Enable categories
+### 启用分类
 
-To enable category page, `taxonomies` should be set in `config.toml`:
+要启用分类页面，应在 `config.toml` 中设置 `taxonomies`：
 
 ```toml
 taxonomies = [{ name = "categories" }]
 ```
 
-### Top-menu
+### 顶部菜单
 
-Set a field in `[extra]` of `config.toml` with a key of `re137_menu_links`:
+在 `config.toml` 的 `[extra]` 中设置一个键为 `re137_menu_links` 的字段：
 
 ```toml
 re137_menu_links = [
@@ -95,14 +95,14 @@ re137_menu_links = [
 ]
 ```
 
-### Page options
+### 页面选项
 
-In frontmatter of posts and single pages, supported options are listed below:
+在文章和单页的 Front Matter 中，支持的选项如下：
 
 ```toml
 title = " "
-path = "about" # This is only for single page
-authors = ["TC", "BB"] # If there are several authors
+path = "about" # 仅用于单页
+authors = ["TC", "BB"] # 如果有多个作者
 date = 2000-01-01T00:00:00+00:00
 updated = 2004-01-01T00:00:00+00:00
 description = " "
@@ -110,39 +110,37 @@ draft = true
 [taxonomies]
 categories = [" "]
 [extra]
-author_gen = false # Do not generate author
-toc_gen = true # Generate table of contents
+author_gen = false # 不生成作者
+toc_gen = true # 生成目录
 ```
 
-### Misc
+### 杂项
 
-You can add more customed options in `[extra]` of `config.toml`
+你可以在 `config.toml` 的 `[extra]` 中添加更多自定义选项
 
 ```toml
-# Image shown when you share this website to others
+# 当你分享这个网站给别人时显示的图片
 ogimage = " "
 
-# SEO settings
+# SEO 设置
 seo = true
 google_search_console = " "
 
-# Show jump buttons for Indiewebring
+# 显示 Indiewebring 跳转按钮
 indiewebring = true
 
-# For authentication in mastodon
+# 用于 mastodon 认证
 mastodon = "https://o3o.ca/@tinikov"
 
-# Only user name is needed
+# 只需要用户名
 github = "tinikov"
 
-# Show establish date in the footer
+# 在页脚显示建立日期
 establishdate = "2024"
 
 # CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/)
 license = true
 
-# Show "🫧 Zola theme re137" in the footer
+# 在页脚显示 "🫧 Zola theme re137"
 show_zola_theme = true
 ```
-
-        

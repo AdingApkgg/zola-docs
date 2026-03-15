@@ -1,7 +1,7 @@
 
 +++
 title = "Seje2"
-description = "A beautiful zola theme"
+description = "一个漂亮的 zola 主题"
 template = "theme.html"
 date = 2025-04-02T10:52:01+08:00
 
@@ -24,33 +24,34 @@ homepage = "https://blog.utopiosphere.net"
 
 # Seje2
 
-![screenshot](screenshot.png)
+![截图](screenshot.png)
 
-[Demo](https://eatradish.github.io/Seje2)
+[演示](https://eatradish.github.io/Seje2)
 [简体中文](https://github.com/eatradish/Seje2/blob/main/README_zh_cn.md)
 
-## Installation
-First download this theme to your `themes` directory:
+## 安装
+
+首先将此主题下载到你的 `themes` 目录：
 
 ```bash
 cd themes
 git clone https://github.com/eatradish/Seje2
 ```
-and then enable it in your `config.toml`:
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "Seje2"
 ```
 
-This theme requires your index section (`content/_index.md`) to be paginated to work:
+此主题需要你的索引部分（`content/_index.md`）分页才能工作：
 
 ```toml
 paginate_by = 5
 ```
 
-The posts should therefore be in directly under the `content` folder.
+因此，文章应直接位于 `content` 文件夹下。
 
-and requires your index section (`about/_index.md`) to be paginated to work:
+并且需要你的索引部分（`about/_index.md`）分页才能工作：
 
 ```toml
 title = "..."
@@ -61,10 +62,11 @@ month = 11
 day = 3
 ```
 
-## Options
+## 选项
 
-### Top-menu
-Set a field in `extra` with a key of `seje2_menu_links`:
+### 顶部菜单
+
+在 `extra` 中设置一个键为 `seje2_menu_links` 的字段：
 
 ```toml
 seje2_menu_links = [
@@ -75,22 +77,20 @@ seje2_menu_links = [
 ]
 ```
 
-If you put `$BASE_URL` in a url, it will automatically be replaced by the actual
-site URL.
+如果你在 url 中放入 `$BASE_URL`，它会自动被替换为实际的站点 URL。
 
-### MathJax Latex Support
-Set a field in `extra` with a bool key of `seje_mathjax`:
+### MathJax Latex 支持
+
+在 `extra` 中设置一个布尔键 `seje_mathjax`：
 
 ```toml
 seje_mathjax = true
 ```
 
-### License
+### 许可证
 
-Set a field in `extra` with a key of `license`:
+在 `extra` 中设置一个键为 `license` 的字段：
 
 ```toml
 license = "@ 宇宙眼镜人"
 ```
-
-        

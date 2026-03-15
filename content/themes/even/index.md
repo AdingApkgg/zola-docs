@@ -27,14 +27,14 @@ Even is a clean, responsive theme based on the Hugo theme with the same name fea
 
 ![even screenshot](https://github.com/getzola/even/blob/master/screenshot.png?raw=true)
 
-## Contents
+## 目录
 
 - Installation
 - Options
   - Top menu
   - Title
 
-## Installation
+## 安装
 First download this theme to your `themes` directory:
 
 ```bash
@@ -68,7 +68,7 @@ sort_by = "date"
 +++
 ```
 
-## Options
+## 选项
 
 ### Top-menu
 Set a field in `extra` with a key of `even_menu`:
@@ -86,19 +86,19 @@ even_menu = [
 If you put `$BASE_URL` in a url, it will automatically be replaced by the actual
 site URL.
 
-### Title
+### 标题
 The site title is shown on the header. As it might be different from the `<title>`
 element that the `title` field in the config represents, you can set the `even_title`
 instead.
 
 ### KaTeX math formula support
 
-This theme contains math formula support using [KaTeX](https://katex.org/),
+This theme contains math formula support using [KaTeX 公式](https://katex.org/),
 which can be enabled by setting `katex_enable = true` in the `extra` section
 of `config.toml`:
 
 ```toml
-[extra]
+[额外配置]
 katex_enable = true
 ```
 
@@ -114,7 +114,7 @@ Optionally, `\\( \KaTeX \\)` inline and `\\[ \KaTeX \\]` / `$$ \KaTeX $$`
 block-style automatic rendering is also supported, if enabled in the config:
 
 ```toml
-[extra]
+[额外配置]
 katex_enable = true
 katex_auto_render = true
 ```

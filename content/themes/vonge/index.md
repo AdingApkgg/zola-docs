@@ -1,7 +1,7 @@
 
 +++
 title = "Vonge"
-description = "Vonge is a Personal portfolio/blog site template"
+description = "Vonge 是一个个人作品集/博客网站模板"
 template = "theme.html"
 date = 2026-02-17T21:06:42+01:00
 
@@ -22,36 +22,36 @@ name = "Pascal Berrang"
 homepage = "https://pascal-berrang.de"
 +++        
 
-# Vonge Zola Theme
+# Vonge Zola 主题
 ![](screenshot.png)
 
-This is a Zola port of the [Vonge Hugo Bookshop template](https://github.com/CloudCannon/vonge-hugo-bookshop-template), originally created by [CloudCannon](https://cloudcannon.com/) and licensed under the MIT License.
+这是 [Vonge Hugo Bookshop 模板](https://github.com/CloudCannon/vonge-hugo-bookshop-template) 的 Zola 移植版，最初由 [CloudCannon](https://cloudcannon.com/) 创建，并根据 MIT 许可证授权。
 
-Vonge is a clean, modern theme for personal portfolios, blogs, or landing pages. This Zola version is designed to be **fully configurable via `config.toml` and through structured front matter blocks** and **does not rely on Bookshop**.
+Vonge 是一个用于个人作品集、博客或落地页的干净、现代的主题。此 Zola 版本旨在 **完全通过 `config.toml` 和结构化 Front Matter 块进行配置**，并且 **不依赖于 Bookshop**。
 
-> ✨ This theme is suitable for developers who want a minimal and flexible Zola theme with a professional design and content blocks driven by configuration.
+> ✨ 此主题适合想要具有专业设计和内容块驱动配置的极简灵活 Zola 主题的开发者。
 
-Demo @ https://paberr.github.io/vonge-zola-theme/
+演示 @ https://paberr.github.io/vonge-zola-theme/
 
-## 🚀 Features
+## 🚀 特性
 
-* Flexible homepage and inner pages using content blocks
-* Customisable content via `extra.content_blocks` in front matter
-* Clean typography and responsive layout
-* Blog section with pagination
-* Portfolio and testimonial support
-* SEO-friendly structure
-* MIT licensed
+* 使用内容块的灵活首页和内页
+* 通过 Front Matter 中的 `extra.content_blocks` 自定义内容
+* 清晰的排版和响应式布局
+* 带有分页的博客版块
+* 作品集和推荐支持
+* SEO 友好的结构
+* MIT 授权
 
-## 📦 Installation
+## 📦 安装
 
-1. Download the Theme
+1. 下载主题
 
 ```
 git submodule add https://github.com/paberr/vonge-zola-theme themes/vonge
 ```
 
-2. At minimum, add the following to your zola `config.toml`
+2. 至少将以下内容添加到你的 zola `config.toml`
 
 ```toml
 theme = "vonge"
@@ -60,17 +60,17 @@ taxonomies = [
 ]
 ```
 
-3. Copy over the example content to get started
+3. 复制示例内容以开始
 
 ```
 cp -r themes/vonge/content/* content
 ```
 
-## 👷 Usage
+## 👷 使用
 
-This theme uses **structured front matter** to build flexible page layouts. Each page can define its blocks using the `extra.content_blocks` array.
+此主题使用 **结构化 Front Matter** 来构建灵活的页面布局。每个页面可以使用 `extra.content_blocks` 数组定义其块。
 
-### Example: `content/blog/_index.md`
+### 示例：`content/blog/_index.md`
 
 ```toml
 +++
@@ -80,25 +80,23 @@ paginate_by = 6
 
 [extra]
 content_blocks = [
-  { block = "page-heading", title = "Blog", description = "Vonge blog features productivity, tips, inspiration and strategies for massive profits. Find out how to set up a successful blog or how to make yours even better!" },
+  { block = "page-heading", title = "Blog", description = "Vonge 博客提供生产力、提示、灵感和巨额利润策略。了解如何建立一个成功的博客或如何让你的博客变得更好！" },
   { block = "posts-list", show_posts = true },
   { block = "newsletter", newsletter_title = "Join my mailing list", newsletter_description = "Get inspiration, updates and, cool stuff!", newsletter_identifier = "", newsletter_button = "Subscribe" }
 ]
 +++
 ```
 
-You can create your own custom blocks or extend existing ones by editing the theme's templates and SCSS.
+你可以通过编辑主题的模板和 SCSS 来创建自己的自定义块或扩展现有块。
 
-## 📖 Documentation
+## 📖 文档
 
-For a full reference of all configuration options, content blocks, and page variables, see [DOCUMENTATION.md](DOCUMENTATION.md).
+有关所有配置选项、内容块和页面变量的完整参考，请参阅 [DOCUMENTATION.md](DOCUMENTATION.md)。
 
-## 🙏 Acknowledgements
+## 🙏 致谢
 
-This theme is based on the original [Vonge Hugo Bookshop template](https://github.com/CloudCannon/vonge-hugo-bookshop-template) by [CloudCannon](https://cloudcannon.com/), adapted for use with Zola. All original design credits go to the authors.
+此主题基于 [CloudCannon](https://cloudcannon.com/) 的原始 [Vonge Hugo Bookshop 模板](https://github.com/CloudCannon/vonge-hugo-bookshop-template)，改编用于 Zola。所有原始设计归功于作者。
 
-## 📄 Contributing
+## 📄 贡献
 
-All contributions to this port are highly welcome!
-
-        
+非常欢迎对移植版的所有贡献！

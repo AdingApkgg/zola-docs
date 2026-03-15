@@ -1,7 +1,7 @@
 
 +++
 title = "shadharon"
-description = "Simple blog theme powered by Zola"
+description = "由 Zola 驱动的简单博客主题"
 template = "theme.html"
 date = 2023-10-27T18:58:30+01:00
 
@@ -24,53 +24,53 @@ homepage = "https://syedzayyan.com"
 
 # Shadharon
 
-Simple blog theme powered by [Zola](getzola.org). See a live preview [here](https://shadharon.syedzayyan.com/).
+由 [Zola](getzola.org) 驱动的简单博客主题。在此处查看 [在线预览](https://shadharon.syedzayyan.com/)。
 
-> Name derived from the Bengali Word - সাধারণ which translates to "generic"
+> 名称源自孟加拉语单词 - সাধারণ，翻译为“通用的”
 
 <details open>
-  <summary>Dark theme</summary>
+  <summary>暗色主题</summary>
 
   ![blog-dark](https://raw.githubusercontent.com/syedzayyan/shadharon/main/screenshot.png)
 </details>
 
 <details close>
-  <summary>Light theme</summary>
+  <summary>亮色主题</summary>
   
   ![light-dark](https://raw.githubusercontent.com/syedzayyan/shadharon/main/screenshot-light.png)
 </details>
 
-## Features
+## 特性
 
-- [X] Themes (light, dark). Default theme is dark with a switcher in the navbar
-- [X] Projects page
-- [x] Social Links
-- [x] Tags
+- [X] 主题（亮色、暗色）。默认主题为暗色，导航栏中有切换器
+- [X] 项目页面
+- [x] 社交链接
+- [x] 标签
 
-## Installation
+## 安装
 
-0. Initialize Git Repo if not initialized
+0. 初始化 Git 仓库（如果尚未初始化）
 
-1. Download the theme
+1. 下载主题
 ```
 git submodule add https://github.com/syedzayyan/shadharon themes/shadharon
 ```
 
-2. Add `theme = "shadharon"` to your `config.toml`
+2. 将 `theme = "shadharon"` 添加到你的 `config.toml`
 
-3. Copy the example content
+3. 复制示例内容
 
 ```
 cp -R themes/shadharon/content/. content
 ```
 
-## Customization
+## 自定义
 
-1. For customization refer to config.toml files, which has comments.
+1. 有关自定义，请参阅 config.toml 文件，其中包含注释。
 
-2. For customizing the banner on the homepage the content/posts/_index.md needs modification. The desc variable under `extra`, specifically. You could delete this as well to remove banner. For an about page or any aditional page an .md file in the "content" directory will do.
+2. 要自定义主页上的横幅，需要修改 content/posts/_index.md。具体来说是 `extra` 下的 desc 变量。你也可以将其删除以移除横幅。对于关于页面或任何其他页面，"content" 目录中的 .md 文件即可。
 
-You can add stylesheets to override the theme:
+你可以添加样式表来覆盖主题：
 
 ```toml
 [extra]
@@ -79,14 +79,12 @@ stylesheets = [
 ]
 ```
 
-These filenames are relative to the root of the site. In this example, the two CSS files would be in the `static` folder.
+这些文件名相对于站点的根目录。在此示例中，两个 CSS 文件将位于 `static` 文件夹中。
 
 
-## References
+## 参考
 
-This theme takes inspiration from 
+此主题灵感来自
 - [apollo](https://github.com/not-matthias/apollo).  
 - [Tania's Website](https://tania.dev/)
 - [Anpu Zola Theme](https://github.com/zbrox/anpu-zola-theme)
-
-        

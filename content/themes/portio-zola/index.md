@@ -27,7 +27,7 @@ homepage = "https://github.com/quentin-rodriguez"
 <div align="center">
 
 [![Zola](https://img.shields.io/badge/Zola-0.22.0-red?style=for-the-badge)](https://www.getzola.org/)
-[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
+[![许可证](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 [![Live demo](https://img.shields.io/badge/-Live%20demo-blue?style=for-the-badge)](https://quentin-rodriguez.github.io/portio-zola)
 
 </div>
@@ -69,7 +69,7 @@ cd <PROJECT_NAME>
 # Submodule
 git submodule add https://github.com/quentin-rodriguez/portio-zola.git themes/portio-zola
 
-# Clone
+# 克隆
 git clone https://github.com/quentin-rodriguez/portio-zola.git themes/portio-zola
 ```
 

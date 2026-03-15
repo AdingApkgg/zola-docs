@@ -30,9 +30,9 @@ This theme was ported to Zola, the original is available at [zhe/hugo-theme-slim
 
 ![Slim screenshot](https://github.com/jameshclrk/zola-slim/blob/master/screenshot.png)
 
-[Demo](http://zola-slim.netlify.com).
+[演示](http://zola-slim.netlify.com).
 
-## Installation
+## 安装
 
 ```
 cd themes
@@ -41,7 +41,7 @@ git clone https://github.com/jameshclrk/zola-slim slim
 
 See the [official docs](https://www.getzola.org/documentation/themes/installing-and-using-themes/) for more information.
 
-## Configuration
+## 配置
 Slim supports a `tags` taxonomy by default. This can be enabled by setting it in your `config.toml`:
 
 ```
@@ -52,7 +52,7 @@ taxonomies = [
 
 There are a couple of extra options supported:
 ```
-[extra]
+[额外配置]
 # Show a summary of a post in a list
 slim_summary = false
 # Show the content of a post in a list
@@ -67,7 +67,7 @@ slim_social = [
 ]
 ```
 
-## License
+## 许可证
 
 Open sourced under [MIT license](https://github.com/zhe/hugo-theme-slim/blob/master/LICENSE.md).
 

@@ -1,7 +1,7 @@
 
 +++
 title = "ntun-zola-theme"
-description = "A classic resume theme"
+description = "一个经典的简历主题"
 template = "theme.html"
 date = 2023-09-25T10:40:29+02:00
 
@@ -24,34 +24,37 @@ homepage = "https://netoun.com"
 
 # **Ntun**
 
-![alt text](screenshot.png "Screenshoot")
+![alt text](screenshot.png "截图")
 
-**Live demo** : https://netoun.github.io/ntun/
-## Contents
+**在线演示** : https://netoun.github.io/ntun/
 
-- Installation
-- Options
+## 目录
 
-## Installation
-First download this theme to your `themes` directory:
+- 安装
+- 选项
+
+## 安装
+
+首先将此主题下载到你的 `themes` 目录：
 
 ```bash
 cd themes
 git clone https://github.com/netoun/ntun.git
 ```
-and then enable it in your `config.toml`:
+
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "ntun"
 ```
 
-This theme requires index section in `about` (`content/about/_index.md`)
+此主题需要 `about` 中的索引部分（`content/about/_index.md`）。
 
-The posts should therefore be in directly under the `content about` folder.
+因此，文章应直接位于 `content about` 文件夹下。
 
-## Options
+## 选项
 
-Set a field in `extra` with a key of `after_dark_menu`:
+在 `extra` 中设置一个键为 `after_dark_menu` 的字段：
 
 ```toml
 [extra]
@@ -70,13 +73,10 @@ links = [
     { url = "mailto:", title="", icon = "fas fa-envelope"}
 ]
 
-# if you add languages, put your emoji flag on array
+# 如果你添加语言，请在数组中放入你的 emoji 旗帜
 languages_flags = [
     "🇬🇧"
 ]
 ```
 
-If you put `$BASE_URL` in a url, it will automatically be replaced by the actual
-site URL.
-
-        
+如果你在 url 中放入 `$BASE_URL`，它会自动被替换为实际的站点 URL。

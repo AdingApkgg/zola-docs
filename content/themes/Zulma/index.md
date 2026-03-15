@@ -1,7 +1,7 @@
 
 +++
 title = "Zulma"
-description = "A zola theme based off bulma.css"
+description = "一个基于 bulma.css 的 Zola 主题"
 template = "theme.html"
 date = 2020-05-10T10:53:40Z
 
@@ -24,59 +24,59 @@ homepage = ""
 
 # Zulma
 
-A Bulma theme for Zola. See a live preview [here](https://festive-morse-47d46c.netlify.com/)
+一个 Bulma 的 Zola 主题。点击 [这里](https://festive-morse-47d46c.netlify.com/) 查看在线预览。
 
-![Zulma Screenshot](/screenshot.png)
+![Zulma 截图](/screenshot.png)
 
-## Contents
+## 目录
 
 - Zulma
-  - Contents
-  - Installation
+  - 内容
+  - 安装
   - Javascript
-    - Sources
-    - Building
-  - Options
-    - Pagination
-    - Taxonomies
-    - Menu Links
-    - Brand
-    - Search
-    - Title
-    - Theming
-  - Original
-  - Known Bugs
+    - 来源
+    - 构建
+  - 选项
+    - 分页
+    - 分类法
+    - 菜单链接
+    - 品牌
+    - 搜索
+    - 标题
+    - 主题化
+  - 原作
+  - 已知 Bug
 
-## Installation
+## 安装
 
-First download this theme to your `themes` directory:
+首先将此主题下载到你的 `themes` 目录：
 
 ```bash
 cd themes
 git clone https://github.com/Worble/Zulma
 ```
 
-and then enable it in your `config.toml`:
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "Zulma"
 ```
 
-That's it! No more configuration should be required, however it might look a little basic. Head to the Options section to see what you can set for more customizability.
+就是这样！不需要更多的配置，但它可能看起来有点基础。前往选项部分查看你可以设置什么以获得更多自定义性。
 
-## Javascript
+## JavaScript
 
-### Sources
+### 来源
 
-All the source javascript files live in `javascript/src`. Following is a list of the javascript files, their purpose, and their sources. All files are prefixed with `zulma_` to avoid any name clashes.
+所有源 javascript 文件都在 `javascript/src` 中。以下是 javascript 文件及其用途和来源的列表。所有文件都以 `zulma_` 为前缀，以避免名称冲突。
 
-- `zulma_search.js` - Used when a user types into the search box on the navbar (if enabled). Taken from [Zola's site](https://github.com/getzola/zola/blob/6100a43/docs/static/search.js).
-- `zulma_navbar.js` - Used for the mobile navbar toggle. Taken from the [bulma template](https://github.com/dansup/bulma-templates/blob/6263eb7/js/bulma.js) at Bulmaswatch
-- `zulma_switchcss.js` - Used for swapping themes (if enabled).
+- `zulma_search.js` - 当用户在导航栏上的搜索框中输入时使用（如果启用）。取自 [Zola 的站点](https://github.com/getzola/zola/blob/6100a43/docs/static/search.js)。
+- `zulma_navbar.js` - 用于移动端导航栏切换。取自 Bulmaswatch 的 [bulma 模板](https://github.com/dansup/bulma-templates/blob/6263eb7/js/bulma.js)
+- `zulma_switchcss.js` - 用于切换主题（如果启用）。
 
-### Building
+### 构建
 
-The JavaScript files are transpiled by babel, minified by webpack, sourcemaps are generated and then everything placed in `static/js`. The repo already contains the transpiled and minified files along with their corrosponding sourcemaps so you don't need to do anything to use these. If you would prefer to build it yourself, feel free to inspect the js files and then run the build process (please ensure that you have [node, npm](https://nodejs.org/en/) and optionally [yarn](https://yarnpkg.com/lang/en/) installed):
+JavaScript 文件由 babel 转译，由 webpack 压缩，生成 sourcemap，然后全部放置在 `static/js` 中。仓库已经包含转译和压缩后的文件及其对应的 sourcemap，因此你无需做任何事情即可使用这些文件。如果你更喜欢自己构建它，请随意检查 js 文件，然后运行构建过程（请确保你已安装 [node, npm](https://nodejs.org/en/) 和可选的 [yarn](https://yarnpkg.com/lang/en/)）：
 
 ```bash
 cd javascript
@@ -84,25 +84,25 @@ yarn
 yarn webpack
 ```
 
-### Github warnings
+### Github 警告
 
-You may get warnings about vulnerabilities from the JavaScript dependencies. These shouldn't be an issue since we only have dev-dependencies and none of the them reach the end-user, but if you don't want to run the buld process yourself, and to stop Github pestering you about security warnings, feel free to delete the top level `javascript` folder when committing.
+你可能会收到关于 JavaScript 依赖项漏洞的警告。这不应该是一个问题，因为我们只有开发依赖项，而且它们都不会到达最终用户，但是如果你不想自己运行构建过程，并且想阻止 Github 骚扰你的安全警告，请随意在提交时删除顶级 `javascript` 文件夹。
 
-## Options
+## 选项
 
-### Pagination
+### 分页
 
-Zulma makes no assumptions about your project. You can freely paginate your content folder or your taxonomies and it will adapt accordingly. For example, editing or creating section (`content/_index.md`) and setting pagination:
+Zulma 对你的项目不做任何假设。你可以自由地分页你的内容文件夹或你的分类法，它会相应地适应。例如，编辑或创建版块（`content/_index.md`）并设置分页：
 
 ```toml
 paginate_by = 5
 ```
 
-This is handled internally, no input is needed from the user.
+这是在内部处理的，不需要用户输入。
 
-### Taxonomies
+### 分类法
 
-Zulma has 3 taxonomies already set internally: `tags`, `cateogories` and `authors`. Setting of any these three in your config.toml like so:
+Zulma 内部已经设置了 3 个分类法：`tags`, `cateogories` 和 `authors`。像这样在你的 config.toml 中设置这三个中的任何一个：
 
 ```toml
 taxonomies = [
@@ -112,7 +112,7 @@ taxonomies = [
 ]
 ```
 
-and setting any of them in a content file:
+并在内容文件中设置它们中的任何一个：
 
 ```toml
 [taxonomies]
@@ -121,9 +121,9 @@ tags = ["rust", "ssg", "other", "test"]
 authors = ["Joe Bloggs"]
 ```
 
-will cause that metadata to appear on the post, either on the header for the name, or at the bottom for tags and categories, and enable those pages.
+这将导致该元数据显示在文章上，要么在标题上显示名称，要么在底部显示标签和分类，并启用这些页面。
 
-Making your own taxonomies is also designed to be as easy as possible. First, add it to your cargo.toml
+制作你自己的分类法也被设计得尽可能简单。首先，将其添加到你的 cargo.toml
 
 ```toml
 taxonomies = [
@@ -131,17 +131,17 @@ taxonomies = [
 ]
 ```
 
-and make the corrosponding folder in your templates, in this case: `templates\links`, and the necessary files: `templates\links\list.html` and `templates\links\single.html`
+并在你的 templates 中制作相应的文件夹，在这种情况下：`templates\links`，以及必要的文件：`templates\links\list.html` 和 `templates\links\single.html`
 
-And then for each, just inherit the taxonomy master page for that page. Before rendering the content block, you may optionally set a variable called `title` for the hero to display on that page, otherwise it will use the default for that taxonomy.
+然后对于每一个，只需继承该页面的分类法主页面。在渲染内容块之前，你可以选择设置一个名为 `title` 的变量以在该页面上显示 hero，否则它将使用该分类法的默认值。
 
-In `single.html`:
+在 `single.html` 中：
 
 ```jinja
 {%/* extends "Zulma/templates/taxonomy_single.html" */%}
 ```
 
-In `list.html`:
+在 `list.html` 中：
 
 ```jinja
 {%/* extends "Zulma/templates/taxonomy_list.html" */%}
@@ -152,9 +152,9 @@ In `list.html`:
 {%/* endblock content */%}
 ```
 
-### Menu Links
+### 菜单链接
 
-In extra, setting `zulma_menu` with a list of items will cause them to render to the top menu bar. It has two paramers, `url` and `name`. These _must_ be set. If you put \$BASE_URL in a url, it will automatically be replaced by the actual site URL. This is the easiest way to allow users to navigate to your taxonomies:
+在 extra 中，设置 `zulma_menu` 为一个项目列表将导致它们渲染到顶部菜单栏。它有两个参数，`url` 和 `name`。这些 _必须_ 设置。如果你在 url 中放入 \$BASE_URL，它会自动被替换为实际的站点 URL。这是允许用户导航到你的分类法的最简单方法：
 
 ```toml
 [extra]
@@ -165,33 +165,33 @@ zulma_menu = [
 ]
 ```
 
-On mobile, a dropdown burger is rendered using javascript. If the page detects javascript is disabled on the clients machine, it will gracefully degrade to always showing the menu (which isn't pretty, but keeps the site functional).
+在移动设备上，使用 javascript 渲染下拉汉堡菜单。如果页面检测到客户端机器禁用了 javascript，它将优雅地降级为始终显示菜单（这不漂亮，但保持了站点的功能）。
 
-### Brand
+### 品牌
 
-In extra, setting `zulma_brand` will cause a brand image to display in the upper left of the top menu bar. This link will always lead back to the homepage. It has two parameters, `image`(optional) and `text`(required). `image` will set the brand to an image at the location specified, and `text` will provide the alt text for this image. If you put \$BASE_URL in a url, it will automatically be replaced by the actual site URL. If `image` is not set, the brand will simply be the text specified.
+在 extra 中，设置 `zulma_brand` 将导致在顶部菜单栏的左上角显示品牌图片。此链接将始终导回首页。它有两个参数，`image`（可选）和 `text`（必需）。`image` 将品牌设置为指定位置的图片，`text` 将为此图片提供 alt 文本。如果你在 url 中放入 \$BASE_URL，它会自动被替换为实际的站点 URL。如果未设置 `image`，品牌将仅为指定的文本。
 
 ```toml
 [extra]
 zulma_brand = {image = "$BASE_URL/images/bulma.png", text = "Home"}
 ```
 
-### Search
+### 搜索
 
-Zulma provides search built in. So long as `build_search_index` is set to `true` in `config.toml` then a search input will appear on the top navigation bar. This requires javascript to be enabled to function; if the page detects javascript is disabled on the clients machine, it will hide itself.
+Zulma 内置搜索功能。只要在 `config.toml` 中将 `build_search_index` 设置为 `true`，顶部导航栏上就会出现一个搜索输入框。这需要启用 javascript 才能通过功能；如果页面检测到客户端机器禁用了 javascript，它将隐藏自己。
 
-The search is shamefully stolen from [Zola's site](https://github.com/getzola/zola/blob/master/docs/static/search.js). Thanks, Vincent!
+搜索是无耻地从 [Zola 的站点](https://github.com/getzola/zola/blob/master/docs/static/search.js) 窃取的。谢谢，Vincent！
 
-### Title
+### 标题
 
-In extra, setting `zulma_title` will set a hero banner on the index page to appear with that title inside.
+在 extra 中，设置 `zulma_title` 将在索引页上设置一个 hero 横幅，并在其中显示该标题。
 
 ```toml
 [extra]
 zulma_title = "Blog"
 ```
 
-If you want to get fancy with it, you can set an image behind using sass like so:
+如果你想搞点花样，你可以像这样使用 sass 在后面设置一张图片：
 
 ```scss
 .index .hero-body {
@@ -204,11 +204,11 @@ If you want to get fancy with it, you can set an image behind using sass like so
 }
 ```
 
-This will set the image behind the hero, and darken it so the main text can still be easily read.
+这将在 hero 后面设置图片，并将其变暗，以便主要文本仍然易于阅读。
 
-### Theming
+### 主题化
 
-In extra, setting `zulma_theme` to a valid value will change the current colour scheme to that one. All themes were taken from [Bulmaswatch](https://jenil.github.io/bulmaswatch/). Valid theme values are:
+在 extra 中，将 `zulma_theme` 设置为有效值会将当前的配色方案更改为该值。所有主题均取自 [Bulmaswatch](https://jenil.github.io/bulmaswatch/)。有效的主题值为：
 
 - default
 - darkly
@@ -220,28 +220,26 @@ In extra, setting `zulma_theme` to a valid value will change the current colour 
 - solar
 - superhero
 
-All valid themes can also be found under the `extra.zulma_themes` variable in the `theme.toml`. Choosing no theme will set default as the theme. Setting an invalid theme value will cause the site to render improperly.
+所有有效主题也可以在 `theme.toml` 中的 `extra.zulma_themes` 变量下找到。选择无主题将设置 default 为主题。设置无效的主题值将导致站点渲染不正确。
 
 ```toml
 [extra]
 zulma_theme = "darkly"
 ```
 
-Additionally, in extra, you can also set the `zulma_allow_theme_selection` boolean. Setting this to `true` will allow a menu in the footer to allow users to select their own theme. This option will store their theme choice in their localstorage and apply it on every page, assuming `zulma_allow_theme_selection` is still true. This requires javascript to be enabled to function; if the page detects javascript is disabled on the clients machine, it will hide itself.
+此外，在 extra 中，你还可以设置 `zulma_allow_theme_selection` 布尔值。将其设置为 `true` 将允许页脚中的菜单允许用户选择他们自己的主题。此选项将把他们的主题选择存储在本地存储中，并将其应用到每个页面，假设 `zulma_allow_theme_selection` 仍然为真。这需要启用 javascript 才能通过功能；如果页面检测到客户端机器禁用了 javascript，它将隐藏自己。
 
-Each theme contains the entirety of Bulma, and will weigh in at ~180kb. If you're running on a server severely limited on space, then I'd recommend you delete each theme you're not using, either from the source or from `/public`. Obviously, doing this will cause `zulma_allow_theme_selection` to work improperly, so make sure you either override `extra.zulma_themes` in `config.toml` to only show themes you have left or to not enable this option at all.
+每个主题都包含整个 Bulma，大约 180kb。如果你在空间严重受限的服务器上运行，那么我建议你删除你不使用的每个主题，无论是从源还是从 `/public`。显然，这样做会导致 `zulma_allow_theme_selection` 工作不正常，所以确保你要么在 `config.toml` 中覆盖 `extra.zulma_themes` 以仅显示你剩下的主题，要么根本不启用此选项。
 
 ```toml
 [extra]
 zulma_allow_theme_selection = true
 ```
 
-## Original
+## 原作
 
-This template is based on the [blog template](https://bulmatemplates.github.io/bulma-templates/templates/blog.html) over at [Free Bulma Templates](https://bulmatemplates.github.io/bulma-templates/). All themes were taken from [Bulmaswatch](https://jenil.github.io/bulmaswatch/). The code behind from originally adapted from the [after-dark](https://github.com/getzola/after-dark/blob/master/README.md) zola template.
+此模板基于 [Free Bulma Templates](https://bulmatemplates.github.io/bulma-templates/) 上的 [博客模板](https://bulmatemplates.github.io/bulma-templates/templates/blog.html)。所有主题均取自 [Bulmaswatch](https://jenil.github.io/bulmaswatch/)。背后的代码最初改编自 [after-dark](https://github.com/getzola/after-dark/blob/master/README.md) zola 模板。
 
-## Known Bugs
+## 已知 Bug
 
-- If user theme swapping is enabled and the user selects a theme different to the default, a slight delay will be introduced in page rendering as the css gets swapped out and in by the javascript. This is particularly pronounced when using the dark theme, since it will flash white before going back to black. This is better than the alternative flashes of unstyled content or old theme, but still annoying. I don't know any way around this, but with browser caching it should be fast enough to not cause serious issues.
-
-        
+- 如果启用了用户主题切换并且用户选择了不同于默认的主题，页面渲染将会引入轻微的延迟，因为 css 会通过 javascript 被换出和换入。当使用暗色主题时这一点尤为明显，因为它会在回到黑色之前闪烁白色。这比未样式化内容或旧主题的替代闪烁要好，但仍然很烦人。我不知道有什么办法可以解决这个问题，但有了浏览器缓存，它应该足够快，不会造成严重问题。

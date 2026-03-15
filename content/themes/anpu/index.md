@@ -1,7 +1,7 @@
 
 +++
 title = "Anpu"
-description = "A port of the Hugo Anubis theme"
+description = "Hugo Anubis 主题的移植版"
 template = "theme.html"
 date = 2025-12-14T11:16:37Z
 
@@ -24,29 +24,29 @@ homepage = "https://zbrox.com"
 
 # Anpu theme for Zola
 
-This is a port of the Hugo theme [Anubis](https://github.com/Mitrichius/hugo-theme-anubis/tree/master/layouts) for [Zola](https://getzola.org).
+这是 Hugo 主题 [Anubis](https://github.com/Mitrichius/hugo-theme-anubis/tree/master/layouts) 的 [Zola](https://getzola.org) 移植版。
 
-## Screenshots
+## 截图
 
-| Light mode | Dark mode |
+| 亮色模式 | 暗色模式 |
 | :------: | :-----------: |
-| ![light mode website screenshot](screenshot-light.png) | ![dark mode website screenshot](screenshot-dark.png) |
+| ![亮色模式网站截图](screenshot-light.png) | ![暗色模式网站截图](screenshot-dark.png) |
 
-## Usage
+## 使用
 
-In order to use the theme you need to clone this repository in your `themes` folder:
+为了使用该主题，你需要将此仓库克隆到你的 `themes` 文件夹中：
 
 ```bash
 git clone https://github.com/zbrox/anpu-zola-theme.git themes/anpu
 ```
 
-Then set your theme setting in `config.toml` to `anpu`:
+然后在 `config.toml` 中将主题设置设置为 `anpu`：
 
 ```toml
 theme = "anpu"
 ```
 
-This theme requires both the `tags` and `categories` taxonomies.
+此主题需要 `tags` 和 `categories` 分类法。
 
 ```toml
 taxonomies = [
@@ -55,18 +55,18 @@ taxonomies = [
 ]
 ```
 
-## How To Customize
+## 如何自定义
 
-There are two things you can customize:
+你可以自定义两件事：
 
-- The links to be included in the menu
-- The date format of the posts
+- 要包含在菜单中的链接
+- 文章的日期格式
 
-### Menu links
+### 菜单链接
 
-In your `config.toml` under the `[extra]` section you need to set the `anpu_menu_links` list.
+在你的 `config.toml` 的 `[extra]` 部分下，你需要设置 `anpu_menu_links` 列表。
 
-Example:
+示例：
 
 ```toml
 [extra]
@@ -75,27 +75,25 @@ anpu_menu_links = [
 ]
 ```
 
-If you include `$BASE_URL` in the url of a link it will be replaced to the base url of your site.
+如果你在链接的 url 中包含 `$BASE_URL`，它将被替换为你站点的 base url。
 
-### Date format
+### 日期格式
 
-In your `config.toml` under the `[extra]` section you need to set the `anpu_date_format` value.
+在你的 `config.toml` 的 `[extra]` 部分下，你需要设置 `anpu_date_format` 值。
 
-Example:
+示例：
 
 ```toml
 [extra]
 anpu_date_format = "%e %B %Y"
 ```
 
-The formatting uses the standart `date` filter in Tera. The date format options you can use are listed in the [chrono crate documentation](https://tera.netlify.app/docs/#date).
+格式化使用 Tera 中的标准 `date` 过滤器。你可以使用的日期格式选项列在 [chrono crate 文档](https://tera.netlify.app/docs/#date) 中。
 
-## Attributions
+## 归属
 
-The icons used are part of [UXWing](https://uxwing.com/license/)'s collection.
+使用的图标是 [UXWing](https://uxwing.com/license/) 收藏的一部分。
 
-## License
+## 许可证
 
-Source code is available under [MIT](LICENSE).
-
-        
+源代码在 [MIT](LICENSE) 下可用。

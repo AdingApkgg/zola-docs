@@ -30,9 +30,9 @@ An elegant but still playful theme for [Zola](https://getzola.org/) powered by [
 
 It is especially optimized for mobile navigation (optionally without JavaScript, if you don't like fancy stuff).
 
-**DEMO**: [https://zhuia.netlify.app/](https://zhuia.netlify.app/)
+**演示**: [https://zhuia.netlify.app/](https://zhuia.netlify.app/)
 
-## Contents
+## 目录
 
 - Installation
 - Features
@@ -47,7 +47,7 @@ It is especially optimized for mobile navigation (optionally without JavaScript,
 - Donate
 - License
 
-## Installation
+## 安装
 
 First download this theme to your `themes` directory:
 
@@ -69,7 +69,7 @@ To sort the post index by date, enable sort in your index section `content/_inde
 sort_by = "date"
 ```
 
-## Features
+## 特性
 - [x] Lightweight and minimal
 - [x] Spectre CSS classes to manage content. [Look at the docs](https://picturepan2.github.io/spectre/)
 - [x] Responsive for mobile support (with full-page mobile menu)
@@ -99,9 +99,9 @@ sort_by = "date"
 - [ ] Table of Contents
 - [ ] Image + text title option
 
-## Options
+## 选项
 
-### Title
+### 标题
 
 Set a title and description in the config to appear in the site header and on the RSS feed:
 
@@ -115,7 +115,7 @@ description = "a novel written by Franz Kafka in 1914"
 Most SEO tags are populated by the page metadata, but you can set the `author` and for the `og:image` tag provide the path to an image:
 
 ```toml
-[extra]
+[额外配置]
 
 author = "Timothy Morton"
 og_image = "Hyperobjects.png"
@@ -133,7 +133,7 @@ You can choose between two modes:
 Set a field in `extra` with a key of `footer_links`:
 
 ```toml
-[extra]
+[额外配置]
 
 # Freely comment out or delete every field
 social_links = [
@@ -152,12 +152,12 @@ social_links = [
 The theme automatically picks up the right icons.
 We can expand the support to other social, for sure: make a PR or open an enhancement issue to ask a new implementation.
 
-### Footer
+### 页脚
 
 You can add your own copyright or whatever to the footer with a through a simple option on the config file:
 
 ```toml
-[extra]
+[额外配置]
 
 footer_tagline = "What if everything is an illusion and nothing exists? In that case, I definitely overpaid for my carpet."
 ```
@@ -180,7 +180,7 @@ Did you liked this theme? Make a donation and support new features!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V425BFU)
 
-## License
+## 许可证
 
 Open sourced under the [MIT license](LICENSE.md).
 

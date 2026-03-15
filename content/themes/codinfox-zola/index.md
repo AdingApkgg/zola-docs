@@ -1,7 +1,7 @@
 
 +++
 title = "codinfox-zola"
-description = "Codinfox theme for Zola"
+description = "Zola 的 Codinfox 主题"
 template = "theme.html"
 date = 2023-05-11T01:34:05+02:00
 
@@ -26,73 +26,71 @@ homepage = "https://svavs.github.io/"
 
 ![Zola Deploy to Github Pages on push](https://github.com/svavs/codinfox-zola/workflows/Zola%20Deploy%20to%20Pages%20on%20push/badge.svg?branch=master)
 
-This is a [Zola](https://www.getzola.com) theme inspired to [Codinfox-Lanyon](https://codinfox.github.com/), a Lanyon based theme for [Jekyll](http://jekyllrb.com). See a live demo [here](https://codinfox-zola.vercel.app/).
+这是一个 [Zola](https://www.getzola.com) 主题，灵感来自 [Codinfox-Lanyon](https://codinfox.github.com/)，一个基于 Lanyon 的 [Jekyll](http://jekyllrb.com) 主题。在此处查看实时演示 [here](https://codinfox-zola.vercel.app/)。
 
-This theme places content first by tucking away navigation in a hidden drawer.
+此主题将内容放在首位，将导航隐藏在抽屉中。
 
-* Built for [Zola](https://www.getzola.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com) and [Vercel](https://vercel.com)
-* Coded with [Spacemacs](https://www.spacemacs.org)
+* 专为 [Zola](https://www.getzola.com) 构建
+* 在 GitHub 上开发，并免费托管在 [GitHub Pages](https://pages.github.com) 和 [Vercel](https://vercel.com) 上
+* 使用 [Spacemacs](https://www.spacemacs.org) 编写
 
-This theme supports:
+此主题支持：
 
-1. Theme colors: you can choose your favorite theme color (changing in `_config.scss`)
-2. Changable sidebar locations (reverse it by changing the boolean value in `_config.scss`)
-3. Integration of FontAwesome, MathJax, Disqus and Google Analytics
-4. Support for multilingual sites
-5. Support for Gravatar
-6. and numerous improvements over original Lanyon and Codinfox-Lanyon
+1. 主题颜色：你可以选择自己喜欢的主题颜色（在 `_config.scss` 中更改）
+2. 可更改的侧边栏位置（通过更改 `_config.scss` 中的布尔值来反转它）
+3. 集成 FontAwesome, MathJax, Disqus 和 Google Analytics
+4. 支持多语言站点
+5. 支持 Gravatar
+6. 以及对原始 Lanyon 和 Codinfox-Lanyon 的许多改进
 
-All the configuration variables and their meaning are inside:
+所有配置变量及其含义都在：
 
-- `config.toml` (for the zola config variables and some extra variables required by this theme),
-- `author.toml` (for the personal informations to be displayed about the author of the site),
-- `nav.toml` (for the navigation menu structure available in the site's sidebar)
-- `_config.scss` (for the definition of some css customizations)
+- `config.toml`（用于 zola 配置变量和此主题所需的一些额外变量），
+- `author.toml`（用于显示关于站点作者的个人信息），
+- `nav.toml`（用于站点侧边栏中可用的导航菜单结构）
+- `_config.scss`（用于定义一些 css 自定义）
 
-The options are fairly straightforward and described in comments.
+选项非常简单，并在注释中有描述。
 
-Learn more and contribute on [GitHub](https://github.com/svavs/codinfox-zola).
+在 [GitHub](https://github.com/svavs/codinfox-zola) 上了解更多信息并做出贡献。
 
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/svavs/codinfox-zola/issues/new) or [ask me on Twitter](https://twitter.com/svavs).
+有问题或建议？请随时在 [GitHub 上打开 issue](https://github.com/svavs/codinfox-zola/issues/new) 或在 [Twitter 上问我](https://twitter.com/svavs)。
 
-### Before you start
+### 开始之前
 
-[Get a gravatar account](https://gravatar.com) and set this up with a profile image.
+[获取一个 gravatar 帐户](https://gravatar.com) 并设置个人资料图片。
 
-#### Add gravatar profile image to codinfox-zola theme
+#### 将 gravatar 个人资料图片添加到 codinfox-zola 主题
 
-1. login to gravatar.com
-2. click My Profile
-3. click **view profile** in RH sidebar beneath profile name
-4. click JSON
-5. copy the `hash` value on line 4
-6. paste the `hash` value to `author.toml` line 10
+1. 登录 gravatar.com
+2. 点击 My Profile
+3. 点击 RH 侧边栏中个人资料名称下方的 **view profile**
+4. 点击 JSON
+5. 复制第 4 行的 `hash` 值
+6. 将 `hash` 值粘贴到 `author.toml` 第 10 行
 
 
-### Install and use
+### 安装和使用
 
-To use this theme you can follow the instruction required by any Zola theme.
+要使用此主题，你可以遵循任何 Zola 主题所需的说明。
 
-Simply clone this repository under the `themes` folder of your site's main folder.
+只需将此仓库克隆到你站点主文件夹的 `themes` 文件夹下即可。
 
-Then, define the required extra variables in the config.toml (take it from the config.toml file of the theme), create and define the author.toml and nav.toml configuration files in the main folder of your site (the same level of the config.toml), and that's it!
+然后，在 config.toml 中定义所需的额外变量（从主题的 config.toml 文件中获取），在站点的主文件夹中创建并定义 author.toml 和 nav.toml 配置文件（与 config.toml 同级），就是这样！
 
-To define your own home picture, put an image file in the `static/img/` folder and set the path in the config.extra.image variable.
+要定义你自己的主页图片，请将图像文件放入 `static/img/` 文件夹并在 config.extra.image 变量中设置路径。
 
-Now is possible to create the content inside the `content` folder as usual for Zola sites.
+现在可以像往常一样在 `content` 文件夹中创建内容。
 
-If you want to have a Blog with this theme, then create a folder inside the `content` folder containing all the blog posts in Markdown format. Zola automatically generate a section that you can manage as a blog. See an example in the [live demo](https://codinfox-zola.vercel.app/blog/).
+如果你想使用此主题拥有博客，请在 `content` 文件夹内创建一个包含所有 Markdown 格式的博客文章的文件夹。Zola 会自动生成一个你可以作为博客管理的版块。在 [实时演示](https://codinfox-zola.vercel.app/blog/) 中查看示例。
 
 
  
-## License
+## 许可证
 
-Open sourced under the [MIT license](LICENSE.md).
+根据 [MIT 许可证](LICENSE.md) 开源。
 
 
-## TODO
- - recaptcha for hiding email address link (https://developers.google.com/recaptcha/intro)
- - hidden multilingual links in topbar for main index section pages
-
-        
+## 待办
+ - 用于隐藏电子邮件地址链接的 recaptcha (https://developers.google.com/recaptcha/intro)
+ - 主索引版块页面的顶部栏中隐藏的多语言链接

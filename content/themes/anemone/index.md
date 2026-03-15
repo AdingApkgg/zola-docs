@@ -1,7 +1,7 @@
 
 +++
 title = "anemone"
-description = "A minimalist Zola theme that prioritizes clean CSS and avoids heavy JavaScript. Enjoy a seamless user experience with lightning-fast load times. Let your content take center stage in a clutter-free, elegant design that enhances readability. Responsive and efficient, anemone brings focus to your ideas."
+description = "一个极简的 Zola 主题，优先考虑干净的 CSS 并避免繁重的 JavaScript。享受闪电般加载速度带来的无缝用户体验。让你的内容在整洁、优雅的设计中占据中心位置，增强可读性。响应式且高效，anemone 让焦点回归你的想法。"
 template = "theme.html"
 date = 2026-02-20T02:49:31+01:00
 
@@ -24,83 +24,83 @@ homepage = "https://speyllsite.pages.dev/"
 
 # anemone
 
-Introducing "anemone," a minimalist [Zola](https://www.getzola.org) theme that prioritizes clean CSS and avoids heavy JavaScript. Enjoy a seamless user experience with lightning-fast load times. Let your content take center stage in a clutter-free, elegant design that enhances readability. Responsive and efficient, anemone brings focus to your ideas.
+介绍 "anemone"，一个极简的 [Zola](https://www.getzola.org) 主题，优先考虑干净的 CSS 并避免繁重的 JavaScript。享受闪电般加载速度带来的无缝用户体验。让你的内容在整洁、优雅的设计中占据中心位置，增强可读性。响应式且高效，anemone 让焦点回归你的想法。
 
-You can browse the demo website [here](https://anemone.pages.dev/)
+你可以在[这里](https://anemone.pages.dev/)浏览演示网站。
 
-Anemone is a versatile Zola theme that comes with both light and dark variants. You can easily switch between the light and dark themes to suit your preferences.
+Anemone 是一个多功能的 Zola 主题，提供亮色和暗色变体。你可以轻松在亮色和暗色主题之间切换，以适应你的喜好。
 
-![Anemone Light and Dark Theme](screenshot.png)
+![Anemone 亮色和暗色主题](screenshot.png)
 
-## Installation
+## 安装
 
-To get started with Anemone, follow these simple steps:
+要开始使用 Anemone，请遵循以下简单步骤：
 
-1. Download the theme to your `themes` directory:
+1. 下载主题到你的 `themes` 目录：
 
 ```bash
 cd themes
 git clone https://github.com/Speyll/anemone
 ```
 
-2. Enable Anemone in your `config.toml`:
+2. 在你的 `config.toml` 中启用 Anemone：
 
 ```toml
 theme = "anemone"
 ```
 
-## Release Notes
+## 发布说明
 
 #### 2025-04-09
 
-This release introduces a **complete rewrite** of the project: simplified, improved, and optimized across the board.
+此版本引入了项目的**完全重写**：全面简化、改进和优化。
 
-**If you are updating from an older release:**
-1. Open your `config.toml` file and update it as needed (compare with the latest release for reference).
-2. Remove the following line from `content/blog/_index.md`:
+**如果你是从旧版本更新：**
+1. 打开你的 `config.toml` 文件并根据需要进行更新（参考最新版本）。
+2. 从 `content/blog/_index.md` 中删除以下行：
    ```toml
    page_template = "blog-page.html"
    ```
 
 #### 2024-03-02
-This release brings several improvements and enhancements, focusing mainly on optimizing performance and user experience. Here's a summary of the key changes:
+此版本带来了多项改进和增强，主要集中在优化性能和用户体验上。以下是关键更改的摘要：
 
-- **suCSS Integration:** The core CSS now leverages the lightweight [suCSS framework](https://speyll.github.io/suCSS/) made by yours truly, providing better maintainability, robustness, and scalability. With suCSS, the theme should maintain consistent appearance across different browsers.
+- **suCSS 集成：** 核心 CSS 现在利用由我制作的轻量级 [suCSS 框架](https://speyll.github.io/suCSS/)，提供更好的可维护性、稳健性和可扩展性。有了 suCSS，主题在不同浏览器中应保持一致的外观。
 
-- **Enhanced Theme Toggle:** The dark and light theme toggle has been revamped for more consistency. Now, the website respects the user's system-wide theme settings, ensuring a seamless experience. Additionally, the toggle retains the selected theme for future visits, offering improved usability.
+- **增强的主题切换：** 暗色和亮色主题切换已改进以提高一致性。现在，网站尊重用户的系统级主题设置，确保存无缝体验。此外，切换功能会记住选定的主题以供将来访问，提供了更好的可用性。
 
-- **Smooth Transition and Sound Effect:** Enjoy a smoother transition between the dark and light mode accompanied by a subtle sound effect. Rest assured, the added sound effect incurs minimal performance overhead, with the file size being just 1kb.
+- **平滑过渡和音效：** 享受暗色和亮色模式之间更平滑的过渡，并伴有微妙的音效。请放心，增加的音效带来的性能开销极小，文件大小仅为 1kb。
 
-- **Class Names and Shortcodes Update:** Some class names and shortcodes have been modified for better organization and clarity. I apologize for any inconvenience this may cause.
+- **类名和短代码更新：** 为了更好的组织和清晰度，一些类名和短代码已被修改。对于由此可能造成的任何不便，我深表歉意。
 
-- **Slight change in Color Choice:** Some dark mode colors have been changed for the sake of readability, still using [veqev](https://github.com/Speyll/veqev).
+- **颜色选择的微调：**为了可读性，更改了一些暗色模式的颜色，仍然使用 [veqev](https://github.com/Speyll/veqev)。
 
 
-## Options
+## 选项
 
-Anemone provides various options to customize your website:
+Anemone 提供了各种选项来自定义你的网站：
 
-#### Default Taxonomies
+#### 默认分类法
 
-To use tags, add the following code to a page's metadata:
+要使用标签，请将以下代码添加到页面的元数据中：
 
 ```toml
 [taxonomies]
 tags = ["tag1", "tag2"]
 ```
 
-#### Pages List in Homepage
+#### 首页文章列表
 
-Enable listing of pages in the homepage by adding the following code to `config.toml`:
+通过将以下代码添加到 `config.toml` 来启用首页文章列表：
 
 ```toml
 [extra]
 list_pages = true
 ```
 
-#### Multilanguage
+#### 多语言
 
-The theme has a built-in feature that allows you to use multiple languages. For detailed instructions on how to use this feature, you can refer to the [Zola Multilingual documentation](https://www.getzola.org/documentation/content/multilingual/). This documentation provides additional information on how to make the most out of this multilingual capability.
+该主题具有内置功能，允许你使用多种语言。有关如何使用此功能的详细说明，请参阅 [Zola 多语言文档](https://www.getzola.org/documentation/content/multilingual/)。此文档提供了有关如何充分利用此多语言功能的更多信息。
 
 ```toml
 [languages.fr]
@@ -109,9 +109,9 @@ title = "anemone"
 languageName = "Français"
 languageCode = "fr"
 ```
-#### Multilanguage-Ready Navigation Bar
+#### 支持多语言的导航栏
 
-Customize the header navigation links with the following code in the `extra` section of `config.toml`:
+在 `config.toml` 的 `extra` 部分使用以下代码自定义头部导航链接：
 
 ```toml
 [extra]
@@ -124,18 +124,18 @@ header_nav = [
 ]
 ```
 
-#### Add Table of Contents (TOC) to Pages
+#### 为页面添加目录 (TOC)
 
-In a page's frontmatter, set `extra.toc` to `true`:
+在页面的 Front Matter 中，设置 `extra.toc` 为 `true`：
 
 ```toml
 [extra]
 toc = true
 ```
 
-#### Display Author Name in Blog Posts
+#### 在博客文章中显示作者姓名
 
-Customize the display of the author's name in your blog posts by toggling the `display_author` variable to either `true` or `false`:
+通过将 `display_author` 变量切换为 `true` 或 `false` 来自定义博客文章中作者姓名的显示：
 
 ```toml
 [extra]
@@ -144,21 +144,19 @@ display_author = true
 
 ### Webrings
 
-Add a webring with a shortcode:
+使用短代码添加 webring：
 
 ```html
 {{/* webring(prev="#", webring="#", webringName="Random Webring", next="#") */}}
 ```
 
-### Extra Data
+### 额外数据
 
-- Set the `author` in both the main config and in pages metadata.
-- Similarly, set `favicon` in the main config, and it will be used as the site icon.
-- Set `footer_content_license` and `footer_content_license_link` if you wish to display content license information in the footer.
+- 在主配置和页面元数据中设置 `author`。
+- 同样，在主配置中设置 `favicon`，它将被用作站点图标。
+- 如果你想在页脚显示内容许可信息，请设置 `footer_content_license` 和 `footer_content_license_link`。
 
 
-### License
+### 许可证
 
-The Anemone theme is available as open source under the terms of the [GPLv3 License](LICENSE).
-
-        
+Anemone 主题根据 [GPLv3 许可证](LICENSE) 作为开源软件提供。

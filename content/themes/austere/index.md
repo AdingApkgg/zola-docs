@@ -1,7 +1,7 @@
 
 +++
 title = "austere"
-description = "A minimal theme for Zola with a focus on writing."
+description = "一个专注于写作的 Zola 极简主题。"
 template = "theme.html"
 date = 2025-12-28T15:39:35Z
 
@@ -28,55 +28,55 @@ homepage = "https://www.tomwrw.com"
 
 <h1 align="center">austere</h1>
 
-<p align="center">A minimal theme for <a href="https://getzola.org">Zola</a> with a focus on writing.</p>
+<p align="center">一个专注于写作的 <a href="https://getzola.org">Zola</a> 极简主题。</p>
 
 ---
 
-**Live Demo:** [My personal website](https://tomwrw.com)
+**在线演示：** [我的个人网站](https://tomwrw.com)
 
-The austere theme is designed with readability in mind. It uses the core functionality of Zola, and doesn't require additional third-party integrations. Currently, the only external link is to Google Fonts. Styles are internal to the base template, and colour can be applied directly in the site configuration.
+austere 主题的设计考虑了可读性。它使用了 Zola 的核心功能，不需要额外的第三方集成。目前，唯一的外部链接是指向 Google Fonts。样式在基本模板内部，颜色可以直接在站点配置中应用。
 
-The design and simplicity of austere was heavily influenced by the excellent [Zap](https://github.com/jimmyff/zola-zap) theme by [jimmyff](https://github.com/jimmyff).
+austere 的设计和简洁性在很大程度上受到了 [jimmyff](https://github.com/jimmyff) 优秀的 [Zap](https://github.com/jimmyff/zola-zap) 主题的影响。
 
-## Features
+## 特性
 
-- Internal CSS (~2KB) - no external stylesheets
-- Configurable color themes for light/dark
-- Serif typography
-- Light/dark mode toggle
-- Responsive images
-- Atom and RSS feeds
-- Fuse.js search
+- 内部 CSS (~2KB) - 无外部样式表
+- 可配置的亮色/暗色主题
+- 衬线排版
+- 亮色/暗色模式切换
+- 响应式图片
+- Atom 和 RSS 订阅
+- Fuse.js 搜索
 
-## Screenshot
+## 截图
 
 <p align="center">
   <img src="screenshot.png" alt="austere" width="1000">
 </p>
 
-## Installation
+## 安装
 
-1. Download this theme to your `themes` directory:
+1. 下载此主题到你的 `themes` 目录：
    ```bash
    cd your-zola-site
    git submodule add https://github.com/tomwrw/austere-theme-zola themes/austere
    ```
 
-2. Set the theme in your `config.toml`:
+2. 在你的 `config.toml` 中设置主题：
    ```toml
    theme = "austere"
    ```
 
-3. Copy the example content to get started (optional):
+3. 复制示例内容以开始（可选）：
    ```bash
    cp -r themes/austere/content/* content/
    ```
 
-## Configuration
+## 配置
 
-### Example Configuration
+### 示例配置
 
-Here you can find an example config.toml to use for your site with the austere theme. Make sure you change:
+在这里你可以找到一个用于 austere 主题的 config.toml 示例。确保你更改了：
 
 - Title
 - Description
@@ -84,68 +84,68 @@ Here you can find an example config.toml to use for your site with the austere t
 
 
 ```toml
-# Site title.
+# 站点标题。
 title = "austere"
-# Site description.
+# 站点描述。
 description = "A minimal theme for Zola with a focus on writing."
-# Base URL for your site.
+# 你的站点基础 URL。
 base_url = "https://www.tomwrw.co.uk"
-# No SASS - CSS is internal (located in base.html template).
+# 无 SASS - CSS 是内部的（位于 base.html 模板中）。
 compile_sass = false
-# Search index enabled.
+# 启用搜索索引。
 build_search_index = true
-# Default site language.
+# 默认站点语言。
 default_language = "en"
-# Feeds.
+# 订阅。
 generate_feeds = true
-# Specify feed filenames.
+# 指定订阅文件名。
 feed_filenames = ["atom.xml", "rss.xml"]
-# Taxonomies.
+# 分类法。
 taxonomies = [{ name = "tags", feed = true }]
 
 [search]
-# Required for search page to work.
+# 搜索页面工作所必需。
 index_format = "fuse_javascript"
 
 [markdown]
-# Required for code highlighting blocks.
+# 代码高亮块所必需。
 highlight_code = true
 highlight_theme = "css"
 
 [slugify]
-# Controls slugification for page/section URLs.
+# 控制页面/版块 URL 的 slug 化。
 paths = "on"
-# Controls slugification for taxonomy terms (tags, categories, etc.).
+# 控制分类法术语（标签、分类等）的 slug 化。
 taxonomies = "on"
-# Controls slugification for heading anchors (H1 to H6 etc.).
+# 控制标题锚点（H1 到 H6 等）的 slug 化。
 anchors = "on"
 
 [extra]
-# Keywords for SEO.
+# SEO 关键词。
 keywords = "zola, theme, minimal"
-# Site icon in header (optional - comment out to hide).
+# 页眉中的站点图标（可选 - 注释掉以隐藏）。
 site_icon = "quill.svg"
-# Header strapline (optional - comment out to hide).
+# 页眉标语（可选 - 注释掉以隐藏）。
 strapline = "A minimal theme for Zola"
-# Footer text (optional - comment out to hide).
+# 页脚文本（可选 - 注释掉以隐藏）。
 footer_text = "austere - made for <a href='https://getzola.org'>Zola</a>"
-# Favicon (optional - comment out to hide).
+# Favicon（可选 - 注释掉以隐藏）。
 favicon = "/favicon.ico"
-# Profile picture on home page (optional - comment out to hide).
+# 首页上的个人资料图片（可选 - 注释掉以隐藏）。
 profile_picture = "/images/profile.svg"
 
-# Enable inline SVG icons (uses sprite sheet).
+# 启用内联 SVG 图标（使用精灵图）。
 inline_icons = true
 icon_path = "static/icons/"
 icons = ["light", "asleep", "rss"]
 
-# Responsive images
+# 响应式图片
 image_format = "auto"
 image_quality = 80
 images_default_size = 1024
 images_sizes = [512, 1024, 2048]
 
-# Navigation menu.
+# 导航菜单。
 menu_links = [
   { url = "$BASE_URL/", name = "Home" },
   { url = "$BASE_URL/posts/", name = "Posts" },
@@ -155,8 +155,8 @@ menu_links = [
   { url = "$BASE_URL/search/", name = "Search" },
 ]
 
-# Custom colour themes. Adjust here to apply own colour.
-# Light colours.
+# 自定义颜色主题。在此调整以应用自己的颜色。
+# 亮色。
 [extra.colours.light]
 background = "#FAF7F2"
 text = "#1a1a1a"
@@ -165,7 +165,7 @@ accent = "#9E4440"
 accent_hover = "#7A3533"
 code_bg = "#f0ebe3"
 border = "#e0d9ce"
-# Dark colours.
+# 暗色。
 [extra.colours.dark]
 background = "#141413"
 text = "#e8e8e8"
@@ -177,19 +177,19 @@ border = "#2a2a29"
 
 ```
 
-### Theme Options
+### 主题选项
 
-All theme options go under `[extra]` in your `config.toml`:
+所有主题选项都在 `config.toml` 中的 `[extra]` 下：
 
-#### Site Identity
+#### 站点标识
 
-| Option | Description | Default |
+| 选项 | 描述 | 默认值 |
 |--------|-------------|---------|
-| `strapline` | Tagline shown in header | *(none)* |
-| `favicon` | Path to favicon | *(none)* |
-| `profile_picture` | Profile image on home page | *(none)* |
-| `keywords` | SEO meta keywords | *(none)* |
-| `footer_text` | Footer HTML content | *(none)* |
+| `strapline` | 页眉显示的标语 | *(无)* |
+| `favicon` | favicon 路径 | *(无)* |
+| `profile_picture` | 首页个人资料图片 | *(无)* |
+| `keywords` | SEO meta 关键词 | *(无)* |
+| `footer_text` | 页脚 HTML 内容 | *(无)* |
 
 ```toml
 [extra]
@@ -200,7 +200,7 @@ keywords = "blog, writing, zola"
 footer_text = "Made with <a href='https://getzola.org'>Zola</a>"
 ```
 
-#### Navigation
+#### 导航
 
 ```toml
 [extra]
@@ -214,9 +214,9 @@ menu_links = [
 ]
 ```
 
-#### Colours
+#### 颜色
 
-Customize the color scheme for light and dark modes:
+自定义亮色和暗色模式的配色方案：
 
 ```toml
 [extra.colours.light]
@@ -238,7 +238,7 @@ code_bg = "#1e1e1d"
 border = "#2a2a29"
 ```
 
-#### Responsive Images
+#### 响应式图片
 
 ```toml
 [extra]
@@ -248,7 +248,7 @@ images_default_size = 1024
 images_sizes = [512, 1024, 2048]
 ```
 
-#### Analytics (Optional)
+#### 分析（可选）
 
 ```toml
 [extra]
@@ -261,11 +261,11 @@ umami_domains = "yoursite.com"                  # optional, limit tracking
 google_analytics_tag_id = "G-XXXXXXXXXX"
 ```
 
-## Content
+## 内容
 
-### Posts
+### 文章
 
-Create posts in `content/posts/`:
+在 `content/posts/` 中创建文章：
 
 ```markdown
 +++
@@ -279,7 +279,7 @@ tags = ["zola", "blogging"]
 Your content here...
 ```
 
-For posts with images, use a folder structure:
+对于带有图片的文章，使用文件夹结构：
 
 ```
 content/posts/my-post/
@@ -287,9 +287,9 @@ content/posts/my-post/
 └── image.jpg
 ```
 
-### Pages
+### 页面
 
-Create standalone pages in `content/`:
+在 `content/` 中创建独立页面：
 
 ```markdown
 +++
@@ -300,9 +300,9 @@ template = "page.html"
 Page content...
 ```
 
-### Projects
+### 项目
 
-Create `content/projects/_index.md`:
+创建 `content/projects/_index.md`:
 
 ```markdown
 +++
@@ -311,7 +311,7 @@ template = "projects.html"
 +++
 ```
 
-Then create `content/projects/projects.toml`:
+然后创建 `content/projects/projects.toml`:
 
 ```toml
 [[projects]]
@@ -325,9 +325,9 @@ status = "Active"
 tags = ["rust", "web"]
 ```
 
-### Search
+### 搜索
 
-Create `content/search.md`:
+创建 `content/search.md`:
 
 ```markdown
 +++
@@ -336,32 +336,32 @@ template = "search.html"
 +++
 ```
 
-## Shortcodes
+## 短代码
 
-### Responsive Image
+### 响应式图片
 
 ```markdown
 {{/* image(src="photo.jpg", alt="Description") */}}
 ```
 
-### YouTube Embed
+### YouTube 嵌入
 
 ```markdown
 {{/* youtube(id="dQw4w9WgXcQ") */}}
 {{/* youtube(id="dQw4w9WgXcQ", autoplay=true) */}}
 ```
 
-### Spotify Embed
+### Spotify 嵌入
 
 ```markdown
 {{/* spotify(id="album-id") */}}
 ```
 
-## Customization
+## 自定义
 
-### Template Hooks
+### 模板钩子
 
-Override these macros in your own `templates/macros/hooks.html`:
+在你自己 `templates/macros/hooks.html` 中覆盖这些宏：
 
 ```html
 {%/* macro post_above_content(page) */%}
@@ -381,9 +381,9 @@ Override these macros in your own `templates/macros/hooks.html`:
 {%/* endmacro */%}
 ```
 
-### OpenGraph Images
+### OpenGraph 图片
 
-Add a preview image to any page:
+为任何页面添加预览图片：
 
 ```markdown
 +++
@@ -392,20 +392,18 @@ og_preview_img = "preview.jpg"
 +++
 ```
 
-## Requirements
+## 要求
 
-- Zola 0.17.0 or later
+- Zola 0.17.0 或更高版本
 
-## License
+## 许可证
 
 MIT
 
-## Credits
+## 致谢
 
-- [Zap](https://github.com/jimmyff/zap) by [jimmyff](https://github.com/jimmyff) - Original theme inspiration
-- [Zola](https://getzola.org) - Static site generator
-- [Fuse.js](https://fusejs.io) - Client-side search
-- [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) - Typography
+- [Zap](https://github.com/jimmyff/zap) by [jimmyff](https://github.com/jimmyff) - 原始主题灵感
+- [Zola](https://getzola.org) - 静态站点生成器
+- [Fuse.js](https://fusejs.io) - 客户端搜索
+- [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4) - 排版
 - Favicon by [IconsMind](https://iconarchive.com/artist/iconsmind.html)
-
-        

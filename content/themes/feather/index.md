@@ -1,7 +1,7 @@
 
 +++
 title = "feather"
-description = "A fuzzy blog theme"
+description = "一个模糊风格的博客主题"
 template = "theme.html"
 date = 2026-01-26T07:40:26-05:00
 
@@ -23,61 +23,57 @@ homepage = "https://doomy.org"
 +++        
 
 # feather
-A lightweight blog theme for [Zola](https://www.getzola.org/) (and to my knowledge the first of now
-many themes created specifically for Zola).
 
-# [Live demo 🔗](https://feather.doomy.org/)
+一个适用于 [Zola](https://www.getzola.org/) 的轻量级博客主题（据我所知，这是专门为 Zola 创建的首批主题之一）。
 
-[![screenshot](screenshot.png)](https://feather.doomy.org/)
+# [在线演示 🔗](https://feather.doomy.org/)
 
-## Features
+[![截图](screenshot.png)](https://feather.doomy.org/)
 
-- Fully responsive
-- Designed for legibility
-- All JS is non-critical and fails gracefully
+## 特性
 
-## Options
-Zola allows themes to [define `[extra]` variables](https://www.getzola.org/documentation/getting-started/configuration/)
-in the config. Here's a full list of theme variables with example values and comments.
+- 完全响应式
+- 为易读性而设计
+- 所有 JS 都是非关键的，并能优雅降级
+
+## 选项
+
+Zola 允许主题在配置中[定义 `[extra]` 变量](https://www.getzola.org/documentation/getting-started/configuration/)。这里是主题变量的完整列表，附带示例值和注释。
 
 ```toml
-# Regular variables you might want to set...
-title = "My site" # Otherwise, this will read "Home" in the nav
+# 你可能想要设置的常规变量...
+title = "My site" # 否则，这将在导航中显示为 "Home"
 
 [extra.feather]
-# Specify a specific theme to use, or use system prefs
-# If set, the theme switcher button is hidden
+# 指定要使用的主题，或使用系统偏好
+# 如果设置，主题切换按钮将被隐藏
 theme = "light"
-head = "<script></script>" # add anything to the head
-hide_nav_image = false # hide the navigation image
-disqus_id = "my-site-com" # site domain if you want disqus comments
-cusdis_id = "12312-31231123-123123123" # cusdis id if you use their comment service
-social =  { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" } # generic social to show on pages
-timezone = "America/New_York" # timezone to calculate article post times
+head = "<script></script>" # 添加任何内容到 head
+hide_nav_image = false # 隐藏导航图片
+disqus_id = "my-site-com" # 如果你想要 disqus 评论，填写站点域名
+cusdis_id = "12312-31231123-123123123" # 如果你使用 cusdis 评论服务，填写 id
+social =  { url = "https://mastodon.social/@doomy", display = "@doomy@mastodon.social" } # 在页面上显示的通用社交信息
+timezone = "America/New_York" # 用于计算文章发布时间的时区
 
 [extra.feather.analytics]
-goatcounter_id = "mydomain-com" # privacy-focused analytics https://www.goatcounter.com
+goatcounter_id = "mydomain-com" # 隐私优先的分析 https://www.goatcounter.com
 ```
 
-Per post, these options are available:
+对于每篇文章，这些选项可用：
 
 ```toml
 [extra.feather.opengraph]
-image = "my_image.jpg" # Assumes asset colocation
+image = "my_image.jpg" # 假设资源共存
 ```
 
-# Usage
-Using feather is easy.  Install [Zola](https://www.getzola.org/) and follow
-[the guide for creating a site and using a theme](https://www.getzola.org/documentation/themes/installing-and-using-themes/).  Then,
-add `theme = "feather"` to your `config.toml` file.
+# 使用
 
-If you intend to publish your site to GitHub Pages, please check out [this
-tutorial](https://www.getzola.org/documentation/deployment/github-pages/).
+使用 feather 很简单。安装 [Zola](https://www.getzola.org/) 并按照[创建站点和使用主题的指南](https://www.getzola.org/documentation/themes/installing-and-using-themes/)操作。然后，将 `theme = "feather"` 添加到你的 `config.toml` 文件中。
 
-You can specify `tags` taxonomies .
+如果你打算将你的站点发布到 GitHub Pages，请查看 [这篇教程](https://www.getzola.org/documentation/deployment/github-pages/)。
 
-# Developing & Contributing
-Because feather comes with example content, you can run the theme just like any Zola
-blog with `zola serve`.
+你可以指定 `tags` 分类法。
 
-        
+# 开发与贡献
+
+因为 feather 附带了示例内容，你可以像任何 Zola 博客一样使用 `zola serve` 运行该主题。

@@ -29,13 +29,13 @@ Linkita is based on [Kita](https://github.com/st1020/kita)
 and [Hugo-Paper](https://github.com/nanxiaobei/hugo-paper) and is multilingual and SEO friendly.
 
 - See the [quickstart repository](https://github.com/salif/linkita-start).
-- See a [live preview](https://salif.github.io/linkita/) and
+- See a [在线预览](https://salif.github.io/linkita/) and
   [its source code](https://codeberg.org/salif/linkita-demo).
 - Open bug reports and feature requests on [Codeberg](https://codeberg.org/salif/linkita/issues).
 - The source code is available on [Codeberg](https://codeberg.org/salif/linkita)
   and mirrored on [GitHub](https://github.com/salif/linkita).
 
-## Features
+## 特性
 
 - Easy to use and modify
 - No preset limits
@@ -50,7 +50,7 @@ and [Hugo-Paper](https://github.com/nanxiaobei/hugo-paper) and is multilingual a
 - Admonition shortcode
 - SEO friendly
 - Comments using [Giscus](https://giscus.app/)
-- Mathematical notations using [KaTeX](https://katex.org/)
+- Mathematical notations using [KaTeX 公式](https://katex.org/)
 - Diagrams and charts using [Mermaid](https://mermaid.js.org/)
 - Multilingual support
 - Search support (elasticlunr_javascript)
@@ -61,7 +61,7 @@ and [Hugo-Paper](https://github.com/nanxiaobei/hugo-paper) and is multilingual a
 - Keyboard shortcuts
 - Relative URLs support
 
-## Installation
+## 安装
 
 The fastest way to create a new site is to use the
 [linkita-start template](https://github.com/salif/linkita-start).
@@ -95,7 +95,7 @@ git clone -b v4 https://codeberg.org/salif/linkita.git themes/linkita
 theme = "linkita"
 ```
 
-Place it near the `base_url` variable, not under `[extra]`.
+Place it near the `base_url` variable, not under `[额外配置]`.
 
 ## Managing versions
 
@@ -111,7 +111,7 @@ Otherwise, find the changelog file for your version in the `changelog` directory
 
 If you switch to a newer version, there may be breaking changes that require manual involvement.
 
-## Usage
+## 使用
 
 Linkita uses the following front matter variables.
 All variables are optional.
@@ -121,14 +121,14 @@ Set the ones you need.
 
 ```yaml ,name=frontmatter
 ---
-title: ""
-description: ""
-date: 
-updated: 
-taxonomies:
+标题: ""
+描述: ""
+日期: 
+更新时间: 
+分类法:
   categories:
   tags:
-extra:
+额外配置:
   comment: false
   math: false
   mermaid: false
@@ -149,11 +149,11 @@ date = 2026-12-30
 # The last updated date of the post
 updated = 2026-12-31
 
-[taxonomies]
+[分类法]
 categories = []
 tags = []
 
-[extra]
+[额外配置]
 # Enable comments
 comment = false
 # Enable KaTeX support
@@ -184,7 +184,7 @@ title = ""
 description = ""
 sort_by = "date"
 paginate_by = 4
-[extra]
+[额外配置]
 profile = "your_username"
 +++
 ```
@@ -206,7 +206,7 @@ title = "Archive"
 description = ""
 template = "archive.html"
 transparent = true
-[extra]
+[额外配置]
 date_format = "%m-%d"
 +++
 ```
@@ -277,7 +277,7 @@ If you choose this option you should set taxonomies in each post.
 
 ```toml ,name=frontmatter
 +++
-[taxonomies]
+[分类法]
 authors = ["author_username", "author2_username"]
 +++
 ```
@@ -306,7 +306,7 @@ For example, you can add JavaScript files and CSS stylesheets in the `templates/
 | Table of contents | <kbd>Alt</kbd>+<kbd>\=</kbd> |
 | Skip to footer    | <kbd>Alt</kbd>+<kbd>\_</kbd> |
 
-## Configuration
+## 配置
 
 Copy and paste the examples into your `zola.toml` file
 and comment out the variables you don't use instead of setting empty values.
@@ -352,17 +352,17 @@ Zola has built-in support for taxonomies.
 Linkita has special support for taxonomies named `tags`, `categories`, and `authors`.
 
 ```toml ,name=zola.toml
-[[taxonomies]]
+[[分类法]]
 name = "categories"
 feed = true
 paginate_by = 4
 
-[[taxonomies]]
+[[分类法]]
 name = "tags"
 feed = true
 paginate_by = 4
 
-[[taxonomies]]
+[[分类法]]
 name = "authors"
 feed = true
 paginate_by = 4
@@ -397,7 +397,7 @@ authors = "name"
 ### General config
 
 ```toml ,name=zola.toml
-[extra]
+[额外配置]
 # Enable KaTeX math formula support globally.
 # Default value: false
 math = false
@@ -758,7 +758,7 @@ Open a page of your site, adding `#disable-analytics` to the page address.
 Do this once for each browser and device.
 For example, open <http://127.0.0.1:1111/#disable-analytics>.
 
-### Comments
+### 评论
 
 See [giscus.app](https://giscus.app/).
 Only available when `extra.comment` in the front matter or `extra.comment` in the config is set to `true`.
@@ -791,7 +791,7 @@ lang = "en"
 loading = "lazy"
 ```
 
-## Contributing
+## 贡献
 
 This project is under the [MIT License](https://codeberg.org/salif/linkita/src/branch/linkita/LICENSE).
 

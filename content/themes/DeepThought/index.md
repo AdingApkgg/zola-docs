@@ -1,7 +1,7 @@
 
 +++
 title = "DeepThought"
-description = "A simple blog theme focused on writing powered by Bulma and Zola."
+description = "一个由 Bulma 和 Zola 提供支持的专注于写作的简单博客主题。"
 template = "theme.html"
 date = 2023-04-09T15:52:10+05:30
 
@@ -28,7 +28,7 @@ homepage = "https://ratanshreshtha.dev"
   <h1>DeepThought</h1>
   
   <p>
-    A simple blog theme focused on writing powered by Bulma and Zola.
+    一个由 Bulma 和 Zola 提供支持的专注于写作的简单博客主题。
   </p>
   
   
@@ -55,49 +55,49 @@ homepage = "https://ratanshreshtha.dev"
 </p>
    
 <h4>
-    <a href="https://github.com/RatanShreshtha/DeepThought/">View Demo</a>
+    <a href="https://github.com/RatanShreshtha/DeepThought/">查看演示</a>
   <span> · </span>
-    <a href="https://github.com/RatanShreshtha/DeepThought">Documentation</a>
+    <a href="https://github.com/RatanShreshtha/DeepThought">文档</a>
   <span> · </span>
-    <a href="https://github.com/RatanShreshtha/DeepThought/issues/">Report Bug</a>
+    <a href="https://github.com/RatanShreshtha/DeepThought/issues/">报告 Bug</a>
   <span> · </span>
-    <a href="https://github.com/RatanShreshtha/DeepThought/issues/">Request Feature</a>
+    <a href="https://github.com/RatanShreshtha/DeepThought/issues/">请求功能</a>
   </h4>
 </div>
 
 <br />
 
 <!-- Table of Contents -->
-# :notebook_with_decorative_cover: Table of Contents
+# :notebook_with_decorative_cover: 目录
 
-- :notebook_with_decorative_cover: Table of Contents
-  - :star2: About the Project
-    - :camera: Screenshots
-    - :space_invader: Tech Stack
-    - :dart: Features
-  - :toolbox: Getting Started
-    - :bangbang: Prerequisites
-    - :gear: Installation
-    - :running: Run Locally
-    - :triangular_flag_on_post: Deployment
-  - :eyes: Usage
-      - Multilingual Navbar
-    - KaTeX math formula support
-      - Automatic rendering without short codes
-    - Elasticlunr search in other language
-  - :wave: Contributing
-  - :warning: License
-  - :handshake: Contact
-  - :gem: Acknowledgements
+- :notebook_with_decorative_cover: 目录
+  - :star2: 关于项目
+    - :camera: 截图
+    - :space_invader: 技术栈
+    - :dart: 特性
+  - :toolbox: 入门
+    - :bangbang: 先决条件
+    - :gear: 安装
+    - :running: 本地运行
+    - :triangular_flag_on_post: 部署
+  - :eyes: 使用
+      - 多语言导航栏
+    - KaTeX 数学公式支持
+      - 无短代码的自动渲染
+    - 其他语言的 Elasticlunr 搜索
+  - :wave: 贡献
+  - :warning: 许可证
+  - :handshake: 联系
+  - :gem: 致谢
 
   
 
 <!-- About the Project -->
-## :star2: About the Project
+## :star2: 关于项目
 
 
 <!-- Screenshots -->
-### :camera: Screenshots
+### :camera: 截图
 
 <div align="center"> 
   <img src="screenshot.png" alt="screenshot" />
@@ -105,65 +105,65 @@ homepage = "https://ratanshreshtha.dev"
 
 
 <!-- TechStack -->
-### :space_invader: Tech Stack
+### :space_invader: 技术栈
 
 
-- [Zola](https://www.getzola.org/) - Your one-stop static site engine
-- [Bulma](https://bulma.io/) - The modern CSS framework that just works. 
+- [Zola](https://www.getzola.org/) - 您的一站式静态站点引擎
+- [Bulma](https://bulma.io/) - 一个有效的现代 CSS 框架。
 
 <!-- Features -->
-### :dart: Features
+### :dart: 特性
 
-- [x] Dark Mode
-- [x] Pagination
-- [x] Search
-- [x] Charts
-- [x] Maps
-- [x] Diagrams
-- [x] Galleria
-- [x] Analytics
-- [x] Comments
-- [x] Categories
-- [x] Social Links
-- [x] Multilingual Navbar
+- [x] 暗色模式
+- [x] 分页
+- [x] 搜索
+- [x] 图表
+- [x] 地图
+- [x] 示意图
+- [x] 画廊
+- [x] 分析
+- [x] 评论
+- [x] 分类
+- [x] 社交链接
+- [x] 多语言导航栏
 - [x] Katex
 
 <!-- Getting Started -->
-## 	:toolbox: Getting Started
+## 	:toolbox: 入门
 
 <!-- Prerequisites -->
-### :bangbang: Prerequisites
+### :bangbang: 先决条件
 
-You need static site generator (SSG) [Zola](https://www.getzola.org/documentation/getting-started/installation/) installed in your machine to use this theme follow their guide on [getting started](https://www.getzola.org/documentation/getting-started/overview/).
+你需要静态站点生成器 (SSG) [Zola](https://www.getzola.org/documentation/getting-started/installation/) 安装在你的机器上才能使用此主题，请按照他们的 [入门](https://www.getzola.org/documentation/getting-started/overview/) 指南进行操作。
 
 <!-- Installation -->
-### :gear: Installation
+### :gear: 安装
 
-Follow zola's guide on [installing a theme](https://www.getzola.org/documentation/themes/installing-and-using-themes/).
-Make sure to add `theme = "DeepThought"` to your `config.toml`
+按照 zola 的 [安装主题](https://www.getzola.org/documentation/themes/installing-and-using-themes/) 指南进行操作。
+确保将 `theme = "DeepThought"` 添加到你的 `config.toml`
 
-**Check zola version (only 0.9.0+)**
-Just to double-check to make sure you have the right version. It is not supported to use this theme with a version under 0.14.1.
+**检查 zola 版本（仅 0.9.0+）**
+只是为了再次检查以确保你有正确的版本。不支持在 0.14.1 以下的版本中使用此主题。
 
 <!-- Run Locally -->
-### :running: Run Locally
+### :running: 本地运行
 
-Go into your sites directory and type `zola serve`. You should see your new site at `localhost:1111`.
+进入你的站点目录并输入 `zola serve`。你应该会在 `localhost:1111` 看到你的新站点。
 
-**NOTE**: you must provide the theme options variables in `config.toml` to serve a functioning site
+**注意**：你必须在 `config.toml` 中提供主题选项变量才能提供功能正常的站点
 
 <!-- Deployment -->
-### :triangular_flag_on_post: Deployment
+### :triangular_flag_on_post: 部署
 
-[Zola](https://www.getzola.org) already has great documentation for deploying to [Netlify](https://www.getzola.org/documentation/deployment/netlify/) or [Github Pages](https://www.getzola.org/documentation/deployment/github-pages/). I won't bore you with a regurgitated explanation.
+[Zola](https://www.getzola.org) 已经有很好的文档用于部署到 [Netlify](https://www.getzola.org/documentation/deployment/netlify/) 或 [Github Pages](https://www.getzola.org/documentation/deployment/github-pages/)。我就不用重复的解释让你感到厌烦了。
 
 <!-- Usage -->
-## :eyes: Usage
+## :eyes: 使用
 
-Following options are available with the `DeepThought` theme
+`DeepThought` 主题提供以下选项
 
 ```toml
-# Enable external libraries
+# 启用外部库
 [extra]
 katex.enabled = true
 katex.auto_render = true
@@ -182,7 +182,7 @@ navbar_items = [
  ]},
 ]
 
-# Add links to favicon, you can use https://realfavicongenerator.net/ to generate favicon for your site
+# 添加 favicon 链接，你可以使用 https://realfavicongenerator.net/ 为你的站点生成 favicon
 [extra.favicon]
 favicon_16x16 = "/icons/favicon-16x16.png"
 favicon_32x32 = "/icons/favicon-32x32.png"
@@ -190,12 +190,12 @@ apple_touch_icon = "/icons/apple-touch-icon.png"
 safari_pinned_tab = "/icons/safari-pinned-tab.svg"
 webmanifest = "/icons/site.webmanifest"
 
-# Author details
+# 作者详情
 [extra.author]
 name = "DeepThought"
 avatar = "/images/avatar.png"
 
-# Social links
+# 社交链接
 [extra.social]
 email = "<email_id>"
 facebook = "<facebook_username>"
@@ -213,25 +213,25 @@ mastodon_username = "<mastadon_username>"
 mastodon_server = "<mastodon_server>" (if not set, defaults to mastodon.social)
 
 
-# To add google analytics
+# 添加 google analytics
 [extra.analytics]
 google = "<your_gtag>"
 
-# To add disqus comments
+# 添加 disqus 评论
 [extra.commenting]
 disqus = "<your_disqus_shortname>"
 
-# To enable mapbox maps
+# 启用 mapbox 地图
 [extra.mapbox]
 enabled = true
 access_token = "<your_access_token>"
 ```
 
-#### Multilingual Navbar
+#### 多语言导航栏
 
-If you want to have a multilingual navbar on your blog, you must add your new code language in the [languages](https://www.getzola.org/documentation/content/multilingual/#configuration) array in the `config.toml` file.
+如果你想在你的博客上拥有多语言导航栏，你必须在 `config.toml` 文件中的 [languages](https://www.getzola.org/documentation/content/multilingual/#configuration) 数组中添加你的新代码语言。
 
-**NOTE**: Don't add you default language to this array
+**注意**：不要将你的默认语言添加到此数组中
 
 ```toml
 languages = [
@@ -240,9 +240,9 @@ languages = [
 ]
 ```
 
-And then create and array of nav item for each language:
+然后为每种语言创建导航项数组：
 
-**NOTE**: Include your default language in this array
+**注意**：将你的默认语言包含在此数组中
 
 ```toml
 navbar_items = [
@@ -275,32 +275,31 @@ es:
 
 ![DeepThought](./screenshot_navbar_es.png)
 
-### KaTeX math formula support
+### KaTeX 数学公式支持
 
-This theme contains math formula support using [KaTeX](https://katex.org/),
-which can be enabled by setting `katex.enabled = true` in the `extra` section
-of `config.toml`.
+此主题包含使用 [KaTeX](https://katex.org/) 的数学公式支持，
+可以通过在 `config.toml` 的 `extra` 部分设置 `katex.enabled = true` 来启用。
 
-After enabling this extension, the `katex` short code can be used in documents:
+启用此扩展后，可以在文档中使用 `katex` 短代码：
 
-- `{{/* katex(body="\KaTeX") */}}` to typeset a math formula inlined into a text,
-  similar to `$...$` in LaTeX
-- `{%/* katex(block=true) */%}\KaTeX{%/* end */%}` to typeset a block of math formulas,
-  similar to `$$...$$` in LaTeX
+- `{{/* katex(body="\KaTeX") */}}` 用于排版嵌入文本中的数学公式，
+  类似于 LaTeX 中的 `$...$`
+- `{%/* katex(block=true) */%}\KaTeX{%/* end */%}` 用于排版数学公式块，
+  类似于 LaTeX 中的 `$$...$$`
 
-#### Automatic rendering without short codes
+#### 无短代码的自动渲染
 
-Optionally, `\\( \KaTeX \\)` / `$ \KaTeX $` inline and `\\[ \KaTeX \\]` / `$$ \KaTeX $$`
-block-style automatic rendering is also supported, if enabled in the config
-by setting `katex.auto_render = true`.
+可选地，如果通过设置 `katex.auto_render = true` 在配置中启用，
+也支持 `\\( \KaTeX \\)` / `$ \KaTeX $` 内联和 `\\[ \KaTeX \\]` / `$$ \KaTeX $$`
+块级自动渲染。
 
-### Elasticlunr search in other language
+### 其他语言的 Elasticlunr 搜索
 
-Zola use [Elasticlunr.js](https://github.com/weixsong/elasticlunr.js) to add full-text search feature.
-To use languages other than en (English), you need to add some javascript files. See the Zola's issue [#1349](https://github.com/getzola/zola/issues/1349).
-By placing the `templates/base.html`on your project and using the `other_lang_search_js` block, you can load the required additional javascript files in the right timing.
+Zola 使用 [Elasticlunr.js](https://github.com/weixsong/elasticlunr.js) 添加全文搜索功能。
+要使用除 en（英语）以外的语言，你需要添加一些 javascript 文件。参见 Zola 的 issue [#1349](https://github.com/getzola/zola/issues/1349)。
+通过将 `templates/base.html` 放置在你的项目上并使用 `other_lang_search_js` 块，你可以在正确的时机加载所需的额外 javascript 文件。
 
-e.g. `templates/base.html`
+例如 `templates/base.html`
 
 ```html
 {%/* extends "DeepThought/templates/base.html" */%} {%/* block other_lang_search_js */%}
@@ -311,42 +310,42 @@ e.g. `templates/base.html`
 {%/* endblock */%}
 ```
 
-More detailed explanations are aound in [elasticlunr's documents](https://github.com/weixsong/elasticlunr.js#other-languages-example-in-browser).
+更多详细解释可以在 [elasticlunr 的文档](https://github.com/weixsong/elasticlunr.js#other-languages-example-in-browser) 中找到。
 
 <!-- Contributing -->
-## :wave: Contributing
+## :wave: 贡献
 
 <a href="https://github.com/RatanShreshtha/DeepThought/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=RatanShreshtha/DeepThought" />
 </a>
 
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
+贡献使开源社区成为一个如此美妙的学习、激励和创造的地方。非常感谢你所做的任何贡献。
 
-- Fork the Project
-- Create your Feature Branch (git checkout -b feature/AmazingFeature)
-- Commit your Changes (git commit -m 'Add some AmazingFeature')
-- Push to the Branch (git push origin feature/AmazingFeature)
-- Open a Pull Request
+- Fork 项目
+- 创建你的特性分支 (git checkout -b feature/AmazingFeature)
+- 提交你的更改 (git commit -m 'Add some AmazingFeature')
+- 推送到分支 (git push origin feature/AmazingFeature)
+- 打开一个 Pull Request
 
 <!-- License -->
-## :warning: License
+## :warning: 许可证
 
-Distributed under the MIT License. See  `LICENSE` for more information.
+根据 MIT 许可证分发。查看 `LICENSE` 获取更多信息。
 
 
 <!-- Contact -->
-## :handshake: Contact
+## :handshake: 联系
 
 Ratan Kulshreshtha - [@RatanShreshtha](https://twitter.com/RatanShreshtha) - ratan.shreshtha[at]gmail.com
 
-Project Link: [https://github.com/RatanShreshtha/DeepThought](https://github.com/RatanShreshtha/DeepThought)
+项目链接: [https://github.com/RatanShreshtha/DeepThought](https://github.com/RatanShreshtha/DeepThought)
 
 
 <!-- Acknowledgments -->
-## :gem: Acknowledgements
+## :gem: 致谢
 
-Use this section to mention useful resources and libraries that you have used in your projects.
+使用此部分提及你在项目中使用的有用资源和库。
 
 - [Shields.io](https://shields.io/)
 - [Choose an Open Source License](https://choosealicense.com)
@@ -355,5 +354,3 @@ Use this section to mention useful resources and libraries that you have used in
 - [Slick Carousel](https://kenwheeler.github.io/slick)
 - [Font Awesome](https://fontawesome.com)
 - [Unsplash](https://unsplash.com/)
-
-        

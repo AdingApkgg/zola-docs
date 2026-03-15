@@ -1,7 +1,7 @@
 
 +++
 title = "polymathic"
-description = "A portfolio theme for person of many talents"
+description = "一个适合多才多艺者的作品集主题"
 template = "theme.html"
 date = 2024-10-15T17:51:38+03:00
 
@@ -26,81 +26,78 @@ homepage = "https://a.nvlkv.xyz"
 
 <a href="https://www.producthunt.com/posts/polymathic?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-polymathic" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=422530&theme=light" alt="polymathic - Zola&#0032;portfolio&#0032;theme&#0032;for&#0032;those&#0032;with&#0032;many&#0032;talents | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
-polymathic is a [Zola](https://www.getzola.org/) portfolio (and not only) theme. 
+polymathic 是一个 [Zola](https://www.getzola.org/) 作品集（及更多）主题。
 
-I made it for my own portfolio. The theme is called `polymathic`, inspired by individuals with a wide range of talents. The theme focuses on rich and consistent navigation experience, exposing the variety of topics to chose from, yet allowing the user to focus on a single thread of your story once they've made a choice. 
+我是为自己的作品集制作的。主题名为 `polymathic`，灵感来自拥有广泛才华的个人。该主题专注于丰富且一致的导航体验，展示各种可供选择的主题，同时允许用户在做出选择后专注于你故事的一条线索。
 
-Docs and theme demo are available here [main--polymathic-demo.netlify.app](https://main--polymathic-demo.netlify.app/) 
+文档和主题演示可在此处获得 [main--polymathic-demo.netlify.app](https://main--polymathic-demo.netlify.app/) 
 
-__Be sure to chek the [demo repo](https://github.com/anvlkv/polymathic-demo/)__ and follow zola docs on [installing and using a theme](https://www.getzola.org/documentation/themes/installing-and-using-themes/#installing-a-theme)
+__请务必查看 [演示仓库](https://github.com/anvlkv/polymathic-demo/)__ 并遵循 zola 文档中关于 [安装和使用主题](https://www.getzola.org/documentation/themes/installing-and-using-themes/#installing-a-theme) 的说明
 
-This theme uses [Bulma](https://bulma.io/) scss framework, making the theme styles highly customizable and enabling mobile first theme design.
+此主题使用 [Bulma](https://bulma.io/) scss 框架，使主题样式高度可定制，并启用移动优先的主题设计。
 
-This theme uses [Animate.css](https://animate.style) for animations.
+此主题使用 [Animate.css](https://animate.style) 进行动画。
 
-This theme adds minimal [Open Graph](https://ogp.me/) tags to every page `head`.
+此主题向每个页面的 `head` 添加最小的 [Open Graph](https://ogp.me/) 标签。
 
-You can quickly deploy the theme to [netlify](https://docs.netlify.com/site-deploys/create-deploys/), theme comes with a config file.
+你可以快速将主题部署到 [netlify](https://docs.netlify.com/site-deploys/create-deploys/)，主题附带配置文件。
 
-## Features
+## 特性
 
-See all features [demonstrated in the docs](https://main--polymathic-demo.netlify.app/features). 
+查看 [文档中演示的](https://main--polymathic-demo.netlify.app/features) 所有特性。
 
-### Media support
+### 媒体支持
 
-The theme is friendly to wide range of screen sizes from `mobile` to `fullhd`. Theme comes with minimal styles for `print` media.
+该主题对从 `mobile` 到 `fullhd` 的各种屏幕尺寸都很友好。主题附带了针对 `print` 媒体的最小样式。
 
-#### Dark mode
+#### 暗色模式
 
-Theme includes preference based dark mode as separate stylesheet. No switch.
+主题包括基于偏好的暗色模式作为单独的样式表。无切换开关。
 
-#### Accessibility
+#### 无障碍
 
-This theme automatically finds accessible colors when using customizations, with minimal config.
+此主题在使用自定义设置时会自动查找无障碍颜色，配置极少。
 
-This theme supports no script environments.
+此主题支持无脚本环境。
 
-This theme respects user preference for reduced motion.
+此主题尊重用户对减少动画的偏好。
 
-### Navigation
+### 导航
 
-This theme builds navigation for your site. The outcome is highly customizable via your `config.toml` and front-matter of your sections.
+此主题为你的网站构建导航。结果可以通过你的 `config.toml` 和版块的 front-matter 高度定制。
 
-### Templates
+### 模板
 
-The theme comes with templates for `index.html`, `page.html`, `section.html`, `taxonomy_list.html`, `taxonomy_single.html`, `404.html`. You can use them in your Zola project as is or by extending them, templates are divided in `block`s and `partials/*.html` for convenience of extending the theme.
+主题附带了 `index.html`, `page.html`, `section.html`, `taxonomy_list.html`, `taxonomy_single.html`, `404.html` 的模板。你可以按原样在你的 Zola 项目中使用它们，也可以通过扩展它们来使用，模板分为 `block` 和 `partials/*.html`，以便于扩展主题。
 
-### Brand and style
+### 品牌和风格
 
-The theme is highly customizable via `config.toml` and sass variables. Your customization can start from just the primary color or extend all the way to bulma variables.
+通过 `config.toml` 和 sass 变量，该主题高度可定制。你的自定义可以从仅主色开始，一直扩展到 bulma 变量。
 
-### Shortcodes
+### 短代码
 
-The theme comes with several shortcodes for building forms, galleries, navigation cards and banners.
+主题附带了几个用于构建表单、画廊、导航卡和横幅的短代码。
 
-## Install
+## 安装
 
-Once you already have zola installed and ran `zola init`, then run from your project directory
+一旦你已经安装了 zola 并运行了 `zola init`，然后在你的项目目录中运行
 
     $ git init
     $ git submodule add https://github.com/anvlkv/polymathic themes/polymathic
 
-You will also need [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed, then run
+你还需要安装 [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)，然后运行
 
     $ npm --prefix themes/polymathic install
 
-For those using netlify deployments config is available here
+对于使用 netlify 部署的用户，此处提供配置
 
     $ cp themes/polymathic/netlify.toml netlify.toml
 
-In your `config.toml` Set zola theme to polymathic
+在你的 `config.toml` 中将 zola 主题设置为 polymathic
 
     theme = "polymathic"
 
 
-## Contributing
+## 贡献
 
-Issues or contributions are welcome. Also, curious what you make with it.
-
-
-        
+欢迎 issue 或贡献。另外，很好奇你用它做了什么。

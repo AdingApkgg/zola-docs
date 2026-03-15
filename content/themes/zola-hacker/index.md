@@ -1,7 +1,7 @@
 
 +++
 title = "zola-hacker"
-description = "Hacker is a theme for Zola"
+description = "Hacker 是一个 Zola 主题"
 template = "theme.html"
 date = 2026-03-08T12:41:26-04:00
 
@@ -22,105 +22,99 @@ name = "Vladimir Loskutov"
 homepage = "https://github.com/en9inerd"
 +++        
 
-# Hacker theme for Zola
+# Zola Hacker 主题
 
-Zola Hacker is a minimalistic theme for Zola, inspired by the [Hacker theme](https://pages-themes.github.io/hacker/) for Jekyll. It is designed for developers who want to write blogs.
+Zola Hacker 是一个极简的 Zola 主题，灵感来自 Jekyll 的 [Hacker theme](https://pages-themes.github.io/hacker/)。它是为想要写博客的开发者设计的。
 
-## Demo
+## 演示
 
-[Live Preview](https://zola-hacker.enginerd.io/).
+[在线预览](https://zola-hacker.enginerd.io/).
 
-## Requirements
+## 要求
 
-Before using the theme, you need to install the [Zola](https://www.getzola.org/documentation/getting-started/installation/) ≥ 0.19.1.
+在使用此主题之前，你需要安装 [Zola](https://www.getzola.org/documentation/getting-started/installation/) ≥ 0.19.1。
 
-## Quick Start
+## 快速开始
 
 ```bash
 git clone git@github.com:en9inerd/zola-hacker.git
 cd zola-hacker
 zola serve
-# open http://127.0.0.1:1111/ in the browser
+# 在浏览器中打开 http://127.0.0.1:1111/
 ```
 
-## Installation
+## 安装
 
-Just earlier we showed you how to run the theme directly. Now we start to
-install the theme in an existing site step by step.
+刚才我们展示了如何直接运行主题。现在我们开始逐步在现有站点中安装主题。
 
-### Step 1: Create a new zola site
+### 第一步：创建一个新的 Zola 站点
 
 ```bash
 zola init mysite
 ```
 
-### Step 2: Install Zola Hacker Theme
+### 第二步：安装 Zola Hacker 主题
 
-Download this theme to your themes directory:
+下载此主题到你的 themes 目录：
 
 ```bash
 cd mysite/themes
 git clone git@github.com:en9inerd/zola-hacker.git
 ```
 
-Or install as a submodule:
+或者作为子模块安装：
 
 ```bash
 cd mysite
-git init  # if your project is a git repository already, ignore this command
+git init  # 如果你的项目已经是 git 仓库，请忽略此命令
 git submodule add git@github.com:en9inerd/zola-hacker.git themes/hacker
 ```
 
-### Step 3: Configuration
+### 第三步：配置
 
-Enable the theme in your `zola.toml` in the site directory:
+在站点目录下的 `zola.toml` 中启用主题：
 
 ```toml
 theme = "hacker"
 ```
 
-Or copy the `zola.toml` from the theme directory to your project's
-root directory:
+或者将 `zola.toml` 从主题目录复制到你的项目根目录：
 
 ```bash
 cp themes/hacker/zola.toml zola.toml
 ```
 
-### Step 4: Add new content
+### 第四步：添加新内容
 
-You can copy the content from the theme directory to your project:
+你可以将 content 从主题目录复制到你的项目中：
 
 ```bash
 cp -r themes/hacker/content .
 ```
 
-You can modify or add new posts in the `content/posts`, `content/pages` or other
-content directories as needed.
+你可以根据需要修改或添加新文章到 `content/posts`、`content/pages` 或其他内容目录中。
 
-### Step 5: Run the project
+### 第五步：运行项目
 
-Just run `zola serve` in the root path of the project:
+只需在项目根路径下运行 `zola serve`：
 
 ```bash
 zola serve
 ```
 
-This command will start the Zola development web server accessible by default at
-`http://127.0.0.1:1111`. Saved changes will live reload in the browser.
+此命令将启动 Zola 开发 Web 服务器，默认访问地址为 `http://127.0.0.1:1111`。保存的更改将在浏览器中实时重新加载。
 
-## Customization
+## 自定义
 
-You can customize your configurations, templates and content for yourself. Look
-at the `zola.toml`, `theme.toml`, `content` files and templates files in this
-repo for an idea.
+你可以自定义配置、模板和内容。查看此仓库中的 `zola.toml`、`theme.toml`、`content` 文件和模板文件以获取灵感。
 
-### Global Configuration
+### 全局配置
 
-There are some configuration options that you can customize in `zola.toml`.
+你可以在 `zola.toml` 中自定义一些配置选项。
 
-#### Configuration options before `extra` options
+#### `extra` 选项之前的配置选项
 
-Set the tags taxonomy in the `zola.toml`:
+在 `zola.toml` 中设置 tags 分类法：
 
 ```toml
 taxonomies = [
@@ -128,74 +122,69 @@ taxonomies = [
 ]
 ```
 
-#### Configuration options under the `extra`
+#### `extra` 下的配置选项
 
-The following options should be under the `[extra]` in `zola.toml`
+以下选项应位于 `zola.toml` 的 `[extra]` 下
 
-- `language_code` - set HTML file language (default to `en-US`)
-- `title_separator` - the separator to your site title, like `|` and `-` (defaults to `|`)
-- `logo` - path to the logo image
-- `google_analytics` - Google Analytics tracking ID
-- `timeformat` - the timeformat for the blog article published date
-- `timezone` - the timezone for the blog article published date
-- `edit_page` - whether to show the edit page in the github repo for your posts
-- `menu` - set the menu items for your site
-- `contact_form_script_id` - the script id for the contact form based on [Google Script](https://github.com/en9inerd/learn-to-send-email-via-google-script-html-no-server)
-- `[extra.github]` - set the GitHub metadata for your site
-- `[extra.giscus]` - set the Giscus settings for your site to enable the comments. Please use own settings from the [Giscus](https://giscus.app/) website
-- `[extra.opengraph]` - set the Open Graph metadata for your site
-- `[extra.pgp_key]` - set pgp key in the footer for certain pages
-- `social_links` - set the social media links in the footer
+- `language_code` - 设置 HTML 文件语言（默认为 `en-US`）
+- `title_separator` - 站点标题的分隔符，如 `|` 和 `-`（默认为 `|`）
+- `logo` - logo 图片路径
+- `google_analytics` - Google Analytics 跟踪 ID
+- `timeformat` - 博客文章发布日期的时间格式
+- `timezone` - 博客文章发布日期的时区
+- `edit_page` - 是否显示文章的 github 仓库编辑页面
+- `menu` - 设置站点的菜单项
+- `contact_form_script_id` - 基于 [Google Script](https://github.com/en9inerd/learn-to-send-email-via-google-script-html-no-server) 的联系表单脚本 ID
+- `[extra.github]` - 设置站点的 GitHub 元数据
+- `[extra.giscus]` - 设置站点的 Giscus 设置以启用评论。请使用 [Giscus](https://giscus.app/) 网站上的自己的设置
+- `[extra.opengraph]` - 设置站点的 Open Graph 元数据
+- `[extra.pgp_key]` - 在某些页面的页脚设置 pgp 密钥
+- `social_links` - 在页脚设置社交媒体链接
 ...
 
-### Templates
+### 模板
 
-All pages extend the `base.html`, and you can customize them as need.
+所有页面都扩展自 `base.html`，你可以根据需要自定义它们。
 
-### Shortcodes
+### 短代码
 
-The theme provides some shortcodes to help you write your content:
+该主题提供了一些短代码来帮助你编写内容：
 
 `contact_form`
-The `contact_form` shortcode is based on [Google Apps Mail](https://github.com/en9inerd/learn-to-send-email-via-google-script-html-no-server) to send emails without a server.
-It depends on `contact_form_script_id` in the `zola.toml`.
+`contact_form` 短代码基于 [Google Apps Mail](https://github.com/en9inerd/learn-to-send-email-via-google-script-html-no-server) 无需服务器发送电子邮件。
+它依赖于 `zola.toml` 中的 `contact_form_script_id`。
 
 ```markdown
 {{/* contact_form() */}}
 ```
 
 `cv`
-The `cv` shortcode is used to display the CV in the page. Data for CV is stored in yaml format in the `data/cv` directory.
+`cv` 短代码用于在页面中显示简历。简历数据以 yaml 格式存储在 `data/cv` 目录中。
 
 ```markdown
 {{/* cv() */}}
 ```
 
 `github_avatar`
-The `github_avatar` shortcode is used to display the GitHub avatar image. It depends on `extra.github.username` in the `zola.toml`. Also, you can pass size as an argument.
+`github_avatar` 短代码用于显示 GitHub 头像图片。它依赖于 `zola.toml` 中的 `extra.github.username`。此外，你可以传递 size 作为参数。
 
 ```markdown
 {{/* github_avatar(size=100) */}}
 ```
 
 `projects`
-The `projects` shortcode is used to display repositories from GitHub. It depends on `extra.github.username` in the `zola.toml` and `extra.repo_names` in page front matter to filter the repositories.
+`projects` 短代码用于显示 GitHub 仓库。它依赖于 `zola.toml` 中的 `extra.github.username` 和页面 front matter 中的 `extra.repo_names` 来过滤仓库。
 
 ```markdown
 {{/* projects() */}}
 ```
 
-## Reporting Issues
+## 报告问题
 
-We use GitHub Issues as the official bug tracker for the **Zola Hacker Theme**. Please
-search [existing issues](https://github.com/en9inerd/zola-hacker/issues). It’s
-possible someone has already reported the same problem.
+我们使用 GitHub Issues 作为 **Zola Hacker Theme** 的官方 bug 追踪器。请搜索 [现有 issues](https://github.com/en9inerd/zola-hacker/issues)。可能已经有人报告了同样的问题。
 
-If your problem or idea is not addressed yet, [open a new issue](https://github.com/en9inerd/zola-hacker/issues/new).
+如果你的问题或想法尚未解决，[打开一个新 issue](https://github.com/en9inerd/zola-hacker/issues/new)。
 
-## License
+## 许可证
 
-**Zola Hacker Theme** is distributed under the terms of the
-[MIT license](https://github.com/en9inerd/zola-hacker/blob/master/LICENSE).
-
-        
+**Zola Hacker Theme** 根据 [MIT 许可证](https://github.com/en9inerd/zola-hacker/blob/master/LICENSE) 分发。

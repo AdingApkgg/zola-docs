@@ -1,7 +1,7 @@
 
 +++
 title = "PaperMod"
-description = "A fast, clean, responsive theme ported to Zola."
+description = "一个快速、干净、响应式的主题，移植到 Zola。"
 template = "theme.html"
 date = 2025-07-15T07:56:50Z
 
@@ -27,59 +27,55 @@ homepage = "https://github.com/cydave"
 ![](screenshot.png)
 
 
-A work in progress port of the [hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme by [@adityatelange](https://github.com/adityatelange) to [Zola](https://www.getzola.org/) 
+一个正在进行的 [hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod) 主题（由 [@adityatelange](https://github.com/adityatelange) 制作）到 [Zola](https://www.getzola.org/) 的移植版。
 
-Due to config changes introduced with Zola 0.19, only Zola 0.19.1 and later are currently supported.
+由于 Zola 0.19 引入的配置更改，目前仅支持 Zola 0.19.1 及更高版本。
 
-Demo @ https://cydave.github.io/zola-theme-papermod/
-
-
-## Features
-
-+ [x] Blog post archive
-+ [x] Blog post RSS feeds
-+ [x] Tags
-+ [x] Tag-based RSS feeds
-+ [x] Optional: Custom taxonomies
-+ [x] Light / Dark theme switching (with configurable default preference)
-+ [x] Syntax highlighting for code snippets (Zola's built-in syntax highlighting)
-+ [x] Custom navigation
-+ [ ] 3 Modes:
-    + [ ] Regular Mode
-    + [ ] Home-Info Mode
-    + [ ] Profile Mode
-+ [x] Code copy buttons
-+ [x] Search page
-+ [ ] SEO Metadata
-+ [ ] Language switcher (multi-language support)
+演示 @ https://cydave.github.io/zola-theme-papermod/
 
 
-## Installation
+## 特性
 
-1. Download the Theme
++ [x] 博客文章归档
++ [x] 博客文章 RSS 订阅
++ [x] 标签
++ [x] 基于标签的 RSS 订阅
++ [x] 可选：自定义分类法
++ [x] 亮色 / 暗色主题切换（具有可配置的默认偏好）
++ [x] 代码片段的语法高亮（Zola 内置语法高亮）
++ [x] 自定义导航
++ [ ] 3 种模式：
+    + [ ] 常规模式
+    + [ ] 首页信息模式
+    + [ ] 个人资料模式
++ [x] 代码复制按钮
++ [x] 搜索页面
++ [ ] SEO 元数据
++ [ ] 语言切换器（多语言支持）
+
+
+## 安装
+
+1. 下载主题
 
 ```
 git submodule add https://github.com/cydave/zola-theme-papermod themes/papermod
 ```
 
-2. Add `theme = "papermod"` to your zola `config.toml`
-3. Copy over the example content to get started
+2. 将 `theme = "papermod"` 添加到你的 zola `config.toml`
+3. 复制示例内容以开始
 
 ```
 cp -r themes/papermod/content content
 ```
 
 
-## Options
+## 选项
 
-Papermod customizations exist under a designated `extra.papermod` section.
-Refer to [config.toml](config.toml) for available options.
+Papermod 自定义项存在于指定的 `extra.papermod` 部分下。
+请参阅 [config.toml](config.toml) 了解可用选项。
 
 
-## Contributing
+## 贡献
 
-If you would like to help out porting hugo-Papermod to Zola feel free to pick
-up a feature and start working on it. All help, no matter how small the
-contribution is highly appreciated.
-
-        
+如果你想帮助将 hugo-PaperMod 移植到 Zola，请随意选择一个功能并开始工作。所有帮助，无论多小的贡献，都非常感激。

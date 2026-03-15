@@ -1,7 +1,7 @@
 
 +++
 title = "solar-theme-zola"
-description = "A port of solar-theme-hugo for zola"
+description = "一个为 Zola 移植的 solar-theme-hugo 主题"
 template = "theme.html"
 date = 2023-03-20T15:48:51+08:00
 
@@ -24,44 +24,44 @@ homepage = "https://github.com/hulufei"
 
 # Solar Theme for Zola
 
-Port of [Solar theme for Hugo](https://github.com/bake/solar-theme-hugo) to Zola.
+将 [Solar theme for Hugo](https://github.com/bake/solar-theme-hugo) 移植到 Zola。
 
-![screenshot](./screenshot.png)
+![截图](./screenshot.png)
 
-## Installation
+## 安装
 
-First download this theme to your `themes` directory:
+首先将此主题下载到你的 `themes` 目录：
 
 ```bash
 $ cd themes
 $ git clone https://github.com/hulufei/solar-theme-zola.git
 ```
-and then enable it in your `config.toml`:
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "solar-theme-zola"
 ```
 
-Add `title` and `description`:
+添加 `title` 和 `description`:
 
 ```toml
 title = "Your Blog Title"
 description = "Your blog description"
 ```
 
-## Options
+## 选项
 
-### Color schemes
+### 配色方案
 
-Set color scheme to (Solarized) `dark` or (Solarized) `light` with `highlight_theme` option:
+使用 `highlight_theme` 选项将配色方案设置为 (Solarized) `dark` 或 (Solarized) `light`：
 
 ```toml
 highlight_theme = "solarized-dark"
 ```
 
-### Sidebar menu
+### 侧边栏菜单
 
-Set a field in `extra` with a key of `site_menus`:
+在 `extra` 中设置一个键为 `site_menus` 的字段：
 
 ```toml
 site_menus = [
@@ -69,6 +69,4 @@ site_menus = [
   { url = "rss.xml", name = "RSS" },
 ]
 ```
-Each link needs to have a `url` and a `name`.
-
-        
+每个链接都需要有一个 `url` 和一个 `name`。

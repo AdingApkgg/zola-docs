@@ -1,7 +1,7 @@
 
 +++
 title = "ataraxia"
-description = "A personal theme focused on ease of reading."
+description = "一个专注于易读性的个人主题。"
 template = "theme.html"
 date = 2023-04-22T22:26:07-05:00
 
@@ -24,15 +24,15 @@ homepage = "https://github.com/gersonbenavides/ataraxia-zola"
 
 # Ataraxia
 
-[![Ataraxia preview](https://raw.githubusercontent.com/gersonbenavides/ataraxia-zola/main/mockup.png "Ataraxia mockup")](https://gersonbenavides.github.io/)
+[![Ataraxia 预览](https://raw.githubusercontent.com/gersonbenavides/ataraxia-zola/main/mockup.png "Ataraxia mockup")](https://gersonbenavides.github.io/)
 
-A personal theme for [Zola](https://www.getzola.org/) focused on readability that aims to be simple, beautiful, and modern. It is designed to support multiple languages and be highly customizable.
+一个专注于可读性的 [Zola](https://www.getzola.org/) 个人主题，旨在简单、美观且现代。它被设计为支持多种语言并且高度可定制。
 
-The theme takes visual inspiration from the [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) and [Neumorphism](https://github.com/longpdo/neumorphism) themes.
+该主题的视觉灵感来自 [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 和 [Neumorphism](https://github.com/longpdo/neumorphism) 主题。
 
-## Installation
+## 安装
 
-Open a command terminal at your site path and run:
+在你的站点路径下打开命令终端并运行：
 
 ```bash
 cd themes
@@ -42,13 +42,13 @@ cd themes
 git clone https://github.com/gersonbenavides/ataraxia-zola.git ataraxia
 ```
 
-## Configuration
+## 配置
 
-Copy the `config_sample.toml` file to your site's main path, then rename it to `config.toml` and edit it with your site data.
+将 `config_sample.toml` 文件复制到你的站点主路径，然后将其重命名为 `config.toml` 并使用你的站点数据进行编辑。
 
-> You can see the [Gerson's website](https://github.com/gersonbenavides/gersonbenavides.github.io) repository for theme setup guide.
+> 你可以查看 [Gerson 的网站](https://github.com/gersonbenavides/gersonbenavides.github.io) 仓库以获取主题设置指南。
 
-For the site to work properly you need to create a `_index.md` file within the `content` path with the following structure:
+为了让站点正常工作，你需要在 `content` 路径内创建一个具有以下结构的 `_index.md` 文件：
 
 ```toml
 +++
@@ -60,9 +60,9 @@ page_template = "page.html"
 +++
 ```
 
-You can add more markdown content inside this file if you need to.
+如果需要，你可以在此文件中添加更多 markdown 内容。
 
-If you want to enable the site's blog, create a _index.md file inside the `content/blog` path then copy the following structure inside the file:
+如果你想启用站点的博客，请在 `content/blog` 路径内创建一个 _index.md 文件，然后将以下结构复制到文件中：
 
 ```toml
 +++
@@ -75,7 +75,7 @@ page_template = "blog_page.html"
 +++
 ```
 
-You can display the result of your website by running:
+你可以通过运行以下命令来显示你的网站结果：
 
 ```bash
 zola serve
@@ -84,9 +84,9 @@ zola serve
 
 ## Hacking
 
-By default, the theme comes with all the scss styles already compiled, in such a way that the installation of Bootstrap is not necessary, in order to avoid dependencies such as Node.js in the production file.
+默认情况下，该主题附带了所有已编译的 scss 样式，因此无需安装 Bootstrap，以避免在生产文件中使用 Node.js 等依赖项。
 
-If you want to edit the theme's styles, you'll need to have a [Node.js](https://nodejs.org/) interpreter and a [Sass compiler](https://sass-lang.com/install) installed. After that, go to the main path of the theme and execute:
+如果你想编辑主题的样式，你需要安装 [Node.js](https://nodejs.org/) 解释器和 [Sass 编译器](https://sass-lang.com/install)。之后，转到主题的主路径并执行：
 
 ```bash
 npm install
@@ -96,21 +96,20 @@ npm install
 sass --watch scss/custom.scss:static/assets/css/custom.css
 ```
 
-> Keep in mind that the main branch of this repository only has the stable versions of the theme, if you want to see the development status and the unstable versions, change to the corresponding branch.
+> 请记住，此仓库的主分支仅包含主题的稳定版本，如果你想查看开发状态和不稳定版本，请切换到相应的分支。
 
-## Credits
+## 致谢
 
-This theme is mainly built on [Zola](https://www.getzola.org/) and [Bootstrap](https://getbootstrap.com/), plus it makes use of [Google fonts](https://fonts.google.com/).
+此主题主要基于 [Zola](https://www.getzola.org/) 和 [Bootstrap](https://getbootstrap.com/) 构建，此外它还使用了 [Google Fonts](https://fonts.google.com/)。
 
 
-## Sponsoring
+## 赞助
 
 [![Liberapay](https://img.shields.io/badge/Finance%20my%20work-F6C915?style=flat&logo=liberapay&logoColor=ffffff "Finance my work")](https://liberapay.com/gersonbenavides/donate)
 
 [![PayPal](https://img.shields.io/badge/Make%20a%20donation-00457C?style=flat&logo=paypal "Make a donation")](https://paypal.me/gersonbdev?country.x=CO&locale.x=es_XC)
 
 
-## License
+## 许可证
 
-This work is published under the [MPL-2.0](https://www.mozilla.org/en-US/MPL/2.0/) license
-        
+这项工作根据 [MPL-2.0](https://www.mozilla.org/en-US/MPL/2.0/) 许可证发布

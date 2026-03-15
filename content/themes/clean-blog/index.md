@@ -1,7 +1,7 @@
 
 +++
 title = "Clean Blog"
-description = "A port of Start Bootstrap Clean Blog for Zola"
+description = "Start Bootstrap Clean Blog 的 Zola 移植版"
 template = "theme.html"
 date = 2023-04-17T13:28:42+01:00
 
@@ -25,19 +25,20 @@ homepage = "https://dtucker.co.uk"
 zola-clean-blog
 ===============
 
-![screenshot](screenshot.png)
+![截图](screenshot.png)
 
-A port of the StartBootstrap Clean Blog theme, for Zola.
+StartBootstrap Clean Blog 主题的 Zola 移植版。
 
-## Demo
+## 演示
 
-[Live Demo](https://zola-clean-blog.netlify.com)
+[在线演示](https://zola-clean-blog.netlify.com)
 
-## Usage
+## 使用
 
-To use the theme, clone this repository to your `themes` directory.
-It requires that you use the categories and tags taxonomies.
-This can be done with the following additions to `config.toml`:
+要使用此主题，请克隆此仓库到你的 `themes` 目录。
+它要求你使用 categories（分类）和 tags（标签）分类法。
+可以通过在 `config.toml` 中添加以下内容来完成：
+
 ```toml
 theme = "zola-clean-blog"
 
@@ -47,17 +48,17 @@ taxonomies = [
 ]
 ```
 
-## Features
+## 特性
 
-- Paginated Home/Categories/Tag Pages
-- Customizable Menu
-- Customizable Social Links
+- 分页的首页/分类/标签页
+- 可自定义菜单
+- 可自定义社交链接
 
-## How To Customize
+## 如何自定义
 
-- To replace header images, add a new image to `static/img/$page-bg.jpg` where `$page` is one of `about`, `home`, `post` or `contact`.
+- 要替换页眉图片，请添加新图片到 `static/img/$page-bg.jpg`，其中 `$page` 是 `about`, `home`, `post` 或 `contact` 之一。
 
-- To replace the copyright field, create your own `templates/index.html` to extend the template and add a `copyright` block:
+- 要替换版权字段，请创建你自己的 `templates/index.html` 来扩展模板并添加一个 `copyright` 块：
 ```
 {%/* extends "zola-clean-blog/templates/index.html" */%}
 {%/* block copyright */%}
@@ -65,11 +66,11 @@ Copyright %copy; Example, Inc. 2016-2019
 {%/* endblock copyright */%}
 ```
 
-- To add a new menu item, override `clean_blog_menu` in your `config.toml`. You can use `$BASE_URL` to reference your own site.
+- 要添加新菜单项，请在你的 `config.toml` 中覆盖 `clean_blog_menu`。你可以使用 `$BASE_URL` 来引用你自己的站点。
 
-- To add a new social link, override `clean_blog_social` in your `config.toml`. You can use `$BASE_URL` to reference your own site.
+- 要添加新社交链接，请在你的 `config.toml` 中覆盖 `clean_blog_social`。你可以使用 `$BASE_URL` 来引用你自己的站点。
 
-- To add Google Analytics, you may add your script to the `extrascripts` block using your own `index.html`
+- 要添加 Google Analytics，你可以使用你自己的 `index.html` 将你的脚本添加到 `extrascripts` 块中：
 ```
 {%/* extends "zola-clean-blog/templates/index.html" */%}
 {%/* block analytics */%}
@@ -78,5 +79,3 @@ Copyright %copy; Example, Inc. 2016-2019
 </script>
 {%/* endblock analytics */%}
 ```
-
-        

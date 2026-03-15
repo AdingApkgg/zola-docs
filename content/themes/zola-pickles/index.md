@@ -1,7 +1,7 @@
 
 +++
 title = "pickles"
-description = "A modern, simple, clean blog theme for Zola."
+description = "一个适用于 Zola 的现代、简单、干净的博客主题。"
 template = "theme.html"
 date = 2025-12-07T22:02:02-07:00
 
@@ -27,34 +27,35 @@ homepage = "https://luke.hsiao.dev"
     zola-pickes
 </h1>
 <div align="center">
-    <strong>Pickles is a clean, responsive blog theme for <a href="https://www.getzola.org/">Zola</a> based on the <a href="https://github.com/mismith0227/hugo_theme_pickles">Hugo theme</a> with the same name.</strong>
+    <strong>Pickles 是一个适用于 <a href="https://www.getzola.org/">Zola</a> 的干净、响应式的博客主题，基于同名的 <a href="https://github.com/mismith0227/hugo_theme_pickles">Hugo 主题</a>。</strong>
 </div>
 <br>
 <div align="center">
   <a href="https://zola-pickles.pages.dev/">
-    <img src="https://img.shields.io/badge/demo-website-forestgreen" alt="demo website"></a>
+    <img src="https://img.shields.io/badge/demo-website-forestgreen" alt="演示网站"></a>
   <a href="https://github.com/lukehsiao/zola-pickles/blob/main/LICENSE.md">
-    <img src="https://img.shields.io/badge/license-BlueOak--1.0.0-blue" alt="License">
+    <img src="https://img.shields.io/badge/license-BlueOak--1.0.0-blue" alt="许可证">
   </a>
 </div>
 <br>
 
-![pickles screenshot](https://github.com/lukehsiao/zola-pickles/blob/main/screenshot.png?raw=true)
+![pickles 截图](https://github.com/lukehsiao/zola-pickles/blob/main/screenshot.png?raw=true)
 
-## Installation
-First download this theme to your `themes` directory:
+## 安装
+
+首先将此主题下载到你的 `themes` 目录：
 
 ```bash
 $ cd themes
 $ git clone https://github.com/lukehsiao/zola-pickles.git
 ```
-and then enable it in your `config.toml`:
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "zola-pickles"
 ```
 
-The theme requires putting the posts in the root of the `content` folder and to enable pagination, for example in `content/_index.md`.
+此主题要求将文章放在 `content` 文件夹的根目录下，并启用分页，例如在 `content/_index.md` 中。
 
 ```
 +++
@@ -64,43 +65,43 @@ insert_anchor_links = "right"
 +++
 ```
 
-## Reference guides
+## 参考指南
 
-## Configuration Options
+## 配置选项
 
 ```toml
 [extra]
-# A line to display underneath the main title
+# 显示在主标题下方的一行
 subtitle = "Example subtitle"
 
-# Text to display in the footer of the page
+# 显示在页面页脚的文本
 copyright = "Copyright authors year"
 
-# Your Google Analytics ID
+# 你的 Google Analytics ID
 analytics = ""
 
-# See below
+# 见下文
 katex_enable = false
 
-# See below
+# 见下文
 instantpage_enable = false
 ```
 
-A full example configuration is included in config.toml.
+`config.toml` 中包含一个完整的示例配置。
 
-Note how pickles also expects `title` and `description` to also be set in the Zola configuration.
+请注意 pickles 还期望在 Zola 配置中设置 `title` 和 `description`。
 
-### KaTeX math formula support
+### KaTeX 数学公式支持
 
-This theme contains math formula support using [KaTeX](https://katex.org/), which can be enabled by setting `katex_enable = true` in the `extra` section of `config.toml`.
+此主题包含使用 [KaTeX 公式](https://katex.org/) 的数学公式支持，可以通过在 `config.toml` 的 `extra` 部分设置 `katex_enable = true` 来启用。
 
-After enabling this extension, the `katex` short code can be used in documents:
-* `{%/* katex(block=true) */%}\KaTeX{%/* end */%}` to typeset a block of math formulas,
-  similar to `$$...$$` in LaTeX
+启用此扩展后，可以在文档中使用 `katex` 短代码：
+* `{%/* katex(block=true) */%}\KaTeX{%/* end */%}` 用于排版数学公式块，
+  类似于 LaTeX 中的 `$$...$$`
 
-### Figure Shortcode
+### Figure 短代码
 
-The figure shortcode is convenient for captioning figures.
+figure 短代码便于为图片添加标题。
 
 ```
 {%/* figure(link="https://www.example.com/", src="https://www.example.com/img.jpeg", alt="sample alt text") */%}
@@ -108,9 +109,9 @@ Your caption here.
 {%/* end */%}
 ```
 
-### Table Shortcode
+### Table 短代码
 
-The table shortcode is convenient for making mobile-friendly tables (centered with overflow scrollbar).
+table 短代码便于制作移动端友好的表格（居中且带有溢出滚动条）。
 
 ```
 {%/* table() */%}
@@ -123,15 +124,13 @@ The table shortcode is convenient for making mobile-friendly tables (centered wi
 
 ### Fontawesome
 
-This theme includes fontawesome, so that fontawesome icons can be directly used.
+此主题包含 fontawesome，因此可以直接使用 fontawesome 图标。
 
 ### Instant.page
 
-The theme contains instant.page prefetching. This can be enabled by setting `instantpage_enable = true` in the `extra` section of `config.toml`.
+此主题包含 instant.page 预取。可以通过在 `config.toml` 的 `extra` 部分设置 `instantpage_enable = true` 来启用。
 
-## Showing article summaries
+## 显示文章摘要
 
-By default, the theme will use the first 280 characters of your post as a summary, if a proper [page summary](https://www.getzola.org/documentation/content/page/#summary) using `<!-- more -->` is not provided.
-For more sensible summaries, we recommend using the manual more indicator.
-
-        
+默认情况下，如果没有提供使用 `<!-- more -->` 的适当 [页面摘要](https://www.getzola.org/documentation/content/page/#summary)，主题将使用文章的前 280 个字符作为摘要。
+为了获得更合理的摘要，我们建议使用手动的 more 指示符。

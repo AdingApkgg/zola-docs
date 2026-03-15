@@ -1,7 +1,7 @@
 
 +++
 title = "abridge"
-description = "A fast and lightweight Zola theme using semantic html, a class-light abridge.css, and No mandatory JS."
+description = "一个快速、轻量级的 Zola 主题，使用语义化 html、轻量级 abridge.css，且无强制 JS。"
 template = "theme.html"
 date = 2026-01-21T18:04:10+08:00
 
@@ -25,100 +25,100 @@ homepage = "https://github.com/jieiku/"
 <div align="center">
 <img src="https://raw.githubusercontent.com/Jieiku/abridge/master/abridge.svg"/>
 
-# Abridge Zola Theme
+# Abridge Zola 主题
 
-A fast, lightweight, and modern [Zola](https://getzola.org) theme utilizing [abridge.css](https://github.com/Jieiku/abridge.css) (a class-light semantic HTML CSS Framework). Perfect [Lighthouse](https://pagespeed.web.dev/report?url=abridge.pages.dev), [YellowLabTools](https://yellowlab.tools/), and [Observatory](https://developer.mozilla.org/en-US/observatory/analyze?host=abridge.netlify.app) scores. Here is a [Zola Themes Benchmarks](https://github.com/Jieiku/zola-themes-benchmarks/blob/main/README.md) Page.
+一个快速、轻量且现代的 [Zola](https://getzola.org) 主题，利用 [abridge.css](https://github.com/Jieiku/abridge.css)（一个类轻量的语义化 HTML CSS 框架）。完美的 [Lighthouse](https://pagespeed.web.dev/report?url=abridge.pages.dev)、[YellowLabTools](https://yellowlab.tools/) 和 [Observatory](https://developer.mozilla.org/en-US/observatory/analyze?host=abridge.netlify.app) 评分。这里是 [Zola 主题基准测试](https://github.com/Jieiku/zola-themes-benchmarks/blob/main/README.md) 页面。
 
-![Lighthouse Score](https://raw.githubusercontent.com/Jieiku/abridge/master/content/overview-abridge/lighthouse.png)
+![Lighthouse 评分](https://raw.githubusercontent.com/Jieiku/abridge/master/content/overview-abridge/lighthouse.png)
 
-Maintenance of this project is made possible by all the <a href="https://github.com/Jieiku/abridge/graphs/contributors">contributors</a> and <a href="https://github.com/sponsors/Jieiku">sponsors</a>. If you'd like to sponsor this project and have your avatar or company logo appear below <a href="https://github.com/sponsors/Jieiku">click here</a>. 💖
+本项目的维护由所有 <a href="https://github.com/Jieiku/abridge/graphs/contributors">贡献者</a> 和 <a href="https://github.com/sponsors/Jieiku">赞助者</a> 共同实现。如果你想赞助这个项目并让你的头像或公司 logo 出现在下方，请 <a href="https://github.com/sponsors/Jieiku">点击这里</a>。💖
 
 <!-- sponsors --><a href="https://github.com/yugfletcher"><img src="https:&#x2F;&#x2F;github.com&#x2F;yugfletcher.png" width="60px" alt="User avatar: " /></a><a href="https://github.com/samueloph"><img src="https:&#x2F;&#x2F;github.com&#x2F;samueloph.png" width="60px" alt="User avatar: Samuel Henrique" /></a><a href="https://github.com/bensuperpc"><img src="https:&#x2F;&#x2F;github.com&#x2F;bensuperpc.png" width="60px" alt="User avatar: Bensuperpc" /></a><!-- sponsors -->
 
 ---
 
-**[View Abridge demo](https://abridge.pages.dev/overview-abridge/)**
+**[查看 Abridge 演示](https://abridge.pages.dev/overview-abridge/)**
 
-**[View Abridge.css demo](https://abridge-css.pages.dev/overview-abridge/)** [[abridge.css framework](https://github.com/Jieiku/abridge.css/tree/master/dist)]
+**[查看 Abridge.css 演示](https://abridge-css.pages.dev/overview-abridge/)** [[abridge.css 框架](https://github.com/Jieiku/abridge.css/tree/master/dist)]
 
-The Abridge.css demo is simply using Abridge theme as a submodule: [config.toml](https://github.com/Jieiku/abridge.css/blob/master/config.toml), [sass/abridge.scss](https://github.com/Jieiku/abridge.css/blob/master/sass/abridge.scss)
+Abridge.css 演示只是将 Abridge 主题作为子模块使用：[config.toml](https://github.com/Jieiku/abridge.css/blob/master/config.toml), [sass/abridge.scss](https://github.com/Jieiku/abridge.css/blob/master/sass/abridge.scss)
 </div>
 
-## Features
+## 特性
 
-- Perfect [Lighthouse](https://pagespeed.web.dev/report?url=abridge.pages.dev), [YellowLabTools](https://yellowlab.tools/), and [Observatory](https://developer.mozilla.org/en-US/observatory/analyze?host=abridge.netlify.app) scores.
-- [PWA support](https://abridge.pages.dev/overview-abridge/#pwa-progressive-web-app) (Progressive Web Application).
-- All JavaScript can be [fully disabled](https://abridge.pages.dev/overview-abridge/#javascript-files).
-- Dark, Light, Auto, and Switcher themes. (colors can be customized, css variables)
-- Code [syntax highlighting](https://abridge.pages.dev/overview-code-blocks/). (colors can be customized, css variables)
-- Numbered code blocks with [line highlighting](https://abridge.pages.dev/overview-code-blocks/#toml).
-- Entirely Offline Site by using the PWA **or** by setting `search_library = "offline"` in `config.toml`.
-- Multi-language support.
-- Search support. ([elasticlunr](https://abridge.pages.dev/), [pagefind](https://abridge-pagefind.pages.dev/), [tinysearch](https://abridge-tinysearch.pages.dev/))
-- Search Suggestions navigation keys, `/` focus, `arrow` move, `enter` select, `escape` close.
-- Search Results Page, type search query then hit `Enter Key` or `click` the search button icon.
-- [SEO](https://abridge.pages.dev/overview-abridge/#seo-and-header-tags) support. (Search Engine Optimization)
-- [Pagination](https://abridge.pages.dev/overview-abridge/#pagination) with numbered paginator on index.
-- Title Based Previous and Next Article links at bottom of Article.
-- Table of Contents in page Index (Optional, clickable links)
-- Recent Posts Block. (Optional)
-- Back to Top button. (uses css only)
-- Code Blocks copy button.
-- Email link in footer obfuscation. (anti-spam)
-- [KaTeX](https://katex.org/) support.
-- [Archive page](https://abridge.pages.dev/archive/).
-- [Tags](https://abridge.pages.dev/tags/).
-- Categories. (similar to Tags, disabled/commented out by default)
-- Social icon links in footer.
-- Responsive design. (mobile first)
-- Video Shortcodes: [Youtube](https://abridge.pages.dev/video-streaming-sites/overview-embed-youtube/), [Vimeo](https://abridge.pages.dev/video-streaming-sites/overview-embed-vimeo/), [Streamable](https://abridge.pages.dev/video-streaming-sites/overview-embed-streamable/).
-- Media Shortcodes: [video](https://abridge.pages.dev/overview-rich-content/#video), [img](https://abridge.pages.dev/overview-images/#img-shortcode), [imgswap](https://abridge.pages.dev/overview-images/#imgswap-shortcode), [image](https://abridge.pages.dev/overview-rich-content/#image), [gif](https://abridge.pages.dev/overview-rich-content/#gif), [audio](https://abridge.pages.dev/overview-rich-content/#audio).
-- Other Shortcodes: [showdata](https://abridge.pages.dev/overview-showdata/), [katex](https://abridge.pages.dev/overview-math/#usage-1).
+- 完美的 [Lighthouse](https://pagespeed.web.dev/report?url=abridge.pages.dev)、[YellowLabTools](https://yellowlab.tools/) 和 [Observatory](https://developer.mozilla.org/en-US/observatory/analyze?host=abridge.netlify.app) 评分。
+- [PWA 支持](https://abridge.pages.dev/overview-abridge/#pwa-progressive-web-app)（渐进式 Web 应用程序）。
+- 所有 JavaScript 均可 [完全禁用](https://abridge.pages.dev/overview-abridge/#javascript-files)。
+- 暗色、亮色、自动和切换主题。（颜色可自定义，css 变量）
+- 代码 [语法高亮](https://abridge.pages.dev/overview-code-blocks/)。（颜色可自定义，css 变量）
+- 带有 [行高亮](https://abridge.pages.dev/overview-code-blocks/#toml) 的编号代码块。
+- 通过使用 PWA **或** 在 `config.toml` 中设置 `search_library = "offline"` 实现完全离线站点。
+- 多语言支持。
+- 搜索支持。([elasticlunr](https://abridge.pages.dev/), [pagefind](https://abridge-pagefind.pages.dev/), [tinysearch](https://abridge-tinysearch.pages.dev/))
+- 搜索建议导航键，`/` 聚焦，`arrow` 移动，`enter` 选择，`escape` 关闭。
+- 搜索结果页面，输入搜索查询然后按 `Enter 键` 或 `点击` 搜索按钮图标。
+- [SEO](https://abridge.pages.dev/overview-abridge/#seo-and-header-tags) 支持。（搜索引擎优化）
+- [分页](https://abridge.pages.dev/overview-abridge/#pagination) 首页带有编号分页器。
+- 文章底部的基于标题的上一篇和下一篇文章链接。
+- 页面索引中的目录（可选，可点击链接）
+- 最近文章块。（可选）
+- 返回顶部按钮。（仅使用 css）
+- 代码块复制按钮。
+- 页脚中的电子邮件链接混淆。（反垃圾邮件）
+- [KaTeX](https://katex.org/) 支持。
+- [归档页面](https://abridge.pages.dev/archive/)。
+- [标签](https://abridge.pages.dev/tags/)。
+- 分类。（类似于标签，默认禁用/注释掉）
+- 页脚中的社交图标链接。
+- 响应式设计。（移动优先）
+- 视频短代码：[Youtube](https://abridge.pages.dev/video-streaming-sites/overview-embed-youtube/)、[Vimeo](https://abridge.pages.dev/video-streaming-sites/overview-embed-vimeo/)、[Streamable](https://abridge.pages.dev/video-streaming-sites/overview-embed-streamable/)。
+- 媒体短代码：[video](https://abridge.pages.dev/overview-rich-content/#video)、[img](https://abridge.pages.dev/overview-images/#img-shortcode)、[imgswap](https://abridge.pages.dev/overview-images/#imgswap-shortcode)、[image](https://abridge.pages.dev/overview-rich-content/#image)、[gif](https://abridge.pages.dev/overview-rich-content/#gif)、[audio](https://abridge.pages.dev/overview-rich-content/#audio)。
+- 其他短代码：[showdata](https://abridge.pages.dev/overview-showdata/)、[katex](https://abridge.pages.dev/overview-math/#usage-1)。
 
-**[Complete Documentation is available here](https://abridge.pages.dev/overview-abridge/)**
+**[完整文档可在这里获得](https://abridge.pages.dev/overview-abridge/)**
 
-## Quick Start
+## 快速开始
 
-This theme requires version 0.19.1 or later of [Zola](https://www.getzola.org/documentation/getting-started/installation/)
+此主题需要 [Zola](https://www.getzola.org/documentation/getting-started/installation/) 0.19.1 或更高版本
 
 ```bash
 git clone https://github.com/jieiku/abridge.git
 cd abridge
 zola serve
-# open http://127.0.0.1:1111/ in the browser
+# 在浏览器中打开 http://127.0.0.1:1111/
 ```
 
-## Installation
+## 安装
 
-The Quick Start shows how to run the theme directly. Next we will use abridge as a theme to a NEW site.
+快速开始展示了如何直接运行主题。接下来我们将使用 abridge 作为新站点的主题。
 
-### 1: Create a new zola site
+### 1: 创建一个新的 zola 站点
 
 ```bash
 yes "" | zola init mysite
 cd mysite
 ```
 
-### 2: Install Abridge
+### 2: 安装 Abridge
 
-Add the theme as a git submodule:
+将主题添加为 git 子模块：
 
 ```bash
-git init  # if your project is a git repository already, ignore this command
+git init  # 如果你的项目已经是 git 仓库，请忽略此命令
 git submodule add https://github.com/jieiku/abridge.git themes/abridge
 git submodule update --init --recursive
 git submodule update --remote --merge
 ```
 
-Or clone the theme into your themes directory:
+或者将主题克隆到你的 themes 目录：
 
 ```bash
 git clone https://github.com/jieiku/abridge.git themes/abridge
 ```
 
-### 3: Configuration
+### 3: 配置
 
-Copy some files from the theme directory to your project's root directory:
+从主题目录复制一些文件到你的项目根目录：
 
 ```bash
 rsync themes/abridge/.gitignore .gitignore
@@ -130,57 +130,55 @@ rsync themes/abridge/package_abridge.js package_abridge.js
 rsync themes/abridge/package.json package.json
 ```
 
-- `config.toml` base configuration with all config values.
-- `content/_index.md` required to set pagination.
-- `COPY-TO-ROOT-SASS/abridge.scss` overrides to customize Abridge variables.
-- `netlify.toml` settings to deploy your repo with netlfiy.
-- `package_abridge.js` node script to: update cache files list in PWA, minify js, bundle js
-- `package.json` to facilitate use of package_abridge.js
+- `config.toml` 包含所有配置值的基本配置。
+- `content/_index.md` 设置分页所需。
+- `COPY-TO-ROOT-SASS/abridge.scss` 覆盖以自定义 Abridge 变量。
+- `netlify.toml` 设置以使用 netlfiy 部署你的仓库。
+- `package_abridge.js` node 脚本用于：更新 PWA 中的缓存文件列表，压缩 js，打包 js
+- `package.json` 以便于使用 package_abridge.js
 
-Uncomment the theme line in your project's root config.toml:
+取消注释项目根目录 config.toml 中的主题行：
 
 ```bash
 sed -i 's/^#theme = "abridge"/theme = "abridge"/' config.toml
 ```
 
-### 4: Add new content
+### 4: 添加新内容
 
-Copy the content from the theme directory to your project or make a new post:
+从主题目录复制内容到你的项目或制作新帖子：
 
 ```bash
 rsync -r themes/abridge/content .
 ```
 
-### 5: Run the project
+### 5: 运行项目
 
-Just run `zola serve` in the root path of the project:
+只需在项目的根路径运行 `zola serve`：
 
 ```bash
 zola serve
 ```
 
-Zola will start the dev web server, accessible by default at `http://127.0.0.1:1111`.
+Zola 将启动开发 Web 服务器，默认访问地址为 `http://127.0.0.1:1111`。
 
-Saved changes will live reload in the browser. (press `ctrl+f5`, or while developing set `pwa=false` in `config.toml`)
+保存的更改将在浏览器中实时重新加载。（按 `ctrl+f5`，或在开发时在 `config.toml` 中设置 `pwa=false`）
 
-## Customization
+## 自定义
 
-For further customization be sure to [check the docs](https://abridge.pages.dev/overview-abridge/).
+有关进一步的自定义，请务必 [查看文档](https://abridge.pages.dev/overview-abridge/)。
 
-## Sponsor
+## 赞助
 
-Do you love this theme? Was it useful to you? Please leave a github star, and if you feel inclined to donate you can make a donation to me through [github sponsors](https://github.com/sponsors/Jieiku/).
+你喜欢这个主题吗？它对你有用吗？请给个 github star，如果你愿意捐赠，你可以通过 [github sponsors](https://github.com/sponsors/Jieiku/) 向我捐款。
 
-## Contributing and Philosophy
+## 贡献和理念
 
-We'd love your help! Especially with fixes to issues, or improvements to existing features.
+我们需要你的帮助！特别是修复问题或改进现有功能。
 
-The goal is for Abridge to be lightweight, fast, and to work properly even if javascript is disabled or blocked.
+Abridge 的目标是轻量、快速，并且即使禁用了 javascript 或阻止了 javascript 也能正常工作。
 
-The only feature that may be considered a necessity that relies on javascript is the Search.
+唯一可能被认为是必要且依赖于 javascript 的功能是搜索。
 
-## License
+## 许可证
 
-**Abridge** is distributed under the terms of the [MIT license](https://github.com/jieiku/abridge/blob/master/LICENSE).
-
-        
+**Abridge** 根据 [MIT 许可证](https://github.com/jieiku/abridge/blob/master/LICENSE) 分发。

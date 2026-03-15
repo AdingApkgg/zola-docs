@@ -1,7 +1,7 @@
 
 +++
 title = "boring"
-description = "A minimal theme"
+description = "一个极简主题"
 template = "theme.html"
 date = 2025-09-05T12:48:33+05:30
 
@@ -23,23 +23,23 @@ homepage = "https://ssiyad.com"
 +++        
 
 # Boring
-Minimal theme for [Zola](https://www.getzola.org/), powered by
-[TailwindCSS](https://tailwindcss.com/)
 
-### Demo
+[Zola](https://www.getzola.org/) 的极简主题，由 [TailwindCSS](https://tailwindcss.com/) 驱动。
+
+### 演示
 https://boring-zola.netlify.app/
 
-![sreenshot](./screenshot.png)
+![截图](./screenshot.png)
 
-### Setup
-In your zola site directory
-- Get theme
+### 设置
+在你的 zola 站点目录中：
+- 获取主题
 
     ```bash
     git submodule add https://github.com/ssiyad/boring themes/boring
     ```
 
-- Build CSS
+- 构建 CSS
 
     ```bash
     cd themes/boring
@@ -47,14 +47,9 @@ In your zola site directory
     yarn build
     ```
 
-- Change theme specific variables. They are listed in `extra` section of
-  [config.toml](./config.toml)
+- 更改特定于主题的变量。它们列在 [config.toml](./config.toml) 的 `extra` 部分中。
 
-Refer [Zola Docs](https://www.getzola.org/documentation/themes/installing-and-using-themes/#using-a-theme)
-for further instructions
+有关进一步说明，请参阅 [Zola 文档](https://www.getzola.org/documentation/themes/installing-and-using-themes/#using-a-theme)。
 
-### License
+### 许可证
 [GPLv3](./LICENSE)
-
-
-        

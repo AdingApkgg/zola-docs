@@ -1,151 +1,105 @@
 
 +++
-title = "hephaestus"
-description = "A portfolio theme"
+title = "Hephaestus"
+description = "一个极简的深色 Zola 主题"
 template = "theme.html"
-date = 2023-03-19T11:40:54-05:00
+date = 2025-09-22T20:09:00+02:00
 
 [taxonomies]
 theme-tags = []
 
 [extra]
-created = 2023-03-19T11:40:54-05:00
-updated = 2023-03-19T11:40:54-05:00
-repository = "https://github.com/BConquest/hephaestus.git"
-homepage = "https://github.com/BConquest/hephaestus"
+created = 2025-09-22T20:09:00+02:00
+updated = 2025-09-22T20:09:00+02:00
+repository = "https://github.com/janbaudisch/zola-hephaestus.git"
+homepage = "https://github.com/janbaudisch/zola-hephaestus"
 minimum_version = "0.4.0"
-license = "AGPL"
-demo = "https://bryantconquest.com"
+license = "MIT"
+demo = "https://zola-hephaestus.janbaudisch.dev"
 
 [extra.author]
-name = "Bryant Conquest"
-homepage = "https://bryantconquest.com"
+name = "Jan Baudisch"
+homepage = "https://janbaudisch.dev"
 +++        
 
-# hephaestus
-Hephaestus is a portfolio theme for zola. It uses bulma css and supports using icons from ion-icon.
+# Hephaestus
 
-![hephaestus screenshot](screenshot.png?raw=true)
+> 一个极简的深色 Zola 主题。
+>
+> [hugo-theme-hephaestus][hugo-hephaestus] 的 [Zola][zola] 移植版。
 
-## Contents
-- Installation
-- Options
-	- Navigation Bar
-	- Education
-	- Projects
-	- Skills
-	- Social Links
+![截图](screenshot.png)
 
-## Installation
+## 原作
 
-First, you will download the theme into your `themes` directory:
+这是 Hugo 主题 [hugo-theme-hephaestus][hugo-hephaestus] ([许可证][upstream-license]) 的移植版。
 
-```bash
-$ cd themes
-$ git clone https://github.com/BConquest/hephaestus
+## 安装
+
+安装此主题最简单的方法是克隆它...
+
+```
+git clone https://github.com/janbaudisch/zola-hephaestus.git themes/hephaestus
 ```
 
-Second, you will enable the theme in your `config.toml` directory:
+... 或者将其用作子模块。
+
+```
+git submodule add https://github.com/janbaudisch/zola-hephaestus.git themes/hephaestus
+```
+
+无论哪种方式，你都必须在 `config.toml` 中启用该主题。
 
 ```toml
 theme = "hephaestus"
 ```
 
-## Options
-### Navigation Bar
-To edit the navigation bar you will need to edit your `config.toml` to include:
+## 选项
+
+有关示例配置，请参阅 [`config.toml`][config]。
+
+### 链接
+
+链接显示在页脚中。它们使用 [Font Awesome][fontawesome] 样式化，你可以选择图标集（默认为 [brands][fontawesome-brands]）。
 
 ```toml
-menu = [
-{ text = "foo", link = "/foo"},
-{ text = "bar", link = "/bar"},
-]
-```
-You can have as many items as you want to have and the links can be to anything.
-
-### Education
-To edit the education that is displayed you will need to create a directory in `content`.
-In the `_index.md` the frontmatter needs to include:
-
-```TOML
-title = "foo"
-template = "education.html"
-
 [extra]
-author = "Name"
-```
-
-For every educational level you want to add you will need to create a new markdown file that includes the frontmatter:
-
-```
-title = "place of education"
-
-[extra]
-image = "image-location"
-link = "link to school"
-+++
-```
-
-Any content that is typed will be rendered underneath these two items.
-
-### Projects
-To edit the projects that are displayed you will need to create a directory in `content`.
-In the `_index.md` the frontmatter needs to include:
-
-```TOML
-title = "foo"
-template = "projects.html"
-
-[extra]
-author = "bar"
-```
-
-Then for every project you want to add you will need to format the `*.md` as:
-
-```md
-+++
-title = "foo"
-
-[extra]
-image = "/image_location"
-link = "link to project"
-technologies = ["bar", "baz"]
-+++
-
-Description of project named foo.
-```
-
-### Skills
-
-To edit the skills that you want to display it is important to note that there are two types of skills that can be
-displayed (lan, and tools). To format the look you will need to create a directory in `content` that includes the
-frontmatter of:
-
-```TOML
-title = "foo"
-template = "skills.html"
-page_template = "skills.html"
-
-[extra]
-author = "author-name"
-image = "image-location"
-
-lan = [
-{ lang = "language", expr = "num between 1-5", image = "image-location", comfort = "word to describe comfort"},
-]
-
-tools = [
-{ tool = "tool-name", expr = "num between 1-5", image = "tool-image"},
+links = [
+    { title = "E-Mail", url = "mailto:mail@example.org", iconset = "fas", icon = "envelope" },
+    { title = "GitHub", url = "https://github.com", icon = "github" },
+    { title = "Twitter", url = "https://twitter.com", icon = "twitter" }
 ]
 ```
 
-### Social Links
-To edit the social links that appear in the footer of the page, you need to edit your `config.toml` to include:
+### 菜单
 
-```
-social = [
-{ user = "username", link = "link", icon = "icon-name from ion-icon"},
-]
+菜单显示在顶部。
+
+```toml
+[[extra.menu]]
+name = "Posts"
+url = "/posts"
+
+[[extra.menu]]
+name = "Tags"
+url = "/tags"
 ```
 
-        
+### 日期格式
+
+指定如何显示日期。格式在 [这里][date-format-docs] 描述。
+
+默认值：`%Y-%m-%d`
+
+```toml
+[extra]
+date_format = "%Y-%m-%d"
+```
+
+[zola]: https://www.getzola.org
+[hugo-hephaestus]: https://github.com/JugglerX/hugo-theme-hephaestus
+[fontawesome]: https://fontawesome.com
+[fontawesome-brands]: https://fontawesome.com/icons?d=gallery&s=brands&m=free
+[upstream-license]: https://github.com/janbaudisch/zola-hephaestus/blob/master/upstream/LICENSE.md
+[config]: https://github.com/janbaudisch/zola-hephaestus/blob/master/config.toml
+[date-format-docs]: https://docs.rs/chrono/latest/chrono/format/strftime/index.html

@@ -1,7 +1,7 @@
 
 +++
 title = "juice"
-description = "An intuitive, elegant, and lightweight Zola theme for product sites."
+description = "一个直观、优雅且轻量级的 Zola 主题，适用于产品站点。"
 template = "theme.html"
 date = 2024-06-01T00:31:42-07:00
 
@@ -26,42 +26,43 @@ homepage = "https://huhu.io"
 
 <img align="right" width="150" height="150" src="/content/juice.svg">
 
-**Juice** is an intuitive, elegant, and responsive Zola theme for product sites.
+**Juice** 是一个直观、优雅且响应式的 Zola 主题，适用于产品网站。
 
-- Build for product sites
-- Simple and intuitive structure
-- Clean and elegant design
-- Responsive and mobile device compatible
-- Customize and extend friendly
+- 专为产品网站打造
+- 简单直观的结构
+- 干净优雅的设计
+- 响应式和移动设备兼容
+- 易于自定义和扩展
 
 https://juice.huhu.io
 
-# Installation
+# 安装
 
-First download this theme to your `themes` directory:
+首先将此主题下载到你的 `themes` 目录：
 
 ```bash
 $ cd themes
 $ git clone https://github.com/huhu/juice.git
 ```
 
-or add as a submodule
+或作为子模块添加
+
 ```bash
 $ git submodule add https://github.com/huhu/juice  themes/juice
 ```
 
-and then enable it in your `config.toml`:
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "juice"
 ```
 
-# Structure
+# 结构
 
 ### Hero
 
-**Juice** is designed for product websites, hence we let **hero** part fills whole of screen.
-You can customize your **hero** by using `hero` block in the `templates/index.html`.
+**Juice** 专为产品网站设计，因此我们让 **hero** 部分填满整个屏幕。
+你可以通过在 `templates/index.html` 中使用 `hero` 块来自定义你的 **hero**。
 
 ```html
 {%/* extends "juice/templates/index.html" */%}
@@ -72,11 +73,10 @@ You can customize your **hero** by using `hero` block in the `templates/index.ht
 {%/* endblock hero */%}
 ```
 
-### Page
+### 页面
 
-Every markdown file located in `content` directory will become a **Page**. There also will display as
-a navigate link on the top-right corner.
-You can change the frontmatter's `weight` value to sort the order (ascending order).
+位于 `content` 目录中的每个 markdown 文件都将成为一个 **页面**。右上角也会显示一个导航链接。
+你可以更改 Front Matter 的 `weight` 值来对顺序进行排序（升序）。
 
 ```
 +++
@@ -87,14 +87,15 @@ weight = 2
 
 ```
 
-### CSS variables
+### CSS 变量
 
-You can override theme variable by creating a file named `_variables.html` in your `templates` directory.
+你可以通过在 `templates` 目录中创建一个名为 `_variables.html` 的文件来覆盖主题变量。
 
-See the default value [here](./templates/_variables.html)
+在 [这里](./templates/_variables.html) 查看默认值。
 
 ### Favicon
-The same way as changing the `hero` block in the `templates/index.html`, you can change the **favicon**.
+
+与更改 `templates/index.html` 中的 `hero` 块相同，你可以更改 **Favicon**。
 
 ```html
 {%/* extends "juice/templates/index.html" */%}
@@ -103,8 +104,9 @@ The same way as changing the `hero` block in the `templates/index.html`, you can
 {%/* endblock favicon */%}
 ```
 
-### Fonts
-If you changed the `--xy-font-family`-variable in `_variables.html`, you have to load the mentioned fonts in the `templates/index.html`.
+### 字体
+
+如果你更改了 `_variables.html` 中的 `--xy-font-family` 变量，你必须在 `templates/index.html` 中加载提到的字体。
 
 ```html
 {%/* extends "juice/templates/index.html" */%}
@@ -114,9 +116,9 @@ If you changed the `--xy-font-family`-variable in `_variables.html`, you have to
 {%/* endblock fonts */%}
 ```
 
-# Configuration
+# 配置
 
-You can customize some builtin property in `config.toml` file:
+你可以在 `config.toml` 文件中自定义一些内置属性：
 
 ```toml
 [extra]
@@ -131,24 +133,23 @@ juice_exclude_menu = [
 repository_url = "https://github.com/huhu/juice"
 ```
 
-# Shortcodes
+# 短代码
 
-**Juice** have some builtin shortcodes available in `templates/shortcodes` directory.
+**Juice** 在 `templates/shortcodes` 目录中有一些可用的内置短代码。
 
-- `issue(id)` - A shortcode to render issue url, e.g. `issue(id=1)` would render to the link `https://github.com/huhu/juice/issue/1`.
+- `issue(id)` - 一个渲染 issue url 的短代码，例如 `issue(id=1)` 将渲染为链接 `https://github.com/huhu/juice/issue/1`。
   
-> The `repository_url` is required.
+> `repository_url` 是必需的。
 
-# Showcases
+# 展示
 
-Please see the [showcases page](https://juice.huhu.io/showcases).
+请查看 [展示页面](https://juice.huhu.io/showcases)。
 
-# Contributing
+# 贡献
 
-Thank you very much for considering contributing to this project!
+非常感谢你考虑为这个项目做贡献！
 
-We appreciate any form of contribution:
+我们感谢任何形式的贡献：
 
-- New issues (feature requests, bug reports, questions, ideas, ...)
-- Pull requests (documentation improvements, code improvements, new features, ...)
-        
+- 新 issue（功能请求、bug 报告、问题、想法……）
+- Pull requests（文档改进、代码改进、新功能……）

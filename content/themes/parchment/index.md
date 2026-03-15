@@ -1,7 +1,7 @@
 
 +++
 title = "parchment"
-description = "Parchemnt theme, by jasonfry.co.uk"
+description = "Parchemnt 主题，由 jasonfry.co.uk 制作"
 template = "theme.html"
 date = 2025-09-25T21:57:54+01:00
 
@@ -22,49 +22,49 @@ name = "Jason Fry"
 homepage = "https://jasonfry.co.uk"
 +++        
 
-# Parchment Zola Theme
+# Parchment Zola 主题
 
-A website theme for the static site generator [Zola](https://getzola.org).
+一个用于静态站点生成器 [Zola](https://getzola.org) 的网站主题。
 
-Written to produce clean, semantic, simple-to-read HTML and CSS. The aim is for a novice to press `F12` and be able to understand what is going on. No div-soup, No javascript, no third party frameworks.
+编写旨在产生干净、语义化、易于阅读的 HTML 和 CSS。目的是让新手按下 `F12` 就能理解发生了什么。没有 div 汤，没有 javascript，没有第三方框架。
 
-Used at [jasonfry.co.uk](https://jasonfry.co.uk).
+用于 [jasonfry.co.uk](https://jasonfry.co.uk)。
 
-Demo available at [whispers-on-parchment.jasonfry.co.uk](https://whispers-on-parchment.jasonfry.co.uk)
+演示可在 [whispers-on-parchment.jasonfry.co.uk](https://whispers-on-parchment.jasonfry.co.uk) 获得
 
-![Parchment screenshot](screenshot.png)
+![Parchment 截图](screenshot.png)
 
-## Installation
+## 安装
 
-First download this theme to your `themes` directory:
+首先将此主题下载到你的 `themes` 目录：
 
 ```bash
 cd themes
 git clone https://github.com/jsonfry/parchment.git
 ```
-and then enable it in your `config.toml`:
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "parchment"
 ```
 
-## Zola Features
+## Zola 特性
 
-No support for taxonomy.
+不支持分类法。
 
-## Customization
+## 自定义
 
-### Base Template
+### 基础模板
 
-You can customize the following things:
+你可以自定义以下内容：
 
-- Adding in your own things to `<head>` (e.g. favicons), your own CSS.
-- Adding some content to the footer
-- Adding something to the end of the body, like analytics. 
+- 添加你自己的东西到 `<head>`（例如 favicons），你自己的 CSS。
+- 向页脚添加一些内容
+- 向 body 末尾添加一些东西，如分析。 
 
-Create a file like the following in `templates/index.html`.
+在 `templates/index.html` 中创建一个如下文件。
 
-If you don't want to include the default CSS, then remove the line `{{/* super() */}}`
+如果你不想包含默认 CSS，则删除 `{{/* super() */}}` 这一行
 
 ```html
 {%/* extends "parchment/templates/index.html" */%}
@@ -84,7 +84,7 @@ If you don't want to include the default CSS, then remove the line `{{/* super()
 {%/* endblock head */%}
 
 {%/* block footer */%}
-    <p>Created by a human</p>
+    <p>由人类创建</p>
     {%/* if config.generate_feeds */%}
     <p>
         <a href="/atom.xml" title="subscribe - rss feed">
@@ -102,9 +102,9 @@ If you don't want to include the default CSS, then remove the line `{{/* super()
 {%/* endblock body_end */%}
 ```
 
-### Colors
+### 颜色
 
-The color scheme is based on [Solarized](https://ethanschoonover.com/solarized/) and has both a dark and light theme included, that will follow the browser / OS setting. The colors are set with CSS variables, which you can override by setting your own CSS in `head` block (or however you set your CSS).
+配色方案基于 [Solarized](https://ethanschoonover.com/solarized/)，并包含暗色和亮色主题，将遵循浏览器/操作系统设置。颜色通过 CSS 变量设置，你可以通过在 `head` 块中设置你自己的 CSS 来覆盖它们（或以任何你设置 CSS 的方式）。
 
 ```css
     :root {
@@ -124,9 +124,9 @@ The color scheme is based on [Solarized](https://ethanschoonover.com/solarized/)
     }
 ```
 
-### TOML config options
+### TOML 配置选项
 
-The following optional things are available to set in the `config.toml` file.
+以下可选内容可在 `config.toml` 文件中设置。
 
 ```toml
 [extra]
@@ -140,9 +140,9 @@ The following optional things are available to set in the `config.toml` file.
       href = "https://getzola.org"
 ```
 
-### After Post Nav
+### 文章导航后
 
-There is a block to add things after the nav that appears at the bottom of posts.
+有一个块可以在文章底部出现的导航后添加内容。
 
 `templates/page.html`
 ```html
@@ -152,11 +152,10 @@ There is a block to add things after the nav that appears at the bottom of posts
     <p>Reply via email - my first name @ my website address</p>
 {%/* endblock after_post_nav */%}
 ```
-### Everything looks too small/big
+### 一切看起来太小/太大
 
-Everything is set with CSS REMs, so just change the HTML element's font size using CSS:
+一切都使用 CSS REM 设置，所以只需使用 CSS 更改 HTML 元素的字体大小：
 
 ```css
 html { font-size: 32px; }
 ```
-        

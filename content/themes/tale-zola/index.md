@@ -1,7 +1,7 @@
 
 +++
 title = "tale-zola"
-description = "Tala-Zola is a minimal Zola theme helping you to build a nice and seo-ready blog."
+description = "Tala-Zola 是一个极简的 Zola 主题，帮助你构建一个漂亮且利于 SEO 的博客。"
 template = "theme.html"
 date = 2021-12-05T00:18:16+08:00
 
@@ -24,76 +24,69 @@ homepage = "https://github.com/aaranxu"
 
 # Tale-Zola Theme
 
+Tala-Zola 是一个极简的 [Zola](https://www.getzola.org) 主题，帮助你构建一个轻量级且利于 SEO 的博客，你可以在不修改模板代码的情况下自定义博客的任何信息。Tala-Zola 是 Jekyll 主题 [Tale](https://github.com/chesterhow/tale) 的移植版。
 
-Tala-Zola is a minimal [Zola](https://www.getzola.org) theme helping you to
-build a light and seo-ready blog, and you can customise any information of the
-blog without having to modify the codes of the template. Tala-Zola is a port of
-the Jekyll theme [Tale](https://github.com/chesterhow/tale).
+## 演示
 
+[在线预览](https://tale-zola.netlify.app/).
 
-## Demo
+## 要求
 
-[Live Preview](https://tale-zola.netlify.app/).
+在使用此主题之前，你需要安装 [Zola](https://www.getzola.org/documentation/getting-started/installation/) ≥ 0.13.0。
 
-## Requirements
-
-Before using the theme, you need to install the [Zola](https://www.getzola.org/documentation/getting-started/installation/) ≥ 0.13.0.
-
-## Quick Start
+## 快速开始
 
 ```bash
 git clone git@github.com:aaranxu/tale-zola.git
 cd tale-zola
 zola serve
-# open http://127.0.0.1:1111/ in the browser
+# 在浏览器中打开 http://127.0.0.1:1111/
 ```
 
-## Installation
+## 安装
 
-Just earlier we showed you how to run the theme directly. Now we start to
-install the theme in an existing site step by step.
+刚才我们展示了如何直接运行主题。现在我们开始逐步在现有站点中安装主题。
 
-### Step 1: Create a new zola site
+### 第一步：创建一个新的 Zola 站点
 
 ```bash
 zola init blog
 ```
 
-### Step 2: Install Tale-Zola
+### 第二步：安装 Tale-Zola
 
-Download this theme to your themes directory:
+下载此主题到你的 themes 目录：
 
 ```bash
 cd blog/themes
 git clone git@github.com:aaranxu/tale-zola.git
 ```
 
-Or install as a submodule:
+或者作为子模块安装：
 
 ```bash
 cd blog
-git init  # if your project is a git repository already, ignore this command
+git init  # 如果你的项目已经是 git 仓库，请忽略此命令
 git submodule add git@github.com:aaranxu/tale-zola.git themes/tale-zola
 ```
 
-### Step 3: Configuration
+### 第三步：配置
 
-Enable the theme in your `config.toml` in the site derectory:
+在站点目录下的 `config.toml` 中启用主题：
 
 ```toml
 theme = "tale-zola"
 ```
 
-Or copy the `config.toml.example` from the theme directory to your project's
-root directory:
+或者将 `config.toml.example` 从主题目录复制到你的项目根目录：
 
 ```bash
 cp themes/tale-zola/config.toml.example config.toml
 ```
 
-### Step 4: Add new content
+### 第四步：添加新内容
 
-Add an `_index.md` file to your `content` directory with some lines as bellows.
+在你的 `content` 目录下添加一个 `_index.md` 文件，内容如下：
 
 ```text
 +++
@@ -102,8 +95,7 @@ paginate_by = 5
 +++
 ```
 
-Add a blog article file with a filename `first-post.md` (or other filenames) and
-input some content in it.
+添加一个文件名为 `first-post.md`（或其他文件名）的博客文章文件，并输入一些内容。
 
 ```text
 +++
@@ -120,42 +112,38 @@ author = "Your Name"
 This is my first post.
 ```
 
-
-Or you can just copy the content from the theme directory to your project:
+或者你可以直接将主题目录中的 content 复制到你的项目中：
 
 ```bash
 cp -r themes/tale-zola/content .
 ```
 
-### Step 5: Run the project
+### 第五步：运行项目
 
-Just run `zola serve` in the root path of the project:
+只需在项目根路径下运行 `zola serve`：
 
 ```bash
 zola serve
 ```
 
-Tale-Zola will start the Zola development web server accessible by default at
-`http://127.0.0.1:1111`. Saved changes will live reload in the browser.
+Tale-Zola 将启动 Zola 开发 Web 服务器，默认访问地址为 `http://127.0.0.1:1111`。保存的更改将在浏览器中实时重新加载。
 
-## Customisation
+## 自定义
 
-You can customize your configurations, templates and content for yourself. Look
-at the `config.toml`, `theme.toml` and templates files in this repo for an idea.
+你可以自定义配置、模板和内容。查看此仓库中的 `config.toml`、`theme.toml` 和模板文件以获取灵感。
 
-In most cases you only need to modify the content in the `config.toml` file to
-custom your blog, including different expressions in your speaking language.
+在大多数情况下，你只需要修改 `config.toml` 文件中的内容即可自定义你的博客，包括使用你的语言的不同表达方式。
 
-### Necessary Configurations
+### 必要配置
 
-Add some information for your blog.
+为你的博客添加一些信息。
 
 ```toml
 title = "You Blog Title"
 description = "The description of your blog."
 ```
 
-Set the tags for the site.
+设置站点的标签。
 
 ```toml
 taxonomies = [
@@ -163,10 +151,10 @@ taxonomies = [
 ]
 ```
 
-Add menus and footer information for your blog.
+为你的博客添加菜单和页脚信息。
 
 ```
-# Menu items
+# 菜单项
 [[extra.menu]]
 name = "Posts"
 url = "/"
@@ -180,29 +168,29 @@ name = "About"
 url = "about"
 
 [extra.footer]
-start_year = "2020"  # start year of the site
-end_year = "2021"    # end year of the site
+start_year = "2020"  # 站点开始年份
+end_year = "2021"    # 站点结束年份
 info = "The information on the footer."
 ```
 
-#### Option Configurations
+#### 选项配置
 
-Add your name as the author name for the blog globally.
+全局添加你的名字作为博客的作者名。
 
 ```toml
 [extra]
 author = "Your Name"
 ```
 
-Use Google Analytics. Add your own Google Analytics ID.
+使用 Google Analytics。添加你自己的 Google Analytics ID。
 
 ```toml
 [extra]
 google_analytics = "UA—XXXXXXXX-X"
 ```
 
-Whether to use Disqus globally and set to your disqus id name.
-And you can enable the disqus on per post page with `extra.disqus` option
+是否全局使用 Disqus 并设置为你的 disqus id 名称。
+你也可以通过 `extra.disqus` 选项在每篇文章页面上启用 disqus。
 
 ```toml
 [extra]
@@ -210,7 +198,7 @@ disqus = false
 disqus_id = ""
 ```
 
-Code syntax highlighting. See also [syntax highlighting](https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting).
+代码语法高亮。另请参阅 [语法高亮](https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting)。
 
 ```toml
 [markdown]
@@ -218,27 +206,27 @@ highlight_code = true
 highlight_theme = "base16-ocean-light"
 ```
 
-Use KaTeX to support the math notation
+使用 KaTeX 支持数学符号
 
 ```toml
 [extra]
 katex = true
 ```
 
-> Note: You can also add the `katex` option on per mardown file of the page or section.
+> 注意：你也可以在页面或版块的 markdown 文件中添加 `katex` 选项。
 
-Set date format in the site
+设置站点中的日期格式
 
 ```toml
 [extra]
-timeformat = "%B %e, %Y" # e.g. June 14, 2021, and this is the default format
+timeformat = "%B %e, %Y" # 例如 June 14, 2021，这是默认格式
 ```
 
-SEO settings, like Open Graph + Twitter Cards
+SEO 设置，如 Open Graph + Twitter Cards
 
 ```toml
 [extra.seo]
-# this image will be used as fallback if a page has no image of its own
+# 如果页面没有自己的图片，将使用此图片作为后备
 image = "tale.png"
 image_height = 50
 image_width = 50
@@ -253,48 +241,42 @@ og_locale = "en_US"
   publisher = "facebook_accout"
 ```
 
-Change the words in your speaking language.
+更改你的语言中的词汇。
 
 ```toml
 [extra.expressions]
-home = "Home"              # The homepage's name
-pinned = "Pinned"          # On the header of the post list
-written_by = "Written by"  # Like: Written by Aaran Xu
-on = "on"                  # Like: on May 3, 2021
-top = "Top"                # Go to the top of the page in the post
-tags = "Tags"              # In the page of Tags
+home = "首页"              # 主页名称
+pinned = "置顶"          # 文章列表头部
+written_by = "作者"  # 例如：作者 Aaran Xu
+on = "于"                  # 例如：于 2021年5月3日
+top = "顶部"                # 文章中返回顶部
+tags = "标签"              # 标签页中
 
-# disqus comments block
-disqus_discussion = "Discussion and feedback"
+# disqus 评论块
+disqus_discussion = "讨论与反馈"
 
-# The contents of the 404 page
-p404 = "404: Page not found"
-p404_info = "Oops! We can't seem to find the page you are looking for."
-p404_back_home_start = "Let's"
-p404_back_home_with_link = "head back home"
-p404_back_home_end = "."
+# 404 页面内容
+p404 = "404: 页面未找到"
+p404_info = "哎呀！我们似乎找不到你要找的页面。"
+p404_back_home_start = "让我们"
+p404_back_home_with_link = "回到首页"
+p404_back_home_end = "。"
 ```
 
-### Custom CSS styles
+### 自定义 CSS 样式
 
-Just add your own styles to `sass/_custom.scss` file.
+只需将你自己的样式添加到 `sass/_custom.scss` 文件中。
 
-## Reporting Issues
+## 报告问题
 
-We use GitHub Issues as the official bug tracker for the **Tale-Zola**. Please
-search [existing issues](https://github.com/aaranxu/tale-zola/issues). It’s
-possible someone has already reported the same problem.
+我们使用 GitHub Issues 作为 **Tale-Zola** 的官方 bug 追踪器。请搜索 [现有 issues](https://github.com/aaranxu/tale-zola/issues)。可能已经有人报告了同样的问题。
 
-If your problem or idea is not addressed yet, [open a new issue](https://github.com/aaranxu/tale-zola/issues/new).
+如果你的问题或想法尚未解决，[打开一个新 issue](https://github.com/aaranxu/tale-zola/issues/new)。
 
-## Contributing
+## 贡献
 
-We'd love your help! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) to learn
-about the kinds of contributions we're looking for.
+我们需要你的帮助！请查看 [CONTRIBUTING.md](./CONTRIBUTING.md) 以了解我们需要什么样的贡献。
 
-## License
+## 许可证
 
-Tale-Zola is distributed under the terms of the
-[MIT license](LICENSE).
-
-        
+Tale-Zola 根据 [MIT 许可证](LICENSE) 分发。

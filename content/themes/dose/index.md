@@ -1,7 +1,7 @@
 
 +++
 title = "dose"
-description = "a small blog theme"
+description = "一个小型博客主题"
 template = "theme.html"
 date = 2023-05-07T12:14:01+02:00
 
@@ -26,24 +26,24 @@ homepage = "https://oltdaniel.eu"
 
 ![](screenshot.png?raw=true)
 
-## Installation
+## 安装
 
-First install the theme into the `themes` directory with one of these options:
+首先通过以下选项之一将主题安装到 `themes` 目录：
 
 ```bash
-# If you work with git: 
+# 如果你使用 git: 
 git submodule add https://github.com/oltdaniel/dose.git themes/dose
-# or just do a download:
+# 或者直接下载:
 git clone https://github.com/oltdaniel/dose.git themes/dose
 ```
 
-and then enable it in your `config.toml`:
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "dose"
 ```
 
-You can enable the following taxonomies:
+你可以启用以下分类法：
 
 ```toml
 taxonomies = [
@@ -51,7 +51,7 @@ taxonomies = [
 ]
 ```
 
-And the theme uses the following extras:
+主题使用以下额外配置：
 
 ```toml
 [extra]
@@ -60,58 +60,57 @@ social_media = [
     { name = "Twitter", url = "https://twitter.com/@twitter" },
     { name = "Mastodon", url = "https://mastodon.social/@Mastodon", rel = "me" }
 ]
-default_theme = "dark" # or "light"
+default_theme = "dark" # 或 "light"
 ```
 
-The description of yourself with your image, you can modify by using a template. Just create a new
-file `myblog/templates/parts/me.html`:
+你可以通过使用模板修改你的描述和图片。只需创建一个新文件 `myblog/templates/parts/me.html`：
 
 ```html
 <img src="https://via.placeholder.com/50" height="50px" width="50px">
-<p>Hi, this is me. I write about microcontrollers, programming and cloud software. ...</p>
+<p>嗨，这是我。我写关于微控制器、编程和云软件的文章。...</p>
 ```
 
-If you want to have all pages sorted by their date, please create `myblog/content/_index.md`:
+如果你想让所有页面按日期排序，请创建 `myblog/content/_index.md`：
 ```
 +++
 sort_by = "date"
 +++
 ```
 
-### About
+### 关于
 
-#### Inspired
-I created this theme mainly for my personal website. You are free to use it or modify it. It is inspired by the [`no-style-please`](https://riggraz.dev/no-style-please/) jekyll theme.
+#### 灵感
+我创建这个主题主要是为了我的个人网站。你可以自由使用或修改它。它的灵感来自于 [`no-style-please`](https://riggraz.dev/no-style-please/) jekyll 主题。
 
-#### Typography
+#### 排版
 
-This theme uses no special font, just the browsers default monospace font. Yes, this can mean that the website could be rendered differently, but users can freely choose their webfont.
+此主题不使用特殊字体，只使用浏览器的默认等宽字体。是的，这意味着网站可能会有不同的渲染效果，但用户可以自由选择他们的网页字体。
 
-#### Darkmode
+#### 暗色模式
 
-This theme supports dark and light mode. Currently this will be only switched based on the users preffered system theme. But a manual switch will follow in the future in the footer (see the todo).
+此主题支持暗色和亮色模式。目前这将仅根据用户首选的系统主题进行切换。但未来会在页脚添加手动切换（见 todo）。
 
-| light | dark |
+| 亮色 | 暗色 |
 |-|-|
 | ![](screenshot-light.png) | ![](screenshot-dark.png) |
 
-#### Size
+#### 大小
 
-The JavaScript has been moved into the page itself to allow minification. Together this results in the following sizes for the `index.html`:
+JavaScript 已移入页面本身以允许压缩。这就导致 `index.html` 的大小如下：
 - `~ 3kB` JavaScript
 - `~ 3kB` CSS
-- `~ 17kB` Profile Image
+- `~ 17kB` 个人资料图片
 - `~5kB - ~3kB = ~2kB` HTML
 
-Which results in a total loading size of `3kB + 3kB + 17kB + 2kB = 25kB`.
+总加载大小为 `3kB + 3kB + 17kB + 2kB = 25kB`。
 
-#### Syntax Highlighting
+#### 语法高亮
 
-As I didn't want to invest any time in creating an own syntax color schema for this theme, I suggest to use `visual-studio-dark`, which is the same one used in the demo page.
+由于我不想花时间为这个主题创建自己的语法颜色方案，我建议使用 `visual-studio-dark`，这也是演示页面中使用的方案。
 
-#### Customization
+#### 自定义
 
-You can create your own version of this theme, by simply changing the sass variables in `sass/style.scss` to match your taste.
+你可以通过简单地更改 `sass/style.scss` 中的 sass 变量来创建你自己的主题版本，以符合你的口味。
 
 ```scss
 /**
@@ -126,9 +125,8 @@ $target-color: yellow;
 $separator-decoration: "//////";
 ```
 
-## License & Contributors
+## 许可证与贡献者
 
 ![GitHub](https://img.shields.io/github/license/oltdaniel/dose)
 
-This project was created by [Daniel Oltmanns](https://github.com/oltdaniel) and has been imporved by these [contributors](https://github.com/oltdaniel/dose/graphs/contributors).
-        
+本项目由 [Daniel Oltmanns](https://github.com/oltdaniel) 创建，并由这些 [贡献者](https://github.com/oltdaniel/dose/graphs/contributors) 改进。

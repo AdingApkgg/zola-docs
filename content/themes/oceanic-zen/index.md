@@ -1,7 +1,7 @@
 
 +++
 title = "Oceanic Zen"
-description = "Minimalistic blog theme"
+description = "极简主义博客主题"
 template = "theme.html"
 date = 2024-08-25T18:51:47-04:00
 
@@ -26,37 +26,37 @@ homepage = "https://barlog.li"
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e90897e9-f3e3-4906-b647-11a918af3a3b/deploy-status)](https://app.netlify.com/sites/oceanic-zen/deploys)
 
-Oceanic Zen is a theme for [Zola](https://www.getzola.org/) static site generator
+Oceanic Zen 是一个 [Zola](https://www.getzola.org/) 静态站点生成器的主题
 
-[Oceanic Zen](https://oceanic-zen.netlify.app/) is a minimalistic theme for personal blog.
+[Oceanic Zen](https://oceanic-zen.netlify.app/) 是一个用于个人博客的极简主义主题。
 
-![Screenshot](screenshot-index.png)
-![Screenshot](screenshot.png)
+![截图](screenshot-index.png)
+![截图](screenshot.png)
 
-## Installation
+## 安装
 
-Download theme to your `themes` directory:
+下载主题到你的 `themes` 目录：
 
 ```bash
 $ cd themes
 $ git clone https://github.com/barlog-m/oceanic-zen.git
 ```
 
-Or add as git submodule
+或者添加为 git 子模块
 
 ```bash
 $ git submodule add https://github.com/barlog-m/oceanic-zen.git themes/oceanic-zen
 ```
 
-Enable it in your `config.toml`:
+在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "oceanic-zen"
 ```
 
-## Options
+## 选项
 
-Theme supported some extra options
+主题支持一些额外选项
 
 ```toml
 [extra]
@@ -65,6 +65,4 @@ github = "github author name"
 twitter = "twitter author name"
 ```
 
-Font [Iosevka](https://typeof.net/Iosevka/)
-
-        
+字体 [Iosevka](https://typeof.net/Iosevka/)

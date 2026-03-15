@@ -24,24 +24,23 @@ homepage = "https://ssiyad.com"
 
 # Block
 
-Pure black, blog focused theme for [Zola](https://www.getzola.org/), powered by
-[TailwindCSS](https://tailwindcss.com/).
+纯黑、以博客为中心的 [Zola](https://www.getzola.org/) 主题，由 [TailwindCSS](https://tailwindcss.com/) 驱动。
 
-Demo: https://block-zola.netlify.app/
+演示: https://block-zola.netlify.app/
 
-![sreenshot](./screenshot.png)
+![截图](./screenshot.png)
 
-## Setup
+## 设置
 
-In your zola site directory
+在你的 zola 站点目录中
 
-- Get theme
+- 获取主题
 
     ```bash
     git submodule add https://github.com/ssiyad/block themes/block
     ```
 
-- Build CSS
+- 构建 CSS
 
     ```bash
     cd themes/block
@@ -49,16 +48,16 @@ In your zola site directory
     npm run css:build
     ```
 
-- Build your site
+- 构建你的站点
 
     ```bash
     cd ../..
     zola build
     ```
 
-## Variables
+## 变量
 
-You can use the following variables in your `config.toml`.
+你可以在 `config.toml` 中使用以下变量。
 
 ```toml
 [extra.intro]
@@ -70,14 +69,13 @@ avatar_url = "https://picsum.photos/200"
 license_text = ""
 ```
 
-Check [theme.toml](./theme.toml) for more info.
+查看 [theme.toml](./theme.toml) 了解更多信息。
 
-## Blocks
+## 块
 
-You can override individual blocks by following
-[this](https://www.getzola.org/documentation/themes/extending-a-theme/#overriding-a-block).
+你可以通过遵循 [这里](https://www.getzola.org/documentation/themes/extending-a-theme/#overriding-a-block) 的说明覆盖单个块。
 
-Example: `templates/base_layout.html`
+示例：`templates/base_layout.html`
 
 ```html
 {%/* extends "block/templates/base_layout.html" */%}
@@ -108,11 +106,6 @@ Example: `templates/base_layout.html`
 {%/* endblock */%}
 ```
 
-## Self Promotion
+## 自我推销
 
-Like this project? Give it a star! ⭐, and spread the word! 🚀. And if you are
-feeling especially charitable, follow [Sabu Siyad](https://ssiyad.com) on
-[GitHub](https://github.com/ssiyad). Thanks!
-
-
-        
+喜欢这个项目吗？给它一个星！⭐，并传播出去！🚀。如果你感觉特别慷慨，请在 [GitHub](https://github.com/ssiyad) 上关注 [Sabu Siyad](https://ssiyad.com)。谢谢！

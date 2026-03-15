@@ -1,7 +1,7 @@
 
 +++
 title = "coffee"
-description = "A simple theme for Zola inspired by coffee."
+description = "一个受咖啡启发的 Zola 简单主题。"
 template = "theme.html"
 date = 2026-02-05T01:26:06+09:00
 
@@ -24,45 +24,45 @@ homepage = "https://yukiosada.work"
 
 # coffee theme
 
-**coffee** is a blog theme for zola!
+**coffee** 是一个 zola 的博客主题！
 
-This theme can be used **mermaid** and **katex**.
+此主题可以使用 **mermaid** 和 **KaTeX 公式**。
 
-- demo site
+- 演示站点
 
 [https://zola-coffee-theme.netlify.app/](https://zola-coffee-theme.netlify.app/)
 
-- [theme logo](https://github.com/Myxogastria0808/coffee/blob/main/logo/README.md)
+- [主题 logo](https://github.com/Myxogastria0808/coffee/blob/main/logo/README.md)
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/logo/coffee.svg" width="300px" height="300px" />
 </div>
 
-- screenshot
+- 截图
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/screenshot.png" width="1920px" height="935px" />
 </div>
 
-## Setup Environment
+## 设置环境
 
-1. Install zola
+1. 安装 zola
 
-Please install zola by referring to the following.
+请参考以下内容安装 zola。
 
 [https://www.getzola.org/documentation/getting-started/installation/](https://www.getzola.org/documentation/getting-started/installation/)
 
-2. Setup coffee theme
+2. 设置 coffee 主题
 
 > [!TIP]
-> If you want to use the coffee theme repository as a blog, you do not need to do the `2.` step other than making extra settings in the `2-6.` step after cloning the repository.
+> 如果你想使用 coffee 主题仓库作为博客，除了在克隆仓库后进行 `2-6.` 步骤中的额外设置外，不需要做 `2.` 步骤。
 
-2-1. Create your blog project
+2-1. 创建你的博客项目
 
 ```sh
 zola init < your blog project >
 ```
-Please select as follows
+请如下选择
 
 ```sh
 Welcome to Zola!
@@ -79,65 +79,65 @@ Get started by moving into the directory and using the built-in server: `zola se
 Visit https://www.getzola.org for the full documentation.
 ```
 
-2-2. Change directory to your blog project
+2-2. 更改目录到你的博客项目
 
 ```sh
 cd ./< your blog project >/themes/
 ```
 
-2-3. Clone coffee theme to theme directory and remove .git directory of coffee theme repository
+2-3. 克隆 coffee 主题到 theme 目录并移除 coffee 主题仓库的 .git 目录
 
 ```sh
 git clone https://github.com/Myxogastria0808/coffee.git
 rm -rf coffee/.git
 ```
 
-2-4. Change directory to the root of your blog project
+2-4. 更改目录到你的博客项目的根目录
 
 ```sh
 cd ..
 ```
 
-2-5. Replace settings to `config.toml` of your blog project
+2-5. 替换你的博客项目的 `config.toml` 设置
 
-The following is the content of the replacement config.
+以下是替换配置的内容。
 
-Please change `base_url` to your blog's URL when deploying your blog.
-During development, I recommend leaving base_url as is.
+部署博客时，请将 `base_url` 更改为你的博客 URL。
+在开发期间，我建议保持 base_url 不变。
 
 ```toml
 theme = "coffee"
 
-# The URL the site will be built for
+# 站点将构建的 URL
 base_url = "/"
 
-# The site title and description; used in feeds by default.
+# 站点标题和描述；默认在 feed 中使用。
 title = "coffee"
 description = "A simple theme for Zola inspired by coffee."
 
-# Whether to automatically compile all Sass files in the sass directory
+# 是否自动编译 sass 目录中的所有 Sass 文件
 compile_sass = true
 
-# When set to "true", the generated HTML files are minified.
+# 设置为 "true" 时，生成的 HTML 文件将被压缩。
 minify_html = true
 
-# Whether to build a search index to be used later on by a JavaScript library
+# 是否构建搜索索引以供稍后由 JavaScript 库使用
 build_search_index = true
 
-# RSS/Atom feeds
+# RSS/Atom 订阅
 generate_feeds = true
-# The filenames to use for the feeds. Used as the template filenames, too.
-# Defaults to ["atom.xml"], which has a built-in template that renders an Atom 1.0 feed.
-# There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
+# 用于订阅的文件名。也用作模板文件名。
+# 默认为 ["atom.xml"]，它有一个内置模板渲染 Atom 1.0 订阅。
+# 还有一个内置模板 "rss.xml" 渲染 RSS 2.0 订阅。
 feed_filenames = ["rss.xml"]
 
-# The taxonomies to be rendered for the site and their configuration of the default languages
-# Example:
+# 为站点渲染的分类法及其默认语言配置
+# 示例:
 #     taxonomies = [
-#       {name = "tags", feed = true}, # each tag will have its own feed
-#       {name = "tags"}, # you can have taxonomies with the same name in multiple languages
-#       {name = "categories", paginate_by = 5},  # 5 items per page for a term
-#       {name = "authors"}, # Basic definition: no feed or pagination
+#       {name = "tags", feed = true}, # 每个标签都有自己的订阅
+#       {name = "tags"}, # 你可以在多种语言中使用相同名称的分类法
+#       {name = "categories", paginate_by = 5},  # 每个术语每页 5 项
+#       {name = "authors"}, # 基本定义：无订阅或分页
 #     ]
 #
 taxonomies = [
@@ -145,98 +145,98 @@ taxonomies = [
 ]
 
 [markdown.highlighting]
-# The syntax highlighting theme to use in light mode
+# 亮色模式下使用的语法高亮主题
 light_theme = "github-light"
-# The syntax highlighting theme to use in dark mode
+# 暗色模式下使用的语法高亮主题
 dark_theme = "github-dark"
 
 [markdown]
-# When set to "true", emoji aliases translated to their corresponding
-# Unicode emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)
+# 设置为 "true" 时，emoji 别名会在渲染的 Markdown 文件中转换为对应的
+# Unicode emoji 等效项。（例如：:smile: => 😄）
 render_emoji = true
 
-# Whether external links are to be opened in a new tab
-# If this is true, a `rel="noopener"` will always automatically be added for security reasons
+# 外部链接是否在新标签页中打开
+# 如果为 true，出于安全原因，总是会自动添加 `rel="noopener"`
 external_links_target_blank = true
 
-# Whether to set rel="noreferrer" for all external links
+# 是否为所有外部链接设置 rel="noreferrer"
 external_links_no_referrer = true
 
-# Whether smart punctuation is enabled (changing quotes, dashes, dots in their typographic form)
-# For example, `...` into `…`, `"quote"` into `“curly”` etc
+# 是否启用智能标点（将引号、破折号、点更改为排版形式）
+# 例如，`...` 变为 `…`，`"quote"` 变为 `“curly”` 等
 smart_punctuation = true
 
 [search]
-# Whether to include the title of the page/section in the index
+# 是否在索引中包含页面/版块的标题
 include_title = true
-# Whether to include the description of the page/section in the index
+# 是否在索引中包含页面/版块的描述
 include_description = true
-# Whether to include the RFC3339 datetime of the page in the search index
+# 是否在搜索索引中包含页面的 RFC3339 日期时间
 include_date = true
-# Whether to include the path of the page/section in the index (the permalink is always included)
+# 是否在索引中包含页面/版块的路径（永久链接总是包含在内）
 include_path = true
-# Whether to include the rendered content of the page/section in the index
+# 是否在索引中包含页面/版块的渲染内容
 include_content = true
 
 [slugify]
-# Various slugification strategies, see below for details
-# Defaults to everything being a slug
+# 各种 slug 化策略，详见下文
+# 默认为所有内容都作为 slug
 paths = "off"
 taxonomies = "off"
-# Whether to remove date prefixes for page path slugs.
-# For example, content/posts/2016-10-08_a-post-with-dates.md => posts/a-post-with-dates
-# When true, content/posts/2016-10-08_a-post-with-dates.md => posts/2016-10-08-a-post-with-dates
+# 是否移除页面路径 slug 的日期前缀。
+# 例如，content/posts/2016-10-08_a-post-with-dates.md => posts/a-post-with-dates
+# 当为 true 时，content/posts/2016-10-08_a-post-with-dates.md => posts/2016-10-08-a-post-with-dates
 paths_keep_dates = true
 ```
 
-2-6. Add extra settings to `config.toml` of your blog project
+2-6. 向你的博客项目的 `config.toml` 添加额外设置
 
-This theme provides the following additional settings.
+此主题提供以下附加设置。
 
-All settings have default values, so you only need to add the settings you want to change.
+所有设置都有默认值，所以你只需要添加想要更改的设置。
 
 - `config.toml`
 
 ```toml
-[extra.coffee] #<- CAUTION: You have to be [extra.coffee], not [extra].
-# default value: 'en'
+[extra.coffee] #<- 注意：必须是 [extra.coffee]，不是 [额外配置]。
+# 默认值: 'en'
 lang = "en"
-# default value: 'blog'
+# 默认值: 'blog'
 keyword = "blog"
-# default value: 'https://raw.githubusercontent.com/Myxogastria0808/coffee/heads/main/static/favicon.svg'
-# A shortcut icon has to be a SVG image.
+# 默认值: 'https://raw.githubusercontent.com/Myxogastria0808/coffee/heads/main/static/favicon.svg'
+# 快捷图标必须是 SVG 图片。
 icon = "https://raw.githubusercontent.com/Myxogastria0808/coffee/heads/main/static/favicon.svg"
-# default value: ''
+# 默认值: ''
 twitter_site = ""
-# default value: '@yuki_osada0808'
+# 默认值: '@yuki_osada0808'
 twitter_creator = "@yuki_osada0808"
-# default value: 'https://raw.githubusercontent.com/Myxogastria0808/coffee/heads/main/static/coffee.webp'
+# 默认值: 'https://raw.githubusercontent.com/Myxogastria0808/coffee/heads/main/static/coffee.webp'
 meta_image = "https://raw.githubusercontent.com/Myxogastria0808/coffee/heads/main/static/coffee.webp"
-# default value: 'coffee theme'
+# 默认值: 'coffee theme'
 meta_image_alt = "coffee theme"
-# default value: '512'
+# 默认值: '512'
 meta_image_width = "512"
-# default value: '512'
+# 默认值: '512'
 meta_image_height = "512"
 
-# default value is below
+# 默认值如下
 about = """
 Hello, my name is <strong>Myxogastria0808.</strong><br/>
 I created a Zola theme named <strong>"coffee"</strong>.
 This template can be used <strong>mermaid</strong> and <strong>katex</strong>.
 <h4>Have a nice day!</h4>
 """
-# default value: 'https://raw.githubusercontent.com/Myxogastria0808/coffee/heads/main/static/coffee.webp'
+# 默认值: 'https://raw.githubusercontent.com/Myxogastria0808/coffee/heads/main/static/coffee.webp'
 about_image = "https://raw.githubusercontent.com/Myxogastria0808/coffee/heads/main/static/coffee.webp"
-# default value: 'coffee theme'
+# 默认值: 'coffee theme'
 about_image_alt = "coffee theme"
-# default value: '512'
+# 默认值: '512'
 about_image_width = "512"
-# default value: '512'
+# 默认值: '512'
 about_image_height = "512"
 ```
 
-- example (part of `config.toml`)
+- 示例 (`config.toml` 部分)
 
 ```toml
 [extra.coffee]
@@ -248,9 +248,9 @@ This blog is made by Zola. This is a sample blog of coffee theme.
 """
 ```
 
-2-7. Replace settings to `content/_index.md` of your blog project
+2-7. 替换你的博客项目的 `content/_index.md` 设置
 
-The following is the content of `_index.md`, which will be newly added in the content directory.
+以下是 `_index.md` 的内容，它将在 content 目录中新建。
 
 - `_index.md`
 
@@ -264,36 +264,36 @@ in_search_index = true
 
 ```
 
-3. Build your blog
+3. 构建你的博客
 
 ```sh
 zola build
 ```
 
-4. Check your blog
+4. 检查你的博客
 
 ```sh
 zola serve
 ```
 
-### Setup Example
+### 设置示例
 
-The following sample have been set up.
+以下示例已设置。
 
 > [!NOTE]
-> This repository includes the coffee theme repository as a submodule.
+> 此仓库包含 coffee 主题仓库作为子模块。
 
-- repository
+- 仓库
 
 [https://github.com/Myxogastria0808/coffee-sample.git](https://github.com/Myxogastria0808/coffee-sample.git)
 
-- demo site
+- 演示站点
 
 [https://zola-coffee-theme-sample.netlify.app/](https://zola-coffee-theme-sample.netlify.app/)
 
-## Post Example
+## 文章示例
 
-You can see the post example below.
+你可以查看下面的文章示例。
 
 ```md
 +++
@@ -325,23 +325,23 @@ I create a logo for my blog theme named "coffee".
 
 ```
 
-Please refer to the following for an actual example.
+请参考以下内容查看实际示例。
 
-- markdown example
+- markdown 示例
 
 [https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md](https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md)
 
-- preview URL
+- 预览 URL
 
 [https://zola-coffee-theme.netlify.app/sample/](https://zola-coffee-theme.netlify.app/sample/)
 
-## coffee Theme Specific Notation
+## coffee 主题特定符号
 
-### List of languages in Code Block
+### 代码块中的语言列表
 
 [https://www.getzola.org/documentation/content/syntax-highlighting/](https://www.getzola.org/documentation/content/syntax-highlighting/)
 
-#### Example
+#### 示例
 
 ````
 ```rs
@@ -353,36 +353,36 @@ fn main() {
 
 ![codeblock](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/codeblock.png)
 
-### Image
+### 图片
 
 ```
 {{/* image(path="/image/path") */}}
 ```
 
-You can add `width=int`, `height=int`, and `caption=String` as options for image shortcode.
+你可以添加 `width=int`, `height=int`, 和 `caption=String` 作为 image 短代码的选项。
 
-You can see the image shortcode examples below.
+你可以在下面看到 image 短代码示例。
 
-- markdown example
+- markdown 示例
 
 [https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md](https://github.com/Myxogastria0808/coffee/blob/main/content/sample/index.md)
 
-- preview URL
+- 预览 URL
 
 [https://zola-coffee-theme.netlify.app/sample/](https://zola-coffee-theme.netlify.app/sample/)
 
-#### Example applying all of `width`, `height`, and `caption`
+#### 应用所有 `width`, `height`, 和 `caption` 的示例
 
 ```
 {{/* image(path="/content/sample/image.jpg", width=1000, height=200, caption="caption") */}}
 ```
 
-![image](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/image.png)
+![图片](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/image.png)
 
 > [!NOTE]
-> Images are automatically converted to webp, so you don't need to worry about image size.
+> 图片会自动转换为 webp，所以你不需要担心图片大小。
 
-### katex
+### KaTeX 公式
 
 ```
 $$
@@ -390,7 +390,7 @@ $$
 $$
 ```
 
-#### Example
+#### 示例
 
 ```
 $$
@@ -398,7 +398,7 @@ $$
 $$
 ```
 
-![katex](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/katex.png)
+![KaTeX 公式](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/katex.png)
 
 ### mermaid
 
@@ -408,7 +408,7 @@ $$
 {%/* end */%}
 ```
 
-#### Example
+#### 示例
 
 ```
 {%/* mermaid() */%}
@@ -422,7 +422,7 @@ graph TD;
 
 ![mermaid](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/mermaid.png)
 
-### note
+### 注意
 
 ```
 {%/* note() */%}
@@ -430,7 +430,7 @@ Contents of the note.
 {%/* end */%}
 ```
 
-#### Example
+#### 示例
 
 ```
 {%/* note() */%}
@@ -438,9 +438,9 @@ This is a note.
 {%/* end */%}
 ```
 
-![note](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/note.png)
+![注意](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/note.png)
 
-### tip
+### 提示
 
 ```
 {%/* tip() */%}
@@ -448,7 +448,7 @@ Contents of the tip.
 {%/* end */%}
 ```
 
-#### Example
+#### 示例
 
 ```
 {%/* tip() */%}
@@ -456,9 +456,9 @@ This is a tip.
 {%/* end */%}
 ```
 
-![tip](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/tip.png)
+![提示](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/tip.png)
 
-### important
+### 重要
 
 ```
 {%/* important() */%}
@@ -466,7 +466,7 @@ Contents of the important.
 {%/* end */%}
 ```
 
-#### Example
+#### 示例
 
 ```
 {%/* important() */%}
@@ -474,9 +474,9 @@ This is a important.
 {%/* end */%}
 ```
 
-![important](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/important.png)
+![重要](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/important.png)
 
-### warning
+### 警告
 
 ```
 {%/* warning() */%}
@@ -484,7 +484,7 @@ Contents of the warning.
 {%/* end */%}
 ```
 
-#### Example
+#### 示例
 
 ```
 {%/* warning() */%}
@@ -492,9 +492,9 @@ This is a warning.
 {%/* end */%}
 ```
 
-![warning](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/warning.png)
+![警告](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/warning.png)
 
-### caution
+### 小心
 
 ```
 {%/* caution() */%}
@@ -502,7 +502,7 @@ Contents of the caution
 {%/* end */%}
 ```
 
-#### Example
+#### 示例
 
 ```
 {%/* caution() */%}
@@ -510,13 +510,13 @@ This is a caution.
 {%/* end */%}
 ```
 
-![caution](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/caution.png)
+![小心](https://raw.githubusercontent.com/Myxogastria0808/coffee/refs/heads/main/assets/caution.png)
 
-## Structure of this template
+## 此模板的结构
 
-The following is expressed in pseudo-HTML.
+以下以伪 HTML 表示。
 
-### Top page (Also serves as an article list page)
+### 首页（也是文章列表页）
 
 ```
 <base.html>
@@ -524,7 +524,7 @@ The following is expressed in pseudo-HTML.
 </base.html>
 ```
 
-### Tag list page
+### 标签列表页
 
 ```
 <base.html>
@@ -532,7 +532,7 @@ The following is expressed in pseudo-HTML.
 </base.html>
 ```
 
-### List of specific tags page
+### 特定标签列表页
 
 ```
 <base.html>
@@ -540,7 +540,7 @@ The following is expressed in pseudo-HTML.
 </base.html>
 ```
 
-### Post page
+### 文章页
 
 ```
 <base.html>
@@ -548,7 +548,7 @@ The following is expressed in pseudo-HTML.
 </base.html>
 ```
 
-### 404 page
+### 404 页面
 
 ```
 <base.html>
@@ -556,7 +556,7 @@ The following is expressed in pseudo-HTML.
 </base.html>
 ```
 
-## References
+## 参考
 
 [https://www.getzola.org/documentation/getting-started/overview/#content](https://www.getzola.org/documentation/getting-started/overview/#content)
 
@@ -565,5 +565,3 @@ The following is expressed in pseudo-HTML.
 [https://sippo.work/blog/20231105-deploy-zola-with-cloudflare-pages/](https://sippo.work/blog/20231105-deploy-zola-with-cloudflare-pages/)
 
 [https://zenn.dev/com4dc/scraps/c6c0f5fb87a1f9](https://zenn.dev/com4dc/scraps/c6c0f5fb87a1f9)
-
-        

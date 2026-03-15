@@ -26,9 +26,9 @@ homepage = "https://trentesaux.fr/"
 
 A light theme for Zola adapted from Pelican.
 
-![screenshot](./screenshot.png)
+![截图](./screenshot.png)
 
-## Installation
+## 安装
 
 You can add the theme as a submodule :
 
@@ -42,7 +42,7 @@ and enable the theme in your `config.toml`
 theme = "toucan"
 ```
 
-## Usage
+## 使用
 
 Categories will be added to the menu, and all articles from categories with
 
@@ -55,7 +55,7 @@ will be listed in the home page.
 You can personalize the following options :
 
 ```toml
-[extra]
+[额外配置]
 title = "Toucan theme"
 title_pic = "/favicon.ico"
 description = "Theme for Zola inspired from Pelican website theme"

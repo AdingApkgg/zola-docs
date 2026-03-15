@@ -1,7 +1,7 @@
 
 +++
 title = "photography theme"
-description = "a photography portfolio theme with many features, including an AI blocker"
+description = "一个包含许多功能（包括 AI 拦截器）的摄影作品集主题"
 template = "theme.html"
 date = 2026-02-01T20:53:02+01:00
 
@@ -23,41 +23,41 @@ homepage = "https://arbs09.dev"
 +++        
 
 # photography website theme
-![screenshot](screenshot.png)
+![截图](screenshot.png)
 
-## Installation
-Initialise git:
+## 安装
+初始化 git:
 
 ```bash
 git init
 ```
 
-Add this theme to the `themes` folder:
+将此主题添加到 `themes` 文件夹：
 
 ```bash
 git submodule add --depth=1 https://github.com/arbs09/photography-theme.git themes/photography
 git submodule update --init --recursive
 ```
 
-You can now enable the theme in your `config.toml`:
+你现在可以在你的 `config.toml` 中启用主题：
 
 ```toml
 theme = "photography"
 ```
 
-## Updating
-Just run:
+## 更新
+只需运行：
 
 ```bash
 git submodule update --remote --merge
 ```
 
-## Configuration
+## 配置
 
-### Options
+### 选项
 
-#### home / nav / footer links
-You can edit the links on the homepage, in the nav and footer.
+#### 首页 / 导航 / 页脚链接
+你可以编辑首页、导航和页脚上的链接。
 
 ```toml
 [extra]
@@ -72,27 +72,26 @@ footer_links = [
 ]
 ```
 
-#### Copyright
-For editing the copyright in the footer just use this:
+#### 版权
+要编辑页脚中的版权，只需使用此项：
 
 ```toml
 [extra]
 copyright = "Example"
 ```
 
-#### Ai opt-out
+#### Ai 退出
 
-If you want to opt out of (some) Ai Bots crawling your site you can add the following to your config.toml.
+如果你想退出（某些）Ai 机器人抓取你的站点，你可以将以下内容添加到你的 config.toml 中。
 ```toml
 [extra]
 no_ai = true
 ```
 
-#### Tracking
-If you want to intigrate Tracking via javascript in the html head you can add configure it like this in the config.toml.
+#### 跟踪
+如果你想通过 html head 中的 javascript 集成跟踪，你可以在 config.toml 中像这样配置它。
 
 ```toml
 [extra]
 tracking_js = "<your js part>
 ```
-        

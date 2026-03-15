@@ -36,7 +36,7 @@ Post demo:
 
 ---
 
-## Installation
+## 安装
 
 Assuming you already have a site set up (see the [Zola guide for setting up a site](https://www.getzola.org/documentation/getting-started/overview/)), 
 
@@ -77,7 +77,7 @@ Galleries can be set up by using the following template in your Markdown file:
 
 For more or less photos, use `<a href>` tags. [Flickr](https://www.flickr.com/) provides a good hosting option as it automatically generates thumbnails for you. 
 
-## Configuration
+## 配置
 
 Andromeda supports custom navbar links - see [config.toml](https://github.com/Pixadus/andromeda-theme/blob/main/config.toml) for an example. You may also set a custom `favicon.ico` though `config.toml`. 
 

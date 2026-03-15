@@ -1,7 +1,7 @@
 
 +++
 title = "after-dark"
-description = "A robust, elegant dark theme"
+description = "一个稳健、优雅的暗色主题"
 template = "theme.html"
 date = 2025-01-09T01:48:56-08:00
 
@@ -24,69 +24,69 @@ homepage = "https://www.vincentprouillet.com"
 
 # after-dark
 
-![after-dark screenshot](screenshot.png)
+![after-dark 截图](screenshot.png)
 
-## Features
+## 特性
 
-- [x] Code Snippet Clipboards
-- [x] Latex Support
-- [ ] Light/Dark mode support
-- [x] Search functionality
+- [x] 代码片段剪贴板
+- [x] Latex 支持
+- [ ] 亮色/暗色模式支持
+- [x] 搜索功能
 
-## Contents
+## 目录
 
-- Installation
-- Options
-  - Top menu
-  - Title
-  - Author
-  - Code Snippets
-  - LaTex Support
-  - Searchbar
+- 安装
+- 选项
+  - 顶部菜单
+  - 标题
+  - 作者
+  - 代码片段
+  - LaTex 支持
+  - 搜索栏
 
-## Installation
+## 安装
 
-First download this theme to your `themes` directory:
+首先将此主题下载到你的 `themes` 目录：
 
 ```bash
 cd themes
 git clone https://github.com/getzola/after-dark.git
 ```
 
-and then enable it in your `config.toml`:
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "after-dark"
 ```
 
-This theme requires your index section (`content/_index.md`) to be paginated to work:
+此主题需要你的索引部分（`content/_index.md`）分页才能工作：
 
 ```toml
 paginate_by = 5
 ```
 
-The posts should therefore be in directly under the `content` folder.
+因此，文章应直接位于 `content` 文件夹下。
 
-The theme requires tags and categories taxonomies to be enabled in your `config.toml`:
+主题需要在 `config.toml` 中启用 tags 和 categories 分类法：
 
 ```toml
 taxonomies = [
-    # You can enable/disable RSS
+    # 你可以启用/禁用 RSS
     {name = "categories", feed = true},
     {name = "tags", feed = true},
 ]
 ```
 
-If you want to paginate taxonomies pages, you will need to overwrite the templates
-as it only works for non-paginated taxonomies by default.
+如果你想对分类法页面进行分页，你需要覆盖模板，因为默认情况下它只适用于非分页的分类法。
 
-## Options
+## 选项
 
-### Top-menu
+### 顶部菜单
 
-Set a field in `extra` with a key of `after_dark_menu`:
+在 `extra` 中设置一个键为 `after_dark_menu` 的字段：
 
 ```toml
+[extra]
 after_dark_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/categories", name = "Categories"},
@@ -95,18 +95,15 @@ after_dark_menu = [
 ]
 ```
 
-If you put `$BASE_URL` in a url, it will automatically be replaced by the actual
-site URL.
+如果你在 url 中放入 `$BASE_URL`，它会自动被替换为实际的站点 URL。
 
-### Title
+### 标题
 
-The site title is shown on the homepage. As it might be different from the `<title>`
-element that the `title` field in the config represents, you can set the `after_dark_title`
-instead.
+站点标题显示在首页上。因为它可能与配置中 `title` 字段代表的 `<title>` 元素不同，你可以设置 `after_dark_title` 来代替。
 
-### Author
+### 作者
 
-You can set this on a per page basis or in the config file.
+你可以在每页基础上或在配置文件中设置此项。
 
 `config.toml`:
 
@@ -115,7 +112,7 @@ You can set this on a per page basis or in the config file.
 author = "John Smith"
 ```
 
-In a page (wrap this in +++):
+在页面中（包裹在 +++ 中）：
 
 ```toml
 title = "..."
@@ -125,40 +122,40 @@ date = 1970-01-01
 author = "John Smith"
 ```
 
-### Code Snippets
+### 代码片段
 
-Syntax Highlighting:
+语法高亮:
 
 ```toml
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customized by setting the `highlight_theme` variable to a theme supported by Zola
+# 是否进行语法高亮
+# 可以通过将 `highlight_theme` 变量设置为 Zola 支持的主题来自定义主题
 highlight_code = true
 
 highlight_theme = "one-dark"
 ```
 
-Enhanced Codeblocks (Clipboard Support and Language Tags)
+增强代码块（剪贴板支持和语言标签）
 
-To enable enhanced codeblocks, set the following in your `config.toml`:
+要启用增强代码块，请在你的 `config.toml` 中设置以下内容：
 
 ```toml
 [extra]
 codeblock = true
 ```
 
-### LaTex Support
+### LaTex 支持
 
-To enable LaTeX support with MathJax, set the following in your `config.toml`:
+要使用 MathJax 启用 LaTeX 支持，请在你的 `config.toml` 中设置以下内容：
 
 ```toml
 [extra]
 latex = true
 ```
 
-### Searchbar
+### 搜索栏
 
-To enable a searchbar at the top of the page navigation, set the following in your `config.toml`:
+要在页面导航顶部启用搜索栏，请在你的 `config.toml` 中设置以下内容：
 
 ```toml
 build_search_index = true
@@ -169,5 +166,3 @@ index_format = "elasticlunr_json"
 [extra]
 enable_search = true
 ```
-
-        

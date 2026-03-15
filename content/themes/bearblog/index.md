@@ -1,7 +1,7 @@
 
 +++
 title = "Bear"
-description = "Bear blog theme"
+description = "Bear 博客主题"
 template = "theme.html"
 date = 2026-02-24T15:58:49+01:00
 
@@ -28,59 +28,59 @@ homepage = "https://alin.ovh"
 [![Forgejo Actions Status](https://codeberg.org/alanpearce/zola-bearblog/badges/workflows/zola.yaml/badge.svg)](https://codeberg.org/alanpearce/zola-bearblog/actions)
 [![Gitlab Pipeline Status](https://gitlab.com/alanpearce/zola-bearblog/badges/main/pipeline.svg)](https://gitlab.com/alanpearce/zola-bearblog/-/commits/main)
 
-🧸 A [Zola](https://www.getzola.org/)-theme based on [Bear Blog](https://bearblog.dev).
+🧸 一个基于 [Bear Blog](https://bearblog.dev) 的 [Zola](https://www.getzola.org/) 主题。
 
-> Free, no-nonsense, super-fast blogging.
+> 免费、简洁、超快的博客。
 
-## Demo
+## 演示
 
-This theme has multiple demo sites, to provide examples of how to set up deployment.
+此主题有多个演示站点，以提供如何设置部署的示例。
 
-### Recommended
+### 推荐
 
 - [Netlify](https://zola-bearblog.netlify.app/)
 - [Grebedoc](https://alanpearce.grebedoc.dev/zola-bearblog/)
 - [Codeberg Pages](https://alanpearce.codeberg.page/zola-bearblog/)
 - [Gitlab Pages](https://alanpearce.gitlab.io/zola-bearblog)
 
-### Not recommended
+### 不推荐
 
-These providers' build environments aren't yet compatible with Zola 0.21.0.
+这些提供商的构建环境尚未与 Zola 0.21.0 兼容。
 - [Cloudflare Pages](https://zola-bearblog.pages.dev/)
 
-## Screenshot
+## 截图
 
-![Screenshot][screenshot]
+![截图][screenshot]
 
-When the user's browser is running »dark mode«, the dark color scheme will be used automatically. The default is the light/white color scheme. Check out the [`style.html`](https://codeberg.org/alanpearce/zola-bearblog/src/branch/main/templates/style.html)-file for the implementation.
+当用户的浏览器运行“暗色模式”时，将自动使用暗色配色方案。默认为亮色/白色配色方案。查看 [`style.html`](https://codeberg.org/alanpearce/zola-bearblog/src/branch/main/templates/style.html) 文件以了解实现。
 
-## Installation
+## 安装
 
-If you already have a Zola site on your machine, you can simply add this theme via
+如果你机器上已经有一个 Zola 站点，你可以简单地通过以下方式添加此主题
 
 ```
 git submodule add https://codeberg.org/alanpearce/zola-bearblog themes/zola-bearblog
 ```
 
-Then, adjust the `config.toml` as detailed below.
+然后，如下详述调整 `config.toml`。
 
-For more information, read the official [setup guide][zola-setup-guide] of Zola.
+有关更多信息，请阅读 Zola 的官方 [设置指南][zola-setup-guide]。
 
-Alternatively, you can quickly deploy a copy of the theme site to Netlify using this button:
+或者，你可以使用此按钮快速将主题站点的副本部署到 Netlify：
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://gitlab.com/alanpearce/zola-bearblog)
+[![部署到 Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://gitlab.com/alanpearce/zola-bearblog)
 
-(Note that this method makes it harder to keep up-to-date with theme updates, which might be necessary for newer versions of Zola.)
+（请注意，这种方法使得跟上主题更新变得更加困难，这对于较新版本的 Zola 可能是必要的。）
 
-## Adjust configuration / config.toml
+## 调整配置 / config.toml
 
-Please check out the included [config.toml](https://codeberg.org/alanpearce/zola-bearblog/src/branch/main/config.toml)
+请查看包含的 [config.toml](https://codeberg.org/alanpearce/zola-bearblog/src/branch/main/config.toml)
 
-## Content & structure
+## 内容与结构
 
-### Menu
+### 菜单
 
-Create an array in `extra` with a key of `main_menu`. `url` is passed to [`get_url`](https://www.getzola.org/documentation/templates/overview/#get-url)
+在 `extra` 中创建一个键为 `main_menu` 的数组。`url` 传递给 [`get_url`](https://www.getzola.org/documentation/templates/overview/#get-url)
 
 ```toml
 [[extra.main_menu]]
@@ -100,30 +100,30 @@ name = "Blog"
 url = "@/blog/_index.md"
 ```
 
-### Adding / editing content
+### 添加 / 编辑内容
 
-#### Index-Page
+#### 首页
 
-The contents of the `index`-page may be changed by editing your `content/_index.md`-file.
+可以通过编辑你的 `content/_index.md` 文件来更改 `index` 页面的内容。
 
 
-### Adding your branding / colors / css
+### 添加你的品牌 / 颜色 / css
 
-Add a `custom_head.html`-file to your `templates/`-directory. In there you may add a `<style>`-tag, *or* you may add a `<link>`-tag referencing your own `custom.css` (in case you prefer to have a separate `.css`-file). Check out the [`style.html`](https://codeberg.org/alanpearce/zola-bearblog/src/branch/main/templates/style.css.html)-file to find out which CSS-styles are applied by default.
+在你的 `templates/` 目录中添加一个 `custom_head.html` 文件。在其中你可以添加一个 `<style>` 标签，*或者*你可以添加一个引用你自己的 `custom.css` 的 `<link>` 标签（如果你更喜欢有一个单独的 `.css` 文件）。查看 [`style.html`](https://codeberg.org/alanpearce/zola-bearblog/src/branch/main/templates/style.css.html) 文件以找出默认应用的 CSS 样式。
 
-### Table of contents
+### 目录
 
-Table of contents are not rendered by default. To render them, set `extra.table_of_contents.show = true` in `config.toml`.
+目录默认不渲染。要渲染它们，请在 `config.toml` 中设置 `extra.table_of_contents.show = true`。
 
-The table of contents is rendered inside a `details` element.
-If you want the section to be collapsed on page load, set `extra.table_of_contents.visible_on_load = false`.
-This defaults to `true`.
+目录渲染在 `details` 元素内。
+如果你希望该部分在页面加载时折叠，请设置 `extra.table_of_contents.visible_on_load = false`。
+这默认为 `true`。
 
-In addition, `extra.table_of_contents.max_level` can limit the maximum level of headers to show.
-To show only `h1`s, set `max_level = 1`, to show `h1`s and `h2`s, set `max_level = 2`, and so on.
-By default, `max_level` is set to 6, so all headers on the page are shown.
+此外，`extra.table_of_contents.max_level` 可以限制显示的标题的最大级别。
+要仅显示 `h1`，设置 `max_level = 1`，要显示 `h1` 和 `h2`，设置 `max_level = 2`，依此类推。
+默认情况下，`max_level` 设置为 6，因此显示页面上的所有标题。
 
-Below is an example of how to configure the table of contents in `config.toml`.
+以下是如何在 `config.toml` 中配置目录的示例。
 
 ```toml
 [extra.table_of_contents]
@@ -132,19 +132,17 @@ max_level = 2
 visible_on_load = false
 ```
 
-It can also be toggled on page-by-page basis. Add `extra.hide_table_of_contents = true` to the page's frontmatter to hide the table of contents for that specific page.
+也可以逐页切换。在页面的 frontmatter 中添加 `extra.hide_table_of_contents = true` 以隐藏该特定页面的目录。
 
-## Issues / Feedback / Contributing
-Please use [Codeberg issues](https://codeberg.org/alanpearce/zola-bearblog/issues) and [Pull Requests](https://codeberg.org/alanpearce/zola-bearblog/pulls).
+## 问题 / 反馈 / 贡献
+请使用 [Codeberg issues](https://codeberg.org/alanpearce/zola-bearblog/issues) 和 [Pull Requests](https://codeberg.org/alanpearce/zola-bearblog/pulls)。
 
-## Special Thanks 🎁
+## 特别感谢 🎁
 
-A special thank you goes out to [Herman](https://herman.bearblog.dev), for creating the original [ʕ•ᴥ•ʔ Bear Blog](https://bearblog.dev/) and [Jan Raasch](https://www.janraasch.com) for creating the hugo port of the Bear Blog theme.
+特别感谢 [Herman](https://herman.bearblog.dev)，感谢他创建了最初的 [ʕ•ᴥ•ʔ Bear Blog](https://bearblog.dev/)，以及 [Jan Raasch](https://www.janraasch.com) 创建了 Bear Blog 主题的 hugo 移植版。
 
-## License
+## 许可证
 [MIT License](http://en.wikipedia.org/wiki/MIT_License) © [Alan Pearce](https://www.alanpearce.eu/)
 
 [zola-setup-guide]: https://www.getzola.org/documentation/getting-started/installation/
 [screenshot]: https://codeberg.org/alanpearce/zola-bearblog/raw/branch/main/screenshot.png
-
-        

@@ -1,7 +1,7 @@
 
 +++
 title = "simple-dev-blog"
-description = "A simple dev blog theme with no javascript, prerendered linked pages and SEO tags."
+description = "一个简单的开发者博客主题，无 javascript，预渲染链接页面和 SEO 标签。"
 template = "theme.html"
 date = 2023-11-07T09:25:21+10:00
 
@@ -26,25 +26,24 @@ homepage = "https://bennett.dev"
 
 # simple-dev-blog-zola-starter
 
-A simple dev-blog theme for Zola. It uses no JavaScript, prerenders links between navigation, blog posts and tags and adds common tags for SEO.
+一个适用于 Zola 的简单开发者博客主题。它不使用 JavaScript，预渲染导航、博客文章和标签之间的链接，并添加常用的 SEO 标签。
 
-You can view it live [here](https://simple-dev-blog-zola-starter.netlify.app/).
+你可以在 [这里](https://simple-dev-blog-zola-starter.netlify.app/) 查看在线演示。
 
-## How to get started
+## 如何开始
 
-To create a new Zola site, first download the CLI and install it on your system. This theme requires Zola version 0.14 or greater.
+要创建一个新的 Zola 站点，首先下载 CLI 并将其安装到你的系统上。此主题需要 Zola 0.14 或更高版本。
 
+你可以在 [Zola 网站上](https://www.getzola.org/documentation/getting-started/installation/) 找到安装说明。
 
-You can find installation instructions [on the Zola website](https://www.getzola.org/documentation/getting-started/installation/).
-
-1. After you've installed the Zola CLI, run the following command to create a new site:
+1. 安装 Zola CLI 后，运行以下命令创建一个新站点：
 
    ```sh
    zola init my_amazing_site
    cd my_amazing_site
    ```
 
-2. After you've created the site, install the "Simple Dev Blog" theme like so:
+2. 创建站点后，像这样安装 "Simple Dev Blog" 主题：
 
    ```sh
    git clone --depth=1 \
@@ -52,44 +51,42 @@ You can find installation instructions [on the Zola website](https://www.getzola
      themes/simple-dev-blog
    ```
 
-3. Now in your `config.toml` file, choose the theme by setting `theme = "simple-dev-blog"`.
+3. 现在在你的 `config.toml` 文件中，通过设置 `theme = "simple-dev-blog"` 选择主题。
 
-4. This theme uses the `tags` taxonomy, in your `config.toml` file set `taxonomies = [ { name = "tags" } ]`
+4. 此主题使用 `tags` 分类法，在你的 `config.toml` 文件中设置 `taxonomies = [ { name = "tags" } ]`
 
-5. Copy across the default content from the theme by running `cp themes/simple-dev-blog/content/* ./content -r`
+5. 通过运行 `cp themes/simple-dev-blog/content/* ./content -r` 复制主题中的默认内容
 
-6. That's it! Now build your site by running the following command, and navigate to `127.0.0.1:111`:
+6. 就是这样！现在通过运行以下命令构建你的站点，并导航到 `127.0.0.1:111`:
 
    ```sh
    zola serve
    ```
 
-You should now have a speedy simple dev blog up and running, have fun!
+你应该现在有一个快速简单的开发者博客在运行了，玩得开心！
 
-## Customisation
+## 自定义
 
-Look at the `config.toml` and `theme.toml` in this repo for an idea, here's a list of all the options:
+查看此仓库中的 `config.toml` 和 `theme.toml` 以获取思路，以下是所有选项的列表：
 
-### Global
+### 全局
 
-The following options should be under the `[extra]` in `config.toml`
+以下选项应位于 `config.toml` 的 `[extra]` 下
 
-- `accent_light` - a lighter shade of your site's accent color
-- `accent` - your site's accent color
-- `blog_path` - the path to your blog (defaults to `blog`)
-- `default_og_image` - the path default og:image for your page
-- `footer_about` - the content for your footer in markdown
-- `icon` - the path to the icon for your site in the content folder
-  - E.g to add the file `icon.png` you should put it in `content/icon.png`
-- `nav` - see `theme.toml`, the navigation links for your site
-- `not_found_message` - the content for your 404 page in markdown
-- `profile_large` - the path to a larger vertical version of your profile picture in the content folder
-- `profile_small` - the path to a small version of your profile picture in the content folder
+- `accent_light` - 你的站点强调色的较浅阴影
+- `accent` - 你的站点强调色
+- `blog_path` - 你的博客路径（默认为 `blog`）
+- `default_og_image` - 页面的默认 og:image 路径
+- `footer_about` - 页脚的 markdown 内容
+- `icon` - 内容文件夹中站点图标的路径
+  - 例如，要添加文件 `icon.png`，你应该将其放在 `content/icon.png`
+- `nav` - 见 `theme.toml`，你的站点的导航链接
+- `not_found_message` - 404 页面的 markdown 内容
+- `profile_large` - 内容文件夹中个人资料图片的大型垂直版本的路径
+- `profile_small` - 内容文件夹中个人资料图片的小型版本的路径
 
-### Page
+### 页面
 
-The following options should be under the `[extra]` section of each page
+以下选项应位于每个页面的 `[extra]` 部分下
 
-- `thumbnail` - the path to your og:image for that page
-
-        
+- `thumbnail` - 该页面的 og:image 路径

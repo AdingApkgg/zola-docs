@@ -1,7 +1,7 @@
 
 +++
 title = "kangae"
-description = "a lightweight microblog theme for zola"
+description = "一个用于 zola 的轻量级微博主题"
 template = "theme.html"
 date = 2023-06-20T18:32:08-07:00
 
@@ -24,34 +24,33 @@ homepage = "https://microblog.ayushnix.com"
 
 # kangae (考え, idea or thought)
 
-[kangae][1] is a lightweight microblog theme for [zola][2].
+[kangae][1] 是一个用于 [zola][2] 的轻量级微博主题。
 
 <details>
-  <summary>kangae screenshots on desktop and mobile</summary>
+  <summary>kangae 桌面端和移动端截图</summary>
 
-  ![kangae screenshot light mode on desktop](static/images/kangae-desktop-light.webp)
-  ![kangae screenshot dark mode on desktop](static/images/kangae-desktop-dark.webp)
-  ![kangae screenshot light mode on mobile](static/images/kangae-mobile-light.webp)
-  ![kangae screenshot dark mode on mobile](static/images/kangae-mobile-dark.webp)
+  ![kangae 桌面端亮色模式截图](static/images/kangae-desktop-light.webp)
+  ![kangae 桌面端暗色模式截图](static/images/kangae-desktop-dark.webp)
+  ![kangae 移动端亮色模式截图](static/images/kangae-mobile-light.webp)
+  ![kangae 移动端暗色模式截图](static/images/kangae-mobile-dark.webp)
 </details>
 
-I've created kangae from scratch and it is not based on any other theme. However, I was inspired to
-create kangae after I came across [Wolfgang Müller's microblog][3]. Thanks Wolf!
+我从零开始创建了 kangae，它不基于任何其他主题。然而，我是在看到 [Wolfgang Müller 的微博][3] 后受到启发创建 kangae 的。谢谢 Wolf！
 
-kangae is licensed under the [NCSA license][5], which is quite similar to the BSD-3-Clause license.
-Unlike BSD-3-Clause, NCSA also covers documentation of a project.
+kangae 根据 [NCSA 许可证][5] 授权，这与 BSD-3-Clause 许可证非常相似。
+与 BSD-3-Clause 不同，NCSA 还涵盖项目的文档。
 
-# Showcase
+# 展示
 
-Here's a list of websites using the kangae theme
+以下是使用 kangae 主题的网站列表
 
 - [ayushnix microblog][4]
 
-If you want to mention your website in this section, please raise a pull request.
+如果你想在本节中提及你的网站，请提出拉取请求。
 
-# Installation
+# 安装
 
-Before using this theme, [install zola][6]. After you've installed zola,
+在使用此主题之前，请 [安装 zola][6]。安装 zola 后，
 
 ```
 $ zola init microblog
@@ -62,78 +61,70 @@ $ zola init microblog
 $ cd microblog/
 ```
 
-kangae doesn't use Sass or syntax highlighting so if you don't want to use custom Sass code or
-enable syntax highlighting, answer the 2nd and 3rd question with a 'no'. kangae also doesn't use any
-JavaScript library to search content. If you don't intend to install a JavaScript library to enable
-search on your microblog, answer 'no' to the last question as well.
+kangae 不使用 Sass 或语法高亮，所以如果你不想使用自定义 Sass 代码或启用语法高亮，请在第 2 和第 3 个问题回答 'no'。kangae 也不使用任何 JavaScript 库来搜索内容。如果你不打算安装 JavaScript 库以在你的微博上启用搜索，请在最后一个问题也回答 'no'。
 
-If you intend to publish your microblog on a forge like GitHub, initialize an empty git repository
-using
+如果你打算在 GitHub 等 forge 上发布你的微博，请使用以下命令初始化一个空的 git 仓库
 
 ```
 $ git init
 $ git commit --allow-empty -m 'initial empty root commit'
 ```
 
-If you don't want to make an empty commit, add and commit a README or a LICENSE file instead.
+如果你不想进行空提交，请添加并提交 README 或 LICENSE 文件。
 
-At this point, you can install kangae using one of the following methods
+此时，你可以使用以下方法之一安装 kangae
 
-## using `git subtree`
+## 使用 `git subtree`
 
 ```
 $ git subtree add -P themes/kangae/ --squash https://github.com/ayushnix/kangae.git master
 ```
 
-## using `git submodule`
+## 使用 `git submodule`
 
 ```
 $ git submodule add https://github.com/ayushnix/kangae.git themes/kangae
 ```
 
-## download kangae in themes directory
+## 在 themes 目录下载 kangae
 
-If you want to keep things simple and figure out version control later, you can
+如果你想保持简单并在以后弄清楚版本控制，你可以
 
 ```
 $ git clone https://github.com/ayushnix/kangae.git themes/kangae
 ```
 
-# Configuration
+# 配置
 
-To begin using kangae after installing it,
+安装后开始使用 kangae，
 
 ```
 $ cp themes/kangae/config.toml ./
 $ sed -i 's;# theme =\(.*\);theme =\1;' config.toml
 ```
 
-The [`config.toml`][7] file of kangae has been documented carefully using TOML comments. If you have
-any questions about configuring kangae which haven't been answered in the `config.toml` file itself,
-please [raise an issue][8].
+kangae 的 [`config.toml`][7] 文件已使用 TOML 注释仔细记录。如果你有任何关于配置 kangae 的问题，而 `config.toml` 文件本身没有回答，请 [提出 issue][8]。
 
-## Shortcodes
+## 短代码
 
-kangae provides several shortcodes that can be used to add content in an accessible manner
+kangae 提供了几个短代码，可用于以可访问的方式添加内容
 
 ### kaomoji `(・_・)ノ`
 
-If you want to use kaomoji in your posts, you can use insert them in an accessbile manner using
+如果你想在你的帖子中使用颜文字，你可以使用以下方式以可访问的方式插入它们
 
 ```
 I don't know. {{/* kaomoji(label="shrug kaomoji", text="╮( ˘_˘ )╭") */}} I've never thought about it.
 ```
 
-Providing a value for the `label` is optional but highly recommended. A short text should be
-mentioned that explains what the kaomoji means to convey. The value of `text` should be the actual
-emoticon itself.
+提供 `label` 的值是可选的，但强烈建议。应该提到一个简短的文本，解释颜文字想要传达的意思。`text` 的值应该是实际的表情符号本身。
 
-This shortcode can also be used for any other ASCII emoticon that can fit in an inline paragraph.
-This includes western emoticons such as `;)` and combination emoticons such as `<(^_^<)`.
+此短代码也可用于任何其他可以放入内联段落的 ASCII 表情符号。
+这包括西方表情符号如 `;)` 和组合表情符号如 `<(^_^<)`。
 
-### Quotes
+### 引用
 
-You can add quotes in your microblog posts using
+你可以在微博帖子中添加引用，使用
 
 ```
 {%/* quote(author="Nara Shikamaru") */%}
@@ -141,10 +132,9 @@ You would think just this once, when it was life or death, I could pull through.
 {%/* end */%}
 ```
 
-This is the most basic form of improvement in writing quotes over simply using `>` in markdown.
+这是相对于在 markdown 中简单使用 `>` 编写引用的最基本改进形式。
 
-If you want to mention the name of the source from where the quote has been taken, such as the name
-of the book or a movie, you can use
+如果你想提及引用来源的名称，例如书名或电影名，你可以使用
 
 ```
 {%/* quote(citation="Mass Effect 3", author="Javik") */%}
@@ -152,8 +142,7 @@ Stand in the ashes of a trillion dead souls, and ask the ghosts if honor matters
 {%/* end */%}
 ```
 
-A `citeurl` can also be given as an argument to this shortcode to provide the actual URL from where
-the source is borrowed.
+也可以为此短代码提供 `citeurl` 作为参数，以提供借用来源的实际 URL。
 
 ```
 {%/* quote(author="Edward Snowden", citeurl="https://old.reddit.com/r/IAmA/comments/36ru89/just_days_left_to_kill_mass_surveillance_under/crglgh2/") */%}
@@ -161,44 +150,42 @@ Arguing that you don't care about the right to privacy because you have nothing 
 {%/* end */%}
 ```
 
-A live preview of these how these shortcodes look like can be found on [this blog post][14].
+可以在 [这篇博文][14] 中找到这些短代码外观的实时预览。
 
-## Optional Features
+## 可选特性
 
-kangae includes some optional features that aren't enabled by default
+kangae 包含一些默认未启用的可选特性
 
-- [style external links using a ↗ unicode symbol][11]
+- [使用 ↗ unicode 符号样式化外部链接][11]
 
-# Donate
+# 捐赠
 
-If you found kangae helpful in creating your own microblog website, please consider supporting me by
-buying me a coffee :coffee:
+如果你发现 kangae 对创建你自己的微博网站有帮助，请考虑通过给我买杯咖啡来支持我 :coffee:
 
 <a href='https://www.buymeacoffee.com/ayushnix' target='_blank' rel="noopener"><img src='https://cdn.buymeacoffee.com/buttons/default-blue.png' alt='buy ayushnix a coffee at buymeacoffee.com' border='0' height='36'></a>
 <a href='https://ko-fi.com/O5O64SQ4C' target='_blank' rel="noopener"><img src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' alt='buy ayusnix a coffee at ko-fi.com' border='0' height='36'></a>
 
-If you're in India, you can also use UPI for donations. My UPI address is `ayushnix@ybl`.
+如果你在印度，你也可以使用 UPI 进行捐赠。我的 UPI 地址是 `ayushnix@ybl`。
 
-# Notes
+# 备注
 
-Although I'm not a web developer, I am interested in learning HTML and CSS to create lightweight
-textual websites. You may be interested in reading [my log about how I learned HTML and CSS][12].
-However, that page is just an unorganized dump of my thoughts and isn't a polished blog post.
-[Seirdy's blog post on creating textual websites][13] is probably a better reference.
+虽然我不是 Web 开发人员，但我有兴趣学习 HTML 和 CSS 以创建轻量级文本网站。你可能有兴趣阅读 [关于我如何学习 HTML 和 CSS 的日志][12]。
+然而，该页面只是我思想的无组织转储，并不是一篇润色过的博文。
+[Seirdy 关于创建文本网站的博文][13] 可能是一个更好的参考。
 
-# TODO (maybe?)
+# 待办 (也许?)
 
-- (responsive) image shortcodes
-- run prettier on HTML and CSS before deployment
-- twitter and mastodon shortcodes
-- add optional support for cross posting and commenting on mastodon without using JS
-- add optional support for [giscus][9] and [loading mastodon comments][10]
-- add shortcode for asciinema
-- add shortcode for blockquote and citation
-- pagination
-- light and dark mode switch
-- content tabs
-- microdata and microformats2
+- (响应式) 图片短代码
+- 部署前在 HTML 和 CSS 上运行 prettier
+- twitter 和 mastodon 短代码
+- 添加可选支持以在不使用 JS 的情况下在 mastodon 上交叉发布和评论
+- 添加对 [giscus][9] 和 [加载 mastodon 评论][10] 的可选支持
+- 为 asciinema 添加短代码
+- 为 blockquote 和 citation 添加短代码
+- 分页
+- 亮色和暗色模式切换
+- 内容选项卡
+- 微数据和 microformats2
 
 [1]: https://kangae.ayushnix.com/
 [2]: https://www.getzola.org/
@@ -214,5 +201,3 @@ However, that page is just an unorganized dump of my thoughts and isn't a polish
 [12]: https://wiki.ayushnix.com/frontend/creating-a-website/
 [13]: https://seirdy.one/2020/11/23/website-best-practices.html
 [14]: https://kangae.ayushnix.com/being-shikamaru-102/
-
-        

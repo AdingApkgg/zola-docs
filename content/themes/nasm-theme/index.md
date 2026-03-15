@@ -1,113 +1,83 @@
 
 +++
-title = "nasm-theme"
-description = "A robust, elegant blue theme"
+title = "Nasm"
+description = "一个受 Netwide Assembler 网站启发的极简 Zola 主题"
 template = "theme.html"
-date = 2023-04-07T14:38:10-03:00
+date = 2025-09-22T20:09:00+02:00
 
 [taxonomies]
 theme-tags = []
 
 [extra]
-created = 2023-04-07T14:38:10-03:00
-updated = 2023-04-07T14:38:10-03:00
-repository = "https://github.com/lucasnasm/nasm-theme.git"
-homepage = "https://github.com/lucasnasm/nasm-theme"
-minimum_version = "0.1.0"
+created = 2025-09-22T20:09:00+02:00
+updated = 2025-09-22T20:09:00+02:00
+repository = "https://github.com/janbaudisch/zola-nasm.git"
+homepage = "https://github.com/janbaudisch/zola-nasm"
+minimum_version = "0.4.0"
 license = "MIT"
-demo = "https://lucasnasm.github.io"
+demo = "https://zola-nasm.janbaudisch.dev"
 
 [extra.author]
-name = "Francisco Lucas"
-homepage = "https://lucasnasm.github.io"
+name = "Jan Baudisch"
+homepage = "https://janbaudisch.dev"
 +++        
 
-# nasm-theme
+# Nasm
 
-## Web
-![nasm-theme web](screenshot.png)
+> 一个受 [Netwide Assembler][nasm] 网站启发的极简 Zola 主题。
 
-## Mobile
-![nasm-theme mobile](https://github.com/lucasnasm/nasm-theme/blob/master/screenshot-mobile.png?raw=true)
+![截图](screenshot.png)
 
-## Contents
+## 安装
 
-- nasm-theme
-  - Web
-  - Mobile
-  - Contents
-  - Fonts
-  - Installation
-  - Options
-    - Disqus
-    - Top-menu
-    - Title
-  - Original
-## Fonts
-Font Awesome for icons  
-Nunito Font
-## Installation
-First download this theme to your `themes` directory:
+安装此主题最简单的方法是克隆它...
 
-```bash
-$ git submodule add git@github.com:lucasnasm/nasm-theme.git themes/nasm-theme
 ```
-and then enable it in your `config.toml`:
+git clone https://github.com/janbaudisch/zola-nasm.git themes/nasm
+```
+
+... 或者将其用作子模块。
+
+```
+git submodule add https://github.com/janbaudisch/zola-nasm.git themes/nasm
+```
+
+无论哪种方式，你都必须在 `config.toml` 中启用该主题。
 
 ```toml
-theme = "nasm-theme"
+theme = "nasm"
 ```
 
-This theme requires your index section (`content/_index.md`) to be paginated to work:
+## 选项
+
+有关示例配置，请参阅 [`config.toml`][config]。
+
+### 菜单
+
+菜单显示在顶部。
 
 ```toml
-paginate_by = 5
+[[extra.menu]]
+name = "Posts"
+url = "/posts"
+
+[[extra.menu]]
+name = "Tags"
+url = "/tags"
 ```
 
-The posts should therefore be in directly under the `content` folder.
+### 日期格式
 
-The theme requires tags and categories taxonomies to be enabled in your `config.toml`:
+指定如何显示日期。格式在 [这里][date-format-docs] 描述。
+
+默认值：`%Y-%m-%d`
 
 ```toml
-taxonomies = [
-    # You can enable/disable RSS
-    {name = "categories", rss = true},
-    {name = "tags", rss = true},
-]
-```
-If you want to paginate taxonomies pages, you will need to overwrite the templates
-as it only works for non-paginated taxonomies by default.
-
-
-## Options
-### Disqus
-set a field `extra` with key of `disqus_username`:
-```toml
-disqus_username = 'username'
-```
-### Top-menu
-Set a field in `extra` with a key of `nasm-theme`:  
-Font Awesome default icons
-```toml
-nasm_menu = [
-    {url = "$BASE_URL", name = "Home", fawesome = "fas fa-home"},
-    {url = "$BASE_URL/categories", name = "Categories", fawesome = "fas fa-folder-open"},
-    {url = "$BASE_URL/tags", name = "Tags", fawesome = "fas fa-tag" },
-    {url = "$BASE_URL/about", name = "About", fawesome = "fas fa-user-alt" },
-
-]
+[extra]
+date_format = "%Y-%m-%d"
 ```
 
-If you put `$BASE_URL` in a url, it will automatically be replaced by the actual
-site URL.
-
-### Title
-The site title is shown on the homepage. As it might be different from the `<title>`
-element that the `title` field in the config represents, you can set the `nasm_theme_title`
-instead.
-
-## Original
-This template is based on the Zola template https://github.com/getzola/after-dark  
-Thanks
-
-        
+[zola]: https://www.getzola.org
+[nasm]: https://www.nasm.us
+[config]: https://github.com/janbaudisch/zola-nasm/blob/master/config.toml
+[date-format-docs]: https://docs.rs/chrono/latest/chrono/format/strftime/index.html

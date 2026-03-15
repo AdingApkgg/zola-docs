@@ -1,7 +1,7 @@
 
 +++
 title = "particle"
-description = "Particle theme for Zola"
+description = "Zola 的 Particle 主题"
 template = "theme.html"
 date = 2023-05-11T00:52:07+02:00
 
@@ -22,38 +22,38 @@ name = "Silvano Sallese"
 homepage = "https://svavs.github.io/"
 +++        
 
-# Port for Zola of the Particle Jekyll theme
+# Particle Jekyll 主题的 Zola 移植版
 
 ![](./screenshot.jpg)
 
-This is a simple and minimalist template for Zola designed for developers that want to show of their portfolio.
+这是一个简单而极简的 Zola 模板，专为想要展示其作品集的开发者设计。
 
-The Theme features:
+主题特性：
 
 - Gulp
 - SASS
 - Sweet Scroll
 - Particle.js
 - BrowserSync
-- Font Awesome and Devicon icons
+- Font Awesome 和 Devicon 图标
 - Google Analytics
-- Info Customization
+- 信息自定义
 
-## Basic Setup
+## 基本设置
 
-1. [Install Zola](https://getzola.com)
-2. Clone the particle theme: `git clone https://github.com/svavs/particle-zola.git`
-3. Edit `config.toml` to personalize your site.
+1. [安装 Zola](https://getzola.com)
+2. 克隆 particle 主题：`git clone https://github.com/svavs/particle-zola.git`
+3. 编辑 `config.toml` 以个性化你的站点。
 
-## Site and User Settings
+## 站点和用户设置
 
-You have to fill some informations on the `[extra]` section of the `config.toml` to customize your site.
+你必须在 `config.toml` 的 `[extra]` 部分填写一些信息来自定义你的站点。
 
 ```
-# Site settings
+# 站点设置
 description = "A blog about lorem ipsum dolor sit amet"
 
-# User settings
+# 用户设置
 username = "Lorem Ipsum"
 user_description = "Anon Developer at Lorem Ipsum Dolor"
 user_title = "Anon Developer"
@@ -63,29 +63,27 @@ github_username = "lorem_ipsum"
 gplus_username = "lorem_ipsum"
 ```
 
-## Color and Particle Customization
-- Color Customization
-  - Edit the sass variables (`_vars.scss`)
-- Particle Customization
-  - Edit the json data in particle function in app.js
-  - Refer to [Particle.js](https://github.com/VincentGarreau/particles.js/) for help
+## 颜色和粒子自定义
+- 颜色自定义
+  - 编辑 sass 变量 (`_vars.scss`)
+- 粒子自定义
+  - 编辑 app.js 中的 particle 函数中的 json 数据
+  - 参考 [Particle.js](https://github.com/VincentGarreau/particles.js/) 获取帮助
 
-To customize the project lists and the about sections, you need to edit the `templates/content.html` template file.
-In future versions will be provided a simpler way.
+要自定义项目列表和关于部分，你需要编辑 `templates/content.html` 模板文件。
+在未来的版本中将提供更简单的方法。
 
-## Questions
+## 问题
 
-Having any issues file a [GitHub Issue](https://github.com/svavs/particle-zola/issues/new).
+有任何问题，请提交 [GitHub Issue](https://github.com/svavs/particle-zola/issues/new)。
 
-## License
+## 许可证
 
-This theme is free and open source software, distributed under the The MIT License. So feel free to use this Jekyll theme anyway you want.
+此主题是免费和开源软件，根据 MIT 许可证分发。所以随意以任何你想要的方式使用此 Jekyll 主题。
 
-## Credits
+## 致谢
 
-This theme was partially designed with the inspiration from these fine folks
+此主题的部分设计灵感来自这些优秀的人
 - [Nathan Randecker](https://github.com/nrandecker/particle)
 - [Willian Justen](https://github.com/willianjusten/will-jekyll-template)
 - [Vincent Garreau](https://github.com/VincentGarreau/particles.js/)
-
-        

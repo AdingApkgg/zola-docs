@@ -27,15 +27,15 @@ homepage = "https://github.com/aaranxu"
 AdiDoks is a modern documentation theme, which is a port of the Hugo
 theme [Doks](https://github.com/h-enk/doks) for Zola.
 
-## Demo
+## 演示
 
-[Live Preview](https://adidoks.netlify.app/).
+[在线预览](https://adidoks.netlify.app/).
 
 ## Requirements
 
 Before using the theme, you need to install the [Zola](https://www.getzola.org/documentation/getting-started/installation/) ≥ 0.15.0.
 
-## Quick Start
+## 快速开始
 
 ```bash
 git clone https://github.com/aaranxu/adidoks.git
@@ -46,7 +46,7 @@ zola serve
 
 Read more from [the document of the AdiDoks](https://adidoks.org/docs/getting-started/introduction/).
 
-## Installation
+## 安装
 
 Just earlier we showed you how to run the theme directly. Now we start to
 install the theme in an existing site step by step.
@@ -139,7 +139,7 @@ build_search_index = true
 
 #### Configuration options under the `extra`
 
-The following options should be under the `[extra]` in `config.toml`
+The following options should be under the `[额外配置]` in `config.toml`
 
 - `language_code` - set HTML file language (default to `en-US`)
 - `theme_color` - your site's HTML color (default to `#fff`)
@@ -166,7 +166,7 @@ All pages are extend to the `base.html`, and you can customize them as need.
 
 Go to the *content/_index.md* file to add your own homepage content.
 
-- `[extra]` - the main content of the homepage
+- `[额外配置]` - the main content of the homepage
 - `[[extra.ist]]` - the lists' content of the homepage
 
 #### Sections
@@ -190,12 +190,12 @@ possible someone has already reported the same problem.
 
 If your problem or idea is not addressed yet, [open a new issue](https://github.com/aaranxu/adidoks/issues/new).
 
-## Contributing
+## 贡献
 
 We'd love your help! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) to learn
 about the kinds of contributions we're looking for.
 
-## License
+## 许可证
 
 **AdiDoks** is distributed under the terms of the
 [MIT license](https://github.com/aaranxu/adidoks/blob/main/LICENSE).

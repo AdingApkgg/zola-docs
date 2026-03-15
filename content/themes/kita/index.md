@@ -1,7 +1,7 @@
 
 +++
 title = "Kita"
-description = "Kita is a clean, elegant and simple blog theme for Zola."
+description = "Kita 是一个干净、优雅且简单的 Zola 博客主题。"
 template = "theme.html"
 date = 2025-10-02T20:07:02+08:00
 
@@ -24,74 +24,72 @@ homepage = "https://st1020.com"
 
 # Kita
 
-Kita is a clean, elegant and simple blog theme for Zola.
+Kita 是一个干净、优雅且简单的 Zola 博客主题。
 
-This theme is based on Hugo theme [hugo-paper](https://github.com/nanxiaobei/hugo-paper) with some features added.
+此主题基于 Hugo 主题 [hugo-paper](https://github.com/nanxiaobei/hugo-paper)，并添加了一些功能。
 
-[Demo](https://kita-zola.pages.dev)
+[演示](https://kita-zola.pages.dev)
 
-![Screenshot](https://raw.githubusercontent.com/st1020/kita/main/screenshot.png)
+![截图](https://raw.githubusercontent.com/st1020/kita/main/screenshot.png)
 
-## Features
+## 特性
 
-- Easy to use and modify
-- No preset limits (This theme does not limit your content directory structure, taxonomy names, etc. It's applicable to all zola sites.)
-- Inject support
-- Dark mode
-- Responsive design
-- Social icons
-- Taxonomies support
-- Projects page
-- Archive page
-- Table of content & Floating side table of content
-- Admonition shortcode
-- SEO friendly
-- Comments using [Giscus](https://giscus.app/)
-- Mathematical notations using [KaTeX](https://katex.org/)
-- Diagrams and charts using [Mermaid](https://mermaid.js.org/)
+- 易于使用和修改
+- 无预设限制（此主题不限制你的内容目录结构、分类法名称等。它适用于所有 zola 站点。）
+- 注入支持
+- 暗色模式
+- 响应式设计
+- 社交图标
+- 分类法支持
+- 项目页面
+- 归档页面
+- 目录和浮动侧边目录
+- Admonition 短代码
+- SEO 友好
+- 使用 [Giscus](https://giscus.app/) 评论
+- 使用 [KaTeX](https://katex.org/) 进行数学符号表示
+- 使用 [Mermaid](https://mermaid.js.org/) 绘制图表
 
-## Installation
+## 安装
 
-The easiest way to install this theme is to clone this repository in the themes directory:
+安装此主题最简单的方法是将此仓库克隆到 themes 目录：
 
 ```sh
 git clone https://github.com/st1020/kita.git themes/kita
 ```
 
-Or to use it as a submodule:
+或者作为子模块使用：
 
 ```sh
 git submodule add https://github.com/st1020/kita.git themes/kita
 ```
 
-Then set `kita` as your theme in `config.toml`.
+然后在 `config.toml` 中将 `kita` 设置为你的主题。
 
 ```toml
 theme = "kita"
 ```
 
-## Configuration
+## 配置
 
-See the `extra` section in [config.toml](https://github.com/st1020/kita/blob/main/config.toml) as a example.
+请参阅 [config.toml](https://github.com/st1020/kita/blob/main/config.toml) 中的 `extra` 部分作为示例。
 
-## Inject support
+## 注入支持
 
-You can easily use inject to add new features to your side without modifying the theme itself.
+你可以轻松使用注入在你的站点添加新功能，而无需修改主题本身。
 
-To use inject, you need to add some HTML files to the `templates/injects` directory.
+要使用注入，你需要将一些 HTML 文件添加到 `templates/injects` 目录。
 
-The available inject points are: `head`, `header_nav`, `body_start`, `body_end`, `page_start`, `page_end`, `footer`, `page_info`.
+可用的注入点有：`head`, `header_nav`, `body_start`, `body_end`, `page_start`, `page_end`, `footer`, `page_info`。
 
-For example, to load a custom script, you can add a `templates/injects/head.html` file:
+例如，要加载自定义脚本，你可以添加一个 `templates/injects/head.html` 文件：
 
 ```html
 <script src="js-file-path-or-cdn-url.js"></script>
 ```
 
-## License
+## 许可证
 
 [MIT License](https://github.com/st1020/kita/blob/main/LICENSE)
 
 Copyright (c) 2023-present, st1020
-
-        

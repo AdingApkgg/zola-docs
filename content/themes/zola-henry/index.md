@@ -1,7 +1,7 @@
 
 +++
 title = "henry"
-description = "A timeless blog theme"
+description = "一个永恒的博客主题"
 template = "theme.html"
 date = 2023-08-15T16:34:12+03:00
 
@@ -24,36 +24,36 @@ homepage = ""
 
 # henry
 
-Henry is a single-column [Zola](https://github.com/getzola/zola) theme based on the original Jekyll styles.
+Henry 是一个基于原始 Jekyll 样式的单栏 [Zola](https://github.com/getzola/zola) 主题。
 
-Demo -> [https://sirodoht.github.io/zola-henry/](https://sirodoht.github.io/zola-henry/)
+演示 -> [https://sirodoht.github.io/zola-henry/](https://sirodoht.github.io/zola-henry/)
 
-![screenshot for home page](screenshot.png)
+![主页截图](screenshot.png)
 
-![screenshot for posts](screenshot-post.png)
+![文章截图](screenshot-post.png)
 
-![screenshot for any other page](screenshot-page.png)
+![其他页面截图](screenshot-page.png)
 
-## Installation
+## 安装
 
-First download this theme to your `themes` directory:
+首先将此主题下载到你的 `themes` 目录：
 
 ```sh
 $ cd themes
 $ git clone https://github.com/sirodoht/zola-henry.git henry
 ```
 
-and then enable it in your `config.toml`:
+然后在你的 `config.toml` 中启用它：
 
 ```toml
 theme = "henry"
 ```
 
-## Options
+## 选项
 
-### Nav links
+### 导航链接
 
-Set a field in `extra` with a key of `henry_links`:
+在 `extra` 中设置一个键为 `henry_links` 的字段：
 
 ```toml
 [extra]
@@ -63,28 +63,26 @@ henry_links = [
 ]
 ```
 
-Each link needs to have a `url` and a `name`.
+每个链接都需要有一个 `url` 和一个 `name`。
 
-### Footer GitHub icon link
+### 页脚 GitHub 图标链接
 
-By default Henry ships with GitHub icon link in the right side of the footer. You can change its link href in your `config.toml`.
+默认情况下，Henry 在页脚右侧提供 GitHub 图标链接。你可以在 `config.toml` 中更改其链接 href。
 
 ```toml
 [extra]
 henry_github = "https://github.com/sirodoht/zola-henry"
 ```
 
-### Footer Twitter icon link
+### 页脚 Twitter 图标链接
 
-Twitter is too mainstream and a bit lame, but 100% of our users have requested, so we offer it.
+Twitter 太主流了，有点逊，但 100% 的用户都要求，所以我们提供了它。
 
 ```toml
 [extra]
 henry_twitter = "https://twitter.com/benbalter"
 ```
 
-## License
+## 许可证
 
 MIT
-
-        

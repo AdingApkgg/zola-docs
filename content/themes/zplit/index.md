@@ -1,7 +1,7 @@
 
 +++
 title = "Zplit"
-description = "A single page theme for a professional online presence."
+description = "一个用于专业在线展示的单页主题。"
 template = "theme.html"
 date = 2024-11-26T15:44:23+01:00
 
@@ -24,40 +24,40 @@ homepage = "https://github.com/gicrisf"
 
 # Zplit
 
-Zplit is a single-page, centrally-divided layout designed for a professional online presence. It features a large image or video on the left, accompanied by content on the right. Zplit is a port of [Split](//onepagelove.com/split) by [One Page Love](//onepagelove.com) for [Zola](https://www.getzola.org/).
+Zplit 是一个单页、中央分隔的布局，专为专业在线展示而设计。它的左侧是一张大图或视频，右侧是内容。Zplit 是 [One Page Love](//onepagelove.com) 的 [Split](//onepagelove.com/split) 的 [Zola](https://www.getzola.org/) 移植版。
 
-![Zola Zplit Theme screenshot](screenshot.png)
+![Zola Zplit 主题截图](screenshot.png)
 
-**DEMO**: [https://zplit.netlify.app/](https://zplit.netlify.app/)
+**演示**: [https://zplit.netlify.app/](https://zplit.netlify.app/)
 
-## Installation
+## 安装
 
-Download the theme to your `themes` directory:
+下载此主题到你的 `themes` 目录：
 
 ```bash
 $ cd themes
 $ git clone https://github.com/gicrisf/zplit.git
 ```
 
-Then, enable the theme editing your `config.toml`:
+然后，编辑你的 `config.toml` 启用主题：
 
 ```toml
 theme = "zplit"
 ```
 
-## Getting started
+## 入门
 
-The most important file of the theme is located in the root directory and is named =config.toml=. Edit this file to customize your preferences. Look for sections like `[extra]` to set variables like `author`, or `[extra.content]` to modify intro_tagline.
+主题最重要的文件位于根目录，名为 =config.toml=。编辑此文件以自定义你的偏好。查找 `[extra]` 等部分来设置 `author` 等变量，或 `[extra.content]` 来修改 intro_tagline。
 
-If something is unclear or not obvious, you might have missed [the "configuration" section of the Zola official documentation](https://www.getzola.org/documentation/getting-started/configuration/). Even if you're new to static site generators, don't worry and take some time to go through the documentation, as it covers fundamental concepts.
+如果不清楚或不明显，你可能错过了 [Zola 官方文档的“配置”部分](https://www.getzola.org/documentation/getting-started/configuration/)。即使你是静态站点生成器的新手，也不要担心，花点时间阅读文档，因为它涵盖了基本概念。
 
-Here after, we will discuss two specific sections in more detail, because those are unique for the Zplit theme:
-- Background image
-- Lists (of links)
+之后，我们将更详细地讨论两个特定部分，因为这些对于 Zplit 主题是独特的：
+- 背景图片
+- 列表（链接）
 
-### Background image
+### 背景图片
 
-Edit the `[extra.visual]` section to set your background image of choice.
+编辑 `[extra.visual]` 部分以设置你选择的背景图片。
 
 ```toml
 [extra.visual]
@@ -65,7 +65,7 @@ Edit the `[extra.visual]` section to set your background image of choice.
 background = "<your-image-file-path-goes-here>"
 ```
 
-You can find this example already written as the default:
+你可以找到这个已经作为默认写入的示例：
 
 ```toml
 [extra.visual]
@@ -74,16 +74,16 @@ background = "images/background.jpg"
 position = "center center"
 ```
 
-As you can see, you can edit the relative position of the image, which is centered by default.
+如你所见，你可以编辑图片的相对位置，默认为居中。
 
-### Lists
+### 列表
 
-You can set up to 3 lists of links in the `[extra.lists]` section of the `config.toml` file: 
+你可以在 `config.toml` 文件的 `[extra.lists]` 部分设置最多 3 个链接列表：
 - connect
 - social
 - network
 
-Manipulating them is very easy: just add/remove elements in the TOML list, as showed in this example (also already present in the default file):
+操作它们非常容易：只需在 TOML 列表中添加/删除元素，如此示例所示（也已存在于默认文件中）：
 
 ``` toml
 social = [
@@ -93,29 +93,29 @@ social = [
 ]
 ```
 
-Do you want another item? Just throw it up to the pile. You have no limits.
-Remember to set the `url` field with the link itself you want to direct your user at and a `text` to show in the page for the corrisponding URL.
+你想要另一个项目吗？只需把它扔到堆里。你没有限制。
+记住设置 `url` 字段为你想要引导用户的链接本身，以及 `text` 以在页面中显示对应 URL 的文本。
 
-## Posts
+## 文章
 
-To add new posts, simply place markdown files in the `content` directory. In order to sort the post index by date, you need to enable the `sort_by` option in the `content/_index.md` file within the index section.
+要添加新文章，只需将 markdown 文件放在 `content` 目录中。为了按日期排序文章索引，你需要在索引部分内的 `content/_index.md` 文件中启用 `sort_by` 选项。
 
 ```toml
 sort_by = "date"
 ```
 
 
-This theme was not specifically designed for blogging, but rather as a landing page for professionals. However, if you wish to blog using this theme, you certainly can. To do so, simply add a new section in the content directory and include it in the main menu through the config file. This will make it readily accessible to the user.
+此主题并非专门为博客设计，而是作为专业人士的落地页。但是，如果你想使用此主题写博客，你当然可以。为此，只需在 content 目录中添加一个新版块，并通过配置文件将其包含在主菜单中。这将使其易于用户访问。
 
-The theme does not offer support for taxonomies or other advanced features. It is focused on providing simple pages. If you wish to enhance the blogging functionality, you are welcome to customize the code or submit a specific request as an issue.
+该主题不提供对分类法或其他高级功能的支持。它专注于提供简单的页面。如果你想增强博客功能，欢迎自定义代码或作为 issue 提交特定请求。
 
-## Custom CSS
+## 自定义 CSS
 
-To make custom changes to the original stylesheets, you can create a `custom.css` file in the `static` directory. In this file, you can add any modifications or additions you desire.
+要对原始样式表进行自定义更改，你可以在 `static` 目录中创建一个 `custom.css` 文件。在此文件中，你可以添加任何你想要的修改或添加。
 
-## Custom colors
+## 自定义颜色
 
-If you need to make adjustments to the colors or grid dimensions, it may be easier to modify the frontmatter of the `_01-content.scss` file directly. In this file, you will find variables conveniently located at the top:
+如果你需要调整颜色或网格尺寸，直接修改 `_01-content.scss` 文件的 Front Matter 可能更容易。在此文件中，你会发现变量方便地位于顶部：
 
 ``` scss
 //-------------------------------------------------------------------------------
@@ -136,30 +136,28 @@ $bp-tablet        : 800px;
 $bp-mobile        : 500px;
 ```
 
-## Features
+## 特性
 
-- [x] Lightweight and minimal
-- [x] Responsive (mobile support)
-- [x] Social links
-- [x] Deploy via Netlify (config already included)
-- [x] Easily extendable menus
-- [x] De-googled (local assets are faster and more secure)
-- [x] Netlify support
-- [x] Custom CSS
-- [x] Custom colors
-- [x] 404 page
-- [x] Basic blogging features
-- [ ] Open Graph and Twitter Cards support
-- [ ] Multilanguage support
+- [x] 轻量级和极简
+- [x] 响应式（移动端支持）
+- [x] 社交链接
+- [x] 通过 Netlify 部署（已包含配置）
+- [x] 易于扩展的菜单
+- [x] 去 Google 化（本地资源更快更安全）
+- [x] Netlify 支持
+- [x] 自定义 CSS
+- [x] 自定义颜色
+- [x] 404 页面
+- [x] 基本博客功能
+- [ ] Open Graph 和 Twitter Cards 支持
+- [ ] 多语言支持
 
-## Support me!
+## 支持我！
 
-Do you love Zplit? Did you find it enjoyable and useful? If so, consider showing your support by making a donation. Your contribution will help fund the development of new features and improvements for this theme.
+你喜欢 Zplit 吗？你觉得它令人愉快且有用吗？如果是这样，请考虑通过捐赠来表示你的支持。你的贡献将有助于资助此主题的新功能和改进的开发。
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V425BFU)
 
-## License
+## 许可证
 
-The original template is released under the [Creative Commons Attribution 3.0 License](//github.com/escalate/hugo-split-theme/blob/master/LICENSE.md). Please keep the original attribution link when using for your own project. If you'd like to use the template without the attribution, you can check out the license option via the template [author's website](//onepagelove.com/split).
-
-        
+原始模板根据 [知识共享署名 3.0 许可证](//github.com/escalate/hugo-split-theme/blob/master/LICENSE.md) 发布。在用于你自己的项目时，请保留原始署名链接。如果你想在不署名的情况下使用模板，你可以通过模板 [作者的网站](//onepagelove.com/split) 查看许可证选项。

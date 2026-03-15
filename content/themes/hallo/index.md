@@ -1,7 +1,7 @@
 
 +++
 title = "hallo"
-description = "A single-page theme to introduce yourself."
+description = "一个介绍你自己的单页主题。"
 template = "theme.html"
 date = 2025-09-22T20:09:00+02:00
 
@@ -24,69 +24,69 @@ homepage = "https://janbaudisch.dev"
 
 # Hallo
 
-> A single-page theme to introduce yourself.
+> 一个介绍你自己的单页主题。
 >
-> [Zola][zola] port of [hallo-hugo][hallo-hugo].
+> [hallo-hugo][hallo-hugo] 的 [Zola][zola] 移植版。
 
-![Screenshot](screenshot.png)
+![截图](screenshot.png)
 
-## Original
+## 原作
 
-This is a port of the original [hallo-hugo][hallo-hugo] theme for Hugo ([License][upstream-license]).
+这是 Hugo 主题 [hallo-hugo][hallo-hugo] ([许可证][upstream-license]) 的移植版。
 
-## Installation
+## 安装
 
-The easiest way to install this theme is to either clone it ...
+安装此主题最简单的方法是克隆它...
 
 ```
 git clone https://github.com/janbaudisch/zola-hallo.git themes/hallo
 ```
 
-... or to use it as a submodule.
+... 或者将其用作子模块。
 
 ```
 git submodule add https://github.com/janbaudisch/zola-hallo.git themes/hallo
 ```
 
-Either way, you will have to enable the theme in your `config.toml`.
+无论哪种方式，你都必须在 `config.toml` 中启用该主题。
 
 ```toml
 theme = "hallo"
 ```
 
-### Introduction
+### 介绍
 
-The introduction text is taken from `content/_index.md`.
+介绍文本取自 `content/_index.md`。
 
-#### Template
+#### 模板
 
-Alternatively, it can be included from `templates/partials/introduction.html` with the following configuration option:
+或者，可以通过以下配置选项从 `templates/partials/introduction.html` 包含它：
 
 ```toml
 [extra]
 hallo_use_introduction_template = true
 ```
 
-## Options
+## 选项
 
-See [`config.toml`][config] for an example configuration.
+有关示例配置，请参阅 [`config.toml`][config]。
 
-### Author
+### 作者
 
-The given name will be used for the 'I am ...' text.
+给定的名称将用于 'I am ...' 文本。
 
-Default: `Hallo`
+默认值：`Hallo`
 
 ```toml
 [extra.author]
 name = "Hallo"
 ```
 
-### Greeting
+### 问候语
 
-The string will be used as a greeting.
+该字符串将用作问候语。
 
-Default: `Hello!`
+默认值：`Hello!`
 
 ```toml
 [extra]
@@ -95,18 +95,18 @@ greeting = "Hello!"
 
 ### `iam`
 
-This variable defines the `I am` text, which you may want to swap out for another language.
+此变量定义 `I am` 文本，你可能想将其换成另一种语言。
 
-Default: `I am`
+默认值：`I am`
 
 ```toml
 [extra]
 iam = "I am"
 ```
 
-### Links
+### 链接
 
-Links show up below the introduction. They are styled with [Font Awesome][fontawesome], you may optionally choose the iconset (default is [brands][fontawesome-brands]).
+链接显示在介绍下方。它们使用 [Font Awesome][fontawesome] 样式化，你可以选择图标集（默认为 [brands][fontawesome-brands]）。
 
 ```toml
 [extra]
@@ -117,15 +117,15 @@ links = [
 ]
 ```
 
-### Theme
+### 主题
 
-Change the colors used.
+更改使用的颜色。
 
 ```toml
 [extra.theme]
 background = "#6FCDBD"
-foreground = "#FFF" # text and portrait border
-hover = "#333" # link hover
+foreground = "#FFF" # 文本和肖像边框
+hover = "#333" # 链接悬停
 ```
 
 [zola]: https://www.getzola.org
@@ -134,5 +134,3 @@ hover = "#333" # link hover
 [fontawesome-brands]: https://fontawesome.com/icons?d=gallery&s=brands&m=free
 [upstream-license]: https://github.com/janbaudisch/zola-hallo/blob/master/upstream/LICENSE
 [config]: https://github.com/janbaudisch/zola-hallo/blob/master/config.toml
-
-        
