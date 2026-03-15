@@ -4,7 +4,12 @@
 {% block extra_content_class %}content--reversed{% endblock extra_content_class %}
 
 {% block content %}
-{% set section = get_section(path="documentation/_index.md") %}
+{% if lang == config.default_language %}
+    {% set section_path = "documentation/_index.md" %}
+{% else %}
+    {% set section_path = "documentation/_index." ~ lang ~ ".md" %}
+{% endif %}
+{% set section = get_section(path=section_path) %}
 <div class="documentation">
     <aside class="documentation__sidebar">
         <ul>

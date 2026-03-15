@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block title %}
+{{ config.title }} | 搜索
+{% endblock title %}
+
+{% block content %}
+<div class="search-page">
+    <div class="search-header">
+        <h1>搜索文档</h1>
+    </div>
+    <div class="search-container">
+        <input id="search" type="search" placeholder="输入关键词搜索..." autocomplete="off">
+        <div class="search-results">
+            <div class="search-results__items"></div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

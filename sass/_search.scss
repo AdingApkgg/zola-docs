@@ -1,58 +1,80 @@
+.search-page {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+}
+
 .search-container {
-  display: inline-block;
   position: relative;
   width: 100%;
-  max-width: 300px;
-  margin-left: auto;
+  max-width: 600px;
+  margin: 0 auto;
 
   input {
     width: 100%;
-    padding: 0.5rem;
+    padding: 1rem;
+    font-size: 1.2rem;
     background: var(--search-bg);
     color: var(--search-text);
-    border: 1px solid var(--search-border);
+    border: 2px solid var(--search-border);
+    border-radius: 8px;
+    
+    &:focus {
+      outline: none;
+      border-color: var(--link-color);
+    }
   }
 }
 
 .search-results {
   display: none;
-  position: absolute;
-  background: var(--search-result-bg);
-  color: var(--search-result-text);
-  padding: 1rem;
-  box-shadow: 2px 2px 2px 0 var(--search-result-shadow);
-  max-height: 500px;
-  overflow: auto;
-  width: 150%;
-  right: 0;
+  margin-top: 2rem;
+  text-align: left;
+  width: 100%;
 
   &__items {
     list-style: none;
+    padding: 0;
   }
 
   li {
-    margin-top: 1rem;
-    border-bottom: 1px solid var(--search-result-border);
-    font-size: 0.9rem;
+    background: var(--search-result-bg);
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--search-result-border);
+    box-shadow: 0 2px 4px var(--search-result-shadow);
 
-    &:first-of-type {
-      margin-top: 0;
+    &:hover {
+      background-color: var(--search-result-hover);
     }
   }
 
   &__item {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 
     a {
-      font-size: 1.2rem;
-      display: inline-block;
+      font-size: 1.4rem;
+      display: block;
       margin-bottom: 0.5rem;
+      color: var(--link-color);
+      font-weight: bold;
     }
-  }
-}
+    
+    div {
+        color: var(--search-result-text);
+    }
 
-@media only screen and (max-width: 1000px) {
-  .search-container {
-    margin-left: 0;
+    em, b {
+        font-weight: bold;
+        background-color: rgba(255, 255, 0, 0.2);
+        padding: 0 2px;
+        border-radius: 2px;
+    }
   }
 }

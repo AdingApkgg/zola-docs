@@ -52,6 +52,32 @@
         </script>
         <script type="text/javascript" src="{{ get_url(path='fuse.min.js') }}" defer></script>
         <script type="text/javascript" src="{{ get_url(path='search.js') }}" defer></script>
+        <script src="{{ get_url(path='js/quicklink.umd.js') }}" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="{{ get_url(path='js/instant.page.js') }}" type="module"></script>
+        <script>
+        (function() {
+            // 仅在首页执行跳转逻辑，避免干扰深层链接访问
+            if (window.location.pathname !== '/' && window.location.pathname !== '/en/') return;
+
+            const lang = localStorage.getItem('zola_lang_pref');
+            const isEnPath = window.location.pathname.startsWith('/en/');
+            
+            if (lang) {
+                if (lang === 'en' && !isEnPath) window.location.href = '/en/';
+                else if (lang === 'zh' && isEnPath) window.location.href = '/';
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (!browserLang.startsWith('zh') && !isEnPath) {
+                    window.location.href = '/en/';
+                }
+            }
+        })();
+        </script>
         {% block head %}{% endblock head %}
     </head>
     <body>
@@ -70,81 +96,78 @@
         </a>
             <nav>
                 <ul>
-                    <li><a class="white" href="{{ get_url(path='@/documentation/_index.md') }}" class="nav-link">文档</a></li>
-                    <li><a class="white" href="{{ get_url(path='@/themes/_index.md') }}" class="nav-link">主题</a></li>
-                    <li><a class="white" href="{{ get_url(path='@/comments.md') }}" class="nav-link">留言板</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white" href="{{ get_url(path='@/documentation/_index.md', lang=lang) }}" class="nav-link">{{ trans(key="documentation", lang=lang) }}</a></li>
+                    <li><a class="white" href="{{ get_url(path='@/themes/_index.md', lang=lang) }}" class="nav-link">{{ trans(key="themes", lang=lang) }}</a></li>
+                    <li><a class="white" href="{{ get_url(path='@/comments.md', lang=lang) }}" class="nav-link">{{ trans(key="guestbook", lang=lang) }}</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">{{ trans(key="forum", lang=lang) }}</a></li>
                     <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                    <li>
+                        {% if lang == "zh" %}
+                            <a class="white" href="/en/" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')">English</a>
+                        {% else %}
+                            <a class="white" href="/" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')">中文</a>
+                        {% endif %}
+                    </li>
                 </ul>
                 <div class="search-container">
-                    <input id="search" type="search" placeholder="🔎 搜索文档">
-
-                    <div class="search-results">
-                        <div class="search-results__items"></div>
-                    </div>
-                </div>
+                    <input id="search" type="search" placeholder="{{ trans(key='search_placeholder', lang=lang) }}">
             </nav>
         </header>
 
         <div class="content {% block extra_content_class %}{% endblock extra_content_class %}">
             {% block content %}
                 <div class="hero">
-                    <h1>您的一站式静态站点引擎</h1>
+                    <h1>{{ trans(key="title", lang=lang) }}</h1>
                     <p class="hero__tagline">
-                        告别依赖。所有功能尽在一个二进制文件中。
+                        {{ trans(key="tagline", lang=lang) }}
                     </p>
-                    <a href="{{ get_url(path='@/documentation/_index.md') }}" class="button">开始使用</a>
+                    <a href="{{ get_url(path='@/documentation/_index.md', lang=lang) }}" class="button">{{ trans(key="get_started", lang=lang) }}</a>
                 </div>
 
                 <div class="inverted-colours selling-points">
                     <div class="selling-points__content container">
                         <div class="selling-point">
-                            <h2>无依赖</h2>
+                            <h2>{{ trans(key="no_deps_title", lang=lang) }}</h2>
                             <p>
-                                Zola 是一个单一的可执行文件，内置了 Sass 编译、语法高亮、目录生成
-                                以及许多传统上需要设置开发环境或添加 JavaScript 库才能实现的功能。
+                                {{ trans(key="no_deps_desc", lang=lang) }}
                             </p>
                         </div>
 
                         <div class="selling-point">
-                            <h2>极速</h2>
+                            <h2>{{ trans(key="fast_title", lang=lang) }}</h2>
                             <p>
-                                平均每个站点的生成时间不到一秒，
-                                包括 Sass 编译和语法高亮。
+                                {{ trans(key="fast_desc", lang=lang) }}
                             </p>
                         </div>
 
                         <div class="selling-point">
-                            <h2>可扩展</h2>
+                            <h2>{{ trans(key="scalable_title", lang=lang) }}</h2>
                             <p>
-                                Zola 将您的整个站点渲染为静态文件，这使得处理任何流量都变得轻而易举，
-                                而且无需担心管理服务器或数据库。
+                                {{ trans(key="scalable_desc", lang=lang) }}
                             </p>
                         </div>
 
                         <div class="selling-point">
-                            <h2>易于使用</h2>
+                            <h2>{{ trans(key="easy_title", lang=lang) }}</h2>
                             <p>
-                                从 CLI 到模板引擎，一切都设计得直观易用。
-                                别只听我说，看看
-                                <a href="{{ get_url(path='@/documentation/_index.md') }}">文档</a> 自己体验一下。
+                                {{ trans(key="easy_desc_1", lang=lang) }}
+                                <a href="{{ get_url(path='@/documentation/_index.md', lang=lang) }}">{{ trans(key="easy_desc_link", lang=lang) }}</a> {{ trans(key="easy_desc_2", lang=lang) }}
                             </p>
                         </div>
 
                         <div class="selling-point">
-                            <h2>灵活</h2>
+                            <h2>{{ trans(key="flexible_title", lang=lang) }}</h2>
                             <p>
-                                Zola 不会妨碍您，让您可以专注于内容，无论是博客、
-                                知识库、落地页还是它们的组合。
+                                {{ trans(key="flexible_desc", lang=lang) }}
                             </p>
                         </div>
 
                         <div class="selling-point">
-                            <h2>增强的 Markdown</h2>
+                            <h2>{{ trans(key="augmented_title", lang=lang) }}</h2>
                             <p>
-                                Zola 自带 <a href="{{ get_url(path='@/documentation/content/shortcodes.md') }}">shortcodes</a> 和
-                                <a href="{{ get_url(path='@/documentation/content/linking.md') }}">内部链接</a>
-                                功能，让您更轻松地编写内容。
+                                {{ trans(key="augmented_desc_1", lang=lang) }} <a href="{{ get_url(path='@/documentation/content/shortcodes.md', lang=lang) }}">{{ trans(key="augmented_desc_link_1", lang=lang) }}</a> {{ trans(key="augmented_desc_2", lang=lang) }}
+                                <a href="{{ get_url(path='@/documentation/content/linking.md', lang=lang) }}">{{ trans(key="augmented_desc_link_2", lang=lang) }}</a>
+                                {{ trans(key="augmented_desc_3", lang=lang) }}
                             </p>
                         </div>
                     </div>
@@ -152,8 +175,8 @@
             {% endblock content %}
         </div>
         <footer>
-            ©2017-{{ now() | date(format="%Y") }} — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
-            <p>本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | 本页访问 <span id="ppv">-</span> 次</p>
+            ©2017-{{ now() | date(format="%Y") }} — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> {{ trans(key="augmented_desc_2", lang=lang) }} <a class="white" href="https://github.com/getzola/zola/graphs/contributors">Contributors</a>
+            <p>{{ trans(key="total_visits", lang=lang) }} <span id="pv">-</span> {{ trans(key="visits_count", lang=lang) }} <span id="uv">-</span> {{ trans(key="people", lang=lang) }} | {{ trans(key="page_visits", lang=lang) }} <span id="ppv">-</span> {{ trans(key="times", lang=lang) }}</p>
         </footer>
 
         <script>
@@ -172,12 +195,5 @@
         })();
         </script>
 
-        <script src="{{ get_url(path='js/quicklink.umd.js') }}"></script>
-        <script>
-        window.addEventListener('load', () => {
-          quicklink.listen();
-        });
-        </script>
-        <script src="{{ get_url(path='js/instant.page.js') }}" type="module"></script>
     </body>
 </html>
