@@ -19,16 +19,24 @@
     <!-- Artalk -->
     <div id="Comments"></div>
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        Artalk.init({
-            el:        '#Comments',
-            pageKey:   '{{ page.path | safe }}',
-            pageTitle: '{{ page.title }}',
-            server:    'https://artalk.saop.cc',
-            site:      '{{ config.title }}',
-            darkMode:  'auto',
-        });
-    });
+    (function() {
+        const initArtalk = () => {
+            Artalk.init({
+                el:        '#Comments',
+                pageKey:   '{{ page.path | safe }}',
+                pageTitle: '{{ page.title }}',
+                server:    'https://artalk.saop.cc',
+                site:      '{{ config.title }}',
+                darkMode:  'auto',
+            });
+        };
+
+        if (typeof Artalk !== 'undefined') {
+            initArtalk();
+        } else {
+            document.addEventListener('DOMContentLoaded', initArtalk);
+        }
+    })();
     </script>
 </div>
 {% endblock content %}
