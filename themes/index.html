@@ -1,149 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh">
-    <head>
-        <meta charset="UTF-8">
-        <meta content="Zola" name="generator">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
-        <meta name="author" content="Vincent Prouillet">
-        <meta name="robots" content="index, follow">
-        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;">
 
-        <!-- Open Graph -->
-        <meta property="og:title" content="Zola">
-        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;">
-        <meta property="og:site_name" content="Zola">
-        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="Zola" name="generator" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="author" content="Vincent Prouillet" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;" />
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Zola">
-        <meta name="twitter:description" content="无需依赖，单一二进制文件的静态站点生成器。">
-        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="Zola" />
+    <meta property="og:description"
+        content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;" />
+    <meta property="og:site_name" content="Zola" />
+    <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
-        <!-- AI Indexing -->
-        <link rel="help" href="/llms.txt" title="AI Context">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title"
+        content="Zola" />
+    <meta name="twitter:description"
+        content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
-        <!-- Schema.org -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "headline": "Zola",
-            "description": "无需依赖，单一二进制文件的静态站点生成器。",
-            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;",
-            "author": {
-                "@type": "Person",
-                "name": "Vincent Prouillet"
-            }
+    <!-- AI Indexing -->
+    <link rel="help" href="/llms.txt" title="AI Context" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "headline": "Zola",
+        "description": "无需依赖，单一二进制文件的静态站点生成器。",
+        "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;",
+        "author": {
+          "@type": "Person",
+          "name": "Vincent Prouillet"
         }
-        </script>
+      }
+    </script>
 
-        <title>主题 | Zola </title>
-        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
-        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
-        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
-        <script type="module">
-            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
-        </script>
-        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
-        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
-        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
-        <script>
-        document.addEventListener('turbo:load', () => {
-          quicklink.listen({
-            ignores: [
-              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
-            ]
-          });
-        });
-        </script>
-        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
-        <script>
-        document.addEventListener('turbo:load', async () => {
-          const pv = document.getElementById('pv');
-          const uv = document.getElementById('uv');
-          const ppv = document.getElementById('ppv');
-          if (!pv || !uv || !ppv) return;
-          try {
-            const res = await fetch('https://bsz.saop.cc/api', {
-              method: 'POST',
-              credentials: 'include',
-              headers: { 'x-bsz-referer': location.href }
+    <title>主题 | Zola </title>
+    <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css" />
+    <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico" />
+    <link rel="alternate" type="application/rss+xml" title="RSS"
+        href="https://zola.docs.saop.cc/rss.xml" />
+    <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css" />
+    <script type="module">
+        import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+    </script>
+    <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+    <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+    <script>
+        document.addEventListener("turbo:load", () => {
+            quicklink.listen({
+                ignores: [
+                    (uri, elem) => elem && elem.hasAttribute("data-noquicklink"),
+                ],
             });
-            const { success, data } = await res.json();
-            if (success) {
-              pv.textContent = data.site_pv;
-              uv.textContent = data.site_uv;
-              ppv.textContent = data.page_pv;
-            }
-          } catch (_) {}
         });
-        </script>
-        
-    </head>
-    <body>
+    </script>
+    <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+    <script>
+        document.addEventListener("turbo:load", async () => {
+            const pv = document.getElementById("pv");
+            const uv = document.getElementById("uv");
+            const ppv = document.getElementById("ppv");
+            if (!pv || !uv || !ppv) return;
+            try {
+                const res = await fetch("https://bsz.saop.cc/api", {
+                    method: "POST",
+                    credentials: "include",
+                    headers: { "x-bsz-referer": location.href },
+                });
+                const { success, data } = await res.json();
+                if (success) {
+                    pv.textContent = data.site_pv;
+                    uv.textContent = data.site_uv;
+                    ppv.textContent = data.page_pv;
+                }
+            } catch (_) { }
+        });
+    </script>
+    
+</head>
 
-        <header>
-        
-        
-		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+<body>
+    <header>
+         
+        <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
-                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
-                <img
-                    src="/logos/Zola-logo-white.svg"
-                    title="Zola main logo"
-                    alt="Zola"
-                    fetchpriority="high"
-                />
+                <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
+                    fetchpriority="high" />
             </picture>
         </a>
-            <nav>
-                <ul>
-                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link"><i class="fas fa-book"></i> 文档</a></li>
-                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i class="fas fa-palette"></i> 主题</a></li>
-                    <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i class="fas fa-comments"></i> 留言板</a></li>
-                    <li><a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i class="fas fa-search"></i> 搜索</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
-                    <li>
-                        
-                        
+        <nav>
+            <ul>
+                <li>
+                    <a class="white" href="https://zola.docs.saop.cc/documentation/getting-started/overview/"
+                        class="nav-link"><i class="fas fa-book"></i> 文档</a>
+                </li>
+                <li>
+                    <a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link"><i
+                            class="fas fa-palette"></i> 主题</a>
+                </li>
+                <li>
+                    <a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link"><i
+                            class="fas fa-comments"></i> 留言板</a>
+                </li>
+                <li>
+                    <a class="white" href="https://zola.docs.saop.cc/search/" class="nav-link"><i
+                            class="fas fa-search"></i> 搜索</a>
+                </li>
+                <li>
+                    <a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank"
+                        rel="noopener noreferrer"><i class="fab fa-discourse"></i> 论坛</a>
+                </li>
+                <li>
+                    <a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank"
+                        rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                </li>
+                <li>
+                                     
+                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;" class="nav-link" data-noquicklink
+                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
+                    
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-                        
-
-                        
-                        
-
-                        
-                        
-                            
-                                
-                                    
-                                
-                            
-                                
-                            
-                        
-
-                        
-                        
-
-                        
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
-                        
-                    </li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="content content--reversed">
-            
+    <div class="content content--reversed">
+        
     <div class="themes-container">
         
             <h1><i class="fas fa-palette"></i> Zola 主题</h1>
@@ -153,294 +150,9 @@
             
             <div class="themes">
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ataraxia-zola&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ataraxia-zola&#x2F;screenshot.png" alt="ataraxia 的截图">
-                        <span>ataraxia</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;prism&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;prism&#x2F;screenshot.png" alt="Prism 的截图">
-                        <span>Prism</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;blow&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;blow&#x2F;screenshot.png" alt="Blow 的截图">
-                        <span>Blow</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;block&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;block&#x2F;screenshot.png" alt="Block 的截图">
-                        <span>Block</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;austere&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;austere&#x2F;screenshot.png" alt="austere 的截图">
-                        <span>austere</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kangae&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kangae&#x2F;screenshot.png" alt="kangae 的截图">
-                        <span>kangae</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-paper&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-paper&#x2F;screenshot.png" alt="zola-paper 的截图">
-                        <span>zola-paper</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-folio&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-folio&#x2F;screenshot.png" alt="zola-folio 的截图">
-                        <span>zola-folio</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seagull&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seagull&#x2F;screenshot.png" alt="Seagull 的截图">
-                        <span>Seagull</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;photography-theme&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;photography-theme&#x2F;screenshot.png" alt="photography theme 的截图">
-                        <span>photography theme</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;radion&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;radion&#x2F;screenshot.png" alt="radion 的截图">
-                        <span>radion</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;toucan&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;toucan&#x2F;screenshot.png" alt="Toucan 的截图">
-                        <span>Toucan</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zplit&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zplit&#x2F;screenshot.png" alt="Zplit 的截图">
-                        <span>Zplit</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;duckquill&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;duckquill&#x2F;screenshot.png" alt="Duckquill 的截图">
-                        <span>Duckquill</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;portio-zola&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;portio-zola&#x2F;screenshot.png" alt="Portio-Zola 的截图">
-                        <span>Portio-Zola</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;matbook&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;matbook&#x2F;screenshot.png" alt="MATbook 的截图">
-                        <span>MATbook</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dose&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dose&#x2F;screenshot.png" alt="dose 的截图">
-                        <span>dose</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;adidoks&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;adidoks&#x2F;screenshot.png" alt="adidoks 的截图">
-                        <span>adidoks</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-course&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-course&#x2F;screenshot.png" alt="Course 的截图">
-                        <span>Course</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;neovim-theme&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;neovim-theme&#x2F;screenshot.png" alt="neovim 的截图">
-                        <span>neovim</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;no-style-please&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;no-style-please&#x2F;screenshot.png" alt="no style, please! 的截图">
-                        <span>no style, please!</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;serene&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;serene&#x2F;screenshot.png" alt="serene 的截图">
-                        <span>serene</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;coffee&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;coffee&#x2F;screenshot.png" alt="coffee 的截图">
-                        <span>coffee</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;sam&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;sam&#x2F;screenshot.png" alt="sam 的截图">
-                        <span>sam</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;project-portfolio&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;project-portfolio&#x2F;screenshot.png" alt="Project Portfolio 的截图">
-                        <span>Project Portfolio</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anpu&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anpu&#x2F;screenshot.png" alt="Anpu 的截图">
-                        <span>Anpu</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;d3c3nt&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;d3c3nt&#x2F;screenshot.png" alt="d3c3nt 的截图">
-                        <span>d3c3nt</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;minimal-dark&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;minimal-dark&#x2F;screenshot.png" alt="minimal-dark 的截图">
-                        <span>minimal-dark</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-nivis&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-nivis&#x2F;screenshot.png" alt="nivis 的截图">
-                        <span>nivis</span>
-                    </a>
-                
                     <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zerm&#x2F;">
                         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zerm&#x2F;screenshot.png" alt="zerm 的截图">
                         <span>zerm</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-easydocs-theme&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-easydocs-theme&#x2F;screenshot.png" alt="EasyDocs 的截图">
-                        <span>EasyDocs</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;slim&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;slim&#x2F;screenshot.png" alt="Slim 的截图">
-                        <span>Slim</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-grayscale&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-grayscale&#x2F;screenshot.png" alt="zola-grayscale 的截图">
-                        <span>zola-grayscale</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;karzok&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;karzok&#x2F;screenshot.png" alt="karzok 的截图">
-                        <span>karzok</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;olivine&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;olivine&#x2F;screenshot.png" alt="Olivine 的截图">
-                        <span>Olivine</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-jiaxiang-wang&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-jiaxiang-wang&#x2F;screenshot.png" alt="jiaxiang.wang 的截图">
-                        <span>jiaxiang.wang</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kodama-theme&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kodama-theme&#x2F;screenshot.png" alt="kodama 的截图">
-                        <span>kodama</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hyde&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hyde&#x2F;screenshot.png" alt="hyde 的截图">
-                        <span>hyde</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tale-zola&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tale-zola&#x2F;screenshot.png" alt="tale-zola 的截图">
-                        <span>tale-zola</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;daisy&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;daisy&#x2F;screenshot.png" alt="Daisy 的截图">
-                        <span>Daisy</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-hacker&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-hacker&#x2F;screenshot.png" alt="zola-hacker 的截图">
-                        <span>zola-hacker</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papermod-2&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papermod-2&#x2F;screenshot.png" alt="PaperMod 的截图">
-                        <span>PaperMod</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hook&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hook&#x2F;screenshot.png" alt="Hook 的截图">
-                        <span>Hook</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-pickles&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-pickles&#x2F;screenshot.png" alt="pickles 的截图">
-                        <span>pickles</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;book&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;book&#x2F;screenshot.png" alt="book 的截图">
-                        <span>book</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolanight&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolanight&#x2F;screenshot.png" alt="zolanight 的截图">
-                        <span>zolanight</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;vonge&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;vonge&#x2F;screenshot.png" alt="Vonge 的截图">
-                        <span>Vonge</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;after-dark&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;after-dark&#x2F;screenshot.png" alt="after-dark 的截图">
-                        <span>after-dark</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papermod&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papermod&#x2F;screenshot.png" alt="PaperMod 的截图">
-                        <span>PaperMod</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;emily&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;emily&#x2F;screenshot.png" alt="emily_zola_theme 的截图">
-                        <span>emily_zola_theme</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-futu&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-futu&#x2F;screenshot.png" alt="futu 的截图">
-                        <span>futu</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anatole-zola&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anatole-zola&#x2F;screenshot.png" alt="anatole-zola 的截图">
-                        <span>anatole-zola</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;feather&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;feather&#x2F;screenshot.png" alt="feather 的截图">
-                        <span>feather</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;deepthought&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;deepthought&#x2F;screenshot.png" alt="DeepThought 的截图">
-                        <span>DeepThought</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-386&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-386&#x2F;screenshot.png" alt="zola.386 的截图">
-                        <span>zola.386</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;clean-blog&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;clean-blog&#x2F;screenshot.png" alt="Clean Blog 的截图">
-                        <span>Clean Blog</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ergo&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ergo&#x2F;screenshot.png" alt="Ergo 的截图">
-                        <span>Ergo</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seje2&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seje2&#x2F;screenshot.png" alt="Seje2 的截图">
-                        <span>Seje2</span>
                     </a>
                 
                     <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolastrap&#x2F;">
@@ -448,159 +160,19 @@
                         <span>zolastrap</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;simple-dev-blog&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;simple-dev-blog&#x2F;screenshot.png" alt="simple-dev-blog 的截图">
-                        <span>simple-dev-blog</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kita&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kita&#x2F;screenshot.png" alt="Kita 的截图">
+                        <span>Kita</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;albatros&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;albatros&#x2F;screenshot.png" alt="Albatros 的截图">
-                        <span>Albatros</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;olivine&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;olivine&#x2F;screenshot.png" alt="Olivine 的截图">
+                        <span>Olivine</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;linkita&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;linkita&#x2F;screenshot.png" alt="Linkita 的截图">
-                        <span>Linkita</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;docsascode-theme&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;docsascode-theme&#x2F;screenshot.png" alt="Docsascode_theme 的截图">
-                        <span>Docsascode_theme</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tilde&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tilde&#x2F;screenshot.png" alt="tilde 的截图">
-                        <span>tilde</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;cela&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;cela&#x2F;screenshot.png" alt="Cela 的截图">
-                        <span>Cela</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;polymathic&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;polymathic&#x2F;screenshot.png" alt="polymathic 的截图">
-                        <span>polymathic</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;academic-workshop&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;academic-workshop&#x2F;screenshot.png" alt="Academic Workshop 的截图">
-                        <span>Academic Workshop</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;oceanic-zen&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;oceanic-zen&#x2F;screenshot.png" alt="Oceanic Zen 的截图">
-                        <span>Oceanic Zen</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;shadharon&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;shadharon&#x2F;screenshot.png" alt="shadharon 的截图">
-                        <span>shadharon</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hermit&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hermit&#x2F;screenshot.png" alt="Hermit_Zola 的截图">
-                        <span>Hermit_Zola</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;archie-zola&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;archie-zola&#x2F;screenshot.png" alt="archie-zola 的截图">
-                        <span>archie-zola</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;andromeda&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;andromeda&#x2F;screenshot.png" alt="Andromeda 的截图">
-                        <span>Andromeda</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;goyo&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;goyo&#x2F;screenshot.png" alt="Goyo 的截图">
-                        <span>Goyo</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;abridge&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;abridge&#x2F;screenshot.png" alt="abridge 的截图">
-                        <span>abridge</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ntun&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ntun&#x2F;screenshot.png" alt="ntun-zola-theme 的截图">
-                        <span>ntun-zola-theme</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lekhz&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lekhz&#x2F;screenshot.png" alt="Lekhz 的截图">
-                        <span>Lekhz</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;academic-paper&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;academic-paper&#x2F;screenshot.png" alt="Academic Paper 的截图">
-                        <span>Academic Paper</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;xuan&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;xuan&#x2F;screenshot.png" alt="xuan 的截图">
-                        <span>xuan</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;otherworld&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;otherworld&#x2F;screenshot.png" alt="otherworld 的截图">
-                        <span>otherworld</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;codinfox-zola&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;codinfox-zola&#x2F;screenshot.png" alt="codinfox-zola 的截图">
-                        <span>codinfox-zola</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lightspeed&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lightspeed&#x2F;screenshot.png" alt="lightspeed 的截图">
-                        <span>lightspeed</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;parchment&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;parchment&#x2F;screenshot.png" alt="parchment 的截图">
-                        <span>parchment</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;bearblog&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;bearblog&#x2F;screenshot.png" alt="Bear 的截图">
-                        <span>Bear</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-no-style-please&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-no-style-please&#x2F;screenshot.png" alt="no style, please! 的截图">
-                        <span>no style, please!</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hallo&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hallo&#x2F;screenshot.png" alt="hallo 的截图">
-                        <span>hallo</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;juice&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;juice&#x2F;screenshot.png" alt="juice 的截图">
-                        <span>juice</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tranquil&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tranquil&#x2F;screenshot.png" alt="tranquil 的截图">
-                        <span>tranquil</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-hikari&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-hikari&#x2F;screenshot.png" alt="Hikari 的截图">
-                        <span>Hikari</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolarwind&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolarwind&#x2F;screenshot.png" alt="Zolarwind 的截图">
-                        <span>Zolarwind</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;inky&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;inky&#x2F;screenshot.png" alt="Inky 的截图">
-                        <span>Inky</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zplit&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zplit&#x2F;screenshot.png" alt="Zplit 的截图">
+                        <span>Zplit</span>
                     </a>
                 
                     <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;boring&#x2F;">
@@ -608,34 +180,34 @@
                         <span>boring</span>
                     </a>
                 
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;goyo&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;goyo&#x2F;screenshot.png" alt="Goyo 的截图">
+                        <span>Goyo</span>
+                    </a>
+                
                     <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;re137&#x2F;">
                         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;re137&#x2F;screenshot.png" alt="re137 的截图">
                         <span>re137</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papaya&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papaya&#x2F;screenshot.png" alt="Papaya 的截图">
-                        <span>Papaya</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-grayscale&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-grayscale&#x2F;screenshot.png" alt="zola-grayscale 的截图">
+                        <span>zola-grayscale</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zluinav&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zluinav&#x2F;screenshot.png" alt="UI Navigation 的截图">
-                        <span>UI Navigation</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;matbook&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;matbook&#x2F;screenshot.png" alt="MATbook 的截图">
+                        <span>MATbook</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;apollo&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;apollo&#x2F;screenshot.png" alt="apollo 的截图">
-                        <span>apollo</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;shadharon&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;shadharon&#x2F;screenshot.png" alt="shadharon 的截图">
+                        <span>shadharon</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hayflow&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hayflow&#x2F;screenshot.png" alt="HayFlow 的截图">
-                        <span>HayFlow</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tabi&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tabi&#x2F;screenshot.png" alt="tabi 的截图">
-                        <span>tabi</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;radion&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;radion&#x2F;screenshot.png" alt="radion 的截图">
+                        <span>radion</span>
                     </a>
                 
                     <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;coast&#x2F;">
@@ -643,19 +215,264 @@
                         <span>coast</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zap&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zap&#x2F;screenshot.png" alt="Zap 的截图">
-                        <span>Zap</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;apollo&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;apollo&#x2F;screenshot.png" alt="apollo 的截图">
+                        <span>apollo</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;terminus&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;terminus&#x2F;screenshot.png" alt="terminus 的截图">
-                        <span>terminus</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;otherworld&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;otherworld&#x2F;screenshot.png" alt="otherworld 的截图">
+                        <span>otherworld</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;nasm-theme&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;nasm-theme&#x2F;screenshot.png" alt="Nasm 的截图">
-                        <span>Nasm</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-nivis&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-nivis&#x2F;screenshot.png" alt="nivis 的截图">
+                        <span>nivis</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seje2&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seje2&#x2F;screenshot.png" alt="Seje2 的截图">
+                        <span>Seje2</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;block&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;block&#x2F;screenshot.png" alt="Block 的截图">
+                        <span>Block</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-folio&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-folio&#x2F;screenshot.png" alt="zola-folio 的截图">
+                        <span>zola-folio</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-hacker&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-hacker&#x2F;screenshot.png" alt="zola-hacker 的截图">
+                        <span>zola-hacker</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dinkleberg&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dinkleberg&#x2F;screenshot.png" alt="dinkleberg 的截图">
+                        <span>dinkleberg</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papermod&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papermod&#x2F;screenshot.png" alt="PaperMod 的截图">
+                        <span>PaperMod</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;slim&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;slim&#x2F;screenshot.png" alt="Slim 的截图">
+                        <span>Slim</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-hikari&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-hikari&#x2F;screenshot.png" alt="Hikari 的截图">
+                        <span>Hikari</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zhuia&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zhuia&#x2F;screenshot.png" alt="Zhuia 的截图">
+                        <span>Zhuia</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;abridge&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;abridge&#x2F;screenshot.png" alt="abridge 的截图">
+                        <span>abridge</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;deepthought&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;deepthought&#x2F;screenshot.png" alt="DeepThought 的截图">
+                        <span>DeepThought</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;portio-zola&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;portio-zola&#x2F;screenshot.png" alt="Portio-Zola 的截图">
+                        <span>Portio-Zola</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;neovim-theme&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;neovim-theme&#x2F;screenshot.png" alt="neovim 的截图">
+                        <span>neovim</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;solar-theme-zola&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;solar-theme-zola&#x2F;screenshot.png" alt="solar-theme-zola 的截图">
+                        <span>solar-theme-zola</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;parchment&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;parchment&#x2F;screenshot.png" alt="parchment 的截图">
+                        <span>parchment</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anpu&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anpu&#x2F;screenshot.png" alt="Anpu 的截图">
+                        <span>Anpu</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-jiaxiang-wang&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-jiaxiang-wang&#x2F;screenshot.png" alt="jiaxiang.wang 的截图">
+                        <span>jiaxiang.wang</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;project-portfolio&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;project-portfolio&#x2F;screenshot.png" alt="Project Portfolio 的截图">
+                        <span>Project Portfolio</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;mabuya&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;mabuya&#x2F;screenshot.png" alt="Mabuya 的截图">
+                        <span>Mabuya</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papermod-2&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papermod-2&#x2F;screenshot.png" alt="PaperMod 的截图">
+                        <span>PaperMod</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;blow&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;blow&#x2F;screenshot.png" alt="Blow 的截图">
+                        <span>Blow</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;albatros&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;albatros&#x2F;screenshot.png" alt="Albatros 的截图">
+                        <span>Albatros</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;austere&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;austere&#x2F;screenshot.png" alt="austere 的截图">
+                        <span>austere</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lightspeed&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lightspeed&#x2F;screenshot.png" alt="lightspeed 的截图">
+                        <span>lightspeed</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;coffee&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;coffee&#x2F;screenshot.png" alt="coffee 的截图">
+                        <span>coffee</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;simple-dev-blog&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;simple-dev-blog&#x2F;screenshot.png" alt="simple-dev-blog 的截图">
+                        <span>simple-dev-blog</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-no-style-please&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-no-style-please&#x2F;screenshot.png" alt="no style, please! 的截图">
+                        <span>no style, please!</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ergo&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ergo&#x2F;screenshot.png" alt="Ergo 的截图">
+                        <span>Ergo</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;float&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;float&#x2F;screenshot.png" alt="Float 的截图">
+                        <span>Float</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;andromeda&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;andromeda&#x2F;screenshot.png" alt="Andromeda 的截图">
+                        <span>Andromeda</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;archie-zola&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;archie-zola&#x2F;screenshot.png" alt="archie-zola 的截图">
+                        <span>archie-zola</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-pickles&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-pickles&#x2F;screenshot.png" alt="pickles 的截图">
+                        <span>pickles</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hook&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hook&#x2F;screenshot.png" alt="Hook 的截图">
+                        <span>Hook</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lekhz&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lekhz&#x2F;screenshot.png" alt="Lekhz 的截图">
+                        <span>Lekhz</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ataraxia-zola&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ataraxia-zola&#x2F;screenshot.png" alt="ataraxia 的截图">
+                        <span>ataraxia</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;minimal-dark&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;minimal-dark&#x2F;screenshot.png" alt="minimal-dark 的截图">
+                        <span>minimal-dark</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;serene&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;serene&#x2F;screenshot.png" alt="serene 的截图">
+                        <span>serene</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;oceanic-zen&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;oceanic-zen&#x2F;screenshot.png" alt="Oceanic Zen 的截图">
+                        <span>Oceanic Zen</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;docsascode-theme&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;docsascode-theme&#x2F;screenshot.png" alt="Docsascode_theme 的截图">
+                        <span>Docsascode_theme</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;feather&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;feather&#x2F;screenshot.png" alt="feather 的截图">
+                        <span>feather</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kirifuji&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kirifuji&#x2F;screenshot.png" alt="kirifuji 的截图">
+                        <span>kirifuji</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;xuan&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;xuan&#x2F;screenshot.png" alt="xuan 的截图">
+                        <span>xuan</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kodama-theme&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kodama-theme&#x2F;screenshot.png" alt="kodama 的截图">
+                        <span>kodama</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-futu&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-futu&#x2F;screenshot.png" alt="futu 的截图">
+                        <span>futu</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-easydocs-theme&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-easydocs-theme&#x2F;screenshot.png" alt="EasyDocs 的截图">
+                        <span>EasyDocs</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;academic-workshop&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;academic-workshop&#x2F;screenshot.png" alt="Academic Workshop 的截图">
+                        <span>Academic Workshop</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;codinfox-zola&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;codinfox-zola&#x2F;screenshot.png" alt="codinfox-zola 的截图">
+                        <span>codinfox-zola</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;soapstone&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;soapstone&#x2F;screenshot.png" alt="Soapstone 的截图">
+                        <span>Soapstone</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tabi&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tabi&#x2F;screenshot.png" alt="tabi 的截图">
+                        <span>tabi</span>
                     </a>
                 
                     <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;homepage-creators&#x2F;">
@@ -668,64 +485,9 @@
                         <span>pico</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;belresume&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;belresume&#x2F;screenshot.png" alt="BelResume 的截图">
-                        <span>BelResume</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dinkleberg&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dinkleberg&#x2F;screenshot.png" alt="dinkleberg 的截图">
-                        <span>dinkleberg</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;solar-theme-zola&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;solar-theme-zola&#x2F;screenshot.png" alt="solar-theme-zola 的截图">
-                        <span>solar-theme-zola</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;particle&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;particle&#x2F;screenshot.png" alt="particle 的截图">
-                        <span>particle</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-henry&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-henry&#x2F;screenshot.png" alt="henry 的截图">
-                        <span>henry</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zallery&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zallery&#x2F;screenshot.png" alt="zallery 的截图">
-                        <span>zallery</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;mabuya&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;mabuya&#x2F;screenshot.png" alt="Mabuya 的截图">
-                        <span>Mabuya</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;halve-z&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;halve-z&#x2F;screenshot.png" alt="halve-z 的截图">
-                        <span>halve-z</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anemone&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anemone&#x2F;screenshot.png" alt="anemone 的截图">
-                        <span>anemone</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hephaestus&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hephaestus&#x2F;screenshot.png" alt="Hephaestus 的截图">
-                        <span>Hephaestus</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-terminimal&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-terminimal&#x2F;screenshot.png" alt="terminimal 的截图">
-                        <span>terminimal</span>
-                    </a>
-                
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zulma&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zulma&#x2F;screenshot.png" alt="Zulma 的截图">
-                        <span>Zulma</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anatole-zola&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anatole-zola&#x2F;screenshot.png" alt="anatole-zola 的截图">
+                        <span>anatole-zola</span>
                     </a>
                 
                     <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tanuki&#x2F;">
@@ -733,34 +495,89 @@
                         <span>tanuki</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;float&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;float&#x2F;screenshot.png" alt="Float 的截图">
-                        <span>Float</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ntun&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;ntun&#x2F;screenshot.png" alt="ntun-zola-theme 的截图">
+                        <span>ntun-zola-theme</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kirifuji&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kirifuji&#x2F;screenshot.png" alt="kirifuji 的截图">
-                        <span>kirifuji</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seagull&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seagull&#x2F;screenshot.png" alt="Seagull 的截图">
+                        <span>Seagull</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kita&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kita&#x2F;screenshot.png" alt="Kita 的截图">
-                        <span>Kita</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;halve-z&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;halve-z&#x2F;screenshot.png" alt="halve-z 的截图">
+                        <span>halve-z</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;resume&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;resume&#x2F;screenshot.png" alt="resume 的截图">
-                        <span>resume</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tilde&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tilde&#x2F;screenshot.png" alt="tilde 的截图">
+                        <span>tilde</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zhuia&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zhuia&#x2F;screenshot.png" alt="Zhuia 的截图">
-                        <span>Zhuia</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;sam&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;sam&#x2F;screenshot.png" alt="sam 的截图">
+                        <span>sam</span>
                     </a>
                 
-                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;soapstone&#x2F;">
-                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;soapstone&#x2F;screenshot.png" alt="Soapstone 的截图">
-                        <span>Soapstone</span>
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;daisy&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;daisy&#x2F;screenshot.png" alt="Daisy 的截图">
+                        <span>Daisy</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-course&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-course&#x2F;screenshot.png" alt="Course 的截图">
+                        <span>Course</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dose&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;dose&#x2F;screenshot.png" alt="dose 的截图">
+                        <span>dose</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;book&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;book&#x2F;screenshot.png" alt="book 的截图">
+                        <span>book</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;polymathic&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;polymathic&#x2F;screenshot.png" alt="polymathic 的截图">
+                        <span>polymathic</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;bearblog&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;bearblog&#x2F;screenshot.png" alt="Bear 的截图">
+                        <span>Bear</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolanight&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolanight&#x2F;screenshot.png" alt="zolanight 的截图">
+                        <span>zolanight</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;adidoks&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;adidoks&#x2F;screenshot.png" alt="adidoks 的截图">
+                        <span>adidoks</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;photography-theme&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;photography-theme&#x2F;screenshot.png" alt="photography theme 的截图">
+                        <span>photography theme</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;academic-paper&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;academic-paper&#x2F;screenshot.png" alt="Academic Paper 的截图">
+                        <span>Academic Paper</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;juice&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;juice&#x2F;screenshot.png" alt="juice 的截图">
+                        <span>juice</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;prism&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;prism&#x2F;screenshot.png" alt="Prism 的截图">
+                        <span>Prism</span>
                     </a>
                 
                     <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-minimal&#x2F;">
@@ -768,20 +585,210 @@
                         <span>Minimal</span>
                     </a>
                 
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papaya&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;papaya&#x2F;screenshot.png" alt="Papaya 的截图">
+                        <span>Papaya</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kangae&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kangae&#x2F;screenshot.png" alt="kangae 的截图">
+                        <span>kangae</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;clean-blog&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;clean-blog&#x2F;screenshot.png" alt="Clean Blog 的截图">
+                        <span>Clean Blog</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;linkita&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;linkita&#x2F;screenshot.png" alt="Linkita 的截图">
+                        <span>Linkita</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anemone&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;anemone&#x2F;screenshot.png" alt="anemone 的截图">
+                        <span>anemone</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;emily&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;emily&#x2F;screenshot.png" alt="emily_zola_theme 的截图">
+                        <span>emily_zola_theme</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolarwind&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zolarwind&#x2F;screenshot.png" alt="Zolarwind 的截图">
+                        <span>Zolarwind</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zap&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zap&#x2F;screenshot.png" alt="Zap 的截图">
+                        <span>Zap</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;particle&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;particle&#x2F;screenshot.png" alt="particle 的截图">
+                        <span>particle</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hephaestus&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hephaestus&#x2F;screenshot.png" alt="Hephaestus 的截图">
+                        <span>Hephaestus</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zallery&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zallery&#x2F;screenshot.png" alt="zallery 的截图">
+                        <span>zallery</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;terminus&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;terminus&#x2F;screenshot.png" alt="terminus 的截图">
+                        <span>terminus</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;d3c3nt&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;d3c3nt&#x2F;screenshot.png" alt="d3c3nt 的截图">
+                        <span>d3c3nt</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hermit&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hermit&#x2F;screenshot.png" alt="Hermit_Zola 的截图">
+                        <span>Hermit_Zola</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;karzok&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;karzok&#x2F;screenshot.png" alt="karzok 的截图">
+                        <span>karzok</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hallo&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hallo&#x2F;screenshot.png" alt="hallo 的截图">
+                        <span>hallo</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zulma&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zulma&#x2F;screenshot.png" alt="Zulma 的截图">
+                        <span>Zulma</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;belresume&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;belresume&#x2F;screenshot.png" alt="BelResume 的截图">
+                        <span>BelResume</span>
+                    </a>
+                
                     <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;even&#x2F;">
                         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;even&#x2F;screenshot.png" alt="even 的截图">
                         <span>even</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hyde&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hyde&#x2F;screenshot.png" alt="hyde 的截图">
+                        <span>hyde</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;vonge&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;vonge&#x2F;screenshot.png" alt="Vonge 的截图">
+                        <span>Vonge</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;cela&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;cela&#x2F;screenshot.png" alt="Cela 的截图">
+                        <span>Cela</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;after-dark&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;after-dark&#x2F;screenshot.png" alt="after-dark 的截图">
+                        <span>after-dark</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-paper&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-paper&#x2F;screenshot.png" alt="zola-paper 的截图">
+                        <span>zola-paper</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-terminimal&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-theme-terminimal&#x2F;screenshot.png" alt="terminimal 的截图">
+                        <span>terminimal</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-386&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-386&#x2F;screenshot.png" alt="zola.386 的截图">
+                        <span>zola.386</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;duckquill&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;duckquill&#x2F;screenshot.png" alt="Duckquill 的截图">
+                        <span>Duckquill</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-henry&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zola-henry&#x2F;screenshot.png" alt="henry 的截图">
+                        <span>henry</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;toucan&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;toucan&#x2F;screenshot.png" alt="Toucan 的截图">
+                        <span>Toucan</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zluinav&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;zluinav&#x2F;screenshot.png" alt="UI Navigation 的截图">
+                        <span>UI Navigation</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;resume&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;resume&#x2F;screenshot.png" alt="resume 的截图">
+                        <span>resume</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tale-zola&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tale-zola&#x2F;screenshot.png" alt="tale-zola 的截图">
+                        <span>tale-zola</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;inky&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;inky&#x2F;screenshot.png" alt="Inky 的截图">
+                        <span>Inky</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;no-style-please&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;no-style-please&#x2F;screenshot.png" alt="no style, please! 的截图">
+                        <span>no style, please!</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;nasm-theme&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;nasm-theme&#x2F;screenshot.png" alt="Nasm 的截图">
+                        <span>Nasm</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hayflow&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hayflow&#x2F;screenshot.png" alt="HayFlow 的截图">
+                        <span>HayFlow</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tranquil&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tranquil&#x2F;screenshot.png" alt="tranquil 的截图">
+                        <span>tranquil</span>
                     </a>
                 
             </div>
         
     </div>
 
-        </div>
-        <footer>
-            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> 和 <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
-            <p><i class="fas fa-eye"></i> 本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次</p>
-        </footer>
+    </div>
+    <footer>
+        ©2017-2026 —
+        <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i
+                class="fas fa-user"></i> Vincent Prouillet</a>
+        和
+        <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank"
+            rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+        <p>
+            <i class="fas fa-eye"></i> 本站总访问
+            <span id="pv">-</span> 次，访客
+            <span id="uv">-</span> 人 |
+            <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
+        </p>
+    </footer>
+</body>
 
-    </body>
 </html>

@@ -1,153 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta content="Zola" name="generator">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
-        <meta name="author" content="Vincent Prouillet">
-        <meta name="robots" content="index, follow">
-        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">
 
-        <!-- Open Graph -->
-        <meta property="og:title" content="GitHub Pages | Zola">
-        <meta property="og:description" content="A fast static site generator in a single binary with everything built-in.">
-        <meta property="og:type" content="article">
-        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;">
-        <meta property="og:site_name" content="Zola">
-        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+<head>
+    <meta charset="UTF-8" />
+    <meta content="Zola" name="generator" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A fast static site generator in a single binary with everything built-in." />
+    <meta name="author" content="Vincent Prouillet" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;" />
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="GitHub Pages | Zola">
-        <meta name="twitter:description" content="A fast static site generator in a single binary with everything built-in.">
-        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+    <!-- Open Graph -->
+    <meta property="og:title"
+        content="GitHub Pages | Zola" />
+    <meta property="og:description"
+        content="A fast static site generator in a single binary with everything built-in." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;" />
+    <meta property="og:site_name" content="Zola" />
+    <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
-        <!-- AI Indexing -->
-        <link rel="help" href="/llms.txt" title="AI Context">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title"
+        content="GitHub Pages | Zola" />
+    <meta name="twitter:description"
+        content="A fast static site generator in a single binary with everything built-in." />
+    <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
-        <!-- Schema.org -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "GitHub Pages",
-            "description": "A fast static site generator in a single binary with everything built-in.",
-            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;",
-            "author": {
-                "@type": "Person",
-                "name": "Vincent Prouillet"
-            }
+    <!-- AI Indexing -->
+    <link rel="help" href="/llms.txt" title="AI Context" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "GitHub Pages",
+        "description": "A fast static site generator in a single binary with everything built-in.",
+        "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;",
+        "author": {
+          "@type": "Person",
+          "name": "Vincent Prouillet"
         }
-        </script>
+      }
+    </script>
 
-        <title>GitHub Pages | Zola </title>
-        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
-        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
-        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
-        <script type="module">
-            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
-        </script>
-        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
-        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
-        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
-        <script>
-        document.addEventListener('turbo:load', () => {
-          quicklink.listen({
-            ignores: [
-              (uri, elem) => elem && elem.hasAttribute('data-noquicklink')
-            ]
-          });
-        });
-        </script>
-        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
-        <script>
-        document.addEventListener('turbo:load', async () => {
-          const pv = document.getElementById('pv');
-          const uv = document.getElementById('uv');
-          const ppv = document.getElementById('ppv');
-          if (!pv || !uv || !ppv) return;
-          try {
-            const res = await fetch('https://bsz.saop.cc/api', {
-              method: 'POST',
-              credentials: 'include',
-              headers: { 'x-bsz-referer': location.href }
+    <title>GitHub Pages | Zola </title>
+    <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css" />
+    <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico" />
+    <link rel="alternate" type="application/rss+xml" title="RSS"
+        href="https://zola.docs.saop.cc/rss.xml" />
+    <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css" />
+    <script type="module">
+        import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+    </script>
+    <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+    <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+    <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+    <script>
+        document.addEventListener("turbo:load", () => {
+            quicklink.listen({
+                ignores: [
+                    (uri, elem) => elem && elem.hasAttribute("data-noquicklink"),
+                ],
             });
-            const { success, data } = await res.json();
-            if (success) {
-              pv.textContent = data.site_pv;
-              uv.textContent = data.site_uv;
-              ppv.textContent = data.page_pv;
-            }
-          } catch (_) {}
         });
-        </script>
-        
-    </head>
-    <body>
+    </script>
+    <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+    <script>
+        document.addEventListener("turbo:load", async () => {
+            const pv = document.getElementById("pv");
+            const uv = document.getElementById("uv");
+            const ppv = document.getElementById("ppv");
+            if (!pv || !uv || !ppv) return;
+            try {
+                const res = await fetch("https://bsz.saop.cc/api", {
+                    method: "POST",
+                    credentials: "include",
+                    headers: { "x-bsz-referer": location.href },
+                });
+                const { success, data } = await res.json();
+                if (success) {
+                    pv.textContent = data.site_pv;
+                    uv.textContent = data.site_uv;
+                    ppv.textContent = data.page_pv;
+                }
+            } catch (_) { }
+        });
+    </script>
+    
+</head>
 
-        <header>
-        
-        
-            
-        
-		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;">
+<body>
+    <header>
+           
+        <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;">
             <picture>
-                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
-                <img
-                    src="/logos/Zola-logo-white.svg"
-                    title="Zola main logo"
-                    alt="Zola"
-                    fetchpriority="high"
-                />
+                <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
+                    fetchpriority="high" />
             </picture>
         </a>
-            <nav>
-                <ul>
-                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link"><i class="fas fa-book"></i> Documentation</a></li>
-                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i class="fas fa-palette"></i> Themes</a></li>
-                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i class="fas fa-comments"></i> Guestbook</a></li>
-                    <li><a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i class="fas fa-search"></i> Search</a></li>
-                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a></li>
-                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
-                    <li>
-                        
-                        
+        <nav>
+            <ul>
+                <li>
+                    <a class="white" href="https://zola.docs.saop.cc/en/documentation/getting-started/overview/"
+                        class="nav-link"><i class="fas fa-book"></i> Documentation</a>
+                </li>
+                <li>
+                    <a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link"><i
+                            class="fas fa-palette"></i> Themes</a>
+                </li>
+                <li>
+                    <a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link"><i
+                            class="fas fa-comments"></i> Guestbook</a>
+                </li>
+                <li>
+                    <a class="white" href="https://zola.docs.saop.cc/en/search/" class="nav-link"><i
+                            class="fas fa-search"></i> Search</a>
+                </li>
+                <li>
+                    <a class="white external" href="https://zola.discourse.group/" class="nav-link" target="_blank"
+                        rel="noopener noreferrer"><i class="fab fa-discourse"></i> Forum</a>
+                </li>
+                <li>
+                    <a class="white external" href="https://github.com/getzola/zola" class="nav-link" target="_blank"
+                        rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                </li>
+                <li>
+                              
                             
-                        
+                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;" class="nav-link" data-noquicklink
+                        onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
+                    
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-                        
-
-                        
-                        
-                            
-                                
-                            
-                                
-                                    
-                                
-                            
-                        
-
-                        
-                        
-
-                        
-                        
-
-                        
-                            <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;deployment&#x2F;github-pages&#x2F;" class="nav-link" data-noquicklink onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
-                        
-                    </li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="content content--reversed">
-            
+    <div class="content content--reversed">
+        
 
     
 
@@ -398,11 +392,21 @@ your site up and running via the CI.</p>
     </div>
 </div>
 
-        </div>
-        <footer>
-            ©2017-2026 — <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-user"></i> Vincent Prouillet</a> and <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank" rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
-            <p><i class="fas fa-eye"></i> Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times</p>
-        </footer>
+    </div>
+    <footer>
+        ©2017-2026 —
+        <a class="white external" href="https://www.vincentprouillet.com" target="_blank" rel="noopener noreferrer"><i
+                class="fas fa-user"></i> Vincent Prouillet</a>
+        and
+        <a class="white external" href="https://github.com/getzola/zola/graphs/contributors" target="_blank"
+            rel="noopener noreferrer"><i class="fas fa-users"></i> Contributors</a>
+        <p>
+            <i class="fas fa-eye"></i> Total visits
+            <span id="pv">-</span> times, visitors
+            <span id="uv">-</span> people |
+            <i class="fas fa-file-alt"></i> Page visits <span id="ppv">-</span> times
+        </p>
+    </footer>
+</body>
 
-    </body>
 </html>
