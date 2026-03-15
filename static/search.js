@@ -128,7 +128,9 @@ var options = {
 var initIndex = async function () {
   if (fuse === undefined) {
     try {
-      const response = await fetch("/search_index.zh.json");
+      const lang = document.documentElement.lang;
+      const indexUrl = lang === "en" ? "/search_index.en.json" : "/search_index.zh.json";
+      const response = await fetch(indexUrl);
       if (response.ok) {
         const data = await response.json();
         fuse = new Fuse(data, options);
