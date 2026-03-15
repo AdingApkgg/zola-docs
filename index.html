@@ -52,6 +52,32 @@
         </script>
         <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
         <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        (function() {
+            // 仅在首页执行跳转逻辑，避免干扰深层链接访问
+            if (window.location.pathname !== '/' && window.location.pathname !== '/en/') return;
+
+            const lang = localStorage.getItem('zola_lang_pref');
+            const isEnPath = window.location.pathname.startsWith('/en/');
+            
+            if (lang) {
+                if (lang === 'en' && !isEnPath) window.location.href = '/en/';
+                else if (lang === 'zh' && isEnPath) window.location.href = '/';
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (!browserLang.startsWith('zh') && !isEnPath) {
+                    window.location.href = '/en/';
+                }
+            }
+        })();
+        </script>
         
     </head>
     <body>
@@ -75,14 +101,14 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link">留言板</a></li>
                     <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
                     <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                    <li>
+                        
+                            <a class="white" href="/en/" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')">English</a>
+                        
+                    </li>
                 </ul>
                 <div class="search-container">
                     <input id="search" type="search" placeholder="🔎 搜索文档">
-
-                    <div class="search-results">
-                        <div class="search-results__items"></div>
-                    </div>
-                </div>
             </nav>
         </header>
 
@@ -101,32 +127,28 @@
                         <div class="selling-point">
                             <h2>无依赖</h2>
                             <p>
-                                Zola 是一个单一的可执行文件，内置了 Sass 编译、语法高亮、目录生成
-                                以及许多传统上需要设置开发环境或添加 JavaScript 库才能实现的功能。
+                                Zola 是一个单一的可执行文件，内置了 Sass 编译、语法高亮、目录生成以及许多传统上需要设置开发环境或添加 JavaScript 库才能实现的功能。
                             </p>
                         </div>
 
                         <div class="selling-point">
                             <h2>极速</h2>
                             <p>
-                                平均每个站点的生成时间不到一秒，
-                                包括 Sass 编译和语法高亮。
+                                平均每个站点的生成时间不到一秒，包括 Sass 编译和语法高亮。
                             </p>
                         </div>
 
                         <div class="selling-point">
                             <h2>可扩展</h2>
                             <p>
-                                Zola 将您的整个站点渲染为静态文件，这使得处理任何流量都变得轻而易举，
-                                而且无需担心管理服务器或数据库。
+                                Zola 将您的整个站点渲染为静态文件，这使得处理任何流量都变得轻而易举，而且无需担心管理服务器或数据库。
                             </p>
                         </div>
 
                         <div class="selling-point">
                             <h2>易于使用</h2>
                             <p>
-                                从 CLI 到模板引擎，一切都设计得直观易用。
-                                别只听我说，看看
+                                从 CLI 到模板引擎，一切都设计得直观易用。别只听我说，看看
                                 <a href="https://zola.docs.saop.cc/documentation/">文档</a> 自己体验一下。
                             </p>
                         </div>
@@ -134,8 +156,7 @@
                         <div class="selling-point">
                             <h2>灵活</h2>
                             <p>
-                                Zola 不会妨碍您，让您可以专注于内容，无论是博客、
-                                知识库、落地页还是它们的组合。
+                                Zola 不会妨碍您，让您可以专注于内容，无论是博客、知识库、落地页还是它们的组合。
                             </p>
                         </div>
 
@@ -152,7 +173,7 @@
             
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">Contributors</a>
             <p>本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 
@@ -172,12 +193,5 @@
         })();
         </script>
 
-        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js"></script>
-        <script>
-        window.addEventListener('load', () => {
-          quicklink.listen();
-        });
-        </script>
-        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
     </body>
 </html>

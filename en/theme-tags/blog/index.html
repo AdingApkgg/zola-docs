@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;theme-tags&#x2F;blog&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Zola">
+        <meta property="og:description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;theme-tags&#x2F;blog&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Zola">
+        <meta name="twitter:description" content="A fast static site generator in a single binary with everything built-in.">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "headline": "Zola",
+            "description": "A fast static site generator in a single binary with everything built-in.",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;theme-tags&#x2F;blog&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>Themes | Zola </title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        (function() {
+            // 仅在首页执行跳转逻辑，避免干扰深层链接访问
+            if (window.location.pathname !== '/' && window.location.pathname !== '/en/') return;
+
+            const lang = localStorage.getItem('zola_lang_pref');
+            const isEnPath = window.location.pathname.startsWith('/en/');
+            
+            if (lang) {
+                if (lang === 'en' && !isEnPath) window.location.href = '/en/';
+                else if (lang === 'zh' && isEnPath) window.location.href = '/';
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (!browserLang.startsWith('zh') && !isEnPath) {
+                    window.location.href = '/en/';
+                }
+            }
+        })();
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/documentation/" class="nav-link">Documentation</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/themes/" class="nav-link">Themes</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/en/comments/" class="nav-link">Guestbook</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">Forum</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                    <li>
+                        
+                            <a class="white" href="/" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'zh')">中文</a>
+                        
+                    </li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 Search">
+            </nav>
+        </header>
+
+        <div class="content content--reversed">
+            
+    <div class="themes-container">
+        
+            <h1>Zola themes in Blog</h1>
+            <div class="themes">
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;linkita&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;linkita&#x2F;screenshot.png" alt="Screenshot of Linkita">
+                        <span>Linkita</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;photography-theme&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;photography-theme&#x2F;screenshot.png" alt="Screenshot of photography theme">
+                        <span>photography theme</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-theme-nivis&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zola-theme-nivis&#x2F;screenshot.png" alt="Screenshot of nivis">
+                        <span>nivis</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;terminus&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;terminus&#x2F;screenshot.png" alt="Screenshot of terminus">
+                        <span>terminus</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;lekhz&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;lekhz&#x2F;screenshot.png" alt="Screenshot of Lekhz">
+                        <span>Lekhz</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zolanight&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zolanight&#x2F;screenshot.png" alt="Screenshot of zolanight">
+                        <span>zolanight</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;austere&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;austere&#x2F;screenshot.png" alt="Screenshot of austere">
+                        <span>austere</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;cela&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;cela&#x2F;screenshot.png" alt="Screenshot of Cela">
+                        <span>Cela</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;kirifuji&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;kirifuji&#x2F;screenshot.png" alt="Screenshot of kirifuji">
+                        <span>kirifuji</span>
+                    </a>
+                
+                    <a class="theme" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zluinav&#x2F;">
+                        <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;zluinav&#x2F;screenshot.png" alt="Screenshot of UI Navigation">
+                        <span>UI Navigation</span>
+                    </a>
+                
+            </div>
+        
+    </div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> and <a class="white" href="https://github.com/getzola/zola/graphs/contributors">Contributors</a>
+            <p>Total visits <span id="pv">-</span> times, visitors <span id="uv">-</span> people | Page visits <span id="ppv">-</span> times</p>
+        </footer>
+
+        <script>
+        (async () => {
+          const res = await fetch('https://bsz.saop.cc/api', {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'x-bsz-referer': location.href }
+          });
+          const { success, data } = await res.json();
+          if (success) {
+            document.getElementById('pv').textContent = data.site_pv;
+            document.getElementById('uv').textContent = data.site_uv;
+            document.getElementById('ppv').textContent = data.page_pv;
+          }
+        })();
+        </script>
+
+    </body>
+</html>

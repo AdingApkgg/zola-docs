@@ -52,6 +52,32 @@
         </script>
         <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
         <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        (function() {
+            // 仅在首页执行跳转逻辑，避免干扰深层链接访问
+            if (window.location.pathname !== '/' && window.location.pathname !== '/en/') return;
+
+            const lang = localStorage.getItem('zola_lang_pref');
+            const isEnPath = window.location.pathname.startsWith('/en/');
+            
+            if (lang) {
+                if (lang === 'en' && !isEnPath) window.location.href = '/en/';
+                else if (lang === 'zh' && isEnPath) window.location.href = '/';
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (!browserLang.startsWith('zh') && !isEnPath) {
+                    window.location.href = '/en/';
+                }
+            }
+        })();
+        </script>
         
     </head>
     <body>
@@ -75,14 +101,14 @@
                     <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link">留言板</a></li>
                     <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
                     <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                    <li>
+                        
+                            <a class="white" href="/en/" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')">English</a>
+                        
+                    </li>
                 </ul>
                 <div class="search-container">
                     <input id="search" type="search" placeholder="🔎 搜索文档">
-
-                    <div class="search-results">
-                        <div class="search-results__items"></div>
-                    </div>
-                </div>
             </nav>
         </header>
 
@@ -235,7 +261,7 @@ Ported from the Hugo theme <a class="external" rel="external" href="https://gith
 
         </div>
         <footer>
-            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">贡献者</a>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">Contributors</a>
             <p>本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | 本页访问 <span id="ppv">-</span> 次</p>
         </footer>
 
@@ -255,12 +281,5 @@ Ported from the Hugo theme <a class="external" rel="external" href="https://gith
         })();
         </script>
 
-        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js"></script>
-        <script>
-        window.addEventListener('load', () => {
-          quicklink.listen();
-        });
-        </script>
-        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
     </body>
 </html>

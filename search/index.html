@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="author" content="Vincent Prouillet">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;search&#x2F;">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="搜索 | Zola">
+        <meta property="og:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;search&#x2F;">
+        <meta property="og:site_name" content="Zola">
+        <meta property="og:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="搜索 | Zola">
+        <meta name="twitter:description" content="无需依赖，单一二进制文件的静态站点生成器。">
+        <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg">
+
+        <!-- AI Indexing -->
+        <link rel="help" href="/llms.txt" title="AI Context">
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "搜索",
+            "description": "无需依赖，单一二进制文件的静态站点生成器。",
+            "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;search&#x2F;",
+            "author": {
+                "@type": "Person",
+                "name": "Vincent Prouillet"
+            }
+        }
+        </script>
+
+        <title>
+Zola | 搜索
+</title>
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/site.css">
+        <link rel="icon" href="https://zola.docs.saop.cc/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://zola.docs.saop.cc/rss.xml">
+        <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css">
+        <script type="module">
+            import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
+        </script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+        <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
+        <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+        <script>
+        document.addEventListener('turbo:load', () => {
+          quicklink.listen();
+        });
+        </script>
+        <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+        <script>
+        (function() {
+            // 仅在首页执行跳转逻辑，避免干扰深层链接访问
+            if (window.location.pathname !== '/' && window.location.pathname !== '/en/') return;
+
+            const lang = localStorage.getItem('zola_lang_pref');
+            const isEnPath = window.location.pathname.startsWith('/en/');
+            
+            if (lang) {
+                if (lang === 'en' && !isEnPath) window.location.href = '/en/';
+                else if (lang === 'zh' && isEnPath) window.location.href = '/';
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage;
+                if (!browserLang.startsWith('zh') && !isEnPath) {
+                    window.location.href = '/en/';
+                }
+            }
+        })();
+        </script>
+        
+    </head>
+    <body>
+
+        <header>
+		<a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
+            <picture>
+                <source srcset="https://zola.docs.saop.cc/logos/Zola-logo-black.svg" media="(prefers-color-scheme: light)">
+                <img
+                    src="/logos/Zola-logo-white.svg"
+                    title="Zola main logo"
+                    alt="Zola"
+                    fetchpriority="high"
+                />
+            </picture>
+        </a>
+            <nav>
+                <ul>
+                    <li><a class="white" href="https://zola.docs.saop.cc/documentation/" class="nav-link">文档</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/themes/" class="nav-link">主题</a></li>
+                    <li><a class="white" href="https://zola.docs.saop.cc/comments/" class="nav-link">留言板</a></li>
+                    <li><a class="white external" href="https://zola.discourse.group/" class="nav-link">论坛</a></li>
+                    <li><a class="white external" href="https://github.com/getzola/zola" class="nav-link">GitHub</a></li>
+                    <li>
+                        
+                            <a class="white" href="/en/" class="nav-link" onclick="localStorage.setItem('zola_lang_pref', 'en')">English</a>
+                        
+                    </li>
+                </ul>
+                <div class="search-container">
+                    <input id="search" type="search" placeholder="🔎 搜索文档">
+            </nav>
+        </header>
+
+        <div class="content ">
+            
+<div class="search-page">
+    <div class="search-header">
+        <h1>搜索文档</h1>
+    </div>
+    <div class="search-container">
+        <input id="search" type="search" placeholder="输入关键词搜索..." autocomplete="off">
+        <div class="search-results">
+            <div class="search-results__items"></div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <footer>
+            ©2017-2026 — <a class="white" href="https://www.vincentprouillet.com">Vincent Prouillet</a> 和 <a class="white" href="https://github.com/getzola/zola/graphs/contributors">Contributors</a>
+            <p>本站总访问 <span id="pv">-</span> 次，访客 <span id="uv">-</span> 人 | 本页访问 <span id="ppv">-</span> 次</p>
+        </footer>
+
+        <script>
+        (async () => {
+          const res = await fetch('https://bsz.saop.cc/api', {
+            method: 'POST',
+            credentials: 'include',
+            headers: { 'x-bsz-referer': location.href }
+          });
+          const { success, data } = await res.json();
+          if (success) {
+            document.getElementById('pv').textContent = data.site_pv;
+            document.getElementById('uv').textContent = data.site_uv;
+            document.getElementById('ppv').textContent = data.page_pv;
+          }
+        })();
+        </script>
+
+    </body>
+</html>

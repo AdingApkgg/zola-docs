@@ -144,7 +144,7 @@ function initSearch() {
   var $searchInput = document.getElementById("search");
   var $searchResults = document.querySelector(".search-results");
   var $searchResultsItems = document.querySelector(".search-results__items");
-  var MAX_ITEMS = 10;
+  var MAX_ITEMS = 50;
   
   if (!$searchInput || !$searchResults || !$searchResultsItems) {
       return;
@@ -178,12 +178,6 @@ function initSearch() {
       }
     }
   }, 150));
-
-  window.addEventListener('click', function(e) {
-    if ($searchResults.style.display == "block" && !$searchResults.contains(e.target)) {
-      $searchResults.style.display = "none";
-    }
-  });
 }
 
 initSearch();
