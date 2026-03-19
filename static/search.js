@@ -188,8 +188,8 @@ function initSearch() {
 }
 
 initSearch();
-document.addEventListener("turbo:load", initSearch);
-document.addEventListener("turbo:before-cache", function() {
+document.addEventListener("swup:page:view", initSearch);
+document.addEventListener("swup:visit:start", function() {
     var $searchResults = document.querySelector(".search-results");
     var $searchInput = document.getElementById("search");
     if ($searchResults) $searchResults.style.display = "none";

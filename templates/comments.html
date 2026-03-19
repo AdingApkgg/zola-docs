@@ -2,41 +2,6 @@
 
 {% block title %}{{ page.title }} | {{ config.title }}{% endblock title %}
 
-{% block head %}
-    <link href="{{ get_url(path='css/Artalk.css') }}" rel="stylesheet">
-    <script src="{{ get_url(path='js/Artalk.js') }}" defer></script>
-    <script>
-    const pageKey = '{{ page.path | safe }}';
-    const initComments = (retry = 0) => {
-        const el = document.getElementById('Comments');
-        if (!el) return;
-        if (el.dataset.artalkInited === pageKey) return;
-        if (typeof Artalk === 'undefined') {
-            if (retry < 50) {
-                setTimeout(() => initComments(retry + 1), 100);
-            }
-            return;
-        }
-        Artalk.init({
-            el:        '#Comments',
-            pageKey:   pageKey,
-            pageTitle: '{{ page.title }}',
-            server:    'https://artalk.saop.cc',
-            site:      '{{ config.title }}',
-            darkMode:  'true',
-        });
-        el.dataset.artalkInited = pageKey;
-    };
-
-    document.addEventListener('turbo:load', () => initComments());
-    if (document.readyState !== 'loading') {
-        initComments();
-    } else {
-        document.addEventListener('DOMContentLoaded', () => initComments());
-    }
-    </script>
-{% endblock head %}
-
 {% block content %}
 <div class="container" style="padding: 2rem 0;">
     <h1>{{ page.title }}</h1>
@@ -46,6 +11,6 @@
 
     <hr style="margin: 2rem 0;">
 
-    <div id="Comments"></div>
+    <div id="Comments" data-page-key="{{ page.path | safe }}"></div>
 </div>
 {% endblock content %}

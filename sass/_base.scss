@@ -146,3 +146,43 @@ p code, li code:not(pre code) {
 a i, h1 i, h2 i, h3 i, h4 i, h5 i, h6 i, button i, .button i, p i {
   margin-right: 0.4em;
 }
+
+// Swup ParallelPlugin 页面过渡
+// 动画由容器级 class 驱动（is-previous-container / is-next-container）
+.transition-fade {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// 旧容器：添加 is-previous-container 时触发离场（淡出 + 上滑）
+// position: absolute 由 JS 设置（需要精确定位到新容器同一位置）
+.transition-fade.is-previous-container {
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+// 新容器：is-next-container 添加 → reflow → 移除，触发入场（从下方滑入）
+.transition-fade.is-next-container {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+// 无障碍：尊重减少动画偏好
+@media (prefers-reduced-motion: reduce) {
+  .transition-fade {
+    transition-duration: 0s !important;
+  }
+}
+
+// Swup progress bar
+.swup-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--link-color), #ff6b6b);
+  box-shadow: 0 0 8px var(--link-color);
+  z-index: 9999;
+}
