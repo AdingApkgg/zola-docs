@@ -54,24 +54,86 @@
     <link rel="alternate" type="application/rss+xml" title="RSS"
         href="https://zola.docs.saop.cc/rss.xml" />
     <link rel="stylesheet" href="https://zola.docs.saop.cc/font-awesome/css/all.min.css" />
-    <script type="module">
-        import hotwiredTurbo from 'https://zola.docs.saop.cc/js/turbo.js';
-    </script>
-    <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
-    <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
-    <script src="https://zola.docs.saop.cc/js/quicklink.umd.js" defer></script>
+    <script src="https://zola.docs.saop.cc/js/swup.js"></script>
+    <script src="https://zola.docs.saop.cc/js/swup-parallel.js"></script>
+    <script src="https://zola.docs.saop.cc/js/swup-preload.js"></script>
+    <script src="https://zola.docs.saop.cc/js/swup-scroll.js"></script>
+
+    <script src="https://zola.docs.saop.cc/js/swup-progress.js"></script>
+    <script src="https://zola.docs.saop.cc/js/swup-head.js"></script>
+    <script src="https://zola.docs.saop.cc/js/swup-body-class.js"></script>
     <script>
-        document.addEventListener("turbo:load", () => {
-            quicklink.listen({
-                ignores: [
-                    (uri, elem) => elem && elem.hasAttribute("data-noquicklink"),
-                ],
+        const swup = new Swup({
+            containers: ['#swup'],
+            animationSelector: '[class*="transition-"]',
+            plugins: [
+                new SwupParallelPlugin(),
+                new SwupPreloadPlugin(),
+                new SwupScrollPlugin(),
+
+                new SwupProgressPlugin(),
+                new SwupHeadPlugin({
+                    persistAssets: true,
+                    persistTags: 'link[rel="stylesheet"], script[src], style',
+                }),
+                new SwupBodyClassPlugin(),
+            ],
+        });
+        swup.hooks.on('content:replace', (visit) => {
+            const doc = visit.to.document;
+            if (!doc) return;
+            const newLang = doc.documentElement?.lang;
+            if (newLang) document.documentElement.lang = newLang;
+            // 同步 header/footer 中的动态内容（语言切换链接等）
+            const pairs = [['header', 'header'], ['footer', 'footer']];
+            pairs.forEach(([sel]) => {
+                const oldEl = document.querySelector(sel);
+                const newEl = doc.querySelector(sel);
+                if (oldEl && newEl) oldEl.innerHTML = newEl.innerHTML;
             });
+            // 旧容器绝对定位到新容器同一位置，实现重叠过渡
+            const prev = document.querySelector('.is-previous-container');
+            const next = document.querySelector('#swup:not(.is-previous-container)');
+            if (prev && next) {
+                const rect = next.getBoundingClientRect();
+                prev.style.position = 'absolute';
+                prev.style.top = (rect.top + window.scrollY) + 'px';
+                prev.style.left = rect.left + 'px';
+                prev.style.width = rect.width + 'px';
+            }
         });
     </script>
-    <script src="https://zola.docs.saop.cc/js/instant.page.js" type="module"></script>
+    <link href="https://zola.docs.saop.cc/css/Artalk.css" rel="stylesheet">
+    <script src="https://zola.docs.saop.cc/js/Artalk.js" defer></script>
+    <script type="text/javascript" src="https://zola.docs.saop.cc/fuse.min.js" defer></script>
+    <script type="text/javascript" src="https://zola.docs.saop.cc/search.js" defer></script>
     <script>
-        document.addEventListener("turbo:load", async () => {
+        function initComments(retry) {
+            retry = retry || 0;
+            var el = document.getElementById('Comments');
+            if (!el) return;
+            var pageKey = el.dataset.pageKey;
+            if (!pageKey) return;
+            if (el.dataset.artalkInited === pageKey) return;
+            if (typeof Artalk === 'undefined') {
+                if (retry < 50) setTimeout(function() { initComments(retry + 1); }, 100);
+                return;
+            }
+            Artalk.init({
+                el: '#Comments',
+                pageKey: pageKey,
+                pageTitle: document.title,
+                server: 'https://artalk.saop.cc',
+                site: 'Zola',
+                darkMode: 'true',
+            });
+            el.dataset.artalkInited = pageKey;
+        }
+        initComments();
+        document.addEventListener('swup:page:view', function() { initComments(); });
+    </script>
+    <script>
+        async function updateAnalytics() {
             const pv = document.getElementById("pv");
             const uv = document.getElementById("uv");
             const ppv = document.getElementById("ppv");
@@ -89,7 +151,9 @@
                     ppv.textContent = data.page_pv;
                 }
             } catch (_) { }
-        });
+        }
+        updateAnalytics();
+        document.addEventListener("swup:page:view", updateAnalytics);
     </script>
     
 </head>
@@ -132,7 +196,7 @@
                 <li>
                               
                             
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;" class="nav-link" data-noquicklink
+                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;documentation&#x2F;themes&#x2F;overview&#x2F;" class="nav-link"
                         onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
                     
                 </li>
@@ -140,7 +204,7 @@
         </nav>
     </header>
 
-    <div class="content content--reversed">
+    <div id="swup" class="transition-fade content content--reversed">
         
 
     
