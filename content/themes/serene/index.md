@@ -1,7 +1,7 @@
 
 +++
 title = "serene"
-description = "A minimal blog theme for zola, well crafted"
+description = "为 Zola 精心打造的极简博客主题"
 template = "theme.html"
 date = 2026-02-14T15:51:03+08:00
 
@@ -22,7 +22,7 @@ name = "isunjn"
 homepage = "https://github.com/isunjn"
 +++        
 
-A minimal blog theme for [Zola](https://www.getzola.org), well crafted.
+一个为 [Zola](https://www.getzola.org) 精心设计的极简博客主题。
 
 [Demo](https://serene-demo.pages.dev) | [Usage](https://github.com/isunjn/serene/blob/latest/USAGE.md)
 

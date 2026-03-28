@@ -1,7 +1,7 @@
 
 +++
 title = "karzok"
-description = "The theme for launching fast documentation sites"
+description = "用于快速搭建文档站点的主题"
 template = "theme.html"
 date = 2024-07-18T16:03:24Z
 
@@ -33,34 +33,34 @@ homepage = ""
 
 # Karzok
 
-- classless and frameworkless
-- Jinja-like templates
-- javascript is optional, needed only for search,math,alerts and dark mode
-- no roundings and other strange design trends
+- 无 class、无框架依赖
+- 类 Jinja 模板风格
+- JavaScript 可选，仅搜索、数学公式、提示框和深色模式需要
+- 无圆角等花哨设计趋势
 
 ![screenshot](./screenshot.png)
 
-## Get Started
+## 快速开始
 
 - [find out more](https://karzok.re128.org/install/)
 
-### Requirements
+### 依赖要求
 
 - [Node.js](https://nodejs.org/)
 
-### 1. Create a new zola site
+### 1. 创建新的 zola 站点
 
 ```sh
 zola init zola_site
 ```
 
-### 2. Download this theme to you themes directory:
+### 2. 将主题下载到 themes 目录：
 
 ```sh
 git clone https://codeberg.org/kogeletey/karzok zola_site/themes
 ```
 
-or install as submodule:
+或作为子模块安装：
 
 ```sh
 cd zola_site
@@ -68,7 +68,7 @@ git init # if your project is a git repository already, ignore this command
 git submodule add https://codeberg.org/kogeletey/karzok zola_site/themes
 ```
 
-### 3. Configuration. Open in favorite editor `config.toml`
+### 3. 配置：用你常用的编辑器打开 `config.toml`
 
 ```toml
 base_url = "https://karzok.example.net" # set-up for production
@@ -77,39 +77,38 @@ theme = "karzok"
 
 See more in [configuration](https://karzok.re128.org/configure/)
 
-### 4. Added new content
+### 4. 添加初始内容
 
 ```zsh
     cp ./themes/content/_index.md content/_index.md
 ```
 
-how you can give freedom to your creativity
+之后你就可以自由发挥进行创作。
 
-### 5. Run the project
+### 5. 运行项目
 
-i. development enviroment
+i. 开发环境
 
-1. Install node dependencies needed to work
+1. 安装构建所需 Node 依赖
 
 ```zsh
 pnpm ci
 pnpm run build
 ```
 
-2. Just run `zola serve` in the root path of the project
+2. 在项目根目录运行 `zola serve`
 
 ```zsh
 zola serve
 ```
 
-Open in favorite browser [http://127.0.0.1:1111](http://127.0.0.1:1111). Saved
-changes live reolad.
+在浏览器打开 [http://127.0.0.1:1111](http://127.0.0.1:1111)。保存改动后会自动热重载。
 
-ii. production enviroment
+ii. 生产环境
 
-- with conainers
+- 使用容器
 
-1. Write file for container
+1. 编写容器文件
 
 ```Dockerfile
 FROM ghcr.io/kogeletey/karzok:latest AS build-stage
@@ -125,12 +124,12 @@ COPY --from=build-stage /www/public /usr/share/nginx/html
 EXPOSE 80
 ```
 
-2.  Run the your container
+2. 运行容器
 ```zsh
 docker build -t <your_name_image> . &&\
 docker run -d -p 8080:8080 <your_name_image> 
 ```
-- using gitlab-ci and gitlab-pages
+- 使用 gitlab-ci 与 gitlab-pages
 
 ```yml
 image: ghcr.io/kogeletey/karzok:latest # or change use your registry
@@ -146,17 +145,16 @@ pages:
 
 Open in favorite browser [https://localhost:8080](http://localhost:8080)
 
-## License
+## 许可证
 
-This program is Free Software: You can use, study share and improve it at your
-will. Specifically you can redistribute and/or modify it under the terms of the
-[MIT](https://mit-license.org/)
+这是自由软件：你可以按自己的意愿使用、研究、分享和改进它。  
+具体来说，你可以在 [MIT](https://mit-license.org/) 条款下重新分发和/或修改它。
 
-## Contribute
+## 贡献
 
-Make sure to read the [Code of Conduct](https://karzok.re128.org/reference/code_of_conduct/)
+请先阅读 [Code of Conduct](https://karzok.re128.org/reference/code_of_conduct/)。
 
-### Find bugs and come up with features
+### 反馈缺陷与功能建议
 
 On the [codeberg issues](https://codeberg.org/kogeletey/karzok/issues) or
 [github issues](https://github.com/kogeletey/karzok/issues)

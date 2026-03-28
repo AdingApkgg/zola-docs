@@ -1,7 +1,7 @@
 
 +++
 title = "Soapstone"
-description = "A bare bones dark theme with some color tweakability"
+description = "简洁骨架式深色主题，支持少量颜色自定义"
 template = "theme.html"
 date = 2022-07-25T17:05:29-07:00
 
@@ -24,15 +24,15 @@ homepage = "https://mradford.com"
 
 # Soapstone
 
-A divless dark theme for zola. [See it in action](https://mattyrad.github.io/soapstone/).
+一个用于 Zola 的无 div 深色主题。[在线演示](https://mattyrad.github.io/soapstone/)。
 
 ![sample](/screenshot.png)
 
-See [installation](https://www.getzola.org/documentation/themes/installing-and-using-themes/) for installation directions.
+安装方式请参考 [installation](https://www.getzola.org/documentation/themes/installing-and-using-themes/) 文档。
 
-## Extra config
+## 额外配置
 
-The following config is optional, but can add a few niceties.
+以下配置为可选项，但可以带来一些额外体验优化。
 
 ```toml
 [extra]

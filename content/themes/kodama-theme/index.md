@@ -1,7 +1,7 @@
 
 +++
 title = "kodama"
-description = "Theme insipired by wowchemy academic."
+description = "受 wowchemy academic 启发的主题"
 template = "theme.html"
 date = 2025-10-11T14:31:25+02:00
 
@@ -27,18 +27,22 @@ homepage = "https://adrien-faure.fr"
 ![Theme screenshot](./screenshot.png)
 ## Summary
 
-This theme is greatly inspired from hugo academic theme.
+该主题深受 hugo academic 主题启发。
 
-First lets introduce some technical details:
+先介绍一些技术细节：
 - It relies on [zola](https://www.getzola.org/).
 - It has no javascript.
 - The CSS is built with [tailwindcss](https://tailwindcss.com/).
     - The blog articles are themed with [@tailwindcss/typography](https://tailwindcss-typography.vercel.app) theme.
+- 依赖 [zola](https://www.getzola.org/)。
+- 不使用 JavaScript。
+- CSS 基于 [tailwindcss](https://tailwindcss.com/) 构建。
+    - 博客文章样式使用 [@tailwindcss/typography](https://tailwindcss-typography.vercel.app)。
 
 
-## Getting started
+## 快速开始
 
-The best way to get started is to follow the official [zola tutorial](https://www.getzola.org/documentation/getting-started/overview/).
+最好的入门方式是先阅读官方 [zola tutorial](https://www.getzola.org/documentation/getting-started/overview/)。
 
 This theme can be installed as any other theme.
 
@@ -49,10 +53,11 @@ cd themes & git clone https://github.com/adfaure/kodama-theme
 
 and set in the `config.toml` the variable `theme` to `kodama-theme`.
 
-### Generate the CSS
+### 生成 CSS
 
 [Tailwindcss](https://tailwindcss.com/) is a framework that parses your html files, and generate the minimal CSS required.
 This theme depends on this framework.
+[Tailwindcss](https://tailwindcss.com/) 会解析 HTML 并生成所需最小 CSS，本主题依赖该框架。
 
 The theme comes with the precompiled style files (`static/styles/styles.css`). However, if you wish to change the style, or modify the template html, you might need to recompile your styles.
 
@@ -83,9 +88,9 @@ The resulting file `static/styles/styles.css` is loaded in the html.
 
 *Note that, for the moment the generation of the css is not automated. As a result, it is necessary to re-run this command when changes are made with the styling.*
 
-## Configuration
+## 配置
 
-This theme use some extra configuration, that can be set in the extra section of your `config.toml`.
+该主题提供一些额外配置，可在 `config.toml` 的 `extra` 区域设置。
 
 ```toml
 # Title displayed in the index page
@@ -114,7 +119,7 @@ menu_items = [
 ]
 ```
 
-## Index page
+## 首页
 
 The information needed to build the index page are located in the page [front matter](https://www.getzola.org/documentation/content/page/#front-matter) of root index file (e.g `content/_index.md`).
 
@@ -157,12 +162,12 @@ interests = [
   icon = "linkedin"
   link = "https://www.linkedin.com/in/adrien-faure-9958978b/"
 ```
-## Contact
+## 联系方式
 
 The predefined contact page can be use.
 The front matter extra part should contains a list of the link to show in the contacts.
 
-## Sections
+## 分区
 
 The section available in your website are automatically detected and displayed in the nav bar at the top of the page.
 To prevent a section to be displayed in the nav bar, you can set the extra front matter option `extra.hidden_nav = false` to false.
@@ -179,7 +184,7 @@ extra.index_title = "Recent Posts"
 extra.index_show = true
 ```
 
-### Blog
+### 博客
 
 The section `blog` is the most standard section. It show a list of article with things that you want to share in your website.
 To use the blog template, configure the section with the following front matter:
@@ -189,7 +194,7 @@ template = "section.html"
 page_template = "blog-page.html"
 ```
 
-### Publications
+### 出版物
 
 The section `publication` is very similar to the `blog` section however it is dedicated to show your list of scientific articles.
 The articles are showed in two subcategories: Thesis and Conference / Workshop.

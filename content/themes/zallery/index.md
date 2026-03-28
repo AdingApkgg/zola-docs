@@ -1,7 +1,7 @@
 
 +++
 title = "zallery"
-description = "Gallery theme for zola"
+description = "Zola 画廊主题"
 template = "theme.html"
 date = 2025-07-14T19:59:26-05:00
 
@@ -24,50 +24,50 @@ homepage = "https://creekmore.dev"
 
 # Zallery theme for Zola
 
-Gallery and portfolio theme for [Zola](https://getzola.org).
+适用于 [Zola](https://getzola.org) 的画廊与作品集主题。
 
 Demo Site: [gamingrobot.github.io/zallery-demo](https://gamingrobot.github.io/zallery-demo/)  
 Personal Portfolio: [gamingrobot.art](https://gamingrobot.art/)
 
-## Screenshots
+## 截图
 
 | Light mode | Dark mode |
 | :------: | :-----------: |
 | ![light mode](screenshot-light.jpg) | ![dark mode](screenshot-dark.jpg) |
 
-## Features
+## 功能
 
-- Dark and Light mode
-- Auto creation of mobile friendly images
-- Auto creation of thumbnails
-- Auto conversion of images
-- Maximize button on images
-- Next and Previous artwork buttons
-- [medium-zoom](https://github.com/francoischalifour/medium-zoom) support
-- [ModelViewer](https://modelviewer.dev/) and [Sketchfab](https://sketchfab.com/) support
-- Video embed support
-- OpenGraph and Twitter embed support
-- Responsive and mobile friendly
+- 深色与浅色模式
+- 自动生成移动端友好图片
+- 自动生成缩略图
+- 自动转换图片格式
+- 图片放大按钮
+- 作品“上一张/下一张”按钮
+- 支持 [medium-zoom](https://github.com/francoischalifour/medium-zoom)
+- 支持 [ModelViewer](https://modelviewer.dev/) 和 [Sketchfab](https://sketchfab.com/)
+- 支持视频嵌入
+- 支持 OpenGraph 与 Twitter 嵌入
+- 响应式与移动端友好
 
-## Installation
+## 安装
 
-Clone the theme into the themes folder:
+将主题克隆到 themes 目录：
 
 ```bash
 git clone https://github.com/gamingrobot/zallery.git themes/zallery
 ```
 
-Note: It is recommended that you copy the `config.toml` from the `themes/zallery` folder to the root folder of your site.
+注意：建议将 `themes/zallery` 下的 `config.toml` 复制到站点根目录。
 
-Then set your theme setting in `config.toml` to `zallery`:
+然后在 `config.toml` 中将主题设置为 `zallery`：
 
 ```toml
 theme = "zallery"
 ```
 
-## Customization
+## 自定义
 
-To customize the theme's colors you will need to copy the `_variables.scss` into your sites `sass` folder and create a `zallery.scss` file with:
+若要自定义主题颜色，需要将 `_variables.scss` 复制到站点 `sass` 目录，并创建 `zallery.scss`：
 
 ```scss
 @import 'variables';
@@ -76,11 +76,11 @@ To customize the theme's colors you will need to copy the `_variables.scss` into
 
 See the demo site for an example: [github.com/gamingrobot/zallery-demo/tree/master/sass](https://github.com/gamingrobot/zallery-demo/tree/master/sass)
 
-## Options
+## 配置项
 
-### Menu Items
+### 菜单项
 
-Customize the header navigation links
+自定义头部导航链接。
 
 ```toml
 [extra]
@@ -90,34 +90,34 @@ menu = [
 ]
 ```
 
-### Browser Bar Theme Color
+### 浏览器地址栏主题色
 
-Customize color to set the browser's url bar on mobile
+用于设置移动端浏览器地址栏颜色。
 
 ```toml
 [extra]
 theme_color = "#313131"
 ```
 
-### Author Url
+### 作者链接
 
-Url used for the name in the copyright
+版权区域作者名对应链接。
 
 ```toml
 [extra]
 author_url = "https://example.com"
 ```
 
-### Cover Image
+### 封面图
 
-Cover image to use on the main gallery pages for opengraph and twitter embeds
+主画廊页面用于 OpenGraph 与 Twitter 嵌入的封面图。
 
 ```toml
 [extra]
 cover_image = "img/cover.webp"
 ```
 
-### Copyright and Powered by
+### 版权与 Powered by
 
 To hide the copyright set this to `true`
 
@@ -133,7 +133,7 @@ To hide the "Powered by Zola & Zallery" set this to `true`
 hide_poweredby = false
 ```
 
-### Gallery
+### 画廊
 
 Settings for the gallery view's thumbnails
 
@@ -144,7 +144,7 @@ thumbnail_format = "webp" # auto, jpg, png, webp
 thumbnail_quality = 100 # value in percentage, only for webp and jpg
 ```
 
-### `img` shortcode settings
+### `img` 短代码设置
 
 Settings for the `img` shortcode, allowing for automatic conversion and creating mobile friendly images
 
@@ -156,7 +156,7 @@ image_format = "webp" # auto, jpg, png, webp
 image_quality = 90 # value in percentage, only for webp and jpg
 ```
 
-### Frontmatter settings
+### Frontmatter 设置
 
 These settings are for the frontmatter on each artwork
 
@@ -166,11 +166,11 @@ thumbnail = "image.jpg" # image to resize into a thumbnail and cover image
 modelviewer = true # enable modelviewer javascript for this artwork
 ```
 
-### Javascript libraries
+### JavaScript 库
 
 #### ModelViewer
 
-Set to `true` to enable [modelviewer](https://modelviewer.dev/) support. This can also be set in the artwork frontmatter or in `config.toml`
+设为 `true` 启用 [modelviewer](https://modelviewer.dev/) 支持。也可在作品 frontmatter 或 `config.toml` 中设置。
 
 ```toml
 [extra]
@@ -179,7 +179,7 @@ modelviewer = true
 
 #### JSZoom
 
-Set to `true` to enable [javascript zoom](https://github.com/francoischalifour/medium-zoom) support.
+设为 `true` 启用 [javascript zoom](https://github.com/francoischalifour/medium-zoom) 支持。
 
 ```toml
 [extra]
@@ -188,14 +188,14 @@ jszoom = true
 
 #### GoatCounter
 
-Set to the goatcounter tag to enable [goatcounter](https://www.goatcounter.com/) support
+填写 goatcounter 标签以启用 [goatcounter](https://www.goatcounter.com/) 支持。
 
 ```toml
 [extra]
 goatcounter = ""
 ```
 
-## Shortcodes
+## 短代码
 
 ### `img`
 

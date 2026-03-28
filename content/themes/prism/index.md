@@ -1,7 +1,7 @@
 
 +++
 title = "Prism"
-description = "A modern Zola theme featuring glassmorphism design"
+description = "采用玻璃拟态设计的现代 Zola 主题"
 template = "theme.html"
 date = 2026-03-09T09:27:07+05:00
 
@@ -23,24 +23,24 @@ homepage = "https://jahongir.ru"
 +++        
 
 # Prism
-A modern Zola theme featuring glassmorphism design
+一个采用玻璃拟态设计的现代 Zola 主题
 [demo](https://xpltt.vercel.app/)
 
 ![Screenshot](./screenshot.png)
 
-## Installation
+## 安装
 
-Clone the theme into your `themes` directory:
+将主题克隆到 `themes` 目录：
 ```bash
 git submodule add https://github.com/jahamars/prism themes/prism
 ```
 
-Enable the theme in your `config.toml`:
+在 `config.toml` 中启用主题：
 ```toml
 theme = "prism"
 ```
 
-## Configuration
+## 配置
 
 ```toml
 
@@ -146,7 +146,7 @@ google_analytics_id = "G-XXXXXXXXXX"          # Google Analytics
 ```
 
 
-### Page level settings (in front matter of .md files)
+### 页面级设置（在 .md 文件 front matter 中）
 
 ```md 
 +++
@@ -164,13 +164,13 @@ no_comments = false            # Disable comments on this page
 ```
 
 
-### Additional notes
-Get Giscus settings from: https://giscus.app/
-Syntax highlighting themes list: https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting
-Date format guide: https://docs.rs/chrono/latest/chrono/format/strftime/index.html
+### 补充说明
+Giscus 配置获取地址：https://giscus.app/  
+语法高亮主题列表：https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting  
+日期格式说明：https://docs.rs/chrono/latest/chrono/format/strftime/index.html
 
 
-## License
+## 许可证
 
 AGPL-3.0
 

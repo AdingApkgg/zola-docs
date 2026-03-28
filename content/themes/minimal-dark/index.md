@@ -1,7 +1,7 @@
 
 +++
 title = "minimal-dark"
-description = "Clean and minimalistic dark theme"
+description = "简洁极简的深色主题"
 template = "theme.html"
 date = 2024-02-07T14:01:03+02:00
 
@@ -25,22 +25,22 @@ homepage = "https://viku.me"
 [![Deploy Zola with GitHub Pages](https://github.com/kuznetsov17/minimal-dark/actions/workflows/zola-build.yml/badge.svg)](https://github.com/kuznetsov17/minimal-dark/actions/workflows/zola-build.yml)
 
 
-# General
+# 概览
 
-I am not the best webmaster, but should be somewhat responsive.
-I intentionally using the bigger fonts to make, feel free to change it in main.scss
+我不是最专业的网站开发者，但这个主题应当具备基本的响应式支持。
+我有意使用了更大的字体，你可以在 `main.scss` 里自由调整。
 
 
-# Light mode
-Now light mode also supported. 
+# 浅色模式
+现在也支持浅色模式。 
 
-# Important
-Please make sure to set up your base_url with trailing slash:
+# 重要提示
+请确保 `base_url` 以斜杠结尾：
 ```toml
 base_url = "https://kuznetsov17.github.io/minimal-dark/"
 ```
-# Comments
-Theme supports [Giscuss](https://giscuss.app) for comments. The configuration is done via config.toml. Here you can see the example section used for this page deployment:
+# 评论
+主题支持使用 [Giscuss](https://giscuss.app) 作为评论系统。相关配置通过 `config.toml` 完成。下面是此站点部署所使用的示例配置：
 ```toml
 [extra.giscus]
 data_repo="kuznetsov17/minimal-dark"
@@ -58,8 +58,8 @@ crossorigin="anonymous"
 nonce=""
 ```
 
-# Page onfigurations
-Customize the page blocks by setting configuration in **[extra]** section:
+# 页面配置
+可在 **[extra]** 区域设置以下配置来自定义页面区块：
 ```toml
 copyright_string = "Сreated in %YEAR% for fun." # the string displayed in footer. %YEAR% is replaced by current year on build
 show_copyright = true / false # enables / disables footer with copyright
@@ -69,11 +69,11 @@ show_toc = true / false # enables / disable TOC
 show_date = true / false # displays publication date in page
 ```
 
-# Blog
-I am using this theme for my [notes](https://viku.me/notes/), or probably blog. 
-The section template supports pagination, tags, sorts the pages by publication date. You may see the working example [here](/notes/)
+# 博客
+我用这个主题来写自己的 [notes](https://viku.me/notes/)（也可以当作博客）。
+分区模板支持分页、标签，并按发布时间排序。你可以在[这里](/notes/)查看实际效果。
 
-# config.toml extras
+# config.toml 附加配置
 ```toml
 author = "John Doe" # author. Will be puth in page metadata
 description = "Some description, if you somehow didn't set it in page / section settings"
@@ -85,9 +85,9 @@ copyright_string = "Сreated by John Doe in 2024 – %YEAR% for fun." # footer c
 nonce = "${SOME_HASH_VALUE}" # used for JavaScript src nonce
 ```
 
-# Shortcodes
+# 短代码
 
-## Callouts
+## 提示框（Callouts）
 ```
 {%/* callout(type = 'warning') */%}
 This is an example of **Warning** callout. [Some link](#)
@@ -99,7 +99,7 @@ This is an example of **Alert** callout. [Some link](#)
 This is an example of **Info** callout. [Some link](#)
 {%/* end */%}
 ```
-## Timeline
+## 时间线（Timeline）
 ```
 {%/* timeline() */%}
 [{
@@ -115,11 +115,11 @@ This is an example of **Info** callout. [Some link](#)
 {%/* end */%}
 ```
 
-# Thanks to
- - [Giscuss](https://giscuss.app) for excellent comments system
- - [bootstrap icons](https://icons.getbootstrap.com) for great social icons 
+# 致谢
+ - 感谢 [Giscuss](https://giscuss.app) 提供优秀的评论系统
+ - 感谢 [bootstrap icons](https://icons.getbootstrap.com) 提供出色的社交图标 
 
-# Screenshot
+# 截图
 ![Screenshot](https://github.com/kuznetsov17/minimal-dark/blob/main/screenshot.png?raw=true)
 
         

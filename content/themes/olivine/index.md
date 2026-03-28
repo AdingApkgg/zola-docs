@@ -1,7 +1,7 @@
 
 +++
 title = "Olivine"
-description = "A Zola theme for a personal knowledge base"
+description = "用于个人知识库的 Zola 主题"
 template = "theme.html"
 date = 2025-12-22T10:21:49-08:00
 
@@ -25,52 +25,51 @@ homepage = "https://web.stanford.edu/~dkim04/"
 
 # Olivine
 
-A simple [Zola](https://github.com/getzola/zola) theme for a personal knowledge
-base. Inspired by [Obsidian](https://obsidian.md).
+一个简洁的 [Zola](https://github.com/getzola/zola) 个人知识库主题。  
+灵感来自 [Obsidian](https://obsidian.md)。
 
 ![Screenshot of example page](screenshot.png)
 
-## Features
+## 功能
 
-* Journaling
-* Tags
-* Knowledge graph
-* Searching
-* Light/dark mode
-* Keyboard shortcuts
-* Backlinks
+* 日记（Journaling）
+* 标签
+* 知识图谱
+* 搜索
+* 浅色/深色模式
+* 键盘快捷键
+* 反向链接（Backlinks）
 
-## Installation
+## 安装
 
-The easiest way to install Olivine is to use the [quickstart
-repository](https://github.com/dongryul-kim/olivine-quickstart).
+安装 Olivine 最简单的方式是使用 [quickstart
+repository](https://github.com/dongryul-kim/olivine-quickstart)。
 
 ```
 git clone --depth 1 --recurse-submodules git@github.com:dongryul-kim/olivine-quickstart.git <your-folder-name>
 ```
 
-### Manual installation
+### 手动安装
 
-You can also use the standard method for installing a Zola theme.
-Please follow the Zola documentation on [installing and using
-themes](https://www.getzola.org/documentation/themes/installing-and-using-themes/).
+你也可以使用 Zola 主题的标准安装方式。  
+请参考 Zola 文档中的 [installing and using
+themes](https://www.getzola.org/documentation/themes/installing-and-using-themes/)。
 
-There is also an additional step that is specific to Olivine. Create a file a
-named `content/olivine-internal-graph.md` with contents:
+此外还有一步 Olivine 专属设置：创建 `content/olivine-internal-graph.md`，内容如下：
 ```
 +++
 title = "Graph"
 template = "internal/graph.html"
 +++
 ```
-a file named `content/olivine-internal-sitemap.md` with contents:
+再创建 `content/olivine-internal-sitemap.md`，内容如下：
 ```
 +++
 title = "Sitemap"
 template = "internal/sitemap.html"
 +++
 ```
-and a file named `content/journal/_index.md` with contents:
+最后创建 `content/journal/_index.md`，内容如下：
 ```
 +++
 title = "Journal"
@@ -79,9 +78,9 @@ extra.siblings = true
 +++
 ```
 
-## Acknowledgments
+## 致谢
 
-Special thanks to
+特别感谢：
 * [year-calendar](https://github.com/year-calendar/js-year-calendar) for the
   calendar widget,
 * [cytoscape](https://github.com/cytoscape/cytoscape.js) for the graph widget,

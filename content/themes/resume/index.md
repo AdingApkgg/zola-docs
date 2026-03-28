@@ -1,7 +1,7 @@
 
 +++
 title = "resume"
-description = "A resume theme"
+description = "简历主题"
 template = "theme.html"
 date = 2021-09-04T01:10:58+08:00
 
@@ -27,14 +27,15 @@ homepage = "https://www.alongwy.top"
 [Chinese Version](README.CN.md)
 
 Redesigned form [hugo resume](https://github.com/eddiewebb/hugo-resume).
+基于 [hugo resume](https://github.com/eddiewebb/hugo-resume) 重新设计。
 
-## Features
-+ This is basically a single-page website with auto-scrolling based on left-hand nav.
-+ Dedicated project/publications pages allow more detail.
-+ Includes a client-side search at '/search'. 
-+ Includes an `/admin` endpoint that can allow authorized users to use a WYSIWYG editor and commit files back to markdown, but with a Wordpress/CMS like experience.
+## 功能
++ 基本形态为单页网站，支持左侧导航自动滚动定位。
++ 提供独立的项目/出版物页面以展示更多细节。
++ 内置客户端搜索页面（`/search`）。
++ 提供 `/admin` 端点，授权用户可通过可视化编辑器编辑并回写 Markdown，体验类似 Wordpress/CMS。
 
-## Quick Start
+## 快速开始
 
 ```bash
 git clone git@github.com:alongwy/zola-resume.git
@@ -43,24 +44,24 @@ zola serve
 # open http://127.0.0.1:1111/
 ```
 
-## Installation
-Just earlier we showed you how to run the theme directly. Now we start to install the theme in an existing site step by step.
+## 安装
+上面展示了直接运行主题的方法。下面是在已有站点中分步安装主题。
 
-### Step 1: Create a new zola site
+### 第一步：创建新的 zola 站点
 
 ```bash
 zola init mysite
 ```
 
-### Step 2: Install zola-resume
-Download this theme to your themes directory:
+### 第二步：安装 zola-resume
+将主题下载到 `themes` 目录：
 
 ```bash
 cd mysite/themes
 git clone git@github.com:alongwy/zola-resume.git
 ```
 
-Or install as a submodule:
+或作为子模块安装：
 
 ```bash
 cd mysite
@@ -68,26 +69,26 @@ git init  # if your project is a git repository already, ignore this command
 git submodule add git@github.com:alongwy/zola-resume.git themes/zola-resume
 ```
 
-### Step 3: Configuration
-Enable the theme in your config.toml in the site derectory:
+### 第三步：配置
+在站点目录的 `config.toml` 中启用主题：
 
 ```toml
 theme = "zola-resume"
 ```
 
-Or copy the config.toml.example from the theme directory to your project's root directory:
+或将主题目录中的 `config.toml.example` 复制到项目根目录：
 
 ```bash
 cp themes/zola-resume/config.toml.example config.toml
 ```
 
-#### For CMS
+#### CMS 配置
 
 ```bash
 cp themes/zola-resume/static/admin/config.yml static/admin/config.yml
 ```
 
-and change those
+并修改以下内容：
 
 ```yaml
 # static/admin/config.yml
@@ -100,40 +101,40 @@ backend:
   site_domain: DOMAIN.netlify.com
 ```
 
-### Step 4: Add new content
-You can copy the content from the theme directory to your project:
+### 第四步：添加内容
+你可以将主题目录中的内容复制到项目：
 
 ```
 cp -r themes/zola-resume/data .
 cp -r themes/zola-resume/content .
 ```
 
-You can modify or add new posts in the content/blog, content/projects or other content directories as needed.
+你可以按需在 `content/blog`、`content/projects` 或其他内容目录中修改或新增文章。
 
-### Step 5: Run the project
-Just run zola serve in the root path of the project:
+### 第五步：运行项目
+在项目根目录运行 `zola serve`：
 
 ```
 zola serve
 ```
 
-This will start the Zola development web server accessible by default at http://127.0.0.1:1111. Saved changes will live reload in the browser.
+这会启动 Zola 开发服务器，默认地址为 http://127.0.0.1:1111。保存改动后浏览器会自动热重载。
 
-## Examples
+## 示例
 
 ![screenshot](https://raw.githubusercontent.com/alongwy/zola-resume/master/screenshot.png)
 
 See [along's site](https://resume.alongwy.top) for a live example.
 
-## Setup & Use
+## 配置与使用
 
-This theme uses a combination of custom sections and some data files to drive content.
+这个主题结合了自定义分区与数据文件来驱动内容展示。
 
-### Summary
-Edit the main `contents/_index.md with a brief bio/summary`
+### 摘要
+编辑主页面 `contents/_index.md`，填写简短个人介绍/摘要。
 
-### Data files
-Data files are used for simple content presented on the homepage.
+### 数据文件
+数据文件用于首页上的结构化内容展示。
 
 - [data/certifications.json](https://github.com/AlongWY/zola-resume/blob/main/data/certifications.json)
 - [data/social.json](https://github.com/AlongWY/zola-resume/blob/main/data/social.json)
@@ -141,29 +142,29 @@ Data files are used for simple content presented on the homepage.
 - [data/experience.json](https://github.com/AlongWY/zola-resume/blob/main/data/experience.json)
 - [data/education.json](https://github.com/AlongWY/zola-resume/blob/main/data/education.json)
 
-### Projects/Opensource
+### 项目/开源
 
-The difference indicates your role as originator or colaborator.
+通过不同分类来区分你是发起者还是协作者。
 
-### Publications
-Similar to projects, create them under `publications`. Include any papers, speaking engagements, articles, etc.
+### 出版物
+与项目类似，在 `publications` 下创建，包含论文、演讲、文章等。
 
-### Blog / Posts
-Similar to posts, create them under `blog`. Include any thoughts, musiings, etc.
+### 博客 / 文章
+与普通文章类似，在 `blog` 下创建，记录思考与随笔等内容。
 **This template does not support a `posts` folder**
 
-### Template params
+### 模板参数
 
-Almost All personal information outside the above details is captured by extra in [`config.toml`](https://github.com/AlongWY/zola-resume/blob/main/config.toml), or can be edited in the "Settings" collection if using CMS.
+除上述内容外，大部分个人信息通过 [`config.toml`](https://github.com/AlongWY/zola-resume/blob/main/config.toml) 的 `extra` 配置，或在使用 CMS 时于 “Settings” 集合中维护。
 
-## CMS Editor with Netlify CMS
+## 使用 Netlify CMS 编辑
 **Does not require deployment to Netlify!**
 
-[Netlify CMS](https://www.netlifycms.org/) is an open source project that enables CMS like experience for static site generation tools like Hugo. This theme includes a fully working integration and guide in [static/admin](https://github.com/AlongWY/zola-resume/tree/main/static/admin)
+[Netlify CMS](https://www.netlifycms.org/) 是一个开源项目，可为 Hugo 等静态站点工具提供 CMS 式编辑体验。本主题已在 [static/admin](https://github.com/AlongWY/zola-resume/tree/main/static/admin) 提供完整集成与使用指引。
 
-## Credits
+## 致谢
 
-This project ports the Hugo Resume theme by Feng Yunlong to support zola.
+本项目将 Feng Yunlong 的 Hugo Resume 主题移植到 Zola。
 
 
         

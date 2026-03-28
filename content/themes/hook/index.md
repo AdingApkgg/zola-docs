@@ -1,7 +1,7 @@
 
 +++
 title = "Hook"
-description = "Clean and simple personal site/blog theme"
+description = "简洁清爽的个人网站/博客主题"
 template = "theme.html"
 date = 2025-08-27T21:56:55+02:00
 
@@ -24,42 +24,42 @@ homepage = "https://koen.bolhu.is"
 
 # Hook
 
-A clean and simple personal site/blog theme for [Zola](https://getzola.org).
+一个用于 [Zola](https://getzola.org) 的简洁个人网站/博客主题。
 
 [Demo](https://inputusername.github.io/zola-hook/)
 
-## Setup
+## 安装
 
-Clone this repo into your `themes` folder:
+将此仓库克隆到你的 `themes` 目录：
 ```sh
 cd themes
 git clone https://github.com/InputUsername/zola-hook.git hook
 ```
 
-Then, enable it in your `config.toml`:
+然后在 `config.toml` 中启用：
 ```toml
 theme = "hook"
 ```
 
-## Features
+## 功能
 
-The following templates are built-in:
+内置以下模板：
 - `index.html` - the homepage;
 - `page.html` - pages and posts (extends `index.html`);
 - `section.html` - archive of pages in a section, mostly for a blog (extends `page.html`);
 - `404.html` - 404 page (extends `page.html`).
 
-Templates have the following Tera blocks:
+模板包含以下 Tera blocks：
 - `title` - to override the default `<title>` (`config.title`);
 - `description` - to override the `<meta name="description">`'s content (`config.description`);
 - `extra_head` - to override styles and anything else in `<head>`;
 - `header` - to change the header (best to put this in a `<header>`);
 - `content` - to change the content (best to put this in a `<main>`).
 
-You can set a section or page description using `description` in your front matter.
-By default, the `description` in `config.toml` is used.
+你可以在 front matter 中用 `description` 设置 section 或页面描述。
+默认会使用 `config.toml` 中的 `description`。
 
-You can define links to include in the header on the homepage in `config.toml`:
+你可以在 `config.toml` 中定义首页头部链接：
 ```toml
 [extra]
 
@@ -69,33 +69,33 @@ links = [
 ]
 ```
 
-Pages in the root section can define `extra.in_header = true` to be included in the header links on the homepage.
+根分区中的页面可设置 `extra.in_header = true`，将其加入首页头部链接。
 
-The content in the root `_index.md` is included in the homepage if present.
+如果根 `_index.md` 存在，其内容会显示在首页中。
 
-Below that is a list of the 20 most recent posts. For this, the `blog/_index.md` section is expected to exist
-(will error if it doesn't exist). There is also a link to an archive of all blog posts by year.
+其下方会显示最近 20 篇文章列表。为此需要存在 `blog/_index.md` 分区
+（若不存在会报错）。同时还会提供按年份归档的文章列表链接。
 
-Hook supports light/dark mode based on the user's preference. There is also a manual toggle button
-(requires JavaScript).
+Hook 支持根据用户偏好自动切换浅色/深色模式，也提供手动切换按钮
+（需要 JavaScript）。
 
-## Screenshots
+## 截图
 
-### Homepage
+### 首页
 
 ![Homepage](screenshot.png)
 
-### Blog post
+### 博客文章
 ![Blog post](screenshot2.png)
 
-### Blog archive
+### 博客归档
 ![Blog archive](screenshot3.png)
 
-### Dark mode
+### 深色模式
 ![Dark mode](screenshot4.png)
 
-## License
+## 许可证
 
-MIT license, see [`LICENSE`](https://github.com/InputUsername/zola-hook/blob/main/LICENSE).
+MIT 许可证，详见 [`LICENSE`](https://github.com/InputUsername/zola-hook/blob/main/LICENSE)。
 
         

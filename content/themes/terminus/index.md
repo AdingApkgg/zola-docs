@@ -1,7 +1,7 @@
 
 +++
 title = "terminus"
-description = "A dark duotone retro theme for Zola"
+description = "适用于 Zola 的复古深色双色调主题"
 template = "theme.html"
 date = 2026-03-07T15:47:17+01:00
 
@@ -24,31 +24,29 @@ homepage = "https://eyalkalderon.com"
 
 # Terminus
 
-An accessible [Zola](https://github.com/getzola/zola) theme with a dark color
-scheme and retro computer terminal-like vibe, multi-language support, zero
-required JavaScript, pretty font ligatures, and a perfect baseline Lighthouse
-score.
+一个注重无障碍的 [Zola](https://github.com/getzola/zola) 主题，采用深色配色和复古终端风格，支持多语言、零必需 JavaScript、优雅连字字体，以及满分基线 Lighthouse 评分。
 
 **Try the demo now:** https://ebkalderon.github.io/terminus/
 
 ![Screenshot of the Terminus demo website on a desktop browser](https://github.com/user-attachments/assets/ae7c378b-2987-4dbd-a84e-7d272e8856bc)
 
-Terminus is largely a port of Radek Kozieł's [Terminal Theme for
+Terminus 大体移植自 Radek Kozieł 的 [Terminal Theme for
 Hugo](https://github.com/panr/hugo-theme-terminal) but with several key
 differences. Credit to the [zerm](https://github.com/ejmg/zerm) and
 [tabi](https://github.com/welpo/tabi) themes for inspiring some of these
 changes.
+Hugo](https://github.com/panr/hugo-theme-terminal)，但做了若干关键改动。也感谢 [zerm](https://github.com/ejmg/zerm) 和 [tabi](https://github.com/welpo/tabi) 主题带来的灵感。
 
-* Better accessibility (WCAG 2.2 Level AA minimum target)
-* Mobile-first design with improved responsiveness
-* Social media icons in footer
-* Support for [GitHub-style alerts]
-* SEO friendly (better OpenGraph support, will add Schema.org eventually)
-* No post image previews for a cleaner look
+* 更好的无障碍体验（最低目标：WCAG 2.2 AA）
+* 移动优先设计，响应式表现更佳
+* 页脚社交媒体图标
+* 支持 [GitHub-style alerts]
+* 更友好的 SEO（更好的 OpenGraph 支持，后续计划加入 Schema.org）
+* 不显示文章封面预览，界面更简洁
 
 [GitHub-style alerts]: https://ebkalderon.github.io/terminus/blog/shortcodes/#alert-shortcode
 
-## Features
+## 功能
 
 - [x] Perfect baseline Lighthouse score (Performance, Accessibility, Best Practices and SEO).
 - [x] [Social media icons in footer](./theme.toml#L70-L73)
@@ -63,9 +61,9 @@ changes.
 
 [Comprehensive documentation]: https://ebkalderon.github.io/terminus/
 
-## Getting Started
+## 快速开始
 
-### Manual Installation
+### 手动安装
 
 1. Initialize a Git repository in your [Zola project directory], if you haven't
    already:
@@ -106,16 +104,16 @@ changes.
 
 [Zola project directory]: https://www.getzola.org/documentation/getting-started/cli-usage/#init
 
-### Updating Terminus
+### 更新 Terminus
 
-To update the Terminus theme as a Git submodule, run:
+如以 Git 子模块方式安装，可运行以下命令更新 Terminus：
 
 ```bash
 git submodule update --remote themes/terminus
 ```
 
-## License
+## 许可证
 
-This project is licensed under the terms of the [MIT license](./LICENSE).
+本项目基于 [MIT license](./LICENSE) 发布。
 
         

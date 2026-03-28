@@ -1,7 +1,7 @@
 
 +++
 title = "Albatros"
-description = "A feature rich theme originally made for Duniter website."
+description = "一个功能丰富、最初为 Duniter 网站打造的主题"
 template = "theme.html"
 date = 2026-03-07T23:59:13+01:00
 
@@ -22,45 +22,45 @@ name = "Hugo Trentesaux"
 homepage = "https://trentesaux.fr/"
 +++        
 
-# Albatros theme for Zola
+# Zola 的 Albatros 主题
 
-This theme was made for [Duniter](https://duniter.fr/) website. It was then abstracted and turned into **Albatros**.
+这个主题最初是为 [Duniter](https://duniter.fr/) 网站开发，随后被抽象整理为通用主题 **Albatros**。
 
 ![screenshot](./screenshot.png)
 
-## Installation
+## 安装
 
-Add the theme as a git submodule:
+将主题作为 git 子模块添加：
 
 ```bash
 git submodule add --name albatros https://git.42l.fr/HugoTrentesaux/albatros.git themes/albatros
 ```
 
-and enable the theme in your `config.toml`
+然后在你的 `config.toml` 中启用主题：
 
 theme = "albatros"
 
-## Features
+## 功能
 
-It has a lot of feature that I could not find time to document yet. Most of the available customization is in `theme.toml`/`extra` section and `sass/_albatros.sass` file (e.g. for colors).
+它有很多功能，我还没来得及完整文档化。大部分可自定义项位于 `theme.toml` 的 `extra` 区域以及 `sass/_albatros.sass` 文件（例如颜色）。
 
 See:
 
 - https://duniter.fr/
 - https://duniter.org/
 
-for reference.
+可作为参考。
 
-### Landing pages
+### 落地页
 
-You are encouraged to provide custom landing pages that you can write in `template/custom`.
-The theme will take care of the rest (pages organised as wiki with breadcrumb).
+建议你提供自定义落地页，可写在 `template/custom` 中。
+其余部分由主题处理（页面会以带面包屑的 wiki 结构组织）。
 
-### Authors
+### 作者信息
 
-Each author must have a card in `content/team` folder.
+每位作者都需要在 `content/team` 目录中拥有一张资料卡。
 
-## Support
+## 支持
 
-I'll provide support on demand on [Zola forum](https://zola.discourse.group/) by documenting the theme step by step.
+如有需要，我会在 [Zola forum](https://zola.discourse.group/) 提供支持，并逐步补充该主题文档。
         

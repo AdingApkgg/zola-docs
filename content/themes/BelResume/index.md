@@ -1,7 +1,7 @@
 
 +++
 title = "BelResume"
-description = "A beautiful, modern, and minimal single-page resume site"
+description = "精美、现代、极简的单页简历站点"
 template = "theme.html"
 date = 2025-04-30T17:15:25+05:30
 
@@ -24,15 +24,16 @@ homepage = "https://cx48.dev"
 
 # BelResumé
 
-***A beautiful, modern, and minimal single-page resume site***
+***一个精美、现代、极简的单页简历站点***
 
-Powered by [Zola](https://getzola.org/). Styled with Tailwind CSS & Font Awesome
+基于 [Zola](https://getzola.org/) 构建，使用 Tailwind CSS 与 Font Awesome 进行样式设计。
 
-> “Bel” in French means beautiful — this is your beautiful resumé!
+> “Bel” 在法语中意为“美丽”——这就是你的美丽简历！
 
-## Preview
+## 预览
 
 [BelResumé](https://cx48.github.io/BelResume/) can be deployed for free using GitHub Pages or Vercel
+[BelResumé](https://cx48.github.io/BelResume/) 可免费部署到 GitHub Pages 或 Vercel。
 
 #### Light Mode
 
@@ -46,82 +47,82 @@ Powered by [Zola](https://getzola.org/). Styled with Tailwind CSS & Font Awesome
 
 ![PageSpeed](https://raw.githubusercontent.com/cx48/BelResume/refs/heads/main/static/images/pagespeed.png)
 
-## Project Structure
+## 项目结构
 
-- **config.toml**: Site metadata  
-- **static/**: `css/style.css`, `js/script.js`  
-- **templates/index.html**: Main layout (calls all partials)  
-- **templates/partials/**: All resume sections are modular
-  - `header.html`: Name, job title, contact links
-  - `experience.html`: Work history (companies, roles, achievements)
-  - `education.html`: Schools, degrees, specializations
-  - `projects.html`: Key project summaries with tags
-  - `skills.html`: Visual skill bars (adjust widths)
-  - `certifications.html`: Cert title + authority + year
-  - `languages.html`: Language proficiency (bars & labels)
-  - `awards.html`: Award names + year + issuer
+- **config.toml**：站点元数据  
+- **static/**：`css/style.css`, `js/script.js`  
+- **templates/index.html**：主布局（调用所有 partial）  
+- **templates/partials/**：简历各模块
+  - `header.html`：姓名、职位、联系方式
+  - `experience.html`：工作经历（公司、角色、成果）
+  - `education.html`：学校、学位、专业方向
+  - `projects.html`：关键项目摘要与标签
+  - `skills.html`：技能进度条（可调宽度）
+  - `certifications.html`：证书名称 + 颁发机构 + 年份
+  - `languages.html`：语言能力（进度条与标签）
+  - `awards.html`：奖项名称 + 年份 + 颁发方
 
-## Quick Start
+## 快速开始
 
-1. **Install Zola**: [https://getzola.org/documentation/getting-started/installation/](https://getzola.org/documentation/getting-started/installation/) 
+1. **安装 Zola**：[https://getzola.org/documentation/getting-started/installation/](https://getzola.org/documentation/getting-started/installation/) 
 
-2. **Clone repository**:
+2. **克隆仓库**：
    ```bash
    git clone https://github.com/cx48/BelResume
    cd BelResume
    ```
 
-3. **Serve locally**:
+3. **本地运行**：
    ```bash
    zola serve
    ```
 
-   After making necessary changes to HTML files present under `partials/` visit [http://127.0.0.1:1111](http://127.0.0.1:1111)
+   对 `partials/` 下 HTML 做必要修改后，访问 [http://127.0.0.1:1111](http://127.0.0.1:1111)。
 
-4. **Build static site**:
+4. **构建静态站点**：
    ```bash
    zola build
    ```
-   All files output to `/public`
+   所有输出文件位于 `/public`。
 
-## Deployment Guide
+## 部署指南
 
-> Deploy to GitHub Pages
+> 部署到 GitHub Pages
 
-1. Run Zola build:
-   ```bash
-   zola build
-   ```
-
-2. Commit and push the contents of the `public/` folder to your `gh-pages` branch
-
-3. In GitHub repo settings, enable Pages from the `/public` folder or `gh-pages` branch
-
-4. Your site will be live at `https://yourusername.github.io/BelResume/`
-
-> Deploy to Vercel
-
-1. Login to [Vercel](https://vercel.com) and import your GitHub repo
-
-2. Set **Build Command** to:
+1. 运行 Zola 构建：
    ```bash
    zola build
    ```
 
-3. Set **Output Directory** to:
+2. 将 `public/` 目录内容提交并推送到 `gh-pages` 分支
+
+3. 在 GitHub 仓库设置中，从 `/public` 目录或 `gh-pages` 分支启用 Pages
+
+4. 你的网站将发布在 `https://yourusername.github.io/BelResume/`
+
+> 部署到 Vercel
+
+1. 登录 [Vercel](https://vercel.com) 并导入 GitHub 仓库
+
+2. 将 **Build Command** 设置为：
+   ```bash
+   zola build
+   ```
+
+3. 将 **Output Directory** 设置为：
    ```bash
    public
    ```
 
-4. Set **Framework Preset** to `Other`
+4. 将 **Framework Preset** 设置为 `Other`
 
-5. Click **Deploy**
+5. 点击 **Deploy**
 
-Zola will build and serve from the `public/` folder automatically on every push
+每次推送后，Zola 会自动构建并从 `public/` 目录提供内容。
 
-## Customization Guide
+## 自定义指南
 
-To update your resume, simply open the required HTML file under `partials/` and modify it as per your requirement
+更新简历时，只需打开 `partials/` 下对应 HTML 文件并按需修改。
 
 ### 1. **config.toml**  
 Update site-wide metadata:
@@ -190,11 +191,11 @@ Highlight awards with name and source:
 <p>DefCon 2025</p>
 ```
 
-## Get in Touch
+## 联系方式
 
-Have feedback, questions, or just want to say hello?  
-Feel free to [open an issue](https://github.com/cx48/BelResume/issues) or reach out directly:
+如有反馈、问题，或只是想打个招呼：  
+欢迎 [提交 issue](https://github.com/cx48/BelResume/issues) 或直接联系。
 
-> Check my GitHub profile for contact links
+> 联系方式请查看我的 GitHub 主页
 
         

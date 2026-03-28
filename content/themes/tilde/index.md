@@ -1,7 +1,7 @@
 
 +++
 title = "tilde"
-description = "Simple theme to match the dracula tilde css"
+description = "匹配 Dracula Tilde CSS 风格的简洁主题"
 template = "theme.html"
 date = 2023-10-25T10:44:26-05:00
 
@@ -24,22 +24,20 @@ homepage = "https://tilde.team/~savoy/"
 
 # tilde
 
-Lightweight and minimal blog theme for the [Zola](https://www.getzola.org/)
-static site generator.
+适用于 [Zola](https://www.getzola.org/) 静态站点生成器的轻量极简博客主题。
 
-Live demo is available here:
+在线演示地址：
 [https://savoy.srht.site/blog-demo](https://savoy.srht.site/blog-demo)
 
 ![](screen_index.png)
 
 ![](screen_post.png)
 
-## Installation
+## 安装
 
-[Theme documentation](https://www.getzola.org/documentation/themes/installing-and-using-themes/)
+[主题文档](https://www.getzola.org/documentation/themes/installing-and-using-themes/)
 
-Clone this repository into your site's `themes` directory or add it as a
-submodule:
+将本仓库克隆到站点的 `themes` 目录，或将其作为子模块添加：
 
 ```bash
 # Clone into themes
@@ -50,7 +48,7 @@ $ git submodule add https://git.sr.ht/~savoy/tilde themes/tilde
 
 ## Configuration
 
-This theme offers the following config options:
+该主题提供以下配置项：
 
 ```toml
 [extra]

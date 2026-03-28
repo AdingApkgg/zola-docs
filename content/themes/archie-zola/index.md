@@ -1,7 +1,7 @@
 
 +++
 title = "archie-zola"
-description = "A zola theme based on Hugo archie."
+description = "基于 Hugo archie 的 Zola 主题"
 template = "theme.html"
 date = 2026-02-28T15:01:13+08:00
 
@@ -24,50 +24,50 @@ homepage = "https://github.com/XXXMrG"
 
 # archie-zola
 
-A clean, minimal Zola theme forked from [archie](https://github.com/athul/archie). Perfect for personal blogs and portfolios with dark/light mode support.
+一个干净、极简的 Zola 主题，分叉自 [archie](https://github.com/athul/archie)。非常适合个人博客和作品集，支持深色/浅色模式。
 
-## Table of Contents
+## 目录
 
-- Demo
-- Features
-- Installation
-- Quick Start
-- Configuration
-- Content Management
-- Customization
-- Troubleshooting
-- Contributing
+- 演示
+- 功能
+- 安装
+- 快速开始
+- 配置
+- 内容管理
+- 自定义
+- 故障排查
+- 贡献
 
-## Demo
+## 演示
 
 **Live Demo:** [https://archie-zola.netlify.app](https://archie-zola.netlify.app)
 
-### Screenshots
+### 截图
 
 | Light Mode | Dark Mode |
 |------------|-----------|
 | ![Light](https://archie-zola.netlify.app/screenshot/screenshot-light.png) | ![Dark](https://archie-zola.netlify.app/screenshot/screenshot-dark.png) |
 
-## Features
+## 功能
 
-- ✅ **Responsive Design** - Works on desktop, tablet, and mobile
-- ✅ **Dark/Light Mode** - Auto-detection + manual toggle
-- ✅ **Fast & Lightweight** - Minimal CSS and JavaScript
-- ✅ **SEO Optimized** - Meta tags, Open Graph, structured data
-- ✅ **Syntax Highlighting** - Code blocks with theme support
-- ✅ **LaTeX Math** - KaTeX integration for mathematical expressions
-- ✅ **Custom CSS/JS** - Easy theme customization
-- ✅ **Google Analytics** - Built-in GA4 support
-- ✅ **Tags & Pagination** - Organize and navigate content
-- ✅ **Social Links** - Footer social media integration
+- ✅ **响应式设计** - 适配桌面、平板和移动端
+- ✅ **深色/浅色模式** - 自动检测 + 手动切换
+- ✅ **快速轻量** - 极少 CSS 与 JavaScript
+- ✅ **SEO 优化** - Meta 标签、Open Graph、结构化数据
+- ✅ **代码高亮** - 支持主题化代码块高亮
+- ✅ **LaTeX 数学公式** - 内置 KaTeX
+- ✅ **自定义 CSS/JS** - 便于主题扩展
+- ✅ **Google Analytics** - 内置 GA4 支持
+- ✅ **标签与分页** - 组织并导航内容
+- ✅ **社交链接** - 页脚社交媒体集成
 
-### Coming Soon
+### 即将支持
 - 🔄 **Twitter Cards** - Rich social media previews
 - 🔄 **YouTube Embeds** - Video integration
 
-## Installation
+## 安装
 
-### Method 1: Git Submodule (Recommended)
+### 方法 1：Git 子模块（推荐）
 
 ```bash
 # Add as submodule
@@ -77,7 +77,7 @@ git submodule add https://github.com/XXXMrG/archie-zola.git themes/archie-zola
 echo 'theme = "archie-zola"' >> config.toml
 ```
 
-### Method 2: Direct Clone
+### 方法 2：直接克隆
 
 ```bash
 # Clone to themes directory
@@ -87,7 +87,7 @@ git clone https://github.com/XXXMrG/archie-zola.git themes/archie-zola
 echo 'theme = "archie-zola"' >> config.toml
 ```
 
-### Updating the Theme
+### 更新主题
 
 ```bash
 # Initialize submodules (first time)
@@ -101,7 +101,7 @@ git add themes/archie-zola
 git commit -m "Update archie-zola theme"
 ```
 
-## Quick Start
+## 快速开始
 
 1. **Install the theme** (see above)
 2. **Copy example config** to your `config.toml`:
@@ -135,9 +135,9 @@ Your first post content here.' > content/posts/hello-world.md
 zola serve
 ```
 
-## Configuration
+## 配置
 
-### Basic Settings
+### 基础设置
 
 ```toml
 base_url = "https://yourdomain.com"

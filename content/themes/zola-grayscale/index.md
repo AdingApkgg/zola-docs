@@ -1,7 +1,7 @@
 
 +++
 title = "zola-grayscale"
-description = "A port of the Start Bootrap Grayscale theme, for Zola."
+description = "Start Bootstrap Grayscale 主题的 Zola 移植版"
 template = "theme.html"
 date = 2024-11-24T16:09:25+11:00
 
@@ -26,42 +26,41 @@ homepage = "https://github.com/mattimustang"
 
 ![screenshot](screenshot.png)
 
-A port of the Start Bootstrap Grayscale theme, for Zola.
+Start Bootstrap Grayscale 主题的 Zola 移植版。
 
-Updated to use the latest Bootstrap 5.3.3.
+已更新至最新 Bootstrap 5.3.3。
 
 <!-- toc -->
 
-- Demo
-- How to Customize
-  - Configuration
-  - Navigation
-  - Contacts
-  - Masthead
-    - Background Image
-  - Content
-  - About
-  - Projects
-  - Signup
-  - Contact
-  - Footer
-- Macros
-  - Debug
-  - Title
+- 演示
+- 自定义方式
+  - 配置
+  - 导航
+  - 联系方式
+  - 首屏（Masthead）
+    - 背景图
+  - 内容
+  - 关于
+  - 项目
+  - 订阅
+  - 联系
+  - 页脚
+- 宏（Macros）
+  - 调试
+  - 标题
   - Google Analytics
-- Misc
+- 杂项
 
 <!-- tocstop -->
 
-## Demo
+## 演示
 
 [Live Demo](https://mattimustang.github.io/zola-grayscale/)
 
-## How to Customize
+## 如何自定义
 
-The majority of customisation is done through template inheritance.
-Every section and subsection of the page has a template `{%/* block */%}` that you
-can override with your own content.
+大多数自定义通过模板继承完成。  
+页面的每个区块和子区块都提供 `{%/* block */%}`，你可以用自己的内容覆盖。
 
 
 Start by copying `themes/zola-grayscale/contact.toml` and
@@ -80,9 +79,9 @@ block, for example this will remove the `about` section of the page:
 {%/* block about */%}{%/* endblock about */%}
 ```
 
-### Configuration
+### 配置
 
-The `config.toml` file has some basic configuration used by the page including:
+`config.toml` 中包含页面使用的基础配置，例如：
 
 * title
 * author
@@ -90,7 +89,7 @@ The `config.toml` file has some basic configuration used by the page including:
 * google_analytics_tag (optional)
 * sb_forms_api_token
 
-### Navigation
+### 导航
 
 The page navigation is customised through the `navigation.toml` file.
 Edit this file to change the names and paths to link to.
@@ -104,7 +103,7 @@ or can be customised with the `nav_home_title` block.
 {%/* block nav_home_title */%}Home{%/* endblock nav_home_title */%}
 ```
 
-### Contacts
+### 联系方式
 
 The contacts section of the page is managed via in the `contacts.toml` which has
 two types of items:
@@ -117,7 +116,7 @@ that section of the page.
 Both contact item types use [Font Awesome](https://fontawesome.io/icons/) icons
 for their `icon` value.
 
-### Masthead
+### 首屏（Masthead）
 
 The entire `masthead` section can be overridden with your own markup like so:
 
@@ -138,13 +137,13 @@ The following sub-blocks are provided for further customisation:
 * `masthead_button_tag`
 * `masthead_button_label`
 
-#### Background Image
+#### 背景图
 
 The background image of the `masthead` can be changed by creating the directory
 `static/assets/img` copying your own image to
 `static/assets/img/bg-masthead.jpg` in your own site.
 
-### Content
+### 内容
 
 A `content` block wraps the About](#about), [Projects sections of
 the page to allow you to completely replace the content of the page with your
@@ -156,7 +155,7 @@ own markup.
 {%/* endblock content */%}
 ```
 
-### About
+### 关于
 
 The entire `about` section can be overridden with your own markup like so:
 
@@ -172,7 +171,7 @@ The following sub-blocks are provided for further customisation:
 * `about_description`
 * `about_image`
 
-### Projects
+### 项目
 
 The entire `projects` section can be overridden with your own markup like so:
 
@@ -215,7 +214,7 @@ The section has these sub-blocks:
 
 * `extra_projects` to add extra content as you wish.
 
-### Signup
+### 订阅
 
 The entire `signup` section can be overridden with your own markup like so:
 
@@ -234,7 +233,7 @@ The following sub-blocks are provided for further customisation:
 * `signup_title`
 * `signup_form`
 
-### Contact
+### 联系
 
 The entire `contact` section can be overridden with your own markup like so:
 
@@ -251,7 +250,7 @@ The following sub-blocks are provided for further customisation:
 * `contact_contact`
 * `contact_social`
 
-### Footer
+### 页脚
 
 The entire `footer` section can be overridden with your own markup like so:
 
@@ -269,9 +268,9 @@ The following sub-blocks are provided for further customisation:
 * `extra_footer`:
   to add extra content as you wish.
 
-## Macros
+## 宏（Macros）
 
-### Debug
+### 调试
 
 The `debug` macro can be used by setting `config.extra.debug` to `true`.
 This will then add a `debug` button to the footer of the page to allow you to
@@ -284,7 +283,7 @@ For example, to debug the `config` context:
 {%/* block footer_debug */%}{{/* debug::debug(context=config, name="config") */}}{%/* endblock footer_debug */%}
 ```
 
-### Title
+### 标题
 
 The `title` macro can be used to set the title for any additional pages you
 might create.
@@ -294,7 +293,7 @@ might create.
 The `google_analytics` macro can be used to insert code for Google Analytics.
 Set `config.extra.google_analytics_tag` to your tag id.
 
-## Misc
+## 杂项
 
 The `extra_head` block can be used to add extra markup to the end of the
 `<head>` of the page.

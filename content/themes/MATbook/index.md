@@ -1,7 +1,7 @@
 
 +++
 title = "MATbook"
-description = "A zola chapter book theme inspired from book and olivine"
+description = "受 Book 与 Olivine 启发的 Zola 章节书主题"
 template = "theme.html"
 date = 2025-12-06T14:37:37-08:00
 
@@ -24,84 +24,84 @@ homepage = "https://shurui.people.stanford.edu/"
 
 # MATbook
 
-A [Zola](https://github.com/getzola/zola) theme for personal notebooks or chapter books. Based on  [Vincent Prouillet](https://www.vincentprouillet.com/)'s [Book](https://github.com/getzola/book), inspired by [Dongryul Kim](https://web.stanford.edu/~dkim04/)'s [Olivine](https://github.com/dongryul-kim/olivine).
+一个适用于个人笔记或章节书的 [Zola](https://github.com/getzola/zola) 主题。基于 [Vincent Prouillet](https://www.vincentprouillet.com/) 的 [Book](https://github.com/getzola/book)，并受到 [Dongryul Kim](https://web.stanford.edu/~dkim04/) 的 [Olivine](https://github.com/dongryul-kim/olivine) 启发。
 
 Live Demo: [https://srliu3264.github.io/MATbook-live-demo](https://srliu3264.github.io/MATbook-live-demo/)
-## Contents
+## 目录
 
 - MATbook
-  - Features
-  - Contents
-  - Installation
-  - Configurations
-    - Enable the theme
-    - Numbered chapters
-    - Current section pages only
-    - Math
-    - Paths
-    - Example toml
+  - 功能
+  - 目录
+  - 安装
+  - 配置
+    - 启用主题
+    - 章节编号
+    - 仅显示当前分区页面
+    - 数学支持
+    - 路径
+    - toml 示例
 
-  - Usage
-    - File structure
-    - Hotkeys
+  - 用法
+    - 文件结构
+    - 快捷键
 
-## Features
+## 功能
 
-- Idle inside Matrix (MATbook is short for Matrix Book)
-- Searching
-- Light/dark mode
-- Book structure (table of chapters and sections in left sidebar, table of contents of current section in right sidebar)
-- Keyboard shortcuts
-- Backlinks
-- Mathjax, Tikzjax, and basic theorem enviroments included for mathematics and commutative diagrams.
+- Matrix 待机效果（MATbook 即 Matrix Book 缩写）
+- 搜索
+- 浅色/深色模式
+- 书籍结构（左侧章节与小节目录，右侧当前小节目录）
+- 键盘快捷键
+- 反向链接
+- 内置 Mathjax、Tikzjax 和基础定理环境，用于数学公式与交换图
 
-## Installation
+## 安装
 
-Please follow the Zola documentation on [installing and using themes](https://www.getzola.org/documentation/themes/installing-and-using-themes/) to install.
+安装请参考 Zola 文档：[installing and using themes](https://www.getzola.org/documentation/themes/installing-and-using-themes/)。
 
-## Configurations
+## 配置
 
-### Enable the theme
+### 启用主题
 
 ```toml
 theme = "MATbook"
 build_search_index = true
 ```
 
-### Numbered chapters
+### 章节编号
 
-By default, the `MATbook` theme will number the chapters and pages in the left menu.
-You can disable that by setting the `book_number_chapters` in `extra.booktheme`:
+默认情况下，`MATbook` 会在左侧菜单为章节与页面编号。  
+你可以在 `extra.booktheme` 中设置 `book_number_chapters` 关闭：
 
 ```toml
 book_number_chapters = false
 ```
 
-### Current section pages only
+### 仅显示当前分区页面
 
-By default, the `MATbook` theme will list all the pages in the current section.
-You can disable that by setting the `book_only_current_section_pages` in `extra.booktheme`:
+默认情况下，`MATbook` 会列出当前分区中的所有页面。  
+你可以在 `extra.booktheme` 中设置 `book_only_current_section_pages` 关闭：
 
 ```toml
 book_only_current_section_pages = false
 ```
 
-NOTE: you need to disabe this if you want to use hotkey `v` to toggle it.
+注意：如果你想使用快捷键 `v` 进行切换，需要关闭该项。
 
-### Math
+### 数学支持
 
-Enable mathjax and tikzjax in `extra` if you need mathematics and tikzcd diagrams in your book.
+若书中需要数学公式与 tikzcd 图，请在 `extra` 中启用 mathjax 与 tikzjax：
 
 ```toml
 tikzjax = true
 mathjax = true
 ```
 
-### Paths
+### 路径
 
-You need to set up two paths:
+你需要设置两类路径：
 
-First, in `[extra]`, you need to make sure that `upload_prefix` is the path to the directory where you put all images.
+首先，在 `[extra]` 中确保 `upload_prefix` 指向你存放图片的目录路径。
 
 For example, if you put all your images in folder `/static/upload`, then you should set
 
@@ -109,15 +109,15 @@ For example, if you put all your images in folder `/static/upload`, then you sho
 upload_prefix = "/upload"
 ```
 
-Second, Home link in `[extra.booktheme]`:
+其次，配置 `[extra.booktheme]` 中的 Home 链接：
 
 ```toml
 home_url="https://shurui.people.stanford.edu/"
 ```
 
-It may be link to your homepage, or a guide/TOC page which collects links to all your books (in this way you can organize multiple books with this theme).
+它可以指向你的主页，或用于汇总所有书籍链接的导览/目录页（这样可用该主题组织多本书）。
 
-### Example toml
+### toml 示例
 
 ```toml
 title = "Shurui Liu's Coding Notes"
@@ -148,11 +148,11 @@ book_only_current_section_pages = false
 home_url = "https://shurui.sites.stanford.edu/"
 ```
 
-## Usage
+## 用法
 
-### File structure
+### 文件结构
 
-All content should be put in `/content` folder as general Zola projects. Each chapter should be a folder inside `/content`, which contains its sections (markdown files). Here is an example of the file structure:
+和常规 Zola 项目一样，所有内容应放在 `/content` 目录。每个章节应是 `/content` 下的文件夹，内部包含各小节（Markdown 文件）。示例结构如下：
 
 ```markdown
 .
@@ -171,25 +171,24 @@ All content should be put in `/content` folder as general Zola projects. Each ch
 └── _index.md
 ```
 
-In `/content` folder, there should be one `_index.md`, which contains title and welcome/preface infomation of the book. In its front matter, you should set `sort_by = "weight" ` to manually control the order of chapters (or you can use sort by slug or date for your notebook).
+在 `/content` 目录下应有一个 `_index.md`，用于书名与欢迎/前言信息。在其 front matter 中应设置 `sort_by = "weight"`，以手动控制章节顺序（笔记场景也可按 slug 或 date 排序）。
 
-Each chapter(folder) must have an `_index.md` file. It should sets its `weight` front-matter variable to its chapter number, and set `sort_by = "weight"` in its front matter.
+每个章节（文件夹）都必须有 `_index.md`。应将 front matter 中的 `weight` 设为章节序号，并设置 `sort_by = "weight"`。
 
-Then in each chapter(folder), each section should be a `page` and should have its `weight` variable set to its section
-number.
+然后在每个章节（文件夹）中，每个小节应为一个 `page`，并将 `weight` 设为该小节序号。
 
-If you don't want welcome/preface page of the book or of a chapter, you can use `redirect_to` front-matter variable in the corresponding `_index.md`.
+如果你不想显示书籍或某章节的欢迎/前言页，可在对应 `_index.md` 中使用 `redirect_to`。
 
 You can write a shell scripts to automate creating new chapters or new notes. For example, you can consult my `zshconfig` project on my [github](https://github.com/srliu3264) (If you can not see it, probably it is bacasue I currently make it private. You can email me for access.)
 
-### Hotkeys
+### 快捷键
 
-In a browser, you can always type `?` to toggle the help page, reminding you of hotkeys. 
+在浏览器中可随时输入 `?` 打开/关闭帮助页，查看快捷键提示。 
 
-The rule is inspired by Vim, Zathura, and [Olivine](https://github.com/dongryul-kim/olivine). 
+快捷键规则受 Vim、Zathura 与 [Olivine](https://github.com/dongryul-kim/olivine) 启发。 
 
-The list of hotkeys may keep expanding, so I will not list all here. You can use `?` the help page, or see `hotkeys.js` manually to check existing functions.
+快捷键列表可能持续扩展，这里不逐一列出。你可通过 `?` 帮助页，或直接查看 `hotkeys.js` 了解现有功能。
 
-The hotkey `i` will allow you to idle inside MATRIX (inspired by [cmatrix](https://github.com/abishekvashok/cmatrix)), and since MAT is both initials for matrix and math, I lazily named this project after it.
+快捷键 `i` 可进入 MATRIX 待机模式（灵感来自 [cmatrix](https://github.com/abishekvashok/cmatrix)）。由于 MAT 同时可指 matrix 与 math，项目名也由此而来。
 
         

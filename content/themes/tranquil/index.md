@@ -1,7 +1,7 @@
 
 +++
 title = "tranquil"
-description = "A blog theme for zola, simple and clean"
+description = "简洁清爽的 Zola 博客主题"
 template = "theme.html"
 date = 2025-08-20T16:30:36+02:00
 
@@ -25,45 +25,45 @@ homepage = "https://github.com/TeaDrinkingProgrammer"
 ![A screenshot (dark theme) of the example page of the demo website](https://github.com/TeaDrinkingProgrammer/tranquil/blob/main/screenshot.png?raw=true)
 ![A screenshot (light theme) of the example page of the demo website](https://github.com/TeaDrinkingProgrammer/tranquil/blob/main/screenshot-light.png?raw=true)
 <br />
-A blog theme for [Zola](https://www.getzola.org). Simple, elegant and uses Tailwind. Based on [Isunjns Serene theme](https://github.com/isunjn/serene).
+A blog 主题，适用于 [Zola](https://www.getzola.org)。风格简洁优雅，使用 Tailwind 构建。基于 [Isunjns Serene theme](https://github.com/isunjn/serene)。
 
-## Demo
+## 演示
 
 -  <https://teadrinkingprogrammer.github.io/tranquil-demo/>
--  My own blog: <https://teadrinkingprogrammer.github.io>
+-  我的个人博客：<https://teadrinkingprogrammer.github.io>
 
-## Features
+## 功能
 
-- A simple and elegant design.
-- Projects page: display a list of the projects you have worked on with links.
-- Theme toggle: switch between light and dark theme regardless of your browser preference.
-- Image zooming using [Lightense](https://github.com/sparanoid/lightense-images): zoom in on images by clicking on them.
-- Out-of-date alert: show alerts when your post is outdated.
-- Callouts (note, warning, alert, etc.) that can be used right in Markdown.
-- Comments using [Giscus](https://giscus.app).
-- Mathematical notations using [KaTeX](https://katex.org).
-- Diagrams and visualizations using [Mermaid](https://github.com/mermaid-js/mermaid).
+- 简洁优雅的设计。
+- 项目页面：可展示你参与过的项目列表并附带链接。
+- 主题切换：无论浏览器偏好如何，都可在浅色与深色主题之间切换。
+- 图片缩放（[Lightense](https://github.com/sparanoid/lightense-images)）：点击图片可放大查看。
+- 过期提醒：当文章过旧时显示提示。
+- 提示框（note、warning、alert 等）可直接在 Markdown 中使用。
+- 评论系统支持 [Giscus](https://giscus.app)。
+- 数学公式支持 [KaTeX](https://katex.org)。
+- 图表与可视化支持 [Mermaid](https://github.com/mermaid-js/mermaid)。
 
-## Shoutouts
+## 致谢
 
-This theme wouldn't have existed without [Isunjns Serene theme](https://github.com/isunjn/serene). It's a great theme, so go check that one out as well.
+没有 [Isunjns Serene theme](https://github.com/isunjn/serene)，这个主题就不会存在。它本身也非常优秀，推荐一并了解。
 
-When I doubted about layout, I always went to look at [FasterThanLimes blog](https://fasterthanli.me) to see how he did it.
+当我对布局拿不准时，我经常会参考 [FasterThanLimes blog](https://fasterthanli.me) 的做法。
 
-Of course, this website wouldn't render without [Zola](https://getzola.org) and it wouldn't show anything without [Tailwind](https://tailwindcss.com/).
+当然，没有 [Zola](https://getzola.org) 这个网站无法生成；没有 [Tailwind](https://tailwindcss.com/) 它也不会有现在的样子。
 
-## Tranquil vs Serene
+## Tranquil 与 Serene
 
-Tranquil is a fork of Serene. The main reason to fork was not that I thought Serene was bad: I just wanted to try out Tailwind for a while and reimplementing a blog theme seemed like the perfect way to do so.
+Tranquil 是 Serene 的一个分支。选择 fork 并不是因为 Serene 不好，而是我想实践一段时间 Tailwind，而重写一个博客主题正是很合适的方式。
 
-The main and pretty much only difference between Tranquil and Serene is that the styling is built from scratch with Tailwind. The icons have also been changed to align better with Tailwind.
+Tranquil 与 Serene 的主要、几乎也是唯一差异，是样式层从零开始使用 Tailwind 构建。图标也做了调整，以更好地契合 Tailwind 风格。
 
-## Usage
+## 用法
 
-- Check the [USAGE.md](./USAGE.md) of `main` branch.
+- 请查看 `main` 分支中的 [USAGE.md](./USAGE.md)。
 
-## Contributing
+## 贡献
 
-- Before you make any non-trivial changes, consider opening an issue so we can discuss the change.
+- 在做任何非小改动前，建议先提交 issue，以便先讨论改动方案。
 
         

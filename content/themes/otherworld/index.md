@@ -1,7 +1,7 @@
 
 +++
 title = "otherworld"
-description = "Vaporwave aesthetic theme"
+description = "蒸汽波美学风格主题"
 template = "theme.html"
 date = 2024-03-24T14:05:03+10:00
 
@@ -30,20 +30,20 @@ homepage = "https://blek.codes"
     otherworld - a zola theme
 </h1>
 
-you can see the demo [here](https://world.blek.codes)
+你可以在[这里](https://world.blek.codes)查看演示。
 
-## how to use
+## 使用方式
 
-### prerequisities
-1. a linux system. you can use windows for that, but this guide centers itself on linux based systems.
-2. you need to have these programs installed: `git` and `zola`
-3. some creativity, html and scss skills
+### 前置条件
+1. 一套 Linux 系统。你也可以在 Windows 上使用，但本指南以 Linux 系统为核心。
+2. 你需要安装这些程序：`git` 和 `zola`。
+3. 一些创意，以及 HTML 和 SCSS 基础技能。
 
-### steps
-#### 1. clone the repo
-(aka download the theme)
+### 步骤
+#### 1. 克隆仓库
+（也就是下载主题）
 
-lets assume that your website's directory name in `daftpunk`. it will appear in commands a few times, and you should replace it with your website's name.
+假设你的网站目录名是 `daftpunk`。它会在下面命令中多次出现，你应替换为自己的网站名称。
 
 ```sh
 $ git clone git@git.blek.codes:blek/otherworld.git daftpunk
@@ -51,20 +51,20 @@ $ cd daftpunk
 ```
 
 #### 2. open an another terminal
-in the same directory, run
+在同一目录下运行：
 
 ```sh
 $ zola serve
 ```
 
-#### 3. edit files in the `content` directory...
+#### 3. 编辑 `content` 目录中的文件……
 
-...as per [zola docs](https://www.getzola.org/documentation/getting-started/overview)
+……按照 [zola 文档](https://www.getzola.org/documentation/getting-started/overview) 进行。
 
-## how to disable loading
-go to `content/index.md`, and in the `+++` blocks, set `extra.noload` to `true`.
+## 如何禁用加载效果
+前往 `content/index.md`，在 `+++` 区块中将 `extra.noload` 设置为 `true`。
 
-like this:
+示例如下：
 ```toml
 +++
 title = "Welcome"

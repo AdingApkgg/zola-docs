@@ -1,7 +1,7 @@
 
 +++
 title = "coast"
-description = "A simple theme for Zola that evokes the feel the sea breeze."
+description = "让人联想到海风感受的简洁 Zola 主题"
 template = "theme.html"
 date = 2026-02-05T01:23:52+09:00
 
@@ -24,11 +24,11 @@ homepage = "https://yukiosada.work"
 
 # coast theme
 
-**coast** is a blog theme for zola!
+**coast** 是一个 zola 博客主题！
 
-This theme can be used **mermaid** and **katex**.
+该主题支持 **mermaid** 和 **katex**。
 
-- demo site
+- 演示站点
 
 [https://zola-coast-theme.netlify.app/](https://zola-coast-theme.netlify.app/)
 
@@ -38,31 +38,31 @@ This theme can be used **mermaid** and **katex**.
   <img src="https://raw.githubusercontent.com/Myxogastria0808/coast/refs/heads/main/logo/coast.svg" width="300px" height="300px" />
 </div>
 
-- screenshot
+- 截图
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/Myxogastria0808/coast/refs/heads/main/screenshot.png" width="1920px" height="935px" />
 </div>
 
-## Setup Environment
+## 环境准备
 
-1. Install zola
+1. 安装 zola
 
-Please install zola by referring to the following.
+请参考以下文档安装 zola：
 
 [https://www.getzola.org/documentation/getting-started/installation/](https://www.getzola.org/documentation/getting-started/installation/)
 
-2. Setup coast theme
+2. 配置 coast 主题
 
 > [!TIP]
 > If you want to use the coast theme repository as a blog, you do not need to do the `2.` step other than making extra settings in the `2-6.` step after cloning the repository.
 
-2-1. Create your blog project
+2-1. 创建博客项目
 
 ```sh
 zola init < your blog project >
 ```
-Please select as follows
+请选择如下选项：
 
 ```sh
 Welcome to Zola!
@@ -79,31 +79,31 @@ Get started by moving into the directory and using the built-in server: `zola se
 Visit https://www.getzola.org for the full documentation.
 ```
 
-2-2. Change directory to your blog project
+2-2. 进入你的博客项目目录
 
 ```sh
 cd ./< your blog project >/themes/
 ```
 
-2-3. Clone coast theme to theme directory and remove .git directory of coast theme repository
+2-3. 将 coast 克隆到主题目录，并移除该主题仓库的 `.git` 目录
 
 ```sh
 git clone https://github.com/Myxogastria0808/coast.git
 rm -rf coast/.git
 ```
 
-2-4. Change directory to the root of your blog project
+2-4. 切回博客项目根目录
 
 ```sh
 cd ..
 ```
 
-2-5. Replace settings to `config.toml` of your blog project
+2-5. 替换博客项目 `config.toml` 配置
 
-The following is the content of the replacement config.
+以下为替换后的配置内容。
 
-Please change `base_url` to your blog's URL when deploying your blog.
-During development, I recommend leaving base_url as is.
+部署时请将 `base_url` 改为你的博客 URL。  
+开发阶段建议保持当前 `base_url` 设置。
 
 ```toml
 theme = "coast"
@@ -189,11 +189,11 @@ taxonomies = "off"
 paths_keep_dates = true
 ```
 
-2-6. Add extra settings to `config.toml` of your blog project
+2-6. 在博客项目的 `config.toml` 中添加扩展设置
 
-This theme provides the following additional settings.
+该主题提供如下扩展配置。
 
-All settings have default values, so you only need to add the settings you want to change.
+所有设置都有默认值，你只需添加需要修改的项。
 
 - `config.toml`
 

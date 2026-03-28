@@ -1,7 +1,7 @@
 
 +++
 title = "neovim"
-description = "A only keyboard theme with tabs and file browser"
+description = "仅键盘操作、带标签页和文件浏览器的主题"
 template = "theme.html"
 date = 2026-02-18T20:41:23+01:00
 
@@ -22,28 +22,28 @@ name = "0xb0tm4n"
 homepage = "https://super-botman.github.io"
 +++        
 
-# Neovim like theme 
+# 类 Neovim 主题
 
-Neovim theme is a neovim like theme for zola.
+Neovim theme 是一个用于 Zola 的类 Neovim 主题。
 
 ![image](https://github.com/user-attachments/assets/0317c951-4975-4150-ac43-7faf4c57aa8b)
 
-exemple: [https://super-botman.github.io](https://super-botman.github.io)
+示例： [https://super-botman.github.io](https://super-botman.github.io)
 
-## Installation
+## 安装
 ```bash
 cd themes
 git clone https://github.com/Super-Botman/neovim-theme.git
 mv neovim-theme/content/readme.md ../content
 ```
 
-then enable it in your config
+然后在配置中启用：
 
 ```toml
 theme = "neovim-theme"
 ```
 
-## Configuration
+## 配置
 
 ```toml
 [extra]

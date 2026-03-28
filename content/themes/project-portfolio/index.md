@@ -1,7 +1,7 @@
 
 +++
 title = "Project Portfolio"
-description = "Theme for a project portfolio (based on Tailwind CSS)."
+description = "项目作品集主题（基于 Tailwind CSS）"
 template = "theme.html"
 date = 2025-10-04T20:23:25+02:00
 
@@ -27,29 +27,30 @@ homepage = "https://www.winterstein.biz"
 > You can find this theme on [Codeberg](https://codeberg.org/winterstein/zola-theme-project-portfolio) and [Github](https://github.com/awinterstein/zola-theme-project-portfolio).
 
 A [Zola](https://www.getzola.org/) theme built with [Tailwind CSS](https://tailwindcss.com/) and [DaisyUI](https://daisyui.com) for presenting the project portfolio of a freelancer, for example. The theme is based on the [Blow](https://www.getzola.org/themes/blow/) theme that was created by Thomas Chartron and on my generic [Daisy](https://codeberg.org/winterstein/zola-theme-daisy) theme. It extends the [Daisy](https://codeberg.org/winterstein/zola-theme-daisy) with specific pages, taxonomies and shortcodes for managing a project portfolio and supports all color schemes of the [Daisy](https://codeberg.org/winterstein/zola-theme-daisy) as well.
+这是一个基于 [Tailwind CSS](https://tailwindcss.com/) 和 [DaisyUI](https://daisyui.com) 的 [Zola](https://www.getzola.org/) 主题，适合展示自由职业者等场景下的项目作品集。该主题基于 Thomas Chartron 的 [Blow](https://www.getzola.org/themes/blow/) 以及作者的通用 [Daisy](https://codeberg.org/winterstein/zola-theme-daisy) 主题，并在 Daisy 基础上扩展了管理作品集所需的页面、分类与短代码，同时兼容 Daisy 的全部配色方案。
 
 ![Screenshot of a project page example](screenshot.png)
 
 Check out the [live demo of the example project](https://awinterstein.github.io/zola-theme-project-portfolio-example/)  or a [real-world implementation](https://www.winterstein.biz/) of this theme.
 
-## Features
+## 功能
 
-* Responsive design (looks good on desktop and mobile)
-* Automatically selected dark / light modes
-* 37 color schemes included
-* Customizable navbar and footer (with social links)
-* Project types and skills taxonomies
-* Search functionality
-* Multi-language support
-* Pagination
-* Customizable favicon
-* Error 404 page
+* 响应式设计（桌面和移动端都表现良好）
+* 自动切换深色 / 浅色模式
+* 内置 37 种配色方案
+* 可自定义导航栏与页脚（含社交链接）
+* 项目类型与技能分类系统
+* 搜索功能
+* 多语言支持
+* 分页
+* 可自定义 favicon
+* 404 错误页
 
-## Quick Start
+## 快速开始
 
-For starting to create a new Zola website using this theme, the easiest approach is to just checkout / fork the [example repository](https://codeberg.org/winterstein/zola-theme-project-portfolio-example) and adapt it to your needs. That repository already contains a minimal structure and configuration for the Zola-based website and can directly be built and deployed to [Netlify](https://www.netlify.com/) and Github pages.
+若要快速基于此主题创建站点，最简单的方法是直接检出 / fork [示例仓库](https://codeberg.org/winterstein/zola-theme-project-portfolio-example) 并按需修改。该仓库已包含最小可用结构和配置，可直接构建并部署到 [Netlify](https://www.netlify.com/) 与 GitHub Pages。
 
-## Configuration
+## 配置
 
 The minimal `config.toml` file for using the theme looks like this:
 
@@ -64,7 +65,7 @@ taxonomies = [
 ]
 ```
 
-### Color Schemes
+### 配色方案
 
 Set a light and dark color scheme:
 
@@ -84,7 +85,7 @@ enable_theme_switching = true
 
 There will be a dropdown in the navbar then, for the visitors to select form the color schemes.
 
-### Languages
+### 语言
 
 To enable support for multiple languages, simply set the default language and add language settings for all your additional languages:
 
@@ -113,7 +114,7 @@ Taxonomies should have exactly the same (not translated) name in all languages, 
 
 You need to create an i18n file containing the translations for all theme variables for all the languages of your website, if they are not included in the theme. Right now, [English](i18n/en.toml), [German](i18n/de.toml), [Hungarian](i18n/hu.toml), [Finnish](i18n/fi.toml) are included. You can create a the directory `i18n` in your website root directory and the language files in there will be picked up by the theme. It would be great, however, if you create a pull-request on the theme repository to add your translations to the theme.
 
-### Search
+### 搜索
 
 Integrating a search into your website is as easy as adding the following to your configuration:
 
@@ -134,7 +135,7 @@ As soon as `build_search_index` is enabled, the search indices are created for a
 
 Just be aware, that you need to add an [Elasticlunr.js](http://elasticlunr.com/)-compatible [Lunr Languages](https://github.com/weixsong/lunr-languages) file to your `static` directory, if you are using other languages than English and German. See the corresponding repository for the [`min` files](https://github.com/weixsong/lunr-languages/tree/master/min). Feel free to add support for your languages to the theme as well, via a pull-request.
 
-### Navbar
+### 导航栏
 
 Arbitrary links can be added to the footer by defining the following list in the `[extra.navbar]` section:
 
@@ -149,7 +150,7 @@ links = [
 
 The value of the `i18n_key` must be in the `i18n` files for your languages (see [en.toml](i18n/en.toml), for example).
 
-### Footer
+### 页脚
 
 All three parts of the footer can be adapted: the links, the social icons, and the copyright notice.
 
@@ -200,7 +201,7 @@ notice = "This is my <b>copyright</b> notice."
 
 HTML can be used there.
 
-### Syntax Highlighting
+### 语法高亮
 
 The theme makes use of Zola code highlighting feature and supports setting a different color scheme depending on whether a light or dark theme is active. Just enable syntax highlighting the following way:
 
@@ -209,7 +210,7 @@ highlight_code = true
 highlight_theme = "css"
 ```
 
-### Index Page
+### 首页
 
 A title and text can be added to the index page by creating a file `_index.md` in the `content` directory. Additionally, a slogan and an image an be configured in the `config.toml`:
 
@@ -222,7 +223,7 @@ image_alt = "Placeholder text describing the index's image."
 
 You can also created a completely different index page, by overwriting the `index.html` template in the template directory of your site. Just inherit from the `page.html` template of the theme.
 
-## Details on Using the Theme
+## 主题使用细节
 
 The installation of the theme works the same as for other Zola themes. As it is described in the [official documentation](https://www.getzola.org/documentation/themes/installing-and-using-themes/). Hence, it fist needs to be added as a git submodule:
 

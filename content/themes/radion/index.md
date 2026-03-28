@@ -1,7 +1,7 @@
 
 +++
 title = "radion"
-description = "A sleek, modern blog theme."
+description = "流畅现代的博客主题"
 template = "theme.html"
 date = 2026-02-07T23:12:58-08:00
 
@@ -24,8 +24,7 @@ homepage = "https://micahkepe.com"
 
 # radion
 
-A sleek, modern blog theme for [Zola](https://www.getzola.org/). See the live
-site demo [here](https://micahkepe.com/radion/).
+一个适用于 [Zola](https://www.getzola.org/) 的流畅现代博客主题。在线演示请见 [here](https://micahkepe.com/radion/)。
 
 > **radion**
 > noun
@@ -46,19 +45,19 @@ site demo [here](https://micahkepe.com/radion/).
 
 </details>
 
-## Features
+## 功能
 
-- [x] Code Snippet Clipboards
-  - [x] Line(s)-specific highlighting
-- [x] Latex Support
-- [x] Light/Dark mode support
-- [x] Search functionality
-- [x] Table of Contents option
-- [x] Footnote support
-- [x] Built-in comments option (Giscus)
-- [x] Open Graph cover image selection
+- [x] 代码片段复制按钮
+  - [x] 支持指定行高亮
+- [x] Latex 支持
+- [x] 深色/浅色模式
+- [x] 搜索功能
+- [x] 目录（TOC）选项
+- [x] 脚注支持
+- [x] 内置评论（Giscus）
+- [x] Open Graph 封面图设置
 
-## Contents and Configuration Guide
+## 目录与配置指南
 
 - Installation
 - Options

@@ -1,7 +1,7 @@
 
 +++
 title = "Goyo"
-description = "A simplicity and clean documentation theme"
+description = "简洁清爽的文档主题"
 template = "theme.html"
 date = 2026-02-27T18:48:22+09:00
 
@@ -25,7 +25,7 @@ homepage = "https://www.hahwul.com"
 ![](./screenshot.png)
 
 <div align="center">
-  <p>Goyo is a <a href="https://www.getzola.org/">Zola</a> theme that aims for simplicity and clean documentation.</p>
+  <p>Goyo 是一个追求简洁与清晰文档体验的 <a href="https://www.getzola.org/">Zola</a> 主题。</p>
 </div>
 
 <p align="center">
@@ -36,54 +36,54 @@ homepage = "https://www.hahwul.com"
   <a href="https://daisyui.com"><img src="https://img.shields.io/badge/DaisyUI-000000?style=for-the-badge&logo=daisyui&logoColor=white"></a>
 </p>
 
-## Features
+## 功能
 
-- Dark & Light Themes with Brightness Settings
-- Beautiful Landing Page
-- Responsive Design
-- SEO-Friendly (Sitemap, RSS Feed)
-- Multi-Language Support (including RTL)
-- Auto-Generated Sidebar & Custom Nav
-- Built-in Search
-- Built-in resources (FontAwesome, Mermaid.js)
-- Comments (Giscus, Utterances)
-- Various shortcodes (Mermaid, Asciinema, Katex, Alert, Badge, YouTube, Gist, Carousel, Collapse, etc.)
-- Custom Font Support
-- Edit Page, Share Buttons and Taxonomies
-- Customization
+- 深色/浅色主题与亮度设置
+- 美观的落地页
+- 响应式设计
+- SEO 友好（Sitemap、RSS）
+- 多语言支持（含 RTL）
+- 自动生成侧边栏与自定义导航
+- 内置搜索
+- 内置资源（FontAwesome、Mermaid.js）
+- 评论系统（Giscus、Utterances）
+- 多种短代码（Mermaid、Asciinema、Katex、Alert、Badge、YouTube、Gist、Carousel、Collapse 等）
+- 自定义字体支持
+- 编辑页面、分享按钮与分类系统
+- 高度可定制
 
-## Installation
+## 安装
 
-Make your zola app
+创建你的 zola 站点：
 
 ```bash
 zola init yoursite
 cd yoursite
 ```
 
-Add the theme as a git submodule:
+将主题作为 git 子模块添加：
 
 ```bash
 git init  # if your project is a git repository already, ignore this command
 git submodule add https://github.com/hahwul/goyo themes/goyo
 ```
 
-Or clone the theme into your themes directory:
+或直接克隆到 `themes` 目录：
 
 ```bash
 git clone https://github.com/hahwul/goyo themes/goyo
 ```
 
-Then set `goyo` as your theme in `config.toml`.
+然后在 `config.toml` 中将 `goyo` 设置为主题：
 
 ```toml
 title = "Your Docs"
 theme = "goyo"
 ```
 
-## Configuration
+## 配置
 
-Add extra field in config.toml
+在 `config.toml` 中添加 `extra` 配置：
 
 ```toml
 [extra]
@@ -200,19 +200,19 @@ category = ""  # Comment category (e.g., "General")
 category_id = ""  # Category ID (e.g., "DIC_kwDOXXXXXXXXXX")
 ```
 
-More information? [Configuration - Goyo Documents](https://goyo.hahwul.com/get_started/configuration/) and [Creating Landing - Goyo Documents](https://goyo.hahwul.com/get_started/creating-landing/)
+更多信息可查看：[Configuration - Goyo Documents](https://goyo.hahwul.com/get_started/configuration/) 与 [Creating Landing - Goyo Documents](https://goyo.hahwul.com/get_started/creating-landing/)。
 
-## Run
+## 运行
 
 ```bash
 zola serve
 
-# and open http://localhost:1111 in your browser.
+# 然后在浏览器打开 http://localhost:1111
 ```
 
-## Contributing
+## 贡献
 
-Goyo is an open-source project made with ❤️. If you would like to contribute, please check [CONTRIBUTING.md](CONTRIBUTING.md) and submit a Pull Request.
+Goyo 是一个用 ❤️ 打造的开源项目。如果你愿意参与贡献，请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md) 并提交 Pull Request。
 
 ![](static/images/CONTRIBUTORS.svg)
 
