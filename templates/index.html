@@ -152,8 +152,17 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     {% block head %}{% endblock head %}
 </head>
