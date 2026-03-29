@@ -209,8 +209,8 @@
                 </li>
                 <li>
                     {% set english_url = current_url | default(value=config.base_url) | replace(from=config.base_url, to="https://www.getzola.org/") %}
-                    <a class="white external" href="{{ english_url }}" class="nav-link"><i
-                            class="fas fa-globe"></i> English</a>
+                    <a class="white external" href="{{ english_url }}" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -305,6 +305,7 @@
             <i class="fas fa-file-alt"></i> {{ trans(key="page_visits", lang=lang)
             }} <span id="ppv">-</span> {{ trans(key="times", lang=lang) }}
         </p>
+        <p>{{ trans(key="ai_translated_notice", lang=lang) }}</p>
     </footer>
 </body>
 
