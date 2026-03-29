@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;goyo&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="Goyo | Zola" />
     <meta property="og:description"
-        content="A simplicity and clean documentation theme" />
+        content="简洁清爽的文档主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;goyo&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="Goyo | Zola" />
     <meta name="twitter:description"
-        content="A simplicity and clean documentation theme" />
+        content="简洁清爽的文档主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Goyo",
-        "description": "A simplicity and clean documentation theme",
+        "description": "简洁清爽的文档主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;goyo&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                            
-                            
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;goyo&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;goyo&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;goyo&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Goyo</h1>
-            <p>A simplicity and clean documentation theme</p>
+            <p>简洁清爽的文档主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;www.hahwul.com">hahwul</a>
@@ -260,7 +267,7 @@
     <hr>
     <p><img src="https://zola.docs.saop.cc/themes/goyo/./screenshot.png" alt="" /></p>
 <div align="center">
-  <p>Goyo is a <a href="https://www.getzola.org/">Zola</a> theme that aims for simplicity and clean documentation.</p>
+  <p>Goyo 是一个追求简洁与清晰文档体验的 <a href="https://www.getzola.org/">Zola</a> 主题。</p>
 </div>
 <p align="center">
   <a href="https://goyo.hahwul.com"><img src="https://img.shields.io/badge/DOCUMENTS-000000?style=for-the-badge&labelColor=000000"></a>
@@ -269,35 +276,35 @@
   <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/TailwindCSS-000000?style=for-the-badge&logo=tailwindcss&logoColor=white"></a>
   <a href="https://daisyui.com"><img src="https://img.shields.io/badge/DaisyUI-000000?style=for-the-badge&logo=daisyui&logoColor=white"></a>
 </p>
-<h2 id="features">Features</h2>
+<h2 id="gong-neng">功能</h2>
 <ul>
-<li>Dark &amp; Light Themes with Brightness Settings</li>
-<li>Beautiful Landing Page</li>
-<li>Responsive Design</li>
-<li>SEO-Friendly (Sitemap, RSS Feed)</li>
-<li>Multi-Language Support (including RTL)</li>
-<li>Auto-Generated Sidebar &amp; Custom Nav</li>
-<li>Built-in Search</li>
-<li>Built-in resources (FontAwesome, Mermaid.js)</li>
-<li>Comments (Giscus, Utterances)</li>
-<li>Various shortcodes (Mermaid, Asciinema, Katex, Alert, Badge, YouTube, Gist, Carousel, Collapse, etc.)</li>
-<li>Custom Font Support</li>
-<li>Edit Page, Share Buttons and Taxonomies</li>
-<li>Customization</li>
+<li>深色/浅色主题与亮度设置</li>
+<li>美观的落地页</li>
+<li>响应式设计</li>
+<li>SEO 友好（Sitemap、RSS）</li>
+<li>多语言支持（含 RTL）</li>
+<li>自动生成侧边栏与自定义导航</li>
+<li>内置搜索</li>
+<li>内置资源（FontAwesome、Mermaid.js）</li>
+<li>评论系统（Giscus、Utterances）</li>
+<li>多种短代码（Mermaid、Asciinema、Katex、Alert、Badge、YouTube、Gist、Carousel、Collapse 等）</li>
+<li>自定义字体支持</li>
+<li>编辑页面、分享按钮与分类系统</li>
+<li>高度可定制</li>
 </ul>
-<h2 id="installation">Installation</h2>
-<p>Make your zola app</p>
+<h2 id="an-zhuang">安装</h2>
+<p>创建你的 zola 站点：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init yoursite</span></span>
 <span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> yoursite</span></span></code></pre>
-<p>Add the theme as a git submodule:</p>
+<p>将主题作为 git 子模块添加：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span><span style="color: #9399B2;font-style: italic;">  # if your project is a git repository already, ignore this command</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/hahwul/goyo themes/goyo</span></span></code></pre>
-<p>Or clone the theme into your themes directory:</p>
+<p>或直接克隆到 <code>themes</code> 目录：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/hahwul/goyo themes/goyo</span></span></code></pre>
-<p>Then set <code>goyo</code> as your theme in <code>config.toml</code>.</p>
+<p>然后在 <code>config.toml</code> 中将 <code>goyo</code> 设置为主题：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Docs&quot;</span></span>
-<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;goyo&quot;</span></span></code></pre><h2 id="configuration">Configuration</h2>
-<p>Add extra field in config.toml</p>
+<span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;goyo&quot;</span></span></code></pre><h2 id="pei-zhi">配置</h2>
+<p>在 <code>config.toml</code> 中添加 <code>extra</code> 配置：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Navigation Configuration</span></span>
 <span class="giallo-l"><span>nav</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
@@ -410,12 +417,12 @@
 <span class="giallo-l"><span>repo_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;font-style: italic;">  # Repository ID (e.g., &quot;R_kgDOXXXXXXX&quot;)</span></span>
 <span class="giallo-l"><span>category</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;font-style: italic;">  # Comment category (e.g., &quot;General&quot;)</span></span>
 <span class="giallo-l"><span>category_id</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;font-style: italic;">  # Category ID (e.g., &quot;DIC_kwDOXXXXXXXXXX&quot;)</span></span></code></pre>
-<p>More information? <a class="external" rel="noopener external" target="_blank" href="https://goyo.hahwul.com/get_started/configuration/">Configuration - Goyo Documents</a> and <a class="external" rel="noopener external" target="_blank" href="https://goyo.hahwul.com/get_started/creating-landing/">Creating Landing - Goyo Documents</a></p>
-<h2 id="run">Run</h2>
+<p>更多信息可查看：<a class="external" rel="noopener external" target="_blank" href="https://goyo.hahwul.com/get_started/configuration/">Configuration - Goyo Documents</a> 与 <a class="external" rel="noopener external" target="_blank" href="https://goyo.hahwul.com/get_started/creating-landing/">Creating Landing - Goyo Documents</a>。</p>
+<h2 id="yun-xing">运行</h2>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span>
 <span class="giallo-l"></span>
-<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># and open http://localhost:1111 in your browser.</span></span></code></pre><h2 id="contributing">Contributing</h2>
-<p>Goyo is an open-source project made with ❤️. If you would like to contribute, please check <a href="https://zola.docs.saop.cc/themes/goyo/CONTRIBUTING.md">CONTRIBUTING.md</a> and submit a Pull Request.</p>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># 然后在浏览器打开 http://localhost:1111</span></span></code></pre><h2 id="gong-xian">贡献</h2>
+<p>Goyo 是一个用 ❤️ 打造的开源项目。如果你愿意参与贡献，请先阅读 <a href="https://zola.docs.saop.cc/themes/goyo/CONTRIBUTING.md">CONTRIBUTING.md</a> 并提交 Pull Request。</p>
 <p><img src="https://zola.docs.saop.cc/themes/goyo/static/images/CONTRIBUTORS.svg" alt="" /></p>
 
 
@@ -435,6 +442,7 @@
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

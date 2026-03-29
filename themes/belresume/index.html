@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;belresume&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="BelResume | Zola" />
     <meta property="og:description"
-        content="A beautiful, modern, and minimal single-page resume site" />
+        content="精美、现代、极简的单页简历站点" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;belresume&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="BelResume | Zola" />
     <meta name="twitter:description"
-        content="A beautiful, modern, and minimal single-page resume site" />
+        content="精美、现代、极简的单页简历站点" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "BelResume",
-        "description": "A beautiful, modern, and minimal single-page resume site",
+        "description": "精美、现代、极简的单页简历站点",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;belresume&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                          
-                              
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;belresume&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;belresume&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;belresume&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> BelResume</h1>
-            <p>A beautiful, modern, and minimal single-page resume site</p>
+            <p>精美、现代、极简的单页简历站点</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;cx48.dev">cx48</a>
@@ -249,98 +256,99 @@
 
     <hr>
     <h1 id="belresume">BelResumé</h1>
-<p><em><strong>A beautiful, modern, and minimal single-page resume site</strong></em></p>
-<p>Powered by <a class="external" rel="noopener external" target="_blank" href="https://getzola.org/">Zola</a>. Styled with Tailwind CSS &amp; Font Awesome</p>
+<p><em><strong>一个精美、现代、极简的单页简历站点</strong></em></p>
+<p>基于 <a class="external" rel="noopener external" target="_blank" href="https://getzola.org/">Zola</a> 构建，使用 Tailwind CSS 与 Font Awesome 进行样式设计。</p>
 <blockquote>
-<p>“Bel” in French means beautiful — this is your beautiful resumé!</p>
+<p>“Bel” 在法语中意为“美丽”——这就是你的美丽简历！</p>
 </blockquote>
-<h2 id="preview">Preview</h2>
-<p><a class="external" rel="noopener external" target="_blank" href="https://cx48.github.io/BelResume/">BelResumé</a> can be deployed for free using GitHub Pages or Vercel</p>
+<h2 id="yu-lan">预览</h2>
+<p><a class="external" rel="noopener external" target="_blank" href="https://cx48.github.io/BelResume/">BelResumé</a> can be deployed for free using GitHub Pages or Vercel
+<a class="external" rel="noopener external" target="_blank" href="https://cx48.github.io/BelResume/">BelResumé</a> 可免费部署到 GitHub Pages 或 Vercel。</p>
 <h4 id="light-mode">Light Mode</h4>
 <p><img src="https://raw.githubusercontent.com/cx48/BelResume/refs/heads/main/static/images/light.png" alt="Light Mode" /></p>
 <h4 id="dark-mode">Dark Mode</h4>
 <p><img src="https://raw.githubusercontent.com/cx48/BelResume/refs/heads/main/static/images/dark.png" alt="Dark Mode" /></p>
 <h4 id="pagespeed-insights">PageSpeed Insights</h4>
 <p><img src="https://raw.githubusercontent.com/cx48/BelResume/refs/heads/main/static/images/pagespeed.png" alt="PageSpeed" /></p>
-<h2 id="project-structure">Project Structure</h2>
+<h2 id="xiang-mu-jie-gou">项目结构</h2>
 <ul>
-<li><strong>config.toml</strong>: Site metadata</li>
-<li><strong>static/</strong>: <code>css/style.css</code>, <code>js/script.js</code></li>
-<li><strong>templates/index.html</strong>: Main layout (calls all partials)</li>
-<li><strong>templates/partials/</strong>: All resume sections are modular
+<li><strong>config.toml</strong>：站点元数据</li>
+<li><strong>static/</strong>：<code>css/style.css</code>, <code>js/script.js</code></li>
+<li><strong>templates/index.html</strong>：主布局（调用所有 partial）</li>
+<li><strong>templates/partials/</strong>：简历各模块
 <ul>
-<li><code>header.html</code>: Name, job title, contact links</li>
-<li><code>experience.html</code>: Work history (companies, roles, achievements)</li>
-<li><code>education.html</code>: Schools, degrees, specializations</li>
-<li><code>projects.html</code>: Key project summaries with tags</li>
-<li><code>skills.html</code>: Visual skill bars (adjust widths)</li>
-<li><code>certifications.html</code>: Cert title + authority + year</li>
-<li><code>languages.html</code>: Language proficiency (bars &amp; labels)</li>
-<li><code>awards.html</code>: Award names + year + issuer</li>
+<li><code>header.html</code>：姓名、职位、联系方式</li>
+<li><code>experience.html</code>：工作经历（公司、角色、成果）</li>
+<li><code>education.html</code>：学校、学位、专业方向</li>
+<li><code>projects.html</code>：关键项目摘要与标签</li>
+<li><code>skills.html</code>：技能进度条（可调宽度）</li>
+<li><code>certifications.html</code>：证书名称 + 颁发机构 + 年份</li>
+<li><code>languages.html</code>：语言能力（进度条与标签）</li>
+<li><code>awards.html</code>：奖项名称 + 年份 + 颁发方</li>
 </ul>
 </li>
 </ul>
-<h2 id="quick-start">Quick Start</h2>
+<h2 id="kuai-su-kai-shi">快速开始</h2>
 <ol>
 <li>
-<p><strong>Install Zola</strong>: <a class="external" rel="noopener external" target="_blank" href="https://getzola.org/documentation/getting-started/installation/">https://getzola.org/documentation/getting-started/installation/</a></p>
+<p><strong>安装 Zola</strong>：<a class="external" rel="noopener external" target="_blank" href="https://getzola.org/documentation/getting-started/installation/">https://getzola.org/documentation/getting-started/installation/</a></p>
 </li>
 <li>
-<p><strong>Clone repository</strong>:</p>
+<p><strong>克隆仓库</strong>：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/cx48/BelResume</span></span>
 <span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> BelResume</span></span></code></pre></li>
 <li>
-<p><strong>Serve locally</strong>:</p>
+<p><strong>本地运行</strong>：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre>
-<p>After making necessary changes to HTML files present under <code>partials/</code> visit <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a></p>
+<p>对 <code>partials/</code> 下 HTML 做必要修改后，访问 <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a>。</p>
 </li>
 <li>
-<p><strong>Build static site</strong>:</p>
+<p><strong>构建静态站点</strong>：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> build</span></span></code></pre>
-<p>All files output to <code>/public</code></p>
+<p>所有输出文件位于 <code>/public</code>。</p>
 </li>
 </ol>
-<h2 id="deployment-guide">Deployment Guide</h2>
+<h2 id="bu-shu-zhi-nan">部署指南</h2>
 <blockquote>
-<p>Deploy to GitHub Pages</p>
+<p>部署到 GitHub Pages</p>
 </blockquote>
 <ol>
 <li>
-<p>Run Zola build:</p>
+<p>运行 Zola 构建：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> build</span></span></code></pre></li>
 <li>
-<p>Commit and push the contents of the <code>public/</code> folder to your <code>gh-pages</code> branch</p>
+<p>将 <code>public/</code> 目录内容提交并推送到 <code>gh-pages</code> 分支</p>
 </li>
 <li>
-<p>In GitHub repo settings, enable Pages from the <code>/public</code> folder or <code>gh-pages</code> branch</p>
+<p>在 GitHub 仓库设置中，从 <code>/public</code> 目录或 <code>gh-pages</code> 分支启用 Pages</p>
 </li>
 <li>
-<p>Your site will be live at <code>https://yourusername.github.io/BelResume/</code></p>
+<p>你的网站将发布在 <code>https://yourusername.github.io/BelResume/</code></p>
 </li>
 </ol>
 <blockquote>
-<p>Deploy to Vercel</p>
+<p>部署到 Vercel</p>
 </blockquote>
 <ol>
 <li>
-<p>Login to <a class="external" rel="noopener external" target="_blank" href="https://vercel.com">Vercel</a> and import your GitHub repo</p>
+<p>登录 <a class="external" rel="noopener external" target="_blank" href="https://vercel.com">Vercel</a> 并导入 GitHub 仓库</p>
 </li>
 <li>
-<p>Set <strong>Build Command</strong> to:</p>
+<p>将 <strong>Build Command</strong> 设置为：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> build</span></span></code></pre></li>
 <li>
-<p>Set <strong>Output Directory</strong> to:</p>
+<p>将 <strong>Output Directory</strong> 设置为：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">public</span></span></code></pre></li>
 <li>
-<p>Set <strong>Framework Preset</strong> to <code>Other</code></p>
+<p>将 <strong>Framework Preset</strong> 设置为 <code>Other</code></p>
 </li>
 <li>
-<p>Click <strong>Deploy</strong></p>
+<p>点击 <strong>Deploy</strong></p>
 </li>
 </ol>
-<p>Zola will build and serve from the <code>public/</code> folder automatically on every push</p>
-<h2 id="customization-guide">Customization Guide</h2>
-<p>To update your resume, simply open the required HTML file under <code>partials/</code> and modify it as per your requirement</p>
+<p>每次推送后，Zola 会自动构建并从 <code>public/</code> 目录提供内容。</p>
+<h2 id="zi-ding-yi-zhi-nan">自定义指南</h2>
+<p>更新简历时，只需打开 <code>partials/</code> 下对应 HTML 文件并按需修改。</p>
 <h3 id="1-config-toml">1. <strong>config.toml</strong></h3>
 <p>Update site-wide metadata:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;John Doe&quot;</span></span>
@@ -372,11 +380,11 @@
 <span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">div</span><span style="color: #F9E2AF;"> style</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;</span><span>width: 100%&quot;</span><span style="color: #94E2D5;">&gt;&lt;/</span><span style="color: #89B4FA;">div</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h3 id="9-partials-awards-html">9. <strong>partials/awards.html</strong></h3>
 <p>Highlight awards with name and source:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="html"><span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span><span>Best Hackathon Project</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">h3</span><span style="color: #94E2D5;">&gt;</span></span>
-<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span><span>DefCon 2025</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h2 id="get-in-touch">Get in Touch</h2>
-<p>Have feedback, questions, or just want to say hello?<br />
-Feel free to <a class="external" rel="noopener external" target="_blank" href="https://github.com/cx48/BelResume/issues">open an issue</a> or reach out directly:</p>
+<span class="giallo-l"><span style="color: #94E2D5;">&lt;</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span><span>DefCon 2025</span><span style="color: #94E2D5;">&lt;/</span><span style="color: #89B4FA;">p</span><span style="color: #94E2D5;">&gt;</span></span></code></pre><h2 id="lian-xi-fang-shi">联系方式</h2>
+<p>如有反馈、问题，或只是想打个招呼：<br />
+欢迎 <a class="external" rel="noopener external" target="_blank" href="https://github.com/cx48/BelResume/issues">提交 issue</a> 或直接联系。</p>
 <blockquote>
-<p>Check my GitHub profile for contact links</p>
+<p>联系方式请查看我的 GitHub 主页</p>
 </blockquote>
 
 
@@ -396,6 +404,7 @@ Feel free to <a class="external" rel="noopener external" target="_blank" href="h
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

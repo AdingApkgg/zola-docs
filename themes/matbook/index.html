@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;matbook&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="MATbook | Zola" />
     <meta property="og:description"
-        content="A zola chapter book theme inspired from book and olivine" />
+        content="受 Book 与 Olivine 启发的 Zola 章节书主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;matbook&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="MATbook | Zola" />
     <meta name="twitter:description"
-        content="A zola chapter book theme inspired from book and olivine" />
+        content="受 Book 与 Olivine 启发的 Zola 章节书主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "MATbook",
-        "description": "A zola chapter book theme inspired from book and olivine",
+        "description": "受 Book 与 Olivine 启发的 Zola 章节书主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;matbook&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                            
-                            
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;matbook&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;matbook&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;matbook&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> MATbook</h1>
-            <p>A zola chapter book theme inspired from book and olivine</p>
+            <p>受 Book 与 Olivine 启发的 Zola 章节书主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;shurui.people.stanford.edu&#x2F;">Shurui Liu</a>
@@ -233,77 +240,77 @@
 
     <hr>
     <h1 id="matbook">MATbook</h1>
-<p>A <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> theme for personal notebooks or chapter books. Based on  <a class="external" rel="noopener external" target="_blank" href="https://www.vincentprouillet.com/">Vincent Prouillet</a>'s <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/book">Book</a>, inspired by <a class="external" rel="noopener external" target="_blank" href="https://web.stanford.edu/~dkim04/">Dongryul Kim</a>'s <a class="external" rel="noopener external" target="_blank" href="https://github.com/dongryul-kim/olivine">Olivine</a>.</p>
+<p>一个适用于个人笔记或章节书的 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> 主题。基于 <a class="external" rel="noopener external" target="_blank" href="https://www.vincentprouillet.com/">Vincent Prouillet</a> 的 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/book">Book</a>，并受到 <a class="external" rel="noopener external" target="_blank" href="https://web.stanford.edu/~dkim04/">Dongryul Kim</a> 的 <a class="external" rel="noopener external" target="_blank" href="https://github.com/dongryul-kim/olivine">Olivine</a> 启发。</p>
 <p>Live Demo: <a class="external" rel="noopener external" target="_blank" href="https://srliu3264.github.io/MATbook-live-demo/">https://srliu3264.github.io/MATbook-live-demo</a></p>
-<h2 id="contents">Contents</h2>
+<h2 id="mu-lu">目录</h2>
 <ul>
 <li>MATbook
 <ul>
 <li>
-<p>Features</p>
+<p>功能</p>
 </li>
 <li>
-<p>Contents</p>
+<p>目录</p>
 </li>
 <li>
-<p>Installation</p>
+<p>安装</p>
 </li>
 <li>
-<p>Configurations</p>
+<p>配置</p>
 <ul>
-<li>Enable the theme</li>
-<li>Numbered chapters</li>
-<li>Current section pages only</li>
-<li>Math</li>
-<li>Paths</li>
-<li>Example toml</li>
+<li>启用主题</li>
+<li>章节编号</li>
+<li>仅显示当前分区页面</li>
+<li>数学支持</li>
+<li>路径</li>
+<li>toml 示例</li>
 </ul>
 </li>
 <li>
-<p>Usage</p>
+<p>用法</p>
 <ul>
-<li>File structure</li>
-<li>Hotkeys</li>
+<li>文件结构</li>
+<li>快捷键</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="features">Features</h2>
+<h2 id="gong-neng">功能</h2>
 <ul>
-<li>Idle inside Matrix (MATbook is short for Matrix Book)</li>
-<li>Searching</li>
-<li>Light/dark mode</li>
-<li>Book structure (table of chapters and sections in left sidebar, table of contents of current section in right sidebar)</li>
-<li>Keyboard shortcuts</li>
-<li>Backlinks</li>
-<li>Mathjax, Tikzjax, and basic theorem enviroments included for mathematics and commutative diagrams.</li>
+<li>Matrix 待机效果（MATbook 即 Matrix Book 缩写）</li>
+<li>搜索</li>
+<li>浅色/深色模式</li>
+<li>书籍结构（左侧章节与小节目录，右侧当前小节目录）</li>
+<li>键盘快捷键</li>
+<li>反向链接</li>
+<li>内置 Mathjax、Tikzjax 和基础定理环境，用于数学公式与交换图</li>
 </ul>
-<h2 id="installation">Installation</h2>
-<p>Please follow the Zola documentation on <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">installing and using themes</a> to install.</p>
-<h2 id="configurations">Configurations</h2>
-<h3 id="enable-the-theme">Enable the theme</h3>
+<h2 id="an-zhuang">安装</h2>
+<p>安装请参考 Zola 文档：<a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">installing and using themes</a>。</p>
+<h2 id="pei-zhi">配置</h2>
+<h3 id="qi-yong-zhu-ti">启用主题</h3>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;MATbook&quot;</span></span>
-<span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="numbered-chapters">Numbered chapters</h3>
-<p>By default, the <code>MATbook</code> theme will number the chapters and pages in the left menu.
-You can disable that by setting the <code>book_number_chapters</code> in <code>extra.booktheme</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>book_number_chapters</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre><h3 id="current-section-pages-only">Current section pages only</h3>
-<p>By default, the <code>MATbook</code> theme will list all the pages in the current section.
-You can disable that by setting the <code>book_only_current_section_pages</code> in <code>extra.booktheme</code>:</p>
+<span class="giallo-l"><span>build_search_index</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="zhang-jie-bian-hao">章节编号</h3>
+<p>默认情况下，<code>MATbook</code> 会在左侧菜单为章节与页面编号。<br />
+你可以在 <code>extra.booktheme</code> 中设置 <code>book_number_chapters</code> 关闭：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>book_number_chapters</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre><h3 id="jin-xian-shi-dang-qian-fen-qu-ye-mian">仅显示当前分区页面</h3>
+<p>默认情况下，<code>MATbook</code> 会列出当前分区中的所有页面。<br />
+你可以在 <code>extra.booktheme</code> 中设置 <code>book_only_current_section_pages</code> 关闭：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>book_only_current_section_pages</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span></code></pre>
-<p>NOTE: you need to disabe this if you want to use hotkey <code>v</code> to toggle it.</p>
-<h3 id="math">Math</h3>
-<p>Enable mathjax and tikzjax in <code>extra</code> if you need mathematics and tikzcd diagrams in your book.</p>
+<p>注意：如果你想使用快捷键 <code>v</code> 进行切换，需要关闭该项。</p>
+<h3 id="shu-xue-zhi-chi">数学支持</h3>
+<p>若书中需要数学公式与 tikzcd 图，请在 <code>extra</code> 中启用 mathjax 与 tikzjax：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>tikzjax</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
-<span class="giallo-l"><span>mathjax</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="paths">Paths</h3>
-<p>You need to set up two paths:</p>
-<p>First, in <code>[extra]</code>, you need to make sure that <code>upload_prefix</code> is the path to the directory where you put all images.</p>
+<span class="giallo-l"><span>mathjax</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="lu-jing">路径</h3>
+<p>你需要设置两类路径：</p>
+<p>首先，在 <code>[extra]</code> 中确保 <code>upload_prefix</code> 指向你存放图片的目录路径。</p>
 <p>For example, if you put all your images in folder <code>/static/upload</code>, then you should set</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>upload_prefix</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;/upload&quot;</span></span></code></pre>
-<p>Second, Home link in <code>[extra.booktheme]</code>:</p>
+<p>其次，配置 <code>[extra.booktheme]</code> 中的 Home 链接：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>home_url</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;https://shurui.people.stanford.edu/&quot;</span></span></code></pre>
-<p>It may be link to your homepage, or a guide/TOC page which collects links to all your books (in this way you can organize multiple books with this theme).</p>
-<h3 id="example-toml">Example toml</h3>
+<p>它可以指向你的主页，或用于汇总所有书籍链接的导览/目录页（这样可用该主题组织多本书）。</p>
+<h3 id="toml-shi-li">toml 示例</h3>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Shurui Liu&#39;s Coding Notes&quot;</span></span>
 <span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Personal Notes&quot;</span></span>
 <span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://web.stanford.edu/~srliu/Notes&quot;</span></span>
@@ -329,9 +336,9 @@ You can disable that by setting the <code>book_only_current_section_pages</code>
 <span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.booktheme</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>book_number_chapters</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span>
 <span class="giallo-l"><span>book_only_current_section_pages</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> false</span></span>
-<span class="giallo-l"><span>home_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://shurui.sites.stanford.edu/&quot;</span></span></code></pre><h2 id="usage">Usage</h2>
-<h3 id="file-structure">File structure</h3>
-<p>All content should be put in <code>/content</code> folder as general Zola projects. Each chapter should be a folder inside <code>/content</code>, which contains its sections (markdown files). Here is an example of the file structure:</p>
+<span class="giallo-l"><span>home_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://shurui.sites.stanford.edu/&quot;</span></span></code></pre><h2 id="yong-fa">用法</h2>
+<h3 id="wen-jian-jie-gou">文件结构</h3>
+<p>和常规 Zola 项目一样，所有内容应放在 <code>/content</code> 目录。每个章节应是 <code>/content</code> 下的文件夹，内部包含各小节（Markdown 文件）。示例结构如下：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>.</span></span>
 <span class="giallo-l"><span>├── chapter1</span></span>
 <span class="giallo-l"><span>│   ├── _index.md</span></span>
@@ -346,17 +353,16 @@ You can disable that by setting the <code>book_only_current_section_pages</code>
 <span class="giallo-l"><span>│   ├── section2.md</span></span>
 <span class="giallo-l"><span>│   └── section3.md</span></span>
 <span class="giallo-l"><span>└── _index.md</span></span></code></pre>
-<p>In <code>/content</code> folder, there should be one <code>_index.md</code>, which contains title and welcome/preface infomation of the book. In its front matter, you should set <code>sort_by = "weight" </code> to manually control the order of chapters (or you can use sort by slug or date for your notebook).</p>
-<p>Each chapter(folder) must have an <code>_index.md</code> file. It should sets its <code>weight</code> front-matter variable to its chapter number, and set <code>sort_by = "weight"</code> in its front matter.</p>
-<p>Then in each chapter(folder), each section should be a <code>page</code> and should have its <code>weight</code> variable set to its section
-number.</p>
-<p>If you don't want welcome/preface page of the book or of a chapter, you can use <code>redirect_to</code> front-matter variable in the corresponding <code>_index.md</code>.</p>
+<p>在 <code>/content</code> 目录下应有一个 <code>_index.md</code>，用于书名与欢迎/前言信息。在其 front matter 中应设置 <code>sort_by = "weight"</code>，以手动控制章节顺序（笔记场景也可按 slug 或 date 排序）。</p>
+<p>每个章节（文件夹）都必须有 <code>_index.md</code>。应将 front matter 中的 <code>weight</code> 设为章节序号，并设置 <code>sort_by = "weight"</code>。</p>
+<p>然后在每个章节（文件夹）中，每个小节应为一个 <code>page</code>，并将 <code>weight</code> 设为该小节序号。</p>
+<p>如果你不想显示书籍或某章节的欢迎/前言页，可在对应 <code>_index.md</code> 中使用 <code>redirect_to</code>。</p>
 <p>You can write a shell scripts to automate creating new chapters or new notes. For example, you can consult my <code>zshconfig</code> project on my <a class="external" rel="noopener external" target="_blank" href="https://github.com/srliu3264">github</a> (If you can not see it, probably it is bacasue I currently make it private. You can email me for access.)</p>
-<h3 id="hotkeys">Hotkeys</h3>
-<p>In a browser, you can always type <code>?</code> to toggle the help page, reminding you of hotkeys.</p>
-<p>The rule is inspired by Vim, Zathura, and <a class="external" rel="noopener external" target="_blank" href="https://github.com/dongryul-kim/olivine">Olivine</a>.</p>
-<p>The list of hotkeys may keep expanding, so I will not list all here. You can use <code>?</code> the help page, or see <code>hotkeys.js</code> manually to check existing functions.</p>
-<p>The hotkey <code>i</code> will allow you to idle inside MATRIX (inspired by <a class="external" rel="noopener external" target="_blank" href="https://github.com/abishekvashok/cmatrix">cmatrix</a>), and since MAT is both initials for matrix and math, I lazily named this project after it.</p>
+<h3 id="kuai-jie-jian">快捷键</h3>
+<p>在浏览器中可随时输入 <code>?</code> 打开/关闭帮助页，查看快捷键提示。</p>
+<p>快捷键规则受 Vim、Zathura 与 <a class="external" rel="noopener external" target="_blank" href="https://github.com/dongryul-kim/olivine">Olivine</a> 启发。</p>
+<p>快捷键列表可能持续扩展，这里不逐一列出。你可通过 <code>?</code> 帮助页，或直接查看 <code>hotkeys.js</code> 了解现有功能。</p>
+<p>快捷键 <code>i</code> 可进入 MATRIX 待机模式（灵感来自 <a class="external" rel="noopener external" target="_blank" href="https://github.com/abishekvashok/cmatrix">cmatrix</a>）。由于 MAT 同时可指 matrix 与 math，项目名也由此而来。</p>
 
 
     </div>
@@ -375,6 +381,7 @@ number.</p>
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

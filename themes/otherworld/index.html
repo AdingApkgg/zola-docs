@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;otherworld&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="otherworld | Zola" />
     <meta property="og:description"
-        content="Vaporwave aesthetic theme" />
+        content="蒸汽波美学风格主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;otherworld&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="otherworld | Zola" />
     <meta name="twitter:description"
-        content="Vaporwave aesthetic theme" />
+        content="蒸汽波美学风格主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "otherworld",
-        "description": "Vaporwave aesthetic theme",
+        "description": "蒸汽波美学风格主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;otherworld&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                            
-                            
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;otherworld&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;otherworld&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;otherworld&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> otherworld</h1>
-            <p>Vaporwave aesthetic theme</p>
+            <p>蒸汽波美学风格主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;blek.codes">blek!</a>
@@ -238,26 +245,26 @@
 <h1 align='center'>
     otherworld - a zola theme
 </h1>
-<p>you can see the demo <a class="external" rel="noopener external" target="_blank" href="https://world.blek.codes">here</a></p>
-<h2 id="how-to-use">how to use</h2>
-<h3 id="prerequisities">prerequisities</h3>
+<p>你可以在<a class="external" rel="noopener external" target="_blank" href="https://world.blek.codes">这里</a>查看演示。</p>
+<h2 id="shi-yong-fang-shi">使用方式</h2>
+<h3 id="qian-zhi-tiao-jian">前置条件</h3>
 <ol>
-<li>a linux system. you can use windows for that, but this guide centers itself on linux based systems.</li>
-<li>you need to have these programs installed: <code>git</code> and <code>zola</code></li>
-<li>some creativity, html and scss skills</li>
+<li>一套 Linux 系统。你也可以在 Windows 上使用，但本指南以 Linux 系统为核心。</li>
+<li>你需要安装这些程序：<code>git</code> 和 <code>zola</code>。</li>
+<li>一些创意，以及 HTML 和 SCSS 基础技能。</li>
 </ol>
-<h3 id="steps">steps</h3>
-<h4 id="1-clone-the-repo">1. clone the repo</h4>
-<p>(aka download the theme)</p>
-<p>lets assume that your website's directory name in <code>daftpunk</code>. it will appear in commands a few times, and you should replace it with your website's name.</p>
+<h3 id="bu-zou">步骤</h3>
+<h4 id="1-ke-long-cang-ku">1. 克隆仓库</h4>
+<p>（也就是下载主题）</p>
+<p>假设你的网站目录名是 <code>daftpunk</code>。它会在下面命令中多次出现，你应替换为自己的网站名称。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git clone git@git.blek.codes:blek/otherworld.git daftpunk</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> cd daftpunk</span></span></code></pre><h4 id="2-open-an-another-terminal">2. open an another terminal</h4>
-<p>in the same directory, run</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> zola serve</span></span></code></pre><h4 id="3-edit-files-in-the-content-directory">3. edit files in the <code>content</code> directory...</h4>
-<p>...as per <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview">zola docs</a></p>
-<h2 id="how-to-disable-loading">how to disable loading</h2>
-<p>go to <code>content/index.md</code>, and in the <code>+++</code> blocks, set <code>extra.noload</code> to <code>true</code>.</p>
-<p>like this:</p>
+<p>在同一目录下运行：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> zola serve</span></span></code></pre><h4 id="3-bian-ji-content-mu-lu-zhong-de-wen-jian">3. 编辑 <code>content</code> 目录中的文件……</h4>
+<p>……按照 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview">zola 文档</a> 进行。</p>
+<h2 id="ru-he-jin-yong-jia-zai-xiao-guo">如何禁用加载效果</h2>
+<p>前往 <code>content/index.md</code>，在 <code>+++</code> 区块中将 <code>extra.noload</code> 设置为 <code>true</code>。</p>
+<p>示例如下：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Welcome&quot;</span></span>
 <span class="giallo-l"></span>
@@ -281,6 +288,7 @@
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

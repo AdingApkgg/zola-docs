@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kodama-theme&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="kodama | Zola" />
     <meta property="og:description"
-        content="Theme insipired by wowchemy academic." />
+        content="受 wowchemy academic 启发的主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kodama-theme&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="kodama | Zola" />
     <meta name="twitter:description"
-        content="Theme insipired by wowchemy academic." />
+        content="受 wowchemy academic 启发的主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "kodama",
-        "description": "Theme insipired by wowchemy academic.",
+        "description": "受 wowchemy academic 启发的主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kodama-theme&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                          
-                              
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;kodama-theme&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;kodama-theme&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;kodama-theme&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> kodama</h1>
-            <p>Theme insipired by wowchemy academic.</p>
+            <p>受 wowchemy academic 启发的主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;adrien-faure.fr">Adrien Faure</a>
@@ -235,8 +242,8 @@
     <h1 id="kodama">Kodama</h1>
 <p><img src="https://zola.docs.saop.cc/themes/kodama-theme/./screenshot.png" alt="Theme screenshot" /></p>
 <h2 id="summary">Summary</h2>
-<p>This theme is greatly inspired from hugo academic theme.</p>
-<p>First lets introduce some technical details:</p>
+<p>该主题深受 hugo academic 主题启发。</p>
+<p>先介绍一些技术细节：</p>
 <ul>
 <li>It relies on <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">zola</a>.</li>
 <li>It has no javascript.</li>
@@ -245,16 +252,24 @@
 <li>The blog articles are themed with <a class="external" rel="noopener external" target="_blank" href="https://tailwindcss-typography.vercel.app">@tailwindcss/typography</a> theme.</li>
 </ul>
 </li>
+<li>依赖 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">zola</a>。</li>
+<li>不使用 JavaScript。</li>
+<li>CSS 基于 <a class="external" rel="noopener external" target="_blank" href="https://tailwindcss.com/">tailwindcss</a> 构建。
+<ul>
+<li>博客文章样式使用 <a class="external" rel="noopener external" target="_blank" href="https://tailwindcss-typography.vercel.app">@tailwindcss/typography</a>。</li>
 </ul>
-<h2 id="getting-started">Getting started</h2>
-<p>The best way to get started is to follow the official <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview/">zola tutorial</a>.</p>
+</li>
+</ul>
+<h2 id="kuai-su-kai-shi">快速开始</h2>
+<p>最好的入门方式是先阅读官方 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview/">zola tutorial</a>。</p>
 <p>This theme can be installed as any other theme.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>mkdir themes</span></span>
 <span class="giallo-l"><span>cd themes &amp; git clone https://github.com/adfaure/kodama-theme</span></span></code></pre>
 <p>and set in the <code>config.toml</code> the variable <code>theme</code> to <code>kodama-theme</code>.</p>
-<h3 id="generate-the-css">Generate the CSS</h3>
+<h3 id="sheng-cheng-css">生成 CSS</h3>
 <p><a class="external" rel="noopener external" target="_blank" href="https://tailwindcss.com/">Tailwindcss</a> is a framework that parses your html files, and generate the minimal CSS required.
-This theme depends on this framework.</p>
+This theme depends on this framework.
+<a class="external" rel="noopener external" target="_blank" href="https://tailwindcss.com/">Tailwindcss</a> 会解析 HTML 并生成所需最小 CSS，本主题依赖该框架。</p>
 <p>The theme comes with the precompiled style files (<code>static/styles/styles.css</code>). However, if you wish to change the style, or modify the template html, you might need to recompile your styles.</p>
 <p>The most simple way, is to follow the <a class="external" rel="noopener external" target="_blank" href="https://tailwindcss.com/docs/installation/">installation page of tailwindcss</a>.</p>
 <p>At the end, you should have tailwindcss installed, and I advise to use the following tailwind configuration (for tailwindcss v4):</p>
@@ -268,8 +283,8 @@ This theme depends on this framework.</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>npx @tailwindcss/cli -i styles/styles.css -o static/styles/styles.css</span></span></code></pre>
 <p>The resulting file <code>static/styles/styles.css</code> is loaded in the html.</p>
 <p><em>Note that, for the moment the generation of the css is not automated. As a result, it is necessary to re-run this command when changes are made with the styling.</em></p>
-<h2 id="configuration">Configuration</h2>
-<p>This theme use some extra configuration, that can be set in the extra section of your <code>config.toml</code>.</p>
+<h2 id="pei-zhi">配置</h2>
+<p>该主题提供一些额外配置，可在 <code>config.toml</code> 的 <code>extra</code> 区域设置。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Title displayed in the index page</span></span>
 <span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Website title&quot;</span></span>
 <span class="giallo-l"></span>
@@ -293,7 +308,7 @@ This theme depends on this framework.</p>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># `Name` is what it is displayed, `path` is the url</span></span>
 <span class="giallo-l"><span>menu_items</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">  {</span><span> path</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;#contacts&quot;</span><span style="color: #9399B2;">,</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Contact&quot;</span><span style="color: #9399B2;"> },</span></span>
-<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h2 id="index-page">Index page</h2>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h2 id="shou-ye">首页</h2>
 <p>The information needed to build the index page are located in the page <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/content/page/#front-matter">front matter</a> of root index file (e.g <code>content/_index.md</code>).</p>
 <p>The available configuration options are:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Insert zola front matter variable such as date etc</span></span>
@@ -330,10 +345,10 @@ This theme depends on this framework.</p>
 <span class="giallo-l"><span>  link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://gitlab.com/adfaure&quot;</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">[[</span><span>extra.avatar_icons</span><span style="color: #9399B2;">]]</span></span>
 <span class="giallo-l"><span>  icon</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;linkedin&quot;</span></span>
-<span class="giallo-l"><span>  link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://www.linkedin.com/in/adrien-faure-9958978b/&quot;</span></span></code></pre><h2 id="contact">Contact</h2>
+<span class="giallo-l"><span>  link</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://www.linkedin.com/in/adrien-faure-9958978b/&quot;</span></span></code></pre><h2 id="lian-xi-fang-shi">联系方式</h2>
 <p>The predefined contact page can be use.
 The front matter extra part should contains a list of the link to show in the contacts.</p>
-<h2 id="sections">Sections</h2>
+<h2 id="fen-qu">分区</h2>
 <p>The section available in your website are automatically detected and displayed in the nav bar at the top of the page.
 To prevent a section to be displayed in the nav bar, you can set the extra front matter option <code>extra.hidden_nav = false</code> to false.</p>
 <p>The section are sorted by <code>weight</code> defined in the front matter of the section.</p>
@@ -342,11 +357,11 @@ This is configurable in the front matter of the section (e.g <code>content/secti
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The name displayed in the section summary</span></span>
 <span class="giallo-l"><span>extra</span><span style="color: #9399B2;">.</span><span>index_title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Recent Posts&quot;</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Set to false to remove the section from the index</span></span>
-<span class="giallo-l"><span>extra</span><span style="color: #9399B2;">.</span><span>index_show</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="blog">Blog</h3>
+<span class="giallo-l"><span>extra</span><span style="color: #9399B2;">.</span><span>index_show</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre><h3 id="bo-ke">博客</h3>
 <p>The section <code>blog</code> is the most standard section. It show a list of article with things that you want to share in your website.
 To use the blog template, configure the section with the following front matter:</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;section.html&quot;</span></span>
-<span class="giallo-l"><span>page_template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;blog-page.html&quot;</span></span></code></pre><h3 id="publications">Publications</h3>
+<span class="giallo-l"><span>page_template</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;blog-page.html&quot;</span></span></code></pre><h3 id="chu-ban-wu">出版物</h3>
 <p>The section <code>publication</code> is very similar to the <code>blog</code> section however it is dedicated to show your list of scientific articles.
 The articles are showed in two subcategories: Thesis and Conference / Workshop.</p>
 <p>To configure a publication section (e.g <code>content/research</code>) and set the following content:</p>
@@ -438,6 +453,7 @@ To add a new svg, you can add a case in the <code>if elif .. else</code> of the 
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

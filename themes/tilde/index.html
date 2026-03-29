@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tilde&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="tilde | Zola" />
     <meta property="og:description"
-        content="Simple theme to match the dracula tilde css" />
+        content="匹配 Dracula Tilde CSS 风格的简洁主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tilde&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="tilde | Zola" />
     <meta name="twitter:description"
-        content="Simple theme to match the dracula tilde css" />
+        content="匹配 Dracula Tilde CSS 风格的简洁主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "tilde",
-        "description": "Simple theme to match the dracula tilde css",
+        "description": "匹配 Dracula Tilde CSS 风格的简洁主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tilde&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                            
-                            
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;tilde&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;tilde&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tilde&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> tilde</h1>
-            <p>Simple theme to match the dracula tilde css</p>
+            <p>匹配 Dracula Tilde CSS 风格的简洁主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;tilde.team&#x2F;~savoy&#x2F;">savoy</a>
@@ -233,21 +240,19 @@
 
     <hr>
     <h1 id="tilde">tilde</h1>
-<p>Lightweight and minimal blog theme for the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a>
-static site generator.</p>
-<p>Live demo is available here:
+<p>适用于 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> 静态站点生成器的轻量极简博客主题。</p>
+<p>在线演示地址：
 <a class="external" rel="noopener external" target="_blank" href="https://savoy.srht.site/blog-demo">https://savoy.srht.site/blog-demo</a></p>
 <p><img src="https://zola.docs.saop.cc/themes/tilde/screen_index.png" alt="" /></p>
 <p><img src="https://zola.docs.saop.cc/themes/tilde/screen_post.png" alt="" /></p>
-<h2 id="installation">Installation</h2>
-<p><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">Theme documentation</a></p>
-<p>Clone this repository into your site's <code>themes</code> directory or add it as a
-submodule:</p>
+<h2 id="an-zhuang">安装</h2>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">主题文档</a></p>
+<p>将本仓库克隆到站点的 <code>themes</code> 目录，或将其作为子模块添加：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Clone into themes</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git clone https://git.sr.ht/~savoy/tilde themes/tilde</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Add as a submodule</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">$</span><span style="color: #A6E3A1;"> git submodule add https://git.sr.ht/~savoy/tilde themes/tilde</span></span></code></pre><h2 id="configuration">Configuration</h2>
-<p>This theme offers the following config options:</p>
+<p>该主题提供以下配置项：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>homepage</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;&quot;</span><span style="color: #9399B2;font-style: italic;"> # author homepage</span></span>
@@ -273,6 +278,7 @@ submodule:</p>
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

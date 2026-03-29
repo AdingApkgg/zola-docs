@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;coast&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="coast | Zola" />
     <meta property="og:description"
-        content="A simple theme for Zola that evokes the feel the sea breeze." />
+        content="让人联想到海风感受的简洁 Zola 主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;coast&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="coast | Zola" />
     <meta name="twitter:description"
-        content="A simple theme for Zola that evokes the feel the sea breeze." />
+        content="让人联想到海风感受的简洁 Zola 主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "coast",
-        "description": "A simple theme for Zola that evokes the feel the sea breeze.",
+        "description": "让人联想到海风感受的简洁 Zola 主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;coast&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                            
-                            
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;coast&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;coast&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;coast&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> coast</h1>
-            <p>A simple theme for Zola that evokes the feel the sea breeze.</p>
+            <p>让人联想到海风感受的简洁 Zola 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;yukiosada.work">Myxogastria0808</a>
@@ -259,10 +266,10 @@
 
     <hr>
     <h1 id="coast-theme">coast theme</h1>
-<p><strong>coast</strong> is a blog theme for zola!</p>
-<p>This theme can be used <strong>mermaid</strong> and <strong>katex</strong>.</p>
+<p><strong>coast</strong> 是一个 zola 博客主题！</p>
+<p>该主题支持 <strong>mermaid</strong> 和 <strong>katex</strong>。</p>
 <ul>
-<li>demo site</li>
+<li>演示站点</li>
 </ul>
 <p><a class="external" rel="noopener external" target="_blank" href="https://zola-coast-theme.netlify.app/">https://zola-coast-theme.netlify.app/</a></p>
 <ul>
@@ -272,27 +279,27 @@
   <img src="https://raw.githubusercontent.com/Myxogastria0808/coast/refs/heads/main/logo/coast.svg" width="300px" height="300px" />
 </div>
 <ul>
-<li>screenshot</li>
+<li>截图</li>
 </ul>
 <div align="center">
   <img src="https://raw.githubusercontent.com/Myxogastria0808/coast/refs/heads/main/screenshot.png" width="1920px" height="935px" />
 </div>
-<h2 id="setup-environment">Setup Environment</h2>
+<h2 id="huan-jing-zhun-bei">环境准备</h2>
 <ol>
-<li>Install zola</li>
+<li>安装 zola</li>
 </ol>
-<p>Please install zola by referring to the following.</p>
+<p>请参考以下文档安装 zola：</p>
 <p><a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/installation/">https://www.getzola.org/documentation/getting-started/installation/</a></p>
 <ol start="2">
-<li>Setup coast theme</li>
+<li>配置 coast 主题</li>
 </ol>
 <blockquote>
 <p>[!TIP]
 If you want to use the coast theme repository as a blog, you do not need to do the <code>2.</code> step other than making extra settings in the <code>2-6.</code> step after cloning the repository.</p>
 </blockquote>
-<p>2-1. Create your blog project</p>
+<p>2-1. 创建博客项目</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init</span><span style="color: #94E2D5;"> &lt;</span><span style="color: #A6E3A1;"> your blog project</span><span style="color: #94E2D5;"> &gt;</span></span></code></pre>
-<p>Please select as follows</p>
+<p>请选择如下选项：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">Welcome</span><span style="color: #A6E3A1;"> to Zola!</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">Please</span><span style="color: #A6E3A1;"> answer a few questions to get started quickly.</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">Any</span><span style="color: #A6E3A1;"> choices made can be changed by modifying the</span><span style="color: #94E2D5;"> `</span><span style="color: #89B4FA;font-style: italic;">config.toml</span><span style="color: #94E2D5;">`</span><span style="color: #89B4FA;font-style: italic;"> file</span><span style="color: #A6E3A1;"> later.</span></span>
@@ -305,17 +312,17 @@ If you want to use the coast theme repository as a blog, you do not need to do t
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">Get</span><span style="color: #A6E3A1;"> started by moving into the directory and using the built-in server:</span><span style="color: #94E2D5;"> `</span><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span><span style="color: #94E2D5;">`</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">Visit</span><span style="color: #A6E3A1;"> https://www.getzola.org for the full documentation.</span></span></code></pre>
-<p>2-2. Change directory to your blog project</p>
+<p>2-2. 进入你的博客项目目录</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> ./</span><span style="color: #94E2D5;">&lt;</span><span style="color: #A6E3A1;"> your blog project</span><span style="color: #94E2D5;"> &gt;</span><span style="color: #A6E3A1;">/themes/</span></span></code></pre>
-<p>2-3. Clone coast theme to theme directory and remove .git directory of coast theme repository</p>
+<p>2-3. 将 coast 克隆到主题目录，并移除该主题仓库的 <code>.git</code> 目录</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/Myxogastria0808/coast.git</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">rm</span><span style="color: #A6E3A1;"> -rf coast/.git</span></span></code></pre>
-<p>2-4. Change directory to the root of your blog project</p>
+<p>2-4. 切回博客项目根目录</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> ..</span></span></code></pre>
-<p>2-5. Replace settings to <code>config.toml</code> of your blog project</p>
-<p>The following is the content of the replacement config.</p>
-<p>Please change <code>base_url</code> to your blog's URL when deploying your blog.
-During development, I recommend leaving base_url as is.</p>
+<p>2-5. 替换博客项目 <code>config.toml</code> 配置</p>
+<p>以下为替换后的配置内容。</p>
+<p>部署时请将 <code>base_url</code> 改为你的博客 URL。<br />
+开发阶段建议保持当前 <code>base_url</code> 设置。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;coast&quot;</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># The URL the site will be built for</span></span>
@@ -397,9 +404,9 @@ During development, I recommend leaving base_url as is.</p>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># For example, content/posts/2016-10-08_a-post-with-dates.md =&gt; posts/a-post-with-dates</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># When true, content/posts/2016-10-08_a-post-with-dates.md =&gt; posts/2016-10-08-a-post-with-dates</span></span>
 <span class="giallo-l"><span>paths_keep_dates</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span></span></code></pre>
-<p>2-6. Add extra settings to <code>config.toml</code> of your blog project</p>
-<p>This theme provides the following additional settings.</p>
-<p>All settings have default values, so you only need to add the settings you want to change.</p>
+<p>2-6. 在博客项目的 <code>config.toml</code> 中添加扩展设置</p>
+<p>该主题提供如下扩展配置。</p>
+<p>所有设置都有默认值，你只需添加需要修改的项。</p>
 <ul>
 <li><code>config.toml</code></li>
 </ul>
@@ -644,6 +651,7 @@ Images are automatically converted to webp, so you don't need to worry about ima
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

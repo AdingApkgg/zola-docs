@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lekhz&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="Lekhz | Zola" />
     <meta property="og:description"
-        content="A text focussed and minimal personal portfolio theme with dark mode." />
+        content="专注文字的极简个人作品集主题，支持深色模式" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lekhz&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="Lekhz | Zola" />
     <meta name="twitter:description"
-        content="A text focussed and minimal personal portfolio theme with dark mode." />
+        content="专注文字的极简个人作品集主题，支持深色模式" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Lekhz",
-        "description": "A text focussed and minimal personal portfolio theme with dark mode.",
+        "description": "专注文字的极简个人作品集主题，支持深色模式",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lekhz&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                          
-                              
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;lekhz&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;lekhz&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;lekhz&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Lekhz</h1>
-            <p>A text focussed and minimal personal portfolio theme with dark mode.</p>
+            <p>专注文字的极简个人作品集主题，支持深色模式</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;ba11b0y.github.io&#x2F;rahul&#x2F;">Rahul Tiwari</a>
@@ -297,40 +304,40 @@
 
     <hr>
     <h1 id="lekhz">lekhz</h1>
-<p>lekhz is a simple, minimalistic, and fast personal website template for Zola.
-Ported from the Hugo theme <a class="external" rel="noopener external" target="_blank" href="https://github.com/ba11b0y/lekh">lekh</a></p>
+<p>lekhz 是一个适用于 Zola 的简洁、极简且快速的个人网站模板。
+从 Hugo 主题 <a class="external" rel="noopener external" target="_blank" href="https://github.com/ba11b0y/lekh">lekh</a> 移植而来。</p>
 <img width="1461" alt="lekhz-dark" src="https://github.com/user-attachments/assets/c4ce7b2b-e55b-4bd9-bb58-c3bb6480700c" />
-<h2 id="contents">Contents</h2>
+<h2 id="mu-lu">目录</h2>
 <ul>
-<li>Features</li>
-<li>Installation</li>
-<li>Customization</li>
+<li>功能</li>
+<li>安装</li>
+<li>自定义</li>
 </ul>
-<h2 id="features">Features</h2>
+<h2 id="gong-neng">功能</h2>
 <ul>
-<li>Social media links</li>
-<li>Markdown supported</li>
-<li>Easy to personalize</li>
-<li>RSS feed</li>
-<li>Dark mode (taken from https://www.gwern.net/ as it is.)</li>
-<li>GoatCounter counts(analytics). Know more about GoatCounter <a class="external" rel="noopener external" target="_blank" href="https://goatcounter.com">here</a></li>
+<li>社交媒体链接</li>
+<li>支持 Markdown</li>
+<li>易于个性化</li>
+<li>RSS 订阅</li>
+<li>深色模式（直接借鉴自 https://www.gwern.net/）</li>
+<li>GoatCounter 访问统计（分析）。了解更多请见<a class="external" rel="noopener external" target="_blank" href="https://goatcounter.com">这里</a></li>
 </ul>
-<h2 id="installation">Installation</h2>
-<p>Create a new Zola site if you haven't already.</p>
+<h2 id="an-zhuang">安装</h2>
+<p>如果你还没有站点，请先创建一个新的 Zola 站点。</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init my-site</span></span>
 <span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> my-site</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span></span></code></pre>
-<p>Add the theme as a submodule:</p>
+<p>将主题作为子模块添加：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/ba11b0y/lekhz.git themes/lekhz</span></span></code></pre>
 <p><strong>OR</strong></p>
-<p>Clone the theme</p>
+<p>克隆主题</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/ba11b0y/lekhz.git</span></span></code></pre>
-<p>and then enable it in your <code>config.toml</code>:</p>
+<p>然后在 <code>config.toml</code> 中启用：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;lekhz&quot;</span></span></code></pre>
-<p>To start with, copy the contents of the <code>content</code> folder to your new site.</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> -r themes/lekhz/content/</span><span>*</span><span style="color: #A6E3A1;"> content/</span></span></code></pre><h2 id="customization-options">Customization options</h2>
-<p>Add the following to your <code>config.toml</code> file in the <code>[extra]</code> section:</p>
+<p>开始使用前，将 <code>content</code> 文件夹内容复制到你的新站点。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> -r themes/lekhz/content/</span><span>*</span><span style="color: #A6E3A1;"> content/</span></span></code></pre><h2 id="zi-ding-yi-xuan-xiang">自定义选项</h2>
+<p>在 <code>config.toml</code> 的 <code>[extra]</code> 区块中添加以下配置：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>lekhz_name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Rahul Tiwari&quot;</span></span>
 <span class="giallo-l"><span>lekhz_about</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;About me description here&quot;</span></span>
@@ -344,7 +351,7 @@ Ported from the Hugo theme <a class="external" rel="noopener external" target="_
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Twitter&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://x.com/ba11b0y&quot;</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;LinkedIn&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://www.linkedin.com/in/ba11b0y/&quot;</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> name</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Goodreads&quot;</span><span style="color: #9399B2;">,</span><span> url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://www.goodreads.com/user/show/91520565-rahul-tiwari&quot;</span><span style="color: #9399B2;">}</span></span>
-<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h2 id="some-more-screenshots">Some more screenshots</h2>
+<span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre><h2 id="geng-duo-jie-tu">更多截图</h2>
 <img width="1451" alt="light-lekhz" src="https://github.com/user-attachments/assets/d120cdd4-3aa2-4e2d-9889-83e97034d9ba" />
 <img width="1461" alt="lekhz-posts" src="https://github.com/user-attachments/assets/688bdfa9-dfdb-4ee6-8b94-1e60e5f93261" />
 
@@ -365,6 +372,7 @@ Ported from the Hugo theme <a class="external" rel="noopener external" target="_
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

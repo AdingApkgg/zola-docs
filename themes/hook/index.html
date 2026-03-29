@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hook&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="Hook | Zola" />
     <meta property="og:description"
-        content="Clean and simple personal site&#x2F;blog theme" />
+        content="简洁清爽的个人网站&#x2F;博客主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hook&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="Hook | Zola" />
     <meta name="twitter:description"
-        content="Clean and simple personal site&#x2F;blog theme" />
+        content="简洁清爽的个人网站&#x2F;博客主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Hook",
-        "description": "Clean and simple personal site&#x2F;blog theme",
+        "description": "简洁清爽的个人网站&#x2F;博客主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hook&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                          
-                              
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;hook&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;hook&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;hook&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Hook</h1>
-            <p>Clean and simple personal site&#x2F;blog theme</p>
+            <p>简洁清爽的个人网站&#x2F;博客主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;koen.bolhu.is">Koen Bolhuis</a>
@@ -233,22 +240,22 @@
 
     <hr>
     <h1 id="hook">Hook</h1>
-<p>A clean and simple personal site/blog theme for <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a>.</p>
+<p>一个用于 <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> 的简洁个人网站/博客主题。</p>
 <p><a class="external" rel="noopener external" target="_blank" href="https://inputusername.github.io/zola-hook/">Demo</a></p>
-<h2 id="setup">Setup</h2>
-<p>Clone this repo into your <code>themes</code> folder:</p>
+<h2 id="an-zhuang">安装</h2>
+<p>将此仓库克隆到你的 <code>themes</code> 目录：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> themes</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/InputUsername/zola-hook.git hook</span></span></code></pre>
-<p>Then, enable it in your <code>config.toml</code>:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;hook&quot;</span></span></code></pre><h2 id="features">Features</h2>
-<p>The following templates are built-in:</p>
+<p>然后在 <code>config.toml</code> 中启用：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;hook&quot;</span></span></code></pre><h2 id="gong-neng">功能</h2>
+<p>内置以下模板：</p>
 <ul>
 <li><code>index.html</code> - the homepage;</li>
 <li><code>page.html</code> - pages and posts (extends <code>index.html</code>);</li>
 <li><code>section.html</code> - archive of pages in a section, mostly for a blog (extends <code>page.html</code>);</li>
 <li><code>404.html</code> - 404 page (extends <code>page.html</code>).</li>
 </ul>
-<p>Templates have the following Tera blocks:</p>
+<p>模板包含以下 Tera blocks：</p>
 <ul>
 <li><code>title</code> - to override the default <code>&lt;title&gt;</code> (<code>config.title</code>);</li>
 <li><code>description</code> - to override the <code>&lt;meta name="description"&gt;</code>'s content (<code>config.description</code>);</li>
@@ -256,32 +263,32 @@
 <li><code>header</code> - to change the header (best to put this in a <code>&lt;header&gt;</code>);</li>
 <li><code>content</code> - to change the content (best to put this in a <code>&lt;main&gt;</code>).</li>
 </ul>
-<p>You can set a section or page description using <code>description</code> in your front matter.
-By default, the <code>description</code> in <code>config.toml</code> is used.</p>
-<p>You can define links to include in the header on the homepage in <code>config.toml</code>:</p>
+<p>你可以在 front matter 中用 <code>description</code> 设置 section 或页面描述。
+默认会使用 <code>config.toml</code> 中的 <code>description</code>。</p>
+<p>你可以在 <code>config.toml</code> 中定义首页头部链接：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span>links</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">    {</span><span> title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Link display text&quot;</span><span style="color: #9399B2;">,</span><span> href</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;http://example.com&quot;</span><span style="color: #9399B2;"> },</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;">    # ...</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">]</span></span></code></pre>
-<p>Pages in the root section can define <code>extra.in_header = true</code> to be included in the header links on the homepage.</p>
-<p>The content in the root <code>_index.md</code> is included in the homepage if present.</p>
-<p>Below that is a list of the 20 most recent posts. For this, the <code>blog/_index.md</code> section is expected to exist
-(will error if it doesn't exist). There is also a link to an archive of all blog posts by year.</p>
-<p>Hook supports light/dark mode based on the user's preference. There is also a manual toggle button
-(requires JavaScript).</p>
-<h2 id="screenshots">Screenshots</h2>
-<h3 id="homepage">Homepage</h3>
+<p>根分区中的页面可设置 <code>extra.in_header = true</code>，将其加入首页头部链接。</p>
+<p>如果根 <code>_index.md</code> 存在，其内容会显示在首页中。</p>
+<p>其下方会显示最近 20 篇文章列表。为此需要存在 <code>blog/_index.md</code> 分区
+（若不存在会报错）。同时还会提供按年份归档的文章列表链接。</p>
+<p>Hook 支持根据用户偏好自动切换浅色/深色模式，也提供手动切换按钮
+（需要 JavaScript）。</p>
+<h2 id="jie-tu">截图</h2>
+<h3 id="shou-ye">首页</h3>
 <p><img src="https://zola.docs.saop.cc/themes/hook/screenshot.png" alt="Homepage" /></p>
-<h3 id="blog-post">Blog post</h3>
+<h3 id="bo-ke-wen-zhang">博客文章</h3>
 <p><img src="https://zola.docs.saop.cc/themes/hook/screenshot2.png" alt="Blog post" /></p>
-<h3 id="blog-archive">Blog archive</h3>
+<h3 id="bo-ke-gui-dang">博客归档</h3>
 <p><img src="https://zola.docs.saop.cc/themes/hook/screenshot3.png" alt="Blog archive" /></p>
-<h3 id="dark-mode">Dark mode</h3>
+<h3 id="shen-se-mo-shi">深色模式</h3>
 <p><img src="https://zola.docs.saop.cc/themes/hook/screenshot4.png" alt="Dark mode" /></p>
-<h2 id="license">License</h2>
-<p>MIT license, see <a class="external" rel="noopener external" target="_blank" href="https://github.com/InputUsername/zola-hook/blob/main/LICENSE"><code>LICENSE</code></a>.</p>
+<h2 id="xu-ke-zheng">许可证</h2>
+<p>MIT 许可证，详见 <a class="external" rel="noopener external" target="_blank" href="https://github.com/InputUsername/zola-hook/blob/main/LICENSE"><code>LICENSE</code></a>。</p>
 
 
     </div>
@@ -300,6 +307,7 @@ By default, the <code>description</code> in <code>config.toml</code> is used.</p
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

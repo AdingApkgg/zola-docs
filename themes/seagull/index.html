@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seagull&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="Seagull | Zola" />
     <meta property="og:description"
-        content="A Zola theme." />
+        content="一个 Zola 主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seagull&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="Seagull | Zola" />
     <meta name="twitter:description"
-        content="A Zola theme." />
+        content="一个 Zola 主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Seagull",
-        "description": "A Zola theme.",
+        "description": "一个 Zola 主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seagull&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                          
-                              
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;seagull&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;seagull&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;seagull&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Seagull</h1>
-            <p>A Zola theme.</p>
+            <p>一个 Zola 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;trentesaux.fr&#x2F;">Hugo Trentesaux</a>
@@ -233,30 +240,30 @@
 
     <hr>
     <h1 id="seagull">Seagull</h1>
-<p>A Zola theme.</p>
+<p>一个 Zola 主题。</p>
 <p><img src="https://zola.docs.saop.cc/themes/seagull/./static/img/gull_rect.svg" alt="gull" /></p>
-<h2 id="installation">Installation</h2>
-<p>Add the theme as a git submodule</p>
+<h2 id="an-zhuang">安装</h2>
+<p>将主题作为 git 子模块添加：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add --name seagull https://git.lacontrevoie.fr/HugoTrentesaux/seagull.git themes/seagull</span></span></code></pre>
-<p>Enable the theme in your <code>config.toml</code></p>
+<p>在你的 <code>config.toml</code> 中启用主题：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>theme = &quot;seagull&quot;</span></span></code></pre>
-<p>Add a <code>_variables.sass</code> file in a <code>sass</code> folder</p>
+<p>在 <code>sass</code> 目录中添加 <code>_variables.sass</code> 文件：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">mkdir</span><span style="color: #A6E3A1;"> sass</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">touch</span><span style="color: #A6E3A1;"> sass/_variables.sass</span></span></code></pre>
-<p>Add a <code>_index.md</code> file in your <code>content</code> folder.</p>
-<h2 id="features">Features</h2>
-<p>Features can be seen on the demo website: https://seagull.coinduf.eu/.</p>
-<p>You can customize the theme with the <code>/sass/_variables.sass</code> file.</p>
-<p>Examples of websites built with this theme:</p>
+<p>在 <code>content</code> 目录中添加 <code>_index.md</code> 文件。</p>
+<h2 id="gong-neng">功能</h2>
+<p>可在演示站查看功能： https://seagull.coinduf.eu/ 。</p>
+<p>你可以通过 <code>/sass/_variables.sass</code> 文件自定义主题。</p>
+<p>使用该主题构建的网站示例：</p>
 <ul>
 <li>https://scientifiquesenrebellion.fr/</li>
 <li>https://labasetoulouse.fr/</li>
 <li>https://trentesaux.fr/</li>
 </ul>
-<h2 id="support">Support</h2>
-<p>I'll provide support on demand on <a class="external" rel="noopener external" target="_blank" href="https://zola.discourse.group/">Zola forum</a> if you tag <a class="external" rel="noopener external" target="_blank" href="https://zola.discourse.group/u/hugotrentesaux/summary">@HugoTrentesaux</a></p>
-<h2 id="build-website">Build website</h2>
-<p>Because of the hack used to allow theme customization, before building seagull website itself, you need to create an empty file</p>
+<h2 id="zhi-chi">支持</h2>
+<p>如果你在 <a class="external" rel="noopener external" target="_blank" href="https://zola.discourse.group/">Zola forum</a> 中 @ 我（<a class="external" rel="noopener external" target="_blank" href="https://zola.discourse.group/u/hugotrentesaux/summary">@HugoTrentesaux</a>），我会按需提供支持。</p>
+<h2 id="gou-jian-wang-zhan">构建网站</h2>
+<p>由于为支持主题自定义使用了一种技巧，在构建 seagull 站点本身之前，你需要先创建一个空文件：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">mkdir</span><span style="color: #A6E3A1;"> ../../sass</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">touch</span><span style="color: #A6E3A1;"> ../../sass/_variables.sass</span></span></code></pre>
 
@@ -276,6 +283,7 @@
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

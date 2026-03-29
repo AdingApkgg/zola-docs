@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;terminus&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="terminus | Zola" />
     <meta property="og:description"
-        content="A dark duotone retro theme for Zola" />
+        content="适用于 Zola 的复古深色双色调主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;terminus&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="terminus | Zola" />
     <meta name="twitter:description"
-        content="A dark duotone retro theme for Zola" />
+        content="适用于 Zola 的复古深色双色调主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "terminus",
-        "description": "A dark duotone retro theme for Zola",
+        "description": "适用于 Zola 的复古深色双色调主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;terminus&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                            
-                            
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;terminus&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;terminus&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;terminus&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> terminus</h1>
-            <p>A dark duotone retro theme for Zola</p>
+            <p>适用于 Zola 的复古深色双色调主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;eyalkalderon.com">Eyal Kalderon</a>
@@ -269,26 +276,24 @@
 
     <hr>
     <h1 id="terminus">Terminus</h1>
-<p>An accessible <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> theme with a dark color
-scheme and retro computer terminal-like vibe, multi-language support, zero
-required JavaScript, pretty font ligatures, and a perfect baseline Lighthouse
-score.</p>
+<p>一个注重无障碍的 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> 主题，采用深色配色和复古终端风格，支持多语言、零必需 JavaScript、优雅连字字体，以及满分基线 Lighthouse 评分。</p>
 <p><strong>Try the demo now:</strong> https://ebkalderon.github.io/terminus/</p>
 <p><img src="https://github.com/user-attachments/assets/ae7c378b-2987-4dbd-a84e-7d272e8856bc" alt="Screenshot of the Terminus demo website on a desktop browser" /></p>
-<p>Terminus is largely a port of Radek Kozieł's <a class="external" rel="noopener external" target="_blank" href="https://github.com/panr/hugo-theme-terminal">Terminal Theme for
+<p>Terminus 大体移植自 Radek Kozieł 的 <a class="external" rel="noopener external" target="_blank" href="https://github.com/panr/hugo-theme-terminal">Terminal Theme for
 Hugo</a> but with several key
 differences. Credit to the <a class="external" rel="noopener external" target="_blank" href="https://github.com/ejmg/zerm">zerm</a> and
 <a class="external" rel="noopener external" target="_blank" href="https://github.com/welpo/tabi">tabi</a> themes for inspiring some of these
-changes.</p>
+changes.
+Hugo](https://github.com/panr/hugo-theme-terminal)，但做了若干关键改动。也感谢 <a class="external" rel="noopener external" target="_blank" href="https://github.com/ejmg/zerm">zerm</a> 和 <a class="external" rel="noopener external" target="_blank" href="https://github.com/welpo/tabi">tabi</a> 主题带来的灵感。</p>
 <ul>
-<li>Better accessibility (WCAG 2.2 Level AA minimum target)</li>
-<li>Mobile-first design with improved responsiveness</li>
-<li>Social media icons in footer</li>
-<li>Support for <a class="external" rel="noopener external" target="_blank" href="https://ebkalderon.github.io/terminus/blog/shortcodes/#alert-shortcode">GitHub-style alerts</a></li>
-<li>SEO friendly (better OpenGraph support, will add Schema.org eventually)</li>
-<li>No post image previews for a cleaner look</li>
+<li>更好的无障碍体验（最低目标：WCAG 2.2 AA）</li>
+<li>移动优先设计，响应式表现更佳</li>
+<li>页脚社交媒体图标</li>
+<li>支持 <a class="external" rel="noopener external" target="_blank" href="https://ebkalderon.github.io/terminus/blog/shortcodes/#alert-shortcode">GitHub-style alerts</a></li>
+<li>更友好的 SEO（更好的 OpenGraph 支持，后续计划加入 Schema.org）</li>
+<li>不显示文章封面预览，界面更简洁</li>
 </ul>
-<h2 id="features">Features</h2>
+<h2 id="gong-neng">功能</h2>
 <ul>
 <li><input disabled="" type="checkbox" checked=""/>
 Perfect baseline Lighthouse score (Performance, Accessibility, Best Practices and SEO).</li>
@@ -311,8 +316,8 @@ Customizable <a href="https://zola.docs.saop.cc/themes/terminus/./theme.toml#L22
 <li><input disabled="" type="checkbox" checked=""/>
 <a class="external" rel="noopener external" target="_blank" href="https://katex.org/">KaTeX</a> support for mathematical notation</li>
 </ul>
-<h2 id="getting-started">Getting Started</h2>
-<h3 id="manual-installation">Manual Installation</h3>
+<h2 id="kuai-su-kai-shi">快速开始</h2>
+<h3 id="shou-dong-an-zhuang">手动安装</h3>
 <ol>
 <li>Initialize a Git repository in your <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/cli-usage/#init">Zola project directory</a>, if you haven't
 already:<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span></span></code></pre></li>
@@ -336,10 +341,10 @@ home page looks and behaves. Choose <em>exactly one</em> of the following option
 </ol>
 </li>
 </ol>
-<h3 id="updating-terminus">Updating Terminus</h3>
-<p>To update the Terminus theme as a Git submodule, run:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule update --remote themes/terminus</span></span></code></pre><h2 id="license">License</h2>
-<p>This project is licensed under the terms of the <a href="https://zola.docs.saop.cc/themes/terminus/./LICENSE">MIT license</a>.</p>
+<h3 id="geng-xin-terminus">更新 Terminus</h3>
+<p>如以 Git 子模块方式安装，可运行以下命令更新 Terminus：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule update --remote themes/terminus</span></span></code></pre><h2 id="xu-ke-zheng">许可证</h2>
+<p>本项目基于 <a href="https://zola.docs.saop.cc/themes/terminus/./LICENSE">MIT license</a> 发布。</p>
 
 
     </div>
@@ -358,6 +363,7 @@ home page looks and behaves. Choose <em>exactly one</em> of the following option
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

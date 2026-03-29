@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;olivine&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="Olivine | Zola" />
     <meta property="og:description"
-        content="A Zola theme for a personal knowledge base" />
+        content="用于个人知识库的 Zola 主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;olivine&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="Olivine | Zola" />
     <meta name="twitter:description"
-        content="A Zola theme for a personal knowledge base" />
+        content="用于个人知识库的 Zola 主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Olivine",
-        "description": "A Zola theme for a personal knowledge base",
+        "description": "用于个人知识库的 Zola 主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;olivine&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                          
-                              
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;olivine&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;olivine&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;olivine&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Olivine</h1>
-            <p>A Zola theme for a personal knowledge base</p>
+            <p>用于个人知识库的 Zola 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;web.stanford.edu&#x2F;~dkim04&#x2F;">Dongryul Kim</a>
@@ -233,44 +240,43 @@
 
     <hr>
     <h1 id="olivine">Olivine</h1>
-<p>A simple <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> theme for a personal knowledge
-base. Inspired by <a class="external" rel="noopener external" target="_blank" href="https://obsidian.md">Obsidian</a>.</p>
+<p>一个简洁的 <a class="external" rel="noopener external" target="_blank" href="https://github.com/getzola/zola">Zola</a> 个人知识库主题。<br />
+灵感来自 <a class="external" rel="noopener external" target="_blank" href="https://obsidian.md">Obsidian</a>。</p>
 <p><img src="https://zola.docs.saop.cc/themes/olivine/screenshot.png" alt="Screenshot of example page" /></p>
-<h2 id="features">Features</h2>
+<h2 id="gong-neng">功能</h2>
 <ul>
-<li>Journaling</li>
-<li>Tags</li>
-<li>Knowledge graph</li>
-<li>Searching</li>
-<li>Light/dark mode</li>
-<li>Keyboard shortcuts</li>
-<li>Backlinks</li>
+<li>日记（Journaling）</li>
+<li>标签</li>
+<li>知识图谱</li>
+<li>搜索</li>
+<li>浅色/深色模式</li>
+<li>键盘快捷键</li>
+<li>反向链接（Backlinks）</li>
 </ul>
-<h2 id="installation">Installation</h2>
-<p>The easiest way to install Olivine is to use the <a class="external" rel="noopener external" target="_blank" href="https://github.com/dongryul-kim/olivine-quickstart">quickstart
-repository</a>.</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git clone --depth 1 --recurse-submodules git@github.com:dongryul-kim/olivine-quickstart.git &lt;your-folder-name&gt;</span></span></code></pre><h3 id="manual-installation">Manual installation</h3>
-<p>You can also use the standard method for installing a Zola theme.
-Please follow the Zola documentation on <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">installing and using
-themes</a>.</p>
-<p>There is also an additional step that is specific to Olivine. Create a file a
-named <code>content/olivine-internal-graph.md</code> with contents:</p>
+<h2 id="an-zhuang">安装</h2>
+<p>安装 Olivine 最简单的方式是使用 <a class="external" rel="noopener external" target="_blank" href="https://github.com/dongryul-kim/olivine-quickstart">quickstart
+repository</a>。</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>git clone --depth 1 --recurse-submodules git@github.com:dongryul-kim/olivine-quickstart.git &lt;your-folder-name&gt;</span></span></code></pre><h3 id="shou-dong-an-zhuang">手动安装</h3>
+<p>你也可以使用 Zola 主题的标准安装方式。<br />
+请参考 Zola 文档中的 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/themes/installing-and-using-themes/">installing and using
+themes</a>。</p>
+<p>此外还有一步 Olivine 专属设置：创建 <code>content/olivine-internal-graph.md</code>，内容如下：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>title = &quot;Graph&quot;</span></span>
 <span class="giallo-l"><span>template = &quot;internal/graph.html&quot;</span></span>
 <span class="giallo-l"><span>+++</span></span></code></pre>
-<p>a file named <code>content/olivine-internal-sitemap.md</code> with contents:</p>
+<p>再创建 <code>content/olivine-internal-sitemap.md</code>，内容如下：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>title = &quot;Sitemap&quot;</span></span>
 <span class="giallo-l"><span>template = &quot;internal/sitemap.html&quot;</span></span>
 <span class="giallo-l"><span>+++</span></span></code></pre>
-<p>and a file named <code>content/journal/_index.md</code> with contents:</p>
+<p>最后创建 <code>content/journal/_index.md</code>，内容如下：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>+++</span></span>
 <span class="giallo-l"><span>title = &quot;Journal&quot;</span></span>
 <span class="giallo-l"><span>template = &quot;internal/journal.html&quot;</span></span>
 <span class="giallo-l"><span>extra.siblings = true</span></span>
-<span class="giallo-l"><span>+++</span></span></code></pre><h2 id="acknowledgments">Acknowledgments</h2>
-<p>Special thanks to</p>
+<span class="giallo-l"><span>+++</span></span></code></pre><h2 id="zhi-xie">致谢</h2>
+<p>特别感谢：</p>
 <ul>
 <li><a class="external" rel="noopener external" target="_blank" href="https://github.com/year-calendar/js-year-calendar">year-calendar</a> for the
 calendar widget,</li>
@@ -295,6 +301,7 @@ calendar widget,</li>
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

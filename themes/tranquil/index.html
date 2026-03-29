@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tranquil&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="tranquil | Zola" />
     <meta property="og:description"
-        content="A blog theme for zola, simple and clean" />
+        content="简洁清爽的 Zola 博客主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tranquil&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="tranquil | Zola" />
     <meta name="twitter:description"
-        content="A blog theme for zola, simple and clean" />
+        content="简洁清爽的 Zola 博客主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "tranquil",
-        "description": "A blog theme for zola, simple and clean",
+        "description": "简洁清爽的 Zola 博客主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tranquil&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                            
-                            
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;tranquil&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;tranquil&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;tranquil&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> tranquil</h1>
-            <p>A blog theme for zola, simple and clean</p>
+            <p>简洁清爽的 Zola 博客主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;github.com&#x2F;TeaDrinkingProgrammer">TeaDrinkingProgrammer</a>
@@ -235,38 +242,38 @@
     <p><img src="https://github.com/TeaDrinkingProgrammer/tranquil/blob/main/screenshot.png?raw=true" alt="A screenshot (dark theme) of the example page of the demo website" />
 <img src="https://github.com/TeaDrinkingProgrammer/tranquil/blob/main/screenshot-light.png?raw=true" alt="A screenshot (light theme) of the example page of the demo website" />
 <br />
-A blog theme for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org">Zola</a>. Simple, elegant and uses Tailwind. Based on <a class="external" rel="noopener external" target="_blank" href="https://github.com/isunjn/serene">Isunjns Serene theme</a>.</p>
-<h2 id="demo">Demo</h2>
+A blog 主题，适用于 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org">Zola</a>。风格简洁优雅，使用 Tailwind 构建。基于 <a class="external" rel="noopener external" target="_blank" href="https://github.com/isunjn/serene">Isunjns Serene theme</a>。</p>
+<h2 id="yan-shi">演示</h2>
 <ul>
 <li><a class="external" rel="noopener external" target="_blank" href="https://teadrinkingprogrammer.github.io/tranquil-demo/">https://teadrinkingprogrammer.github.io/tranquil-demo/</a></li>
-<li>My own blog: <a class="external" rel="noopener external" target="_blank" href="https://teadrinkingprogrammer.github.io">https://teadrinkingprogrammer.github.io</a></li>
+<li>我的个人博客：<a class="external" rel="noopener external" target="_blank" href="https://teadrinkingprogrammer.github.io">https://teadrinkingprogrammer.github.io</a></li>
 </ul>
-<h2 id="features">Features</h2>
+<h2 id="gong-neng">功能</h2>
 <ul>
-<li>A simple and elegant design.</li>
-<li>Projects page: display a list of the projects you have worked on with links.</li>
-<li>Theme toggle: switch between light and dark theme regardless of your browser preference.</li>
-<li>Image zooming using <a class="external" rel="noopener external" target="_blank" href="https://github.com/sparanoid/lightense-images">Lightense</a>: zoom in on images by clicking on them.</li>
-<li>Out-of-date alert: show alerts when your post is outdated.</li>
-<li>Callouts (note, warning, alert, etc.) that can be used right in Markdown.</li>
-<li>Comments using <a class="external" rel="noopener external" target="_blank" href="https://giscus.app">Giscus</a>.</li>
-<li>Mathematical notations using <a class="external" rel="noopener external" target="_blank" href="https://katex.org">KaTeX</a>.</li>
-<li>Diagrams and visualizations using <a class="external" rel="noopener external" target="_blank" href="https://github.com/mermaid-js/mermaid">Mermaid</a>.</li>
+<li>简洁优雅的设计。</li>
+<li>项目页面：可展示你参与过的项目列表并附带链接。</li>
+<li>主题切换：无论浏览器偏好如何，都可在浅色与深色主题之间切换。</li>
+<li>图片缩放（<a class="external" rel="noopener external" target="_blank" href="https://github.com/sparanoid/lightense-images">Lightense</a>）：点击图片可放大查看。</li>
+<li>过期提醒：当文章过旧时显示提示。</li>
+<li>提示框（note、warning、alert 等）可直接在 Markdown 中使用。</li>
+<li>评论系统支持 <a class="external" rel="noopener external" target="_blank" href="https://giscus.app">Giscus</a>。</li>
+<li>数学公式支持 <a class="external" rel="noopener external" target="_blank" href="https://katex.org">KaTeX</a>。</li>
+<li>图表与可视化支持 <a class="external" rel="noopener external" target="_blank" href="https://github.com/mermaid-js/mermaid">Mermaid</a>。</li>
 </ul>
-<h2 id="shoutouts">Shoutouts</h2>
-<p>This theme wouldn't have existed without <a class="external" rel="noopener external" target="_blank" href="https://github.com/isunjn/serene">Isunjns Serene theme</a>. It's a great theme, so go check that one out as well.</p>
-<p>When I doubted about layout, I always went to look at <a class="external" rel="noopener external" target="_blank" href="https://fasterthanli.me">FasterThanLimes blog</a> to see how he did it.</p>
-<p>Of course, this website wouldn't render without <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> and it wouldn't show anything without <a class="external" rel="noopener external" target="_blank" href="https://tailwindcss.com/">Tailwind</a>.</p>
-<h2 id="tranquil-vs-serene">Tranquil vs Serene</h2>
-<p>Tranquil is a fork of Serene. The main reason to fork was not that I thought Serene was bad: I just wanted to try out Tailwind for a while and reimplementing a blog theme seemed like the perfect way to do so.</p>
-<p>The main and pretty much only difference between Tranquil and Serene is that the styling is built from scratch with Tailwind. The icons have also been changed to align better with Tailwind.</p>
-<h2 id="usage">Usage</h2>
+<h2 id="zhi-xie">致谢</h2>
+<p>没有 <a class="external" rel="noopener external" target="_blank" href="https://github.com/isunjn/serene">Isunjns Serene theme</a>，这个主题就不会存在。它本身也非常优秀，推荐一并了解。</p>
+<p>当我对布局拿不准时，我经常会参考 <a class="external" rel="noopener external" target="_blank" href="https://fasterthanli.me">FasterThanLimes blog</a> 的做法。</p>
+<p>当然，没有 <a class="external" rel="noopener external" target="_blank" href="https://getzola.org">Zola</a> 这个网站无法生成；没有 <a class="external" rel="noopener external" target="_blank" href="https://tailwindcss.com/">Tailwind</a> 它也不会有现在的样子。</p>
+<h2 id="tranquil-yu-serene">Tranquil 与 Serene</h2>
+<p>Tranquil 是 Serene 的一个分支。选择 fork 并不是因为 Serene 不好，而是我想实践一段时间 Tailwind，而重写一个博客主题正是很合适的方式。</p>
+<p>Tranquil 与 Serene 的主要、几乎也是唯一差异，是样式层从零开始使用 Tailwind 构建。图标也做了调整，以更好地契合 Tailwind 风格。</p>
+<h2 id="yong-fa">用法</h2>
 <ul>
-<li>Check the <a href="https://zola.docs.saop.cc/themes/tranquil/./USAGE.md">USAGE.md</a> of <code>main</code> branch.</li>
+<li>请查看 <code>main</code> 分支中的 <a href="https://zola.docs.saop.cc/themes/tranquil/./USAGE.md">USAGE.md</a>。</li>
 </ul>
-<h2 id="contributing">Contributing</h2>
+<h2 id="gong-xian">贡献</h2>
 <ul>
-<li>Before you make any non-trivial changes, consider opening an issue so we can discuss the change.</li>
+<li>在做任何非小改动前，建议先提交 issue，以便先讨论改动方案。</li>
 </ul>
 
 
@@ -286,6 +293,7 @@ A blog theme for <a class="external" rel="noopener external" target="_blank" hre
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

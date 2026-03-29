@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;inky&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="Inky | Zola" />
     <meta property="og:description"
-        content="An elegant and understated theme for Zola" />
+        content="一个优雅且克制的 Zola 主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;inky&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="Inky | Zola" />
     <meta name="twitter:description"
-        content="An elegant and understated theme for Zola" />
+        content="一个优雅且克制的 Zola 主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Inky",
-        "description": "An elegant and understated theme for Zola",
+        "description": "一个优雅且克制的 Zola 主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;inky&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                            
-                            
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;inky&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;inky&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;inky&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Inky</h1>
-            <p>An elegant and understated theme for Zola</p>
+            <p>一个优雅且克制的 Zola 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;www.jimmyff.co.uk">jimmyff</a>
@@ -234,46 +241,46 @@
     <hr>
     <h1 id="zola-inky">Zola-Inky</h1>
 <blockquote>
-<p>An elegant and understated theme for Zola</p>
+<p>一个优雅且克制的 Zola 主题</p>
 </blockquote>
-<p>Zola Inky (<a class="external" rel="noopener external" target="_blank" href="https://jimmyff.github.io/zola-inky">view demo</a>) is a theme by <a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff">jimmyff</a> and <a class="external" rel="noopener external" target="_blank" href="https://github.com/mr-karan">mr-karan</a> for the <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> static site generator. This theme was originally based on the <a class="external" rel="noopener external" target="_blank" href="https://github.com/knadh/hugo-ink">hugo-ink</a> theme, ported by mr-karan. It was then packaged and developed further by jimmyff. The theme is available on <a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff/zola-inky">Github</a> under the MIT license, for more information on how to use it please see the <a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff/zola-inky/blob/main/README.md">readme</a> and check the <a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff/zola-inky/blob/main/CHANGELOG.md">changelog</a> for a list of the latest changes.</p>
+<p>Zola Inky（<a class="external" rel="noopener external" target="_blank" href="https://jimmyff.github.io/zola-inky">查看演示</a>）是 <a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff">jimmyff</a> 与 <a class="external" rel="noopener external" target="_blank" href="https://github.com/mr-karan">mr-karan</a> 为 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> 静态站点生成器开发的主题。该主题最初基于 <a class="external" rel="noopener external" target="_blank" href="https://github.com/knadh/hugo-ink">hugo-ink</a>，由 mr-karan 完成移植，随后由 jimmyff 进一步打包和开发。主题以 MIT 许可证发布在 <a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff/zola-inky">Github</a>。更多使用信息请查看 <a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff/zola-inky/blob/main/README.md">readme</a>，最新变更请查看 <a class="external" rel="noopener external" target="_blank" href="https://github.com/jimmyff/zola-inky/blob/main/CHANGELOG.md">changelog</a>。</p>
 <p><a class="external" rel="noopener external" target="_blank" href="https://jimmyff.github.io/zola-inky"><img src="https://zola.docs.saop.cc/themes/inky/screenshot.png" alt="PNG" /></a></p>
-<h2 id="changelog">Changelog</h2>
-<p>For latest changes please see the <a href="https://zola.docs.saop.cc/themes/inky/CHANGELOG.md">changelog</a>.</p>
-<h2 id="features">Features</h2>
+<h2 id="geng-xin-ri-zhi">更新日志</h2>
+<p>最新改动请查看 <a href="https://zola.docs.saop.cc/themes/inky/CHANGELOG.md">changelog</a>。</p>
+<h2 id="gong-neng">功能</h2>
 <ul>
-<li>Responsive design</li>
-<li>Responsive images</li>
-<li>Gallery template</li>
-<li>Taxonomy support</li>
-<li>Search</li>
-<li>Customisable via template hooks</li>
+<li>响应式设计</li>
+<li>响应式图片</li>
+<li>画廊模板</li>
+<li>分类系统支持</li>
+<li>搜索</li>
+<li>可通过模板 hooks 自定义</li>
 </ul>
-<h2 id="getting-started">Getting started</h2>
+<h2 id="kuai-su-kai-shi">快速开始</h2>
 <ol>
-<li>Add this theme to your <code>themes/</code> folder (recommended method: git submodule).</li>
-<li>Copy of the the theme's config.toml file and put in your projects root directory. Update it as required and don't forget to add <code>theme = 'zola-inky'</code> at the top of the file.</li>
-<li>Copy this contents of the <code>content/</code> directory the root of your project and change the files as your necessary.</li>
+<li>将主题添加到你的 <code>themes/</code> 目录（推荐方式：git submodule）。</li>
+<li>复制主题中的 <code>config.toml</code> 到项目根目录，并按需修改，别忘了在文件顶部添加 <code>theme = 'zola-inky'</code>。</li>
+<li>将 <code>content/</code> 目录内容复制到你的项目根目录下并按需调整文件。</li>
 </ol>
-<h2 id="customising-the-theme">Customising the theme</h2>
+<h2 id="zhu-ti-zi-ding-yi">主题自定义</h2>
 <ul>
-<li><strong>To change the settings</strong> copy <code>config.toml</code> in to your project and update as required (make sure you add the theme variable at the top of the file, see the getting started heading above).</li>
-<li><strong>To change the themes colours</strong> copy <code>sass/variables.scss</code> in to your project under the same folder and update as required.</li>
-<li><strong>To inject content in to templates</strong> copy <code>templates/macros/hooks.html</code> and update as required.</li>
+<li><strong>修改设置</strong>：将 <code>config.toml</code> 复制到你的项目中并按需调整（确保文件顶部设置主题变量，见上文“快速开始”）。</li>
+<li><strong>修改主题配色</strong>：将 <code>sass/variables.scss</code> 按相同路径复制到项目中并按需修改。</li>
+<li><strong>向模板注入内容</strong>：复制 <code>templates/macros/hooks.html</code> 并按需修改。</li>
 </ul>
-<h2 id="using-the-responsive-image-shortcode">Using the responsive image shortcode</h2>
-<p>Using the responsive images will make sure your images are generated at various sizes and served up to viewers at the size that best suits their device via the image srcset attribute. You can use this feature in your markdown like so:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>{{ image(src=&quot;yourimage.jpg&quot;, alt=&quot;This is my image&quot;) }}</span></span></code></pre><h2 id="feature-requests-support">Feature requests &amp; support</h2>
-<p>I'm afraid I'm unable to accept feature requests or provide user support for this theme. The <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview/">Zola documentation</a> and <a class="external" rel="noopener external" target="_blank" href="https://tera.netlify.app/docs/">Tera documentation</a> are great resources and there is a <a class="external" rel="noopener external" target="_blank" href="https://zola.discourse.group/">Zola discussion forum</a>. If you've found a bug in the themse please open a github issue.</p>
-<h2 id="contributing">Contributing</h2>
-<p>Contributions are very welcome! If you are planning to add a feature to the theme then feel free to open an issue to discuss your approach and we will be able to say if it's it will likely be accepted. Please keep the following in mind:</p>
+<h2 id="shi-yong-xiang-ying-shi-tu-pian-duan-dai-ma">使用响应式图片短代码</h2>
+<p>使用响应式图片后，图片会生成多个尺寸，并通过 <code>srcset</code> 为不同设备提供最合适的版本。你可以在 Markdown 中这样使用：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="markdown"><span class="giallo-l"><span>{{ image(src=&quot;yourimage.jpg&quot;, alt=&quot;This is my image&quot;) }}</span></span></code></pre><h2 id="gong-neng-qing-qiu-yu-zhi-chi">功能请求与支持</h2>
+<p>很抱歉，我无法接受该主题的功能请求或提供用户支持。你可以参考 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/documentation/getting-started/overview/">Zola 文档</a> 与 <a class="external" rel="noopener external" target="_blank" href="https://tera.netlify.app/docs/">Tera 文档</a>，也可以使用 <a class="external" rel="noopener external" target="_blank" href="https://zola.discourse.group/">Zola 讨论论坛</a>。如果你发现主题 bug，请在 Github 提交 issue。</p>
+<h2 id="gong-xian">贡献</h2>
+<p>非常欢迎贡献！如果你计划为主题添加功能，欢迎先开 issue 讨论方案，我们会评估是否适合合并。请注意以下几点：</p>
 <ul>
-<li>Only widely generic features will be accepted, anything too specific should be kept to your own templates.</li>
-<li>Be careful about destroying indentation as Tera syntax doesn't seem to be widely supported by IDEs.</li>
-<li>Keep it lean. Adding bloat will likely result in your PR being rejected.</li>
-<li>Consider backward compatibility, ideally people blindly-upgrading won't see any unexpected changes to their sites.</li>
+<li>仅接受通用性较强的功能，过于特定的功能建议保留在你自己的模板中。</li>
+<li>注意不要破坏缩进，许多 IDE 对 Tera 语法支持有限。</li>
+<li>保持精简，过度臃肿的改动很可能导致 PR 被拒绝。</li>
+<li>考虑向后兼容性，理想情况下用户直接升级不应遇到意外变化。</li>
 </ul>
-<p>New theme maintainers are welcome but should provide pull-request or two first!</p>
+<p>欢迎成为新的主题维护者，但建议先提交一两个 pull request！</p>
 
 
     </div>
@@ -292,6 +299,7 @@
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

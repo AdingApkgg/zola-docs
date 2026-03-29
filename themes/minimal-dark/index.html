@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;minimal-dark&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="minimal-dark | Zola" />
     <meta property="og:description"
-        content="Clean and minimalistic dark theme" />
+        content="简洁极简的深色主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;minimal-dark&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="minimal-dark | Zola" />
     <meta name="twitter:description"
-        content="Clean and minimalistic dark theme" />
+        content="简洁极简的深色主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "minimal-dark",
-        "description": "Clean and minimalistic dark theme",
+        "description": "简洁极简的深色主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;minimal-dark&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                          
-                              
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;minimal-dark&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;minimal-dark&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;minimal-dark&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> minimal-dark</h1>
-            <p>Clean and minimalistic dark theme</p>
+            <p>简洁极简的深色主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;viku.me">Vitaliy Kuznetsov</a>
@@ -233,15 +240,15 @@
 
     <hr>
     <p><a class="external" rel="noopener external" target="_blank" href="https://github.com/kuznetsov17/minimal-dark/actions/workflows/zola-build.yml"><img src="https://github.com/kuznetsov17/minimal-dark/actions/workflows/zola-build.yml/badge.svg" alt="Deploy Zola with GitHub Pages" /></a></p>
-<h1 id="general">General</h1>
-<p>I am not the best webmaster, but should be somewhat responsive.
-I intentionally using the bigger fonts to make, feel free to change it in main.scss</p>
-<h1 id="light-mode">Light mode</h1>
-<p>Now light mode also supported.</p>
-<h1 id="important">Important</h1>
-<p>Please make sure to set up your base_url with trailing slash:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://kuznetsov17.github.io/minimal-dark/&quot;</span></span></code></pre><h1 id="comments">Comments</h1>
-<p>Theme supports <a class="external" rel="noopener external" target="_blank" href="https://giscuss.app">Giscuss</a> for comments. The configuration is done via config.toml. Here you can see the example section used for this page deployment:</p>
+<h1 id="gai-lan">概览</h1>
+<p>我不是最专业的网站开发者，但这个主题应当具备基本的响应式支持。
+我有意使用了更大的字体，你可以在 <code>main.scss</code> 里自由调整。</p>
+<h1 id="qian-se-mo-shi">浅色模式</h1>
+<p>现在也支持浅色模式。</p>
+<h1 id="zhong-yao-ti-shi">重要提示</h1>
+<p>请确保 <code>base_url</code> 以斜杠结尾：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://kuznetsov17.github.io/minimal-dark/&quot;</span></span></code></pre><h1 id="ping-lun">评论</h1>
+<p>主题支持使用 <a class="external" rel="noopener external" target="_blank" href="https://giscuss.app">Giscuss</a> 作为评论系统。相关配置通过 <code>config.toml</code> 完成。下面是此站点部署所使用的示例配置：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span style="color: #9399B2;">[</span><span>extra.giscus</span><span style="color: #9399B2;">]</span></span>
 <span class="giallo-l"><span>data_repo</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;kuznetsov17/minimal-dark&quot;</span></span>
 <span class="giallo-l"><span>data_repo_id</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;R_kgDOLIfXYA&quot;</span></span>
@@ -255,17 +262,17 @@ I intentionally using the bigger fonts to make, feel free to change it in main.s
 <span class="giallo-l"><span>data_theme</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;//kuznetsov17.github.io/minimal-dark/css/gs_dark.css&quot;</span></span>
 <span class="giallo-l"><span>data_lang</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;en&quot;</span></span>
 <span class="giallo-l"><span>crossorigin</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;anonymous&quot;</span></span>
-<span class="giallo-l"><span>nonce</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;&quot;</span></span></code></pre><h1 id="page-onfigurations">Page onfigurations</h1>
-<p>Customize the page blocks by setting configuration in <strong>[extra]</strong> section:</p>
+<span class="giallo-l"><span>nonce</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;&quot;</span></span></code></pre><h1 id="ye-mian-pei-zhi">页面配置</h1>
+<p>可在 <strong>[extra]</strong> 区域设置以下配置来自定义页面区块：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>copyright_string</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Сreated in %YEAR% for fun.&quot;</span><span style="color: #9399B2;font-style: italic;"> # the string displayed in footer. %YEAR% is replaced by current year on build</span></span>
 <span class="giallo-l"><span>show_copyright</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># enables / disables footer with copyright</span></span>
 <span class="giallo-l"><span>show_comments</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># enables / disables comments</span></span>
 <span class="giallo-l"><span>show_shares</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># enables / disables section with social share buttons</span></span>
 <span class="giallo-l"><span>show_toc</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># enables / disable TOC</span></span>
-<span class="giallo-l"><span>show_date</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># displays publication date in page</span></span></code></pre><h1 id="blog">Blog</h1>
-<p>I am using this theme for my <a class="external" rel="noopener external" target="_blank" href="https://viku.me/notes/">notes</a>, or probably blog.
-The section template supports pagination, tags, sorts the pages by publication date. You may see the working example <a href="/notes/">here</a></p>
-<h1 id="config-toml-extras">config.toml extras</h1>
+<span class="giallo-l"><span>show_date</span><span style="color: #94E2D5;"> =</span><span style="color: #FAB387;"> true</span><span> / false </span><span style="color: #9399B2;font-style: italic;"># displays publication date in page</span></span></code></pre><h1 id="bo-ke">博客</h1>
+<p>我用这个主题来写自己的 <a class="external" rel="noopener external" target="_blank" href="https://viku.me/notes/">notes</a>（也可以当作博客）。
+分区模板支持分页、标签，并按发布时间排序。你可以在<a href="/notes/">这里</a>查看实际效果。</p>
+<h1 id="config-toml-fu-jia-pei-zhi">config.toml 附加配置</h1>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>author</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;John Doe&quot;</span><span style="color: #9399B2;font-style: italic;"> # author. Will be puth in page metadata</span></span>
 <span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Some description, if you somehow didn&#39;t set it in page / section settings&quot;</span></span>
 <span class="giallo-l"><span>logo_src</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;images/logo.svg&quot;</span><span style="color: #9399B2;font-style: italic;"> # logo src</span></span>
@@ -273,8 +280,8 @@ The section template supports pagination, tags, sorts the pages by publication d
 <span class="giallo-l"><span>index_page</span><span style="color: #94E2D5;">=</span><span style="color: #A6E3A1;">&quot;index&quot;</span><span style="color: #9399B2;font-style: italic;"> # name of the index page. Should be one of top_menu to make things work</span></span>
 <span class="giallo-l"><span>top_menu</span><span style="color: #94E2D5;"> =</span><span style="color: #9399B2;"> [</span><span style="color: #A6E3A1;">&quot;index&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;">&quot;features&quot;</span><span style="color: #9399B2;">,</span><span style="color: #A6E3A1;">&quot;notes&quot;</span><span style="color: #9399B2;">]</span><span style="color: #9399B2;font-style: italic;"> # Menu items</span></span>
 <span class="giallo-l"><span>copyright_string</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Сreated by John Doe in 2024 – %YEAR% for fun.&quot;</span><span style="color: #9399B2;font-style: italic;"> # footer content. %YEAR% will be replaced with current year</span></span>
-<span class="giallo-l"><span>nonce</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;${SOME_HASH_VALUE}&quot;</span><span style="color: #9399B2;font-style: italic;"> # used for JavaScript src nonce</span></span></code></pre><h1 id="shortcodes">Shortcodes</h1>
-<h2 id="callouts">Callouts</h2>
+<span class="giallo-l"><span>nonce</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;${SOME_HASH_VALUE}&quot;</span><span style="color: #9399B2;font-style: italic;"> # used for JavaScript src nonce</span></span></code></pre><h1 id="duan-dai-ma">短代码</h1>
+<h2 id="ti-shi-kuang-callouts">提示框（Callouts）</h2>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>{% callout(type = &#39;warning&#39;) %}</span></span>
 <span class="giallo-l"><span>This is an example of **Warning** callout. [Some link](#)</span></span>
 <span class="giallo-l"><span>{% end %}</span></span>
@@ -283,7 +290,7 @@ The section template supports pagination, tags, sorts the pages by publication d
 <span class="giallo-l"><span>{% end %}</span></span>
 <span class="giallo-l"><span>{% callout(type = &#39;info&#39;) %}</span></span>
 <span class="giallo-l"><span>This is an example of **Info** callout. [Some link](#)</span></span>
-<span class="giallo-l"><span>{% end %}</span></span></code></pre><h2 id="timeline">Timeline</h2>
+<span class="giallo-l"><span>{% end %}</span></span></code></pre><h2 id="shi-jian-xian-timeline">时间线（Timeline）</h2>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>{% timeline() %}</span></span>
 <span class="giallo-l"><span>[{</span></span>
 <span class="giallo-l"><span>    &quot;title&quot;:&quot;Lorem Ipsum Event&quot;,</span></span>
@@ -295,12 +302,12 @@ The section template supports pagination, tags, sorts the pages by publication d
 <span class="giallo-l"><span>    &quot;body&quot;:&quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.&quot;,</span></span>
 <span class="giallo-l"><span>    &quot;date&quot;:&quot;Jun-2022&quot;</span></span>
 <span class="giallo-l"><span>}]</span></span>
-<span class="giallo-l"><span>{% end %}</span></span></code></pre><h1 id="thanks-to">Thanks to</h1>
+<span class="giallo-l"><span>{% end %}</span></span></code></pre><h1 id="zhi-xie">致谢</h1>
 <ul>
-<li><a class="external" rel="noopener external" target="_blank" href="https://giscuss.app">Giscuss</a> for excellent comments system</li>
-<li><a class="external" rel="noopener external" target="_blank" href="https://icons.getbootstrap.com">bootstrap icons</a> for great social icons</li>
+<li>感谢 <a class="external" rel="noopener external" target="_blank" href="https://giscuss.app">Giscuss</a> 提供优秀的评论系统</li>
+<li>感谢 <a class="external" rel="noopener external" target="_blank" href="https://icons.getbootstrap.com">bootstrap icons</a> 提供出色的社交图标</li>
 </ul>
-<h1 id="screenshot">Screenshot</h1>
+<h1 id="jie-tu">截图</h1>
 <p><img src="https://github.com/kuznetsov17/minimal-dark/blob/main/screenshot.png?raw=true" alt="Screenshot" /></p>
 
 
@@ -320,6 +327,7 @@ The section template supports pagination, tags, sorts the pages by publication d
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

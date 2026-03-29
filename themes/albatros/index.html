@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;albatros&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="Albatros | Zola" />
     <meta property="og:description"
-        content="A feature rich theme originally made for Duniter website." />
+        content="一个功能丰富、最初为 Duniter 网站打造的主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;albatros&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="Albatros | Zola" />
     <meta name="twitter:description"
-        content="A feature rich theme originally made for Duniter website." />
+        content="一个功能丰富、最初为 Duniter 网站打造的主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Albatros",
-        "description": "A feature rich theme originally made for Duniter website.",
+        "description": "一个功能丰富、最初为 Duniter 网站打造的主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;albatros&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                          
-                              
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;albatros&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;albatros&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;albatros&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> Albatros</h1>
-            <p>A feature rich theme originally made for Duniter website.</p>
+            <p>一个功能丰富、最初为 Duniter 网站打造的主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;trentesaux.fr&#x2F;">Hugo Trentesaux</a>
@@ -232,29 +239,29 @@
     </div>
 
     <hr>
-    <h1 id="albatros-theme-for-zola">Albatros theme for Zola</h1>
-<p>This theme was made for <a class="external" rel="noopener external" target="_blank" href="https://duniter.fr/">Duniter</a> website. It was then abstracted and turned into <strong>Albatros</strong>.</p>
+    <h1 id="zola-de-albatros-zhu-ti">Zola 的 Albatros 主题</h1>
+<p>这个主题最初是为 <a class="external" rel="noopener external" target="_blank" href="https://duniter.fr/">Duniter</a> 网站开发，随后被抽象整理为通用主题 <strong>Albatros</strong>。</p>
 <p><img src="https://zola.docs.saop.cc/themes/albatros/./screenshot.png" alt="screenshot" /></p>
-<h2 id="installation">Installation</h2>
-<p>Add the theme as a git submodule:</p>
+<h2 id="an-zhuang">安装</h2>
+<p>将主题作为 git 子模块添加：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add --name albatros https://git.42l.fr/HugoTrentesaux/albatros.git themes/albatros</span></span></code></pre>
-<p>and enable the theme in your <code>config.toml</code></p>
+<p>然后在你的 <code>config.toml</code> 中启用主题：</p>
 <p>theme = "albatros"</p>
-<h2 id="features">Features</h2>
-<p>It has a lot of feature that I could not find time to document yet. Most of the available customization is in <code>theme.toml</code>/<code>extra</code> section and <code>sass/_albatros.sass</code> file (e.g. for colors).</p>
+<h2 id="gong-neng">功能</h2>
+<p>它有很多功能，我还没来得及完整文档化。大部分可自定义项位于 <code>theme.toml</code> 的 <code>extra</code> 区域以及 <code>sass/_albatros.sass</code> 文件（例如颜色）。</p>
 <p>See:</p>
 <ul>
 <li>https://duniter.fr/</li>
 <li>https://duniter.org/</li>
 </ul>
-<p>for reference.</p>
-<h3 id="landing-pages">Landing pages</h3>
-<p>You are encouraged to provide custom landing pages that you can write in <code>template/custom</code>.
-The theme will take care of the rest (pages organised as wiki with breadcrumb).</p>
-<h3 id="authors">Authors</h3>
-<p>Each author must have a card in <code>content/team</code> folder.</p>
-<h2 id="support">Support</h2>
-<p>I'll provide support on demand on <a class="external" rel="noopener external" target="_blank" href="https://zola.discourse.group/">Zola forum</a> by documenting the theme step by step.</p>
+<p>可作为参考。</p>
+<h3 id="luo-di-ye">落地页</h3>
+<p>建议你提供自定义落地页，可写在 <code>template/custom</code> 中。
+其余部分由主题处理（页面会以带面包屑的 wiki 结构组织）。</p>
+<h3 id="zuo-zhe-xin-xi">作者信息</h3>
+<p>每位作者都需要在 <code>content/team</code> 目录中拥有一张资料卡。</p>
+<h2 id="zhi-chi">支持</h2>
+<p>如有需要，我会在 <a class="external" rel="noopener external" target="_blank" href="https://zola.discourse.group/">Zola forum</a> 提供支持，并逐步补充该主题文档。</p>
 
 
     </div>
@@ -273,6 +280,7 @@ The theme will take care of the rest (pages organised as wiki with breadcrumb).<
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

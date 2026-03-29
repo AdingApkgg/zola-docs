@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;archie-zola&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="archie-zola | Zola" />
     <meta property="og:description"
-        content="A zola theme based on Hugo archie." />
+        content="基于 Hugo archie 的 Zola 主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;archie-zola&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="archie-zola | Zola" />
     <meta name="twitter:description"
-        content="A zola theme based on Hugo archie." />
+        content="基于 Hugo archie 的 Zola 主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "archie-zola",
-        "description": "A zola theme based on Hugo archie.",
+        "description": "基于 Hugo archie 的 Zola 主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;archie-zola&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                            
-                            
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;archie-zola&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;archie-zola&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;archie-zola&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> archie-zola</h1>
-            <p>A zola theme based on Hugo archie.</p>
+            <p>基于 Hugo archie 的 Zola 主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;github.com&#x2F;XXXMrG">Keith</a>
@@ -233,55 +240,55 @@
 
     <hr>
     <h1 id="archie-zola">archie-zola</h1>
-<p>A clean, minimal Zola theme forked from <a class="external" rel="noopener external" target="_blank" href="https://github.com/athul/archie">archie</a>. Perfect for personal blogs and portfolios with dark/light mode support.</p>
-<h2 id="table-of-contents">Table of Contents</h2>
+<p>一个干净、极简的 Zola 主题，分叉自 <a class="external" rel="noopener external" target="_blank" href="https://github.com/athul/archie">archie</a>。非常适合个人博客和作品集，支持深色/浅色模式。</p>
+<h2 id="mu-lu">目录</h2>
 <ul>
-<li>Demo</li>
-<li>Features</li>
-<li>Installation</li>
-<li>Quick Start</li>
-<li>Configuration</li>
-<li>Content Management</li>
-<li>Customization</li>
-<li>Troubleshooting</li>
-<li>Contributing</li>
+<li>演示</li>
+<li>功能</li>
+<li>安装</li>
+<li>快速开始</li>
+<li>配置</li>
+<li>内容管理</li>
+<li>自定义</li>
+<li>故障排查</li>
+<li>贡献</li>
 </ul>
-<h2 id="demo">Demo</h2>
+<h2 id="yan-shi">演示</h2>
 <p><strong>Live Demo:</strong> <a class="external" rel="noopener external" target="_blank" href="https://archie-zola.netlify.app">https://archie-zola.netlify.app</a></p>
-<h3 id="screenshots">Screenshots</h3>
+<h3 id="jie-tu">截图</h3>
 <table><thead><tr><th>Light Mode</th><th>Dark Mode</th></tr></thead><tbody>
 <tr><td><img src="https://archie-zola.netlify.app/screenshot/screenshot-light.png" alt="Light" /></td><td><img src="https://archie-zola.netlify.app/screenshot/screenshot-dark.png" alt="Dark" /></td></tr>
 </tbody></table>
-<h2 id="features">Features</h2>
+<h2 id="gong-neng">功能</h2>
 <ul>
-<li>✅ <strong>Responsive Design</strong> - Works on desktop, tablet, and mobile</li>
-<li>✅ <strong>Dark/Light Mode</strong> - Auto-detection + manual toggle</li>
-<li>✅ <strong>Fast &amp; Lightweight</strong> - Minimal CSS and JavaScript</li>
-<li>✅ <strong>SEO Optimized</strong> - Meta tags, Open Graph, structured data</li>
-<li>✅ <strong>Syntax Highlighting</strong> - Code blocks with theme support</li>
-<li>✅ <strong>LaTeX Math</strong> - KaTeX integration for mathematical expressions</li>
-<li>✅ <strong>Custom CSS/JS</strong> - Easy theme customization</li>
-<li>✅ <strong>Google Analytics</strong> - Built-in GA4 support</li>
-<li>✅ <strong>Tags &amp; Pagination</strong> - Organize and navigate content</li>
-<li>✅ <strong>Social Links</strong> - Footer social media integration</li>
+<li>✅ <strong>响应式设计</strong> - 适配桌面、平板和移动端</li>
+<li>✅ <strong>深色/浅色模式</strong> - 自动检测 + 手动切换</li>
+<li>✅ <strong>快速轻量</strong> - 极少 CSS 与 JavaScript</li>
+<li>✅ <strong>SEO 优化</strong> - Meta 标签、Open Graph、结构化数据</li>
+<li>✅ <strong>代码高亮</strong> - 支持主题化代码块高亮</li>
+<li>✅ <strong>LaTeX 数学公式</strong> - 内置 KaTeX</li>
+<li>✅ <strong>自定义 CSS/JS</strong> - 便于主题扩展</li>
+<li>✅ <strong>Google Analytics</strong> - 内置 GA4 支持</li>
+<li>✅ <strong>标签与分页</strong> - 组织并导航内容</li>
+<li>✅ <strong>社交链接</strong> - 页脚社交媒体集成</li>
 </ul>
-<h3 id="coming-soon">Coming Soon</h3>
+<h3 id="ji-jiang-zhi-chi">即将支持</h3>
 <ul>
 <li>🔄 <strong>Twitter Cards</strong> - Rich social media previews</li>
 <li>🔄 <strong>YouTube Embeds</strong> - Video integration</li>
 </ul>
-<h2 id="installation">Installation</h2>
-<h3 id="method-1-git-submodule-recommended">Method 1: Git Submodule (Recommended)</h3>
+<h2 id="an-zhuang">安装</h2>
+<h3 id="fang-fa-1-git-zi-mo-kuai-tui-jian">方法 1：Git 子模块（推荐）</h3>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Add as submodule</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://github.com/XXXMrG/archie-zola.git themes/archie-zola</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable in config.toml</span></span>
-<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #A6E3A1;"> &#39;theme = &quot;archie-zola&quot;&#39;</span><span style="color: #94E2D5;"> &gt;&gt;</span><span style="color: #A6E3A1;"> config.toml</span></span></code></pre><h3 id="method-2-direct-clone">Method 2: Direct Clone</h3>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #A6E3A1;"> &#39;theme = &quot;archie-zola&quot;&#39;</span><span style="color: #94E2D5;"> &gt;&gt;</span><span style="color: #A6E3A1;"> config.toml</span></span></code></pre><h3 id="fang-fa-2-zhi-jie-ke-long">方法 2：直接克隆</h3>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Clone to themes directory</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://github.com/XXXMrG/archie-zola.git themes/archie-zola</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Enable in config.toml</span></span>
-<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #A6E3A1;"> &#39;theme = &quot;archie-zola&quot;&#39;</span><span style="color: #94E2D5;"> &gt;&gt;</span><span style="color: #A6E3A1;"> config.toml</span></span></code></pre><h3 id="updating-the-theme">Updating the Theme</h3>
+<span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">echo</span><span style="color: #A6E3A1;"> &#39;theme = &quot;archie-zola&quot;&#39;</span><span style="color: #94E2D5;"> &gt;&gt;</span><span style="color: #A6E3A1;"> config.toml</span></span></code></pre><h3 id="geng-xin-zhu-ti">更新主题</h3>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Initialize submodules (first time)</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule update --init</span></span>
 <span class="giallo-l"></span>
@@ -290,7 +297,7 @@
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># Commit the update</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> add themes/archie-zola</span></span>
-<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> commit -m &quot;Update archie-zola theme&quot;</span></span></code></pre><h2 id="quick-start">Quick Start</h2>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> commit -m &quot;Update archie-zola theme&quot;</span></span></code></pre><h2 id="kuai-su-kai-shi">快速开始</h2>
 <ol>
 <li><strong>Install the theme</strong> (see above)</li>
 <li><strong>Copy example config</strong> to your <code>config.toml</code>:</li>
@@ -316,8 +323,8 @@
 <ol start="4">
 <li><strong>Build and serve</strong>:</li>
 </ol>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre><h2 id="configuration">Configuration</h2>
-<h3 id="basic-settings">Basic Settings</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre><h2 id="pei-zhi">配置</h2>
+<h3 id="ji-chu-she-zhi">基础设置</h3>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://yourdomain.com&quot;</span></span>
 <span class="giallo-l"><span>title</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your Site Title&quot;</span></span>
 <span class="giallo-l"><span>description</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;Your site description&quot;</span></span>
@@ -524,6 +531,7 @@
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

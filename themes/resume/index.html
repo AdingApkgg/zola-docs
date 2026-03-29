@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;resume&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="resume | Zola" />
     <meta property="og:description"
-        content="A resume theme" />
+        content="简历主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;resume&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="resume | Zola" />
     <meta name="twitter:description"
-        content="A resume theme" />
+        content="简历主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "resume",
-        "description": "A resume theme",
+        "description": "简历主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;resume&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                          
-                              
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;resume&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;resume&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;resume&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> resume</h1>
-            <p>A resume theme</p>
+            <p>简历主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;www.alongwy.top">Feng Yunlong</a>
@@ -234,35 +241,36 @@
     <hr>
     <h1 id="zola-resume">Zola Resume</h1>
 <p><a href="https://zola.docs.saop.cc/themes/resume/README.CN.md">Chinese Version</a></p>
-<p>Redesigned form <a class="external" rel="noopener external" target="_blank" href="https://github.com/eddiewebb/hugo-resume">hugo resume</a>.</p>
-<h2 id="features">Features</h2>
+<p>Redesigned form <a class="external" rel="noopener external" target="_blank" href="https://github.com/eddiewebb/hugo-resume">hugo resume</a>.
+基于 <a class="external" rel="noopener external" target="_blank" href="https://github.com/eddiewebb/hugo-resume">hugo resume</a> 重新设计。</p>
+<h2 id="gong-neng">功能</h2>
 <ul>
-<li>This is basically a single-page website with auto-scrolling based on left-hand nav.</li>
-<li>Dedicated project/publications pages allow more detail.</li>
-<li>Includes a client-side search at '/search'.</li>
-<li>Includes an <code>/admin</code> endpoint that can allow authorized users to use a WYSIWYG editor and commit files back to markdown, but with a Wordpress/CMS like experience.</li>
+<li>基本形态为单页网站，支持左侧导航自动滚动定位。</li>
+<li>提供独立的项目/出版物页面以展示更多细节。</li>
+<li>内置客户端搜索页面（<code>/search</code>）。</li>
+<li>提供 <code>/admin</code> 端点，授权用户可通过可视化编辑器编辑并回写 Markdown，体验类似 Wordpress/CMS。</li>
 </ul>
-<h2 id="quick-start">Quick Start</h2>
+<h2 id="kuai-su-kai-shi">快速开始</h2>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone git@github.com:alongwy/zola-resume.git</span></span>
 <span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> zola-resume</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span>
-<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># open http://127.0.0.1:1111/</span></span></code></pre><h2 id="installation">Installation</h2>
-<p>Just earlier we showed you how to run the theme directly. Now we start to install the theme in an existing site step by step.</p>
-<h3 id="step-1-create-a-new-zola-site">Step 1: Create a new zola site</h3>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init mysite</span></span></code></pre><h3 id="step-2-install-zola-resume">Step 2: Install zola-resume</h3>
-<p>Download this theme to your themes directory:</p>
+<span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># open http://127.0.0.1:1111/</span></span></code></pre><h2 id="an-zhuang">安装</h2>
+<p>上面展示了直接运行主题的方法。下面是在已有站点中分步安装主题。</p>
+<h3 id="di-yi-bu-chuang-jian-xin-de-zola-zhan-dian">第一步：创建新的 zola 站点</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init mysite</span></span></code></pre><h3 id="di-er-bu-an-zhuang-zola-resume">第二步：安装 zola-resume</h3>
+<p>将主题下载到 <code>themes</code> 目录：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> mysite/themes</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone git@github.com:alongwy/zola-resume.git</span></span></code></pre>
-<p>Or install as a submodule:</p>
+<p>或作为子模块安装：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> mysite</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span><span style="color: #9399B2;font-style: italic;">  # if your project is a git repository already, ignore this command</span></span>
-<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add git@github.com:alongwy/zola-resume.git themes/zola-resume</span></span></code></pre><h3 id="step-3-configuration">Step 3: Configuration</h3>
-<p>Enable the theme in your config.toml in the site derectory:</p>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add git@github.com:alongwy/zola-resume.git themes/zola-resume</span></span></code></pre><h3 id="di-san-bu-pei-zhi">第三步：配置</h3>
+<p>在站点目录的 <code>config.toml</code> 中启用主题：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;zola-resume&quot;</span></span></code></pre>
-<p>Or copy the config.toml.example from the theme directory to your project's root directory:</p>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> themes/zola-resume/config.toml.example config.toml</span></span></code></pre><h4 id="for-cms">For CMS</h4>
+<p>或将主题目录中的 <code>config.toml.example</code> 复制到项目根目录：</p>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> themes/zola-resume/config.toml.example config.toml</span></span></code></pre><h4 id="cms-pei-zhi">CMS 配置</h4>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">cp</span><span style="color: #A6E3A1;"> themes/zola-resume/static/admin/config.yml static/admin/config.yml</span></span></code></pre>
-<p>and change those</p>
+<p>并修改以下内容：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># static/admin/config.yml</span></span>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #89B4FA;">backend</span><span style="color: #94E2D5;">:</span></span>
@@ -270,24 +278,24 @@
 <span class="giallo-l"><span style="color: #89B4FA;">  repo</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> USERNAME/REPO</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  branch</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> BRANCH</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;">  cms_label_prefix</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> netlify-cms/</span></span>
-<span class="giallo-l"><span style="color: #89B4FA;">  site_domain</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> DOMAIN.netlify.com</span></span></code></pre><h3 id="step-4-add-new-content">Step 4: Add new content</h3>
-<p>You can copy the content from the theme directory to your project:</p>
+<span class="giallo-l"><span style="color: #89B4FA;">  site_domain</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> DOMAIN.netlify.com</span></span></code></pre><h3 id="di-si-bu-tian-jia-nei-rong">第四步：添加内容</h3>
+<p>你可以将主题目录中的内容复制到项目：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>cp -r themes/zola-resume/data .</span></span>
 <span class="giallo-l"><span>cp -r themes/zola-resume/content .</span></span></code></pre>
-<p>You can modify or add new posts in the content/blog, content/projects or other content directories as needed.</p>
-<h3 id="step-5-run-the-project">Step 5: Run the project</h3>
-<p>Just run zola serve in the root path of the project:</p>
+<p>你可以按需在 <code>content/blog</code>、<code>content/projects</code> 或其他内容目录中修改或新增文章。</p>
+<h3 id="di-wu-bu-yun-xing-xiang-mu">第五步：运行项目</h3>
+<p>在项目根目录运行 <code>zola serve</code>：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="plain"><span class="giallo-l"><span>zola serve</span></span></code></pre>
-<p>This will start the Zola development web server accessible by default at http://127.0.0.1:1111. Saved changes will live reload in the browser.</p>
-<h2 id="examples">Examples</h2>
+<p>这会启动 Zola 开发服务器，默认地址为 http://127.0.0.1:1111。保存改动后浏览器会自动热重载。</p>
+<h2 id="shi-li">示例</h2>
 <p><img src="https://raw.githubusercontent.com/alongwy/zola-resume/master/screenshot.png" alt="screenshot" /></p>
 <p>See <a class="external" rel="noopener external" target="_blank" href="https://resume.alongwy.top">along's site</a> for a live example.</p>
-<h2 id="setup-use">Setup &amp; Use</h2>
-<p>This theme uses a combination of custom sections and some data files to drive content.</p>
-<h3 id="summary">Summary</h3>
-<p>Edit the main <code>contents/_index.md with a brief bio/summary</code></p>
-<h3 id="data-files">Data files</h3>
-<p>Data files are used for simple content presented on the homepage.</p>
+<h2 id="pei-zhi-yu-shi-yong">配置与使用</h2>
+<p>这个主题结合了自定义分区与数据文件来驱动内容展示。</p>
+<h3 id="zhai-yao">摘要</h3>
+<p>编辑主页面 <code>contents/_index.md</code>，填写简短个人介绍/摘要。</p>
+<h3 id="shu-ju-wen-jian">数据文件</h3>
+<p>数据文件用于首页上的结构化内容展示。</p>
 <ul>
 <li><a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/data/certifications.json">data/certifications.json</a></li>
 <li><a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/data/social.json">data/social.json</a></li>
@@ -295,20 +303,20 @@
 <li><a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/data/experience.json">data/experience.json</a></li>
 <li><a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/data/education.json">data/education.json</a></li>
 </ul>
-<h3 id="projects-opensource">Projects/Opensource</h3>
-<p>The difference indicates your role as originator or colaborator.</p>
-<h3 id="publications">Publications</h3>
-<p>Similar to projects, create them under <code>publications</code>. Include any papers, speaking engagements, articles, etc.</p>
-<h3 id="blog-posts">Blog / Posts</h3>
-<p>Similar to posts, create them under <code>blog</code>. Include any thoughts, musiings, etc.
+<h3 id="xiang-mu-kai-yuan">项目/开源</h3>
+<p>通过不同分类来区分你是发起者还是协作者。</p>
+<h3 id="chu-ban-wu">出版物</h3>
+<p>与项目类似，在 <code>publications</code> 下创建，包含论文、演讲、文章等。</p>
+<h3 id="bo-ke-wen-zhang">博客 / 文章</h3>
+<p>与普通文章类似，在 <code>blog</code> 下创建，记录思考与随笔等内容。
 <strong>This template does not support a <code>posts</code> folder</strong></p>
-<h3 id="template-params">Template params</h3>
-<p>Almost All personal information outside the above details is captured by extra in <a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/config.toml"><code>config.toml</code></a>, or can be edited in the "Settings" collection if using CMS.</p>
-<h2 id="cms-editor-with-netlify-cms">CMS Editor with Netlify CMS</h2>
+<h3 id="mo-ban-can-shu">模板参数</h3>
+<p>除上述内容外，大部分个人信息通过 <a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/blob/main/config.toml"><code>config.toml</code></a> 的 <code>extra</code> 配置，或在使用 CMS 时于 “Settings” 集合中维护。</p>
+<h2 id="shi-yong-netlify-cms-bian-ji">使用 Netlify CMS 编辑</h2>
 <p><strong>Does not require deployment to Netlify!</strong></p>
-<p><a class="external" rel="noopener external" target="_blank" href="https://www.netlifycms.org/">Netlify CMS</a> is an open source project that enables CMS like experience for static site generation tools like Hugo. This theme includes a fully working integration and guide in <a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/tree/main/static/admin">static/admin</a></p>
-<h2 id="credits">Credits</h2>
-<p>This project ports the Hugo Resume theme by Feng Yunlong to support zola.</p>
+<p><a class="external" rel="noopener external" target="_blank" href="https://www.netlifycms.org/">Netlify CMS</a> 是一个开源项目，可为 Hugo 等静态站点工具提供 CMS 式编辑体验。本主题已在 <a class="external" rel="noopener external" target="_blank" href="https://github.com/AlongWY/zola-resume/tree/main/static/admin">static/admin</a> 提供完整集成与使用指引。</p>
+<h2 id="zhi-xie">致谢</h2>
+<p>本项目将 Feng Yunlong 的 Hugo Resume 主题移植到 Zola。</p>
 
 
     </div>
@@ -327,6 +335,7 @@
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

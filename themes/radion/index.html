@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;radion&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="radion | Zola" />
     <meta property="og:description"
-        content="A sleek, modern blog theme." />
+        content="流畅现代的博客主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;radion&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="radion | Zola" />
     <meta name="twitter:description"
-        content="A sleek, modern blog theme." />
+        content="流畅现代的博客主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "radion",
-        "description": "A sleek, modern blog theme.",
+        "description": "流畅现代的博客主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;radion&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                            
-                            
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;radion&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;radion&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;radion&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> radion</h1>
-            <p>A sleek, modern blog theme.</p>
+            <p>流畅现代的博客主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               <a href="https:&#x2F;&#x2F;micahkepe.com">Micah Kepe</a>
@@ -254,8 +261,7 @@
 
     <hr>
     <h1 id="radion">radion</h1>
-<p>A sleek, modern blog theme for <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a>. See the live
-site demo <a class="external" rel="noopener external" target="_blank" href="https://micahkepe.com/radion/">here</a>.</p>
+<p>一个适用于 <a class="external" rel="noopener external" target="_blank" href="https://www.getzola.org/">Zola</a> 的流畅现代博客主题。在线演示请见 <a class="external" rel="noopener external" target="_blank" href="https://micahkepe.com/radion/">here</a>。</p>
 <blockquote>
 <p><strong>radion</strong>
 noun</p>
@@ -271,31 +277,31 @@ noun</p>
 <summary>Light theme</summary>
 <p><img src="https://zola.docs.saop.cc/themes/radion/screenshot-light.png" alt="radion light theme screenshot" /></p>
 </details>
-<h2 id="features">Features</h2>
+<h2 id="gong-neng">功能</h2>
 <ul>
 <li><input disabled="" type="checkbox" checked=""/>
-Code Snippet Clipboards
+代码片段复制按钮
 <ul>
 <li><input disabled="" type="checkbox" checked=""/>
-Line(s)-specific highlighting</li>
+支持指定行高亮</li>
 </ul>
 </li>
 <li><input disabled="" type="checkbox" checked=""/>
-Latex Support</li>
+Latex 支持</li>
 <li><input disabled="" type="checkbox" checked=""/>
-Light/Dark mode support</li>
+深色/浅色模式</li>
 <li><input disabled="" type="checkbox" checked=""/>
-Search functionality</li>
+搜索功能</li>
 <li><input disabled="" type="checkbox" checked=""/>
-Table of Contents option</li>
+目录（TOC）选项</li>
 <li><input disabled="" type="checkbox" checked=""/>
-Footnote support</li>
+脚注支持</li>
 <li><input disabled="" type="checkbox" checked=""/>
-Built-in comments option (Giscus)</li>
+内置评论（Giscus）</li>
 <li><input disabled="" type="checkbox" checked=""/>
-Open Graph cover image selection</li>
+Open Graph 封面图设置</li>
 </ul>
-<h2 id="contents-and-configuration-guide">Contents and Configuration Guide</h2>
+<h2 id="mu-lu-yu-pei-zhi-zhi-nan">目录与配置指南</h2>
 <ul>
 <li>Installation</li>
 <li>Options
@@ -693,6 +699,7 @@ a path like <code>"assets/cover.png"</code>). The first filename match will be u
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 

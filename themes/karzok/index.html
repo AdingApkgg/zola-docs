@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="无需依赖，单一二进制文件的静态站点生成器。" />
+    <meta name="description" content="Zola 中文社区文档与汉化站，欢迎一起完善。" />
     <meta name="author" content="Vincent Prouillet" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;karzok&#x2F;" />
@@ -16,7 +16,7 @@
     <meta property="og:title"
         content="karzok | Zola" />
     <meta property="og:description"
-        content="The theme for launching fast documentation sites" />
+        content="用于快速搭建文档站点的主题" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;karzok&#x2F;" />
     <meta property="og:site_name" content="Zola" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title"
         content="karzok | Zola" />
     <meta name="twitter:description"
-        content="The theme for launching fast documentation sites" />
+        content="用于快速搭建文档站点的主题" />
     <meta name="twitter:image" content="https://zola.docs.saop.cc/logos/Zola-logo-main-coffee.svg" />
 
     <!-- AI Indexing -->
@@ -39,7 +39,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "karzok",
-        "description": "The theme for launching fast documentation sites",
+        "description": "用于快速搭建文档站点的主题",
         "url": "https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;karzok&#x2F;",
         "author": {
           "@type": "Person",
@@ -152,15 +152,24 @@
                 }
             } catch (_) { }
         }
-        updateAnalytics();
-        document.addEventListener("swup:page:view", updateAnalytics);
+        function initAnalytics() {
+            if (window.__zolaAnalyticsInited) return;
+            window.__zolaAnalyticsInited = true;
+            updateAnalytics();
+            document.addEventListener("swup:page:view", updateAnalytics);
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initAnalytics, { once: true });
+        } else {
+            initAnalytics();
+        }
     </script>
     
 </head>
 
 <body>
     <header>
-         
+        
         <a class="header__logo" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;">
             <picture>
                 <img src="https://zola.docs.saop.cc/logos/Zola-logo-white.svg" title="Zola main logo" alt="Zola"
@@ -194,11 +203,9 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                            
-                            
-                    <a class="white" href="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;en&#x2F;themes&#x2F;karzok&#x2F;" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
                     
+                    <a class="white external" href="https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;karzok&#x2F;" class="nav-link" target="_blank" rel="noopener noreferrer"><i
+                            class="fas fa-globe"></i> 官方英文</a>
                 </li>
             </ul>
         </nav>
@@ -212,7 +219,7 @@
         <img src="https:&#x2F;&#x2F;zola.docs.saop.cc&#x2F;themes&#x2F;karzok&#x2F;screenshot.png" class="thumb">
         <div class="metadata">
             <h1><i class="fas fa-cube"></i> karzok</h1>
-            <p>The theme for launching fast documentation sites</p>
+            <p>用于快速搭建文档站点的主题</p>
             <p><b><i class="fas fa-user"></i> 作者:</b>
             
               Konrad Geletey
@@ -242,52 +249,51 @@
 </p>
 <h1 id="karzok">Karzok</h1>
 <ul>
-<li>classless and frameworkless</li>
-<li>Jinja-like templates</li>
-<li>javascript is optional, needed only for search,math,alerts and dark mode</li>
-<li>no roundings and other strange design trends</li>
+<li>无 class、无框架依赖</li>
+<li>类 Jinja 模板风格</li>
+<li>JavaScript 可选，仅搜索、数学公式、提示框和深色模式需要</li>
+<li>无圆角等花哨设计趋势</li>
 </ul>
 <p><img src="https://zola.docs.saop.cc/themes/karzok/./screenshot.png" alt="screenshot" /></p>
-<h2 id="get-started">Get Started</h2>
+<h2 id="kuai-su-kai-shi">快速开始</h2>
 <ul>
 <li><a class="external" rel="noopener external" target="_blank" href="https://karzok.re128.org/install/">find out more</a></li>
 </ul>
-<h3 id="requirements">Requirements</h3>
+<h3 id="yi-lai-yao-qiu">依赖要求</h3>
 <ul>
 <li><a class="external" rel="noopener external" target="_blank" href="https://nodejs.org/">Node.js</a></li>
 </ul>
-<h3 id="1-create-a-new-zola-site">1. Create a new zola site</h3>
-<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init zola_site</span></span></code></pre><h3 id="2-download-this-theme-to-you-themes-directory">2. Download this theme to you themes directory:</h3>
+<h3 id="1-chuang-jian-xin-de-zola-zhan-dian">1. 创建新的 zola 站点</h3>
+<pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> init zola_site</span></span></code></pre><h3 id="2-jiang-zhu-ti-xia-zai-dao-themes-mu-lu">2. 将主题下载到 themes 目录：</h3>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> clone https://codeberg.org/kogeletey/karzok zola_site/themes</span></span></code></pre>
-<p>or install as submodule:</p>
+<p>或作为子模块安装：</p>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #F38BA8;font-style: italic;">cd</span><span style="color: #A6E3A1;"> zola_site</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> init</span><span style="color: #9399B2;font-style: italic;"> # if your project is a git repository already, ignore this command</span></span>
-<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://codeberg.org/kogeletey/karzok zola_site/themes</span></span></code></pre><h3 id="3-configuration-open-in-favorite-editor-config-toml">3. Configuration. Open in favorite editor <code>config.toml</code></h3>
+<span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">git</span><span style="color: #A6E3A1;"> submodule add https://codeberg.org/kogeletey/karzok zola_site/themes</span></span></code></pre><h3 id="3-pei-zhi-yong-ni-chang-yong-de-bian-ji-qi-da-kai-config-toml">3. 配置：用你常用的编辑器打开 <code>config.toml</code></h3>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="toml"><span class="giallo-l"><span>base_url</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;https://karzok.example.net&quot;</span><span style="color: #9399B2;font-style: italic;"> # set-up for production</span></span>
 <span class="giallo-l"><span>theme</span><span style="color: #94E2D5;"> =</span><span style="color: #A6E3A1;"> &quot;karzok&quot;</span></span></code></pre>
 <p>See more in <a class="external" rel="noopener external" target="_blank" href="https://karzok.re128.org/configure/">configuration</a></p>
-<h3 id="4-added-new-content">4. Added new content</h3>
+<h3 id="4-tian-jia-chu-shi-nei-rong">4. 添加初始内容</h3>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">    cp</span><span style="color: #A6E3A1;"> ./themes/content/_index.md content/_index.md</span></span></code></pre>
-<p>how you can give freedom to your creativity</p>
-<h3 id="5-run-the-project">5. Run the project</h3>
-<p>i. development enviroment</p>
+<p>之后你就可以自由发挥进行创作。</p>
+<h3 id="5-yun-xing-xiang-mu">5. 运行项目</h3>
+<p>i. 开发环境</p>
 <ol>
-<li>Install node dependencies needed to work</li>
+<li>安装构建所需 Node 依赖</li>
 </ol>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">pnpm</span><span style="color: #A6E3A1;"> ci</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">pnpm</span><span style="color: #A6E3A1;"> run build</span></span></code></pre>
 <ol start="2">
-<li>Just run <code>zola serve</code> in the root path of the project</li>
+<li>在项目根目录运行 <code>zola serve</code></li>
 </ol>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">zola</span><span style="color: #A6E3A1;"> serve</span></span></code></pre>
-<p>Open in favorite browser <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a>. Saved
-changes live reolad.</p>
-<p>ii. production enviroment</p>
+<p>在浏览器打开 <a class="external" rel="noopener external" target="_blank" href="http://127.0.0.1:1111">http://127.0.0.1:1111</a>。保存改动后会自动热重载。</p>
+<p>ii. 生产环境</p>
 <ul>
-<li>with conainers</li>
+<li>使用容器</li>
 </ul>
 <ol>
-<li>Write file for container</li>
+<li>编写容器文件</li>
 </ol>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="docker"><span class="giallo-l"><span style="color: #CBA6F7;">FROM</span><span> ghcr.io/kogeletey/karzok:latest </span><span style="color: #CBA6F7;">AS</span><span> build-stage</span></span>
 <span class="giallo-l"><span style="color: #9399B2;font-style: italic;"># or your path to image</span></span>
@@ -301,12 +307,12 @@ changes live reolad.</p>
 <span class="giallo-l"></span>
 <span class="giallo-l"><span style="color: #CBA6F7;">EXPOSE</span><span> 80</span></span></code></pre>
 <ol start="2">
-<li>Run the your container</li>
+<li>运行容器</li>
 </ol>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">docker</span><span style="color: #A6E3A1;"> build -t</span><span style="color: #94E2D5;"> &lt;</span><span style="color: #A6E3A1;">your_name_imag</span><span>e</span><span style="color: #94E2D5;">&gt;</span><span style="color: #A6E3A1;"> .</span><span style="color: #9399B2;"> &amp;&amp;</span><span style="color: #F5C2E7;">\</span></span>
 <span class="giallo-l"><span style="color: #89B4FA;font-style: italic;">docker</span><span style="color: #A6E3A1;"> run -d -p 8080:8080</span><span style="color: #94E2D5;"> &lt;</span><span style="color: #A6E3A1;">your_name_imag</span><span>e</span><span style="color: #94E2D5;">&gt;</span><span> </span></span></code></pre>
 <ul>
-<li>using gitlab-ci and gitlab-pages</li>
+<li>使用 gitlab-ci 与 gitlab-pages</li>
 </ul>
 <pre class="giallo" style="color: #CDD6F4; background-color: #1E1E2E;"><code data-lang="yaml"><span class="giallo-l"><span style="color: #89B4FA;">image</span><span style="color: #94E2D5;">:</span><span style="color: #A6E3A1;"> ghcr.io/kogeletey/karzok:latest</span><span style="color: #9399B2;font-style: italic;"> # or change use your registry</span></span>
 <span class="giallo-l"></span>
@@ -318,13 +324,12 @@ changes live reolad.</p>
 <span class="giallo-l"><span style="color: #89B4FA;">    paths</span><span style="color: #94E2D5;">:</span></span>
 <span class="giallo-l"><span style="color: #9399B2;">      -</span><span style="color: #A6E3A1;"> public/</span></span></code></pre>
 <p>Open in favorite browser <a class="external" rel="noopener external" target="_blank" href="http://localhost:8080">https://localhost:8080</a></p>
-<h2 id="license">License</h2>
-<p>This program is Free Software: You can use, study share and improve it at your
-will. Specifically you can redistribute and/or modify it under the terms of the
-<a class="external" rel="noopener external" target="_blank" href="https://mit-license.org/">MIT</a></p>
-<h2 id="contribute">Contribute</h2>
-<p>Make sure to read the <a class="external" rel="noopener external" target="_blank" href="https://karzok.re128.org/reference/code_of_conduct/">Code of Conduct</a></p>
-<h3 id="find-bugs-and-come-up-with-features">Find bugs and come up with features</h3>
+<h2 id="xu-ke-zheng">许可证</h2>
+<p>这是自由软件：你可以按自己的意愿使用、研究、分享和改进它。<br />
+具体来说，你可以在 <a class="external" rel="noopener external" target="_blank" href="https://mit-license.org/">MIT</a> 条款下重新分发和/或修改它。</p>
+<h2 id="gong-xian">贡献</h2>
+<p>请先阅读 <a class="external" rel="noopener external" target="_blank" href="https://karzok.re128.org/reference/code_of_conduct/">Code of Conduct</a>。</p>
+<h3 id="fan-kui-que-xian-yu-gong-neng-jian-yi">反馈缺陷与功能建议</h3>
 <p>On the <a class="external" rel="noopener external" target="_blank" href="https://codeberg.org/kogeletey/karzok/issues">codeberg issues</a> or
 <a class="external" rel="noopener external" target="_blank" href="https://github.com/kogeletey/karzok/issues">github issues</a></p>
 
@@ -345,6 +350,7 @@ will. Specifically you can redistribute and/or modify it under the terms of the
             <span id="uv">-</span> 人 |
             <i class="fas fa-file-alt"></i> 本页访问 <span id="ppv">-</span> 次
         </p>
+        <p>本站中文内容由 AI 翻译。</p>
     </footer>
 </body>
 
