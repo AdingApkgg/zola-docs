@@ -208,7 +208,8 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                    <a class="white external" href="https://www.getzola.org/" class="nav-link"><i
+                    {% set english_url = current_url | default(value=config.base_url) | replace(from=config.base_url, to="https://www.getzola.org/") %}
+                    <a class="white external" href="{{ english_url }}" class="nav-link"><i
                             class="fas fa-globe"></i> English</a>
                 </li>
             </ul>
