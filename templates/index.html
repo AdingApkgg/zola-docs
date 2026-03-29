@@ -169,8 +169,7 @@
 
 <body>
     <header>
-        {% set logo_url = config.base_url %} {% if lang != config.default_language
-        %} {% set logo_url = config.base_url ~ lang ~ "/" %} {% endif %}
+        {% set logo_url = config.base_url %}
         <a class="header__logo" href="{{ logo_url }}">
             <picture>
                 <img src="{{ get_url(path='logos/Zola-logo-white.svg') }}" title="Zola main logo" alt="Zola"
@@ -209,26 +208,8 @@
                         rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                 </li>
                 <li>
-                    {% set other_lang = "en" %} {% if lang == "en" %} {% set other_lang
-                    = "zh" %} {% endif %} {% set other_lang_path = "" %} {# Check if
-                    page translations exist #} {% if page and page.translations %} {%
-                    for trans in page.translations %} {% if trans.lang == other_lang %}
-                    {% set_global other_lang_path = trans.permalink %} {% endif %} {%
-                    endfor %} {% endif %} {# Check if section translations exist #} {%
-                    if not other_lang_path and section and section.translations %} {%
-                    for trans in section.translations %} {% if trans.lang == other_lang
-                    %} {% set_global other_lang_path = trans.permalink %} {% endif %} {%
-                    endfor %} {% endif %} {# Fallback to homepage if no translation
-                    found #} {% if not other_lang_path %} {% if other_lang == "zh" %} {%
-                    set_global other_lang_path = "/" %} {% else %} {% set_global
-                    other_lang_path = "/en/" %} {% endif %} {% endif %} {% if lang ==
-                    "zh" %}
-                    <a class="white" href="{{ other_lang_path }}" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'en')"><i class="fas fa-globe"></i> English</a>
-                    {% else %}
-                    <a class="white" href="{{ other_lang_path }}" class="nav-link"
-                        onclick="localStorage.setItem('zola_lang_pref', 'zh')"><i class="fas fa-globe"></i> 中文</a>
-                    {% endif %}
+                    <a class="white external" href="https://www.getzola.org/" class="nav-link"><i
+                            class="fas fa-globe"></i> English</a>
                 </li>
             </ul>
         </nav>
